@@ -49,6 +49,13 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
+      new CopyWebpackPlugin([
+        {
+          from: './fonts',
+          to: 'fonts/[path][name].[ext]',
+          toType: 'template',
+        },
+      ]),
     ],
     optimization: {
       noEmitOnErrors: true,
