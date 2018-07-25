@@ -44,7 +44,7 @@ const commonConfig = merge([
       ]),
       new CopyWebpackPlugin([
         {
-          from: './styles',
+          from: './styles/**/*.css',
           to: 'styles/[name].[ext]',
           toType: 'template',
         },
