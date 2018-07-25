@@ -10,7 +10,7 @@ const commonConfig = merge([
   {
     context: path.resolve(__dirname, 'src'),
     entry: {
-      index: './index',
+      index: './pages/index',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),

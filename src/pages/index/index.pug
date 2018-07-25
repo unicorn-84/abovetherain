@@ -1,17 +1,18 @@
-extends ./templates/includes/layout
+extends ../../templates/includes/layout
 block head
-  include ./templates/includes/head
+  include ../../templates/includes/head
   title Над Дождем
   meta(name="description"
        content="Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.")
   block icons
-    include ./templates/includes/icons
+    include ../../templates/includes/icons
   block styles
-    include ./templates/includes/styles
+    include ../../templates/includes/styles
 block body
-  block header
-  h1 Над дождем
-  block content
-  block footer
+  #wrapper.clearfix
+    block header
+    h1 Над дождем
+    block content
+    block footer
   block scripts
-    include ./templates/includes/scripts
+    include ../../templates/includes/scripts

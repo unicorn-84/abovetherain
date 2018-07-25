@@ -36,7 +36,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
-      template: './index.pug',
+      template: './pages/index/index.pug',
     }),
   ],
 };
