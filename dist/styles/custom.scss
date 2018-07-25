@@ -1,0 +1,40 @@
+@import 'fonts';
+@import 'slider';
+
+.mfp-iframe-scaler iframe {
+  box-shadow: none !important;
+}
+
+.mfp-counter {
+  display: none;
+}
+
+.atr-button {
+  max-width: 320px;
+}
+
+.bd {
+  border: 2px solid red;
+}
+
+.bottommargin-xxs {
+  margin-bottom: 10px;
+}
+
+.bottommargin-xs {
+  margin-bottom: 15px;
+}
+
+.allmargin-xs {
+  margin: 15px;
+}
+
+.d-table-cell {
+  display: table-cell;
+}
+
+#top-search form input {
+  font-size: 15px !important;
+  text-transform: none !important;
+  font-weight: normal;
+}

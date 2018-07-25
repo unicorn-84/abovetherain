@@ -56,6 +56,13 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
+      new CopyWebpackPlugin([
+        {
+          from: './images',
+          to: 'images/[path][name].[ext]',
+          toType: 'template',
+        },
+      ]),
     ],
     optimization: {
       noEmitOnErrors: true,
