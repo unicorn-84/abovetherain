@@ -1,0 +1,20 @@
+doctype html
+html(lang="ru-RU")
+  head
+    //Common meta tags
+    include blocks/meta
+    block meta
+    //Common icons
+    include ./blocks/icons
+    block icons
+    //Common styles
+    include ./blocks/styles
+    block styles
+  body.stretched
+    #wrapper.clearfix
+      block header
+      block content
+      block footer
+    //Common scripts
+    include ./blocks/scripts
+      block scripts
