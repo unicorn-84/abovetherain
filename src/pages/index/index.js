@@ -1,1 +1,3 @@
-console.log('overtherain');
+import './index.scss';
+
+console.log('Home page');
