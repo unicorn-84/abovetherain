@@ -1,3 +1,4 @@
+include ../mixins/primary-navigation
 //Header
 header#header.transparent-header.no-sticky
   #header-wrap
@@ -10,22 +11,4 @@ header#header.transparent-header.no-sticky
         a(href="index.html" class="retina-logo" data-dark-logo=require("../../images/logo/logo-dark@2x.png"))
           img(src=require("../../images/logo/logo-dark@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
       //Primary Navigation
-      nav#primary-menu.dark.with-arrows
-        ul
-          //Services
-          li
-            a(href="services.html")
-              div Услуги
-              ul
-                li
-                  a(href="ajax/service.html") Услуга 1
-                li
-                  a(href="ajax/service.html") Услуга 2
-                li
-                  a(href="ajax/service.html") Услуга 3
-                li
-                  a(href="ajax/service.html") Услуга 4
-                li
-                  a(href="ajax/service.html") Услуга 5
-                li
-                  a(href="ajax/service.html") Услуга 6
+      +primary-navigation(items)

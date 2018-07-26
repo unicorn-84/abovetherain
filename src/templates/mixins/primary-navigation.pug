@@ -1,0 +1,15 @@
+mixin primary-navigation(items)
+  nav#primary-menu.dark.with-arrows
+    ul
+      each item in items
+        if !item.subitems
+          li(class={current: htmlWebpackPlugin.options.name === item.name})
+            a(href=`${item.name}.html`) #{item.title}
+        else
+          li(class={current: htmlWebpackPlugin.options.name === item.name})
+            a(href=`${item.name}.html`)
+              div #{item.title}
+            ul
+              each subitem in item.subitems
+                li
+                  a(href=`${subitem.path}/${subitem.name}.html` data-ajax) #{subitem.title}
