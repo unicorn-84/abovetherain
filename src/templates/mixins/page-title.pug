@@ -1,0 +1,8 @@
+mixin pageTitle(page)
+  section#page-title.page-title-nobg
+    .container.clearfix
+      h1= page.title
+      ol.breadcrumb
+        li.breadcrumb-item
+          a(href="index.html") Главная
+        li.breadcrumb-item.active.current(aria-current="page") #{page.title}
