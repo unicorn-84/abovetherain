@@ -14,7 +14,8 @@ html(lang="ru-RU")
   body.stretched
     //Page content
     #wrapper.clearfix
-      include ./components/header
+      block header
+        include ./mixins/header
       block content
         include ./mixins/page-title
       block footer
