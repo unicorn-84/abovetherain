@@ -12,7 +12,7 @@ mixin primary-navigation(items)
             ul
               each subitem in item.subitems
                 li
-                  a(href=`${data.ajaxFolder}/${subitem.name}.html` data-ajax) #{subitem.title}
+                  a(href=`${options.ajaxFolder}/${subitem.name}.html` data-ajax) #{subitem.title}
     #top-search
       a#top-search-trigger(href="#")
         i.icon-search3

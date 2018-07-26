@@ -1,15 +1,15 @@
 extends ../../templates/layout
 append variables
   -
-    const data = require('../../data');
+    const { options, pages, primaryNavigation } = require('../../data');
     const slide1 = require('../../images/slides/slide-1.jpg');
     const slide2 = require('../../images/slides/slide-2.jpg');
     const slide3 = require('../../images/slides/slide-3.jpg');
 //-HEAD
 append meta
   //Page meta tags
-  title= `${data.siteName} | ${data.pages.index.title}`
-  meta(name="description" content= data.pages.index.description)
+  title= `${options.siteName} | ${pages.index.title}`
+  meta(name="description" content= pages.description)
 append icons
   //Page icons
 append styles
@@ -50,7 +50,7 @@ append content
                 p Время твоего превосходства
           //Phone icon
           #slider-phone
-            a(href=`tel:${data.sliderPhone}`)
+            a(href=`tel:${options.sliderPhone}`)
               i.i-circled.i-light.icon-call
 append footer
   //Footer
