@@ -1,6 +1,14 @@
 extends ../../templates/layout
 append variables
-  -const { options, pages, primaryNavigation } = require('../../data');
+  -
+    const { options, pages, primaryNavigation, services } = require('../../data');
+    const service1 = require('../../images/services/rent.jpg');
+    const service2 = require('../../images/services/aerial-hoop.jpg');
+    const service3 = require('../../images/services/aerial-silk.jpg');
+    const service4 = require('../../images/services/hip-hop.jpg');
+    const service5 = require('../../images/services/pole-dance.jpg');
+    const service6 = require('../../images/services/yoga.jpg');
+    const service7 = require('../../images/services/zumba.jpg');
 //-HEAD
 append meta
   //Page meta tags
@@ -15,5 +23,83 @@ append header
   +header(primaryNavigation.items)
 append content
   +pageTitle(pages.services)
+  section#content
+    .content-wrap
+      .container.clearfix
+        #portfolio.portfolio.grid-container.portfolio-3.clearfix
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service1 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Аренда
+              span Мы вынуждены отталкиваться от того, что высокое качество позиционных исследований требует от нас анализа новых принципов формирования материально-технической и кадровой базы
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service2 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Воздушное кольцо
+              span Банальные, но неопровержимые выводы, а также базовые сценарии поведения пользователей неоднозначны и будут призваны к ответу
+          .clear.d-xs-block.d-sm-block.d-md-none.d-lg-none.d-xl-none
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service3 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Воздушное полотно
+              span Принимая во внимание показатели успешности, высококачественный прототип будущего проекта является качественно новой ступенью экспериментов, поражающих по своей масштабности и грандиозности
+          .clear.d-xs-none.d-sm-none.d-md-block.d-lg-block.d-xl-block
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service4 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Хип-хоп
+              span Господа, повышение уровня гражданского сознания предполагает независимые способы реализации дальнейших направлений развития
+          .clear.d-xs-block.d-sm-block.d-md-none.d-lg-none.d-xl-none
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service5 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Pole dance
+              span Сложно сказать, почему ключевые особенности структуры проекта, инициированные исключительно синтетически, призваны к ответу
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service6 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Йога
+              span Как уже неоднократно упомянуто, реплицированные с зарубежных источников, современные исследования описаны максимально подробно
+          .clear.d-xs-none.d-sm-none.d-md-block.d-lg-block.d-xl-block
+          article.portfolio-item.bottommargin-xxs
+            div.portfolio-image
+              img(src= service7 alt="")
+              .portfolio-overlay
+                a(href="ajax/service.html" data-lightbox="ajax" class="center-icon")
+                  i.icon-line-ellipsis
+            .portfolio-desc
+              h3
+                a(href="ajax/service.html" data-lightbox="ajax") Зумба
+              span Следует отметить, что перспективное планирование требует от нас анализа вывода текущих активов
 append scripts
   //Page scripts
