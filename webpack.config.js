@@ -14,7 +14,13 @@ const commonConfig = merge([
   {
     context: path.resolve(__dirname, 'src'),
     entry: {
-      index: './pages/index',
+      index: './pages/index/index',
+      services: './pages/services/services',
+      schedule: './pages/schedule/schedule',
+      events: './pages/events/events',
+      team: './pages/team/team',
+      gallery: './pages/gallery/gallery',
+      contacts: './pages/contacts/contacts',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -71,6 +77,78 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
+        data,
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'services.html',
+        template: './pages/services/services.pug',
+        name: 'services',
+        data,
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'schedule.html',
+        template: './pages/schedule/schedule.pug',
+        name: 'schedule',
+        data,
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'events.html',
+        template: './pages/events/events.pug',
+        name: 'events',
+        data,
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'team.html',
+        template: './pages/team/team.pug',
+        name: 'team',
+        data,
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'gallery.html',
+        template: './pages/gallery/gallery.pug',
+        name: 'gallery',
+        data,
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'contacts.html',
+        template: './pages/contacts/contacts.pug',
+        name: 'contacts',
         data,
         minify: {
           removeComments: production,
