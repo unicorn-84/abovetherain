@@ -121,6 +121,7 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
+        chunks: ['team'],
         minify: {
           removeComments: production,
           minifyCSS: production,
