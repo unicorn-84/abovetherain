@@ -6,7 +6,6 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
-const data = require('./src/data.json');
 
 const production = process.env.npm_lifecycle_event === 'build';
 
@@ -77,7 +76,6 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -89,7 +87,6 @@ const commonConfig = merge([
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -101,7 +98,6 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -113,7 +109,6 @@ const commonConfig = merge([
         filename: 'events.html',
         template: './pages/events/events.pug',
         name: 'events',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -125,7 +120,6 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -137,7 +131,6 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -149,7 +142,6 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
-        data,
         minify: {
           removeComments: production,
           minifyCSS: production,
