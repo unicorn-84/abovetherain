@@ -1,0 +1,65 @@
+{
+  "siteName": "Над Дождём",
+  "ajaxFolder": "data",
+  "pages": {
+    "index": {
+      "name": "index",
+      "title": "Главная",
+      "description": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое."
+    }
+  },
+  "primaryNavigation": {
+    "items": [
+      {
+        "name": "services",
+        "title": "Услуги",
+        "subitems": [
+          {
+            "name": "service-1",
+            "title": "Услуга-1"
+          },
+          {
+            "name": "service-2",
+            "title": "Услуга-2"
+          },
+          {
+            "name": "service-3",
+            "title": "Услуга-3"
+          },
+          {
+            "name": "service-4",
+            "title": "Услуга-4"
+          },
+          {
+            "name": "service-5",
+            "title": "Услуга-5"
+          },
+          {
+            "name": "service-6",
+            "title": "Услуга-6"
+          }
+        ]
+      },
+      {
+        "name": "schedules",
+        "title": "Расписание"
+      },
+      {
+        "name": "events",
+        "title": "Афиша"
+      },
+      {
+        "name": "team",
+        "title": "Мы"
+      },
+      {
+        "name": "gallery",
+        "title": "Галерея"
+      },
+      {
+        "name": "contacts",
+        "title": "Контакты"
+      }
+    ]
+  }
+}

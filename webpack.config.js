@@ -6,6 +6,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
+const data = require('./src/data.json');
 
 const production = process.env.npm_lifecycle_event === 'build';
 
@@ -70,6 +71,7 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
+        data,
         minify: {
           removeComments: production,
           minifyCSS: production,

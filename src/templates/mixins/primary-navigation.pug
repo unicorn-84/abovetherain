@@ -3,16 +3,16 @@ mixin primary-navigation(items)
     ul
       each item in items
         if !item.subitems
-          li(class={current: htmlWebpackPlugin.options.name === item.name})
+          li(class={current: pageName === item.name})
             a(href=`${item.name}.html`) #{item.title}
         else
-          li(class={current: htmlWebpackPlugin.options.name === item.name})
+          li(class={current: pageName === item.name})
             a(href=`${item.name}.html`)
               div #{item.title}
             ul
               each subitem in item.subitems
                 li
-                  a(href=`${subitem.path}/${subitem.name}.html` data-ajax) #{subitem.title}
+                  a(href=`${data.ajaxFolder}/${subitem.name}.html` data-ajax) #{subitem.title}
     #top-search
       a#top-search-trigger(href="#")
         i.icon-search3
