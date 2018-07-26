@@ -3,8 +3,11 @@ const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
+
+const production = process.env.npm_lifecycle_event === 'build';
 
 const commonConfig = merge([
   {
@@ -63,6 +66,17 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
+      new HtmlWebpackPlugin({
+        filename: 'index.html',
+        template: './pages/index/index.pug',
+        name: 'index',
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
     ],
     optimization: {
       noEmitOnErrors: true,
