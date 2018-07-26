@@ -1,6 +1,7 @@
 {
   "siteName": "Над Дождём",
   "ajaxFolder": "data",
+  "sliderPhone": "+100 200 300",
   "pages": {
     "index": {
       "name": "index",

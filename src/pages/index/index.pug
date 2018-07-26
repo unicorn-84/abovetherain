@@ -1,6 +1,10 @@
 extends ../../templates/layout
 append variables
-  -const data = require('../../data');
+  -
+    const data = require('../../data');
+    const slide1 = require('../../images/slides/slide-1.jpg');
+    const slide2 = require('../../images/slides/slide-2.jpg');
+    const slide3 = require('../../images/slides/slide-3.jpg');
 //-HEAD
 append meta
   //Page meta tags
@@ -19,7 +23,7 @@ append content
         .swiper-wrapper
           //Slide-1
           .swiper-slide.dark(style={
-            background: "url(images/slide-1.jpg) 50% 50% / cover no-repeat"
+            background: `url(${slide1}) 50% 50% / cover no-repeat`,
           })
             .overlay
             .container.clearfix
@@ -28,7 +32,7 @@ append content
                 p Время твоего превосходства
           //Slide-2
           .swiper-slide.dark(style={
-            background: "url(images/slide-2.jpg) 50% 50% / cover no-repeat"
+            background: `url(${slide2}) 50% 50% / cover no-repeat`
           })
             .overlay
             .container.clearfix
@@ -37,13 +41,17 @@ append content
                 p Время твоего превосходства
           //Slide-3
           .swiper-slide.dark(style={
-            background: "url(images/slide-1.jpg) 50% 50% / cover no-repeat"
+            background: `url(${slide3}) 50% 50% / cover no-repeat`
           })
             .overlay
             .container.clearfix
               .slider-caption.slider-caption-center.slide-3
                 h2 Над дождём
                 p Время твоего превосходства
+          //Phone icon
+          #slider-phone
+            a(href=`tel:${data.sliderPhone}`)
+              i.i-circled.i-light.icon-call
 append footer
   //Footer
 append scripts

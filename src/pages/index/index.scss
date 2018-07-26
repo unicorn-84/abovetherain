@@ -1,3 +1,26 @@
 body {
   overflow: hidden;
 }
+
+#slider {
+  .overlay {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  #slider-phone {
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 10;
+    transition: transform 0.3s ease-out;
+
+    &:focus,
+    &:hover {
+      transform: scale(1.1) !important;
+    }
+
+    i {
+      box-shadow: rgba(0, 0, 0, 0.75) 0 0 6px !important;
+    }
+  }
+}
