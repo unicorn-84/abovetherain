@@ -1,22 +1,17 @@
 doctype html
 html(lang="ru-RU")
   head
-    //Common meta tags
-    include blocks/meta
     block meta
-    //Common icons
-    include ./blocks/icons
+      include ./blocks/meta
     block icons
-    //Common styles
-    include ./blocks/styles
+      include ./blocks/icons
     block styles
+      include ./blocks/styles
   body.stretched
+    //Page content
     #wrapper.clearfix
-      //Header
       include ./components/header
-      //Content
       block content
       block footer
-    //Common scripts
-    include ./blocks/scripts
-      block scripts
+    block scripts
+      include ./blocks/scripts

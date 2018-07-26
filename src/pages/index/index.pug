@@ -1,19 +1,18 @@
 extends ../../templates/layout
 
 //-HEAD
-block meta
+append meta
   //Page meta tags
   title Над Дождем
   meta(name="description"
        content="Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.")
-block icons
+append icons
   //Page icons
-block styles
+append styles
   //Page styles
 
 //-BODY
-block content
-  //Page content
+append content
   //Primary Slider
   section#slider.slider-element.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1500" data-autoplay="5000")
     .slider-parallax-inner
@@ -46,6 +45,7 @@ block content
               .slider-caption.slider-caption-center.slide-3
                 h2 Над дождём
                 p Время твоего превосходства
-block footer
-block scripts
+append footer
+  //Footer
+append scripts
   //Page scripts
