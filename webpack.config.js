@@ -19,7 +19,7 @@ const commonConfig = merge([
       events: './pages/events/events',
       team: './pages/team/team',
       gallery: './pages/gallery/gallery',
-      contacts: './pages/contacts/contacts',
+      contacts: './pages/contacts/contacts'
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -110,6 +110,7 @@ const commonConfig = merge([
         filename: 'events.html',
         template: './pages/events/events.pug',
         name: 'events',
+        chunks: ['events'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -145,6 +146,18 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'event.html',
+        template: './pages/events/event.pug',
+        name: 'event',
+        chunks: ['events'],
         minify: {
           removeComments: production,
           minifyCSS: production,
