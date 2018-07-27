@@ -133,6 +133,7 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
+        chunks: ['gallery'],
         minify: {
           removeComments: production,
           minifyCSS: production,

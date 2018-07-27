@@ -15,5 +15,17 @@ append header
   +header(primaryNavigation.items)
 append content
   +pageTitle(pages.gallery)
+  section#content
+    .content-wrap
+      .container.clearfix
+        -let i = 1;
+        div(data-lightbox="gallery")
+          while i <= 18
+            a(href=`images/gallery/${i}.jpg` data-lightbox="gallery-item")
+              img.image_fade.col_one_fourth(src=`images/gallery/thumbnails/${i}.jpg` class={
+                col_last: i % 4 === 0
+              } alt="")
+              -i += 1;
+
 append scripts
   //Page scripts
