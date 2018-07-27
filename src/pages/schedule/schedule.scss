@@ -1,0 +1,143 @@
+//Schedule
+$schedule-font-heading: 'Comfortaa', cursive;
+$schedule-font-secondary: 'Open Sans', sans-serif;
+$schedule-font-weight-heading: 700;
+$schedule-font-weight-secondary: 400;
+$schedule-font-size-secondary: 16px;
+$schedule-bg-color: #fdfdfd;
+$schedule-border-color: #ccc;
+$schedule-text-color: #2d4958;
+$schedule-days-bg-color: darken($schedule-bg-color, 0.5%);
+$schedule-times-bg-color: $schedule-days-bg-color;
+$schedule-direction-color: darken($schedule-bg-color, 1.5%);
+
+.schedule-table,
+.schedule-table-mobile {
+  width: calc(100% + 2px);
+  table-layout: fixed;
+  border-collapse: separate;
+  text-align: center;
+  margin-left: -1px;
+  margin-right: -1px;
+
+  td {
+    border: 1px dotted lighten($schedule-border-color, 10%);
+    background-color: $schedule-bg-color;
+  }
+
+  .schedule-day,
+  .schedule-time,
+  .schedule-event {
+    border: 1px solid $schedule-border-color;
+    font-family: $schedule-font-secondary;
+    font-weight: $schedule-font-weight-secondary;
+    color: $schedule-text-color;
+  }
+
+  .schedule-day,
+  .schedule-time {
+    font-size: $schedule-font-size-secondary / 1.25;
+  }
+
+  .schedule-day {
+    background-color: $schedule-days-bg-color;
+    padding: 10px 0;
+  }
+
+  .schedule-time {
+    background-color: $schedule-times-bg-color;
+    padding: 15px 0;
+  }
+
+  [class*='schedule-direction'] {
+    vertical-align: middle;
+    padding: 0 5px;
+    background-color: $schedule-direction-color;
+
+    & > * {
+      margin: 10px 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s;
+
+      &:focus,
+      &:hover {
+        text-decoration: underline !important;
+      }
+    }
+
+    .schedule-title,
+    .schedule-interval,
+    .schedule-coach {
+      display: block;
+    }
+
+    .schedule-interval,
+    .schedule-coach {
+      font-family: $schedule-font-secondary;
+      font-weight: $schedule-font-weight-secondary;
+    }
+
+    .schedule-title {
+      font-family: $schedule-font-heading;
+      font-weight: $schedule-font-weight-heading;
+    }
+
+    .schedule-interval {
+      font-size: 12px;
+    }
+
+    .schedule-coach {
+      font-size: 14px;
+      font-style: italic;
+    }
+  }
+}
+
+.schedule-table {
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  .schedule-day {
+    &:first-child {
+      width: 10%;
+    }
+  }
+
+  [class*='schedule-direction'] {
+    .schedule-title {
+      @media screen and (max-width: 991px) {
+        font-size: 12px;
+      }
+    }
+
+    .schedule-interval {
+      @media screen and (max-width: 991px) {
+        font-size: 10px;
+      }
+    }
+
+    .schedule-coach {
+      @media screen and (max-width: 991px) {
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+.schedule-table-mobile {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+
+  .schedule-day {
+    &:first-child {
+      width: 20%;
+    }
+  }
+}

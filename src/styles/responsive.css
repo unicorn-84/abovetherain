@@ -1494,7 +1494,6 @@
 
 @media (max-width: 575px) {
 
-	.container,
 	#header.full-header .container,
 	.container-fullwidth {
 		width: 100% !important;

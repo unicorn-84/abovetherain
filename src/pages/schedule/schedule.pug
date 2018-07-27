@@ -15,5 +15,28 @@ append header
   +header(primaryNavigation.items)
 append content
   +pageTitle(pages.schedule)
+  section#content
+    .content-wrap
+      .container.clerafix
+        .col_full.nobottommargin
+          .col_one_third.nobottommargin
+            select
+              option(value="all" selected) Направление
+              option(value="direction-1") Воздушное кольцо
+              option(value="direction-2") Воздушное полотно
+              option(value="direction-3") Йога
+              option(value="direction-4") Хип-хоп
+              option(value="direction-5") Зумба
+              option(value="direction-6") Pole dance
+          .col_one_third.nobottommargin
+            select
+              option(value="all" selected) Тренер
+              option(value="team-1") Виктория
+              option(value="team-2") Михаил
+              option(value="team-3") Алексей
+              option(value="team-4") Надежда
+          .schedule-wrapper
+            include ../../templates/components/schedule-mobile
+            include ../../templates/components/schedule
 append scripts
   //Page scripts

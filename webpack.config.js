@@ -99,6 +99,7 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
+        chunks: ['schedule'],
         minify: {
           removeComments: production,
           minifyCSS: production,
