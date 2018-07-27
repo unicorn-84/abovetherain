@@ -1,0 +1,30 @@
+.address-item {
+  margin: 32px 0 0 24px;
+
+  @media screen and (max-width: 767px) {
+    margin-left: 0;
+  }
+
+  p {
+    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 1;
+
+    @media screen and (max-width: 767px) {
+      font-size: 16px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    i {
+      padding-right: 16px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+}

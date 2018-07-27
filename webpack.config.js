@@ -19,7 +19,7 @@ const commonConfig = merge([
       events: './pages/events/events',
       team: './pages/team/team',
       gallery: './pages/gallery/gallery',
-      contacts: './pages/contacts/contacts'
+      contacts: './pages/contacts/contacts',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
@@ -146,6 +146,7 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
+        chunks: ['contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
