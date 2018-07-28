@@ -42,28 +42,32 @@
         "title": "Услуги",
         "subitems": [
           {
-            "name": "service-1",
+            "name": "service-0",
             "title": "Аренда"
           },
           {
-            "name": "service-2",
+            "name": "service-1",
             "title": "Воздушное кольцо"
           },
           {
-            "name": "service-3",
+            "name": "service-2",
             "title": "Воздушное полотно"
           },
           {
-            "name": "service-4",
-            "title": "Pole dance"
-          },
-          {
-            "name": "service-5",
+            "name": "service-3",
             "title": "Йога"
           },
           {
-            "name": "service-6",
+            "name": "service-4",
+            "title": "Хип-хоп"
+          },
+          {
+            "name": "service-5",
             "title": "Зумба"
+          },
+          {
+            "name": "service-6",
+            "title": "Pole dance"
           }
         ]
       },

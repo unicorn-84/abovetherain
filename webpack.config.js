@@ -83,6 +83,7 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
+        chunks: ['index'],
         minify: {
           removeComments: production,
           minifyCSS: production,
