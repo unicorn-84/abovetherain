@@ -72,6 +72,13 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
+      new CopyWebpackPlugin([
+        {
+          from: './data',
+          to: 'data/[path][name].[ext]',
+          toType: 'template',
+        },
+      ]),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './pages/index/index.pug',
