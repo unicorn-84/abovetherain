@@ -83,7 +83,7 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        chunks: ['index'],
+        excludeChunks: ['services', 'schedule', 'events', 'team', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -95,7 +95,7 @@ const commonConfig = merge([
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
-        chunks: ['services'],
+        excludeChunks: ['index', 'schedule', 'events', 'team', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -107,7 +107,7 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
-        chunks: ['schedule'],
+        excludeChunks: ['index', 'services', 'events', 'team', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -119,7 +119,7 @@ const commonConfig = merge([
         filename: 'events.html',
         template: './pages/events/events.pug',
         name: 'events',
-        chunks: ['events'],
+        excludeChunks: ['index', 'services', 'schedule', 'team', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -131,7 +131,7 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
-        chunks: ['team'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -143,7 +143,7 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
-        chunks: ['gallery'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -155,7 +155,7 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
-        chunks: ['contacts'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -167,7 +167,7 @@ const commonConfig = merge([
         filename: 'event.html',
         template: './pages/events/event.pug',
         name: 'event',
-        chunks: ['events'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
