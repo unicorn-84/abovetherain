@@ -6,6 +6,7 @@
     "string-quotes": [
       "single"
     ],
-    "no-eol-whitespace": false
+    "no-eol-whitespace": false,
+    "at-rule-no-unknown": false
   }
 }
