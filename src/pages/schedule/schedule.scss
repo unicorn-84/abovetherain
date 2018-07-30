@@ -21,6 +21,8 @@
     font-family: $schedule-font-secondary;
     font-weight: $schedule-font-weight-secondary;
     color: $schedule-text-color;
+    overflow: hidden;
+    word-wrap: break-spaces;
   }
 
   .schedule-day,
@@ -38,7 +40,7 @@
     padding: 15px 0;
   }
 
-  [class*='schedule-direction'] {
+  .schedule-event {
     vertical-align: middle;
     padding: 0 5px;
     background-color: $schedule-direction-color;
@@ -98,7 +100,7 @@
     }
   }
 
-  [class*='schedule-direction'] {
+  .schedule-event {
     .schedule-title {
       @media screen and (max-width: 991px) {
         font-size: 12px;

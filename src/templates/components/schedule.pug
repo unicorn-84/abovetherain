@@ -1,3 +1,4 @@
+include ../../templates/mixins/schedule-event
 table.schedule-table
   thead
   tr
@@ -10,248 +11,349 @@ table.schedule-table
     th.schedule-day Суббота
     th.schedule-day Воскресенье
   tbody
+  //-10:00
   tr
     td.schedule-time 10:00
+    //-Понедельник
     td
-    td.schedule-event.schedule-direction-1(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-1.html") Воздушное кольцо
-      span.schedule-interval 10:00-11:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
-    td.schedule-event.schedule-direction-1(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-1.html") Воздушное кольцо
-      span.schedule-interval 10:00-11:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
-    td.schedule-event.schedule-direction-1(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-1.html") Воздушное кольцо
-      span.schedule-interval 10:00-11:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Вторник
+    +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+    //-Среда
+    +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+    //-Четверг
+    +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+    //-Пятница
     td
-    td.schedule-event.schedule-direction-1(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-1.html") Воздушное кольцо
-      span.schedule-interval 10:00-11:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Суббота
+    +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+    //-Воскресенье
     td
+  //-10:30
   tr
     td.schedule-time 10:30
+    //-Понедельник
     td
+    //-Вторник
+    //-Среда
+    //-Четверг
+    //-Пятница
     td
+    //-Суббота
+    //-Воскресенье
     td
+  //-11:00
   tr
     td.schedule-time 11:00
+    //-Понедельник
     td
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
     td
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-11:30
   tr
     td.schedule-time 11:30
+    //-Понедельник
     td
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
     td
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-12:00
   tr
     td.schedule-time 12:00
-    td.schedule-event.schedule-direction-2(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-2.html") Воздушное полотно
-      span.schedule-interval 12:00-13:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
-    td.schedule-event.schedule-direction-2(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-2.html") Воздушное полотно
-      span.schedule-interval 12:00-13:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Понедельник
+    +schedule-event('2', 'service-2', 'Воздушное полотно', 'team-1', 'Виктория', '12:00', '13:00')
+    //-Вторник
+    +schedule-event('2', 'service-2', 'Воздушное полотно', 'team-1', 'Виктория', '12:00', '13:00')
+    //-Среда
     td
-    td.schedule-event.schedule-direction-2(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-2.html") Воздушное полотно
-      span.schedule-interval 12:00-13:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Четверг
+    +schedule-event('2', 'service-2', 'Воздушное полотно', 'team-1', 'Виктория', '12:00', '13:00')
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-12:30
   tr
     td.schedule-time 12:30
+    //-Понедельник
+    //-Вторник
+    //-Среда
     td
+    //-Четверг
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-13:00
   tr
     td.schedule-time 13:00
+    //-Понедельник
     td
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
     td
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-13:30
   tr
     td.schedule-time 13:30
+    //-Понедельник
     td
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
     td
+    //-Пятница
     td
-    td.schedule-event.schedule-direction-3(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-3.html") Йога
-      span.schedule-interval 13:30-14:30
-      a.schedule-coach(data-ajax href="data/team/team-2.html") Михаил
+    //-Суббота
+    +schedule-event('2', 'service-3', 'Йога', 'team-2', 'Михаил', '13:30', '14:30')
+    //-Воскресенье
     td
+  //-14-00
   tr
     td.schedule-time 14:00
-    td.schedule-event.schedule-direction-4(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-4.html") Хип-хоп
-      span.schedule-interval 14:00-15:00
-      a.schedule-coach(data-ajax href="data/team/team-3.html") Алексей
+    //-Понедельник
+    +schedule-event('2', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '14:00', '15:00')
+    //-Вторник
     td
+    //-Среда
     td
-    td.schedule-event.schedule-direction-4(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-4.html") Хип-хоп
-      span.schedule-interval 14:00-15:00
-      a.schedule-coach(data-ajax href="data/team/team-3.html") Алексей
+    //-Четверг
+    +schedule-event('2', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '14:00', '15:00')
+    //-Пятница
     td
+    //-Суббота
+    //-Воскресенье
     td
+  //-15:00
   tr
     td.schedule-time 14:30
+    //-Понедельник
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-15:30
   tr
     td.schedule-time 15:00
-    td.schedule-event.schedule-direction-4(rowspan="3")
-      a.schedule-title(data-ajax href="data/services/service-4.html") Хип-хоп
-      span.schedule-interval 15:00-16:30
-      a.schedule-coach(data-ajax href="data/team/team-3.html") Алексей
+    //-Понедельник
+    +schedule-event('3', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '15:00', '16:30')
+    //-Вторник
     td
+    //-Среда
     td
-    td.schedule-event.schedule-direction-4(rowspan="3")
-      a.schedule-title(data-ajax href="data/services/service-4.html") Хип-хоп
-      span.schedule-interval 15:00-16:30
-      a.schedule-coach(data-ajax href="data/team/team-3.html") Алексей
+    //-Четверг
+    +schedule-event('3', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '15:00', '16:30')
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-15:30
   tr
     td.schedule-time 15:30
+    //-Понедельник
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
+    //-Пятница
     td
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-16:00
   tr
     td.schedule-time 16:00
+    //-Понедельник
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
+    //-Пятница
     td
-    td.schedule-event.schedule-direction-5(rowspan="3")
-      a.schedule-title(data-ajax href="data/services/service-5.html") Зумба
-      span.schedule-interval 16:00-17:30
-      a.schedule-coach(data-ajax href="data/team/team-2.html")
+    //-Суббота
+    +schedule-event('3', 'service-5', 'Зумба', '', '', '16:00', '17:30')
+    //-Воскресенье
     td
+  //-16:30
   tr
     td.schedule-time 16:30
+    //-Понедельник
     td
+    //-Вторник
     td
+    //-Среда
     td
+    //-Четверг
     td
+    //-Пятница
     td
+    //-Суббота
+    //-Воскресенье
     td
+  //-17:00
   tr
     td.schedule-time 17:00
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 17:00-18:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Понедельник
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '17:00', '18:00')
+    //-Вторник
     td
-    td.schedule-event.schedule-direction-3(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-3.html") Йога
-      span.schedule-interval 17:00-18:00
-      a.schedule-coach(data-ajax href="data/team/team-2.html") Михаил
+    //-Среда
+    +schedule-event('2', 'service-3', 'Йога', 'team-2', 'Михаил', '17:00', '18:00')
+    //-Четверг
     td
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 17:00-18:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Пятница
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '17:00', '18:00')
+    //-Суббота
+    //-Воскресенье
     td
+  //-17:30
   tr
     td.schedule-time 17:30
+    //-Понедельник
+    //-Вторник
     td
+    //-Среда
+    //-Четверг
     td
+    //-Пятница
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-18:00
   tr
     td.schedule-time 18:00
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 18:00-19:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html") Надежда
+    //-Понедельник
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '18:00', '19:00')
+    //-Вторник
     td
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 18:00-19:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html") Надежда
+    //-Среда
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '18:00', '19:00')
+    //-Четверг
     td
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 18:00-19:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html") Надежда
+    //-Пятница
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '18:00', '19:00')
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-18:30
   tr
     td.schedule-time 18:30
+    //-Понедельник
+    //-Вторник
     td
+    //-Среда
+    //-Четверг
     td
+    //-Пятница
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-19:30
   tr
     td.schedule-time 19:00
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 19:00-20:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
-    td.schedule-event.schedule-direction-5(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-5.html") Зумба
-      span.schedule-interval 19:00-20:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html")
+    //-Понедельник
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '19:00', '20:00')
+    //-Вторник
+    +schedule-event('2', 'service-5', 'Зумба', '', '', '19:00', '20:00')
+    //-Среда
     td
+    //-Четверг
     td
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 19:00-20:00
-      a.schedule-coach(data-ajax href="data/team/team-1.html") Виктория
+    //-Пятница
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '19:00', '20:00')
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-20:00
   tr
     td.schedule-time 19:30
+    //-Понедельник
+    //-Вторник
+    //-Среда
     td
+    //-Четверг
     td
+    //-Пятница
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-20:00
   tr
     td.schedule-time 20:00
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 20:00-21:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html") Надежда
+    //-Понедельник
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '20:00', '21:00')
+    //-Вторник
     td
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 20:00-21:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html") Надежда
+    //-Среда
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '20:00', '21:00')
+    //-Четверг
     td
-    td.schedule-event.schedule-direction-6(rowspan="2")
-      a.schedule-title(data-ajax href="data/services/service-6.html") Pole dance
-      span.schedule-interval 20:00-21:00
-      a.schedule-coach(data-ajax href="data/team/team-4.html") Надежда
+    //-Пятница
+    +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '20:00', '21:00')
+    //-Суббота
     td
+    //-Воскресенье
     td
+  //-20:30
   tr
     td.schedule-time 20:30
+    //-Понедельник
+    //-Вторник
     td
+    //-Среда
+    //-Четверг
     td
+    //-Пятница
+    //-Суббота
     td
+    //-Воскресенье
     td
