@@ -9,7 +9,7 @@
       "single"
     ],
     "no-restricted-syntax": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": false
   },
   "env": {
     "browser": true,
