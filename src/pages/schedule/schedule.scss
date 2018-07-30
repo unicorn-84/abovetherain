@@ -1,15 +1,4 @@
-//Schedule
-$schedule-font-heading: 'Comfortaa', cursive;
-$schedule-font-secondary: 'Open Sans', sans-serif;
-$schedule-font-weight-heading: 700;
-$schedule-font-weight-secondary: 400;
-$schedule-font-size-secondary: 16px;
-$schedule-bg-color: #fdfdfd;
-$schedule-border-color: #ccc;
-$schedule-text-color: #2d4958;
-$schedule-days-bg-color: darken($schedule-bg-color, 0.5%);
-$schedule-times-bg-color: $schedule-days-bg-color;
-$schedule-direction-color: darken($schedule-bg-color, 1.5%);
+@import '../../styles/variables';
 
 .schedule-table,
 .schedule-table-mobile {

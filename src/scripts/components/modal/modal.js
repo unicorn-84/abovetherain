@@ -1,3 +1,5 @@
+import './modal.scss';
+
 function createModalSpinner() {
   const modalSpinner = document.createElement('div');
 

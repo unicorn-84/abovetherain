@@ -1,15 +1,4 @@
-//Modal
-$modal-overlay-bg-color: rgba(0, 0, 0, 0.7);
-$modal-spinner-bg-color: #fff;
-$modal-close-bg-color: #ccc;
-$modal-close-bg-hover: darken($modal-close-bg-color, 20%);
-$modal-content-bg-color: #fff;
-$modal-content-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
-$modal-content-font-heading: 'Comfortaa', cursive;
-$modal-content-font-secondary: 'Open Sans', sans-serif;
-$modal-content-font-weight-heading: 700;
-$modal-content-font-weight-secondary: 400;
-$modal-content-font-size-secondary: 16px;
+@import '../../../styles/variables';
 
 .rain-modal,
 .rain-modal-overlay {
@@ -30,19 +19,21 @@ $modal-content-font-size-secondary: 16px;
     backface-visibility: hidden;
     position: absolute;
     z-index: 1002;
-    background-color: $modal-overlay-bg-color;
-    animation: rain-opacity 0.3s ease-in;
+    background-color: rgba($dark-color, 0.7);
+
+    @include animation(opacity 0.3s $function);
   }
 
   .rain-modal-content {
     max-width: 90%;
-    background: $modal-content-bg-color;
+    background: $light-color;
     position: relative;
     z-index: 1003;
     overflow-y: auto;
     max-height: 80%;
-    animation: rain-sally 0.4s forwards cubic-bezier(0.6, 0, 0.4, 1);
-    box-shadow: $modal-content-box-shadow;
+    box-shadow: $box-shadow;
+
+    @include animation(sally 0.3s $function);
   }
 
   .rain-modal-close {
@@ -67,7 +58,7 @@ $modal-content-font-size-secondary: 16px;
       top: 50%;
       left: 0;
       transform: translateY(-50%);
-      background-color: $modal-close-bg-color;
+      background-color: $light-color;
       border-radius: 2px;
     }
 
@@ -83,13 +74,13 @@ $modal-content-font-size-secondary: 16px;
     &:hover {
       &::before,
       &::after {
-        background-color: $modal-close-bg-hover;
+        background-color: darken($light-color, $hover-percent);
       }
     }
   }
 }
 
-@keyframes rain-opacity {
+@keyframes opacity {
   0% {
     opacity: 0;
   }
@@ -99,7 +90,7 @@ $modal-content-font-size-secondary: 16px;
   }
 }
 
-@keyframes rain-sally {
+@keyframes sally {
   0% {
     opacity: 0;
     transform: scale3d(0, 0, 1);
@@ -128,14 +119,14 @@ $modal-content-font-size-secondary: 16px;
   max-width: 100%;
 
   h3 {
-    font-family: $modal-content-font-heading;
-    font-weight: $modal-content-font-weight-heading;
+    font-family: $heading-font-family;
+    font-weight: $heading-font-weight;
   }
 
   p {
-    font-weight: $modal-content-font-weight-secondary;
-    font-family: $modal-content-font-secondary;
-    font-size: $modal-content-font-size-secondary;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    font-size: $font-size;
 
     &:not(:last-child) {
       margin-bottom: 0;
@@ -179,7 +170,7 @@ $modal-content-font-size-secondary: 16px;
   & > div {
     width: 15px;
     height: 15px;
-    background-color: $modal-spinner-bg-color;
+    background-color: $light-color;
     border-radius: 100%;
     animation: rain-bouncedelay 1.4s infinite ease-in-out;
     animation-fill-mode: both;
