@@ -1,13 +1,23 @@
 @import '../../styles/variables';
 
-.schedule-table,
-.schedule-table-mobile {
+.schedule-table {
   width: calc(100% + 2px);
   table-layout: fixed;
   border-collapse: separate;
   text-align: center;
   margin-left: -1px;
   margin-right: -1px;
+
+  body.device-md &.mobile,
+  body.device-lg &.mobile,
+  body.device-xl &.mobile {
+    display: none;
+  }
+
+  body.device-xs &:not(.mobile),
+  body.device-sm &:not(.mobile) {
+    display: none;
+  }
 
   td {
     border: 1px dotted lighten($schedule-border-color, 10%);
@@ -33,6 +43,16 @@
   .schedule-day {
     background-color: $schedule-days-bg-color;
     padding: 10px 0;
+
+    &:first-child {
+      width: 20%;
+
+      body.device-md &,
+      body.device-lg &,
+      body.device-xl & {
+        width: 10%;
+      }
+    }
   }
 
   .schedule-time {
@@ -42,8 +62,13 @@
 
   .schedule-event {
     vertical-align: middle;
-    padding: 0 5px;
+    padding: 5px 15px;
     background-color: $schedule-direction-color;
+
+    body.device-md &,
+    body.device-lg & {
+      padding: 0 5px;
+    }
 
     & > * {
       margin: 10px 0;
@@ -51,13 +76,17 @@
     }
 
     a {
-      text-decoration: none;
+      text-decoration: none !important;
       color: inherit;
-      transition: all 0.3s;
 
       &:focus,
       &:hover {
-        text-decoration: underline !important;
+        text-decoration: underline rgba($schedule-text-color, 0.5) !important;
+      }
+
+      body.device-xs &,
+      body.device-sm & {
+        text-decoration: underline rgba($schedule-text-color, 0.5) !important;
       }
     }
 
@@ -65,70 +94,50 @@
     .schedule-interval,
     .schedule-coach {
       display: block;
+      text-align: left;
     }
 
-    .schedule-interval,
+    .schedule-title,
     .schedule-coach {
-      font-family: $schedule-font-secondary;
-      font-weight: $schedule-font-weight-secondary;
-    }
-
-    .schedule-title {
       font-family: $schedule-font-heading;
-      font-weight: $schedule-font-weight-heading;
+
+      > span {
+        body.device-xs &,
+        body.device-sm & {
+          border-bottom: 1px solid #333;
+        }
+      }
     }
 
-    .schedule-interval {
-      font-size: 12px;
-    }
-
-    .schedule-coach {
-      font-size: 14px;
-      font-style: italic;
-    }
-  }
-}
-
-.schedule-table {
-  @media screen and (max-width: 767px) {
-    display: none;
-  }
-
-  .schedule-day {
-    &:first-child {
-      width: 10%;
-    }
-  }
-
-  .schedule-event {
     .schedule-title {
-      @media screen and (max-width: 991px) {
+      font-weight: $schedule-font-weight-heading;
+      font-size: 16px;
+
+      body.device-md & {
         font-size: 12px;
       }
     }
 
+    .schedule-interval,
+    .schedule-coach {
+      font-weight: $schedule-font-weight-secondary;
+    }
+
     .schedule-interval {
-      @media screen and (max-width: 991px) {
+      font-family: $schedule-font-secondary;
+      font-size: 12px;
+
+      body.device-md & {
         font-size: 10px;
       }
     }
 
     .schedule-coach {
-      @media screen and (max-width: 991px) {
+      font-size: 14px;
+
+      body.device-md & {
         font-size: 10px;
       }
-    }
-  }
-}
-
-.schedule-table-mobile {
-  @media screen and (min-width: 768px) {
-    display: none;
-  }
-
-  .schedule-day {
-    &:first-child {
-      width: 20%;
     }
   }
 }
