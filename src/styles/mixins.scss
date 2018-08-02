@@ -2,7 +2,7 @@
 
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-    $value: map-get($breakpoints, $breakpoint);
+    $value: nth(map-get($breakpoints, $breakpoint), 1);
 
     @media screen and (min-width: $value) {
       @content;
