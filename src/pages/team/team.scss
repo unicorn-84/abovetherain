@@ -1,2 +1,46 @@
+//SCSS
 @import '../../styles/variables';
-@import '../../styles/mixins.scss';
+@import '../../styles/mixins';
+
+.team {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #f00;
+  box-sizing: border-box;
+
+  img {
+    //display: block;
+    //width: 100%;
+    //height: auto;
+  }
+
+  a {
+    display: block;
+    color: $link-color;
+    text-decoration: underline rgba($link-color, 0.5) !important;
+  }
+
+  .team-content {
+    .team-title {
+      font-family: $heading-font-family;
+      font-weight: $heading-font-weight;
+      margin: $indent * 4 0 $indent * 3 0;
+    }
+
+    .team-direction,
+    .team-description {
+      font-family: $font-family;
+      font-weight: $font-weight;
+    }
+
+    .team-direction {
+      font-size: $font-size;
+      margin-bottom: $indent;
+    }
+
+    .team-description {
+      font-size: 14px;
+      margin: $indent * 3 0 $indent * 12 0;
+    }
+  }
+}

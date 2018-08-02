@@ -7,8 +7,10 @@ $breakpoints: (
 );
 
 //Colors
+$theme-color: #2d4958;
 $light-color: #fff;
 $dark-color: #333;
+$link-color: $theme-color;
 
 //Typography
 $heading-font-family: 'Comfortaa', cursive;
@@ -20,6 +22,7 @@ $font-size: 16px;
 //Miscellaneous
 $box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
 $hover-percent: 20%;
+$indent: 5px;
 
 //Animation
 $function: cubic-bezier(0.6, 0, 0.4, 1);
