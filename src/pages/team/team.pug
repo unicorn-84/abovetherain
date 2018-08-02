@@ -18,16 +18,19 @@ append content
   //+pageTitle(pages.team)
   section#content
     .content-wrap
-      .container
-        .row
-          each coach in team
-            .col-xs-12.col-sm-6
-              .team
-                //img.team-image(src= coach.src alt= coach.title)
-                .team-content
-                  h2.team-title #{coach.title}
-                  each direction in coach.directions
-                    a.team-direction(href="#") #{direction}
-                  p.team-description #{coach.description}
+      .team-list
+        .container
+          .row
+            each coach in team
+              .col-xs-12.col-sm-6
+                .team
+                  .team-image
+                    img(src= coach.src alt= coach.title)
+                  .team-content
+                    .team-title
+                      h4 #{coach.title}
+                    each direction in coach.directions
+                      a.team-direction(href="#") #{direction}
+                    p.team-description #{coach.description}
 append scripts
   //Page scripts

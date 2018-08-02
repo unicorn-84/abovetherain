@@ -2,16 +2,27 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+.team-list {
+  margin-bottom: $indent * -10;
+
+  @include respond-to(desktop) {
+    margin-bottom: $indent * -8;
+  }
+}
+
 .team {
+  position: relative;
   display: flex;
   flex-direction: column;
-  border: 1px solid #f00;
-  box-sizing: border-box;
+  margin-bottom: $indent * 10;
 
-  img {
-    //display: block;
-    //width: 100%;
-    //height: auto;
+  @include respond-to(desktop) {
+    flex-direction: row;
+    margin-bottom: $indent * 8;
+
+    > * {
+      flex-basis: 50%;
+    }
   }
 
   a {
@@ -20,11 +31,34 @@
     text-decoration: underline rgba($link-color, 0.5) !important;
   }
 
+  .team-image {
+    position: relative;
+
+    > img {
+      display: block;
+      width: 100%;
+    }
+  }
+
   .team-content {
+    @include respond-to(desktop) {
+      padding-left: $indent * 5;
+    }
+
     .team-title {
-      font-family: $heading-font-family;
-      font-weight: $heading-font-weight;
-      margin: $indent * 4 0 $indent * 3 0;
+      h4 {
+        font-family: $heading-font-family;
+        font-weight: $heading-font-weight;
+        margin: $indent * 4 0 $indent * 3 0;
+        font-size: 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: $text-color;
+
+        @include respond-to(desktop) {
+          margin-top: 0;
+        }
+      }
     }
 
     .team-direction,
@@ -40,7 +74,8 @@
 
     .team-description {
       font-size: 14px;
-      margin: $indent * 3 0 $indent * 12 0;
+      margin: $indent * 3 0 0;
+      color: $text-color;
     }
   }
 }
