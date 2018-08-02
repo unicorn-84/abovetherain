@@ -1,3 +1,11 @@
+//Breakpoints
+$breakpoints: (
+  handheld: 576px 540px,
+  tablet: 768px 720px,
+  laptop: 992px 960px,
+  desktop: 1200px 1140px
+);
+
 //Colors
 $light-color: #fff;
 $dark-color: #333;
