@@ -1,4 +1,6 @@
+// SCSS
+import 'bootstrap/scss/bootstrap.scss';
 import '../../styles/style.scss';
 import './contacts.scss';
-import '../../scripts/components/modal/modal.scss';
+// JS
 import '../../scripts/components/modal/modal';
