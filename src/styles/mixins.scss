@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'functions';
 
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -8,6 +9,9 @@
       @content;
     }
   }
+}
 
-  @warn 'Unknown `#{$breakpoint}` in $breakpoints';
+@mixin type($level: 0) {
+  font-size: type-scale($level) !important;
+  line-height: $line-height !important;
 }

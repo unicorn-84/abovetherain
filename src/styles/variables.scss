@@ -11,19 +11,30 @@ $theme-color: #2d4958;
 $light-color: #fff;
 $dark-color: #333;
 $text-color: $dark-color;
-$link-color: $theme-color;
+$link-color: $dark-color;
+$icon-color: $dark-color;
 
 //Typography
 $heading-font-family: 'Comfortaa', cursive;
 $font-family: 'Open Sans', sans-serif;
 $heading-font-weight: 700;
 $font-weight: 400;
-$font-size: 16px;
+$font-size: 1rem;
+$rhythm: 1.618;
+$line-height: $rhythm;
+$font-sizes: (
+  -2: $font-size / $rhythm / $rhythm,
+  -1: $font-size / $rhythm,
+  0: $font-size,
+  1: $font-size * $rhythm,
+  2: $font-size * $rhythm * $rhythm
+);
 
 //Miscellaneous
 $box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.4);
 $hover-percent: 20%;
-$indent: 5px;
+$indent: $rhythm * 5px;
+$indent: $rhythm * 1px;
 
 //Animation
 $function: cubic-bezier(0.6, 0, 0.4, 1);

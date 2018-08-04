@@ -13,24 +13,33 @@ append styles
   //Page styles
 //-BODY
 append header
-  //+header(primaryNavigation.items)
+  +header(primaryNavigation.items)
 append content
-  //+pageTitle(pages.team)
+  +pageTitle(pages.team)
   section#content
     .content-wrap
-      .team-list
+      .team-wrapper
         .container
           .row
             each coach in team
-              .col-xs-12.col-sm-6
+              .col-sm-6
                 .team
                   .team-image
                     img(src= coach.src alt= coach.title)
                   .team-content
                     .team-title
-                      h4 #{coach.title}
-                    each direction in coach.directions
-                      a.team-direction(href="#") #{direction}
-                    p.team-description #{coach.description}
+                      h3 #{coach.title}
+                    .team-directions
+                      ul
+                        each direction in coach.directions
+                          li
+                            a(href="#") #{direction}
+                    .team-media.clearfix
+                      a(href="#")
+                        i.i-plain.icon-image
+                      a(href="#")
+                        i.i-plain.icon-play-circle
+                    .team-description
+                      p #{coach.description}
 append scripts
   //Page scripts

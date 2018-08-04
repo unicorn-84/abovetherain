@@ -1,80 +1,103 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.team-list {
-  margin-bottom: $indent * -10;
+.team-wrapper {
+  margin-bottom: $indent * -20;
 
-  @include respond-to(desktop) {
-    margin-bottom: $indent * -8;
+  .i-plain {
+    color: $icon-color;
+
+    &:focus,
+    &:hover {
+      color: lighten($icon-color, $hover-percent);
+    }
   }
 }
 
 .team {
-  position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: $indent * 10;
+  margin-bottom: $indent * 20;
 
   @include respond-to(desktop) {
     flex-direction: row;
-    margin-bottom: $indent * 8;
 
     > * {
       flex-basis: 50%;
     }
   }
 
-  a {
-    display: block;
-    color: $link-color;
-    text-decoration: underline rgba($link-color, 0.5) !important;
-  }
-
   .team-image {
-    position: relative;
+    margin-bottom: $indent * 10;
 
-    > img {
+    @include respond-to(desktop) {
+      margin: 0 $indent * 10 0 0;
+    }
+
+    img {
       display: block;
       width: 100%;
+      height: auto;
     }
   }
 
   .team-content {
-    @include respond-to(desktop) {
-      padding-left: $indent * 5;
-    }
+    //padding: 0 $indent * 10;
 
     .team-title {
-      h4 {
+      h3 {
+        margin: 0;
         font-family: $heading-font-family;
         font-weight: $heading-font-weight;
-        margin: $indent * 4 0 $indent * 3 0;
-        font-size: 20px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
         color: $text-color;
 
-        @include respond-to(desktop) {
-          margin-top: 0;
+        @include type(1);
+      }
+    }
+
+    .team-media {
+      margin: $indent * 5 0;
+    }
+
+    .team-directions {
+      margin: $indent * 5 0;
+
+      ul {
+        margin: 0 0 0 $indent * 10;
+        padding: 0;
+
+        li {
+          a {
+            font-family: $font-family;
+            font-weight: $font-weight;
+            text-decoration: underline rgba($link-color, 0.5) !important;
+            color: $link-color;
+
+            @include type(0);
+
+            &:focus,
+            &:hover {
+              text-decoration: underline rgba($link-color, 0.5) !important;
+            }
+
+            @include respond-to(laptop) {
+              text-decoration: none !important;
+            }
+          }
         }
       }
     }
 
-    .team-direction,
     .team-description {
-      font-family: $font-family;
-      font-weight: $font-weight;
-    }
+      p {
+        margin: 0;
+        font-family: $font-family;
+        font-weight: $font-weight;
+        color: $text-color;
 
-    .team-direction {
-      font-size: $font-size;
-      margin-bottom: $indent;
-    }
-
-    .team-description {
-      font-size: 14px;
-      margin: $indent * 3 0 0;
-      color: $text-color;
+        @include type(0);
+      }
     }
   }
 }
+
