@@ -1,4 +1,5 @@
 @import 'variables';
+@import 'scss/mixins';
 @import 'functions';
 
 @mixin respond-to($breakpoint) {

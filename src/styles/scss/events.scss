@@ -1,218 +1,138 @@
+@import '../variables';
+@import '../mixins';
 
-/* ----------------------------------------------------------------
-
-	event.scss
-
------------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------
-	Events
------------------------------------------------------------------*/
-
-
-.events .entry,
-.ievent {
-	padding: 20px;
-	background-color: #F9F9F9;
-	border-bottom: 3px solid #EEE;
+.events-wrapper {
+  margin-bottom: $indent * -20;
 }
 
-.events,
-.ievent {
-	.entry-image {
-		.entry-date {
-			position: absolute;
-			top: 10px;
-			left: 10px;
-			background-color: rgba(0,0,0,0.7);
-			color: #FFF;
-			text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-			width: 60px;
-			height: 64px;
-			text-align: center;
-			padding-top: 7px;
-			font-size: 26px;
-			line-height: 1;
-			span {
-				display: block;
-				font-size: 15px;
-				margin-top: 5px;
-			}
-		}
-	}
-	.entry-c {
-		padding: 5px 0;
-	}
+.event {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $indent * 20;
+
+  @include respond-to(desktop) {
+    flex-direction: row;
+  }
 }
 
 .single-event {
-	.entry-image {
-		img {
-			@include border-radius(0);
-		}
-	}
-	.events-meta {
-		font-size: 14px;
-	}
+  font-family: $font-family;
+  font-weight: $font-weight;
 }
 
-.single-event .events-meta,
-.parallax {
-	 .iconlist {
-		li {
-			margin: 5px 0;
-		}
-	}
+.event-image {
+  margin-bottom: $indent * 13;
+
+  .event & {
+    @include respond-to(desktop) {
+      margin: 0 $indent * 10 0 0;
+      flex-basis: 30%;
+    }
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .event-date {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+    background-color: rgba($dark-color, 0.8);
+    color: $light-color;
+    text-shadow: 1px 1px 1px rgba($dark-color, 0.2);
+    padding: $indent * 6;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      display: block;
+      font-family: $font-family;
+      font-weight: $font-weight;
+
+      @include type(-1);
+
+      @include respond-to(desktop) {
+        @include type(0);
+
+        line-height: 1.333 !important;
+      }
+
+      line-height: 1.333 !important;
+    }
+
+    @include respond-to(desktop) {
+      padding: $indent * 4;
+
+      .single-event & {
+        top: 20px;
+        left: 40px;
+        padding: $indent * 8;
+
+        span {
+          @include type(1);
+
+          line-height: 1.333 !important;
+        }
+      }
+    }
+  }
 }
 
-.single-event .entry-overlay,
-.parallax .entry-overlay-meta {
-	position: absolute;
-	top: auto;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 80px;
-	background-color: rgba(0,0,0,0.85);
-	text-align: center;
-	line-height: 80px;
-	font-size: 22px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
-	z-index: 5;
-}
+.event-content {
+  padding: 0 $indent * 6;
 
-.single-event {
-	.countdown {
-		display: inline-block;
-		position: relative;
-		top: 7px;
-	}
-	.countdown-section {
-		padding: 0 15px;
-		border-left-color: rgba(255,255,255,0.3);
-		color: #CCC;
-	}
-	.countdown-amount {
-		color: #FFF;
-	}
-}
+  .event & {
+    @include respond-to(desktop) {
+      padding: $indent * 3 0 0;
+      flex-basis: 70%;
+    }
+  }
 
-.parallax {
-	.entry-overlay,
-	.entry-overlay-meta {
-		background: transparent;
-		width: auto;
-		text-align: right;
-		bottom: 30px;
-		left: auto;
-		right: 30px;
-	}
-	.entry-overlay-meta {
-		padding: 20px;
-		font-size: 14px;
-		text-align: left;
-		right: 38px;
-		bottom: 130px;
-		width: 368px;
-		height: auto;
-		line-height: inherit;
-		background-color: rgba(0,0,0,0.7);
-		@include border-radius(3px);
-	}
-}
+  .event-title {
+    h3 {
+      margin: 0 0 $indent * 5;
+      font-family: $heading-font-family;
+      font-weight: $heading-font-weight;
+      color: $text-color;
 
-.parallax {
-	&.overlay-left {
-		.entry-overlay,
-		.entry-overlay-meta {
-			right: auto;
-			left: 30px;
-		}
-		.entry-overlay-meta {
-			left: 38px;
-		}
-	}
-	&.overlay-center {
-		.entry-overlay,
-		.entry-overlay-meta {
-			bottom: 100px;
-			right: auto;
-			left: 50%;
-			margin-left: -192px;
-		}
-		.entry-overlay-meta {
-			top: 100px;
-			bottom: auto;
-			margin-left: -184px;
-		}
-	}
-	.entry-overlay-meta {
-		h2 {
-			font-size: 20px;
-			text-transform: uppercase;
-			border-bottom: 1px dashed rgba(255,255,255,0.2);
-			padding-bottom: 17px;
-			a {
-				color: #FFF;
-				&:hover {
-					color: #DDD;
-				}
-			}
-		}
-	}
-}
+      @include type(1);
+    }
+  }
 
-.parallax {
-	.countdown {
-		top: 0;
-	}
-	.countdown-section {
-		border-left: 0;
-		width: 80px;
-		height: 80px;
-		margin: 0 8px;
-		font-size: 13px;
-		background-color: rgba(0,0,0,0.7);
-		@include border-radius(3px);
-		padding-top: 14px;
-	}
-	.countdown-amount {
-		font-size: 28px;
-		margin-bottom: 6px;
-	}
-}
+  .event-excerpt {
+    p {
+      margin: $indent * 10 0;
+      font-family: $font-family;
+      font-weight: $font-weight;
+      color: $text-color;
 
-/* Individual Events
------------------------------------------------------------------*/
+      @include type(0);
+    }
 
-.ievent {
-	position: relative;
-	margin-top: 20px;
-	&:first-child {
-		margin-top: 0;
-	}
-	.entry-image {
-		width: 30%;
-		margin-right: 20px;
-	}
-	.entry-content {
-		margin-top: 20px;
-	}
-	.entry-title {
-		h2 {
-			font-size: 18px;
-		}
-	}
-	.entry-meta {
-		margin-right: -10px;
-		li {
-			font-size: 13px;
-			margin-right: 10px;
-			padding-left: 10px;
-			&:first-child {
-				padding-left: 0;
-			}
-		}
-	}
+    a {
+      @include link($link-color, 0);
+    }
+  }
+
+  .event-text {
+    p {
+      margin: $indent * 10 0;
+      font-family: $font-family;
+      font-weight: $font-weight;
+      color: $text-color;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @include type(0);
+    }
+  }
 }

@@ -167,7 +167,7 @@ const commonConfig = merge([
         filename: 'event.html',
         template: './pages/events/event.pug',
         name: 'event',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'contacts'],
+        excludeChunks: ['index', 'services', 'schedule', 'team', 'gallery', 'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
