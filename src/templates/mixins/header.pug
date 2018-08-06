@@ -10,7 +10,7 @@ mixin header(items)
           a(href="index.html" class="retina-logo" data-dark-logo=require("../../images/logo/logo-dark@2x.png"))
             img(src=require("../../images/logo/logo@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
         //Primary Navigation
-        nav#primary-menu.dark.with-arrows
+        nav#primary-menu.with-arrows
             ul
               each item in items
                 if !item.subitems
