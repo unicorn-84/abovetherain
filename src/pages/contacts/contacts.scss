@@ -2,7 +2,9 @@
 @import '../../styles/mixins.scss';
 
 .address-item {
-  margin: 32px 0 0 24px;
+  margin: 0 0 32px 24px;
+  font-family: $font-family;
+  color: $text-color;
 
   @media screen and (max-width: 767px) {
     margin-left: 0;
@@ -26,8 +28,7 @@
     }
 
     a {
-      text-decoration: none;
-      color: inherit;
+      @include link($link-color, 1);
     }
   }
 }

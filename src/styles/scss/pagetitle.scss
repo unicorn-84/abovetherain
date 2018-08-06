@@ -59,9 +59,7 @@
   }
 
   a {
-    color: $dark-color;
-
-    @include link($dark-color, 0);
+    @include link($link-color, 0);
   }
 
   i {
