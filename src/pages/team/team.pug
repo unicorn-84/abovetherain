@@ -33,7 +33,7 @@ append content
                       ul
                         each direction in coach.directions
                           li
-                            a(href="#") #{direction}
+                            a(data-ajax href=`data/services/${direction.name}.html`) #{direction.title}
                     .team-media.clearfix
                       a(href="#")
                         i.i-plain.icon-image
