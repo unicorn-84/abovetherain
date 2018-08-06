@@ -28,9 +28,21 @@ body {
   }
 
   .slider-caption {
+    position: relative;
+    max-width: 800px;
+    text-align: center;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+
+    @include respond-to(desktop) {
+      margin-top: 10%;
+    }
+
     h2 {
       font-family: $heading-font-family;
       font-weight: $heading-font-weight;
+      line-height: 1.333 !important;
     }
 
     p {
