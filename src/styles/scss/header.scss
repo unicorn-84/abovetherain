@@ -80,7 +80,7 @@ body.stretched #header.full-header .container {
 #logo {
   position: relative;
   float: left;
-  font-family: $heading-font;
+  font-family: $heading-font-family;
   font-size: 36px;
   line-height: 100%;
   margin-right: 40px;
@@ -217,13 +217,13 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 
 #primary-menu ul ul li > a {
   font-size: $primary-menu-submenu-font-size;
-  font-weight: $primary-menu-submenu-font-weight;
-  color: #666;
+  font-weight: $font-weight;
+  color: $dark-color;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 0;
   letter-spacing: 0;
-  font-family: $primary-menu-submenu-font;
+  font-family: $font-family;
 
   @include transition(all 0.2s ease-in-out);
 }
@@ -492,15 +492,16 @@ body.top-search-open #top-search form {
   border-radius: 0;
   border: 0;
   outline: 0 !important;
-  font-size: 32px;
   padding: 10px 80px 10px 0;
   height: 100%;
   background-color: transparent;
-  color: #333;
+  color: $dark-color;
   font-weight: 700;
   margin-top: 0 !important;
-  font-family: $heading-font;
+  font-family: $font-family;
   letter-spacing: 2px;
+
+  @include type(0);
 }
 
 body:not(.device-md):not(.device-sm):not(.device-xs) #header.full-header #top-search form input {
@@ -557,7 +558,7 @@ body:not(.device-md):not(.device-sm):not(.device-xs) #header.transparent-header:
   .dropdown-menu {
     padding: 10px 0;
     li a {
-      font-family: $body-font;
+      font-family: $font-family;
       font-weight: 400;
       text-align: left;
       line-height: 22px;

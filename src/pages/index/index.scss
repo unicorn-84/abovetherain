@@ -7,7 +7,7 @@ body {
 
 #slider {
   .overlay {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   #slider-phone {
@@ -24,6 +24,18 @@ body {
 
     i {
       box-shadow: rgba(0, 0, 0, 0.75) 0 0 6px !important;
+    }
+  }
+
+  .slider-caption {
+    h2 {
+      font-family: $heading-font-family;
+      font-weight: $heading-font-weight;
+    }
+
+    p {
+      font-family: $font-family;
+      font-weight: $font-weight;
     }
   }
 }
