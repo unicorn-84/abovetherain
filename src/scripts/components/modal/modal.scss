@@ -75,7 +75,7 @@
     &:hover {
       &::before,
       &::after {
-        background-color: darken($light-color, $hover-percent);
+        background-color: darken($light-color, 20%);
       }
     }
   }

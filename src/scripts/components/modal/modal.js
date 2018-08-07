@@ -65,9 +65,7 @@ function modalHandler(element) {
 }
 
 document.body.addEventListener('click', (e) => {
-  console.log(e.target);
   if (e.target.hasAttribute('data-ajax')) {
-    console.log(e.target);
     e.stopPropagation();
     e.preventDefault();
     modalHandler(e.target);

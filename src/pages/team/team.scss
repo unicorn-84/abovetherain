@@ -9,7 +9,7 @@
 
     &:focus,
     &:hover {
-      color: lighten($icon-color, $hover-percent);
+      color: lighten($icon-color, 20%);
     }
   }
 }

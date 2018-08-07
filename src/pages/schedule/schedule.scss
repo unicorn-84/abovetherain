@@ -6,6 +6,10 @@ $schedule-days-bg-color: darken($schedule-bg-color, 0.5%);
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
+.schedule-wrapper {
+  margin-top: $indent * 10;
+}
+
 .schedule-table {
   display: none;
   width: calc(100% + 2px);
@@ -71,8 +75,19 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
     padding: 0 $indent * 8;
     background-color: $schedule-direction-color;
 
+    &:focus,
+    &:hover {
+      box-shadow: $box-shadow;
+
+      @include transition(box-shadow 0.3s $function);
+    }
+
     @include respond-to(tablet) {
       padding: 0 $indent * 2;
+      opacity: 0.2;
+      pointer-events: none;
+
+      @include transition(opacity 0.3s $function);
     }
 
     @include respond-to(laptop) {
@@ -162,5 +177,58 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
         font-size: 14px !important;
       }
     }
+  }
+}
+
+.schedule-table[data-selected='all'] .schedule-event,
+.schedule-table[data-selected='service-1'] .schedule-event[data-service='service-1'],
+.schedule-table[data-selected='service-2'] .schedule-event[data-service='service-2'],
+.schedule-table[data-selected='service-3'] .schedule-event[data-service='service-3'],
+.schedule-table[data-selected='service-4'] .schedule-event[data-service='service-4'],
+.schedule-table[data-selected='service-5'] .schedule-event[data-service='service-5'],
+.schedule-table[data-selected='service-6'] .schedule-event[data-service='service-6'],
+.schedule-table[data-selected='coach-1'] .schedule-event[data-coach='team-1'],
+.schedule-table[data-selected='coach-2'] .schedule-event[data-coach='team-2'],
+.schedule-table[data-selected='coach-3'] .schedule-event[data-coach='team-3'],
+.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='team-4'] {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.select,
+.select-list {
+  background-color: $schedule-bg-color;
+  border: 1px solid $border-color;
+  color: $text-color;
+  font-family: $heading-font-family;
+  font-weight: $font-weight;
+
+  @include type(0);
+}
+
+.select,
+.select-list > li {
+  padding: $indent * 4 $indent * 8;
+}
+
+.select {
+  margin-bottom: $indent * 10;
+  font-weight: $font-weight;
+
+  &::after {
+    border-color: $border-color transparent transparent;
+  }
+
+  &.active::after {
+    border-color: transparent transparent $border-color;
+  }
+}
+
+.select-list > li {
+  @include transition(background-color, 0.3s, $function);
+
+  &:focus,
+  &:hover {
+    background-color: darken($schedule-bg-color, 5%);
   }
 }
