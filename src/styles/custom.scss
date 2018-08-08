@@ -1,0 +1,35 @@
+@import 'variables';
+@import 'mixins';
+
+#wrapper {
+  background: transparent url('../images/fon.jpg') no-repeat center / cover;
+}
+
+#content {
+  background-color: transparent;
+  color: #f5f5dc;
+}
+
+header:not(.sticky-header) {
+  #primary-menu {
+    > ul {
+      > li {
+        > a {
+          color: $link-color;
+
+          @include transition(color 0.3s $function);
+        }
+
+        &:focus > a,
+        &:hover > a,
+        &.current > a {
+          color: darken($link-color, 5%);
+        }
+      }
+    }
+  }
+
+  #top-search a {
+    color: $link-color;
+  }
+}
