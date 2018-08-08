@@ -22,7 +22,7 @@ const commonConfig = merge([
       contacts: './pages/contacts/contacts',
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
+      path: path.resolve(__dirname, 'dist/item-4'),
       filename: './scripts/[name].js',
     },
     module: {
