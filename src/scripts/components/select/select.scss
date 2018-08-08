@@ -54,7 +54,6 @@ select[data-select] {
   overflow: hidden auto;
   max-height: 300px;
   z-index: 1;
-  animation: select-list 0.3s $function forwards;
 
   > li {
     @include transition(background-color 0.3s $function);
@@ -67,15 +66,5 @@ select[data-select] {
 
   .select.active & {
     display: block;
-  }
-}
-
-@keyframes select-list {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 }

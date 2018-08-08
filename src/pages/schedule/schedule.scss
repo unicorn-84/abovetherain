@@ -217,11 +217,15 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
   }
 }
 
-.select-list > li {
-  @include transition(background-color, 0.3s, $function);
+.select-list {
+  @include animation(opacity 0.3s $function);
 
-  &:focus,
-  &:hover {
-    background-color: darken($schedule-bg-color, 5%);
+  li {
+    @include transition(background-color, 0.3s, $function);
+
+    &:focus,
+    &:hover {
+      background-color: darken($schedule-bg-color, 5%);
+    }
   }
 }
