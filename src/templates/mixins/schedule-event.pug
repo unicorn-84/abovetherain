@@ -1,7 +1,10 @@
 mixin schedule-event(rowspan, serviceFile, direction, coachFile, coach, timeStart, timeEnd)
   td.schedule-event(rowspan= rowspan data-service= serviceFile data-coach= coachFile)
     if direction
-      a.schedule-title(data-ajax href=`data/services/${serviceFile}.html`)= direction
-    span.schedule-interval= `${timeStart}-${timeEnd}`
+      .schedule-title
+        a(data-ajax href=`data/services/${serviceFile}.html`)= direction
+      .schedule-interval
+        span= `${timeStart}-${timeEnd}`
     if coach
-      a.schedule-coach(data-ajax href=`data/team/${coachFile}.html`)= coach
+      .schedule-coach
+        a(data-ajax href=`data/team/${coachFile}.html`)= coach

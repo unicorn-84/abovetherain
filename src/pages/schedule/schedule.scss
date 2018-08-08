@@ -75,13 +75,6 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
     padding: 0 $indent * 8;
     background-color: $schedule-direction-color;
 
-    &:focus,
-    &:hover {
-      box-shadow: $box-shadow;
-
-      @include transition(box-shadow 0.3s $function);
-    }
-
     @include respond-to(tablet) {
       padding: 0 $indent * 2;
       opacity: 0.2;
@@ -109,7 +102,7 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
     a {
       text-decoration: underline rgba($text-color, 0.5) !important;
-      color: inherit;
+      color: $link-color;
 
       &:focus,
       &:hover {
