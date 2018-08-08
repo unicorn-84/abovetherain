@@ -1,6 +1,54 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+$text-color: $light-color;
+$link-color: $light-color;
+$icon-color: $light-color;
+
+#wrapper {
+  background: rgba(255, 255, 255, 1) url('../images/team/fon.jpg') center no-repeat / cover;
+
+  #content {
+    background-color: transparent;
+  }
+}
+
+header:not(.sticky-header) {
+  #primary-menu {
+    > ul {
+      > li {
+        > a {
+          color: $link-color;
+
+          @include transition(color 0.3s $function);
+        }
+
+        &:focus > a,
+        &:hover > a,
+        &.current > a {
+          color: darken($link-color, 20%);
+        }
+      }
+    }
+  }
+}
+
+#page-title {
+  h1 {
+    color: $text-color;
+  }
+
+  .breadcrumb {
+    a {
+      @include link($link-color, 0);
+    }
+
+    .breadcrumb-item.active {
+      color: darken($link-color, 20%);
+    }
+  }
+}
+
 .team-wrapper {
   margin-bottom: $indent * -20;
 
@@ -68,6 +116,7 @@
 
         li {
           margin-bottom: $indent * 3;
+          color: $link-color;
 
           a {
             font-family: $font-family;

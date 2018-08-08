@@ -12,12 +12,12 @@ $breakpoints: (
 
 //Colors
 $theme-color: #2d4958;
-$light-color: #fff;
-$border-color: #ccc;
-$dark-color: #333;
-$text-color: $dark-color;
-$link-color: $dark-color;
-$icon-color: $dark-color;
+$light-color: #fff !default;
+$border-color: #ccc !default;
+$dark-color: #333 !default;
+$text-color: $dark-color !default;
+$link-color: $dark-color !default;
+$icon-color: $dark-color !default;
 
 //Typography
 $heading-font-family: 'Comfortaa', cursive;
