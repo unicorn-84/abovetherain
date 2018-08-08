@@ -2,7 +2,7 @@
 @import '../../styles/mixins.scss';
 
 body {
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
 #slider {
