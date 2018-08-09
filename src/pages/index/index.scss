@@ -1,13 +1,116 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
+@font-face {
+  font-family: 'elisabethischebook';
+  src:
+    url('../fonts/elisabethischebook/elisabethischebook.woff2') format('woff2'),
+    url('../fonts/elisabethischebook/elisabethischebook.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hercules_modern';
+  src:
+    url('../fonts/hercules_modern/hercules_modern.woff2') format('woff2'),
+    url('../fonts/hercules_modern/hercules_modern.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   overflow: hidden;
 }
 
 #slider {
+  .swiper-pagination {
+    display: none;
+  }
+
+  .swiper-wrapper {
+    .swiper-slide {
+      background: transparent center center no-repeat / cover;
+
+      &.slide-1 {
+        background-image: url('../images/slides/slide-1.jpg');
+
+        h3 {
+          font-family: elisabethischebook, serif !important;
+          color: #694a06 !important;
+        }
+      }
+
+      &.slide-2 {
+        background-image: url('../images/slides/slide-2.jpg');
+
+        h3 {
+          font-family: hercules_modern, serif !important;
+          color: #f0e2c3 !important;
+        }
+      }
+
+      &.slide-3 {
+        background-image: url('../images/slides/slide-3.jpg');
+
+        h3 {
+          font-family: $font-family !important;
+          color: #fff !important;
+        }
+      }
+
+      &.slide-4 {
+        background-image: url('../images/slides/slide-1.jpg');
+
+        h3 {
+          font-family: elisabethischebook, serif !important;
+          color: #f0e2c3 !important;
+        }
+      }
+
+      .slide-wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        .slider-caption {
+          position: absolute;
+          top: 60% !important;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          padding: 0;
+          max-width: none;
+
+          > div {
+            overflow: hidden;
+          }
+
+          h3 {
+            color: $light-color;
+            font-weight: $font-weight;
+            margin-bottom: $indent * 5 !important;
+            text-transform: uppercase;
+
+            @include type(2);
+
+            line-height: 1 !important;
+
+            @include respond-to(desktop) {
+              @include type(5);
+
+              line-height: 1 !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .overlay {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   #slider-phone {
@@ -26,28 +129,10 @@ body {
       box-shadow: rgba(0, 0, 0, 0.75) 0 0 6px !important;
     }
   }
+}
 
-  .slider-caption {
-    position: relative;
-    max-width: 800px;
-    text-align: center;
-    margin: 0 auto;
-    left: 0;
-    right: 0;
-
-    @include respond-to(desktop) {
-      margin-top: 10%;
-    }
-
-    h2 {
-      font-family: $heading-font-family;
-      font-weight: $heading-font-weight;
-      line-height: 1.333 !important;
-    }
-
-    p {
-      font-family: $font-family;
-      font-weight: $font-weight;
-    }
-  }
+.slide {
+  animation-name: slide;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
 }

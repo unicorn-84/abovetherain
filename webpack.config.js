@@ -39,6 +39,12 @@ const commonConfig = merge([
             },
           ],
         },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+            'file-loader',
+          ],
+        },
       ],
     },
     plugins: [
@@ -184,7 +190,7 @@ const commonConfig = merge([
 
 module.exports = (mode) => {
   if (mode === 'production') {
-    return merge(commonConfig, productionConfig, { mode });
+    return merge(commonConfig, productionConfig, {mode});
   }
-  return merge(commonConfig, developmentConfig, { mode });
+  return merge(commonConfig, developmentConfig, {mode});
 };

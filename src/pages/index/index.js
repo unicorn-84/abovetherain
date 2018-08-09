@@ -7,5 +7,5 @@ import abovetherain from '../../scripts/init';
 import '../../scripts/components/modal/modal';
 
 document.addEventListener('DOMContentLoaded', () => {
-  abovetherain.initialize();
+  // abovetherain.initialize();
 });
