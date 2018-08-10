@@ -23,7 +23,7 @@ append content
             .address-item
               p
                 i.icon-map-marker
-                |Пионерская ул., 50
+                | Санкт-Петербург, Пионерская ул., 50
               p
                 i.icon-phone3
                 a(href="tel:+7812100-20-30") +7 812 100-20-30
@@ -33,36 +33,44 @@ append content
                   data-ajax contact form
                 a(href="#") info@admin.ru
           .col-lg-12
-            #google-map
+            #yandex-map
 append scripts
   //Page scripts
-  script(src="https://maps.google.com/maps/api/js?key=AIzaSyDMxJ92oBkSnVNHFX3R8XhtYQPEgk1_IiI")
-  script(src="scripts/jquery.gmap.js")
+  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
   script.
-    $('#google-map').gMap({
-    latitude: 59.964123,
-    longitude:  30.273157,
-    maptype: 'ROADMAP',
-    zoom: 15,
-    markers: [
-    {
-    latitude: 59.964123,
-    longitude:  30.273157,
-    html: '<div style="width: 200px;"><h4 class="nomargin">Привет, мы Танцевальный&nbsp;Клуб <span>\'Над&nbsp;Дождем\'</span></h4></div>',
-    icon: {
-    image: "../images/icons/map-icon-red.png",
-    iconsize: [32, 39],
-    iconanchor: [32,39]
+    ymaps.ready(init);
+    function init() {
+      const map = new ymaps.Map('yandex-map', {
+        center: [59.964139, 30.272844],
+        zoom: 17
+      });
+      map.behaviors.disable('scrollZoom');
+      const mark = new ymaps.Placemark([59.964139, 30.272844],
+        {
+          type: "Point",
+          coordinates: [59.964139, 30.272844],
+        },
+        {
+          // preset: 'islands#redCircleDotIcon'
+          iconLayout: 'default#image',
+          iconImageHref: '/images/mark.png',
+          iconImageSize: [60, 80],
+          iconImageOffset: [-50, -40],
+          cursor: 'auto'
+        });
+      const route = new ymaps.Polyline([
+        [59.964139, 30.272844],
+        [59.964282, 30.273050],
+        [59.964358, 30.273876],
+        [59.964097, 30.274206],
+        [59.964173, 30.274472]
+      ], {}, {
+        strokeColor: "#caac37",
+        strokeWidth: 2,
+        strokeStyle: 'dot'
+      });
+      map.geoObjects
+      .add(mark)
+      .add(route);
     }
-    }
-    ],
-    doubleclickzoom: false,
-    controls: {
-    panControl: true,
-    zoomControl: true,
-    mapTypeControl: true,
-    scaleControl: false,
-    streetViewControl: false,
-    overviewMapControl: false
-    }
-    });
+
