@@ -51,3 +51,15 @@ $slider-font-family: 'hercules_modern', serif;
 $slider-font-color: $light-color;
 $slider-font-size: 4.5rem;
 $caption-position: 65%;
+$slider-overlay: rgba(20, 20, 20, 0.4);
+
+//Menu
+$menu-font-family: $heading-font-family;
+$menu-font-weight: $font-weight;
+$menu-font-color: $light-color;
+$menu-font-size: 14px;
+$menu-hover-text-color: darken($menu-font-color, 5%);
+$submenu-font-family: $menu-font-family;
+$submenu-font-weight: $menu-font-weight;
+$submenu-font-size: 12px;
+

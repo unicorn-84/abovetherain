@@ -62,7 +62,7 @@ body {
   }
 
   .overlay {
-    background-color: rgba(10, 10, 10, 0.4);
+    background-color: $slider-overlay;
   }
 
   #slider-phone {
@@ -72,13 +72,22 @@ body {
     z-index: 10;
     transition: transform 0.3s ease-out;
 
+    .i-light {
+      color: $dark-color;
+      background-color: $light-color;
+    }
+
     &:focus,
     &:hover {
       transform: scale(1.1) !important;
+
+      .i-light {
+        background-color: darken($light-color, 5%);
+      }
     }
 
     i {
-      box-shadow: rgba(0, 0, 0, 0.75) 0 0 6px !important;
+      //box-shadow: rgba(0, 0, 0, 0.75) 0 0 6px !important;
     }
   }
 }

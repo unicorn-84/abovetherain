@@ -177,8 +177,8 @@ body.stretched #header.full-header .container {
   width: $primary-menu-submenu-width;
   background-color: $light-color;
   box-shadow: 0 13px 42px 11px rgba(0, 0, 0, 0.05);
-  border: 1px solid $border-color;
-  border-top: 2px solid $theme-color;
+  //border: 1px solid $border-color;
+  //border-top: 2px solid $theme-color;
   height: auto;
   z-index: 199;
   top: 100%;
@@ -216,14 +216,14 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 }
 
 #primary-menu ul ul li > a {
-  font-size: $primary-menu-submenu-font-size;
-  font-weight: $font-weight;
+  font-size: $submenu-font-size;
+  font-weight: $submenu-font-weight;
   color: $dark-color;
   padding-top: 10px;
   padding-bottom: 10px;
   border: 0;
   letter-spacing: 0;
-  font-family: $font-family;
+  font-family: $submenu-font-family;
 
   @include transition(all 0.2s ease-in-out);
 }
@@ -233,9 +233,9 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 }
 
 #primary-menu ul ul li:hover > a {
-  background-color: #f9f9f9;
+  background-color: darken($menu-font-color, 5%);
   padding-left: 18px;
-  color: $theme-color;
+  color: $dark-color;
 }
 
 #primary-menu ul ul > li.sub-menu > a,
@@ -288,12 +288,12 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
   display: block;
   line-height: 22px;
   padding: $primary-menu-padding 15px;
-  color: $primary-menu-font-color;
-  font-weight: $primary-menu-font-weight;
-  font-size: $primary-menu-font-size;
+  color: $menu-font-color;
+  font-weight: $menu-font-weight;
+  font-size: $menu-font-size;
   letter-spacing: $primary-menu-font-spacing;
   text-transform: $primary-menu-font-tt;
-  font-family: $heading-font-family;
+  font-family: $menu-font-family;
 
   @include transition(margin 0.4s ease, padding 0.4s ease);
 }
@@ -319,7 +319,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 
 #primary-menu ul li:hover > a,
 #primary-menu ul li.current > a {
-  color: $theme-color;
+  color: $menu-hover-text-color;
 }
 
 #primary-menu > ul > li.sub-menu > a > div {
@@ -438,9 +438,10 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
   width: 14px;
   height: 14px;
   font-size: 14px;
-  line-height: 20px;
+  //line-height: 20px;
   text-align: center;
-  color: #333;
+  color: $light-color;
+
   @include transition(color .3s ease-in-out);
 }
 
