@@ -1,1 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Comfortaa:400,700|Open+Sans&subset=cyrillic');
+
+@font-face {
+  font-family: 'elisabethischebook';
+  src:
+    url('../fonts/elisabethischebook/elisabethischebook.woff2') format('woff2'),
+    url('../fonts/elisabethischebook/elisabethischebook.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'hercules_modern';
+  src:
+    url('../fonts/hercules_modern/hercules_modern.woff2') format('woff2'),
+    url('../fonts/hercules_modern/hercules_modern.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}

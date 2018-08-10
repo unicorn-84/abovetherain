@@ -12,7 +12,7 @@ $breakpoints: (
 
 //Colors
 $theme-color: #caac37;
-$light-color: #fff;
+$light-color: #f0e2c3;
 $border-color: #ccc;
 $dark-color: #333;
 $text-color: $dark-color;
@@ -36,6 +36,7 @@ $font-sizes: (
   3: $font-size * $rhythm * $rhythm * $rhythm,
   4: $font-size * $rhythm * $rhythm * $rhythm * $rhythm,
   5: $font-size * $rhythm * $rhythm * $rhythm * $rhythm * $rhythm,
+  6: $font-size * $rhythm * $rhythm * $rhythm * $rhythm * $rhythm * $rhythm,
 );
 
 //Miscellaneous
@@ -44,3 +45,9 @@ $indent: 2px;
 
 //Animation
 $function: cubic-bezier(0.6, 0, 0.4, 1);
+
+//Slider
+$slider-font-family: 'hercules_modern', serif;
+$slider-font-color: $light-color;
+$slider-font-size: 4.5rem;
+$caption-position: 65%;

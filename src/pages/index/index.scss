@@ -1,24 +1,6 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-@font-face {
-  font-family: 'elisabethischebook';
-  src:
-    url('../fonts/elisabethischebook/elisabethischebook.woff2') format('woff2'),
-    url('../fonts/elisabethischebook/elisabethischebook.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'hercules_modern';
-  src:
-    url('../fonts/hercules_modern/hercules_modern.woff2') format('woff2'),
-    url('../fonts/hercules_modern/hercules_modern.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 body {
   overflow: hidden;
 }
@@ -34,38 +16,14 @@ body {
 
       &.slide-1 {
         background-image: url('../images/slides/slide-1.jpg');
-
-        h3 {
-          font-family: elisabethischebook, serif !important;
-          color: #694a06 !important;
-        }
       }
 
       &.slide-2 {
         background-image: url('../images/slides/slide-2.jpg');
-
-        h3 {
-          font-family: hercules_modern, serif !important;
-          color: #f0e2c3 !important;
-        }
       }
 
       &.slide-3 {
         background-image: url('../images/slides/slide-3.jpg');
-
-        h3 {
-          font-family: $font-family !important;
-          color: #fff !important;
-        }
-      }
-
-      &.slide-4 {
-        background-image: url('../images/slides/slide-1.jpg');
-
-        h3 {
-          font-family: elisabethischebook, serif !important;
-          color: #f0e2c3 !important;
-        }
       }
 
       .slide-wrapper {
@@ -77,7 +35,7 @@ body {
 
         .slider-caption {
           position: absolute;
-          top: 60% !important;
+          top: $caption-position !important;
           left: 0;
           right: 0;
           margin: 0 auto;
@@ -89,20 +47,14 @@ body {
           }
 
           h3 {
-            color: $light-color;
+            color: $slider-font-color;
+            font-family: $slider-font-family;
             font-weight: $font-weight;
             margin-bottom: $indent * 5 !important;
             text-transform: uppercase;
-
-            @include type(2);
-
-            line-height: 1 !important;
-
-            @include respond-to(desktop) {
-              @include type(5);
-
-              line-height: 1 !important;
-            }
+            font-size: $slider-font-size;
+            line-height: 1;
+            letter-spacing: 0.2rem;
           }
         }
       }
@@ -110,7 +62,7 @@ body {
   }
 
   .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(10, 10, 10, 0.4);
   }
 
   #slider-phone {
