@@ -11,13 +11,14 @@ $breakpoints: (
 );
 
 //Colors
-$theme-color: #2d4958;
-$light-color: #fff !default;
-$border-color: #555 !default;
-$dark-color: #333 !default;
-$text-color: #002137;
-$link-color: #002137 !default;
-$icon-color: #002137 !default;
+
+$theme-color: #fff;
+$light-color: #f5f5dc;
+$border-color: #ccc;
+$dark-color: #002137;
+$text-color: $dark-color;
+$link-color: $dark-color;
+$icon-color: $dark-color;
 
 //Typography
 $heading-font-family: 'Comfortaa', cursive;
@@ -33,6 +34,10 @@ $font-sizes: (
   0: $font-size,
   1: $font-size * $rhythm,
   2: $font-size * $rhythm * $rhythm,
+  3: $font-size * $rhythm * $rhythm * $rhythm,
+  4: $font-size * $rhythm * $rhythm * $rhythm * $rhythm,
+  5: $font-size * $rhythm * $rhythm * $rhythm * $rhythm * $rhythm,
+  6: $font-size * $rhythm * $rhythm * $rhythm * $rhythm * $rhythm * $rhythm,
 );
 
 //Miscellaneous
@@ -41,3 +46,23 @@ $indent: 2px;
 
 //Animation
 $function: cubic-bezier(0.6, 0, 0.4, 1);
+
+//Slider
+$slider-font-family: 'hercules_modern', serif;
+$slider-font-color: $light-color;
+$slider-font-size: 4.5rem;
+$caption-position: 65%;
+$slider-overlay: rgba(20, 20, 20, 0.4);
+
+//Menu
+$menu-font-family: $heading-font-family;
+$menu-font-weight: $font-weight;
+$menu-font-color: $dark-color;
+$index-menu-font-color: $light-color;
+$menu-font-size: 14px;
+$menu-hover-font-color: darken($menu-font-color, 5%);
+$index-menu-hover-font-color: darken($index-menu-font-color, 5%);
+$submenu-font-family: $menu-font-family;
+$submenu-font-weight: $menu-font-weight;
+$submenu-font-size: 12px;
+$submenu-font-color: $dark-color;

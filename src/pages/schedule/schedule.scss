@@ -1,11 +1,11 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-$schedule-bg-color: rgba(0, 0, 0, 0);
+$schedule-bg-color: $light-color;
 $schedule-days-bg-color: darken($schedule-bg-color, 0.5%);
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: darken($schedule-bg-color, 1.5%);
-//$border-color: darken($text-color, 20%);
+//$border-color: #ccc;
 
 .schedule-wrapper {
   margin-top: $indent * 10;
@@ -191,7 +191,7 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
 .select,
 .select-list {
-  background-color: #e1c47d;
+  background-color: $light-color;
   border: 1px solid $border-color;
   color: $text-color;
   font-family: $heading-font-family;
@@ -226,7 +226,7 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
     &:focus,
     &:hover {
-      background-color: darken($schedule-bg-color, 5%);
+      background-color: darken($light-color, 4%);
     }
   }
 }

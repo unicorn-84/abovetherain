@@ -2,9 +2,6 @@ extends ../../templates/layout
 append variables
   -
     const { options, pages, primaryNavigation } = require('../../data');
-    const slide1 = require('../../images/slides/slide-1.jpg');
-    const slide2 = require('../../images/slides/slide-2.jpg');
-    const slide3 = require('../../images/slides/slide-3.jpg');
 //-HEAD
 append meta
   //Page meta tags
@@ -16,41 +13,47 @@ append styles
   //Page styles
 //-BODY
 append header
-  +header(primaryNavigation.items)
+  +header(primaryNavigation.items, true)
 append content
   //Primary Slider
-  section#slider.slider-element.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1500" data-autoplay="5000")
+  section#slider.slider-element.slider-parallax.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1000" data-autoplay="5000" data-grab="false")
     .slider-parallax-inner
       .swiper-container.swiper-parent
         .swiper-wrapper
           //Slide-1
-          .swiper-slide.dark(style={
-            background: `url(${slide1}) 50% 50% / cover no-repeat`
-          })
+          .swiper-slide.slide-1
             .overlay
-            .container
-              .slider-caption
-                h2(data-caption-animate="fadeInUp" data-caption-delay="200") Время твоего превосходства
+            .container.clearfix
+              .slide-wrapper
+                .slider-caption
+                  div
+                    h3(data-caption-animate="slide") Время твоего
+                  div
+                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
           //Slide-2
-          .swiper-slide.dark(style={
-            background: `url(${slide2}) 50% 50% / cover no-repeat`
-          })
+          .swiper-slide.slide-2
             .overlay
             .container
-              .slider-caption
-                h2(data-caption-animate="fadeInUp" data-caption-delay="200") Время твоего превосходства
+              .slide-wrapper
+                .slider-caption
+                  div
+                    h3(data-caption-animate="slide") Время твоего
+                  div
+                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
           //Slide-3
-          .swiper-slide.dark(style={
-            background: `url(${slide3}) 50% 50% / cover no-repeat`
-          })
+          .swiper-slide.slide-3
             .overlay
             .container
-              .slider-caption
-                h2(data-caption-animate="fadeInUp" data-caption-delay="200") Время твоего превосходства
-          //Phone icon
-          #slider-phone
-            a(href=`tel:${options.sliderPhone}`)
-              i.i-circled.i-light.icon-call
+              .slide-wrapper
+                .slider-caption
+                  div
+                    h3(data-caption-animate="slide") Время твоего
+                  div
+                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
+        //Phone icon
+        #slider-phone
+          a(href=`tel:${options.sliderPhone}`)
+            i.i-circled.i-light.icon-call
 block footer
 append scripts
   //Page scripts

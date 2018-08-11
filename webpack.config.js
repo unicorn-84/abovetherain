@@ -22,7 +22,7 @@ const commonConfig = merge([
       contacts: './pages/contacts/contacts',
     },
     output: {
-      path: path.resolve(__dirname, 'dist/item-6'),
+      path: path.resolve(__dirname, 'dist/item-11'),
       filename: './scripts/[name].js',
     },
     module: {
@@ -37,6 +37,12 @@ const commonConfig = merge([
                 pretty: true,
               },
             },
+          ],
+        },
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          use: [
+            'file-loader',
           ],
         },
       ],
@@ -184,7 +190,7 @@ const commonConfig = merge([
 
 module.exports = (mode) => {
   if (mode === 'production') {
-    return merge(commonConfig, productionConfig, { mode });
+    return merge(commonConfig, productionConfig, {mode});
   }
-  return merge(commonConfig, developmentConfig, { mode });
+  return merge(commonConfig, developmentConfig, {mode});
 };
