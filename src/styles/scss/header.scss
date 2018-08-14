@@ -226,10 +226,6 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
   font-family: $submenu-font-family;
 
   @include transition(all 0.2s ease-in-out);
-
-  header.index & {
-    color: $submenu-font-color;
-  }
 }
 
 #primary-menu ul ul li > a i {
@@ -237,14 +233,9 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
 }
 
 #primary-menu ul ul li:hover > a {
-  background-color: $index-menu-hover-font-color;
+  background-color: $theme-color;
   padding-left: 18px;
   color: $submenu-font-color;
-
-  header.index & {
-    background-color: $index-menu-hover-font-color;
-    color: $submenu-font-color;
-  }
 }
 
 #primary-menu ul ul > li.sub-menu > a,
@@ -304,11 +295,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content {
   text-transform: $primary-menu-font-tt;
   font-family: $menu-font-family;
 
-  @include transition(margin 0.4s ease, padding 0.4s ease);
-
-  header.index & {
-    color: $index-menu-font-color;
-  }
+  @include transition(margin 0.3s ease, padding 0.3s ease, color 0.3s $function);
 }
 
 #primary-menu ul li > a span {

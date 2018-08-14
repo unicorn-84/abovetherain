@@ -1,22 +1,14 @@
-mixin header(items, index)
-  header#header.transparent-header(class= { index })
+mixin header(items)
+  header#header.transparent-header
     #header-wrap
       .container.clearfix
         #primary-menu-trigger: i.icon-reorder
         //Logo
         #logo
-          if index
-            a(href="index.html" class="standard-logo")
-              img(src=require("../../images/logo/logo.png") alt="Логотип танцевального клуба 'Над дождем'")
-            a(href="index.html" class="retina-logo")
-              img(src=require("../../images/logo/logo@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
-          else
-            a(href="index.html" class="standard-logo")
-              img(src=require("../../images/logo/logo-dark.png") alt="Логотип танцевального клуба 'Над дождем'")
-            a(href="index.html" class="retina-logo")
-              img(src=require("../../images/logo/logo-dark@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
-
-
+          a(href="index.html" class="standard-logo")
+            img(src=require("../../images/logo/logo.png") alt="Логотип танцевального клуба 'Над дождем'")
+          a(href="index.html" class="retina-logo")
+            img(src=require("../../images/logo/logo@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
         //Primary Navigation
         nav#primary-menu.with-arrows
             ul

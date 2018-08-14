@@ -3506,14 +3506,14 @@ var SEMICOLON = SEMICOLON || {};
 			if( SEMICOLON.isMobile.any() ){
 				$body.addClass('device-touch');
 			}
-			// var el = {
-			//     darkLogo : $("<img>", {src: defaultDarkLogo}),
-			//     darkRetinaLogo : $("<img>", {src: retinaDarkLogo})
-			// };
-			// el.darkLogo.prependTo("body");
-			// el.darkRetinaLogo.prependTo("body");
-			// el.darkLogo.css({'position':'absolute','z-index':'-100'});
-			// el.darkRetinaLogo.css({'position':'absolute','z-index':'-100'});
+			var el = {
+			    darkLogo : $("<img>", {src: defaultDarkLogo}),
+			    darkRetinaLogo : $("<img>", {src: retinaDarkLogo})
+			};
+			el.darkLogo.prependTo("body");
+			el.darkRetinaLogo.prependTo("body");
+			el.darkLogo.css({'position':'absolute','z-index':'-100'});
+			el.darkRetinaLogo.css({'position':'absolute','z-index':'-100'});
 		}
 
 	};

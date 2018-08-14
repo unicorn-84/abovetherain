@@ -11,14 +11,13 @@ $breakpoints: (
 );
 
 //Colors
-
-$theme-color: #fff;
-$light-color: #dedec8;
-$border-color: #ccc;
+$light-color: #f5f5dc;
 $dark-color: #002137;
-$text-color: $dark-color;
-$link-color: $dark-color;
-$icon-color: $dark-color;
+$theme-color: complement($light-color);
+$border-color: #ccc;
+$text-color: $light-color;
+$link-color: $light-color;
+$icon-color: $light-color;
 
 //Typography
 $heading-font-family: 'Comfortaa', cursive;
@@ -57,11 +56,9 @@ $slider-overlay: rgba(20, 20, 20, 0.4);
 //Menu
 $menu-font-family: $heading-font-family;
 $menu-font-weight: $font-weight;
-$menu-font-color: $dark-color;
-$index-menu-font-color: $light-color;
+$menu-font-color: $light-color;
 $menu-font-size: 14px;
-$menu-hover-font-color: darken($menu-font-color, 5%);
-$index-menu-hover-font-color: darken($index-menu-font-color, 5%);
+$menu-hover-font-color: $theme-color;
 $submenu-font-family: $menu-font-family;
 $submenu-font-weight: $menu-font-weight;
 $submenu-font-size: 12px;

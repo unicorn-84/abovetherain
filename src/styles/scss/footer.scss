@@ -2,7 +2,8 @@
 @import '../mixins';
 
 #footer {
-  background-color: $dark-color;
+  border-top: 1px solid $light-color;
+  background: transparent;
   padding: $indent * 20 $indent * 5;
 
   .phone {

@@ -1,21 +1,11 @@
 @import '../variables';
 @import '../mixins';
 
-/* ----------------------------------------------------------------
-
-	pagetitle.scss
-
------------------------------------------------------------------*/
-
-/* ----------------------------------------------------------------
-	Page Title
------------------------------------------------------------------*/
-
 #page-title {
   position: relative;
   padding: $page-title-padding 0;
-  background-color: $page-title-bg;
-  border-bottom: 1px solid $border-color;
+  background-color: transparent;
+  border-bottom: 1px solid $light-color;
 
   .container {
     position: relative;
@@ -27,7 +17,7 @@
     line-height: 1;
     font-weight: 600;
     letter-spacing: 1px;
-    color: $text-color;
+    color: $light-color;
     font-size: $page-title-size;
     text-transform: uppercase;
     font-family: $heading-font-family;
@@ -52,14 +42,18 @@
   background-color: transparent !important;
   padding: 0 !important;
   font-size: 12px;
-  font-family: $font-family;
+  font-family: $heading-font-family;
 
   > li {
     @include type(0);
+
+    color: $text-color !important;
   }
 
   a {
     @include link($link-color, 0);
+
+    font-family: $heading-font-family !important;
   }
 
   i {
@@ -93,11 +87,11 @@ body.stretched .container-fullwidth .breadcrumb {
     }
 
     .breadcrumb > .active {
-      color: rgba(255, 255, 255, 0.6);
+      color: $light-color;
     }
 
     .breadcrumb a {
-      color: rgba(255, 255, 255, 0.8);
+      color: $light-color;
     }
 
     .breadcrumb a:hover {
@@ -198,7 +192,7 @@ body.stretched .container-fullwidth .breadcrumb {
 
   &.page-title-nobg {
     background: transparent !important;
-    border-bottom: 1px solid #F5F5F5;
+    border-bottom: 1px solid $light-color;
   }
 
   /* Page Title - Video

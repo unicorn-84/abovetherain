@@ -1,15 +1,14 @@
 @import 'variables';
 @import 'mixins';
 
-#wrapper {
-  background: $light-color;
+body {
+  background: $light-color url('../images/fon.jpg') center no-repeat / cover;
+  min-height: 100vh;
 }
 
-#content {
-  background-color: transparent;
-  color: #f5f5dc;
-}
-
-#page-title.page-title-nobg {
-  border: none;
+#header,
+#wrapper,
+#content,
+#footer {
+  background: transparent;
 }
