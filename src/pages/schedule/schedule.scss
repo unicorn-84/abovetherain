@@ -1,11 +1,12 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-$schedule-bg-color: $light-color;
-$schedule-days-bg-color: darken($schedule-bg-color, 0.5%);
+$schedule-bg-color: rgba(0, 0, 0, 0.4);
+$schedule-days-bg-color: $schedule-bg-color;
 $schedule-times-bg-color: $schedule-days-bg-color;
-$schedule-direction-color: darken($schedule-bg-color, 1.5%);
-//$border-color: #ccc;
+$schedule-direction-color: $schedule-bg-color;
+$link-color: #00be9f;
+$border-color: #aaa;
 
 .schedule-wrapper {
   margin-top: $indent * 10;
@@ -15,7 +16,7 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
   display: none;
   width: calc(100% + 2px);
   table-layout: fixed;
-  border-collapse: separate;
+  //border-collapse: separate;
   text-align: center;
   margin-left: -1px;
   margin-right: -1px;
@@ -33,7 +34,7 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
   }
 
   td {
-    border: 1px dotted lighten($border-color, 10%);
+    //border: 1px dotted lighten($border-color, 10%);
     background-color: $schedule-bg-color;
   }
 
@@ -50,12 +51,11 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
   .schedule-day,
   .schedule-time {
-    padding: $indent * 5 0;
-
     @include type(-1);
   }
 
   .schedule-day {
+    padding: $indent * 5 0;
     background-color: $schedule-days-bg-color;
 
     &:first-child {
@@ -69,16 +69,17 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
   .schedule-time {
     background-color: $schedule-times-bg-color;
+    padding: $indent * 8 0;
   }
 
   .schedule-event {
     vertical-align: middle;
     padding: 0 $indent * 8;
     background-color: $schedule-direction-color;
+    border-color: #555;
 
     @include respond-to(tablet) {
       padding: 0 $indent * 2;
-      opacity: 0.2;
       pointer-events: none;
 
       @include transition(opacity 0.3s $function);
@@ -98,16 +99,17 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
       @include respond-to(tablet) {
         margin: $indent * 4 0;
+        opacity: 0.2;
       }
     }
 
     a {
-      text-decoration: underline rgba($text-color, 0.5) !important;
+      text-decoration: underline rgba($link-color, 0.5) !important;
       color: $link-color;
 
       &:focus,
       &:hover {
-        text-decoration: underline rgba($text-color, 0.5) !important;
+        text-decoration: underline rgba($link-color, 0.5) !important;
       }
 
       @include respond-to(tablet) {
@@ -174,6 +176,21 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
   }
 }
 
+.schedule-table[data-selected='all'] .schedule-event > *,
+.schedule-table[data-selected='service-1'] .schedule-event[data-service='service-1'] > *,
+.schedule-table[data-selected='service-2'] .schedule-event[data-service='service-2'] > *,
+.schedule-table[data-selected='service-3'] .schedule-event[data-service='service-3'] > *,
+.schedule-table[data-selected='service-4'] .schedule-event[data-service='service-4'] > *,
+.schedule-table[data-selected='service-5'] .schedule-event[data-service='service-5'] > *,
+.schedule-table[data-selected='service-6'] .schedule-event[data-service='service-6'] > *,
+.schedule-table[data-selected='coach-1'] .schedule-event[data-coach='team-1'] > *,
+.schedule-table[data-selected='coach-2'] .schedule-event[data-coach='team-2'] > *,
+.schedule-table[data-selected='coach-3'] .schedule-event[data-coach='team-3'] > *,
+.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='team-4'] > * {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .schedule-table[data-selected='all'] .schedule-event,
 .schedule-table[data-selected='service-1'] .schedule-event[data-service='service-1'],
 .schedule-table[data-selected='service-2'] .schedule-event[data-service='service-2'],
@@ -185,15 +202,12 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 .schedule-table[data-selected='coach-2'] .schedule-event[data-coach='team-2'],
 .schedule-table[data-selected='coach-3'] .schedule-event[data-coach='team-3'],
 .schedule-table[data-selected='coach-4'] .schedule-event[data-coach='team-4'] {
-  opacity: 1;
-  pointer-events: auto;
+  border-color: $border-color;
 }
 
 .select,
 .select-list {
-  background-color: $light-color;
   border: 1px solid $border-color;
-  color: $text-color;
   font-family: $heading-font-family;
   font-weight: $font-weight;
 
@@ -206,6 +220,8 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 }
 
 .select {
+  color: $text-color;
+  background-color: $schedule-bg-color;
   margin-bottom: $indent * 10;
   font-weight: $font-weight;
 
@@ -219,6 +235,9 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 }
 
 .select-list {
+  color: $dark-color;
+  background-color: $light-color;
+
   @include animation(opacity 0.3s $function);
 
   li {
@@ -226,7 +245,7 @@ $schedule-direction-color: darken($schedule-bg-color, 1.5%);
 
     &:focus,
     &:hover {
-      background-color: darken($light-color, 4%);
+      background-color: $theme-color;
     }
   }
 }
