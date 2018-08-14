@@ -6,7 +6,7 @@ $schedule-days-bg-color: $schedule-bg-color;
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: $schedule-bg-color;
 $link-color: #00be9f;
-$border-color: #aaa;
+$border-color: #777;
 
 .schedule-wrapper {
   margin-top: $indent * 10;
@@ -51,7 +51,7 @@ $border-color: #aaa;
 
   .schedule-day,
   .schedule-time {
-    @include type(-1);
+    font-size: 14px;
   }
 
   .schedule-day {
@@ -76,7 +76,7 @@ $border-color: #aaa;
     vertical-align: middle;
     padding: 0 $indent * 8;
     background-color: $schedule-direction-color;
-    border-color: #555;
+    border-width: 0;
 
     @include respond-to(tablet) {
       padding: 0 $indent * 2;
@@ -99,7 +99,7 @@ $border-color: #aaa;
 
       @include respond-to(tablet) {
         margin: $indent * 4 0;
-        opacity: 0.2;
+        opacity: 0;
       }
     }
 
@@ -202,7 +202,7 @@ $border-color: #aaa;
 .schedule-table[data-selected='coach-2'] .schedule-event[data-coach='team-2'],
 .schedule-table[data-selected='coach-3'] .schedule-event[data-coach='team-3'],
 .schedule-table[data-selected='coach-4'] .schedule-event[data-coach='team-4'] {
-  border-color: $border-color;
+  border-width: 1px;
 }
 
 .select,
