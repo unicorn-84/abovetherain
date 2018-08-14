@@ -26,6 +26,10 @@
       "name": "team",
       "title": "Мы"
     },
+    "coaches": {
+      "name": "coaches",
+      "title": "Тренеры"
+    },
     "gallery": {
       "name": "gallery",
       "title": "Галерея"
@@ -81,7 +85,14 @@
       },
       {
         "name": "team",
-        "title": "Мы"
+        "title": "Мы",
+        "subitems": [
+          {
+            "name": "coaches",
+            "title": "Тренеры",
+            "page": true
+          }
+        ]
       },
       {
         "name": "gallery",

@@ -23,7 +23,10 @@ mixin header(items)
                     ul
                       each subitem in item.subitems
                         li
-                          a(data-ajax href=`data/services/${subitem.name}.html`) #{subitem.title}
+                          if subitem.page
+                            a(href=`${subitem.name}.html`) #{subitem.title}
+                          else
+                            a(data-ajax href=`data/services/${subitem.name}.html`) #{subitem.title}
             //#top-search
             //  a#top-search-trigger(href="#")
             //    i.icon-search3

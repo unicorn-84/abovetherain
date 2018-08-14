@@ -1,7 +1,6 @@
 extends ../../templates/layout
 append variables
-  -
-    const { options, pages, primaryNavigation, team } = require('../../data');
+  -const { options, pages, primaryNavigation } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
@@ -18,32 +17,7 @@ append content
   +pageTitle(pages.team)
   section#content
     .content-wrap
-      .team-wrapper
-        .container
-          .row
-            each coach in team
-              .col-sm-6
-                .team
-                  .team-image
-                    img(src= coach.src alt= coach.title)
-                  .team-content
-                    .team-title
-                      h3 #{coach.title}
-                    .team-directions
-                      ul
-                        each direction in coach.directions
-                          li
-                            a(data-ajax href=`data/services/${direction.name}.html`) #{direction.title}
-                    .team-media.clearfix
-                      //-TODO
-                        lightbox gallery
-                      a(href="#")
-                        i.i-plain.icon-image
-                      //-TODO
-                        lightbox video
-                      a(href="#")
-                        i.i-plain.icon-play-circle
-                    .team-description
-                      p #{coach.description}
+      .container
+        .row
+          |Team
 append scripts
-  //Page scripts
