@@ -1,6 +1,8 @@
 extends ../../templates/layout
 append variables
-  -const { options, pages, primaryNavigation } = require('../../data');
+  -const { options, pages, primaryNavigation, team } = require('../../data');
+  -const teamPhoto = require('../../images/team/thumbnails/team.jpg');
+  -const bigTeamPhoto = require('../../images/team/team.jpg');
 //-HEAD
 append meta
   //Page meta tags
@@ -19,5 +21,14 @@ append content
     .content-wrap
       .container
         .row
-          |Team
+          .col
+            .team-wrapper
+              //-TODO Слайдер для 'Мы'
+              .team-photo
+                picture
+                  source(media="(min-width: 768px)" srcset= bigTeamPhoto)
+                  img(src= teamPhoto alt="Над Дождём")
+              .team-content
+                .team-title !{team.title}
+                .team-description !{team.description}
 append scripts

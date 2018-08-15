@@ -13,8 +13,8 @@
 }
 
 @mixin type($level: 0) {
-  font-size: type-scale($level) !important;
-  line-height: $line-height !important;
+  font-size: type-scale($level);
+  line-height: $line-height;
 }
 
 @mixin animation($variables...) {
@@ -28,17 +28,17 @@
 @mixin link($color: $link-color, $type: 0) {
   font-family: $font-family;
   font-weight: $font-weight;
-  text-decoration: underline rgba($color, 0.5) !important;
+  text-decoration: underline rgba($color, 0.5);
   color: $color;
 
   @include type($type);
 
   &:focus,
   &:hover {
-    text-decoration: underline rgba($color, 0.5) !important;
+    text-decoration: underline rgba($color, 0.5);
   }
 
   @include respond-to(laptop) {
-    text-decoration: none !important;
+    text-decoration: none;
   }
 }

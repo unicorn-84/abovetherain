@@ -1,2 +1,36 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
+
+.team-wrapper {
+  .team-photo {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      box-shadow: $box-shadow;
+    }
+  }
+
+  .team-content {
+    .team-title {
+      margin: $indent * 15 0 $indent * 10;
+      text-align: center;
+
+      @include respond-to(laptop) {
+        margin: $indent * 20 0 $indent * 15;
+      }
+    }
+
+    p {
+      font-family: $font-family;
+      font-weight: $font-weight;
+      margin: 0;
+
+      @include type(0);
+
+      @include respond-to(laptop) {
+        @include type(1);
+      }
+    }
+  }
+}
