@@ -1,35 +1,33 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-.address-item {
-  margin: 0 0 32px 24px;
-  font-family: $font-family;
+.contact-content {
+  margin-bottom: $indent * 16;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
   color: $text-color;
 
-  @media screen and (max-width: 767px) {
-    margin-left: 0;
+  @include respond-to(laptop) {
+    margin-left: $indent * 8;
   }
 
-  p {
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 1;
+  i {
+    padding-right: $indent * 8;
+  }
 
-    @media screen and (max-width: 767px) {
-      font-size: 16px;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    i {
-      padding-right: 16px;
-    }
+  .contact-address,
+  .contact-phone,
+  .contact-email {
+    @include type(1);
 
     a {
       @include link($link-color, 1);
     }
+  }
+
+  .contact-address,
+  .contact-phone {
+    margin-bottom: $indent * 8;
   }
 }
 

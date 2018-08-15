@@ -1,6 +1,6 @@
 extends ../../templates/layout
 append variables
-  -const { options, pages, primaryNavigation } = require('../../data');
+  -const { options, pages, primaryNavigation, contacts } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
@@ -20,14 +20,14 @@ append content
       .container.clearfix
         .row
           .col-lg-12
-            .address-item
-              p
+            .contact-content
+              .contact-address
                 i.icon-map-marker
-                | Санкт-Петербург, Пионерская ул., 50
-              p
+                | !{contacts.address}
+              .contact-phone
                 i.icon-phone3
-                a(href="tel:+7812100-20-30") +7 812 100-20-30
-              p
+                a(href=`tel:${contacts.phone}`)= contacts.phone
+              .contact-email
                 i.icon-envelope-alt
                 //-TODO
                   data-ajax contact form

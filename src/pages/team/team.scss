@@ -13,12 +13,7 @@
 
   .team-content {
     .team-title {
-      margin: $indent * 15 0 $indent * 10;
       text-align: center;
-
-      @include respond-to(laptop) {
-        margin: $indent * 20 0 $indent * 15;
-      }
     }
 
     p {
