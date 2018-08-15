@@ -3,7 +3,7 @@
 
 #page-title {
   position: relative;
-  padding: $page-title-padding 0;
+  padding: $indent * 30 0 $indent * 20;
   background-color: transparent;
   border-bottom: 1px solid $light-color;
 
@@ -11,16 +11,13 @@
     position: relative;
   }
 
-  h1 {
+  h3 {
     padding: 0;
     margin: 0;
     line-height: 1;
-    font-weight: 600;
-    letter-spacing: 1px;
+    letter-spacing: 0.1rem;
     color: $light-color;
-    font-size: $page-title-size;
     text-transform: uppercase;
-    font-family: $heading-font-family;
   }
 
   span {
