@@ -1,25 +1,71 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
+body {
+  animation: none;
+}
+
 .coaches-wrapper {
   margin-bottom: -30px;
+
+  @include respond-to(desktop) {
+    margin-bottom: 0;
+  }
+}
+
+.coach-wrapper {
+  overflow: hidden;
+  margin-bottom: 30px;
+
+  @include respond-to(desktop) {
+    margin-bottom: 0;
+  }
 }
 
 .coach {
   position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
   box-shadow: $box-shadow;
+  animation: none;
+
+  @include respond-to(desktop) {
+    transform: translateY(100%);
+    animation: slide 1s ease-in-out forwards;
+  }
+
+  .coaches-wrapper [class*='col']:nth-child(1) & {
+    animation-delay: 0.2s;
+  }
+
+  .coaches-wrapper [class*='col']:nth-child(2) & {
+    animation-delay: 0.4s;
+  }
+
+  .coaches-wrapper [class*='col']:nth-child(3) & {
+    animation-delay: 0.6s;
+  }
+
+  .coaches-wrapper [class*='col']:nth-child(4) & {
+    animation-delay: 0.8s;
+  }
 
   &::before {
+    display: block;
     content: '';
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.95));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
+    opacity: 0.9;
+    transition: opacity 0.3s $function;
+  }
+
+  &:hover::before {
+    opacity: 1;
+    transition: opacity 0.3s $function;
   }
 
   .coach-image {

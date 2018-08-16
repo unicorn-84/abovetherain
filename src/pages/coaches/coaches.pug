@@ -23,24 +23,25 @@ append content
           .row
             each coach in coaches
               .col-sm-6.col-md-6.col-lg-4.col-xl-3
-                .coach
-                  .coach-image
-                    picture
-                      source(media="(max-width: 767px)" srcset= require(`../../images/coaches/thumbnails/${coach.name}.jpg`))
-                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.siteName} | ${coach.title}`)
-                  .coach-info
-                    div
-                      .coach-title
-                        h2= coach.title
-                      .coach-directions
-                        each direction in coach.directions
-                          a(data-ajax href=`data/services/${direction.name}.html`)
-                            h4= direction.title
-                    .coach-icons
-                      a(data-ajax href=`data/team/team-1.html`)
-                        i.icon-line2-info
-                      a(href=`schedule.html`)
-                        i.icon-calendar2
+                .coach-wrapper.animated(data-animate="bounce")
+                  .coach
+                    .coach-image
+                      picture
+                        source(media="(max-width: 767px)" srcset= require(`../../images/coaches/thumbnails/${coach.name}.jpg`))
+                        img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.siteName} | ${coach.title}`)
+                    .coach-info
+                      div
+                        .coach-title
+                          h2= coach.title
+                        .coach-directions
+                          each direction in coach.directions
+                            a(data-ajax href=`data/services/${direction.name}.html`)
+                              h4= direction.title
+                      .coach-icons
+                        a(data-ajax href=`data/team/team-1.html`)
+                          i.icon-line2-info
+                        a(href=`schedule.html`)
+                          i.icon-calendar2
 append scripts
   //Page scripts
 
