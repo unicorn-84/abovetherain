@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-$schedule-bg-color: rgba(0, 0, 0, 0.4);
+$schedule-bg-color: $overlay;
 $schedule-days-bg-color: $schedule-bg-color;
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: $schedule-bg-color;

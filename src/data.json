@@ -112,9 +112,8 @@
   },
   "coaches": [
     {
-      "name": "team-1",
+      "name": "victoria",
       "title": "Виктория",
-      "src": "images/team/team-1.jpg",
       "directions": [
         {
           "name": "service-1",
@@ -132,9 +131,8 @@
       "description": "Сложно сказать, почему базовые сценарии поведения пользователей разоблачены."
     },
     {
-      "name": "team-2",
+      "name": "mikhail",
       "title": "Михаил",
-      "src": "images/team/team-2.jpg",
       "directions": [
         {
           "name": "service-3",
@@ -144,9 +142,8 @@
       "description": "Как уже неоднократно упомянуто, предприниматели в сети интернет в равной степени предоставлены сами себе."
     },
     {
-      "name": "team-3",
+      "name": "alex",
       "title": "Алексей",
-      "src": "images/team/team-3.jpg",
       "directions": [
         {
           "name": "service-4",
@@ -156,9 +153,8 @@
       "description": "Консультация с широким активом напрямую зависит от позиций, занимаемых участниками в отношении поставленных задач."
     },
     {
-      "name": "team-4",
+      "name": "nadezhda",
       "title": "Надежда",
-      "src": "images/team/team-4.jpg",
       "directions": [
         {
           "name": "service-6",
