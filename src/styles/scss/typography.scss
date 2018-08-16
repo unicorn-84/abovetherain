@@ -46,8 +46,7 @@ img {
 }
 
 a {
-  @include link($link-color, 0);
-
+  text-decoration: none !important;
   img {
     border: none;
   }

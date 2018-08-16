@@ -26,17 +26,17 @@
 }
 
 @mixin link($color: $link-color, $type: 0) {
-  text-decoration: underline rgba($color, 0.5);
+  text-decoration: underline rgba($color, 0.5) !important;
   color: $color;
 
   @include type($type);
 
   &:focus,
   &:hover {
-    text-decoration: underline rgba($color, 0.5);
+    text-decoration: underline rgba($color, 0.5) !important;
   }
 
   @include respond-to(laptop) {
-    text-decoration: none;
+    text-decoration: none !important;
   }
 }
