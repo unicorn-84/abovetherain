@@ -109,6 +109,10 @@ body {
         padding-bottom: 0;
       }
 
+      a {
+        @include link($link-color, 0);
+      }
+
       h4 {
         margin: 0;
         padding: 5px 0;

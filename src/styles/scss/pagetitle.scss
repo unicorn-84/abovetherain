@@ -3,9 +3,14 @@
 
 #page-title {
   position: relative;
-  padding: $indent * 30 0 $indent * 20;
+  padding: 50px 0;
   background-color: transparent;
   border-bottom: 1px solid $light-color;
+  border-top: 1px solid $light-color;
+
+  @include respond-to(laptop) {
+    border-top: none;
+  }
 
   .container {
     position: relative;
@@ -14,10 +19,13 @@
   h3 {
     padding: 0;
     margin: 0;
-    line-height: 1;
     letter-spacing: 0.1rem;
     color: $light-color;
     text-transform: uppercase;
+
+    @include respond-to(tablet) {
+      line-height: 1 !important;
+    }
   }
 
   span {
