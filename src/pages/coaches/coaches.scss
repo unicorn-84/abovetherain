@@ -59,13 +59,6 @@ body {
     bottom: 0;
     left: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1));
-    opacity: 0.9;
-    transition: opacity 0.3s $function;
-  }
-
-  &:hover::before {
-    opacity: 1;
-    transition: opacity 0.3s $function;
   }
 
   .coach-image {
@@ -147,6 +140,14 @@ body {
         padding: 10px;
         margin-bottom: 5px;
 
+        @include respond-to(laptop) {
+          &:hover {
+            i {
+              color: $theme-color;
+            }
+          }
+        }
+
         &:last-child {
           margin-bottom: 0;
         }
@@ -160,6 +161,10 @@ body {
 
           @include respond-to(tablet) {
             font-size: 1.5em;
+          }
+
+          @include respond-to(laptop) {
+            transition: color 0.3s $function;
           }
 
           @include respond-to(desktop) {
