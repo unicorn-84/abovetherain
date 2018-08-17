@@ -26,12 +26,15 @@ append content
                 | !{contacts.address}
               .contact-phone
                 i.icon-phone3
+                //-TODO изменить телефон
                 a(href=`tel:${contacts.phone}`)= contacts.phone
               .contact-email
                 i.icon-envelope-alt
-                //-TODO
+                //-TODO добавить форму обратной связи
                   data-ajax contact form
-                a(href="#")= contacts.email
+                //-TODO изменить email
+                //-a(href="#")= contacts.email
+                span= contacts.email
           .col-lg-12
             #yandex-map
 append scripts
