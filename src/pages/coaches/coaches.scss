@@ -1,10 +1,6 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-body {
-  animation: none;
-}
-
 .coaches-wrapper {
   margin-bottom: -30px;
 
@@ -26,7 +22,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  box-shadow: $box-shadow;
   animation: none;
 
   @include respond-to(desktop) {

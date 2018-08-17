@@ -46,31 +46,19 @@
         "title": "Услуги",
         "subitems": [
           {
-            "name": "service-0",
+            "name": "rent",
             "title": "Аренда"
           },
           {
-            "name": "service-1",
+            "name": "aerial-hoop",
             "title": "Воздушное кольцо"
           },
           {
-            "name": "service-2",
+            "name": "aerial-silk",
             "title": "Воздушное полотно"
           },
           {
-            "name": "service-3",
-            "title": "Йога"
-          },
-          {
-            "name": "service-4",
-            "title": "Хип-хоп"
-          },
-          {
-            "name": "service-5",
-            "title": "Зумба"
-          },
-          {
-            "name": "service-6",
+            "name": "pole-dance",
             "title": "Pole dance"
           }
         ]
@@ -104,6 +92,28 @@
       }
     ]
   },
+  "services": [
+    {
+      "name": "rent",
+      "title": "Аренда",
+      "main": 1
+    },
+    {
+      "name": "aerial-hoop",
+      "title": "Воздушное кольцо",
+      "main": 1
+    },
+    {
+      "name": "aerial-silk",
+      "title": "Воздушное полотно",
+      "main": 1
+    },
+    {
+      "name": "pole-dance",
+      "title": "Pole Dance",
+      "main": 1
+    }
+  ],
   "team": {
     "name": "team",
     "title": "<h2>Над Дождём</h2>",
