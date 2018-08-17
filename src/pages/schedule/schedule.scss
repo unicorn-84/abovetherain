@@ -221,7 +221,7 @@ $border-color: #777;
 
 .select {
   color: $dark-color;
-  background-color: rgba($light-color, 0.9);
+  background-color: $light-color;
   margin-bottom: $indent * 10;
   font-weight: $font-weight;
 
@@ -236,7 +236,7 @@ $border-color: #777;
 
 .select-list {
   color: $dark-color;
-  background-color: rgba($light-color, 0.95);
+  background-color: $light-color;
 
   @include animation(opacity 0.3s $function);
 
