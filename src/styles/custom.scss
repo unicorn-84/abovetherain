@@ -1,6 +1,13 @@
 @import 'variables';
 @import 'mixins';
 
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
 body {
   background: $light-color url('../images/fon.jpg') center no-repeat / cover;
   min-height: 100vh;
