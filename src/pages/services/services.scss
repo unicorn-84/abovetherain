@@ -1,20 +1,134 @@
 @import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
-.portfolio-desc {
-  h3 {
-    font-family: $heading-font-family;
-    font-weight: $heading-font-weight;
-    color: $text-color;
+.services-wrapper {
+  margin-bottom: -30px;
+}
 
-    @include type(1);
+.service-wrapper {
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.service {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  animation: none;
+
+  &::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 80%);
+    transition: opacity 0.3s $function, visibility 0.1s 0.1s $function;
   }
 
-  span {
-    font-family: $font-family;
-    font-weight: $font-weight;
-    color: $text-color;
+  @include respond-to(laptop) {
+    &::before {
+      display: block;
+    }
+  }
 
-    @include type(0);
+  &:hover {
+    cursor: pointer;
+
+    &::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  @include respond-to(desktop) {
+    transform: translateY(100%);
+    animation: slide 1s ease-in-out forwards;
+  }
+
+  .services-wrapper [class*='col']:nth-child(1) & {
+    animation-delay: 0.2s;
+  }
+
+  .services-wrapper [class*='col']:nth-child(2) & {
+    animation-delay: 0.4s;
+  }
+
+  .services-wrapper [class*='col']:nth-child(3) & {
+    animation-delay: 0.6s;
+  }
+
+  .services-wrapper [class*='col']:nth-child(4) & {
+    animation-delay: 0.8s;
+  }
+
+  .service-image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    a {
+      display: block;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 80%);
+        transition: none;
+      }
+
+      @include respond-to(laptop) {
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .service-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    a {
+      display: block;
+      text-decoration: underline rgba($link-color, 0.5) !important;
+
+      @include respond-to(laptop) {
+        text-decoration: none !important;
+      }
+    }
+
+    .service-title {
+      padding: 15px;
+
+      h2 {
+        margin: 0;
+        text-align: center;
+
+        @include type(0);
+
+        @include respond-to(handheld) {
+          @include type(1);
+        }
+
+        @include respond-to(tablet) {
+          @include type(2);
+        }
+
+        @include respond-to(desktop) {
+          @include type(1);
+        }
+      }
+    }
   }
 }

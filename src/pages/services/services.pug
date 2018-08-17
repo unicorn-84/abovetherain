@@ -18,81 +18,21 @@ append content
   +pageTitle(pages.services)
   section#content
     .content-wrap
-      .container
-        #portfolio.portfolio.grid-container.portfolio-3.clearfix
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-0.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-0.html")
-                  i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-0.html") Аренда
-              span Мы вынуждены отталкиваться от того, что высокое качество позиционных исследований требует от нас анализа новых принципов формирования материально-технической и кадровой базы
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-1.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-1.html")
-              //    i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-1.html") Воздушное кольцо
-              span Банальные, но неопровержимые выводы, а также базовые сценарии поведения пользователей неоднозначны и будут призваны к ответу
-          .clear.d-xs-block.d-sm-block.d-md-none.d-lg-none.d-xl-none
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-2.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-2.html")
-              //    i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-2.html") Воздушное полотно
-              span Принимая во внимание показатели успешности, высококачественный прототип будущего проекта является качественно новой ступенью экспериментов, поражающих по своей масштабности и грандиозности
-          .clear.d-xs-none.d-sm-none.d-md-block.d-lg-block.d-xl-block
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-3.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-3.html")
-              //    i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-3.html") Йога
-              span Господа, повышение уровня гражданского сознания предполагает независимые способы реализации дальнейших направлений развития
-          .clear.d-xs-block.d-sm-block.d-md-none.d-lg-none.d-xl-none
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-4.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-4.html")
-              //    i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-4.html") Хип-хоп
-              span Сложно сказать, почему ключевые особенности структуры проекта, инициированные исключительно синтетически, призваны к ответу
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-5.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-5.html")
-              //    i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-5.html") Зумба
-              span Как уже неоднократно упомянуто, реплицированные с зарубежных источников, современные исследования описаны максимально подробно
-          .clear.d-xs-none.d-sm-none.d-md-block.d-lg-block.d-xl-block
-          article.portfolio-item.bottommargin-xxs
-            div.portfolio-image
-              img(src="images/services/service-6.jpg" alt="")
-              //.portfolio-overlay
-              //  a.center-icon(data-ajax href="data/services/service-6.html")
-              //    i.icon-line-ellipsis
-            .portfolio-desc
-              h3
-                a(data-ajax href="data/services/service-6.html") Pole dance
-              span Следует отметить, что перспективное планирование требует от нас анализа вывода текущих активов
+      .services-wrapper
+        .container
+          .row
+            each service in services
+              .col-sm-6.col-md-3.col-lg-4
+                .service-wrapper
+                  .service
+                    .service-image
+                      a(data-ajax href=`data/services/${service.name}.html`)
+                        picture
+                          source(media="(max-width: 767px)" srcset= require(`../../images/services/${service.name}/thumbnails/${service.main}.jpg`))
+                          img(src= require(`../../images/services/${service.name}/${service.main}.jpg`) alt= `${options.siteName} | ${service.title}`)
+                    .service-info
+                      a(data-ajax href=`data/services/${service.name}.html`)
+                        .service-title
+                          h2= service.title
 append scripts
   //Page scripts
