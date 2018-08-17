@@ -28,7 +28,7 @@
     },
     "coaches": {
       "name": "coaches",
-      "title": "Тренеры"
+      "title": "Мы"
     },
     "gallery": {
       "name": "gallery",
@@ -80,19 +80,8 @@
         "title": "Расписание"
       },
       {
-        "name": "events",
-        "title": "Афиша"
-      },
-      {
-        "name": "team",
-        "title": "Мы",
-        "subitems": [
-          {
-            "name": "coaches",
-            "title": "Тренеры",
-            "page": true
-          }
-        ]
+        "name": "coaches",
+        "title": "Мы"
       },
       {
         "name": "gallery",
