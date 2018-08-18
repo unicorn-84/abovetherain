@@ -19,7 +19,7 @@ body {
         background-image: url('../images/slides/thumbnails/slide-1.jpg');
 
         @include respond-to(laptop) {
-          background-image: url('../../images/slides/slide-1.jpg');
+          background-image: url('../images/slides/slide-1.jpg');
         }
       }
 
@@ -27,7 +27,7 @@ body {
         background-image: url('../images/slides/thumbnails/slide-2.jpg');
 
         @include respond-to(laptop) {
-          background-image: url('../../images/slides/slide-2.jpg');
+          background-image: url('../images/slides/slide-2.jpg');
         }
       }
 
@@ -35,7 +35,7 @@ body {
         background-image: url('../images/slides/thumbnails/slide-3.jpg');
 
         @include respond-to(laptop) {
-          background-image: url('../../images/slides/slide-3.jpg');
+          background-image: url('../images/slides/slide-3.jpg');
         }
       }
 
