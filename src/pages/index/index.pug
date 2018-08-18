@@ -13,7 +13,7 @@ append styles
   //Page styles
 //-BODY
 append header
-  +header(primaryNavigation.items)
+  +header(primaryNavigation.items, className='index')
 append content
   //Primary Slider
   section#slider.slider-element.slider-parallax.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1000" data-autoplay="5000" data-grab="false")
@@ -51,7 +51,7 @@ append content
                   div
                     h3(data-caption-animate="slide" data-caption-delay="200") превосходства
         //Phone icon
-        //#slider-phone
+        #slider-phone
           a(href=`tel:${options.sliderPhone}`)
             i.i-circled.i-light.icon-call
 block footer

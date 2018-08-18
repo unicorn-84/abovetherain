@@ -15,6 +15,7 @@ module.exports = {
   devtool: false,
   module: {
     rules: [
+      // JS
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -26,6 +27,7 @@ module.exports = {
           },
         },
       },
+      // Images
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: [
