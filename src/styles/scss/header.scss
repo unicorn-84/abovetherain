@@ -17,6 +17,10 @@
   position: relative;
   background-color: #FFF;
   border-bottom: 1px solid #F5F5F5;
+
+  &.index {
+    color: $dark-color;
+  }
 }
 
 #header .container { position: relative; }
@@ -211,13 +215,25 @@ body.stretched #header.full-header .container {
   padding: $primary-menu-padding 15px;
   color: $menu-font-color;
   font-weight: $menu-font-weight;
-  font-size: $menu-font-size;
+  font-size: 14px;
   letter-spacing: $primary-menu-font-spacing;
   text-transform: $primary-menu-font-tt;
   font-family: $heading-font-family;
   outline: none;
 
   @include transition(margin 0.4s ease, padding 0.4s ease, color 0.3s $function);
+
+  header.index & {
+    color: $dark-color;
+  }
+
+  @include respond-to(laptop) {
+    font-size: $menu-font-size;
+
+    header.index & {
+      color: $menu-font-color;
+    }
+  }
 }
 
 #primary-menu ul li > a span { display: none; }

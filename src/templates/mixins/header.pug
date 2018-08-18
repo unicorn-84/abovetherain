@@ -1,14 +1,24 @@
-mixin header(items)
-  header#header.transparent-header.no-sticky
+mixin header(items, className)
+  header#header.transparent-header.no-sticky(class= className)
     #header-wrap
       .container.clearfix
         #primary-menu-trigger: i.icon-reorder
         //Logo
         #logo
-          a(href="index.html" class="standard-logo")
-            img(src=require("../../images/logo/logo.png") alt="Логотип танцевального клуба 'Над дождем'")
-          a(href="index.html" class="retina-logo")
-            img(src=require("../../images/logo/logo@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
+          if className === 'index'
+            a(href="index.html" class="standard-logo")
+              picture
+                source(media="(max-width: 991px)" srcset= require('../../images/logo/logo-dark.png'))
+                img(src= require('../../images/logo/logo.png') alt="Логотип танцевального клуба 'Над дождем'")
+            a(href="index.html" class="retina-logo")
+              picture
+                source(media="(max-width: 991px)" srcset= require('../../images/logo/logo-dark@2x.png'))
+                img(src= require('../../images/logo/logo@2x.png') alt="Логотип танцевального клуба 'Над дождем'")
+          else
+            a(href="index.html" class="standard-logo")
+              img(src=require("../../images/logo/logo.png") alt="Логотип танцевального клуба 'Над дождем'")
+            a(href="index.html" class="retina-logo")
+              img(src=require("../../images/logo/logo@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
         //Primary Navigation
         nav#primary-menu.with-arrows
             ul
