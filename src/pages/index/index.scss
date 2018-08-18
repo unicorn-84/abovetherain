@@ -13,18 +13,30 @@ body {
 
   .swiper-wrapper {
     .swiper-slide {
-      background: transparent center center no-repeat / cover;
+      background: transparent center right no-repeat / cover;
 
       &.slide-1 {
-        background-image: url('../images/slides/slide-1.jpg');
+        background-image: url('../images/slides/thumbnails/slide-1.jpg');
+
+        @include respond-to(laptop) {
+          background-image: url('../../images/slides/slide-1.jpg');
+        }
       }
 
       &.slide-2 {
-        background-image: url('../images/slides/slide-2.jpg');
+        background-image: url('../images/slides/thumbnails/slide-2.jpg');
+
+        @include respond-to(laptop) {
+          background-image: url('../../images/slides/slide-2.jpg');
+        }
       }
 
       &.slide-3 {
-        background-image: url('../images/slides/slide-3.jpg');
+        background-image: url('../images/slides/thumbnails/slide-3.jpg');
+
+        @include respond-to(laptop) {
+          background-image: url('../../images/slides/slide-3.jpg');
+        }
       }
 
       .slide-wrapper {
@@ -63,7 +75,7 @@ body {
   }
 
   .overlay {
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0.5) 70%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5) 70%);
   }
 
   #slider-phone {
