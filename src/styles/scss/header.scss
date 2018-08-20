@@ -307,7 +307,7 @@ body.no-superfish #primary-menu li:hover > .mega-menu-content { display: block; 
   line-height: 1;
   font-size: $submenu-font-size;
   font-weight: $submenu-font-weight;
-  color: $submenu-font-color;
+  color: $submenu-font-color !important;
   padding-top: 15px;
   padding-bottom: 15px;
   border: 0;
