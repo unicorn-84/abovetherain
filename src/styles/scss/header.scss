@@ -232,6 +232,10 @@ body.stretched #header.full-header .container {
 
     header.index & {
       color: $menu-font-color;
+
+      &:hover {
+        color: $theme-color;
+      }
     }
   }
 }
