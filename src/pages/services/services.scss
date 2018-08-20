@@ -15,6 +15,7 @@
   display: flex;
   flex-direction: column;
   animation: none;
+  border: 1px solid $light-color;
 
   &::before {
     display: none;
@@ -117,15 +118,7 @@
 
         @include type(0);
 
-        @include respond-to(handheld) {
-          @include type(1);
-        }
-
-        @include respond-to(tablet) {
-          @include type(2);
-        }
-
-        @include respond-to(desktop) {
+        @include respond-to(laptop) {
           @include type(1);
         }
       }
