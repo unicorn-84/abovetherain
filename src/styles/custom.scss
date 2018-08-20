@@ -2,20 +2,27 @@
 @import 'mixins';
 
 *,
-*:after,
-*:before {
+*::after,
+*::before {
   box-sizing: border-box;
   outline: none !important;
 }
 
-body {
-  background: $light-color url('../images/fon.jpg') center no-repeat / cover;
-  min-height: 100vh;
-}
+#wrapper {
+  background: $dark-color url('../images/fon/thumbnails/fon.jpg') center fixed / cover;
 
-#header,
-#wrapper,
-#content,
-#footer {
-  background: transparent;
+  @include respond-to(laptop) {
+    background: $dark-color url('../images/fon/fon.jpg') center fixed / cover;
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0) 15%, rgba(0, 0, 0, 0) 85%, rgba(0, 0, 0, 0.3));
+  }
 }
