@@ -35,12 +35,12 @@ append content
                           h2= coach.title
                         .coach-directions
                           each direction in coach.directions
-                            a(data-ajax href=`data/services/${direction.name}.html`)
+                            a(href='services.html')
                               h4= direction.title
                       .coach-icons
-                        a(data-ajax href=`data/team/team-1.html`)
+                        a(data-ajax href='#')
                           i.icon-line2-info
-                        a(href=`schedule.html`)
+                        a(href='schedule.html')
                           i.icon-calendar2
 append scripts
   //Page scripts
