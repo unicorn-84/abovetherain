@@ -22,17 +22,12 @@ append content
         .container
           .row
             each service in services
-              .col-sm-6.col-md-4
-                .service-wrapper
-                  .service
-                    .service-image
-                      a(data-ajax href=`data/services/${service.name}.html`)
-                        picture
-                          source(media="(max-width: 767px)" srcset= require(`../../images/services/${service.name}/thumbnails/${service.main}.jpg`))
-                          img(src= require(`../../images/services/${service.name}/${service.main}.jpg`) alt= `${options.siteName} | ${service.title}`)
-                    .service-info
-                      a(data-ajax href=`data/services/${service.name}.html`)
-                        .service-title
-                          h2= service.title
+              .col-sm-6.col-lg-4
+                .service
+                  .service-image
+                    img(src= require(`../../images/services/${service.name}.jpg`) alt= `${options.siteName} | ${service.title}`)
+                  .service-info
+                    .service-title
+                      h2= service.title
 append scripts
   //Page scripts

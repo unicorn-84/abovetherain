@@ -95,23 +95,23 @@
   "services": [
     {
       "name": "rent",
-      "title": "Аренда",
-      "main": 1
+      "title": "Аренда"
     },
     {
       "name": "aerial-hoop",
-      "title": "Воздушное кольцо",
-      "main": 1
+      "title": "Воздушное кольцо"
     },
     {
       "name": "aerial-silk",
-      "title": "Воздушное полотно",
-      "main": 1
+      "title": "Воздушное полотно"
     },
     {
       "name": "pole-dance",
-      "title": "Pole Dance",
-      "main": 1
+      "title": "Pole Dance"
+    },
+    {
+      "name": "yoga",
+      "title": "Йога"
     }
   ],
   "team": {
