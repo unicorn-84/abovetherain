@@ -9,8 +9,8 @@ const glob = require('glob');
 module.exports = {
   mode: 'production',
   output: {
-    filename: './scripts/[name].[hash].js',
-    chunkFilename: './scripts/[name].[hash].js',
+    filename: './scripts/[name].[contenthash].js',
+    chunkFilename: './scripts/[name].[contenthash].js',
   },
   devtool: false,
   module: {
@@ -56,6 +56,7 @@ module.exports = {
     ],
   },
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -98,7 +99,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
+      filename: 'styles/[name].[contenthash].css',
     }),
     // new PurgecssPlugin({
     //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
