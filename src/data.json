@@ -66,23 +66,23 @@
   "services": [
     {
       "name": "rent",
-      "title": "Аренда",
-      "main": 1
+      "title": "Аренда"
     },
     {
       "name": "aerial-hoop",
-      "title": "Воздушное кольцо",
-      "main": 1
+      "title": "Воздушное кольцо"
     },
     {
       "name": "aerial-silk",
-      "title": "Воздушное полотно",
-      "main": 1
+      "title": "Воздушное полотно"
     },
     {
       "name": "pole-dance",
-      "title": "Pole Dance",
-      "main": 1
+      "title": "Pole Dance"
+    },
+    {
+      "name": "yoga",
+      "title": "Йога"
     }
   ],
   "team": {
@@ -97,30 +97,48 @@
       "title": "Виктория",
       "directions": [
         {
-          "name": "service-1",
+          "name": "aerial-hoop",
           "title": "Воздушное кольцо"
         },
         {
-          "name": "service-2",
+          "name": "aerial-silk",
           "title": "Воздушное полотно"
         },
         {
-          "name": "service-6",
+          "name": "pole-dance",
           "title": "Pole dance"
         }
-      ],
-      "description": "Сложно сказать, почему базовые сценарии поведения пользователей разоблачены."
+      ]
+    },
+    {
+      "name": "aleksandra",
+      "title": "Александра",
+      "directions": [
+        {
+          "name": "stretching",
+          "title": "Растяжка на полотнах"
+        }
+      ]
     },
     {
       "name": "nadezhda",
       "title": "Надежда",
       "directions": [
         {
-          "name": "service-6",
+          "name": "pole-dance",
           "title": "Pole dance"
         }
-      ],
-      "description": "И нет сомнений, что явные признаки победы институциализации являются только методом политического участия и призваны к ответу."
+      ]
+    },
+    {
+      "name": "natalia",
+      "title": "Наталья",
+      "directions": [
+        {
+          "name": "yoga",
+          "title": "Йога"
+        }
+      ]
     }
   ],
   "events": [
