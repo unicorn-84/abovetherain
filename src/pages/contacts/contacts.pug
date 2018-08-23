@@ -40,8 +40,8 @@ append scripts
     ymaps.ready(init);
     function init() {
       const map = new ymaps.Map('yandex-map', {
-        center: [59.963612, 30.273182],
-        zoom: 17
+        center: [59.9636, 30.2732],
+        zoom: 16
       });
       map.behaviors.disable('scrollZoom');
       const mark = new ymaps.Placemark([59.964280, 30.272800], {},
@@ -68,7 +68,7 @@ append scripts
       ], {}, {
         strokeColor: "#002137",
         strokeWidth: 2,
-        strokeStyle: 'dot',
+        strokeStyle: 'dot'
       });
       const route3 = new ymaps.Polyline([
         [59.964196, 30.274412],
@@ -78,10 +78,8 @@ append scripts
         strokeWidth: 2,
         strokeStyle: 'dot'
       });
-      const evacuator = new ymaps.Placemark([59.962822, 30.274136],
-        {
-
-        },
+      const evacuator = new ymaps.Placemark([59.9625, 30.2743],
+        {},
         {
           iconLayout: 'default#image',
           iconImageHref: 'images/evacuator.png',
