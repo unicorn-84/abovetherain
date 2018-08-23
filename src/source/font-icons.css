@@ -1807,8 +1807,8 @@
 	content: "\e7a6";
 }
 .icon-angle-down:before {
-	content: "\e7a7";
-}
+	 content: "\e7a7";
+ }
 .icon-desktop:before {
 	content: "\e7a8";
 }
