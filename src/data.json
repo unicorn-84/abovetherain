@@ -126,52 +126,48 @@
       "title": "Виктория",
       "directions": [
         {
-          "name": "service-1",
+          "name": "aerial-hoop",
           "title": "Воздушное кольцо"
         },
         {
-          "name": "service-2",
+          "name": "aerial-silk",
           "title": "Воздушное полотно"
         },
         {
-          "name": "service-6",
+          "name": "pole-dance",
           "title": "Pole dance"
         }
-      ],
-      "description": "Сложно сказать, почему базовые сценарии поведения пользователей разоблачены."
+      ]
     },
     {
-      "name": "mikhail",
-      "title": "Михаил",
+      "name": "aleksandra",
+      "title": "Александра",
       "directions": [
         {
-          "name": "service-3",
-          "title": "Йога"
+          "name": "stretching",
+          "title": "Растяжка на полотнах"
         }
-      ],
-      "description": "Как уже неоднократно упомянуто, предприниматели в сети интернет в равной степени предоставлены сами себе."
-    },
-    {
-      "name": "alex",
-      "title": "Алексей",
-      "directions": [
-        {
-          "name": "service-4",
-          "title": "Хип-хоп"
-        }
-      ],
-      "description": "Консультация с широким активом напрямую зависит от позиций, занимаемых участниками в отношении поставленных задач."
+      ]
     },
     {
       "name": "nadezhda",
       "title": "Надежда",
       "directions": [
         {
-          "name": "service-6",
+          "name": "pole-dance",
           "title": "Pole dance"
         }
-      ],
-      "description": "И нет сомнений, что явные признаки победы институциализации являются только методом политического участия и призваны к ответу."
+      ]
+    },
+    {
+      "name": "natalia",
+      "title": "Наталья",
+      "directions": [
+        {
+          "name": "yoga",
+          "title": "Йога"
+        }
+      ]
     }
   ],
   "events": [

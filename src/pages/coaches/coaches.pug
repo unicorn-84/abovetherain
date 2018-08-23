@@ -26,9 +26,7 @@ append content
                 .coach-wrapper
                   .coach
                     .coach-image
-                      picture
-                        source(media="(max-width: 767px)" srcset= require(`../../images/coaches/thumbnails/${coach.name}.jpg`))
-                        img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.siteName} | ${coach.title}`)
+                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.siteName} | ${coach.title}`)
                     .coach-info
                       div
                         .coach-title
