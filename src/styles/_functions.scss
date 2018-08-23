@@ -1,5 +1,3 @@
-@import 'variables';
-
 @function type-scale($level: 0) {
   @return map-get($font-sizes, $level);
 }

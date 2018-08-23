@@ -1,5 +1,7 @@
-//Reset
-//@import '~reset-css/sass/reset';
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'keyframes';
 
 // Initialize
 @import 'scss/variables.scss';

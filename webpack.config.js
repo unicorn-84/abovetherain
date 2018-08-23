@@ -41,9 +41,14 @@ const commonConfig = merge([
           ],
         },
         {
-          test: /\.(woff|woff2|eot|ttf|otf)$/,
+          test: /\.(eot|svg|ttf|woff|woff2)$/,
           use: [
-            'file-loader',
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'fonts/[name].[ext]',
+              },
+            },
           ],
         },
       ],
@@ -53,7 +58,7 @@ const commonConfig = merge([
       new AsyncChunkNames(),
       new CopyWebpackPlugin([
         {
-          from: './scripts',
+          from: './scripts/**/*.js',
           to: 'scripts/[name].[ext]',
           toType: 'template',
         },
@@ -65,27 +70,13 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
-      new CopyWebpackPlugin([
-        {
-          from: './fonts',
-          to: 'fonts/[path][name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      new CopyWebpackPlugin([
-        {
-          from: './images',
-          to: 'images/[path][name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      new CopyWebpackPlugin([
-        {
-          from: './data',
-          to: 'data/[path][name].[ext]',
-          toType: 'template',
-        },
-      ]),
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: './data',
+      //     to: 'data/[path][name].[ext]',
+      //     toType: 'template',
+      //   },
+      // ]),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './pages/index/index.pug',
@@ -203,7 +194,7 @@ const commonConfig = merge([
 
 module.exports = (mode) => {
   if (mode === 'production') {
-    return merge(commonConfig, productionConfig, { mode });
+    return merge(commonConfig, productionConfig, {mode});
   }
-  return merge(commonConfig, developmentConfig, { mode });
+  return merge(commonConfig, developmentConfig, {mode});
 };
