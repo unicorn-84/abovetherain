@@ -9,8 +9,8 @@ const glob = require('glob');
 module.exports = {
   mode: 'production',
   output: {
-    filename: './scripts/[name].[contenthash].js',
-    chunkFilename: './scripts/[name].[contenthash].js',
+    filename: '[name].[contenthash:4].js',
+    chunkFilename: '[name].[contenthash:4].js',
   },
   devtool: false,
   module: {
@@ -34,7 +34,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[hash].[ext]',
+              name: 'images/[name].[hash:4].[ext]',
             },
           },
         ],
@@ -44,12 +44,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              url: false,
-            },
-          },
+          'css-loader',
           'sass-loader',
         ],
       },
@@ -99,7 +94,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[contenthash].css',
+      filename: '[name].[contenthash:4].css',
     }),
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
