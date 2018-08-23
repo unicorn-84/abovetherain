@@ -5,20 +5,14 @@
   margin-bottom: -30px;
 }
 
-.service-wrapper {
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
 .service {
   position: relative;
-  display: flex;
   flex-direction: column;
-  animation: none;
-  border: 1px solid $light-color;
+  margin-bottom: 30px;
+  box-shadow: $box-shadow;
 
   &::before {
-    display: none;
+    display: block;
     content: '';
     position: absolute;
     top: 0;
@@ -26,43 +20,6 @@
     bottom: 0;
     left: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 80%);
-    transition: opacity 0.3s $function, visibility 0.1s 0.1s $function;
-  }
-
-  @include respond-to(laptop) {
-    &::before {
-      display: block;
-    }
-  }
-
-  &:hover {
-    cursor: pointer;
-
-    &::before {
-      opacity: 0;
-      visibility: hidden;
-    }
-  }
-
-  @include respond-to(desktop) {
-    transform: translateY(100%);
-    animation: slide 1s ease-in-out forwards;
-  }
-
-  .services-wrapper [class*='col']:nth-child(1) & {
-    animation-delay: 0.2s;
-  }
-
-  .services-wrapper [class*='col']:nth-child(2) & {
-    animation-delay: 0.4s;
-  }
-
-  .services-wrapper [class*='col']:nth-child(3) & {
-    animation-delay: 0.6s;
-  }
-
-  .services-wrapper [class*='col']:nth-child(4) & {
-    animation-delay: 0.8s;
   }
 
   .service-image {
@@ -71,27 +28,6 @@
       width: 100%;
       height: auto;
     }
-
-    a {
-      display: block;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 80%);
-        transition: none;
-      }
-
-      @include respond-to(laptop) {
-        &::before {
-          display: none;
-        }
-      }
-    }
   }
 
   .service-info {
@@ -99,15 +35,6 @@
     right: 0;
     bottom: 0;
     left: 0;
-
-    a {
-      display: block;
-      text-decoration: underline rgba($link-color, 0.5) !important;
-
-      @include respond-to(laptop) {
-        text-decoration: none !important;
-      }
-    }
 
     .service-title {
       padding: 15px;
@@ -121,6 +48,7 @@
         @include respond-to(laptop) {
           @include type(1);
         }
+        font-weight: $font-weight;
       }
     }
   }

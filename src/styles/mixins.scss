@@ -27,7 +27,7 @@
 
 @mixin link($color: $link-color, $type: 0) {
   color: $color;
-  text-decoration: underline rgba($link-color, 0.4) !important;
+  text-decoration: underline rgba($link-color, 0.5) !important;
 
   @include type($type);
 
@@ -37,6 +37,6 @@
 
   &:focus,
   &:hover {
-    text-decoration: underline rgba($link-color, 0.4) !important;
+    text-decoration: underline rgba($link-color, 0.5) !important;
   }
 }

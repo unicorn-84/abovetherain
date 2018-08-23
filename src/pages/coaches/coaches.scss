@@ -94,6 +94,8 @@
         @include respond-to(desktop) {
           @include type(1);
         }
+
+        font-weight: $font-weight;
       }
     }
 

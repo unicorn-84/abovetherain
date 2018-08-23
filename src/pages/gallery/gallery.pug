@@ -17,17 +17,16 @@ append content
   +pageTitle(pages.gallery)
   section#content
     .content-wrap
-      .container.clearfix
-        //-TODO
-          new lightbox gallery
-        -let i = 1;
-        //div(data-lightbox="gallery")
-          while i <= 24
-            a(href=`images/gallery/${i}.jpg` data-lightbox="gallery-item")
-              img.image_fade.col_one_fourth(src=`images/gallery/thumbnails/${i}.jpg` class={
-                col_last: i % 4 === 0
-              } alt="")
-              -i += 1;
-
+      .gallery-wrapper
+        .container
+          //-TODO new lightbox gallery
+          div.row(data-lightbox="gallery")
+            -let i = 1;
+            while i <= 20
+              .col-sm-6.col-lg-4
+                .gallery-image
+                  a(href= require(`../../images/gallery/${i}.jpg`) data-lightbox="gallery-item")
+                    img(src= require(`../../images/gallery/thumbnails/${i}.jpg`) alt= options.siteName)
+                    -i += 1;
 append scripts
   //Page scripts
