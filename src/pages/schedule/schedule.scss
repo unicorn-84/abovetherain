@@ -10,8 +10,8 @@ $border-color: #777;
 
 .content-wrap {
   .container {
-    @include respond-to(laptop) {
-      max-width: 1340px;
+    @include respond-to(tablet) {
+      max-width: 1340px !important;
     }
   }
 }
@@ -62,14 +62,22 @@ $border-color: #777;
   .schedule-day {
     padding: $indent * 5 0;
 
+    @include respond-to(tablet) {
+      font-size: 12px;
+    }
+
+    @include respond-to(laptop) {
+      font-size: 14px;
+    }
+
     &:first-child {
       width: 20%;
 
       @include respond-to(tablet) {
-        width: 10%;
+        width: 6%;
       }
 
-      @include respond-to(laptop) {
+      @include respond-to(desktop) {
         width: 8%;
       }
     }
@@ -77,6 +85,14 @@ $border-color: #777;
 
   .schedule-time {
     padding: 20px 0;
+
+    @include respond-to(tablet) {
+      font-size: 10px;
+    }
+
+    @include respond-to(laptop) {
+      font-size: 14px;
+    }
   }
 
   .schedule-event {
@@ -85,13 +101,17 @@ $border-color: #777;
     opacity: 0.1;
 
     @include respond-to(tablet) {
-      padding: 0 5px;
+      padding: 5px;
 
       @include transition(opacity 0.3s $function);
     }
 
     @include respond-to(laptop) {
-      padding: 5px 15px;
+      padding: 5px 10px;
+    }
+
+    @include respond-to(desktop) {
+      padding: 10px 15px;
     }
 
     & > * {
@@ -141,7 +161,11 @@ $border-color: #777;
       @include type(0);
 
       @include respond-to(tablet) {
-        @include type(-1);
+        font-size: 0.7rem;
+      }
+
+      @include respond-to(laptop) {
+        font-size: 14px;
       }
 
       @include respond-to(desktop) {
@@ -172,7 +196,7 @@ $border-color: #777;
       font-size: 14px;
 
       @include respond-to(tablet) {
-        @include type(-1);
+        font-size: 0.7rem;
       }
 
       @include respond-to(laptop) {
@@ -221,9 +245,11 @@ $border-color: #777;
 .schedule-filter {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
-  @include respond-to(laptop) {
+  @include respond-to(tablet) {
     justify-content: start;
+    flex-wrap: nowrap;
   }
 }
 
@@ -244,10 +270,12 @@ $border-color: #777;
 .select {
   color: $dark-color;
   background-color: $light-color;
-  max-width: 320px;
+  margin-bottom: 15px;
 
-  @include respond-to(laptop) {
+  @include respond-to(tablet) {
     margin-right: 15px;
+    margin-bottom: 0;
+    max-width: 320px;
 
     &:last-child {
       margin-right: 0;
