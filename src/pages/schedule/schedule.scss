@@ -51,12 +51,12 @@ $border-color: #777;
     color: $text-color;
     overflow: hidden;
     word-wrap: break-word;
+    border: 1px solid $border-color;
   }
 
   .schedule-day,
   .schedule-time {
     font-size: 14px;
-    border: 1px solid $border-color;
   }
 
   .schedule-day {
@@ -82,6 +82,7 @@ $border-color: #777;
   .schedule-event {
     vertical-align: middle;
     padding: 0 $indent * 8;
+    opacity: 0.1;
 
     @include respond-to(tablet) {
       padding: 0 5px;
@@ -100,7 +101,7 @@ $border-color: #777;
 
       @include respond-to(tablet) {
         margin: $indent * 4 0;
-        opacity: 0;
+        pointer-events: none;
       }
     }
 
@@ -123,6 +124,10 @@ $border-color: #777;
     .schedule-coach {
       display: block;
       text-align: left;
+
+      @include respond-to(tablet) {
+        text-align: center;
+      }
     }
 
     .schedule-title,
@@ -191,7 +196,7 @@ $border-color: #777;
 .schedule-table[data-selected='coach-2'] .schedule-event[data-coach='coach-2'] > *,
 .schedule-table[data-selected='coach-3'] .schedule-event[data-coach='coach-3'] > *,
 .schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] > * {
-  opacity: 1;
+  pointer-events: auto;
 }
 
 .schedule-table[data-selected='all'] .schedule-event,
@@ -210,6 +215,7 @@ $border-color: #777;
 .schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] {
   border: 1px solid $border-color;
   background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
 
 .schedule-filter {
