@@ -10,10 +10,12 @@ import './schedule.scss';
 document.addEventListener('DOMContentLoaded', () => {
   abovetherain.initialize();
   createSelect();
-  const table = document.querySelector('.schedule-table');
-  document.querySelectorAll('.select-list li').forEach((option) => {
-    option.addEventListener('click', ({ target }) => {
-      table.dataset.selected = target.getAttribute('value');
+  const tables = document.querySelectorAll('.schedule-table');
+  tables.forEach((table) => {
+    document.querySelectorAll('.select-list li').forEach((option) => {
+      option.addEventListener('click', ({ target }) => {
+        table.dataset.selected = target.getAttribute('value');
+      });
     });
   });
 });

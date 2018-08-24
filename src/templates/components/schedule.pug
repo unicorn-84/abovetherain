@@ -368,66 +368,59 @@ table.schedule-table(data-selected="all")
       td
 //-Мобильная
 //-Понедельник
-table.schedule-table.mobile
+table.schedule-table.mobile(data-selected="all")
   thead
   tr
     th.schedule-day
     th.schedule-day Понедельник
   tbody
+    //-8:30
+    tr
+      td.schedule-time 8:30
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '8:30', '9:30')
+    //-9:00
+    tr
+      td.schedule-time 9:00
+    //-9:30
+    tr
+      td.schedule-time 9:30
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '9:30', '10:30')
+    //-10:00
+    tr
+      td.schedule-time 10:00
     //-12:00
     tr
       td.schedule-time 12:00
-      +schedule-event('2', 'service-2', 'Воздушное полотно', 'team-1', 'Виктория', '12:00', '13:00')
+      +schedule-event('2', 'direction-4', 'Растяжка на полотнах', 'coach-1', 'Наталья', '12:00', '13:00')
     //-12:30
     tr
       td.schedule-time 12:30
-    //-14:00
-    tr
-      td.schedule-time 14:00
-      +schedule-event('2', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '14:00', '15:00')
-    //-14:30
-    tr
-      td.schedule-time 14:30
-    //-15:00
-    tr
-      td.schedule-time 15:00
-      +schedule-event('3', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '15:00', '16:30')
-    //-15:30
-    tr
-      td.schedule-time 15:30
     //-16:00
     tr
       td.schedule-time 16:00
-    //-17:00
+      +schedule-event('2', 'direction-8', 'Pole Dance<br>детcкий', 'coach-4', 'Надежда', '16:00', '17:00')
+    //-16:30
     tr
-      td.schedule-time 17:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '17:00', '18:00')
-    //-17:30
-    tr
-      td.schedule-time 17:30
-    //-18:00
-    tr
-      td.schedule-time 18:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '18:00', '19:00')
-    //-18:30
-    tr
-      td.schedule-time 18:30
+      td.schedule-time 16:30
     //-19:00
     tr
       td.schedule-time 19:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '19:00', '20:00')
+      +schedule-event('3', 'direction-1', 'Йога', 'coach-1', 'Наталья', '19:00', '20:30')
     //-19:30
     tr
       td.schedule-time 19:30
     //-20:00
     tr
       td.schedule-time 20:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '20:00', '21:00')
     //-20:30
     tr
       td.schedule-time 20:30
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-4', 'Надежда', '20:30', '21:30')
+    //-21:00
+    tr
+      td.schedule-time 21:00
 //-Вторник
-table.schedule-table.mobile
+table.schedule-table.mobile(data-selected="all")
   thead
   tr
     th.schedule-day
@@ -436,61 +429,138 @@ table.schedule-table.mobile
     //-10:00
     tr
       td.schedule-time 10:00
-      +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '10:00', '11:00')
     //-10:30
     tr
       td.schedule-time 10:30
+    //-11:00
+    tr
+      td.schedule-time 11:00
+      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-3', 'Александра', '11:00', '12:00')
+    //-11:30
+    tr
+      td.schedule-time 11:30
     //-12:00
     tr
       td.schedule-time 12:00
-      +schedule-event('2', 'service-2', 'Воздушное полотно', 'team-1', 'Виктория', '12:00', '13:00')
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-3', 'Александра', '12:00', '13:00')
     //-12:30
     tr
       td.schedule-time 12:30
-    //-19:00
+    //-14:00
     tr
-      td.schedule-time 19:00
-      +schedule-event('2', 'service-5', 'Зумба', '', '', '19:00', '20:00')
-    //-19:30
+      td.schedule-time 14:00
+      +schedule-event('2', 'direction-7', 'Художественная гимнастика', 'coach-3', 'Александра', '14:00', '15:00')
+    //-14:30
     tr
-      td.schedule-time 19:30
-//-Среда
-table.schedule-table.mobile
-  thead
-  tr
-    th.schedule-day
-    th.schedule-day Среда
-  tbody
-    //-10:00
+      td.schedule-time 14:30
+    //-15:00
     tr
-      td.schedule-time 10:00
-      +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
-    //-10:30
+      td.schedule-time 15:00
+      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-2', 'Виктория', '15:00', '16:30')
+    //-15:30
     tr
-      td.schedule-time 10:30
+      td.schedule-time 15:30
+    //-16:00
+    tr
+      td.schedule-time 16:00
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '16:00', '17:00')
+    //-16:30
+    tr
+      td.schedule-time 16:30
     //-17:00
     tr
       td.schedule-time 17:00
-      +schedule-event('2', 'service-3', 'Йога', 'team-2', 'Михаил', '17:00', '18:00')
+      +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '17:00', '18:00')
     //-17:30
     tr
       td.schedule-time 17:30
     //-18:00
     tr
       td.schedule-time 18:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '18:00', '19:00')
+      +schedule-event('2', 'direction-3', 'Pole dance', 'coach-3', 'Александра', '18:00', '19:00')
     //-18:30
     tr
       td.schedule-time 18:30
+    //-19:00
+    tr
+      td.schedule-time 19:00
+      +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '19:00', '20:00')
+    //-19:30
+    tr
+      td.schedule-time 19:30
     //-20:00
     tr
       td.schedule-time 20:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '20:00', '21:00')
+      +schedule-event('2', 'direction-9', 'Спортивная гимнастика', 'coach-3', 'Александра', '20:00', '21:00')
+    //-20:30
+    tr
+      td.schedule-time 20:30
+    //-21:00
+    tr
+      td.schedule-time 21:00
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-2', 'Виктория', '21:00', '22:00')
+    //-21:00
+    tr
+      td.schedule-time 21:30
+//-Среда
+table.schedule-table.mobile(data-selected="all")
+  thead
+  tr
+    th.schedule-day
+    th.schedule-day Среда
+  tbody
+    //-9:00
+    tr
+      td.schedule-time 9:00
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '9:00', '10:00')
+    //-9:30
+    tr
+      td.schedule-time 9:30
+    //-10:00
+    tr
+      td.schedule-time 10:00
+      +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '10:00', '11:00')
+    //-10:30
+    tr
+      td.schedule-time 10:30
+    //-11:00
+    tr
+      td.schedule-time 11:00
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '11:00', '12:00')
+    //-11:30
+    tr
+      td.schedule-time 11:30
+    //-12:30
+    tr
+      td.schedule-time 12:30
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-2', 'Виктория', '12:30', '13:30')
+    //-13:00
+    tr
+      td.schedule-time 13:00
+    //-13:30
+    tr
+      td.schedule-time 13:30
+      +schedule-event('2', 'direction-4', 'Растяжка на полотнах', 'coach-1', 'Наталья', '13:30', '14:30')
+    //-14-00
+    tr
+      td.schedule-time 14:00
+    //-16:00
+    tr
+      td.schedule-time 16:00
+      +schedule-event('2', 'direction-8', 'Pole Dance<br>детcкий', 'coach-4', 'Надежда', '16:00', '17:00')
+    //-16:30
+    tr
+      td.schedule-time 16:30
+    //-20:00
+    tr
+      td.schedule-time 20:00
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-4', 'Надежда', '20:00', '21:00')
     //-20:30
     tr
       td.schedule-time 20:30
 //-Четверг
-table.schedule-table.mobile
+table.schedule-table.mobile(data-selected="all")
   thead
   tr
     th.schedule-day
@@ -499,71 +569,138 @@ table.schedule-table.mobile
     //-10:00
     tr
       td.schedule-time 10:00
-      +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '10:00', '11:00')
     //-10:30
     tr
       td.schedule-time 10:30
+    //-11:00
+    tr
+      td.schedule-time 11:00
+      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-3', 'Александра', '11:00', '12:00')
+    //-11:30
+    tr
+      td.schedule-time 11:30
     //-12:00
     tr
       td.schedule-time 12:00
-      +schedule-event('2', 'service-2', 'Воздушное полотно', 'team-1', 'Виктория', '12:00', '13:00')
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-3', 'Александра', '12:00', '13:00')
     //-12:30
     tr
       td.schedule-time 12:30
-    //-14:00
-    tr
-      td.schedule-time 14:00
-      +schedule-event('2', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '14:00', '15:00')
-    //-14:30
-    tr
-      td.schedule-time 14:30
-    //-15:00
-    tr
-      td.schedule-time 15:00
-      +schedule-event('3', 'service-4', 'Хип-хоп', 'team-3', 'Алексей', '15:00', '16:30')
-    //-15:30
-    tr
-      td.schedule-time 15:30
     //-16:00
     tr
       td.schedule-time 16:00
-//-Пятница
-table.schedule-table.mobile
-  thead
-  tr
-    th.schedule-day
-    th.schedule-day Пятница
-  tbody
+      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-2', 'Виктория', '16:00', '17:00')
+    //-16:30
+    tr
+      td.schedule-time 16:30
     //-17:00
     tr
       td.schedule-time 17:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '17:00', '18:00')
+      +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '17:00', '18:00')
     //-17:30
     tr
       td.schedule-time 17:30
     //-18:00
     tr
       td.schedule-time 18:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '18:00', '19:00')
+      +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '18:00', '19:00')
     //-18:30
     tr
       td.schedule-time 18:30
     //-19:00
     tr
       td.schedule-time 19:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-1', 'Виктория', '19:00', '20:00')
+      +schedule-event('3', 'direction-1', 'Йога', 'coach-1', 'Наталья', '19:00', '20:30')
     //-19:30
     tr
       td.schedule-time 19:30
     //-20:00
     tr
       td.schedule-time 20:00
-      +schedule-event('2', 'service-6', 'Pole dance', 'team-4', 'Надежда', '20:00', '21:00')
     //-20:30
     tr
       td.schedule-time 20:30
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-2', 'Виктория', '20:30', '21:30')
+    //-21:00
+    tr
+      td.schedule-time 21:00
+//-Пятница
+table.schedule-table.mobile(data-selected="all")
+  thead
+  tr
+    th.schedule-day
+    th.schedule-day Пятница
+  tbody
+    //-8:30
+    tr
+      td.schedule-time 8:30
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '8:30', '9:30')
+    //-9:00
+    tr
+     td.schedule-time 9:00
+    //-9:30
+    tr
+      td.schedule-time 9:30
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '9:30', '10:30')
+    //-10:00
+    tr
+      td.schedule-time 10:00
+    //-11:00
+    tr
+      td.schedule-time 11:00
+      +schedule-event('2', 'direction-4', 'Растяжка на полотнах', 'coach-1', 'Наталья', '11:00', '12:00')
+    //-11:30
+    tr
+      td.schedule-time 11:30
+    //-15:00
+    tr
+      td.schedule-time 15:00
+      +schedule-event('2', 'direction-7', 'Художественная гимнастика', 'coach-3', 'Александра', '15:00', '16:00')
+    //-15:30
+    tr
+      td.schedule-time 15:30
+    //-16:00
+    tr
+      td.schedule-time 16:00
+      +schedule-event('2', 'direction-8', 'Pole Dance<br>детcкий', 'coach-3', 'Александра', '16:00', '17:00')
+    //-16:30
+    tr
+      td.schedule-time 16:30
+    //-17:00
+    tr
+      td.schedule-time 17:00
+      +schedule-event('2', 'direction-8', 'Pole Dance<br>детcкий', 'coach-3', 'Александра', '17:00', '18:00')
+    //-17:30
+    tr
+      td.schedule-time 17:30
+    //-18:00
+    tr
+      td.schedule-time 18:00
+      +schedule-event('2', 'direction-3', 'Pole dance', 'coach-4', 'Надежда', '18:00', '19:00')
+    //-18:30
+    tr
+      td.schedule-time 18:30
+    //-19:00
+    tr
+      td.schedule-time 19:00
+      +schedule-event('2', 'direction-9', 'Спортивная гимнастика', 'coach-2', 'Виктория', '19:00', '20:00')
+    //-19:30
+    tr
+      td.schedule-time 19:30
+    //-20:00
+    tr
+      td.schedule-time 20:00
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-4', 'Надежда', '20:00', '21:00')
+    //-20:30
+    tr
+      td.schedule-time 20:30
+    //-21:00
+    tr
+      td.schedule-time 21:00
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-2', 'Виктория', '21:00', '22:00')
 //-Суббота
-table.schedule-table.mobile
+table.schedule-table.mobile(data-selected="all")
   thead
   tr
     th.schedule-day
@@ -572,24 +709,21 @@ table.schedule-table.mobile
     //-10:00
     tr
       td.schedule-time 10:00
-      +schedule-event('2', 'service-1', 'Воздушное кольцо', 'team-1', 'Виктория', '10:00', '11:00')
+      +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '10:00', '11:00')
     //-10:30
     tr
       td.schedule-time 10:30
-    //-13:30
+    //-11:00
     tr
-      td.schedule-time 13:30
-      +schedule-event('2', 'service-3', 'Йога', 'team-2', 'Михаил', '13:30', '14:30')
-    //-14:00
+      td.schedule-time 11:00
+      +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '11:00', '12:00')
+    //-11:30
     tr
-      td.schedule-time 14:00
-    //-16:00
+      td.schedule-time 11:30
+    //-12:00
     tr
-      td.schedule-time 16:00
-      +schedule-event('3', 'service-5', 'Зумба', '', '', '16:00', '17:30')
-    //-16:30
+      td.schedule-time 12:00
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-2', 'Виктория', '12:00', '13:00')
+    //-12:30
     tr
-      td.schedule-time 16:00
-    //-17:00
-    tr
-      td.schedule-time 17:00
+      td.schedule-time 12:30
