@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
       zoom: 16,
     });
     map.behaviors.disable('scrollZoom');
-    const mark = new ymaps.Placemark([59.964280, 30.272800], {},
+    const mark = new ymaps.Placemark([59.964280, 30.273500], {},
       {
         iconLayout: 'default#image',
         iconImageHref: logo,
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor: 'auto',
       });
     const route1 = new ymaps.Polyline([
-      [59.964280, 30.272800],
+      [59.964280, 30.2731],
       [59.964358, 30.273876],
       [59.963719, 30.274693],
       [59.963260, 30.273519],
@@ -64,11 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cursor: 'auto',
       });
     map.geoObjects
-      .add(mark)
       .add(route1)
       .add(route2)
       .add(route3)
-      .add(evacuator);
+      .add(evacuator)
+      .add(mark);
   }
+
   ymaps.ready(init);
 }());
