@@ -212,6 +212,15 @@ $border-color: #777;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.schedule-filter {
+  display: flex;
+  justify-content: space-between;
+
+  @include respond-to(laptop) {
+    justify-content: start;
+  }
+}
+
 .select,
 .select-list {
   border: 1px solid $border-color;
@@ -229,8 +238,15 @@ $border-color: #777;
 .select {
   color: $dark-color;
   background-color: $light-color;
-  margin-bottom: $indent * 10;
-  font-weight: $font-weight;
+  max-width: 320px;
+
+  @include respond-to(laptop) {
+    margin-right: 15px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
   &::after {
     border-color: $border-color transparent transparent;
