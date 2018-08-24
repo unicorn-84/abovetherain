@@ -17,9 +17,7 @@ $border-color: #777;
 }
 
 .schedule-wrapper {
-  @include respond-to(tablet) {
-    margin-top: 15px;
-  }
+  margin-top: 15px;
 }
 
 .schedule-table {
@@ -36,6 +34,14 @@ $border-color: #777;
   &.mobile {
     display: table;
     margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    tr:not(.schedule-table-head) {
+      display: none;
+    }
   }
 
   @include respond-to(tablet) {
@@ -243,6 +249,23 @@ $border-color: #777;
   border: 1px solid $border-color;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
+}
+
+.schedule-table.mobile[data-selected='all'] tr,
+.schedule-table.mobile[data-selected='direction-1'] tr[class*='direction-1'],
+.schedule-table.mobile[data-selected='direction-2'] tr[class*='direction-2'],
+.schedule-table.mobile[data-selected='direction-3'] tr[class*='direction-3'],
+.schedule-table.mobile[data-selected='direction-4'] tr[class*='direction-4'],
+.schedule-table.mobile[data-selected='direction-5'] tr[class*='direction-5'],
+.schedule-table.mobile[data-selected='direction-6'] tr[class*='direction-6'],
+.schedule-table.mobile[data-selected='direction-7'] tr[class*='direction-7'],
+.schedule-table.mobile[data-selected='direction-8'] tr[class*='direction-8'],
+.schedule-table.mobile[data-selected='direction-9'] tr[class*='direction-9'],
+.schedule-table.mobile[data-selected='coach-1'] tr[class*='coach-1'],
+.schedule-table.mobile[data-selected='coach-2'] tr[class*='coach-2'],
+.schedule-table.mobile[data-selected='coach-3'] tr[class*='coach-3'],
+.schedule-table.mobile[data-selected='coach-4'] tr[class*='coach-4'] {
+  display: table-row;
 }
 
 .schedule-filter {
