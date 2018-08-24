@@ -1,10 +1,10 @@
-mixin schedule-event(rowspan, serviceFile, direction, coachFile, coach, timeStart, timeEnd)
-  td.schedule-event(rowspan= rowspan data-service= serviceFile data-coach= coachFile)
+mixin schedule-event(rowspan, directionNumber, direction, coachNumber, coach, timeStart, timeEnd)
+  td.schedule-event(rowspan= rowspan data-direction= directionNumber data-coach= coachNumber)
     if direction
       .schedule-title
-        a(data-ajax href=`data/services/${serviceFile}.html`)= direction
+        a(href='services.html') !{direction}
       .schedule-interval
         span= `${timeStart}-${timeEnd}`
     if coach
       .schedule-coach
-        a(data-ajax href=`data/team/${coachFile}.html`)= coach
+        a(href='coaches.html')= coach
