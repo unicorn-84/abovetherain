@@ -1,8 +1,8 @@
-mixin schedule-event(rowspan, serviceFile, direction, coachFile, coach, timeStart, timeEnd)
-  td.schedule-event(rowspan= rowspan data-service= serviceFile data-coach= coachFile)
+mixin schedule-event(rowspan, directionNumber, direction, coachNumber, coach, timeStart, timeEnd)
+  td.schedule-event(rowspan= rowspan data-direction= directionNumber data-coach= coachNumber)
     if direction
       .schedule-title
-        a(href='services.html')= direction
+        a(href='services.html') !{direction}
       .schedule-interval
         span= `${timeStart}-${timeEnd}`
     if coach

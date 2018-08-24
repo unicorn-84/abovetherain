@@ -1,12 +1,20 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-$schedule-bg-color: $overlay;
+$schedule-bg-color: rgba(0, 0, 0, 0.8);
 $schedule-days-bg-color: $schedule-bg-color;
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: $schedule-bg-color;
 $link-color: #00be9f;
 $border-color: #777;
+
+.content-wrap {
+  .container {
+    @include respond-to(laptop) {
+      max-width: 1340px;
+    }
+  }
+}
 
 .schedule-wrapper {
   margin-top: $indent * 10;
@@ -16,10 +24,12 @@ $border-color: #777;
   display: none;
   width: calc(100% + 2px);
   table-layout: fixed;
-  //border-collapse: separate;
   text-align: center;
   margin-left: -1px;
   margin-right: -1px;
+  background-color: $schedule-bg-color;
+  border-collapse: separate;
+  border-spacing: 0;
 
   &.mobile {
     display: table;
@@ -33,15 +43,9 @@ $border-color: #777;
     }
   }
 
-  td {
-    //border: 1px dotted lighten($border-color, 10%);
-    background-color: $schedule-bg-color;
-  }
-
   .schedule-day,
   .schedule-time,
   .schedule-event {
-    border: 1px solid $border-color;
     font-family: $font-family;
     font-weight: $font-weight;
     color: $text-color;
@@ -52,11 +56,11 @@ $border-color: #777;
   .schedule-day,
   .schedule-time {
     font-size: 14px;
+    border: 1px solid $border-color;
   }
 
   .schedule-day {
     padding: $indent * 5 0;
-    background-color: $schedule-days-bg-color;
 
     &:first-child {
       width: 20%;
@@ -64,38 +68,35 @@ $border-color: #777;
       @include respond-to(tablet) {
         width: 10%;
       }
+
+      @include respond-to(laptop) {
+        width: 8%;
+      }
     }
   }
 
   .schedule-time {
-    background-color: $schedule-times-bg-color;
-    padding: $indent * 8 0;
+    padding: 20px 0;
   }
 
   .schedule-event {
     vertical-align: middle;
     padding: 0 $indent * 8;
-    background-color: $schedule-direction-color;
-    border-width: 0;
 
     @include respond-to(tablet) {
-      padding: 0 $indent * 2;
-      pointer-events: none;
+      padding: 0 5px;
 
       @include transition(opacity 0.3s $function);
     }
 
     @include respond-to(laptop) {
-      padding: 0 $indent * 4;
-    }
-
-    @include respond-to(desktop) {
-      padding: $indent * 2 $indent * 8;
+      padding: 5px 15px;
     }
 
     & > * {
       margin: $indent * 6 0;
       padding: 0;
+      transition: opacity 0.3s $function;
 
       @include respond-to(tablet) {
         margin: $indent * 4 0;
@@ -138,7 +139,7 @@ $border-color: #777;
         @include type(-1);
       }
 
-      @include respond-to(laptop) {
+      @include respond-to(desktop) {
         @include type(0);
       }
     }
@@ -177,32 +178,38 @@ $border-color: #777;
 }
 
 .schedule-table[data-selected='all'] .schedule-event > *,
-.schedule-table[data-selected='service-1'] .schedule-event[data-service='service-1'] > *,
-.schedule-table[data-selected='service-2'] .schedule-event[data-service='service-2'] > *,
-.schedule-table[data-selected='service-3'] .schedule-event[data-service='service-3'] > *,
-.schedule-table[data-selected='service-4'] .schedule-event[data-service='service-4'] > *,
-.schedule-table[data-selected='service-5'] .schedule-event[data-service='service-5'] > *,
-.schedule-table[data-selected='service-6'] .schedule-event[data-service='service-6'] > *,
-.schedule-table[data-selected='coach-1'] .schedule-event[data-coach='team-1'] > *,
-.schedule-table[data-selected='coach-2'] .schedule-event[data-coach='team-2'] > *,
-.schedule-table[data-selected='coach-3'] .schedule-event[data-coach='team-3'] > *,
-.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='team-4'] > * {
+.schedule-table[data-selected='direction-1'] .schedule-event[data-direction='direction-1'] > *,
+.schedule-table[data-selected='direction-2'] .schedule-event[data-direction='direction-2'] > *,
+.schedule-table[data-selected='direction-3'] .schedule-event[data-direction='direction-3'] > *,
+.schedule-table[data-selected='direction-4'] .schedule-event[data-direction='direction-4'] > *,
+.schedule-table[data-selected='direction-5'] .schedule-event[data-direction='direction-5'] > *,
+.schedule-table[data-selected='direction-6'] .schedule-event[data-direction='direction-6'] > *,
+.schedule-table[data-selected='direction-7'] .schedule-event[data-direction='direction-7'] > *,
+.schedule-table[data-selected='direction-8'] .schedule-event[data-direction='direction-8'] > *,
+.schedule-table[data-selected='direction-9'] .schedule-event[data-direction='direction-9'] > *,
+.schedule-table[data-selected='coach-1'] .schedule-event[data-coach='coach-1'] > *,
+.schedule-table[data-selected='coach-2'] .schedule-event[data-coach='coach-2'] > *,
+.schedule-table[data-selected='coach-3'] .schedule-event[data-coach='coach-3'] > *,
+.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] > * {
   opacity: 1;
-  pointer-events: auto;
 }
 
 .schedule-table[data-selected='all'] .schedule-event,
-.schedule-table[data-selected='service-1'] .schedule-event[data-service='service-1'],
-.schedule-table[data-selected='service-2'] .schedule-event[data-service='service-2'],
-.schedule-table[data-selected='service-3'] .schedule-event[data-service='service-3'],
-.schedule-table[data-selected='service-4'] .schedule-event[data-service='service-4'],
-.schedule-table[data-selected='service-5'] .schedule-event[data-service='service-5'],
-.schedule-table[data-selected='service-6'] .schedule-event[data-service='service-6'],
-.schedule-table[data-selected='coach-1'] .schedule-event[data-coach='team-1'],
-.schedule-table[data-selected='coach-2'] .schedule-event[data-coach='team-2'],
-.schedule-table[data-selected='coach-3'] .schedule-event[data-coach='team-3'],
-.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='team-4'] {
-  border-width: 1px;
+.schedule-table[data-selected='direction-1'] .schedule-event[data-direction='direction-1'],
+.schedule-table[data-selected='direction-2'] .schedule-event[data-direction='direction-2'],
+.schedule-table[data-selected='direction-3'] .schedule-event[data-direction='direction-3'],
+.schedule-table[data-selected='direction-4'] .schedule-event[data-direction='direction-4'],
+.schedule-table[data-selected='direction-5'] .schedule-event[data-direction='direction-5'],
+.schedule-table[data-selected='direction-6'] .schedule-event[data-direction='direction-6'],
+.schedule-table[data-selected='direction-7'] .schedule-event[data-direction='direction-7'],
+.schedule-table[data-selected='direction-8'] .schedule-event[data-direction='direction-8'],
+.schedule-table[data-selected='direction-9'] .schedule-event[data-direction='direction-9'],
+.schedule-table[data-selected='coach-1'] .schedule-event[data-coach='coach-1'],
+.schedule-table[data-selected='coach-2'] .schedule-event[data-coach='coach-2'],
+.schedule-table[data-selected='coach-3'] .schedule-event[data-coach='coach-3'],
+.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] {
+  border: 1px solid $border-color;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .select,
