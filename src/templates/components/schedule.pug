@@ -58,11 +58,11 @@ table.schedule-table(data-selected="all")
       td.schedule-time 10:00
       //-Понедельник
       //-Вторник
-      td
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '10:00', '11:00')
       //-Среда
       +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '10:00', '11:00')
       //-Четверг
-      td
+      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '10:00', '11:00')
       //-Пятница
       //-Суббота
       +schedule-event('2', 'direction-2', 'Полотно', 'coach-2', 'Виктория', '10:00', '11:00')
@@ -72,10 +72,8 @@ table.schedule-table(data-selected="all")
       //-Понедельник
       td
       //-Вторник
-      td
       //-Среда
       //-Четверг
-      td
       //-Пятница
       td
       //-Суббота
@@ -85,13 +83,13 @@ table.schedule-table(data-selected="all")
       //-Понедельник
       td
       //-Вторник
-      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '11:00', '12:00')
+      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-3', 'Александра', '11:00', '12:00')
       //-Среда
       +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '11:00', '12:00')
       //-Четверг
-      td
+      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-3', 'Александра', '11:00', '12:00')
       //-Пятница
-      +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-3', 'Александра', '11:00', '12:00')
+      +schedule-event('2', 'direction-4', 'Растяжка на полотнах', 'coach-1', 'Наталья', '11:00', '12:00')
       //-Суббота
       +schedule-event('2', 'direction-1', 'Йога', 'coach-1', 'Наталья', '11:00', '12:00')
     //-11:30
@@ -102,7 +100,6 @@ table.schedule-table(data-selected="all")
       //-Вторник
       //-Среда
       //-Четверг
-      td
       //-Пятница
       //-Суббота
     //-12:00
@@ -111,13 +108,13 @@ table.schedule-table(data-selected="all")
       //-Понедельник
       +schedule-event('2', 'direction-4', 'Растяжка на полотнах', 'coach-1', 'Наталья', '12:00', '13:00')
       //-Вторник
-      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-3', 'Александра', '12:00', '13:00')
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-3', 'Александра', '12:00', '13:00')
       //-Среда
       td
       //-Четверг
-      td
+      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-3', 'Александра', '12:00', '13:00')
       //-Пятница
-      +schedule-event('2', 'direction-5', 'Кольцо', 'coach-3', 'Александра', '12:00', '13:00')
+      td
       //-Суббота
       +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-2', 'Виктория', '12:00', '13:00')
     //-12:30
@@ -128,8 +125,8 @@ table.schedule-table(data-selected="all")
       //-Среда
       +schedule-event('2', 'direction-3', 'Pole Dance', 'coach-2', 'Виктория', '12:30', '13:30')
       //-Четверг
-      td
       //-Пятница
+      td
       //-Суббота
     //-13:00
     tr
@@ -137,12 +134,12 @@ table.schedule-table(data-selected="all")
       //-Понедельник
       td
       //-Вторник
-      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-3', 'Александра', '13:00', '14:00')
+      td
       //-Среда
       //-Четверг
       td
       //-Пятница
-      +schedule-event('2', 'direction-6', 'Растяжка', 'coach-3', 'Александра', '13:00', '14:00')
+      td
       //-Суббота
       td
     //-13:30
@@ -151,11 +148,13 @@ table.schedule-table(data-selected="all")
       //-Понедельник
       td
       //-Вторник
+      td
       //-Среда
       +schedule-event('2', 'direction-4', 'Растяжка на полотнах', 'coach-1', 'Наталья', '13:30', '14:30')
       //-Четверг
       td
       //-Пятница
+      td
       //-Суббота
       td
     //-14-00
