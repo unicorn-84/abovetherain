@@ -111,7 +111,7 @@
     },
     {
       "name": "yoga",
-      "title": "Йога"
+      "title": "Королевская йога"
     }
   ],
   "direction": [
@@ -152,9 +152,6 @@
       "title": "Спортивная гимнастика"
     }
   ],
-  "days": [
-  
-  ],
   "team": {
     "name": "team",
     "title": "<h2>Над Дождём</h2>",
@@ -179,15 +176,12 @@
       "title": "Виктория",
       "directions": [
         {
-          "name": "aerial-hoop",
-          "title": "Воздушное кольцо"
+          "title": "Кольцо"
         },
         {
-          "name": "aerial-silk",
-          "title": "Воздушное полотно"
+          "title": "Полотно"
         },
         {
-          "name": "pole-dance",
           "title": "Pole dance"
         }
       ]
@@ -198,8 +192,7 @@
       "title": "Александра",
       "directions": [
         {
-          "name": "pole-dance",
-          "title": "Pole dance"
+          "title": "Кольцо"
         }
       ]
     },
@@ -209,8 +202,7 @@
       "title": "Надежда",
       "directions": [
         {
-          "name": "stretching",
-          "title": "Растяжка на полотнах"
+          "title": "Pole dance"
         }
       ]
     }
