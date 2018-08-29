@@ -183,8 +183,8 @@
     },
     {
       "id": 2,
-      "name": "aleksandra",
-      "title": "Александра",
+      "name": "nadezhda",
+      "title": "Надежда",
       "directions": [
         {
           "name": "stretching",
@@ -194,8 +194,8 @@
     },
     {
       "id": 3,
-      "name": "nadezhda",
-      "title": "Надежда",
+      "name": "aleksandra",
+      "title": "Александра",
       "directions": [
         {
           "name": "pole-dance",
