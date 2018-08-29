@@ -135,6 +135,17 @@
   "coaches": [
     {
       "id": 1,
+      "name": "natalia",
+      "title": "Наталья",
+      "directions": [
+        {
+          "name": "yoga",
+          "title": "Йога"
+        }
+      ]
+    },
+    {
+      "id": 2,
       "name": "victoria",
       "title": "Виктория",
       "directions": [
@@ -153,17 +164,6 @@
       ]
     },
     {
-      "id": 2,
-      "name": "nadezhda",
-      "title": "Надежда",
-      "directions": [
-        {
-          "name": "stretching",
-          "title": "Растяжка на полотнах"
-        }
-      ]
-    },
-    {
       "id": 3,
       "name": "aleksandra",
       "title": "Александра",
@@ -176,12 +176,12 @@
     },
     {
       "id": 4,
-      "name": "natalia",
-      "title": "Наталья",
+      "name": "nadezhda",
+      "title": "Надежда",
       "directions": [
         {
-          "name": "yoga",
-          "title": "Йога"
+          "name": "stretching",
+          "title": "Растяжка на полотнах"
         }
       ]
     }
