@@ -1,33 +1,36 @@
-// SCSS
-import './select.scss';
 // JS
 import wrap from '../helpers';
 
+const nativeSelects = document.querySelectorAll('select[data-select]');
+
 function resetNativeSelect() {
-  document.querySelectorAll('select[data-select]').forEach((nativeSelect) => {
-    for (let i = 0; i < nativeSelect.options.length; i += 1) {
-      nativeSelect.options[i].removeAttribute('selected');
-      nativeSelect.options[i].selected = nativeSelect.options[i].defaultSelected;
+  nativeSelects.forEach((nativeSelect) => {
+    const item = nativeSelect;
+    if (item.options) {
+      for (let i = 0; i < item.options.length; i += 1) {
+        item.options[i].removeAttribute('selected');
+        item.options[i].selected = item.options[i].defaultSelected;
+      }
+      item.options[item.selectedIndex].setAttribute('selected', 'selected');
+      item.parentNode.childNodes[1].textContent = item.options[item.selectedIndex].textContent;
     }
-    nativeSelect.options[nativeSelect.selectedIndex].setAttribute('selected', 'selected');
-    nativeSelect.parentNode.childNodes[1].textContent = nativeSelect.options[nativeSelect.selectedIndex].textContent;
   });
 }
 
 function customOptionHandler({ target }, nativeSelectOption) {
   const select = target.closest('.select');
   const nativeSelect = nativeSelectOption.parentNode;
+  const customSelectList = target.parentNode;
   select.childNodes[1].textContent = target.textContent;
   if (!target.hasAttribute('selected')) {
-    for (let i = 0; i < target.parentNode.childNodes.length; i += 1) {
-      target.parentNode.childNodes[i].removeAttribute('selected');
+    for (let i = 0; i < customSelectList.childNodes.length; i += 1) {
+      customSelectList.childNodes[i].removeAttribute('selected');
     }
     target.setAttribute('selected', 'selected');
   }
   if (!nativeSelectOption.hasAttribute('selected')) {
-    nativeSelect.options[nativeSelect.selectedIndex].selected = false;
+    nativeSelect.options.selectedIndex = Array.from(target.parentNode.children).indexOf(target);
     nativeSelect.options[nativeSelect.selectedIndex].removeAttribute('selected');
-    nativeSelectOption.selected = true;
     nativeSelectOption.setAttribute('selected', 'selected');
   }
 }
@@ -43,7 +46,7 @@ function createCustomSelectOption(customSelectList, nativeSelectOption) {
   customSelectOption.setAttribute('value', nativeSelectOption.getAttribute('value'));
   customSelectOption.innerHTML = nativeSelectOption.innerHTML;
   if (nativeSelectOption.selected) {
-    customSelectOption.setAttribute('selected', '');
+    customSelectOption.setAttribute('selected', 'selected');
   }
   customSelectOption.addEventListener('click', (e) => {
     resetNativeSelect();
@@ -65,14 +68,15 @@ function createCustomSelect(nativeSelect) {
   const customSelect = document.createElement('div');
   customSelect.classList.add('select');
   wrap(nativeSelect, customSelect);
-  customSelect.append(nativeSelect.options[nativeSelect.selectedIndex].innerHTML);
   if (nativeSelect.options.length > 0) {
+    customSelect.append(nativeSelect.options[nativeSelect.selectedIndex].innerHTML);
     customSelect.append(createCustomSelectList(nativeSelect));
   }
+  return customSelect;
 }
 
 function createSelect() {
-  document.querySelectorAll('select[data-select]').forEach((nativeSelect) => {
+  nativeSelects.forEach((nativeSelect) => {
     createCustomSelect(nativeSelect);
   });
   document.body.addEventListener('click', ({ target }) => {
