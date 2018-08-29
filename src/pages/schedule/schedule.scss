@@ -30,17 +30,24 @@ $border-color: #777;
   background-color: $schedule-bg-color;
   border-collapse: separate;
   border-spacing: 0;
+  border: 1px solid $border-color;
 
   &.mobile {
     display: table;
-    margin-bottom: 30px;
+    background-color: transparent;
+    border: none;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    tr:not(.schedule-table-head) {
+    tr {
       display: none;
+      background-color: $schedule-bg-color;
+
+      &.schedule-table-margin {
+        background-color: transparent;
+
+        td {
+          padding-bottom: 30px;
+        }
+      }
     }
   }
 
@@ -228,7 +235,13 @@ $border-color: #777;
 .schedule-table[data-selected='coach-1'] .schedule-event[data-coach='coach-1'] > *,
 .schedule-table[data-selected='coach-2'] .schedule-event[data-coach='coach-2'] > *,
 .schedule-table[data-selected='coach-3'] .schedule-event[data-coach='coach-3'] > *,
-.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] > * {
+.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] > *,
+.schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'] > *,
+.schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'] > *,
+.schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'] > *,
+.schedule-table[data-selected='day-4'] .schedule-event[data-day='day-4'] > *,
+.schedule-table[data-selected='day-5'] .schedule-event[data-day='day-5'] > *,
+.schedule-table[data-selected='day-6'] .schedule-event[data-day='day-6'] > * {
   pointer-events: auto;
 }
 
@@ -245,7 +258,13 @@ $border-color: #777;
 .schedule-table[data-selected='coach-1'] .schedule-event[data-coach='coach-1'],
 .schedule-table[data-selected='coach-2'] .schedule-event[data-coach='coach-2'],
 .schedule-table[data-selected='coach-3'] .schedule-event[data-coach='coach-3'],
-.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'] {
+.schedule-table[data-selected='coach-4'] .schedule-event[data-coach='coach-4'],
+.schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'],
+.schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'],
+.schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'],
+.schedule-table[data-selected='day-4'] .schedule-event[data-day='day-4'],
+.schedule-table[data-selected='day-5'] .schedule-event[data-day='day-5'],
+.schedule-table[data-selected='day-6'] .schedule-event[data-day='day-6'] {
   border: 1px solid $border-color;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
@@ -264,7 +283,13 @@ $border-color: #777;
 .schedule-table.mobile[data-selected='coach-1'] tr[class*='coach-1'],
 .schedule-table.mobile[data-selected='coach-2'] tr[class*='coach-2'],
 .schedule-table.mobile[data-selected='coach-3'] tr[class*='coach-3'],
-.schedule-table.mobile[data-selected='coach-4'] tr[class*='coach-4'] {
+.schedule-table.mobile[data-selected='coach-4'] tr[class*='coach-4'],
+.schedule-table[data-selected='day-1'] tr[class*='day-1'],
+.schedule-table[data-selected='day-2'] tr[class*='day-2'],
+.schedule-table[data-selected='day-3'] tr[class*='day-3'],
+.schedule-table[data-selected='day-4'] tr[class*='day-4'],
+.schedule-table[data-selected='day-5'] tr[class*='day-5'],
+.schedule-table[data-selected='day-6'] tr[class*='day-6'] {
   display: table-row;
 }
 
@@ -305,6 +330,10 @@ $border-color: #777;
 
     &:last-child {
       margin-right: 0;
+    }
+
+    &#day-select {
+      display: none;
     }
   }
 

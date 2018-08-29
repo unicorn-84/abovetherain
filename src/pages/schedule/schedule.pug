@@ -38,6 +38,14 @@ append content
                 option(value="coach-2") Виктория
                 option(value="coach-3") Александра
                 option(value="coach-4") Надежда
+              select#day-select(data-select)
+                option(value="all" selected) Все дни
+                option(value="day-1") Понедельник
+                option(value="day-2") Вторник
+                option(value="day-3") Среда
+                option(value="day-4") Четверг
+                option(value="day-5") Пятница
+                option(value="day-6") Суббота
           .col-12
             .schedule-wrapper
               include ../../templates/components/schedule

@@ -67,6 +67,7 @@ function createCustomSelectList(nativeSelect) {
 function createCustomSelect(nativeSelect) {
   const customSelect = document.createElement('div');
   customSelect.classList.add('select');
+  customSelect.id = nativeSelect.id;
   wrap(nativeSelect, customSelect);
   if (nativeSelect.options.length > 0) {
     customSelect.append(nativeSelect.options[nativeSelect.selectedIndex].innerHTML);

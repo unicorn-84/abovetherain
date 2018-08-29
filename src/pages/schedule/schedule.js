@@ -44,18 +44,17 @@ const data = {
 const { direction } = data;
 const { coach } = data;
 const { day } = data;
-const defaultStateObject = {
+let stateObject = {
   direction: 'all',
   coach: 'all',
   day: 'all',
 };
-const queryState = {};
 function makeQuery(object) {
   return Object.keys(object).map(i => [i, object[i]].join('=')).join('&');
 }
 function makeStateObject(object) {
   if (!object) {
-    return defaultStateObject;
+    return stateObject;
   }
   return object;
 }
@@ -72,19 +71,19 @@ function checkQuery() {
           if (direction.indexOf(parameters[i].direction) < 0) {
             return false;
           }
-          queryState.direction = parameters[i].direction;
+          stateObject.direction = parameters[i].direction;
           break;
         case 'coach':
           if (coach.indexOf(parameters[i].coach) < 0) {
             return false;
           }
-          queryState.coach = parameters[i].coach;
+          stateObject.coach = parameters[i].coach;
           break;
         case 'day':
           if (day.indexOf(parameters[i].day) < 0) {
             return false;
           }
-          queryState.day = parameters[i].day;
+          stateObject.day = parameters[i].day;
           break;
         default:
           return false;
@@ -94,13 +93,13 @@ function checkQuery() {
   }
   return false;
 }
-function replaceQuery(stateObject) {
-  window.history.replaceState(stateObject, '', `?${makeQuery(makeStateObject(stateObject))}`);
+function replaceQuery(object) {
+  window.history.replaceState(object, '', `?${makeQuery(makeStateObject(object))}`);
 }
 function setSelects(...selects) {
   for (const select of selects) {
     for (let i = 0; i < select.options.length; i += 1) {
-      if (select.options[i].value === queryState[select.id.split('-')[0]]) {
+      if (select.options[i].value === stateObject[select.id.split('-')[0]]) {
         select.options.selectedIndex = i;
         break;
       }
@@ -110,10 +109,10 @@ function setSelects(...selects) {
 function sortTable(tables) {
   tables.forEach((table) => {
     const item = table;
-    if (queryState.direction !== 'all') {
-      item.dataset.selected = queryState.direction;
+    if (stateObject.direction !== 'all') {
+      item.dataset.selected = stateObject.direction;
     } else {
-      item.dataset.selected = queryState.coach;
+      item.dataset.selected = stateObject.coach;
     }
   });
 }
@@ -121,21 +120,30 @@ document.addEventListener('DOMContentLoaded', () => {
   abovetherain.initialize();
   const tables = document.querySelectorAll('.schedule-table');
   const nativeSelects = document.querySelectorAll('select[data-select]');
-  const directionSelect = document.querySelector('#direction-select');
-  const coachSelect = document.querySelector('#coach-select');
-  // const daySelect = document.querySelector('#day-select');
+  const directionSelect = document.querySelector('select#direction-select');
+  const coachSelect = document.querySelector('select#coach-select');
+  const daySelect = document.querySelector('select#day-select');
   nativeSelects.forEach((nativeSelect) => {
     const item = nativeSelect;
     item.onchange = () => {
-      queryState[item.id.split('-')[0]] = data[item.id.split('-')[0]][item.options.selectedIndex];
-      replaceQuery(queryState);
+      stateObject = {
+        direction: 'all',
+        coach: 'all',
+        day: 'all',
+      };
+      stateObject[item.id.split('-')[0]] = data[item.id.split('-')[0]][item.options.selectedIndex];
+      console.log(stateObject);
+      replaceQuery(stateObject);
     };
   });
   if (checkQuery()) {
-    setSelects(directionSelect, coachSelect);
+    stateObject.direction = 'all';
+    stateObject.day = 'all';
+    replaceQuery(stateObject);
+    setSelects(directionSelect, coachSelect, daySelect);
     sortTable(tables);
   } else {
-    replaceQuery(defaultStateObject);
+    replaceQuery(stateObject);
   }
   createSelect();
   const customOptions = document.querySelectorAll('.select-list > li');
