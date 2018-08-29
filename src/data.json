@@ -114,6 +114,47 @@
       "title": "Йога"
     }
   ],
+  "direction": [
+    {
+      "id": 1,
+      "title": "Йога"
+    },
+    {
+      "id": 2,
+      "title": "Полотно"
+    },
+    {
+      "id": 3,
+      "title": "Pole Dance"
+    },
+    {
+      "id": 4,
+      "title": "Растяжка на полотнах"
+    },
+    {
+      "id": 5,
+      "title": "Кольцо"
+    },
+    {
+      "id": 6,
+      "title": "Растяжка"
+    },
+    {
+      "id": 7,
+      "title": "Художественная гимнастика"
+    },
+    {
+      "id": 8,
+      "title": "Pole Dance детский"
+    },
+    {
+      "id": 9,
+      "title": "Спортивная гимнастика"
+    }
+  ],
+  "days": [
+  
+  ],
   "team": {
     "name": "team",
     "title": "<h2>Над Дождём</h2>",
@@ -122,6 +163,7 @@
   },
   "coaches": [
     {
+      "id": 1,
       "name": "victoria",
       "title": "Виктория",
       "directions": [
@@ -140,6 +182,7 @@
       ]
     },
     {
+      "id": 2,
       "name": "aleksandra",
       "title": "Александра",
       "directions": [
@@ -150,6 +193,7 @@
       ]
     },
     {
+      "id": 3,
       "name": "nadezhda",
       "title": "Надежда",
       "directions": [
@@ -160,6 +204,7 @@
       ]
     },
     {
+      "id": 4,
       "name": "natalia",
       "title": "Наталья",
       "directions": [
