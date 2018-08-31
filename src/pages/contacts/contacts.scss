@@ -1,39 +1,36 @@
-.address-item {
-  margin: 32px 0 0 24px;
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
-  @media screen and (max-width: 767px) {
-    margin-left: 0;
+.contact-content {
+  margin-bottom: $indent * 16;
+  font-family: $heading-font-family;
+  font-weight: $heading-font-weight;
+  color: $text-color;
+
+  @include respond-to(laptop) {
+    margin-left: $indent * 8;
   }
 
-  p {
-    margin-bottom: 16px;
-    font-size: 18px;
-    line-height: 1;
+  i {
+    padding-right: $indent * 8;
+  }
 
-    @media screen and (max-width: 767px) {
-      font-size: 16px;
-    }
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    i {
-      padding-right: 16px;
-    }
+  .contact-address,
+  .contact-phone,
+  .contact-email {
+    @include type(1);
 
     a {
-      text-decoration: none;
-      color: inherit;
+      @include link($link-color, 1);
     }
+  }
+
+  .contact-address,
+  .contact-phone {
+    margin-bottom: $indent * 8;
   }
 }
 
-form {
-  margin: 64px;
-
-  .sm-form-control {
-    margin-bottom: 16px;
-    border-radius: 3px !important;
-  }
+#yandex-map {
+  height: 500px;
 }

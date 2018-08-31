@@ -9,12 +9,13 @@ const glob = require('glob');
 module.exports = {
   mode: 'production',
   output: {
-    filename: './scripts/[name].[hash].js',
-    chunkFilename: './scripts/[name].[hash].js',
+    filename: '[name].[contenthash:4].js',
+    chunkFilename: '[name].[contenthash:4].js',
   },
   devtool: false,
   module: {
     rules: [
+      // JS
       {
         test: /\.js$/,
         exclude: /(node_modules|bower_components)/,
@@ -26,13 +27,14 @@ module.exports = {
           },
         },
       },
+      // Images
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[hash].[ext]',
+              name: 'images/[name].[hash:4].[ext]',
             },
           },
         ],
@@ -49,6 +51,7 @@ module.exports = {
     ],
   },
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -91,7 +94,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].css',
+      filename: '[name].[contenthash:4].css',
     }),
     // new PurgecssPlugin({
     //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),

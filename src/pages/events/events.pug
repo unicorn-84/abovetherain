@@ -17,23 +17,23 @@ append content
   +pageTitle(pages.events)
   section#content
     .content-wrap
-      .container.clearfix
-        #posts.events.small-thumbs
-          each event in events
-            .entry.clearfix.nobg.noborder.nopadding
-              .entry-image
-                a(href= event.link)
-                  img(src= event.img.src alt= event.img.alt)
-                  .entry-date #{event.date.day}
-                    span= event.date.month
-              .entry-c
-                .entry-title
-                  h2
-                    a(href= event.link)= event.title
-                .entry-content
-                  p= event.excerpt
-                  a(href= event.link) Подробнее...
-
-
+      .events-wrapper
+        .container
+          .row
+            each event in events
+              .col-md-6.col-xl-12
+                .event
+                  .event-image
+                    a(href= event.link)
+                      img(src= event.img.src alt= event.img.alt)
+                      .event-date
+                        span= event.date.day
+                        span= event.date.month
+                  .event-content
+                    .event-title
+                      h3= event.title
+                    .event-excerpt
+                      p= event.excerpt
+                      a(href= event.link) Подробнее...
 append scripts
   //Page scripts

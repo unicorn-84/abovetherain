@@ -65,11 +65,11 @@ function modalHandler(element) {
 }
 
 document.body.addEventListener('click', (e) => {
-  console.log(e.target);
-  if (e.target.hasAttribute('data-ajax')) {
-    console.log(e.target);
+  const target = e.target.closest('[data-ajax]');
+  if (target) {
+    console.log(target);
     e.stopPropagation();
     e.preventDefault();
-    modalHandler(e.target);
+    modalHandler(target);
   }
 });

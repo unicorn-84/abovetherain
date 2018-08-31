@@ -1,3 +1,9 @@
+@import 'fonts';
+@import 'icons';
+@import 'variables';
+@import 'mixins';
+@import 'keyframes';
+
 // Initialize
 @import 'scss/variables.scss';
 @import 'scss/mixins.scss';
@@ -14,8 +20,8 @@
 @import 'scss/pagetitle.scss';
 @import 'scss/content.scss';
 @import 'scss/portfolio.scss';
-@import 'scss/blog.scss';
-@import 'scss/shop.scss';
+//@import 'scss/blog.scss';
+//@import 'scss/shop.scss';
 @import 'scss/events.scss';
 
 // Shortcodes
@@ -30,5 +36,9 @@
 // Extras
 @import 'scss/extras.scss';
 
-// Custom
-@import 'scss/custom/custom';
+//Dark
+@import 'scss/dark';
+
+//Responsive
+@import 'scss/responsive';
+@import 'custom';

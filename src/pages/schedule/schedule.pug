@@ -17,25 +17,37 @@ append content
   +pageTitle(pages.schedule)
   section#content
     .content-wrap
-      .container.clerafix
-        .col_full.nobottommargin
-          //.col_one_third.nobottommargin
-          //  select
-          //    option(value="all" selected) Направление
-          //    option(value="direction-1") Воздушное кольцо
-          //    option(value="direction-2") Воздушное полотно
-          //    option(value="direction-3") Йога
-          //    option(value="direction-4") Хип-хоп
-          //    option(value="direction-5") Зумба
-          //    option(value="direction-6") Pole dance
-          //.col_one_third.nobottommargin
-          //  select
-          //    option(value="all" selected) Тренер
-          //    option(value="team-1") Виктория
-          //    option(value="team-2") Михаил
-          //    option(value="team-3") Алексей
-          //    option(value="team-4") Надежда
-          .schedule-wrapper
-            include ../../templates/components/schedule
+      .container
+        .row
+          .col-12
+            .schedule-filter
+              select#direction-select(data-select)
+                option(value="all" selected) Все направления
+                option(value="direction-1") Йога
+                option(value="direction-2") Полотно
+                option(value="direction-3") Pole Dance
+                option(value="direction-4") Растяжка на полотнах
+                option(value="direction-5") Кольцо
+                option(value="direction-6") Растяжка
+                option(value="direction-7") Художественная гимнастика
+                option(value="direction-8") Pole Dance детcкий
+                option(value="direction-9") Спортивная гимнастика
+              select#coach-select(data-select)
+                option(value="all" selected) Все тренеры
+                option(value="coach-1") Натали
+                option(value="coach-2") Виктория
+                option(value="coach-3") Александра
+                option(value="coach-4") Надежда
+              select#day-select(data-select)
+                option(value="all" selected) Все дни
+                option(value="day-1") Понедельник
+                option(value="day-2") Вторник
+                option(value="day-3") Среда
+                option(value="day-4") Четверг
+                option(value="day-5") Пятница
+                option(value="day-6") Суббота
+          .col-12
+            .schedule-wrapper
+              include ../../templates/components/schedule
 append scripts
   //Page scripts

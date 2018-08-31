@@ -1,7 +1,8 @@
 extends ../../templates/layout
 append variables
-  -
-    const { options, pages, primaryNavigation, team } = require('../../data');
+  -const { options, pages, primaryNavigation, team } = require('../../data');
+  -const teamPhoto = require('../../images/team/thumbnails/team.jpg');
+  -const bigTeamPhoto = require('../../images/team/team.jpg');
 //-HEAD
 append meta
   //Page meta tags
@@ -18,19 +19,16 @@ append content
   +pageTitle(pages.team)
   section#content
     .content-wrap
-      .container.clearfix
+      .container
         .row
-           each coach in team
-            .col-lg-6.bottommargin
-              .team.team-list.clearfix
-                .team-image
-                  img(src= coach.src alt= coach.title)
-                .team-desc
-                  .team-title
-                    h4 #{coach.title}
-                    each direction in coach.directions
-                      span #{direction}
-                  .team-content
-                    p #{coach.description}
+          .col
+            .team-wrapper
+              //-TODO Слайдер для 'Мы'
+              .team-photo
+                picture
+                  source(media="(min-width: 768px)" srcset= bigTeamPhoto)
+                  img(src= teamPhoto alt="Над Дождём")
+              .team-content
+                .team-title !{team.title}
+                .team-description !{team.description}
 append scripts
-  //Page scripts

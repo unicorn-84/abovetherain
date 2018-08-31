@@ -18,6 +18,7 @@ const commonConfig = merge([
       schedule: './pages/schedule/schedule',
       events: './pages/events/events',
       team: './pages/team/team',
+      coaches: './pages/coaches/coaches',
       gallery: './pages/gallery/gallery',
       contacts: './pages/contacts/contacts',
     },
@@ -39,6 +40,17 @@ const commonConfig = merge([
             },
           ],
         },
+        {
+          test: /\.(eot|svg|ttf|woff|woff2)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'fonts/[name].[ext]',
+              },
+            },
+          ],
+        },
       ],
     },
     plugins: [
@@ -46,7 +58,7 @@ const commonConfig = merge([
       new AsyncChunkNames(),
       new CopyWebpackPlugin([
         {
-          from: './scripts',
+          from: './scripts/**/*.js',
           to: 'scripts/[name].[ext]',
           toType: 'template',
         },
@@ -58,32 +70,18 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
-      new CopyWebpackPlugin([
-        {
-          from: './fonts',
-          to: 'fonts/[path][name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      new CopyWebpackPlugin([
-        {
-          from: './images',
-          to: 'images/[path][name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      new CopyWebpackPlugin([
-        {
-          from: './data',
-          to: 'data/[path][name].[ext]',
-          toType: 'template',
-        },
-      ]),
+      // new CopyWebpackPlugin([
+      //   {
+      //     from: './data',
+      //     to: 'data/[path][name].[ext]',
+      //     toType: 'template',
+      //   },
+      // ]),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        excludeChunks: ['services', 'schedule', 'events', 'team', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -95,7 +93,7 @@ const commonConfig = merge([
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
-        excludeChunks: ['index', 'schedule', 'events', 'team', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -107,7 +105,7 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
-        excludeChunks: ['index', 'services', 'events', 'team', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'events', 'team', 'coaches', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -119,7 +117,7 @@ const commonConfig = merge([
         filename: 'events.html',
         template: './pages/events/events.pug',
         name: 'events',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -131,7 +129,19 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'coaches', 'gallery', 'contacts', 'event'],
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        filename: 'coaches.html',
+        template: './pages/coaches/coaches.pug',
+        name: 'event',
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -143,7 +153,7 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'contacts', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -155,7 +165,7 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'event'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -167,7 +177,7 @@ const commonConfig = merge([
         filename: 'event.html',
         template: './pages/events/event.pug',
         name: 'event',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'contacts'],
+        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -184,7 +194,7 @@ const commonConfig = merge([
 
 module.exports = (mode) => {
   if (mode === 'production') {
-    return merge(commonConfig, productionConfig, { mode });
+    return merge(commonConfig, productionConfig, {mode});
   }
-  return merge(commonConfig, developmentConfig, { mode });
+  return merge(commonConfig, developmentConfig, {mode});
 };

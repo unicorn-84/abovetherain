@@ -1,0 +1,67 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.gallery-wrapper {
+  margin-bottom: -30px;
+}
+
+.gallery-image {
+  margin-bottom: 30px;
+  box-shadow: $box-shadow;
+  position: relative;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  &::before {
+    display: none;
+    position: absolute;
+    content: '';
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 80%);
+    transition: opacity 0.3s $function, visibility 0.1s 0.1s $function;
+  }
+
+  @include respond-to(laptop) {
+    &::before {
+      display: block;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  a {
+    display: block;
+
+    &::before {
+      display: block;
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.7) 80%);
+      transition: none;
+    }
+
+    @include respond-to(laptop) {
+      &::before {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+extends ../../templates/layout
+append variables
+  -
+    const { options, pages, primaryNavigation, coaches } = require('../../data');
+//-HEAD
+append meta
+  //Page meta tags
+  title= `${options.siteName} | ${pages.coaches.title}`
+  meta(name="description" content= pages.description)
+append icons
+  //Page icons
+append styles
+  //Page styles
+//-BODY
+append header
+  +header(primaryNavigation.items)
+append content
+  +pageTitle(pages.coaches)
+  section#content
+    .content-wrap
+      .coaches-wrapper
+        .container
+          .row
+            each coach in coaches
+              .col-sm-6.col-md-6.col-lg-4.col-xl-3
+                .coach-wrapper
+                  .coach
+                    .coach-image
+                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.siteName} | ${coach.title}`)
+                    .coach-info
+                      div
+                        .coach-title
+                          h2= coach.title
+                        .coach-directions
+                          each direction in coach.directions
+                            a(data-ajax href=`data/services/${direction.name}.html`)
+                              h4= direction.title
+                      .coach-icons
+                        a(data-ajax href=`data/team/team-1.html`)
+                          i.icon-line2-info
+                        a(href=`schedule.html?direction=all&coach=coach-${coach.id}&day=all`)
+                          i.icon-calendar2
+append scripts
+  //Page scripts
+

@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'scss/mixins';
+@import 'functions';
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: nth(map-get($breakpoints, $breakpoint), 1);
+
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin type($level: 0) {
+  font-size: type-scale($level);
+  line-height: $line-height;
+}
+
+@mixin animation($variables...) {
+  animation: $variables;
+}
+
+@mixin transition($variables...) {
+  transition: $variables;
+}
+
+@mixin link($color: $link-color, $type: 0) {
+  color: $color;
+  text-decoration: underline rgba($link-color, 0.5) !important;
+
+  @include type($type);
+
+  @include respond-to(laptop) {
+    text-decoration: none !important;
+  }
+
+  &:focus,
+  &:hover {
+    text-decoration: underline rgba($link-color, 0.5) !important;
+  }
+}

@@ -1,0 +1,21 @@
+@import 'variables';
+@import 'mixins';
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  background-color: $link-color;
+}
+
+#wrapper {
+  background: transparent url('../images/fon/thumbnails/fon.jpg') center fixed / cover;
+
+  @include respond-to(laptop) {
+    background: transparent url('../images/fon/fon.jpg') center fixed / cover;
+  }
+}

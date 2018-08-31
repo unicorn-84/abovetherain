@@ -10,17 +10,19 @@ module.exports = {
   },
   module: {
     rules: [
+      // Images
       {
         test: /\.(png|jpg|gif|svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]',
+              name: 'images/[name].[ext]',
             },
           },
         ],
       },
+      // CSS
       {
         test: /\.(sa|sc|c)ss$/,
         use: [

@@ -1,2 +1,11 @@
-import '../../scripts/components/modal/modal.scss';
+// SCSS
+import 'bootstrap/scss/bootstrap.scss';
+import '../../styles/style.scss';
+import './services.scss';
+// JS
+import abovetherain from '../../scripts/init';
 import '../../scripts/components/modal/modal';
+
+document.addEventListener('DOMContentLoaded', () => {
+  abovetherain.initialize();
+});

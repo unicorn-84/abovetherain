@@ -1,0 +1,57 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.services-wrapper {
+  margin-bottom: -30px;
+}
+
+.service {
+  position: relative;
+  flex-direction: column;
+  margin-bottom: 30px;
+  box-shadow: $box-shadow;
+
+  &::before {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8));
+  }
+
+  .service-image {
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .service-info {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    .service-title {
+      padding: 15px;
+
+      h2 {
+        margin: 0;
+        text-align: center;
+        text-shadow: $text-shadow;
+
+        @include type(0);
+
+        @include respond-to(laptop) {
+          @include type(1);
+        }
+
+        font-weight: $heading-font-weight;
+      }
+    }
+  }
+}

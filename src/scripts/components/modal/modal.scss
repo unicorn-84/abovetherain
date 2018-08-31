@@ -1,4 +1,5 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .rain-modal,
 .rain-modal-overlay {
@@ -19,7 +20,7 @@
     backface-visibility: hidden;
     position: absolute;
     z-index: 1002;
-    background-color: rgba($dark-color, 0.7);
+    background-color: rgba(#333, 0.7);
 
     @include animation(opacity 0.3s $function);
   }
@@ -74,7 +75,7 @@
     &:hover {
       &::before,
       &::after {
-        background-color: darken($light-color, $hover-percent);
+        background-color: darken($light-color, 20%);
       }
     }
   }
@@ -121,12 +122,14 @@
   h3 {
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
+    color: $dark-color;
   }
 
   p {
     font-family: $font-family;
     font-weight: $font-weight;
     font-size: $font-size;
+    color: $dark-color;
 
     &:not(:last-child) {
       margin-bottom: 0;

@@ -297,8 +297,8 @@
 
 	#header.transparent-header,
 	#header.semi-transparent {
-		background: #FFF;
-		border-bottom: 1px solid #F5F5F5;
+		//background: #FFF;
+		//border-bottom: 1px solid #F5F5F5;
 		z-index: auto;
 	}
 
@@ -373,6 +373,7 @@
 		border: 0 !important;
 		padding: 0 !important;
 		margin: 0 !important;
+
 		@include transition(none);
 	}
 
@@ -412,7 +413,6 @@
 		float: none;
 		margin: 0 !important;
 		text-align: left !important;
-		border-top: 1px solid #EEE;
 	}
 
 	#header.split-menu #primary-menu:not(.mobile-menu-off-canvas) > ul:not(:first-child) > li:first-child { border-top: 1px solid #EEE; }
@@ -470,7 +470,7 @@
 
 	#primary-menu > ul > li.sub-menu > a,
 	#primary-menu > .container > ul > li.sub-menu > a {
-		background-image: url("../images/icons/submenu.png");
+		background-image: url("../images/icons/submenu-dark.png");
 		background-position: right center;
 		background-repeat: no-repeat;
 	}
@@ -485,8 +485,7 @@
 		max-width: none;
 		background: transparent !important;
 		box-shadow: none;
-		border: 0;
-		border-top: 1px solid #EEE;
+		border: none;
 		z-index: 1;
 		top: 0;
 		padding-left: 15px;
@@ -510,7 +509,7 @@
 	#primary-menu ul ul li {
 		float: none;
 		margin: 0;
-		border-top: 1px solid #EEE;
+		border-top: none !important;
 	}
 
 	#primary-menu ul ul li > a {
@@ -518,6 +517,11 @@
 		font-size: 13px;
 		text-transform: none;
 		font-weight: 400;
+		color: $light-color !important;
+
+    header.index &{
+      color: $dark-color !important
+    }
 	}
 
 	#primary-menu ul ul li:hover > a {
@@ -562,7 +566,6 @@
 		margin: 0;
 		border-left: 0 !important;
 		padding-left: 15px;
-		border-top: 1px solid #EEE;
 	}
 
 	#primary-menu ul li .mega-menu-content ul.mega-menu-column:first-child { border: 0; }
@@ -1376,7 +1379,7 @@
 	}
 
 	#page-title {
-		padding: 20px 0 25px;
+		padding: 40px 0;
 		text-align: center;
 		h1 {
 			line-height: 1.5;
@@ -1595,9 +1598,6 @@
 				display: none;
 			}
 		}
-	}
-	h5 {
-		margin: 10px 0 0 0;
 	}
 
 	.tabs-responsive .tab-container { padding: 0 !important; }
@@ -1846,8 +1846,6 @@
 }
 
 @media (max-width: 575px) {
-
-	.container,
 	#header.full-header .container,
 	.container-fullwidth {
 		width: 100% !important;
