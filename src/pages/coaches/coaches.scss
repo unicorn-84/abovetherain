@@ -5,17 +5,13 @@
   margin-bottom: -30px;
 
   @include respond-to(desktop) {
-    margin-bottom: 0;
+
   }
 }
 
 .coach-wrapper {
   overflow: hidden;
   margin-bottom: 30px;
-
-  @include respond-to(desktop) {
-    margin-bottom: 0;
-  }
 }
 
 .coach {
@@ -29,6 +25,7 @@
     animation: slide 1s ease-in-out forwards;
   }
 
+  .coaches-wrapper [class*='col']:nth-child(1) &,
   .coaches-wrapper [class*='col']:nth-child(1) & {
     animation-delay: 0.2s;
   }
