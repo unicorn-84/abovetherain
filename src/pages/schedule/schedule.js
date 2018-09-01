@@ -132,7 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
         day: 'all',
       };
       stateObject[item.id.split('-')[0]] = data[item.id.split('-')[0]][item.options.selectedIndex];
-      console.log(stateObject);
       replaceQuery(stateObject);
     };
   });

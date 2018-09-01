@@ -1,22 +1,46 @@
 [
   {
-    "id": 0,
-    "name": "Акробатическое кольцо"
+    "name": "direction-1",
+    "title": "Йога"
   },
   {
-    "id": 1,
-    "name": "Воздушное полотно"
+    "name": "direction-2",
+    "title": "Полотно"
   },
   {
-    "id": 2,
-    "name": "Йога"
+    "name": "direction-3",
+    "title": "Pole Dance"
   },
   {
-    "id": 3,
-    "name": "Хип-хоп"
+    "name": "direction-4",
+    "title": "Растяжка на полотнах"
   },
   {
-    "id": 4,
-    "name": "Pole dance"
+    "name": "direction-5",
+    "title": "Кольцо"
+  },
+  {
+    "name": "direction-6",
+    "title": "Растяжка"
+  },
+  {
+    "name": "direction-7",
+    "title": "Художественная гимнастика"
+  },
+  {
+    "name": "direction-8",
+    "title": "Pole Dance детский"
+  },
+  {
+    "name": "direction-9",
+    "title": "Спортивная гимнастика"
+  },
+  {
+    "name": "direction-10",
+    "title": "Функциональный тренинг"
+  },
+  {
+    "name": "direction-11",
+    "title": "Женская пластика"
   }
 ]
