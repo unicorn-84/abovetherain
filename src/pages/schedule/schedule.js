@@ -28,6 +28,7 @@ const data = {
     'coach-2',
     'coach-3',
     'coach-4',
+    'coach-5',
   ],
   day: [
     'all',
