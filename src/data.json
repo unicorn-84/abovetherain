@@ -161,7 +161,7 @@
   "coaches": [
     {
       "id": 1,
-      "name": "natalia",
+      "name": "nataliia",
       "title": "Натали",
       "directions": [
         {
@@ -203,6 +203,22 @@
       "directions": [
         {
           "title": "Pole dance"
+        },
+        {
+          "title": "Растяжка"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "yana",
+      "title": "Яна",
+      "directions": [
+        {
+          "title": "Функциональный тренинг"
+        },
+        {
+          "title": "Женская пластика"
         }
       ]
     }
