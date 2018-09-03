@@ -49,6 +49,16 @@ $border-color: #777;
         }
       }
     }
+    
+    th {
+      &:first-child {
+        display: none;
+
+        @include respond-to(tablet) {
+          display: table-cell;
+        }
+      }
+    }
   }
 
   @include respond-to(tablet) {
@@ -100,10 +110,12 @@ $border-color: #777;
   }
 
   .schedule-time {
+    display: none;
     padding: 20px 0;
 
     @include respond-to(tablet) {
       font-size: 10px;
+      display: table-cell;
     }
 
     @include respond-to(laptop) {

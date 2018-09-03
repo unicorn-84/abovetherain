@@ -3,10 +3,6 @@
 
 .coaches-wrapper {
   margin-bottom: -30px;
-
-  @include respond-to(desktop) {
-
-  }
 }
 
 .coach-wrapper {
@@ -26,20 +22,17 @@
   }
 
   .coaches-wrapper [class*='col']:nth-child(1) &,
-  .coaches-wrapper [class*='col']:nth-child(1) & {
+  .coaches-wrapper [class*='col']:nth-child(4) & {
     animation-delay: 0.2s;
   }
 
-  .coaches-wrapper [class*='col']:nth-child(2) & {
+  .coaches-wrapper [class*='col']:nth-child(2) &,
+  .coaches-wrapper [class*='col']:nth-child(5) & {
     animation-delay: 0.4s;
   }
 
   .coaches-wrapper [class*='col']:nth-child(3) & {
     animation-delay: 0.6s;
-  }
-
-  .coaches-wrapper [class*='col']:nth-child(4) & {
-    animation-delay: 0.8s;
   }
 
   &::before {
