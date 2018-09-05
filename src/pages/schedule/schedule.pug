@@ -1,6 +1,9 @@
 extends ../../templates/layout
 append variables
-  -const { options, pages, primaryNavigation } = require('../../data');
+  -
+    const { options, pages, primaryNavigation } = require('../../data');
+    const directions = require('../../data/directions');
+    const coaches = require('../../data/coaches');
 //-HEAD
 append meta
   //Page meta tags
@@ -23,24 +26,12 @@ append content
             .schedule-filter
               select#direction-select(data-select)
                 option(value="all" selected) Все направления
-                option(value="direction-1") Йога
-                option(value="direction-2") Полотно
-                option(value="direction-3") Pole Dance
-                option(value="direction-4") Растяжка на полотнах
-                option(value="direction-5") Кольцо
-                option(value="direction-6") Растяжка
-                option(value="direction-7") Художественная гимнастика
-                option(value="direction-8") Pole Dance детcкий
-                option(value="direction-9") Спортивная гимнастика
-                option(value="direction-10") Функциональный тренинг
-                option(value="direction-11") Женская пластика
+                each direction in directions
+                  option(value= direction.name)= direction.title
               select#coach-select(data-select)
                 option(value="all" selected) Все тренеры
-                option(value="coach-1") Натали
-                option(value="coach-2") Виктория
-                option(value="coach-3") Александра
-                option(value="coach-4") Надежда
-                option(value="coach-5") Яна
+                each coach in coaches
+                  option(value= coach.name)= coach.title
               select#day-select(data-select)
                 option(value="all" selected) Все дни
                 option(value="day-1") Понедельник

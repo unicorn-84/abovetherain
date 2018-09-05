@@ -1,5 +1,5 @@
-mixin schedule-event(rowspan, directionNumber, direction, coachNumber, coach, dayNumber, timeStart, timeEnd)
-  td.schedule-event(rowspan= rowspan data-direction= directionNumber data-coach= coachNumber data-day= dayNumber)
+mixin schedule-event(rowspan, directionClass, direction, coachClass, coach, dayClass, timeStart, timeEnd)
+  td.schedule-event(rowspan= rowspan data-direction= directionClass data-coach= coachClass data-day= dayClass)
     if direction
       .schedule-title
         a(href='services.html') !{direction}

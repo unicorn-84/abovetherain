@@ -1,46 +1,42 @@
 [
   {
-    "name": "direction-1",
-    "title": "Йога"
+    "name": "d01",
+    "title": "Королевская йога"
   },
   {
-    "name": "direction-2",
-    "title": "Полотно"
-  },
-  {
-    "name": "direction-3",
+    "name": "d02",
     "title": "Pole Dance"
   },
   {
-    "name": "direction-4",
-    "title": "Растяжка на полотнах"
+    "name": "d03",
+    "title": "Детский Pole Dance"
   },
   {
-    "name": "direction-5",
-    "title": "Кольцо"
+    "name": "d04",
+    "title": "Stretching"
   },
   {
-    "name": "direction-6",
-    "title": "Растяжка"
+    "name": "d05",
+    "title": "Stretching на полотнах"
   },
   {
-    "name": "direction-7",
+    "name": "d06",
+    "title": "Воздушное кольцо"
+  },
+  {
+    "name": "d07",
+    "title": "Воздушное полотно"
+  },
+  {
+    "name": "d08",
     "title": "Художественная гимнастика"
   },
   {
-    "name": "direction-8",
-    "title": "Pole Dance детский"
-  },
-  {
-    "name": "direction-9",
-    "title": "Спортивная гимнастика"
-  },
-  {
-    "name": "direction-10",
+    "name": "d09",
     "title": "Функциональный тренинг"
   },
   {
-    "name": "direction-11",
+    "name": "d10",
     "title": "Женская пластика"
   }
 ]

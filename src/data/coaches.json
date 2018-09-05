@@ -1,32 +1,22 @@
 [
   {
-    "id": 0,
-    "name": "Виктория",
-    "directions": [
-      0,
-      1,
-      4
-    ]
+    "name": "c01",
+    "title": "Виктория"
   },
   {
-    "id": 1,
-    "name": "Михаил",
-    "directions": [
-      2
-    ]
+    "name": "c02",
+    "title": "Натали"
   },
   {
-    "id": 2,
-    "name": "Алексей",
-    "directions": [
-      3
-    ]
+    "name": "c03",
+    "title": "Александра"
   },
   {
-    "id": 3,
-    "name": "Надежда",
-    "directions": [
-      4
-    ]
+    "name": "c04",
+    "title": "Надежда"
+  },
+  {
+    "name": "c05",
+    "title": "Яна"
   }
 ]

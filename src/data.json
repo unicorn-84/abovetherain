@@ -131,7 +131,7 @@
   },
   "coaches": [
     {
-      "id": 1,
+      "id": "c02",
       "name": "nataliia",
       "title": "Натали",
       "directions": [
@@ -144,7 +144,7 @@
       ]
     },
     {
-      "id": 2,
+      "id": "c01",
       "name": "victoria",
       "title": "Виктория",
       "directions": [
@@ -160,7 +160,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "c03",
       "name": "aleksandra",
       "title": "Александра",
       "directions": [
@@ -179,7 +179,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "c04",
       "name": "nadezhda",
       "title": "Надежда",
       "directions": [
@@ -192,7 +192,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": "c05",
       "name": "yana",
       "title": "Яна",
       "directions": [
