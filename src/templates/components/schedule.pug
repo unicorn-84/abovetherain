@@ -25,7 +25,8 @@ table.schedule-table(data-selected="all")
       //-Пятница
       +schedule-event('3', 'd01', 'Королевская йога', 'c02', 'Натали', 'day-5', '9:00', '10:30')
       //-Суббота
-      +schedule-event('2', 'd04', 'Stretching', '', '', 'day-6', '9:00', '10:00')
+      td
+      //+schedule-event('2', 'd04', 'Stretching', '', '', 'day-6', '9:00', '10:00')
     //-9:30
     tr
       td.schedule-time 9:30
@@ -35,6 +36,7 @@ table.schedule-table(data-selected="all")
       //-Четверг
       //-Пятница
       //-Суббота
+      td
     //-10:00
     tr
       td.schedule-time 10:00
@@ -44,7 +46,7 @@ table.schedule-table(data-selected="all")
       //-Четверг
       //-Пятница
       //-Суббота
-      +schedule-event('2', 'd10', 'Женская пластика', 'c05', 'Яна', 'day-6', '10:00', '11:00')
+      +schedule-event('2', 'd04', 'Stretching', '', '', 'day-6', '10:00', '11:00')
     //-10:30
     tr
       td.schedule-time 10:30
@@ -97,7 +99,8 @@ table.schedule-table(data-selected="all")
       //-Пятница
       td
       //-Суббота
-      +schedule-event('2', 'd04', 'Stretching', 'c05', 'Яна', 'day-6', '12:00', '13:00')
+      td
+      //+schedule-event('2', 'd04', 'Stretching', 'c05', 'Яна', 'day-6', '12:00', '13:00')
     //-12:30
     tr
       td.schedule-time 12:30
@@ -111,6 +114,7 @@ table.schedule-table(data-selected="all")
       //-Пятница
       +schedule-event('2', 'd06', 'Воздушное кольцо', 'c03', 'Александра', 'day-5', '12:30', '13:30')
       //-Суббота
+      +schedule-event('2', 'd02', 'Pole Dance', 'c01', 'Виктория', 'day-6', '12:30', '13:30')
     //-13:00
     tr
       td.schedule-time 13:00
@@ -121,7 +125,6 @@ table.schedule-table(data-selected="all")
       td
       //-Пятница
       //-Суббота
-      td
     //-13:30
     tr
       td.schedule-time 13:30
@@ -136,7 +139,8 @@ table.schedule-table(data-selected="all")
       //-Пятница
       +schedule-event('2', 'd04', 'Stretching', 'c03', 'Александра', 'day-5', '13:30', '14:30')
       //-Суббота
-      +schedule-event('2', 'd02', 'Pole Dance', 'c01', 'Виктория', 'day-6', '13:30', '14:30')
+      td
+      //+schedule-event('2', 'd02', 'Pole Dance', 'c01', 'Виктория', 'day-6', '13:30', '14:30')
     //-14-00
     tr
       td.schedule-time 14:00
@@ -147,6 +151,7 @@ table.schedule-table(data-selected="all")
       //-Четверг
       //-Пятница
       //-Суббота
+      +schedule-event('2', 'd10', 'Женская пластика', 'c05', 'Яна', 'day-6', '14:00', '15:00')
     //-14:30
     tr
       td.schedule-time 14:30
@@ -160,7 +165,6 @@ table.schedule-table(data-selected="all")
       //-Пятница
       +schedule-event('2', 'd08', 'Художественная гимнастика', 'c03', 'Александра', 'day-5', '14:30', '15:30')
       //-Суббота
-      td
     //-15:00
     tr
       td.schedule-time 15:00
@@ -200,7 +204,7 @@ table.schedule-table(data-selected="all")
       //-Пятница
       +schedule-event('2', 'd02', 'Pole Dance', 'c03', 'Александра', 'day-5', '16:00', '17:00')
       //-Суббота
-      +schedule-event('2', 'd04', 'Stretching', 'c01', 'Виктория', 'day-6', '16:00', '17:00')
+      +schedule-event('2', 'd04', 'Stretching', 'c05', 'Яна', 'day-6', '16:00', '17:00')
     //-16:30
     tr
       td.schedule-time 16:30
@@ -774,18 +778,13 @@ table.schedule-table.mobile(data-selected="all")
   tbody
     //-8:30
     //-9:00
-    tr.d04.day-6
-      td.schedule-time 9:00
-      +schedule-event('2', 'd04', 'Stretching', '', '', 'day-6', '9:00', '10:00')
     //-9:30
-    tr.d04.day-6
-      td.schedule-time 9:30
     //-10:00
-    tr.d10.c05.day-6
+    tr.d04.day-6
       td.schedule-time 10:00
-      +schedule-event('2', 'd10', 'Женская пластика', 'c05', 'Яна', 'day-6', '10:00', '11:00')
+      +schedule-event('2', 'd04', 'Stretching', '', '', 'day-6', '10:00', '11:00')
     //-10:30
-    tr.d10.c05.day-6
+    tr.d04.day-6
       td.schedule-time 10:30
     //-11:00
     tr.d07.c01.day-6
@@ -795,21 +794,21 @@ table.schedule-table.mobile(data-selected="all")
     tr.d07.c01.day-6
       td.schedule-time 11:30
     //-12:00
-    tr.d04.c05.day-6
-      td.schedule-time 12:00
-      +schedule-event('2', 'd04', 'Stretching', 'c05', 'Яна', 'day-6', '12:00', '13:00')
     //-12:30
-    tr.d04.c05.day-6
+    tr.d02.c01.day-6
       td.schedule-time 12:30
+      +schedule-event('2', 'd02', 'Pole Dance', 'c01', 'Виктория', 'day-6', '12:30', '13:30')
     //-13:00
+    tr.d02.c01.day-6
+      td.schedule-time 13:00
     //-13:30
-    tr.d02.c01.day-6
-      td.schedule-time 13:30
-      +schedule-event('2', 'd02', 'Pole Dance', 'c01', 'Виктория', 'day-6', '13:30', '14:30')
     //-14:00
-    tr.d02.c01.day-6
+    tr.d10.c05.day-6
       td.schedule-time 14:00
+      +schedule-event('2', 'd10', 'Женская пластика', 'c05', 'Яна', 'day-6', '14:00', '15:00')
     //-14:30
+    tr.d10.c05.day-6
+      td.schedule-time 14:30
     //-15:00
     tr.d09.c05.day-6
       td.schedule-time 15:00
@@ -818,11 +817,11 @@ table.schedule-table.mobile(data-selected="all")
     tr.d09.c05.day-6
       td.schedule-time 15:30
     //-16:00
-    tr.d04.c01.day-6
+    tr.d04.c05.day-6
       td.schedule-time 16:00
-      +schedule-event('2', 'd04', 'Stretching', 'c01', 'Виктория', 'day-6', '16:00', '17:00')
+      +schedule-event('2', 'd04', 'Stretching', 'c05', 'Яна', 'day-6', '16:00', '17:00')
     //-16:30
-    tr.d04.c01.day-6
+    tr.d04.c05.day-6
       td.schedule-time 16:30
     //-17:00
     //-17:30
