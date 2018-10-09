@@ -50,6 +50,10 @@
         "title": "Расписание"
       },
       {
+        "name": "events",
+        "title": "Афиша"
+      },
+      {
         "name": "coaches",
         "title": "Мы"
       },
