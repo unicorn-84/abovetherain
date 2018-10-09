@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{12:function(n,e,t){"use strict";t(0),t(1),t(13);var i=function(n){return n&&n.__esModule?n:{default:n}}(t(2));t(3),document.addEventListener("DOMContentLoaded",function(){i.default.initialize()})},13:function(n,e,t){}},[[12,2,0,1]]]);
