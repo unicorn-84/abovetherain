@@ -6,12 +6,17 @@
 }
 
 .event {
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin-bottom: $indent * 20;
+  //margin-bottom: $indent * 20;
+  background-color: rgba(#000, 0.5);
+  max-width: 800px;
+  margin: auto;
 
   @include respond-to(desktop) {
     flex-direction: row;
+    max-width: 100%;
   }
 }
 
@@ -25,8 +30,8 @@
 
   .event & {
     @include respond-to(desktop) {
-      margin: 0 $indent * 10 0 0;
-      flex-basis: 30%;
+      margin: 0 $indent * 15 0 0;
+      flex-basis: 35%;
     }
   }
 
@@ -40,9 +45,9 @@
     position: absolute;
     top: 10px;
     left: 25px;
-    background-color: rgba($dark-color, 0.8);
+    background-color: rgba(#000, 0.8);
     color: $light-color;
-    text-shadow: 1px 1px 1px rgba($dark-color, 0.2);
+    text-shadow: 1px 1px 1px rgba(#000, 0.2);
     padding: $indent * 6;
     font-family: $font-family;
     font-weight: $font-weight;
@@ -86,12 +91,15 @@
 }
 
 .event-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 0 $indent * 6;
 
   .event & {
     @include respond-to(desktop) {
       padding: $indent * 3 0 0;
-      flex-basis: 70%;
+      flex-basis: 65%;
     }
   }
 
@@ -108,12 +116,16 @@
 
   .event-excerpt {
     p {
-      margin: $indent * 10 0;
+      margin: 0 0 $indent * 10 0;
       font-family: $font-family;
       font-weight: $font-weight;
       color: $text-color;
 
       @include type(0);
+
+      @include  respond-to(desktop) {
+        margin: 0;
+      }
     }
 
     a {
