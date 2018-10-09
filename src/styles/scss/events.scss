@@ -2,7 +2,7 @@
 @import '../mixins';
 
 .events-wrapper {
-  margin-bottom: $indent * -20;
+  //margin-bottom: $indent * -20;
 }
 
 .event {
@@ -123,7 +123,7 @@
 
       @include type(0);
 
-      @include  respond-to(desktop) {
+      @include respond-to(desktop) {
         margin: 0;
       }
     }
