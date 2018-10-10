@@ -5,6 +5,10 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const cssnano = require('cssnano');
 const glob = require('glob');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+const AddAssetPlugin = require('add-asset-webpack-plugin');
+const { common } = require('./src/data');
 
 module.exports = {
   mode: 'production',
@@ -29,7 +33,7 @@ module.exports = {
       },
       // Images
       {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(png|jpg|gif|svg|ico)$/,
         use: [
           {
             loader: 'file-loader',
@@ -99,5 +103,26 @@ module.exports = {
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
     }),
+    new SitemapPlugin(common.url, ['/'], {
+      lastMod: true,
+      changeFreq: 'always',
+      priority: '1',
+    }),
+    new RobotstxtPlugin({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: '',
+          crawlDelay: 1,
+        },
+      ],
+      sitemap: `${common.url}/sitemap.xml.gz`,
+      host: common.url,
+    }),
+    new AddAssetPlugin('humans.txt', `/* TEAM */\nDeveloper: ${common.author}\nSite: ${common.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(common.lang, {
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+    })}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
   ],
 };
