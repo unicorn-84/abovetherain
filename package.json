@@ -21,6 +21,7 @@
     "node": "8.11.1"
   },
   "devDependencies": {
+    "add-asset-webpack-plugin": "^0.1.0",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
