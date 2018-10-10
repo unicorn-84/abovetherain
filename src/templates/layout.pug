@@ -1,9 +1,8 @@
 //-Common variables
 block variables
-  -const pageName = htmlWebpackPlugin.options.name;
 //-Markup
 doctype html
-html(lang="ru-RU")
+html(lang= common.lang, dir= common.dir, prefix='og: //ogp.me/ns#')
   head
     block meta
       include ./blocks/meta
