@@ -19,35 +19,51 @@
     "descriptions": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.",
     "index": {
       "name": "index",
-      "title": "Главная"
+      "title": "Главная",
+      "keys": "",
+      "description": ""
     },
     "services": {
       "name": "services",
-      "title": "Услуги"
+      "title": "Услуги",
+      "keys": "",
+      "description": ""
     },
     "schedule": {
       "name": "schedule",
-      "title": "Расписание"
+      "title": "Расписание",
+      "keys": "",
+      "description": ""
     },
     "events": {
       "name": "events",
-      "title": "Афиша"
+      "title": "Афиша",
+      "keys": "",
+      "description": ""
     },
     "team": {
       "name": "team",
-      "title": "Мы"
+      "title": "Мы",
+      "keys": "",
+      "description": ""
     },
     "coaches": {
       "name": "coaches",
-      "title": "Тренеры"
+      "title": "Тренеры",
+      "keys": "",
+      "description": ""
     },
     "gallery": {
       "name": "gallery",
-      "title": "Галерея"
+      "title": "Галерея",
+      "keys": "",
+      "description": ""
     },
     "contacts": {
       "name": "contacts",
-      "title": "Контакты"
+      "title": "Контакты",
+      "keys": "",
+      "description": ""
     }
   },
   "primaryNavigation": {
