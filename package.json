@@ -1,6 +1,6 @@
 {
   "name": "overtherain",
-  "version": "0.10.0",
+  "version": "1.0.0",
   "description": "Dance Club static web site",
   "scripts": {
     "dev": "webpack --env development",
