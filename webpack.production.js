@@ -5,6 +5,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const cssnano = require('cssnano');
 const glob = require('glob');
+const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const { common } = require('./src/data');
 
 module.exports = {
   mode: 'production',
@@ -99,5 +101,10 @@ module.exports = {
     // new PurgecssPlugin({
     //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
     // }),
+    new SitemapPlugin(common.url, ['/'], {
+      lastMod: true,
+      changeFreq: 'always',
+      priority: '1',
+    }),
   ],
 };
