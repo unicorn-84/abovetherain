@@ -21,19 +21,24 @@ append content
         .container
           .row
             each event in events
-              .col-md-6.col-xl-12
+              .col-sm-12
                 .event
                   .event-image
-                    a(href= event.link)
-                      img(src= event.img.src alt= event.img.alt)
+                    a(href= require('../../images/events/28-10-2018.jpg'))
+                      img(src= require('../../images/events/28-10-2018.jpg') alt= event.img.alt)
                       .event-date
                         span= event.date.day
                         span= event.date.month
                   .event-content
                     .event-title
-                      h3= event.title
+                      h3 !{event.title}
                     .event-excerpt
-                      p= event.excerpt
-                      a(href= event.link) Подробнее...
+                      p.
+                        Впервые в САНКТ-ПЕТЕРБУРГЕ! <br>
+                        28 октября 2018 <br>
+                        В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ <br>
+                        <a href="https://vk.com/naddozhdem"><span>https://vk.com/naddozhdem</span></a><br>
+                        Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+
 append scripts
   //Page scripts
