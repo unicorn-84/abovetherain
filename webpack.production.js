@@ -6,7 +6,8 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const cssnano = require('cssnano');
 const glob = require('glob');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
-const { common } = require('./src/data');
+const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+const {common} = require('./src/data');
 
 module.exports = {
   mode: 'production',
@@ -105,6 +106,17 @@ module.exports = {
       lastMod: true,
       changeFreq: 'always',
       priority: '1',
+    }),
+    new RobotstxtPlugin({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: '',
+          crawlDelay: 1,
+        },
+      ],
+      sitemap: `${common.url}/sitemap.xml.gz`,
+      host: common.url,
     }),
   ],
 };
