@@ -1,0 +1,24 @@
+extends ../../templates/layout
+append variables
+    - const { common, options, pages, primaryNavigation } = require('../../data');
+//-HEAD
+append meta
+    //Page meta tags
+    title= `${common.name} | ${pages.requisites.title}`
+    if pages.requisites.description
+        meta(name='description', content= pages.requisites.description)
+    else
+        meta(name='description', content= common.description)
+    if pages.requisites.keys
+        meta(name='keywords', content= pages.requisites.keys)
+append icons
+    //Page icons
+append styles
+    //Page styles
+//-BODY
+append header
+    +header(primaryNavigation.items)
+append content
+block footer
+append scripts
+    //Page scripts

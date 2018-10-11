@@ -64,6 +64,12 @@
       "title": "Контакты",
       "keys": "",
       "description": ""
+    },
+    "requisites": {
+      "name": "requisites",
+      "title": "Реквизиты",
+      "keys": "",
+      "description": ""
     }
   },
   "primaryNavigation": {
