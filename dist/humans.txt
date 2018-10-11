@@ -1,0 +1,10 @@
+/* TEAM */
+Developer: unicorn-84
+Site: unicorn-84@ya.ru
+Location: Saint Petersburg, Russia
+
+/* SITE */
+Last update: 2018-10-11
+Language: Russian
+Standards: HTML5, CSS3, ES6
+IDE: WebStorm
