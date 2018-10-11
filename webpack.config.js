@@ -82,7 +82,7 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        excludeChunks: ['services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -94,7 +94,7 @@ const commonConfig = merge([
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
-        excludeChunks: ['index', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -106,7 +106,7 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
-        excludeChunks: ['index', 'services', 'events', 'team', 'coaches', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'events', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -118,7 +118,7 @@ const commonConfig = merge([
         filename: 'events.html',
         template: './pages/events/events.pug',
         name: 'events',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -130,7 +130,7 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'coaches', 'gallery', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -141,7 +141,7 @@ const commonConfig = merge([
       new HtmlWebpackPlugin({
         filename: 'coaches.html',
         template: './pages/coaches/coaches.pug',
-        name: 'event',
+        name: 'coaches',
         excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'contacts'],
         minify: {
           removeComments: production,
@@ -154,7 +154,7 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'contacts', 'event'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -166,19 +166,7 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'event'],
-        minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'event.html',
-        template: './pages/events/event.pug',
-        name: 'event',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts'],
+        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
