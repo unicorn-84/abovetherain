@@ -26,7 +26,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env'],
+            presets: ['airbnb'],
             plugins: ['syntax-dynamic-import'],
           },
         },
