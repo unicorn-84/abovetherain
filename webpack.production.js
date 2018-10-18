@@ -112,7 +112,8 @@ module.exports = {
       policy: [
         {
           userAgent: '*',
-          disallow: '',
+          allow: '/index.html',
+          disallow: '/',
           crawlDelay: 1,
         },
       ],
