@@ -8,14 +8,26 @@
   outline: none !important;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   background-color: $link-color;
 }
 
 #wrapper {
+  display: flex;
+  flex-flow: column nowrap;
+  min-height: 100%;
   background: transparent url('../images/fon/thumbnails/fon.jpg') center fixed / cover;
 
   @include respond-to(laptop) {
     background: transparent url('../images/fon/fon.jpg') center fixed / cover;
   }
+}
+
+#content {
+  flex: auto;
 }
