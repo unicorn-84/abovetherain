@@ -31,7 +31,7 @@ append content
               .col-sm-12
                 .event
                   div.event-image
-                    a(href= require(`../../images/events/${event.name}/${event.poster.fileName}`))
+                    a(href= `events/${event.name}.html`)
                       img(src= require(`../../images/events/${event.name}/${event.poster.fileName}`) alt= event.poster.alt)
                       .event-date
                         span= event.date[0]
@@ -40,15 +40,23 @@ append content
                     .event-title
                       h3 !{event.title}
                     .event-excerpt
-                      p Впервые в САНКТ-ПЕТЕРБУРГЕ!
-                      p 28 октября 2018
-                      p В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ
                       p
-                       a(href="https://vk.com/naddozhdem")
-                         span
-                          b https://vk.com/naddozhdem
-                      p Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
-                      p
+                        |Впервые в САНКТ-ПЕТЕРБУРГЕ!
+                        br
+                        |28 октября 2018
+                        br
+                        |В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
+                        br
+                        a(href="https://vk.com/naddozhdem")
+                          span
+                            b https://vk.com/naddozhdem
+                        br
+                        |Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+                        |
+                        a(href= `events/${event.name}.html`)
+                          em
+                            span Подробнее...
+                        br
                         a(href='requisites.html')
                           span
                             b Реквизиты для оплаты
