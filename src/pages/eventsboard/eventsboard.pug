@@ -31,14 +31,17 @@ append content
               .col-sm-12
                 .event
                   div.event-image
-                    a(href= `events/${event.name}.html`)
+                    a(href= `${event.name}.html`)
                       img(src= require(`../../images/events/${event.name}/${event.poster.fileName}`) alt= event.poster.alt)
                       .event-date
                         span= event.date[0]
                         span= event.date[1]
                   .event-content
                     .event-title
-                      h3 !{event.title}
+                      h3
+                        |Мастер-класс
+                        br
+                        |Софы Макуриной
                     .event-excerpt
                       p
                         |Впервые в САНКТ-ПЕТЕРБУРГЕ!
@@ -53,9 +56,8 @@ append content
                         br
                         |Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
                         |
-                        a(href= `events/${event.name}.html`)
-                          em
-                            span Подробнее...
+                        a(href= `${event.name}.html`)
+                          span Подробнее...
                         br
                         a(href='requisites.html')
                           span
