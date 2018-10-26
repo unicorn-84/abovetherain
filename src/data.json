@@ -35,8 +35,8 @@
       "keys": "",
       "description": ""
     },
-    "events": {
-      "name": "events",
+    "eventsboard": {
+      "name": "eventsboard",
       "title": "Афиша",
       "keys": "",
       "description": ""
@@ -101,7 +101,7 @@
         "title": "Расписание"
       },
       {
-        "name": "events",
+        "name": "eventsboard",
         "title": "Афиша"
       },
       {
@@ -247,21 +247,6 @@
         }
 
       ]
-    }
-  ],
-  "events": [
-    {
-      "title": "МАСТЕР-КЛАСС<br>СОФЫ МАКУРИНОЙ",
-      "excerpt": "",
-      "link": "",
-      "img": {
-        "src": "",
-        "alt": "МАСТЕР-КЛАСС СОФЫ МАКУРИНОЙ"
-      },
-      "date": {
-        "day": 28,
-        "month": "Октября"
-      }
     }
   ],
   "contacts": {

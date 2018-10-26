@@ -1,16 +1,18 @@
 extends ../../templates/layout
 append variables
-  -const { common, options, pages, primaryNavigation, events } = require('../../data');
+  -
+    const { common, options, pages, primaryNavigation } = require('../../data');
+    const events = require('../../data/events')
 //-HEAD
 append meta
   //Page meta tags
-  title= `${common.name} | ${pages.events.title}`
-  if pages.events.description
-    meta(name='description', content= pages.events.description)
+  title= `${common.name} | ${pages.eventsboard.title}`
+  if pages.eventsboard.description
+    meta(name='description', content= pages.eventsboard.description)
   else
     meta(name='description', content= common.description)
-  if pages.events.keys
-    meta(name='keywords', content= pages.events.keys)
+  if pages.eventsboard.keys
+    meta(name='keywords', content= pages.eventsboard.keys)
 append icons
   //Page icons
 append styles
@@ -19,7 +21,7 @@ append styles
 append header
   +header(primaryNavigation.items)
 append content
-  +pageTitle(pages.events)
+  +pageTitle(pages.eventsboard)
   section#content
     .content-wrap
       .events-wrapper
@@ -29,11 +31,11 @@ append content
               .col-sm-12
                 .event
                   div.event-image
-                    a(href= 'events/sofa-makurina-master-class.html')
-                      img(src= require('../../images/events/28-10-2018.jpg') alt= event.img.alt)
+                    a(href= require(`../../images/events/${event.name}/${event.poster.fileName}`))
+                      img(src= require(`../../images/events/${event.name}/${event.poster.fileName}`) alt= event.poster.alt)
                       .event-date
-                        span= event.date.day
-                        span= event.date.month
+                        span= event.date[0]
+                        span= event.date[1]
                   .event-content
                     .event-title
                       h3 !{event.title}
