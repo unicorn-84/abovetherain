@@ -16,7 +16,10 @@ const commonConfig = merge([
       index: './pages/index/index',
       services: './pages/services/services',
       schedule: './pages/schedule/schedule',
-      eventsboard: './pages/eventsboard/eventsboard',
+      eventsboard: [
+        './pages/eventsboard/eventsboard',
+        // './pages/eventsboard/events/sofa-makurina-master-class',
+      ],
       team: './pages/team/team',
       coaches: './pages/coaches/coaches',
       gallery: './pages/gallery/gallery',
@@ -179,18 +182,6 @@ const commonConfig = merge([
         template: './pages/requisites/requisites.pug',
         name: 'requisites',
         excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts'],
-        minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        filename: 'sofa-makurina-master-class.html',
-        template: './pages/events/events/sofa-makurina-master-class.pug',
-        name: 'sofa-makurina-master-class',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
