@@ -16,7 +16,7 @@ const commonConfig = merge([
       index: './pages/index/index',
       services: './pages/services/services',
       schedule: './pages/schedule/schedule',
-      events: './pages/events/events',
+      eventsboard: './pages/eventsboard/eventsboard',
       team: './pages/team/team',
       coaches: './pages/coaches/coaches',
       gallery: './pages/gallery/gallery',
@@ -82,7 +82,7 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        excludeChunks: ['services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: ['services', 'schedule', 'eventsboard', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -94,7 +94,7 @@ const commonConfig = merge([
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
-        excludeChunks: ['index', 'schedule', 'events', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: ['index', 'schedule', 'eventsboard', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -106,7 +106,7 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
-        excludeChunks: ['index', 'services', 'events', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: ['index', 'services', 'eventsboard', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -115,9 +115,9 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
-        filename: 'events.html',
-        template: './pages/events/events.pug',
-        name: 'events',
+        filename: 'eventsboard.html',
+        template: './pages/eventsboard/eventsboard.pug',
+        name: 'eventsboard',
         excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
@@ -130,7 +130,7 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'coaches', 'gallery', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -142,7 +142,7 @@ const commonConfig = merge([
         filename: 'coaches.html',
         template: './pages/coaches/coaches.pug',
         name: 'coaches',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'gallery', 'contacts'],
+        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'team', 'gallery', 'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -154,7 +154,7 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'contacts', 'requisites'],
+        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'team', 'coaches', 'contacts', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -166,7 +166,7 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
-        excludeChunks: ['index', 'services', 'schedule', 'events', 'team', 'coaches', 'gallery', 'requisites'],
+        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'team', 'coaches', 'gallery', 'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -195,7 +195,7 @@ const commonConfig = merge([
 
 module.exports = (mode) => {
   if (mode === 'production') {
-    return merge(commonConfig, productionConfig, {mode});
+    return merge(commonConfig, productionConfig, { mode });
   }
-  return merge(commonConfig, developmentConfig, {mode});
+  return merge(commonConfig, developmentConfig, { mode });
 };
