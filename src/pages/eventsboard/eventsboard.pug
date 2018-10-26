@@ -1,0 +1,66 @@
+extends ../../templates/layout
+append variables
+  -
+    const { common, options, pages, primaryNavigation } = require('../../data');
+    const events = require('../../data/events')
+//-HEAD
+append meta
+  //Page meta tags
+  title= `${common.name} | ${pages.eventsboard.title}`
+  if pages.eventsboard.description
+    meta(name='description', content= pages.eventsboard.description)
+  else
+    meta(name='description', content= common.description)
+  if pages.eventsboard.keys
+    meta(name='keywords', content= pages.eventsboard.keys)
+append icons
+  //Page icons
+append styles
+  //Page styles
+//-BODY
+append header
+  +header(primaryNavigation.items)
+append content
+  +pageTitle(pages.eventsboard)
+  section#content
+    .content-wrap
+      .events-wrapper
+        .container
+          .row
+            each event in events
+              .col-sm-12
+                .event
+                  div.event-image
+                    a(href= `${event.name}.html`)
+                      img(src= require(`../../images/events/${event.name}/${event.poster.fileName}`) alt= event.poster.alt)
+                      .event-date
+                        span= event.date[0]
+                        span= event.date[1]
+                  .event-content
+                    .event-title
+                      h3
+                        |Мастер-класс
+                        br
+                        |Софы Макуриной
+                    .event-excerpt
+                      p
+                        |Впервые в САНКТ-ПЕТЕРБУРГЕ!
+                        br
+                        |28 октября 2018
+                        br
+                        |В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
+                        br
+                        a(href="https://vk.com/naddozhdem")
+                          span
+                            b https://vk.com/naddozhdem
+                        br
+                        |Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+                        |
+                        a(href= `${event.name}.html`)
+                          span Подробнее...
+                        br
+                        a(href='requisites.html')
+                          span
+                            b Реквизиты для оплаты
+append scripts
+  //Page scripts
