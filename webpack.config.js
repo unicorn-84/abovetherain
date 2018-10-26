@@ -186,6 +186,18 @@ const commonConfig = merge([
           collapseWhitespace: production,
         },
       }),
+      new HtmlWebpackPlugin({
+        filename: 'sofa-makurina-master-class.html',
+        template: './pages/eventsboard/sofa-makurina-master-class.pug',
+        name: 'sofa-makurina-master-class',
+        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts'],
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
     ],
     optimization: {
       noEmitOnErrors: true,
