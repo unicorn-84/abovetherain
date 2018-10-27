@@ -38,10 +38,12 @@ append content
                         span= event.date[1]
                   .event-content
                     .event-title
-                      h3
-                        |Мастер-класс
-                        br
-                        |Софы Макуриной
+                      a(href= `${event.name}.html`)
+                        h3
+                          span
+                            |Мастер-класс
+                            br
+                            |Софы Макуриной
                     .event-excerpt
                       p
                         |Впервые в САНКТ-ПЕТЕРБУРГЕ!
@@ -55,9 +57,6 @@ append content
                             b https://vk.com/naddozhdem
                         br
                         |Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
-                        |
-                        a(href= `${event.name}.html`)
-                          span Подробнее...
                         br
                         a(href='requisites.html')
                           span
