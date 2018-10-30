@@ -67,9 +67,8 @@ function modalHandler(element) {
 document.body.addEventListener('click', (e) => {
   const target = e.target.closest('[data-ajax]');
   if (target) {
-    console.log(target);
     e.stopPropagation();
     e.preventDefault();
-    modalHandler(target);
+    // modalHandler(target);
   }
 });
