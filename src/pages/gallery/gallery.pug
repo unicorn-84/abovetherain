@@ -27,8 +27,8 @@ append content
           //-TODO new lightbox gallery
           div.row(data-lightbox="gallery")
             -let i = 1;
-            while i <= 20
-              .col-sm-6.col-lg-4
+            while i <= 31
+              .col-sm-6.col-lg-4.center
                 .gallery-image
                   a(href= require(`../../images/gallery/${i}.jpg`) data-lightbox="gallery-item")
                     img(src= require(`../../images/gallery/thumbnails/${i}.jpg`) alt= options.siteName)
