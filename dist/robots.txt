@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /index.html
+Disallow: /
+Crawl-delay: 1
+Sitemap: http://abovetherain.ru/sitemap.xml.gz
+Host: abovetherain.ru
