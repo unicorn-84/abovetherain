@@ -49,7 +49,7 @@
     },
     "coaches": {
       "name": "coaches",
-      "title": "Тренеры",
+      "title": "Мы",
       "keys": "",
       "description": ""
     },
@@ -76,25 +76,7 @@
     "items": [
       {
         "name": "services",
-        "title": "Услуги",
-        "subitems": [
-          {
-            "name": "rent",
-            "title": "Аренда"
-          },
-          {
-            "name": "aerial-hoop",
-            "title": "Воздушное кольцо"
-          },
-          {
-            "name": "aerial-silk",
-            "title": "Воздушное полотно"
-          },
-          {
-            "name": "pole-dance",
-            "title": "Pole dance"
-          }
-        ]
+        "title": "Услуги"
       },
       {
         "name": "schedule",
@@ -105,15 +87,8 @@
         "title": "Афиша"
       },
       {
-        "name": "team",
-        "title": "Мы",
-        "subitems": [
-          {
-            "name": "coaches",
-            "title": "Тренеры",
-            "page": true
-          }
-        ]
+        "name": "coaches",
+        "title": "Мы"
       },
       {
         "name": "gallery",

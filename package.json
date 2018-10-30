@@ -1,13 +1,13 @@
 {
   "name": "overtherain",
-  "version": "0.10.0",
+  "version": "1.4.0",
   "description": "Dance Club static web site",
   "scripts": {
     "dev": "webpack --env development",
     "build": "webpack --env production",
     "server": "webpack-dev-server --env development",
     "version": "npm run build && git add -A dist",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push -f && git push --tags -f"
   },
   "private": true,
   "repository": {
