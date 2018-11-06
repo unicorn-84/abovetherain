@@ -22,16 +22,10 @@ append content
   +pageTitle(pages.gallery)
   section#content
     .content-wrap
-      .gallery-wrapper
-        .container
-          //-TODO new lightbox gallery
-          div.row(data-lightbox="gallery")
-            -let i = 1;
-            while i <= 31
-              .col-sm-6.col-lg-4.center
-                .gallery-image
-                  a(href= require(`../../images/gallery/${i}.jpg`) data-lightbox="gallery-item")
-                    img(src= require(`../../images/gallery/thumbnails/${i}.jpg`) alt= options.siteName)
-                    -i += 1;
+      .container
+        div(id='gallery', data-lightbox='gallery')
+          div
+            a(data-lightbox='gallery-item')
+            img(src= require(`../../images/gallery/thumbnails/1.jpg`) alt= options.siteName width='', height='')
 append scripts
   //Page scripts
