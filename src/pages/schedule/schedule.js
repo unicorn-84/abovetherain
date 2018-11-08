@@ -1,6 +1,4 @@
 // JS
-import abovetherain from '../../scripts/init';
-import '../../scripts/components/modal/modal';
 import createSelect from '../../scripts/components/select/select';
 
 // SCSS
@@ -118,7 +116,6 @@ function sortTable(tables) {
   });
 }
 document.addEventListener('DOMContentLoaded', () => {
-  abovetherain.initialize();
   const tables = document.querySelectorAll('.schedule-table');
   const nativeSelects = document.querySelectorAll('select[data-select]');
   const directionSelect = document.querySelector('select#direction-select');
