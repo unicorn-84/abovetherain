@@ -1,7 +1,7 @@
 extends ../../templates/layout
 append variables
   -
-    const { common, options, pages, primaryNavigation, services } = require('../../data');
+    const { common, options, pages, primaryNavigation } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
@@ -22,17 +22,74 @@ append header
 append content
   +pageTitle(pages.services)
   section#content
-    .content-wrap
-      .services-wrapper
-        .container
-          .row
-            each service in services
-              .col-sm-6.col-lg-4
-                .service
-                  .service-image
-                    img(src= require(`../../images/services/${service.name}.jpg`) alt= `${options.siteName} | ${service.title}`)
-                  .service-info
-                    .service-title
-                      h2= service.title
+    //-Content
+    div(class='content-wrap')
+      //-Container
+      div(class='container')
+        div(class='row')
+          //-Аренда
+          div(class='col-12 col-lg-6')
+            div(class='card mb-5 mb-lg-4 border-0')
+              div(class='image-container')
+                img(class='card-img-top', src= require('../../images/services/rent/001-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require('../../images/services/rent/001-600x400.jpg') + ' 600w,' + require('../../images/services/rent/001-800x533.jpg') + ' 800w')
+              div(class='card-body')
+                h2(class='card-title mb-3')
+                  |Аренда сценической площадки
+                span(class='card-subtitle mb-4')
+                  |от 25 000 до 40 000 руб
+                p(class='card-text mb-4')
+                  |В танцевальном замке "Над дождём" возможно арендовать сценическую площадку для проведения отчетного концерта, творческого вечера, спектакля, семинара, мастер-класса и других различных мероприятий.
+                a(href= require('../../data/services/rent.pug'), class='read-more d-flex justify-content-end', data-ajax) Подробнее...
+          //-Кольцо
+          div(class='col-12 col-lg-6')
+            div(class='card mb-5 mb-lg-4 border-0')
+              div(class='image-container')
+                img(class='card-img-top', src= require(
+                  '../../images/services/rent/002-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require(
+                  '../../images/services/rent/002-600x400.jpg') + ' 600w,' +
+                require('../../images/services/rent/002-800x533.jpg') + ' 800w')
+              div(class='card-body')
+                h2(class='card-title mb-3')
+                  | Воздушное кольцо
+                span(class='card-subtitle')
+                  | Одно занятие - 750 руб
+                  br
+                  | Пробное занятие - 500 руб
+          //-Полотно
+          div(class='col-12 col-lg-6')
+            div(class='card mb-5 mb-lg-4 border-0')
+              div(class='image-container')
+                img(class='card-img-top', src= require('../../images/services/rent/003-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require('../../images/services/rent/003-600x400.jpg') + ' 600w,' + require('../../images/services/rent/003-800x533.jpg') + ' 800w')
+              div(class='card-body')
+                h2(class='card-title mb-3')
+                  | Воздушное полотно
+                span(class='card-subtitle')
+                  | Одно занятие - 750 руб
+                  br
+                  | Пробное занятие - 500 руб
+          //-Пилон
+          div(class='col-12 col-lg-6')
+            div(class='card mb-5 mb-lg-4 border-0')
+              div(class='image-container')
+                img(class='card-img-top', src= require('../../images/services/rent/004-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require('../../images/services/rent/004-600x400.jpg') + ' 600w,' + require('../../images/services/rent/004-800x533.jpg') + ' 800w')
+              div(class='card-body')
+                h2(class='card-title mb-3')
+                  | Pole Dance
+                span(class='card-subtitle')
+                  | Одно занятие - 750 руб
+                  br
+                  | Пробное занятие - 500 руб
+          //-Королевская йога
+          div(class='col-12 col-lg-6')
+            div(class='card border-0')
+              div(class='image-container')
+                img(class='card-img-top', src= require('../../images/services/rent/005-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require('../../images/services/rent/005-600x400.jpg') + ' 600w,' + require('../../images/services/rent/005-800x533.jpg') + ' 800w')
+              div(class='card-body')
+                h2(class='card-title mb-3')
+                  | Королевская йога
+                span(class='card-subtitle')
+                  | Одно занятие - 750 руб
+                  br
+                  | Пробное занятие - 500 руб
 append scripts
   //Page scripts

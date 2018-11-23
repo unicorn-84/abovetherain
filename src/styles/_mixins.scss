@@ -37,6 +37,7 @@
 
   &:focus,
   &:hover {
+    color: inherit;
     text-decoration: underline rgba($link-color, 0.5) !important;
   }
 }
