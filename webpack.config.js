@@ -1,7 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
@@ -29,15 +29,24 @@ const commonConfig = merge([
     },
     module: {
       rules: [
+        // JS
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: ['env'],
+              plugins: ['syntax-dynamic-import'],
+            },
+          },
+        },
         {
           test: /\.(pug|jade)$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /(node_modules|bower_components|data)/,
           use: [
             {
               loader: 'pug-loader',
-              options: {
-                pretty: true,
-              },
             },
           ],
         },
@@ -52,11 +61,37 @@ const commonConfig = merge([
             },
           ],
         },
+        {
+          test: /data.*\.(jade|pug|html)$/,
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                name: 'data/[name].[hash:4].html',
+              },
+            },
+            'extract-loader',
+            {
+              loader: 'html-loader',
+              options: {
+                attrs: ['img:src'],
+                root: path.resolve(__dirname, '.'),
+                interpolate: true,
+              },
+            },
+            {
+              loader: 'pug-html-loader',
+              options: {
+                exports: false,
+              },
+            },
+          ],
+        },
       ],
     },
     plugins: [
       new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
-      new AsyncChunkNames(),
+      // new AsyncChunkNames(),
       new CopyWebpackPlugin([
         {
           from: './scripts/**/*.js',
@@ -82,7 +117,15 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        excludeChunks: ['services', 'schedule', 'eventsboard', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: [
+          'services',
+          'schedule',
+          'eventsboard',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -94,7 +137,15 @@ const commonConfig = merge([
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
-        excludeChunks: ['index', 'schedule', 'eventsboard', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: [
+          'index',
+          'schedule',
+          'eventsboard',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -106,7 +157,15 @@ const commonConfig = merge([
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
-        excludeChunks: ['index', 'services', 'eventsboard', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: [
+          'index',
+          'services',
+          'eventsboard',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -118,7 +177,15 @@ const commonConfig = merge([
         filename: 'eventsboard.html',
         template: './pages/eventsboard/eventsboard.pug',
         name: 'eventsboard',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -130,7 +197,15 @@ const commonConfig = merge([
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
-        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'coaches', 'gallery', 'contacts', 'requisites'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'eventsboard',
+          'coaches',
+          'gallery',
+          'contacts',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -142,7 +217,14 @@ const commonConfig = merge([
         filename: 'coaches.html',
         template: './pages/coaches/coaches.pug',
         name: 'coaches',
-        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'team', 'gallery', 'contacts'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'eventsboard',
+          'team',
+          'gallery',
+          'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -154,7 +236,15 @@ const commonConfig = merge([
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
-        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'team', 'coaches', 'contacts', 'requisites'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'eventsboard',
+          'team',
+          'coaches',
+          'contacts',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -166,7 +256,15 @@ const commonConfig = merge([
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
-        excludeChunks: ['index', 'services', 'schedule', 'eventsboard', 'team', 'coaches', 'gallery', 'requisites'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'eventsboard',
+          'team',
+          'coaches',
+          'gallery',
+          'requisites'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -178,7 +276,14 @@ const commonConfig = merge([
         filename: 'requisites.html',
         template: './pages/requisites/requisites.pug',
         name: 'requisites',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
@@ -190,13 +295,26 @@ const commonConfig = merge([
         filename: 'sofa-makurina-master-class.html',
         template: './pages/eventsboard/sofa-makurina-master-class.pug',
         name: 'sofa-makurina-master-class',
-        excludeChunks: ['index', 'services', 'schedule', 'team', 'coaches', 'gallery', 'contacts'],
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts'],
         minify: {
           removeComments: production,
           minifyCSS: production,
           minifyJS: production,
           collapseWhitespace: production,
         },
+      }),
+      new webpack.ProvidePlugin({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+        Popper: ['popper.js', 'default'],
       }),
     ],
     optimization: {
