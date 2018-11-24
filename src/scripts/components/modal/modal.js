@@ -33,15 +33,15 @@ function createModal() {
 }
 
 function removeModal() {
-  document.body.classList.toggle('modal-active');
-  document.querySelector('.modal').remove();
+  if (document.querySelector('.modal')) {
+    document.querySelector('.modal').remove();
+  }
 }
 
 function modalHandler() {
-  document.body.classList.toggle('modal-active');
   document.body.prepend(createModal());
   document.querySelector('.modal-overlay').addEventListener('click', removeModal);
   document.querySelector('.modal-close').addEventListener('click', removeModal);
 }
 
-export default modalHandler;
+export { modalHandler, removeModal };

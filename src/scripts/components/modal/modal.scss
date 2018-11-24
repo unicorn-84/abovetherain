@@ -1,21 +1,24 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
 .modal,
 .modal-overlay {
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
 }
 
 .modal {
   display: flex;
   position: fixed;
-  align-items: center;
+  //align-items: center;
   justify-content: center;
   z-index: 1001;
-  overflow-x: hidden;
-  overflow-y: auto;
+  //overflow-x: hidden;
+  //overflow-y: auto;
   padding-top: 55px;
-  padding-bottom: 55px;
+  //padding-bottom: 55px;
 }
 
 .modal .modal-overlay {
@@ -28,11 +31,13 @@
 
 .modal .abovetherain__modal-content {
   max-width: 90%;
-  background: #fff;
   position: relative;
   z-index: 1003;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
   animation: sally 0.3s ease-in-out;
+  background: $light-color;
+  overflow-y: auto;
+  max-height: 100%;
 }
 
 .modal .abovetherain__modal-content .service {
@@ -143,3 +148,83 @@
 .abovetherain__css3-spinner > .abovetherain__css3-spinner-bounce2 {
   animation-delay: -0.16s;
 }
+//
+//.rain-modal,
+//.rain-modal-overlay {
+//  top: 0;
+//  left: 0;
+//  width: 100%;
+//  height: 100%;
+//}
+//
+//.rain-modal {
+//  display: flex;
+//  position: fixed;
+//  align-items: center;
+//  justify-content: center;
+//  z-index: 1001;
+//
+//  .rain-modal-overlay {
+//    backface-visibility: hidden;
+//    position: absolute;
+//    z-index: 1002;
+//    background-color: rgba(#333, 0.7);
+//
+//    @include animation(opacity 0.3s $function);
+//  }
+//
+//  .rain-modal-content {
+//    max-width: 90%;
+//    background: $light-color;
+//    position: relative;
+//    z-index: 1003;
+//    overflow-y: auto;
+//    max-height: 80%;
+//    box-shadow: $box-shadow;
+//
+//    @include animation(sally 0.3s $function);
+//  }
+//
+//  .rain-modal-close {
+//    display: inline-block;
+//    position: absolute;
+//    width: 25px;
+//    height: 25px;
+//    overflow: hidden;
+//    transition: background-color 0.3s ease-out;
+//    top: 0;
+//    right: 0;
+//    margin: 15px;
+//    z-index: 1004;
+//    cursor: pointer;
+//
+//    &::before,
+//    &::after {
+//      position: absolute;
+//      content: '';
+//      width: 100%;
+//      height: 2px;
+//      top: 50%;
+//      left: 0;
+//      transform: translateY(-50%);
+//      background-color: $light-color;
+//      border-radius: 2px;
+//    }
+//
+//    &::before {
+//      transform: rotate(45deg);
+//    }
+//
+//    &::after {
+//      transform: rotate(-45deg);
+//    }
+//
+//    &:focus,
+//    &:hover {
+//      &::before,
+//      &::after {
+//        background-color: darken($light-color, 20%);
+//      }
+//    }
+//  }
+//}
