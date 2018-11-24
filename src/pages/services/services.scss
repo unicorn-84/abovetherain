@@ -59,3 +59,12 @@
     @include type(0);
   }
 }
+
+.modal-content {
+  background: $light-color;
+  color: $dark-color;
+
+  .modal-title {
+    color: $dark-color;
+  }
+}
