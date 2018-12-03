@@ -19,18 +19,6 @@ module.exports = {
   devtool: false,
   module: {
     rules: [
-      // JS
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['airbnb'],
-            plugins: ['syntax-dynamic-import'],
-          },
-        },
-      },
       // Images
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
@@ -100,9 +88,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:4].css',
     }),
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    }),
+    // new PurgecssPlugin({
+    //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    // }),
     new SitemapPlugin(common.url, ['/'], {
       lastMod: true,
       changeFreq: 'always',
