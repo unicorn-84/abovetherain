@@ -2,16 +2,9 @@
 import 'bootstrap/scss/bootstrap.scss';
 import '../../styles/style.scss';
 import './contacts.scss';
-// JS
-import abovetherain from '../../scripts/init';
-import '../../scripts/components/modal/modal';
 // IMAGES
 import logo from '../../images/logo/logo-dark.png';
 import evacuatorLogo from '../../images/evacuator.png';
-
-document.addEventListener('DOMContentLoaded', () => {
-  abovetherain.initialize();
-});
 
 (function createMap() {
   function init() {

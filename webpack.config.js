@@ -1,7 +1,6 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
@@ -29,6 +28,14 @@ const commonConfig = merge([
     },
     module: {
       rules: [
+        // JS
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [
+            'babel-loader',
+          ],
+        },
         {
           test: /\.(pug|jade)$/,
           exclude: /(node_modules|bower_components)/,
@@ -56,7 +63,6 @@ const commonConfig = merge([
     },
     plugins: [
       new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
-      new AsyncChunkNames(),
       new CopyWebpackPlugin([
         {
           from: './scripts/**/*.js',
@@ -71,13 +77,13 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
-      // new CopyWebpackPlugin([
-      //   {
-      //     from: './data',
-      //     to: 'data/[path][name].[ext]',
-      //     toType: 'template',
-      //   },
-      // ]),
+      new CopyWebpackPlugin([
+        {
+          from: './data/catalogs',
+          to: './[name].[ext]',
+          toType: 'template',
+        },
+      ]),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './pages/index/index.pug',
