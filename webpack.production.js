@@ -19,18 +19,6 @@ module.exports = {
   devtool: false,
   module: {
     rules: [
-      // JS
-      {
-        test: /\.js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['airbnb'],
-            plugins: ['syntax-dynamic-import'],
-          },
-        },
-      },
       // Images
       {
         test: /\.(png|jpg|gif|svg|ico)$/,
