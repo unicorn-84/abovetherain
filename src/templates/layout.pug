@@ -19,5 +19,10 @@ html(lang= common.lang, dir= common.dir, prefix='og: //ogp.me/ns#')
         include ./mixins/page-title
       block footer
         include ./blocks/footer
+    //-Yandex.Metrika
+    //-TODO: 'Переделать'
+    noscript
+      div
+        img(src='https://mc.yandex.ru/watch/51313063', style='position:absolute; left:-9999px;', alt='')
     block scripts
       include ./blocks/scripts
