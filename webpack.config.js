@@ -157,6 +157,26 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        filename: 'rent.html',
+        template: './pages/services/rent.pug',
+        name: 'rent',
+        excludeChunks: [
+          'index',
+          'schedule',
+          'eventsboard',
+          'team',
+          'coaches',
+          'gallery',
+          'contacts',
+          'requisites'],
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
