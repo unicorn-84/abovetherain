@@ -8,6 +8,11 @@ const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
 
 const production = process.env.npm_lifecycle_event === 'build';
+if (production) {
+  process.env.NODE_ENV = 'production';
+} else {
+  process.env.NODE_ENV = 'development';
+}
 
 const commonConfig = merge([
   {
@@ -33,13 +38,9 @@ const commonConfig = merge([
         {
           test: /\.js$/,
           exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['env'],
-              plugins: ['syntax-dynamic-import'],
-            },
-          },
+          use: [
+            'babel-loader',
+          ],
         },
         {
           test: /\.(pug|jade)$/,
@@ -91,7 +92,7 @@ const commonConfig = merge([
     },
     plugins: [
       new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
-      // new AsyncChunkNames(),
+      // скрипты шаблона
       new CopyWebpackPlugin([
         {
           from: './scripts/**/*.js',
@@ -99,6 +100,7 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
+      // стили шаблона
       new CopyWebpackPlugin([
         {
           from: './styles/**/*.css',
@@ -106,13 +108,14 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
-      // new CopyWebpackPlugin([
-      //   {
-      //     from: './data',
-      //     to: 'data/[path][name].[ext]',
-      //     toType: 'template',
-      //   },
-      // ]),
+      // валидации
+      new CopyWebpackPlugin([
+        {
+          from: './data/trash',
+          to: './[name].[ext]',
+          toType: 'template',
+        },
+      ]),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './pages/index/index.pug',
