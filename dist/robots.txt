@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /catalogs.html
+Crawl-delay: 1
+Sitemap: http://abovetherain.ru/sitemap.xml.gz
+Host: abovetherain.ru
