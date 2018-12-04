@@ -65,13 +65,13 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 11:00
       //-Понедельник
-      +schedule-event('2', 'd02', 'Pole Dance', 'c05', 'Яна', 'day-1', '11:00', '12:00')
+      +schedule-event('2', 'd11', 'Зумба', '', '', 'day-1', '11:00', '12:00')
       //-Вторник
       +schedule-event('2', 'd02', 'Pole Dance', '', '', 'day-2', '11:00', '12:00')
       //-Среда
       +schedule-event('2', 'd07', 'Воздушное полотно', '', '', 'day-3', '11:00', '12:00')
       //-Четверг
-      +schedule-event('2', 'd02', 'Pole Dance', 'c05', 'Яна', 'day-4', '11:00', '12:00')
+      +schedule-event('2', 'd12', 'Strong by Zumba', '', '', 'day-4', '11:00', '12:00')
       //-Пятница
       +schedule-event('2', 'd02', 'Pole Dance', '', '', 'day-5', '11:00', '12:00')
       //-Суббота
@@ -347,7 +347,7 @@ table.schedule-table(data-selected="all")
 //-Понедельник
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.d01.d02.d03.d04.d05.d09.c02.c04.c05.day-1
+    tr.d01.d02.d03.d04.d05.d09.d11.c02.c04.c05.day-1
       th.schedule-day
       th.schedule-day Понедельник
   tbody
@@ -362,11 +362,11 @@ table.schedule-table.mobile(data-selected="all")
     tr.d01.c02.day-1
       td.schedule-time 10:00
     //-11:00
-    tr.d02.c05.day-1
+    tr.d11.day-1
       td.schedule-time 11:00
-      +schedule-event('2', 'd02', 'Pole Dance', 'c05', 'Яна', 'day-1', '11:00', '12:00')
+      +schedule-event('2', 'd11', 'Zumba', '', '', 'day-1', '11:00', '12:00')
     //-11:30
-    tr.d02.c05.day-1
+    tr.d11.day-1
       td.schedule-time 11:30
     //-12:30
     tr.d05.c02.day-1
@@ -428,7 +428,7 @@ table.schedule-table.mobile(data-selected="all")
     tr.d04.c04.day-1
       td.schedule-time 21:30
     //-Margin
-    tr.schedule-table-margin.d01.d02.d03.d04.d05.d09.c02.c04.c05.day-1
+    tr.schedule-table-margin.d01.d02.d03.d04.d05.d09.d11.c02.c04.c05.day-1
       td
 //-Вторник
 table.schedule-table.mobile(data-selected="all")
@@ -598,7 +598,7 @@ table.schedule-table.mobile(data-selected="all")
 //-Четверг
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.d01.d02.d04.d07.d09.c02.c05.day-4
+    tr.d01.d02.d04.d07.d09.d12.c02.c05.day-4
       th.schedule-day
       th.schedule-day Четверг
   tbody
@@ -614,11 +614,11 @@ table.schedule-table.mobile(data-selected="all")
       td.schedule-time 10:00
     //-10:30
     //-11:00
-    tr.d02.c05.day-4
+    tr.d12.day-4
       td.schedule-time 11:00
-      +schedule-event('2', 'd02', 'Pole Dance', 'c05', 'Яна', 'day-4', '11:00', '12:00')
+      +schedule-event('2', 'd12', 'Strong by Zumba', '', '', 'day-4', '11:00', '12:00')
     //-11:30
-    tr.d02.c05.day-4
+    tr.d12.day-4
       td.schedule-time 11:30
     //-12:00
     tr.d04.c05.day-4
@@ -678,7 +678,7 @@ table.schedule-table.mobile(data-selected="all")
     tr.d04.day-4
       td.schedule-time 21:30
     //-Margin
-    tr.schedule-table-margin.d01.d02.d04.d07.d09.c02.c05.day-4
+    tr.schedule-table-margin.d01.d02.d04.d07.d09.d12.c02.c05.day-4
       td
 //-Пятница
 table.schedule-table.mobile(data-selected="all")
