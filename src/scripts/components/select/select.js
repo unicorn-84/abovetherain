@@ -1,5 +1,5 @@
 // JS
-import wrap from '../helpers';
+import { wrap } from '../helpers';
 
 const nativeSelects = document.querySelectorAll('select[data-select]');
 

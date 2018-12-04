@@ -3,4 +3,21 @@ function wrap(element, wrapper) {
   wrapper.appendChild(element);
 }
 
-export default wrap;
+function fetchData(url, cb) {
+  fetch(url)
+    .then((response) => {
+      if (response.status !== 200) {
+        throw new Error('No data');
+      }
+      return response.text();
+    })
+    .then(text => cb(null, text))
+    .catch(error => cb(error));
+}
+
+function insertDataToModal(data) {
+  document.querySelector('.modal').insertAdjacentHTML('beforeEnd', data);
+  document.querySelector('.abovetherain__css3-spinner').remove();
+}
+
+export { wrap, fetchData, insertDataToModal };
