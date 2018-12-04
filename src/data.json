@@ -181,22 +181,6 @@
       ]
     },
     {
-      "id": "c01",
-      "name": "victoria",
-      "title": "Виктория",
-      "directions": [
-        {
-          "title": "Кольцо"
-        },
-        {
-          "title": "Полотно"
-        },
-        {
-          "title": "Pole dance"
-        }
-      ]
-    },
-    {
       "id": "c04",
       "name": "nadezhda",
       "title": "Надежда",
