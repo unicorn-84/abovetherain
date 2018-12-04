@@ -88,9 +88,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:4].css',
     }),
-    // new PurgecssPlugin({
-    //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    // }),
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    }),
     new SitemapPlugin(common.url, ['/'], {
       lastMod: true,
       changeFreq: 'always',
@@ -100,8 +100,7 @@ module.exports = {
       policy: [
         {
           userAgent: '*',
-          allow: '/index.html',
-          disallow: '/',
+          disallow: '/catalogs.html',
           crawlDelay: 1,
         },
       ],
