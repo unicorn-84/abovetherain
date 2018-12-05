@@ -88,24 +88,24 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:4].css',
     }),
-    // new PurgecssPlugin({
-    //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    // }),
-    new SitemapPlugin(common.url, ['/'], {
-      lastMod: true,
-      changeFreq: 'always',
-      priority: '1',
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
     }),
+    // new SitemapPlugin(common.url, ['/'], {
+    //   lastMod: true,
+    //   changeFreq: 'always',
+    //   priority: '1',
+    // }),
     new RobotstxtPlugin({
       policy: [
         {
           userAgent: '*',
-          disallow: '/catalogs.html',
+          // disallow: '/catalogs.html',
           crawlDelay: 1,
         },
       ],
-      sitemap: `${common.url}/sitemap.xml.gz`,
-      host: common.url,
+      // sitemap: `${common.url}/sitemap.xml.gz`,
+      // host: common.url,
     }),
     new AddAssetPlugin('humans.txt', `/* TEAM */\nDeveloper: ${common.author}\nSite: ${common.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(common.lang, {
       year: 'numeric',
