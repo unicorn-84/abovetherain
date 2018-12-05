@@ -6,7 +6,7 @@
     "dev": "webpack --env development",
     "build": "webpack --env production",
     "server": "webpack-dev-server --env development",
-    "version": "npm run build && git add -A dist",
+    "version": "npm run build && git add -f dist",
     "postversion": "git push -f && git push --tags -f"
   },
   "private": true,
