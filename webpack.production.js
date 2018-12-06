@@ -99,9 +99,9 @@ module.exports = {
     new RobotstxtPlugin({
       policy: [
         {
-          userAgent: '*',
+          // userAgent: '*',
           // disallow: '/catalogs.html',
-          crawlDelay: 1,
+          // crawlDelay: 1,
         },
       ],
       // sitemap: `${common.url}/sitemap.xml.gz`,
