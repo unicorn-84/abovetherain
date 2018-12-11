@@ -5,7 +5,7 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const cssnano = require('cssnano');
 const glob = require('glob');
-const SitemapPlugin = require('sitemap-webpack-plugin').default;
+// const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const AddAssetPlugin = require('add-asset-webpack-plugin');
 const { common } = require('./src/data');
@@ -99,7 +99,7 @@ module.exports = {
     new RobotstxtPlugin({
       policy: [
         {
-          // userAgent: '*',
+          userAgent: '*',
           // disallow: '/catalogs.html',
           // crawlDelay: 1,
         },
