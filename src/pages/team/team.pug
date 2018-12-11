@@ -1,15 +1,15 @@
 extends ../../templates/layout
 append variables
-  -const { common, options, pages, primaryNavigation, team } = require('../../data');
+  -const { options, pages, primaryNavigation, team } = require('../../data');
   -const bigTeamPhoto = require('../../images/team/team.jpg');
 //-HEAD
 append meta
   //Page meta tags
-  title= `${common.name} | ${pages.team.title}`
+  title= `${options.name} | ${pages.team.title}`
   if pages.team.description
     meta(name='description', content= pages.team.description)
   else
-    meta(name='description', content= common.description)
+    meta(name='description', content= options.description)
   if pages.team.keys
     meta(name='keywords', content= pages.team.keys)
 append icons
