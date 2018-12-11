@@ -32,11 +32,10 @@ append content
                 | !{contacts.address}
               .contact-phone
                 i.icon-phone3
-                //-TODO изменить телефон
                 a(href=`tel:${contacts.phone}`)= contacts.phone
               .contact-email
                 i.icon-envelope-alt
-                //-TODO data-ajax contact form
+                //-TODO: 'Modal contact form'
                 a(href="#")= contacts.email
           .col-lg-12
             #yandex-map
