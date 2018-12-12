@@ -1,5 +1,5 @@
 {
-  "name": "overtherain",
+  "name": "abovetherain",
   "version": "1.9.0",
   "description": "Dance Club static web site",
   "scripts": {
@@ -12,14 +12,14 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/unicorn-84/overtherain.git"
+    "url": "git+https://github.com/unicorn-84/abovetherain.git"
   },
   "author": "unicorn-84 <unicorn-84@ya.ru> (https://github.com/unicorn-84)",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/unicorn-84/overtherain/issues"
+    "url": "https://github.com/unicorn-84/abovetherain/issues"
   },
-  "homepage": "https://github.com/unicorn-84/overtherain#readme",
+  "homepage": "https://github.com/unicorn-84/abovetherain#readme",
   "engines": {
     "node": "10.14.1"
   },
