@@ -1,16 +1,16 @@
 extends ../../templates/layout
 append variables
-  - const { common, options, pages, primaryNavigation } = require('../../data');
+  - const { options, pages, primaryNavigation, contacts } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
-  title= `${common.name} | ${pages.index.title}`
+  title= `${options.name} | ${pages.index.title}`
   meta(name='google-site-verification', content='Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig')
   meta(name='yandex-verification', content='f196debf2583cee4')
   if pages.index.description
     meta(name='description', content= pages.index.description)
   else
-    meta(name='description', content= common.description)
+    meta(name='description', content= options.description)
   if pages.index.keys
     meta(name='keywords', content= pages.index.keys)
   meta(name='google-site-verification' content='Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig')
@@ -59,7 +59,7 @@ append content
                     h3(data-caption-animate="slide" data-caption-delay="200") превосходства
         //Phone icon
         #slider-phone
-          a(href=`tel:${options.sliderPhone}`)
+          a(href=`tel:${contacts.phone}`)
             i.i-circled.i-light.icon-call
 block footer
 append scripts
