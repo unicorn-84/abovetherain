@@ -1,74 +1,56 @@
 {
-  "common": {
+  "options": {
     "url": "http://abovetherain.ru",
     "name": "Над Дождём",
     "description": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.",
-    "theme_color": "#e9e9d3",
-    "lang": "ru-RU",
-    "dir": "ltr",
-    "logo": "src/images/logo/logo.png",
     "author": "unicorn-84",
-    "author_email": "unicorn-84 [at] ya [dot] ru"
-  },
-  "options": {
-    "siteName": "Над Дождём",
-    "ajaxFolder": "data",
+    "author_email": "unicorn-84 [at] ya [dot] ru",
     "sliderPhone": "+7 952 3999930"
   },
   "pages": {
-    "descriptions": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.",
     "index": {
       "name": "index",
       "title": "Главная",
-      "keys": "",
       "description": ""
     },
     "services": {
       "name": "services",
       "title": "Услуги",
-      "keys": "",
       "description": ""
     },
     "schedule": {
       "name": "schedule",
       "title": "Расписание",
-      "keys": "",
       "description": ""
     },
     "eventsboard": {
       "name": "eventsboard",
       "title": "Афиша",
-      "keys": "",
       "description": ""
     },
     "team": {
       "name": "team",
       "title": "Мы",
-      "keys": "",
       "description": ""
     },
     "coaches": {
       "name": "coaches",
       "title": "Мы",
-      "keys": "",
       "description": ""
     },
     "gallery": {
       "name": "gallery",
       "title": "Галерея",
-      "keys": "",
       "description": ""
     },
     "contacts": {
       "name": "contacts",
       "title": "Контакты",
-      "keys": "",
       "description": ""
     },
     "requisites": {
       "name": "requisites",
       "title": "Реквизиты",
-      "keys": "",
       "description": ""
     }
   },
