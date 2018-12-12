@@ -1,14 +1,14 @@
 extends ../../templates/layout
 append variables
-  - const { common, options, pages, primaryNavigation, coaches } = require('../../data');
+  - const { options, pages, primaryNavigation, coaches } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
-  title= `${common.name} | ${pages.coaches.title}`
+  title= `${options.name} | ${pages.coaches.title}`
   if pages.coaches.description
     meta(name='description', content= pages.coaches.description)
   else
-    meta(name='description', content= common.description)
+    meta(name='description', content= options.description)
   if pages.coaches.keys
     meta(name='keywords', content= pages.coaches.keys)
 append icons
@@ -30,7 +30,7 @@ append content
                 .coach-wrapper
                   .coach
                     .coach-image
-                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.siteName} | ${coach.title}`)
+                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.name} | ${coach.title}`)
                     .coach-info
                       div
                         .coach-title

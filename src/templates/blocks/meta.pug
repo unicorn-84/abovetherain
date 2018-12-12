@@ -1,5 +1,5 @@
 //Common meta tags
-- const { common } = require('../../data');
+- const { options } = require('../../data');
 meta(charset='utf-8')
 meta(http-equiv='x-ua-compatible', content='ie=edge')
 meta(name='viewport', content='width=device-width, initial-scale=1, viewport-fit=cover')
@@ -7,9 +7,9 @@ meta(property='og:type', content='website')
 meta(property='og:image', content= require('../../images/icons/og-image.png'))
 meta(property='og:image:width', content='520')
 meta(property='og:image:height', content='260')
-meta(property='og:url', content= common.url)
-meta(property='og:description', content= common.description)
-meta(property='og:title', content= common.name)
+meta(property='og:url', content= options.url)
+meta(property='og:description', content= options.description)
+meta(property='og:title', content= options.name)
 link(rel='author', href='humans.txt')
 //-Yandex.Metrika
 //-TODO: 'Переделать'

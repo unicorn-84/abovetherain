@@ -1,16 +1,16 @@
 extends ../../templates/layout
 append variables
   -
-    const { common, options, pages, primaryNavigation, events } = require('../../data');
+    const { options, pages, primaryNavigation, events } = require('../../data');
     const event= require('../../data/events');
 //-HEAD
 append meta
   //Page meta tags
-  title= `${common.name} | ${event[0].title}`
+  title= `${options.name} | ${event[0].title}`
   if event[0].description
     meta(name='description', content= pages.events.description)
   else
-    meta(name='description', content= common.description)
+    meta(name='description', content= options.description)
   if event[0].keys
     meta(name='keywords', content= pages.events.keys)
 append icons
