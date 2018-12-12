@@ -1,14 +1,14 @@
 extends ../../templates/layout
 append variables
-  -const { common, options, pages, primaryNavigation, contacts } = require('../../data');
+  -const { options, pages, primaryNavigation, contacts } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
-  title= `${common.name} | ${pages.contacts.title}`
+  title= `${options.name} | ${pages.contacts.title}`
   if pages.contacts.description
     meta(name='description', content= pages.contacts.description)
   else
-    meta(name='description', content= common.description)
+    meta(name='description', content= options.description)
   if pages.contacts.keys
     meta(name='keywords', content= pages.contacts.keys)
 append icons
