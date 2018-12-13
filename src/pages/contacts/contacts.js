@@ -3,7 +3,7 @@ import 'bootstrap/scss/bootstrap.scss';
 import '../../styles/style.scss';
 import './contacts.scss';
 // IMAGES
-import logo from '../../images/logo/logo-dark.png';
+import logo from '../../images/logo/logo@3x.png';
 import evacuatorLogo from '../../images/evacuator.png';
 
 (function createMap() {
@@ -17,7 +17,7 @@ import evacuatorLogo from '../../images/evacuator.png';
       {
         iconLayout: 'default#image',
         iconImageHref: logo,
-        iconImageSize: [60, 80],
+        iconImageSize: [80, 80],
         iconImageOffset: [-60, -40],
         cursor: 'auto',
       });
@@ -27,7 +27,7 @@ import evacuatorLogo from '../../images/evacuator.png';
       [59.963719, 30.274693],
       [59.963260, 30.273519],
     ], {}, {
-      strokeColor: '#002137',
+      strokeColor: '#8b887d',
       strokeWidth: 2,
       strokeStyle: 'dot',
     });
@@ -35,7 +35,7 @@ import evacuatorLogo from '../../images/evacuator.png';
       [59.963882, 30.275045],
       [59.963763, 30.274640],
     ], {}, {
-      strokeColor: '#002137',
+      strokeColor: '#8b887d',
       strokeWidth: 2,
       strokeStyle: 'dot',
     });
@@ -43,7 +43,7 @@ import evacuatorLogo from '../../images/evacuator.png';
       [59.964196, 30.274412],
       [59.964140, 30.274154],
     ], {}, {
-      strokeColor: '#002137',
+      strokeColor: '#8b887d',
       strokeWidth: 2,
       strokeStyle: 'dot',
     });

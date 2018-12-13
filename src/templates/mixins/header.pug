@@ -5,20 +5,8 @@ mixin header(items, className)
         #primary-menu-trigger: i.icon-reorder
         //Logo
         #logo
-          if className === 'index'
-            a(href="index.html" class="standard-logo")
-              picture
-                source(media="(max-width: 991px)" srcset= require('../../images/logo/logo-dark.png'))
-                img(src= require('../../images/logo/logo.png') alt="Логотип танцевального клуба 'Над дождем'")
-            a(href="index.html" class="retina-logo")
-              picture
-                source(media="(max-width: 991px)" srcset= require('../../images/logo/logo-dark@2x.png'))
-                img(src= require('../../images/logo/logo@2x.png') alt="Логотип танцевального клуба 'Над дождем'")
-          else
-            a(href="index.html" class="standard-logo")
-              img(src=require("../../images/logo/logo.png") alt="Логотип танцевального клуба 'Над дождем'")
-            a(href="index.html" class="retina-logo")
-              img(src=require("../../images/logo/logo@2x.png") alt="Логотип танцевального клуба 'Над дождем'")
+          a(href="index.html", style='display: inline-block;')
+            img(src= require('../../images/logo/logo.png'), srcset= require('../../images/logo/logo.png') + ' 1x, ' + require('../../images/logo/logo@2x.png') + ' 2x, ' + require('../../images/logo/logo@3x.png') + ' 3x', alt="Логотип танцевального клуба 'Над дождем'")
         //Primary Navigation
         nav#primary-menu.with-arrows
             ul
