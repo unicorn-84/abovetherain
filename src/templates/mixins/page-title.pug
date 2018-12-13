@@ -1,8 +1,12 @@
 mixin pageTitle(page)
   section#page-title.page-title-nobg
     .container.clearfix
-      h3 !{page.title}
+      h3 !{page.pageTitle}
       ol.breadcrumb
-        li.breadcrumb-item
-          a(href="index.html") Главная
-        li.breadcrumb-item.active.current(aria-current="page") !{page.title}
+        if page.breadcrumbs
+          each breadcrumb in page.breadcrumbs
+            if breadcrumb.path !== 'current'
+              li.breadcrumb-item
+                a(href= breadcrumb.path) !{breadcrumb.name}
+            else
+              li.breadcrumb-item.active.current(aria-current="page") !{breadcrumb.name}
