@@ -5,34 +5,18 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title Над Дождём | Аренда сценической площадки
-  //-TODO: 'Description для Аренды'
-  //-meta(name='description', content='')
+  title= pages.rent.title
+  meta(name='description', content= pages.rent.description)
 append icons
   //Page icons
 append styles
   //Page styles
-  style.
-    #page-title h3 {
-      line-height: 1.65 !important;
-    }
 //-BODY
 append header
   +header(primaryNavigation.items)
 append content
   //-Page title
-  section#page-title.page-title-nobg
-    .container.clearfix
-      h3
-        |Аренда
-        br
-        |сценической площадки
-      ol.breadcrumb
-        li.breadcrumb-item
-          a(href="index.html") Главная
-        li.breadcrumb-item
-          a(href="services.html") Услуги
-        li.breadcrumb-item.active.current(aria-current="page") Аренда
+  +pageTitle(pages.rent)
   section#content
     //-Content
     div(class='content-wrap')

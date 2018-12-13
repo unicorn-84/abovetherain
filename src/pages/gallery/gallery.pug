@@ -4,13 +4,8 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= `${options.name} | ${pages.gallery.title}`
-  if pages.gallery.description
-    meta(name='description', content= pages.gallery.description)
-  else
-    meta(name='description', content= options.description)
-  if pages.gallery.keys
-    meta(name='keywords', content= pages.gallery.keys)
+  title= pages.gallery.title
+  meta(name='description', content= pages.gallery.description)
 append icons
   //Page icons
 append styles

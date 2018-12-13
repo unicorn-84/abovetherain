@@ -4,13 +4,8 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= `${options.name} | ${pages.coaches.title}`
-  if pages.coaches.description
-    meta(name='description', content= pages.coaches.description)
-  else
-    meta(name='description', content= options.description)
-  if pages.coaches.keys
-    meta(name='keywords', content= pages.coaches.keys)
+  title= pages.coaches.title
+  meta(name='description', content= pages.coaches.description)
 append icons
   //Page icons
 append styles
