@@ -6,13 +6,8 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= `${options.name} | ${pages.eventsboard.title}`
-  if pages.eventsboard.description
-    meta(name='description', content= pages.eventsboard.description)
-  else
-    meta(name='description', content= options.description)
-  if pages.eventsboard.keys
-    meta(name='keywords', content= pages.eventsboard.keys)
+  title= pages.eventsboard.title
+  meta(name='description', content= pages.eventsboard.description)
 append icons
   //Page icons
 append styles
