@@ -236,21 +236,7 @@
   ],
   "coaches": [
     {
-      "id": "c01",
-      "name": "aleksandr",
-      "title": "Александр",
-      "directions": [
-        {
-          "title": "Zumba (R) Fitness"
-        },
-        {
-          "title": "Strong by Zumba (R)"
-        }
-      ]
-    },
-    {
-      "id": "c02",
-      "name": "nataliia",
+      "name": "natali",
       "title": "Натали",
       "directions": [
         {
@@ -262,9 +248,8 @@
       ]
     },
     {
-      "id": "c04",
-      "name": "nadezhda",
-      "title": "Надежда",
+      "name": "nadezhda_luchinina",
+      "title": "Надежда Лучинина",
       "directions": [
         {
           "title": "Pole dance"
@@ -275,8 +260,7 @@
       ]
     },
     {
-      "id": "c05",
-      "name": "yana",
+      "name": "jana",
       "title": "Яна",
       "directions": [
         {
@@ -285,7 +269,18 @@
         {
           "title": "Женская пластика"
         }
-
+      ]
+    },
+    {
+      "name": "aleksandr_ushakov",
+      "title": "Александр Ушаков",
+      "directions": [
+        {
+          "title": "Zumba (R) Fitness"
+        },
+        {
+          "title": "Strong by Zumba (R)"
+        }
       ]
     }
   ],

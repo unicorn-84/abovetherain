@@ -25,7 +25,7 @@ append content
                 .coach-wrapper
                   .coach
                     .coach-image
-                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${options.name} | ${coach.title}`)
+                      img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${coach.title} | ${options.name}`)
                     .coach-info
                       div
                         .coach-title
@@ -41,7 +41,7 @@ append content
                       .coach-icons
                         a(data-ajax href='#')
                           i.icon-line2-info
-                        a(href=`schedule.html?direction=all&coach=${coach.id}&day=all`)
+                        a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
                           i.icon-calendar2
 append scripts
   //Page scripts
