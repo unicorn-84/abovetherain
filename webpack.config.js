@@ -249,6 +249,25 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        filename: 'nadezhda_luchinina.html',
+        template: './pages/coaches/nadezhda_luchinina.pug',
+        name: 'nadezhda_luchinina',
+        excludeChunks: [
+          'index',
+          'services',
+          'schedule',
+          'eventsboard',
+          'gallery',
+          'contacts',
+          'requisites'],
+        minify: {
+          removeComments: production,
+          minifyCSS: production,
+          minifyJS: production,
+          collapseWhitespace: production,
+        },
+      }),
+      new HtmlWebpackPlugin({
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
