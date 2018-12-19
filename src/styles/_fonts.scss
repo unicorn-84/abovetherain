@@ -1,13 +1,10 @@
 @font-face {
   font-family: 'Main';
-  src: url('../fonts/Main/Main-Italic.eot');
   src:
     local('Main Italic'),
     local('Main-Italic'),
-    url('../fonts/Main/Main-Italic.eot?#iefix') format('embedded-opentype'),
     url('../fonts/Main/Main-Italic.woff2') format('woff2'),
     url('../fonts/Main/Main-Italic.woff') format('woff'),
-    url('../fonts/Main/Main-Italic.ttf') format('truetype'),
     url('../fonts/Main/Main-Italic.svg#Main-Italic') format('svg');
   font-weight: normal;
   font-style: italic;
@@ -15,13 +12,10 @@
 
 @font-face {
   font-family: 'Main';
-  src: url('../fonts/Main/Main.eot');
   src:
     local('Main'),
-    url('../fonts/Main/Main.eot?#iefix') format('embedded-opentype'),
     url('../fonts/Main/Main.woff2') format('woff2'),
     url('../fonts/Main/Main.woff') format('woff'),
-    url('../fonts/Main/Main.ttf') format('truetype'),
     url('../fonts/Main/Main.svg#Main') format('svg');
   font-weight: normal;
   font-style: normal;
@@ -29,14 +23,11 @@
 
 @font-face {
   font-family: 'Main';
-  src: url('../fonts/Main/Main-BoldItalic.eot');
   src:
     local('Main Bold Italic'),
     local('Main-BoldItalic'),
-    url('../fonts/Main/Main-BoldItalic.eot?#iefix') format('embedded-opentype'),
     url('../fonts/Main/Main-BoldItalic.woff2') format('woff2'),
     url('../fonts/Main/Main-BoldItalic.woff') format('woff'),
-    url('../fonts/Main/Main-BoldItalic.ttf') format('truetype'),
     url('../fonts/Main/Main-BoldItalic.svg#Main-BoldItalic') format('svg');
   font-weight: bold;
   font-style: italic;
@@ -44,14 +35,11 @@
 
 @font-face {
   font-family: 'Main';
-  src: url('../fonts/Main/Main-Bold.eot');
   src:
     local('Main Bold'),
     local('Main-Bold'),
-    url('../fonts/Main/Main-Bold.eot?#iefix') format('embedded-opentype'),
     url('../fonts/Main/Main-Bold.woff2') format('woff2'),
     url('../fonts/Main/Main-Bold.woff') format('woff'),
-    url('../fonts/Main/Main-Bold.ttf') format('truetype'),
     url('../fonts/Main/Main-Bold.svg#Main-Bold') format('svg');
   font-weight: bold;
   font-style: normal;
