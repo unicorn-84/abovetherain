@@ -35,7 +35,7 @@
     text-decoration: underline rgba($theme-color, 0.5) !important;
 
     @include respond-to(laptop) {
-      &:not(.read-more) {
+      & {
         text-decoration: none !important;
       }
     }

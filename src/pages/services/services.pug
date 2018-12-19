@@ -22,6 +22,11 @@ append content
       //-Container
       div(class='container')
         div(class='row')
+          div(class='col-12')
+            h3(class='mb-4')
+              |Выбирайте направления, в которых хочется развиваться.
+              br
+              |Стоимость одного занятия в школе танцев – 750 рублей.
           //-Аренда
           //FIXME: 'images alts'
           div(class='col-12 col-lg-6')
@@ -31,11 +36,25 @@ append content
               div(class='card-body')
                 h2(class='card-title mb-3')
                   |Аренда сценической площадки
-                span(class='card-subtitle mb-4')
+                span(class='card-subtitle mb-3')
                   |от 25 000 до 40 000 руб
-                p(class='card-text mb-4')
+                p(class='card-text lead mb-3')
                   |В танцевальном замке "Над дождём" возможно арендовать сценическую площадку для проведения отчетного концерта, творческого вечера, спектакля, семинара, мастер-класса и других различных мероприятий.
                 a(href= 'rent.html', class='read-more d-flex justify-content-end', data-ajax) Подробнее...
+          //-Пилон
+          div(class='col-12 col-lg-6')
+            div(class='card mb-5 mb-lg-4 border-0')
+              div(class='image-container')
+                img(class='card-img-top', src= require('../../images/services/pole-dance/001-pole-dance-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require('../../images/services/pole-dance/001-pole-dance-600x400.jpg') + ' 600w,' + require('../../images/services/pole-dance/001-pole-dance-800x533.jpg') + ' 800w')
+              div(class='card-body')
+                h2(class='card-title mb-3')
+                  |Pole Dance
+                span(class='card-subtitle mb-3')
+                  |Одно занятие - 750 руб
+                  br
+                  |Пробное занятие - 500 руб
+                p(class='card-text lead')
+                  |Pole Dance — это фитнес нового поколения, объединяющий в себе современную хореографию и воздушную акробатику. Помогает развивать и укреплять все группы мышц, совершенствовать красоту тела и достигать внутреннего раскрепощения.
           //-Кольцо
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
@@ -47,10 +66,12 @@ append content
               div(class='card-body')
                 h2(class='card-title mb-3')
                   | Воздушное кольцо
-                span(class='card-subtitle')
+                span(class='card-subtitle mb-3')
                   | Одно занятие - 750 руб
                   br
                   | Пробное занятие - 500 руб
+                p(class='card-text lead')
+                  |Воздушное кольцо - спортивное увлечение, благодаря которому вы незаметно приобретете красивые формы тела. Посещая эти занятия, вы сможете выполнять эффектные и захватывающие трюки. Окунетесь в мир воздушного искусства и почувствуйте себя настоящим артистом. После месяца активных тренировок вы заметите свободу в движениях, легкость и подъем жизненной энергии.
           //-Полотно
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
@@ -59,22 +80,12 @@ append content
               div(class='card-body')
                 h2(class='card-title mb-3')
                   | Воздушное полотно
-                span(class='card-subtitle')
+                span(class='card-subtitle mb-3')
                   | Одно занятие - 750 руб
                   br
                   | Пробное занятие - 500 руб
-          //-Пилон
-          div(class='col-12 col-lg-6')
-            div(class='card mb-5 mb-lg-4 border-0')
-              div(class='image-container')
-                img(class='card-img-top', src= require('../../images/services/pole-dance/001-pole-dance-600x400.jpg'), alt='Над Дождём | Аренда сценической площадки', srcset= require('../../images/services/pole-dance/001-pole-dance-600x400.jpg') + ' 600w,' + require('../../images/services/pole-dance/001-pole-dance-800x533.jpg') + ' 800w')
-              div(class='card-body')
-                h2(class='card-title mb-3')
-                  | Pole Dance
-                span(class='card-subtitle')
-                  | Одно занятие - 750 руб
-                  br
-                  | Пробное занятие - 500 руб
+                p(class='card-text lead')
+                  |Воздушные полотна - спорт для избранных. Здесь вы полностью удовлетворите свою тягу к совершенству. Зависая в воздухе при помощи двух полотен, танцоры демонстрируют различные трюки, срывы, эффектные висы и шпагаты. Занимаясь воздушными полотнами, вы обретаете желанную спортивную форму, гибкость и пластичность тела.
           //-Королевская йога
           div(class='col-12 col-lg-6')
             div(class='card border-0 mb-5 mb-lg-4')
@@ -83,10 +94,12 @@ append content
               div(class='card-body')
                 h2(class='card-title mb-3')
                   | Королевская йога
-                span(class='card-subtitle')
+                span(class='card-subtitle mb-3')
                   | Одно занятие - 750 руб
                   br
                   | Пробное занятие - 500 руб
+                p(class='card-text lead')
+                  |Йога - практика ума и тела, сочетающая в себе различные физические позы, дыхательные техники, медитацию и релаксацию. Занятие по йоге нацелено на гармонизацию психического и физиологического состояния организма.
           //-Stretching
           div(class='col-12 col-lg-6')
             div(class='card border-0')
@@ -95,9 +108,11 @@ append content
               div(class='card-body')
                 h2(class='card-title mb-3')
                   | Stretching
-                span(class='card-subtitle')
+                span(class='card-subtitle mb-3')
                   | Одно занятие - 750 руб
                   br
                   | Пробное занятие - 500 руб
+                p(class='card-text lead')
+                  |Stretching - оздоровительное направление, сконцентрированное на растяжении групп мышц, суставов, связок и сухожилий. Благодаря активному разогреву мышц и влиянию на функционирование кровеносной и лимфатической системы, данное направление увеличивает эластичность всего тела, замедляет старение организма и улучшает обмен веществ.
 append scripts
   //Page scripts
