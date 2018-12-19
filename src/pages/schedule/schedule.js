@@ -23,10 +23,9 @@ const data = {
   ],
   coach: [
     'all',
-    'c01',
-    'c02',
-    'c04',
-    'c05',
+    'natali',
+    'nadezhda_luchinina',
+    'jana',
   ],
   day: [
     'all',
