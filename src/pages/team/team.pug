@@ -5,7 +5,14 @@ append variables
 append meta
   //Page meta tags
   title= pages.team.title
-  meta(name='description', content= pages.team.description)
+  if pages.team.description
+    meta(name='description', content= pages.team.description)
+  if pages.team.og.title
+    meta(property='og:title', content= pages.team.og.title)
+  if pages.team.og.description
+    meta(property='og:title', content= pages.team.og.description)
+  meta(property='og:url', content= `${options.url}/${pages.team.name}.html`)
+  meta(property='og:image', content= require('../../images/team/001-team-600x400.jpg'))
 append icons
   //Page icons
 append styles

@@ -84,7 +84,6 @@
     "team": {
       "name": "team",
       "title": "Мы | Над Дождём",
-      "description": "",
       "pageTitle": "Мы",
       "breadcrumbs": [
         {
@@ -95,7 +94,10 @@
           "name": "Мы",
           "path": "current"
         }
-      ]
+      ],
+      "og": {
+        "title": "Мы | Над Дождём"
+      }
     },
     "coaches": {
       "name": "coaches",
