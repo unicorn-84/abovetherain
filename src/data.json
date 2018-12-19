@@ -237,7 +237,7 @@
   "coaches": [
     {
       "id": "01",
-      "name": "nataliia",
+      "name": "natali",
       "title": "Натали",
       "directions": [
         {
@@ -250,7 +250,7 @@
     },
     {
       "id": "02",
-      "name": "nadezhda",
+      "name": "nadezhda_luchinina",
       "title": "Надежда",
       "directions": [
         {
@@ -263,7 +263,7 @@
     },
     {
       "id": "03",
-      "name": "yana",
+      "name": "jana",
       "title": "Яна",
       "directions": [
         {
@@ -276,7 +276,7 @@
     },
     {
       "id": "04",
-      "name": "aleksandr",
+      "name": "aleksandr_ushakov",
       "title": "Александр",
       "directions": [
         {
