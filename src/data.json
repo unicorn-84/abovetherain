@@ -236,6 +236,19 @@
   ],
   "coaches": [
     {
+      "id": "c01",
+      "name": "aleksandr",
+      "title": "Александр",
+      "directions": [
+        {
+          "title": "Zumba (R) Fitness"
+        },
+        {
+          "title": "Strong by Zumba (R)"
+        }
+      ]
+    },
+    {
       "id": "c02",
       "name": "nataliia",
       "title": "Натали",
