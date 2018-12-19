@@ -1,0 +1,25 @@
+extends ../../templates/layout
+append variables
+  -const { options, pages, primaryNavigation } = require('../../data');
+//-HEAD
+append meta
+  //Page meta tags
+  title= pages.team.title
+  meta(name='description', content= pages.team.description)
+append icons
+  //Page icons
+append styles
+  //Page styles
+//-BODY
+append header
+  +header(primaryNavigation.items)
+append content
+  +pageTitle(pages.team)
+  section#content
+    .content-wrap
+      .coaches-wrapper
+        .container
+          .row
+append scripts
+  //Page scripts
+
