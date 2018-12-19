@@ -236,7 +236,6 @@
   ],
   "coaches": [
     {
-      "id": "01",
       "name": "natali",
       "title": "Натали",
       "directions": [
@@ -249,9 +248,8 @@
       ]
     },
     {
-      "id": "02",
       "name": "nadezhda_luchinina",
-      "title": "Надежда",
+      "title": "Надежда Лучинина",
       "directions": [
         {
           "title": "Pole dance"
@@ -262,7 +260,6 @@
       ]
     },
     {
-      "id": "03",
       "name": "jana",
       "title": "Яна",
       "directions": [
@@ -275,9 +272,8 @@
       ]
     },
     {
-      "id": "04",
       "name": "aleksandr_ushakov",
-      "title": "Александр",
+      "title": "Александр Ушаков",
       "directions": [
         {
           "title": "Zumba (R) Fitness"
