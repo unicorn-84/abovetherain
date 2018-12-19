@@ -117,6 +117,26 @@
         }
       ]
     },
+    "nadezhda_luchinina": {
+      "name": "nadezhda_luchinina",
+      "title": "Надежда Лучинина | Над Дождём",
+      "description": "",
+      "pageTitle": "Надежда Лучинина",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Тренеры",
+          "path": "coaches.html"
+        },
+        {
+          "name": "Надежда Лучинина",
+          "path": "current"
+        }
+      ]
+    },
     "gallery": {
       "name": "gallery",
       "title": "Фото и видео школы танцев | Над Дождём",
@@ -328,6 +348,7 @@
     {
       "name": "nadezhda_luchinina",
       "title": "Надежда Лучинина",
+      "link": "nadezhda_luchinina.html",
       "directions": [
         {
           "title": "Pole dance"
