@@ -1,6 +1,6 @@
 // JS
 import createSelect from '../../scripts/components/select/select';
-
+import { directions, coaches } from '../../data';
 // SCSS
 import '../../scripts/components/select/select.scss';
 import 'bootstrap/scss/bootstrap.scss';
@@ -8,26 +8,6 @@ import '../../styles/style.scss';
 import './schedule.scss';
 
 const data = {
-  direction: [
-    'all',
-    'd01',
-    'd02',
-    'd03',
-    'd04',
-    'd05',
-    'd06',
-    'd07',
-    'd08',
-    'd09',
-    'd10',
-  ],
-  coach: [
-    'all',
-    'c01',
-    'c02',
-    'c04',
-    'c05',
-  ],
   day: [
     'all',
     'day-1',
@@ -39,9 +19,16 @@ const data = {
     'day-7',
   ],
 };
-
-const { direction } = data;
-const { coach } = data;
+const direction = ['all'];
+directions.forEach((item) => {
+  direction.push(item.name);
+});
+const coach = ['all'];
+coaches.forEach((item) => {
+  coach.push(item.name);
+});
+data.coach = coach;
+data.direction = direction;
 const { day } = data;
 let stateObject = {
   direction: 'all',
