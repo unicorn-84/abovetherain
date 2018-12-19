@@ -196,42 +196,98 @@
       "title": "Королевская йога"
     }
   ],
-  "direction": [
+  "directions": [
     {
-      "id": 1,
-      "title": "Йога"
+      "name": "yoga",
+      "title": "Королевская йога",
+      "coaches": [
+        {
+          "title": "Натали"
+        }
+      ]
     },
     {
-      "id": 2,
-      "title": "Полотно"
+      "name": "pole_dance",
+      "title": "Pole Dance",
+      "coaches": [
+        {
+          "title": "Надежда Лучинина"
+        }
+      ]
     },
     {
-      "id": 3,
-      "title": "Pole Dance"
+      "name": "pole_dance_child",
+      "title": "Детский Pole Dance",
+      "coaches": []
     },
     {
-      "id": 4,
-      "title": "Растяжка на полотнах"
+      "name": "stretching",
+      "title": "Stretching",
+      "coaches": [
+        {
+          "title": "Надежда Лучинина"
+        }
+      ]
     },
     {
-      "id": 5,
-      "title": "Кольцо"
+      "name": "stretching_silk",
+      "title": "Stretching на полотнах",
+      "coaches": [
+        {
+          "title": "Натали"
+        }
+      ]
     },
     {
-      "id": 6,
-      "title": "Растяжка"
+      "name": "aerial_hoop",
+      "title": "Воздушное кольцо",
+      "coaches": []
     },
     {
-      "id": 7,
-      "title": "Художественная гимнастика"
+      "name": "aerial_silk",
+      "title": "Воздушное полотно",
+      "coaches": []
     },
     {
-      "id": 8,
-      "title": "Pole Dance детский"
+      "name": "rhythmic_gymnastics",
+      "title": "Художественная гимнастика",
+      "coaches": []
     },
     {
-      "id": 9,
-      "title": "Спортивная гимнастика"
+      "name": "functional_training",
+      "title": "Функциональный тренинг",
+      "coaches": [
+        {
+          "title": "Яна"
+        }
+      ]
+    },
+    {
+      "name": "plastic",
+      "title": "Женская пластика",
+      "coaches": [
+        {
+          "title": "Яна"
+        }
+      ]
+    },
+    {
+      "name": "zumba_fitness",
+      "title": "Zumba (R) Fitness",
+      "coaches": [
+        {
+          "title": "Александр Ушаков"
+        }
+      ]
+    },
+    {
+      "name": "zumba_strong",
+      "title": "Strong by Zumba (R)",
+      "coaches": [
+        {
+          "title": "Александр Ушаков"
+        }
+      ]
     }
   ],
   "coaches": [
