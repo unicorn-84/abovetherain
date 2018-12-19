@@ -81,10 +81,9 @@
         }
       ]
     },
-    "coaches": {
-      "name": "coaches",
-      "title": "Преподаватели школы танцев | Над Дождём",
-      "description": "В нашей студии работает сплоченный коллектив преподавателей по следующим направлениям: pole dance, воздушная гимнастика и кольцо, йога, растяжка, зумба и не только. Приходите к нам и тренируйтесь у лучших!",
+    "team": {
+      "name": "team",
+      "title": "Мы | Над Дождём",
       "pageTitle": "Мы",
       "breadcrumbs": [
         {
@@ -93,6 +92,65 @@
         },
         {
           "name": "Мы",
+          "path": "current"
+        }
+      ],
+      "og": {
+        "title": "Мы | Над Дождём"
+      }
+    },
+    "coaches": {
+      "name": "coaches",
+      "title": "Преподаватели школы танцев | Над Дождём",
+      "description": "В нашей студии работает сплоченный коллектив преподавателей по следующим направлениям: pole dance, воздушная гимнастика и кольцо, йога, растяжка, зумба и не только. Приходите к нам и тренируйтесь у лучших!",
+      "pageTitle": "Тренеры",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Тренеры",
+          "path": "current"
+        }
+      ]
+    },
+    "aleksandr_ushakov": {
+      "name": "aleksandr_ushakov",
+      "title": "Александр Ушаков | Над Дождём",
+      "description": "",
+      "pageTitle": "Александр Ушаков",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Тренеры",
+          "path": "coaches.html"
+        },
+        {
+          "name": "Александр Ушаков",
+          "path": "current"
+        }
+      ]
+    },
+    "nadezhda_luchinina": {
+      "name": "nadezhda_luchinina",
+      "title": "Надежда Лучинина | Над Дождём",
+      "description": "",
+      "pageTitle": "Надежда Лучинина",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Тренеры",
+          "path": "coaches.html"
+        },
+        {
+          "name": "Надежда Лучинина",
           "path": "current"
         }
       ]
@@ -161,8 +219,12 @@
         "title": "Афиша"
       },
       {
-        "name": "coaches",
+        "name": "team",
         "title": "Мы"
+      },
+      {
+        "name": "coaches",
+        "title": "Тренеры"
       },
       {
         "name": "gallery",
@@ -196,48 +258,105 @@
       "title": "Королевская йога"
     }
   ],
-  "direction": [
+  "directions": [
     {
-      "id": 1,
-      "title": "Йога"
+      "name": "yoga",
+      "title": "Королевская йога",
+      "coaches": [
+        {
+          "title": "Натали"
+        }
+      ]
     },
     {
-      "id": 2,
-      "title": "Полотно"
+      "name": "pole_dance",
+      "title": "Pole Dance",
+      "coaches": [
+        {
+          "title": "Надежда Лучинина"
+        }
+      ]
     },
     {
-      "id": 3,
-      "title": "Pole Dance"
+      "name": "pole_dance_child",
+      "title": "Детский Pole Dance",
+      "coaches": []
     },
     {
-      "id": 4,
-      "title": "Растяжка на полотнах"
+      "name": "stretching",
+      "title": "Stretching",
+      "coaches": [
+        {
+          "title": "Надежда Лучинина"
+        }
+      ]
     },
     {
-      "id": 5,
-      "title": "Кольцо"
+      "name": "stretching_silk",
+      "title": "Stretching на полотнах",
+      "coaches": [
+        {
+          "title": "Натали"
+        }
+      ]
     },
     {
-      "id": 6,
-      "title": "Растяжка"
+      "name": "aerial_hoop",
+      "title": "Воздушное кольцо",
+      "coaches": []
     },
     {
-      "id": 7,
-      "title": "Художественная гимнастика"
+      "name": "aerial_silk",
+      "title": "Воздушное полотно",
+      "coaches": []
     },
     {
-      "id": 8,
-      "title": "Pole Dance детский"
+      "name": "rhythmic_gymnastics",
+      "title": "Художественная гимнастика",
+      "coaches": []
     },
     {
-      "id": 9,
-      "title": "Спортивная гимнастика"
+      "name": "functional_training",
+      "title": "Функциональный тренинг",
+      "coaches": [
+        {
+          "title": "Яна"
+        }
+      ]
+    },
+    {
+      "name": "plastic",
+      "title": "Женская пластика",
+      "coaches": [
+        {
+          "title": "Яна"
+        }
+      ]
+    },
+    {
+      "name": "zumba_fitness",
+      "title": "Zumba (R) Fitness",
+      "coaches": [
+        {
+          "title": "Александр Ушаков",
+          "link": "aleksandr_ushakov.html"
+        }
+      ]
+    },
+    {
+      "name": "zumba_strong",
+      "title": "Strong by Zumba (R)",
+      "coaches": [
+        {
+          "title": "Александр Ушаков",
+          "link": "aleksandr_ushakov.html"
+        }
+      ]
     }
   ],
   "coaches": [
     {
-      "id": "c02",
-      "name": "nataliia",
+      "name": "natali",
       "title": "Натали",
       "directions": [
         {
@@ -249,9 +368,9 @@
       ]
     },
     {
-      "id": "c04",
-      "name": "nadezhda",
-      "title": "Надежда",
+      "name": "nadezhda_luchinina",
+      "title": "Надежда Лучинина",
+      "link": "nadezhda_luchinina.html",
       "directions": [
         {
           "title": "Pole dance"
@@ -262,8 +381,7 @@
       ]
     },
     {
-      "id": "c05",
-      "name": "yana",
+      "name": "jana",
       "title": "Яна",
       "directions": [
         {
@@ -272,7 +390,19 @@
         {
           "title": "Женская пластика"
         }
-
+      ]
+    },
+    {
+      "name": "aleksandr_ushakov",
+      "title": "Александр Ушаков",
+      "link": "aleksandr_ushakov.html",
+      "directions": [
+        {
+          "title": "Zumba (R) Fitness"
+        },
+        {
+          "title": "Strong by Zumba (R)"
+        }
       ]
     }
   ],

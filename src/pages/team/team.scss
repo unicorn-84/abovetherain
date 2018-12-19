@@ -1,0 +1,63 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.card {
+  background-color: rgba(#000, 0.5);
+  box-shadow: $box-shadow;
+
+  p {
+    line-height: 1.8 !important;
+  }
+
+  ul {
+    padding-left: 2em;
+  }
+
+  .image-container {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: 66.666666%;
+
+    img {
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  a {
+    font-family: $heading-font-family;
+    color: $theme-color;
+    text-decoration: underline rgba($theme-color, 0.5) !important;
+
+    @include respond-to(laptop) {
+      &:not(.read-more) {
+        text-decoration: none !important;
+      }
+    }
+
+    &:focus,
+    &:hover {
+      text-decoration: underline rgba($theme-color, 0.5) !important;
+    }
+  }
+
+  .card-title {
+    @include type(1);
+
+    @include respond-to(handheld) {
+      @include type(2);
+    }
+  }
+
+  .card-subtitle {
+    display: block;
+    font-family: $heading-font-family;
+
+    @include type(0);
+  }
+}
