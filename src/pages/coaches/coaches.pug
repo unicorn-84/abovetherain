@@ -32,8 +32,12 @@ append content
                           h2= coach.title
                         .coach-directions
                           each direction in coach.directions
-                            a(href='services.html')
-                              h4= direction.title
+                            if direction.link
+                              a(href= direction.link)
+                                h4= direction.title
+                            else
+                              a(href='services.html')
+                                h4= direction.title
                       .coach-icons
                         a(data-ajax href='#')
                           i.icon-line2-info
