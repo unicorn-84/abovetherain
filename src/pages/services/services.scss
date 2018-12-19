@@ -28,19 +28,17 @@
   a {
     font-family: $heading-font-family;
     color: $theme-color;
-    text-decoration: underline rgba($link-color, 0.5) !important;
-    transition: color 0.3s $function;
+    text-decoration: underline rgba($theme-color, 0.5) !important;
 
     @include respond-to(laptop) {
-      &:not(.read-more) {
+      & {
         text-decoration: none !important;
       }
     }
 
     &:focus,
     &:hover {
-      color: $light-color;
-      text-decoration: underline rgba($link-color, 0.5) !important;
+      text-decoration: underline rgba($theme-color, 0.5) !important;
     }
   }
 
