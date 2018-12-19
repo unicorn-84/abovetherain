@@ -236,20 +236,7 @@
   ],
   "coaches": [
     {
-      "id": "c01",
-      "name": "aleksandr",
-      "title": "Александр",
-      "directions": [
-        {
-          "title": "Zumba (R) Fitness"
-        },
-        {
-          "title": "Strong by Zumba (R)"
-        }
-      ]
-    },
-    {
-      "id": "c02",
+      "id": "01",
       "name": "nataliia",
       "title": "Натали",
       "directions": [
@@ -262,7 +249,7 @@
       ]
     },
     {
-      "id": "c04",
+      "id": "02",
       "name": "nadezhda",
       "title": "Надежда",
       "directions": [
@@ -275,7 +262,7 @@
       ]
     },
     {
-      "id": "c05",
+      "id": "03",
       "name": "yana",
       "title": "Яна",
       "directions": [
@@ -285,7 +272,19 @@
         {
           "title": "Женская пластика"
         }
-
+      ]
+    },
+    {
+      "id": "04",
+      "name": "aleksandr",
+      "title": "Александр",
+      "directions": [
+        {
+          "title": "Zumba (R) Fitness"
+        },
+        {
+          "title": "Strong by Zumba (R)"
+        }
       ]
     }
   ],
