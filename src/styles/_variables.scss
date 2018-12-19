@@ -20,10 +20,10 @@ $icon-color: $light-color;
 $overlay: rgba(0, 0, 0, 0.4);
 
 //Typography
-$heading-font-family: 'Comfortaa', cursive;
-$font-family: 'Open Sans', sans-serif;
-$heading-font-weight: 700;
-$font-weight: 400;
+$heading-font-family: Main, sans-serif;
+$font-family: Main, sans-serif;
+$heading-font-weight: bold;
+$font-weight: normal;
 $font-size: 1rem;
 $rhythm: 1.333;
 $line-height: 1.65;
@@ -48,7 +48,7 @@ $text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
 $function: cubic-bezier(0.6, 0, 0.4, 1);
 
 //Slider
-$slider-font-family: 'hercules_modern', serif;
+$slider-font-family: $heading-font-family;
 $slider-font-color: $light-color;
 $slider-font-size: 4.5rem;
 $caption-position: 65%;
