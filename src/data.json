@@ -196,7 +196,7 @@
       "title": "Королевская йога"
     }
   ],
-  "direction": [
+  "directions": [
     {
       "name": "yoga",
       "title": "Королевская йога",
@@ -263,7 +263,7 @@
       ]
     },
     {
-      "name": "women's_plastic",
+      "name": "women_plastic",
       "title": "Женская пластика",
       "coaches": [
         {
