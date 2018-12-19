@@ -198,40 +198,52 @@
   ],
   "direction": [
     {
-      "id": 1,
-      "title": "Йога"
+      "name": "yoga",
+      "title": "Королевская йога"
     },
     {
-      "id": 2,
-      "title": "Полотно"
-    },
-    {
-      "id": 3,
+      "name": "pole_dance",
       "title": "Pole Dance"
     },
     {
-      "id": 4,
-      "title": "Растяжка на полотнах"
+      "name": "pole_dance_child",
+      "title": "Детский Pole Dance"
     },
     {
-      "id": 5,
-      "title": "Кольцо"
+      "name": "stretching",
+      "title": "Stretching"
     },
     {
-      "id": 6,
-      "title": "Растяжка"
+      "name": "stretching_silk",
+      "title": "Stretching на полотнах"
     },
     {
-      "id": 7,
+      "name": "aerial_hoop",
+      "title": "Воздушное кольцо"
+    },
+    {
+      "name": "aerial_silk",
+      "title": "Воздушное полотно"
+    },
+    {
+      "name": "rhythmic_gymnastics",
       "title": "Художественная гимнастика"
     },
     {
-      "id": 8,
-      "title": "Pole Dance детский"
+      "name": "functional_training",
+      "title": "Функциональный тренинг"
     },
     {
-      "id": 9,
-      "title": "Спортивная гимнастика"
+      "name": "women's_plastic",
+      "title": "Женская пластика"
+    },
+    {
+      "name": "zumba_fitness",
+      "title": "Zumba (R) Fitness"
+    },
+    {
+      "name": "zumba_strong",
+      "title": "Strong by Zumba (R)"
     }
   ],
   "coaches": [
