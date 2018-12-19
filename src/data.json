@@ -97,6 +97,26 @@
         }
       ]
     },
+    "aleksandr_ushakov": {
+      "name": "aleksandr_ushakov",
+      "title": "Александр Ушаков | Над Дождём",
+      "description": "",
+      "pageTitle": "Александр Ушаков",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Тренеры",
+          "path": "coaches.html"
+        },
+        {
+          "name": "Александр Ушаков",
+          "path": "current"
+        }
+      ]
+    },
     "gallery": {
       "name": "gallery",
       "title": "Фото и видео школы танцев | Над Дождём",
@@ -276,7 +296,8 @@
       "title": "Zumba (R) Fitness",
       "coaches": [
         {
-          "title": "Александр Ушаков"
+          "title": "Александр Ушаков",
+          "link": "aleksandr_ushakov.html"
         }
       ]
     },
@@ -285,7 +306,8 @@
       "title": "Strong by Zumba (R)",
       "coaches": [
         {
-          "title": "Александр Ушаков"
+          "title": "Александр Ушаков",
+          "link": "aleksandr_ushakov.html"
         }
       ]
     }
@@ -330,6 +352,7 @@
     {
       "name": "aleksandr_ushakov",
       "title": "Александр Ушаков",
+      "link": "aleksandr_ushakov.html",
       "directions": [
         {
           "title": "Zumba (R) Fitness"

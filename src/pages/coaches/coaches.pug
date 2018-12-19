@@ -39,8 +39,9 @@ append content
                               a(href='services.html')
                                 h4= direction.title
                       .coach-icons
-                        a(data-ajax href='#')
-                          i.icon-line2-info
+                        if coach.link
+                          a(href= coach.link)
+                            i.icon-line2-info
                         a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
                           i.icon-calendar2
 append scripts
