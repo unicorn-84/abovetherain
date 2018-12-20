@@ -8,7 +8,7 @@
     "server": "webpack-dev-server --env development",
     "version": "npm run build && git add -f dist",
     "postversion": "git push && git push --tags",
-    "dev-server": "npm version preminor"
+    "dev-server": "npm version minor"
   },
   "private": true,
   "repository": {

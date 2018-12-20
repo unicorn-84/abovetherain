@@ -1,10 +1,10 @@
-const path = require('path');
+// const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
+// const PurgecssPlugin = require('purgecss-webpack-plugin');
 const cssnano = require('cssnano');
-const glob = require('glob');
+// const glob = require('glob');
 // const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const AddAssetPlugin = require('add-asset-webpack-plugin');
@@ -90,9 +90,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:4].css',
     }),
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    }),
+    // new PurgecssPlugin({
+    //   paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    // }),
     // new SitemapPlugin(common.url, ['/'], {
     //   lastMod: true,
     //   changeFreq: 'always',
