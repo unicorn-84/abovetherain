@@ -10,6 +10,8 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const AddAssetPlugin = require('add-asset-webpack-plugin');
 const { options } = require('./src/data');
 
+const devServer = process.env.npm_lifecycle_event === 'dev-server';
+
 module.exports = {
   mode: 'production',
   output: {
@@ -98,11 +100,7 @@ module.exports = {
     // }),
     new RobotstxtPlugin({
       policy: [
-        {
-          userAgent: '*',
-          // disallow: '/catalogs.html',
-          // crawlDelay: 1,
-        },
+        devServer ? { userAgent: '*', disallow: '/' } : { userAgent: '*' },
       ],
       // sitemap: `${common.url}/sitemap.xml.gz`,
       // host: common.url,
