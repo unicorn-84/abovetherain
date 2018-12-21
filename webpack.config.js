@@ -44,6 +44,9 @@ const commonConfig = merge([
           use: [
             {
               loader: 'pug-loader',
+              options: {
+                pretty: true,
+              },
             },
           ],
         },
