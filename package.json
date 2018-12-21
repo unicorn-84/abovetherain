@@ -1,14 +1,13 @@
 {
   "name": "abovetherain",
-  "version": "1.18.0",
+  "version": "1.18.1",
   "description": "Dance Club static web site",
   "scripts": {
-    "dev": "webpack --env development",
-    "build": "webpack --env production",
-    "server": "webpack-dev-server --env development",
-    "version": "npm run build && git add -f dist",
-    "postversion": "git push && git push --tags",
-    "dev-server": "npm version minor"
+    "build:dev": "webpack --env development",
+    "build:prod": "webpack --env production",
+    "server:loc": "webpack-dev-server --env development",
+    "version": "npm run build:prod && git add -f dist",
+    "postversion": "git push -f && git push -f --tags"
   },
   "private": true,
   "repository": {
