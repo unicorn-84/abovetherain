@@ -25,10 +25,7 @@ append content
                 .coach-wrapper
                   .coach
                     .coach-image
-                      if coach.name === 'aleksandr_ushakov'
-                        img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
-                      else
-                        img(src= require(`../../images/coaches/${coach.name}.jpg`) alt= `${coach.title} | ${options.name}`)
+                      img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
                     .coach-info
                       div
                         .coach-title
