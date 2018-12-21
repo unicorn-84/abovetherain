@@ -7,12 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
 
-const production = process.env.npm_lifecycle_event === 'build';
-if (production) {
-  process.env.NODE_ENV = 'production';
-} else {
-  process.env.NODE_ENV = 'development';
-}
+const build = process.env.npm_lifecycle_event === 'build';
 
 const commonConfig = merge([
   {
@@ -130,10 +125,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -150,10 +145,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -170,10 +165,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -190,10 +185,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -210,10 +205,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -230,10 +225,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -250,10 +245,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -270,10 +265,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -290,10 +285,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -310,10 +305,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -330,10 +325,10 @@ const commonConfig = merge([
           'gallery',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -350,10 +345,10 @@ const commonConfig = merge([
           'gallery',
           'contacts'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new HtmlWebpackPlugin({
@@ -370,10 +365,10 @@ const commonConfig = merge([
           'contacts',
           'requisites'],
         minify: {
-          removeComments: production,
-          minifyCSS: production,
-          minifyJS: production,
-          collapseWhitespace: production,
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
         },
       }),
       new webpack.ProvidePlugin({
