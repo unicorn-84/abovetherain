@@ -2,8 +2,9 @@
 @import '../../styles/mixins';
 
 .card {
-  background-color: rgba(#000, 0.5);
+  background-color: transparent;
   box-shadow: $box-shadow;
+  border-radius: 0;
 
   p {
     line-height: 1.8 !important;
@@ -29,21 +30,18 @@
     }
   }
 
+  .card-img-top {
+    border-radius: 0;
+  }
+
+  .card-body {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   a {
     font-family: $heading-font-family;
-    color: $theme-color;
-    text-decoration: underline rgba($theme-color, 0.5) !important;
-
-    @include respond-to(laptop) {
-      & {
-        text-decoration: none !important;
-      }
-    }
-
-    &:focus,
-    &:hover {
-      text-decoration: underline rgba($theme-color, 0.5) !important;
-    }
+    color: $light-color;
+    text-decoration: underline rgba($light-color, 0.5) !important;
   }
 
   .card-title {
