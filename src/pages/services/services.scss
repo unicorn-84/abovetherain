@@ -6,13 +6,7 @@
   box-shadow: $box-shadow;
   border-radius: 0;
 
-  h2 {
-    color: #333;
-  }
-
-  p,
-  span {
-    color: #494949;
+  p {
     line-height: 1.8 !important;
   }
 
@@ -36,10 +30,14 @@
     border-radius: 0;
   }
 
+  .card-body {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
   a {
     font-family: $heading-font-family;
-    color: #494949;
-    text-decoration: underline rgba(#494949, 0.5) !important;
+    color: $light-color;
+    text-decoration: underline rgba($light-color, 0.5) !important;
   }
 
   .card-title {
