@@ -10,6 +10,8 @@ const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const AddAssetPlugin = require('add-asset-webpack-plugin');
 const { options } = require('./src/data');
 
+const server = process.env.npm_config_server;
+
 module.exports = {
   mode: 'production',
   output: {
@@ -88,9 +90,6 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash:4].css',
     }),
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    }),
     // new SitemapPlugin(common.url, ['/'], {
     //   lastMod: true,
     //   changeFreq: 'always',
@@ -98,11 +97,7 @@ module.exports = {
     // }),
     new RobotstxtPlugin({
       policy: [
-        {
-          userAgent: '*',
-          // disallow: '/catalogs.html',
-          // crawlDelay: 1,
-        },
+        server === 'dev' ? { userAgent: '*', disallow: '/' } : { userAgent: '*' },
       ],
       // sitemap: `${common.url}/sitemap.xml.gz`,
       // host: common.url,
@@ -114,3 +109,11 @@ module.exports = {
     })}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
   ],
 };
+
+if (server !== 'dev') {
+  module.exports.plugins.push(
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    }),
+  );
+}
