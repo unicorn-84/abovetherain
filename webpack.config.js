@@ -7,7 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
 
-const build = process.env.npm_lifecycle_event === 'build';
+const build = process.env.npm_lifecycle_event === 'build:prod';
+const server = process.env.npm_config_server;
 
 const commonConfig = merge([
   {
@@ -103,15 +104,8 @@ const commonConfig = merge([
           toType: 'template',
         },
       ]),
-      // валидации
-      new CopyWebpackPlugin([
-        {
-          from: './data/trash',
-          to: './[name].[ext]',
-          toType: 'template',
-        },
-      ]),
       new HtmlWebpackPlugin({
+        server,
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
@@ -132,6 +126,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'services.html',
         template: './pages/services/services.pug',
         name: 'services',
@@ -152,6 +147,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'rent.html',
         template: './pages/services/rent.pug',
         name: 'rent',
@@ -172,6 +168,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'schedule.html',
         template: './pages/schedule/schedule.pug',
         name: 'schedule',
@@ -192,6 +189,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'eventsboard.html',
         template: './pages/eventsboard/eventsboard.pug',
         name: 'eventsboard',
@@ -212,6 +210,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'team.html',
         template: './pages/team/team.pug',
         name: 'team',
@@ -232,6 +231,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'coaches.html',
         template: './pages/coaches/coaches.pug',
         name: 'coaches',
@@ -252,6 +252,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'aleksandr_ushakov.html',
         template: './pages/coaches/aleksandr_ushakov.pug',
         name: 'aleksandr_ushakov',
@@ -272,6 +273,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'nadezhda_luchinina.html',
         template: './pages/coaches/nadezhda_luchinina.pug',
         name: 'nadezhda_luchinina',
@@ -292,6 +294,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'gallery.html',
         template: './pages/gallery/gallery.pug',
         name: 'gallery',
@@ -312,6 +315,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'contacts.html',
         template: './pages/contacts/contacts.pug',
         name: 'contacts',
@@ -332,6 +336,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'requisites.html',
         template: './pages/requisites/requisites.pug',
         name: 'requisites',
@@ -352,6 +357,7 @@ const commonConfig = merge([
         },
       }),
       new HtmlWebpackPlugin({
+        server,
         filename: 'sofa-makurina-master-class.html',
         template: './pages/eventsboard/sofa-makurina-master-class.pug',
         name: 'sofa-makurina-master-class',
@@ -390,3 +396,16 @@ module.exports = (mode) => {
   }
   return merge(commonConfig, developmentConfig, { mode });
 };
+
+if (server !== 'dev') {
+  module.exports.plugins.push(
+    // валидации
+    new CopyWebpackPlugin([
+      {
+        from: './data/trash',
+        to: './[name].[ext]',
+        toType: 'template',
+      },
+    ]),
+  );
+}
