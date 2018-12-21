@@ -8,6 +8,7 @@ const glob = require('glob');
 // const SitemapPlugin = require('sitemap-webpack-plugin').default;
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const AddAssetPlugin = require('add-asset-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { options } = require('./src/data');
 
 const server = process.env.npm_config_server;
@@ -112,6 +113,14 @@ module.exports = {
 
 if (server !== 'dev') {
   module.exports.plugins.push(
+    // валидации
+    new CopyWebpackPlugin([
+      {
+        from: './data/trash',
+        to: './[name].[ext]',
+        toType: 'template',
+      },
+    ]),
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
     }),
