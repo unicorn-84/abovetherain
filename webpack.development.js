@@ -3,10 +3,9 @@ module.exports = {
   devtool: 'inline-source-map',
   devServer: {
     stats: 'errors-only',
-    open: true,
     overlay: true,
     host: process.env.HOST,
-    port: process.env.PORT,
+    port: process.env.PORT || 8000,
   },
   module: {
     rules: [
