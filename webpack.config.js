@@ -396,16 +396,3 @@ module.exports = (mode) => {
   }
   return merge(commonConfig, developmentConfig, { mode });
 };
-
-if (server !== 'dev') {
-  module.exports.plugins.push(
-    // валидации
-    new CopyWebpackPlugin([
-      {
-        from: './data/trash',
-        to: './[name].[ext]',
-        toType: 'template',
-      },
-    ]),
-  );
-}
