@@ -46,7 +46,6 @@ module.exports = {
     ],
   },
   optimization: {
-    runtimeChunk: 'single',
     splitChunks: {
       cacheGroups: {
         default: false,
