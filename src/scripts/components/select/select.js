@@ -1,4 +1,5 @@
 // JS
+// FIXME: 'Не меняется selected значение в Safari'
 import { wrap } from '../helpers';
 
 const nativeSelects = document.querySelectorAll('select[data-select]');
