@@ -15,6 +15,7 @@ const commonConfig = merge([
     context: path.resolve(__dirname, 'src'),
     entry: {
       index: './pages/index/index',
+      inlineIndex: './pages/index/inlineIndex',
       services: './pages/services/services',
       schedule: './pages/schedule/schedule',
       eventsboard: './pages/eventsboard/eventsboard',
@@ -112,15 +113,16 @@ const commonConfig = merge([
         filename: 'index.html',
         template: './pages/index/index.pug',
         name: 'index',
-        excludeChunks: [
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
+        inject: false,
+        // excludeChunks: [
+        //   'services',
+        //   'schedule',
+        //   'eventsboard',
+        //   'team',
+        //   'coaches',
+        //   'gallery',
+        //   'contacts',
+        //   'requisites'],
         minify: {
           removeComments: build,
           minifyCSS: build,
