@@ -4,22 +4,24 @@ script(type="text/javascript" src="scripts/plugins.js")
 script(type="text/javascript" src="scripts/functions.js")
 if htmlWebpackPlugin.options.name !== 'index'
   script.
-    const btn = $('#abovetherain__gototop');
-    if ($(window).scrollTop() > 300) {
-      btn.css({
-        display: 'flex',
-      }).animate({
-        opacity: 1,
-      }, 300);
-    }
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > 300) {
-        btn.css({ display: 'flex' });
-      } else {
-        btn.css({ display: 'none' });
+    jQuery.noConflict();
+    jQuery(document).ready(function domReadyCb($) {
+      $window = $(window);
+      $goToTopEl = $('#abovetherain__gototop');
+      $goToTopEl.click(function () {
+        $('body, html').stop(true).animate({
+          'scrollTop': 0
+        });
+        return false;
+      });
+      $window.on('scroll', function windowScrollCb() {
+        if ($window.scrollTop() > 450) {
+          $goToTopEl.fadeIn();
+        } else {
+          $goToTopEl.fadeOut();
+        }
+      });
+      if ($window.scrollTop() > 450) {
+        $goToTopEl.fadeIn();
       }
-    });
-    btn.on('click', function (e) {
-      e.preventDefault();
-      $('html, body').animate({ scrollTop: 0 }, '300');
     });
