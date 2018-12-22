@@ -33,21 +33,20 @@ body {
 }
 
 #abovetherain__gototop {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 50px;
-  height: 50px;
   display: none;
+  z-index: 20;
+  position: fixed;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  width: 50px;
+  height: 50px;
+  top: auto;
+  left: auto;
+  right: 30px;
+  bottom: 50px;
+  cursor: pointer;
 
-  svg path {
+  path {
     fill: $light-color;
-  }
-
-  &:hover {
-    cursor: pointer;
   }
 }
