@@ -1,3 +1,3 @@
 import './inlineIndex.scss';
 
-console.log('Inline script');
+console.log('Inline index');
