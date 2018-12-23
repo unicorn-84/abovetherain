@@ -4,6 +4,7 @@ const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
 const productionConfig = require('./webpack.production');
 const developmentConfig = require('./webpack.development');
 
@@ -281,6 +282,13 @@ const commonConfig = merge([
         jQuery: 'jquery',
         'window.jQuery': 'jquery',
         Popper: ['popper.js', 'default'],
+      }),
+      new FileManagerPlugin({
+        onEnd: {
+          delete: [
+            path.resolve(__dirname, 'dist/**/inline*.*'),
+          ],
+        },
       }),
     ],
     optimization: {
