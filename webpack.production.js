@@ -63,7 +63,7 @@ module.exports = {
           reuseExistingChunk: true,
         },
         inline: {
-          name: false,
+          // name: false,
           test: /inline/,
           chunks: 'initial',
           enforce: true,
