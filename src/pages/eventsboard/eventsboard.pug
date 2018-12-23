@@ -12,6 +12,14 @@ append icons
   //Page icons
 append styles
   //Page styles
+  each cssFile in htmlWebpackPlugin.files.css
+    if cssFile.search(/inline/i) === -1 && (cssFile.search(/vendor/i) !== -1 || cssFile.search(/commons/i) !== -1 || cssFile.search(/eventsboard/i) !== -1)
+      link(href=cssFile, rel='preload', as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
+      noscript
+        link(href=cssFile, rel='stylesheet')
+  each cssFile in htmlWebpackPlugin.files.css
+    if cssFile.search(/inline~eventsboard/i) !== -1
+      style=compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
   +header(primaryNavigation.items)

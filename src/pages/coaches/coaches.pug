@@ -16,7 +16,7 @@ append styles
       noscript
         link(href=cssFile, rel='stylesheet')
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inlineCoaches/i) !== -1
+    if cssFile.search(/inline~coaches/i) !== -1
       style=compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
