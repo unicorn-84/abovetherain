@@ -12,9 +12,9 @@ append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline/i) === -1 && (cssFile.search(/vendor/i) !== -1 || cssFile.search(/commons/i) !== -1 || cssFile.search(/requisites/i) !== -1)
-    link(href=cssFile, rel='preload', as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
-    noscript
-      link(href=cssFile, rel='stylesheet')
+      link(href=cssFile, rel='preload', as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
+      noscript
+        link(href=cssFile, rel='stylesheet')
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~requisites/i) !== -1
       style=compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
@@ -46,3 +46,9 @@ append content
                   «Оплата за участие в танцевальном мероприятии, МК Софа. НДС не облагается»
 append scripts
   //Page scripts
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline/i) === -1 && (jsFile.search(/vendor/i) !== -1 || jsFile.search(/commons/i) !== -1 || jsFile.search(/requisites/i) !== -1)
+      script(src= jsFile, type='text/javascript')
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline~requisites/i) !== -1
+      script(type='text/javascript') !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}

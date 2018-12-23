@@ -133,3 +133,9 @@ append content
                 '../../images/gallery/thumbnails/029.jpg') alt= options.name width='300', height='200')
 append scripts
   //Page scripts
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline/i) === -1 && (jsFile.search(/vendor/i) !== -1 || jsFile.search(/commons/i) !== -1 || jsFile.search(/gallery/i) !== -1)
+      script(src= jsFile, type='text/javascript')
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline~gallery/i) !== -1
+      script(type='text/javascript') !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}

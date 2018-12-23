@@ -138,6 +138,7 @@ const commonConfig = merge([
         filename: 'rent.html',
         template: './pages/services/rent.pug',
         name: 'rent',
+        inject: false,
         minify: {
           removeComments: build,
           minifyCSS: build,
@@ -215,6 +216,7 @@ const commonConfig = merge([
         filename: 'nadezhda_luchinina.html',
         template: './pages/coaches/nadezhda_luchinina.pug',
         name: 'nadezhda_luchinina',
+        inject: false,
         minify: {
           removeComments: build,
           minifyCSS: build,
@@ -266,6 +268,7 @@ const commonConfig = merge([
         filename: 'sofa-makurina-master-class.html',
         template: './pages/eventsboard/sofa-makurina-master-class.pug',
         name: 'sofa-makurina-master-class',
+        inject: false,
         minify: {
           removeComments: build,
           minifyCSS: build,
