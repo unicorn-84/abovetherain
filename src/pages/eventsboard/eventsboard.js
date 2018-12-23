@@ -5,5 +5,5 @@ import '../../styles/style.scss';
 // Local
 import './eventsboard.scss';
 // Inline
-import './inline/inlineEventsboard';
-import './inline/inlineEventsboard.scss';
+// import './inline/inlineEventsboard';
+// import './inline/inlineEventsboard.scss';
