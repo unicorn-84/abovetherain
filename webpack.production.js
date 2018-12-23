@@ -61,6 +61,11 @@ module.exports = {
           minChunks: 2,
           chunks: 'all',
           reuseExistingChunk: true,
+        },
+        inline: {
+          name: false,
+          test: /inline/,
+          chunks: 'initial',
           enforce: true,
         },
       },
@@ -76,6 +81,7 @@ module.exports = {
           },
         },
       }),
+      // FIXME: 'Добавить preset'
       new OptimizeCSSAssetsPlugin({
         cssProcessor: cssnano,
         cssProcessorOptions: {
