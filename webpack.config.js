@@ -293,6 +293,16 @@ const commonConfig = merge([
     ],
     optimization: {
       noEmitOnErrors: true,
+      splitChunks: {
+        cacheGroups: {
+          inline: {
+            name: false,
+            test: /inline/,
+            chunks: 'initial',
+            enforce: true,
+          },
+        },
+      },
     },
   },
 ]);

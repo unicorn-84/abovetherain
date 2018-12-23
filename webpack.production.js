@@ -62,12 +62,6 @@ module.exports = {
           chunks: 'all',
           reuseExistingChunk: true,
         },
-        inline: {
-          // name: false,
-          test: /inline/,
-          chunks: 'initial',
-          enforce: true,
-        },
       },
     },
     minimizer: [
