@@ -1,11 +1,16 @@
-// JS
+// Vendor
+import 'bootstrap/scss/bootstrap.scss';
+// Common
+import '../../styles/style.scss';
+// Local
+import '../../scripts/components/select/select.scss';
+import './schedule.scss';
+// Inline
+import './inline/inlineSchedule';
+import './inline/inlineSchedule.scss';
+
 import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';
-// SCSS
-import '../../scripts/components/select/select.scss';
-import 'bootstrap/scss/bootstrap.scss';
-import '../../styles/style.scss';
-import './schedule.scss';
 
 const data = {
   day: [
