@@ -124,3 +124,9 @@ append content
                   |Stretching - оздоровительное направление, сконцентрированное на растяжении групп мышц, суставов, связок и сухожилий. Благодаря активному разогреву мышц и влиянию на функционирование кровеносной и лимфатической системы, данное направление увеличивает эластичность всего тела, замедляет старение организма и улучшает обмен веществ.
 append scripts
   //Page scripts
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline/i) === -1 && (jsFile.search(/vendor/i) !== -1 || jsFile.search(/commons/i) !== -1 || jsFile.search(/services/i) !== -1)
+      script(src= jsFile, type='text/javascript')
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline~services/i) !== -1
+      script(type='text/javascript') !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}
