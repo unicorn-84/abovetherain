@@ -4,6 +4,7 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
+  base(href= htmlWebpackPlugin.options.base)
   title= pages.index.title
   meta(name='description', content= pages.index.description)
   if htmlWebpackPlugin.options.buildServer !== 'dev'

@@ -12,7 +12,9 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
 const prod = process.env.npm_lifecycle_event === 'build:prod';
+const localServer = process.env.npm_lifecycle_event === 'server:loc';
 const buildServer = process.env.npm_config_server;
+const port = 8000;
 
 module.exports = {
   entry: {
@@ -29,7 +31,9 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: prod ? 'scripts/[name].[contenthash:4].js' : 'scripts/[name].js',
+    filename: prod
+      ? 'scripts/[name].[contenthash:4].js'
+      : 'scripts/[name].js',
     chunkFilename: prod
       ? 'scripts/[name].[contenthash:4].js'
       : 'scripts/[name].js',
@@ -164,8 +168,8 @@ module.exports = {
   devServer: {
     stats: 'errors-only',
     overlay: true,
-    host: process.env.HOST,
-    port: process.env.PORT || 8000,
+    compress: true,
+    port,
   },
 };
 
@@ -221,6 +225,7 @@ if (prod) {
         template: pages[page].template,
         inject: false,
         buildServer,
+        base: localServer ? `http://localhost:${port}/` : options.url,
         minify: {
           removeComments: prod,
           minifyCSS: prod,
