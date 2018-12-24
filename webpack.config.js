@@ -101,7 +101,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: prod ? '[name].[hash:4].[ext]' : '[name].[ext]',
-              outputPath: 'images/',
+              outputPath: 'images',
             },
           },
         ],
@@ -260,8 +260,8 @@ module.exports = {
           chunks: 'all',
           test: /(node_modules|bower_components)/,
         },
-        commons: {
-          name: 'commons',
+        common: {
+          name: 'common',
           minChunks: 2,
           chunks: 'all',
         },

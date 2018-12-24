@@ -1,19 +1,17 @@
 //Common scripts
-if htmlWebpackPlugin.options.name === 'aleksandr-ushakov'
-  script(type="text/javascript" src="../scripts/jquery.js")
-  script(type="text/javascript" src="../scripts/plugins.js")
-  script(type="text/javascript" src="../scripts/functions.js")
-else
-  script(type="text/javascript" src="scripts/jquery.js")
-  script(type="text/javascript" src="scripts/plugins.js")
-  script(type="text/javascript" src="scripts/functions.js")
-//FIXME: 'Объявить переменные'
+script(type="text/javascript" src="scripts/jquery.js")
+script(type="text/javascript" src="scripts/plugins.js")
+script(type="text/javascript" src="scripts/functions.js")
+each jsFile in htmlWebpackPlugin.files.js
+  if jsFile.search(/inline/i) === -1 && (jsFile.search(/vendor/i) !== -1 || jsFile.search(/common/i) !== -1)
+    script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
+//Go to top
 if htmlWebpackPlugin.options.name !== 'index'
   script.
     jQuery.noConflict();
     jQuery(document).ready(function domReadyCb($) {
-      $window = $(window);
-      $goToTopEl = $('#abovetherain__gototop');
+      const $window = $(window);
+      const $goToTopEl = $('#abovetherain__gototop');
       $goToTopEl.click(function () {
         $('body, html').stop(true).animate({
           'scrollTop': 0
