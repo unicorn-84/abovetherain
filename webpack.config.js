@@ -9,31 +9,23 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
 const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
-const { options } = require('./src/data');
+const { options, pages } = require('./src/data');
 
 const prod = process.env.npm_lifecycle_event === 'build:prod';
 const buildServer = process.env.npm_config_server;
 
-const htmlWebpackPluginMinifyOptions = {
-  removeComments: true,
-  minifyCSS: true,
-  minifyJS: true,
-  collapseWhitespace: true,
-};
-
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
   entry: {
-    index: './pages/index/index',
-    services: './pages/services/services',
-    schedule: './pages/schedule/schedule',
-    eventsboard: './pages/eventsboard/eventsboard',
-    team: './pages/team/team',
-    coaches: './pages/coaches/coaches',
-    coach: './pages/coaches/coach/coach',
-    gallery: './pages/gallery/gallery',
-    contacts: './pages/contacts/contacts',
-    requisites: './pages/requisites/requisites',
+    index: './src/pages/index/index',
+    services: './src/pages/services/services',
+    schedule: './src/pages/schedule/schedule',
+    eventsboard: './src/pages/eventsboard/eventsboard',
+    team: './src/pages/team/team',
+    coaches: './src/pages/coaches/coaches',
+    coach: './src/pages/coaches/coach/coach',
+    gallery: './src/pages/gallery/gallery',
+    contacts: './src/pages/contacts/contacts',
+    requisites: './src/pages/requisites/requisites',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -60,7 +52,7 @@ module.exports = {
           {
             loader: 'pug-loader',
             options: {
-              pretty: true,
+              pretty: !prod,
             },
           },
         ],
@@ -112,7 +104,7 @@ module.exports = {
     // скрипты шаблона
     new CopyWebpackPlugin([
       {
-        from: './scripts/**/*.js',
+        from: './src/scripts/**/*.js',
         to: 'scripts/[name].[ext]',
         toType: 'template',
       },
@@ -120,7 +112,7 @@ module.exports = {
     // стили шаблона
     new CopyWebpackPlugin([
       {
-        from: './styles/**/*.css',
+        from: './src/styles/**/*.css',
         to: 'styles/[name].[ext]',
         toType: 'template',
       },
@@ -129,110 +121,6 @@ module.exports = {
       filename: prod
         ? 'styles/[name].[contenthash:4].css'
         : 'styles/[name].css',
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'index.html',
-      template: './pages/index/index.pug',
-      name: 'index',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'services.html',
-      template: './pages/services/services.pug',
-      name: 'services',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'rent.html',
-      template: './pages/services/rent.pug',
-      name: 'rent',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'schedule.html',
-      template: './pages/schedule/schedule.pug',
-      name: 'schedule',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'eventsboard.html',
-      template: './pages/eventsboard/eventsboard.pug',
-      name: 'eventsboard',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'team.html',
-      template: './pages/team/team.pug',
-      name: 'team',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'coaches.html',
-      template: './pages/coaches/coaches.pug',
-      name: 'coaches',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'nadezhda_luchinina.html',
-      template: './pages/coaches/nadezhda_luchinina.pug',
-      name: 'nadezhda_luchinina',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'gallery.html',
-      template: './pages/gallery/gallery.pug',
-      name: 'gallery',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'contacts.html',
-      template: './pages/contacts/contacts.pug',
-      name: 'contacts',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'requisites.html',
-      template: './pages/requisites/requisites.pug',
-      name: 'requisites',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'sofa-makurina-master-class.html',
-      template: './pages/eventsboard/sofa-makurina-master-class.pug',
-      name: 'sofa-makurina-master-class',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
-    }),
-    new HtmlWebpackPlugin({
-      buildServer,
-      filename: 'coaches/aleksandr-ushakov.html',
-      template: './pages/coaches/coach/aleksandr-ushakov.pug',
-      name: 'aleksandr-ushakov',
-      inject: false,
-      minify: prod ? htmlWebpackPluginMinifyOptions : null,
     }),
     new webpack.ProvidePlugin({
       $: 'jquery',
@@ -323,3 +211,23 @@ if (prod) {
     );
   }
 }
+
+(function createPages() {
+  Object.keys(pages).forEach((page) => {
+    module.exports.plugins.push(
+      new HtmlWebpackPlugin({
+        name: pages[page].name,
+        filename: pages[page].link,
+        template: pages[page].template,
+        inject: false,
+        buildServer,
+        minify: {
+          removeComments: prod,
+          minifyCSS: prod,
+          minifyJS: prod,
+          collapseWhitespace: prod,
+        },
+      }),
+    );
+  });
+}());
