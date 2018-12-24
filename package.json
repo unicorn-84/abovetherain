@@ -7,7 +7,8 @@
     "build:prod": "webpack --env production",
     "server:loc": "webpack-dev-server --env development",
     "version": "npm run build:prod && git add -f dist",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "build:server-dev": "npm --server=dev run build:prod"
   },
   "private": true,
   "repository": {
