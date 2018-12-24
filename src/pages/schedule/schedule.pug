@@ -75,5 +75,4 @@ append scripts
   //Inline scripts
   each jsFile in htmlWebpackPlugin.files.js
     if jsFile.search(/inline~schedule/i) !== -1
-      script(type='text/javascript') !{compilation.assets[jsFile.substr(
-        htmlWebpackPlugin.files.publicPath.length)].source()}
+      script(type='text/javascript') !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}

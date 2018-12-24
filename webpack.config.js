@@ -11,7 +11,6 @@ const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options } = require('./src/data');
 
-
 const prod = process.env.npm_lifecycle_event === 'build:prod';
 const buildServer = process.env.npm_config_server;
 

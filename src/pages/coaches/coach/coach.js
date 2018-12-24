@@ -4,5 +4,6 @@ import 'bootstrap/scss/bootstrap.scss';
 import '../../../styles/style.scss';
 // Local
 import './coach.scss';
-
-console.log('Coach page');
+// Inline
+import './inline/inlineCoach';
+import './inline/inlineCoach.scss';
