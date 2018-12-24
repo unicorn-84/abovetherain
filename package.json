@@ -3,12 +3,13 @@
   "version": "1.19.0-0",
   "description": "Dance Club static web site",
   "scripts": {
-    "build:dev": "webpack --env development",
-    "build:prod": "webpack --env production",
-    "server:loc": "webpack-dev-server --env development",
+    "build:dev": "webpack --mode development",
+    "build:prod": "webpack --mode production",
+    "build:server-dev": "npm --server=dev run build:prod",
+    "build:server-prod": "npm --server=prod run build:prod",
+    "server:loc": "webpack-dev-server --mode development",
     "version": "npm run build:prod && git add -f dist",
-    "postversion": "git push && git push --tags",
-    "build:server-dev": "npm --server=dev run build:prod"
+    "postversion": "git push && git push --tags"
   },
   "private": true,
   "repository": {
