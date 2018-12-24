@@ -21,13 +21,15 @@ const commonConfig = merge([
       eventsboard: './pages/eventsboard/eventsboard',
       team: './pages/team/team',
       coaches: './pages/coaches/coaches',
+      coach: './pages/coaches/coach/coach',
       gallery: './pages/gallery/gallery',
       contacts: './pages/contacts/contacts',
       requisites: './pages/requisites/requisites',
     },
     output: {
       path: path.resolve(__dirname, 'dist'),
-      filename: './scripts/[name].js',
+      filename: build ? 'scripts/[name].[contenthash:4].js' : 'scripts/[name].js',
+      chunkFilename: build ? 'scripts/[name].[contenthash:4].js' : 'scripts/[name].js',
     },
     module: {
       rules: [
@@ -57,33 +59,8 @@ const commonConfig = merge([
             {
               loader: 'file-loader',
               options: {
-                name: 'fonts/[name].[ext]',
-              },
-            },
-          ],
-        },
-        {
-          test: /data.*\.(jade|pug|html)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'data/[name].[hash:4].html',
-              },
-            },
-            'extract-loader',
-            {
-              loader: 'html-loader',
-              options: {
-                attrs: ['img:src'],
-                root: path.resolve(__dirname, '.'),
-                interpolate: true,
-              },
-            },
-            {
-              loader: 'pug-html-loader',
-              options: {
-                exports: false,
+                name: '[name].[ext]',
+                outputPath: 'fonts/',
               },
             },
           ],
@@ -201,19 +178,6 @@ const commonConfig = merge([
       }),
       new HtmlWebpackPlugin({
         server,
-        filename: 'aleksandr_ushakov.html',
-        template: './pages/coaches/aleksandr_ushakov.pug',
-        name: 'aleksandr_ushakov',
-        inject: false,
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
         filename: 'nadezhda_luchinina.html',
         template: './pages/coaches/nadezhda_luchinina.pug',
         name: 'nadezhda_luchinina',
@@ -269,6 +233,19 @@ const commonConfig = merge([
         filename: 'sofa-makurina-master-class.html',
         template: './pages/eventsboard/sofa-makurina-master-class.pug',
         name: 'sofa-makurina-master-class',
+        inject: false,
+        minify: {
+          removeComments: build,
+          minifyCSS: build,
+          minifyJS: build,
+          collapseWhitespace: build,
+        },
+      }),
+      new HtmlWebpackPlugin({
+        server,
+        filename: 'coaches/aleksandr-ushakov.html',
+        template: './pages/coaches/coach/aleksandr-ushakov.pug',
+        name: 'aleksandr-ushakov',
         inject: false,
         minify: {
           removeComments: build,

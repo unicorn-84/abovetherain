@@ -116,8 +116,8 @@
         }
       ]
     },
-    "aleksandr_ushakov": {
-      "name": "aleksandr_ushakov",
+    "aleksandrUshakov": {
+      "name": "aleksandr-ushakov",
       "title": "Александр Ушаков | Над Дождём",
       "description": "",
       "pageTitle": "Александр Ушаков",
@@ -340,7 +340,7 @@
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandr_ushakov.html"
+          "link": "aleksandr-ushakov.html"
         }
       ]
     },
@@ -350,7 +350,7 @@
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandr_ushakov.html"
+          "link": "aleksandr-ushakov.html"
         }
       ]
     }
@@ -394,9 +394,9 @@
       ]
     },
     {
-      "name": "aleksandr_ushakov",
+      "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
-      "link": "aleksandr_ushakov.html",
+      "link": "coaches/aleksandr-ushakov.html",
       "directions": [
         {
           "title": "Zumba (R) Fitness"

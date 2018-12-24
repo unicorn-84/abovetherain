@@ -1,7 +1,12 @@
 //Common scripts
-script(type="text/javascript" src="scripts/jquery.js")
-script(type="text/javascript" src="scripts/plugins.js")
-script(type="text/javascript" src="scripts/functions.js")
+if htmlWebpackPlugin.options.name === 'aleksandr-ushakov'
+  script(type="text/javascript" src="../scripts/jquery.js")
+  script(type="text/javascript" src="../scripts/plugins.js")
+  script(type="text/javascript" src="../scripts/functions.js")
+else
+  script(type="text/javascript" src="scripts/jquery.js")
+  script(type="text/javascript" src="scripts/plugins.js")
+  script(type="text/javascript" src="scripts/functions.js")
 //FIXME: 'Объявить переменные'
 if htmlWebpackPlugin.options.name !== 'index'
   script.

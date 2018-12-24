@@ -15,10 +15,6 @@ const server = process.env.npm_config_server;
 
 module.exports = {
   mode: 'production',
-  output: {
-    filename: '[name].[contenthash:4].js',
-    chunkFilename: '[name].[contenthash:4].js',
-  },
   devtool: false,
   module: {
     rules: [
@@ -38,7 +34,12 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          MiniCssExtractPlugin.loader,
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
+          },
           'css-loader',
           'sass-loader',
         ],
@@ -54,13 +55,13 @@ module.exports = {
           name: 'vendor',
           chunks: 'all',
           test: /(node_modules|bower_components)/,
-          priority: 1,
+          // priority: 1,
         },
         commons: {
           name: 'commons',
           minChunks: 2,
-          chunks: 'all',
-          reuseExistingChunk: true,
+          chunks: 'initial',
+          // reuseExistingChunk: true,
         },
       },
     },
@@ -88,7 +89,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:4].css',
+      filename: 'styles/[name].[contenthash:4].css',
     }),
     // new SitemapPlugin(common.url, ['/'], {
     //   lastMod: true,
