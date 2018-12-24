@@ -6,16 +6,43 @@ append meta
   //Page meta tags
   title= pages.index.title
   meta(name='description', content= pages.index.description)
-  if htmlWebpackPlugin.options.server !== 'dev'
+  if htmlWebpackPlugin.options.buildServer !== 'dev'
     meta(name='google-site-verification', content='Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig')
     meta(name='yandex-verification', content='f196debf2583cee4')
 append icons
   //Page icons
 append styles
   //Page styles
+  each cssFile in htmlWebpackPlugin.files.css
+    if cssFile.search(/inline/i) === -1 && cssFile.search(/index/i) !== -1
+      link(rel='preload', href= cssFile.substr(
+        htmlWebpackPlugin.files.publicPath.length), as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
+      noscript
+        link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  //Inline styles
+  each cssFile in htmlWebpackPlugin.files.css
+    if cssFile.search(/inline~index/i) !== -1
+      style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
-  +header(primaryNavigation.items, className='index')
+  append header
+    //Header
+    header#header.transparent-header.no-sticky
+      #header-wrap
+        .container.clearfix
+          #primary-menu-trigger: i.icon-reorder
+          //Logo
+          #logo
+            a(href="index.html", style='display: inline-block;')
+              img(src= require('../../images/logo/logo.png'), srcset= require('../../images/logo/logo.png') + ' 1x, ' +
+              require('../../images/logo/logo@2x.png') + ' 2x', alt="Над дождём")
+          //Primary Navigation
+          nav#primary-menu
+            ul
+              each item in primaryNavigation
+                li(class={current: htmlWebpackPlugin.options.name === item.name})
+                  a(href=`${item.name}.html`)
+                    div= item.title
 append content
   //Primary Slider
   section#slider.slider-element.slider-parallax.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1000" data-autoplay="5000" data-grab="false")
@@ -59,3 +86,10 @@ append content
 block footer
 append scripts
   //Page scripts
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline/i) === -1 && jsFile.search(/index/i) !== -1
+      script(type='text/javascript', src= jsFile)
+  //Inline scripts
+  each jsFile in htmlWebpackPlugin.files.js
+    if jsFile.search(/inline~index/i) !== -1
+      script(type='text/javascript') !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}

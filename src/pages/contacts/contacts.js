@@ -1,8 +1,13 @@
-// SCSS
+// Vendor
 import 'bootstrap/scss/bootstrap.scss';
+// Common
 import '../../styles/style.scss';
+// Local
 import './contacts.scss';
-// IMAGES
+// Inline
+import './inline/inlineContacts';
+import './inline/inlineContacts.scss';
+
 import logo from '../../images/logo/logo@3x.png';
 import evacuatorLogo from '../../images/evacuator.png';
 
