@@ -5,8 +5,8 @@ import '../../styles/style.scss';
 // Local
 import './contacts.scss';
 // Inline
-// import './inline/inlineContacts';
-// import './inline/inlineContacts.scss';
+import './inline/inlineContacts';
+import './inline/inlineContacts.scss';
 
 import logo from '../../images/logo/logo@3x.png';
 import evacuatorLogo from '../../images/evacuator.png';
