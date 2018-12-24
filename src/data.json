@@ -11,11 +11,15 @@
   "pages": {
     "index": {
       "name": "index",
+      "link": "index.html",
+      "template": "./src/pages/index/index.pug",
       "title": "Школа танцев на пилоне, полотнах и кольце в СПб – «Над дождём», т. +7 952 3999930",
       "description": "Танцы на пилоне, кольце и полотнах, зумба, фитнес, растяжка, йога в СПб – группы по 5 человек. Наша школа танцев находится по адресу ул. Пионерская, 50. Запишитесь на пробное занятие в танцевальную студию «Над дождём», т. +7 952 3999930"
     },
     "services": {
       "name": "services",
+      "link": "services.html",
+      "template": "./src/pages/services/services.pug",
       "title": "Направления занятий в школе танцев | Над Дождём",
       "description": "В нашей танцевальной школе огромный выбор танцевальных занятий - pole dance, воздушное кольцо, воздушное полотно, зумба, королевская йога, занятия для укрепления спины и растяжка. Записывайтесь на пробное занятие: +7 952 3999930",
       "pageTitle": "Услуги",
@@ -30,28 +34,10 @@
         }
       ]
     },
-    "rent": {
-      "name": "rent",
-      "title": "Аренда танцевального зала в СПб для любых мероприятий | Над Дождём",
-      "description": "Аренда зала в СПБ - у нас лучшие условия и цены! К вашим услугам просторный зал 90 м с уютным бельэтажем для гостей, профессиональная звуковая аппаратура и освещение. Удобное расположение, живописное место с видом на набережную. Звоните: +7 952 3999930",
-      "pageTitle": "Аренда",
-      "breadcrumbs": [
-        {
-          "name": "Главная",
-          "path": "index.html"
-        },
-        {
-          "name": "Услуги",
-          "path": "services.html"
-        },
-        {
-          "name": "Аренда",
-          "path": "current"
-        }
-      ]
-    },
     "schedule": {
       "name": "schedule",
+      "link": "schedule.html",
+      "template": "./src/pages/schedule/schedule.pug",
       "title": "Расписание школы танцев в Санкт-Петербурге | Над Дождём",
       "description": "Выбирайте удобное для вас расписание занятий и приходите танцевать в самую красивую и уютную танцевальную студию Санкт-Петербурга",
       "pageTitle": "Расписание",
@@ -68,6 +54,8 @@
     },
     "eventsboard": {
       "name": "eventsboard",
+      "link": "eventsboard.html",
+      "template": "./src/pages/eventsboard/eventsboard.pug",
       "title": "Мероприятия школы танцев | Над Дождём",
       "description": "Наша студия регулярно проводит мастер-классы от ведущих преподавателей по танцам на пилоне, воздушной гимнастике, а также другие интересные танцевальные мероприятия.",
       "pageTitle": "Афиша",
@@ -84,6 +72,8 @@
     },
     "team": {
       "name": "team",
+      "link": "team.html",
+      "template": "./src/pages/team/team.pug",
       "title": "Мы | Над Дождём",
       "pageTitle": "Мы",
       "breadcrumbs": [
@@ -102,6 +92,8 @@
     },
     "coaches": {
       "name": "coaches",
+      "link": "coaches.html",
+      "template": "./src/pages/coaches/coaches.pug",
       "title": "Преподаватели школы танцев | Над Дождём",
       "description": "В нашей студии работает сплоченный коллектив преподавателей по следующим направлениям: pole dance, воздушная гимнастика и кольцо, йога, растяжка, зумба и не только. Приходите к нам и тренируйтесь у лучших!",
       "pageTitle": "Тренеры",
@@ -116,8 +108,86 @@
         }
       ]
     },
+    "gallery": {
+      "name": "gallery",
+      "link": "gallery.html",
+      "template": "./src/pages/gallery/gallery.pug",
+      "title": "Фото и видео школы танцев | Над Дождём",
+      "description": "Смотрите наши фото и видео отчеты с занятий по танцам на пилоне, воздушной гимнастике, растяжке и йоге, а также репортажи с танцевальных мероприятий и мастер-классов.",
+      "pageTitle": "Галерея",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Галерея",
+          "path": "current"
+        }
+      ]
+    },
+    "contacts": {
+      "name": "contacts",
+      "link": "contacts.html",
+      "template": "./src/pages/contacts/contacts.pug",
+      "title": "Контакты школы танцев | Над Дождём",
+      "description": "Наша студия танцев находится в тихом, красивом и уютном месте, на набережной Малой Невки, в 15 минутах ходьбы от станции метро «Чкаловская». Адрес: Пионерская улица, 50. Звоните: +7 952 3999930",
+      "pageTitle": "Контакты",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Контакты",
+          "path": "current"
+        }
+      ]
+    },
+    "requisites": {
+      "name": "requisites",
+      "link": "requisites.html",
+      "template": "./src/pages/requisites/requisites.pug",
+      "title": "Реквизиты | Над Дождём",
+      "description": "",
+      "pageTitle": "Реквизиты",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Реквизиты",
+          "path": "current"
+        }
+      ]
+    },
+    "rent": {
+      "name": "rent",
+      "link": "rent.html",
+      "template": "./src/pages/services/rent.pug",
+      "title": "Аренда танцевального зала в СПб для любых мероприятий | Над Дождём",
+      "description": "Аренда зала в СПБ - у нас лучшие условия и цены! К вашим услугам просторный зал 90 м с уютным бельэтажем для гостей, профессиональная звуковая аппаратура и освещение. Удобное расположение, живописное место с видом на набережную. Звоните: +7 952 3999930",
+      "pageTitle": "Аренда",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Аренда",
+          "path": "current"
+        }
+      ]
+    },
     "aleksandrUshakov": {
       "name": "aleksandr-ushakov",
+      "link": "coaches/aleksandr-ushakov.html",
+      "template": "./src/pages/coaches/coach/aleksandr-ushakov.pug",
       "title": "Александр Ушаков | Над Дождём",
       "description": "",
       "pageTitle": "Александр Ушаков",
@@ -138,6 +208,8 @@
     },
     "nadezhda_luchinina": {
       "name": "nadezhda_luchinina",
+      "link": "nadezhda_luchinina.html",
+      "template": "./src/pages/coaches/nadezhda_luchinina.pug",
       "title": "Надежда Лучинина | Над Дождём",
       "description": "",
       "pageTitle": "Надежда Лучинина",
@@ -152,54 +224,6 @@
         },
         {
           "name": "Надежда Лучинина",
-          "path": "current"
-        }
-      ]
-    },
-    "gallery": {
-      "name": "gallery",
-      "title": "Фото и видео школы танцев | Над Дождём",
-      "description": "Смотрите наши фото и видео отчеты с занятий по танцам на пилоне, воздушной гимнастике, растяжке и йоге, а также репортажи с танцевальных мероприятий и мастер-классов.",
-      "pageTitle": "Галерея",
-      "breadcrumbs": [
-        {
-          "name": "Главная",
-          "path": "index.html"
-        },
-        {
-          "name": "Галерея",
-          "path": "current"
-        }
-      ]
-    },
-    "contacts": {
-      "name": "contacts",
-      "title": "Контакты школы танцев | Над Дождём",
-      "description": "Наша студия танцев находится в тихом, красивом и уютном месте, на набережной Малой Невки, в 15 минутах ходьбы от станции метро «Чкаловская». Адрес: Пионерская улица, 50. Звоните: +7 952 3999930",
-      "pageTitle": "Контакты",
-      "breadcrumbs": [
-        {
-          "name": "Главная",
-          "path": "index.html"
-        },
-        {
-          "name": "Контакты",
-          "path": "current"
-        }
-      ]
-    },
-    "requisites": {
-      "name": "requisites",
-      "title": "Реквизиты | Над Дождём",
-      "description": "",
-      "pageTitle": "Реквизиты",
-      "breadcrumbs": [
-        {
-          "name": "Главная",
-          "path": "index.html"
-        },
-        {
-          "name": "Реквизиты",
           "path": "current"
         }
       ]
