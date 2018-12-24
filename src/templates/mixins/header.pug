@@ -1,33 +1,16 @@
-mixin header(items, className)
-  header#header.transparent-header.no-sticky(class= className)
+mixin header(items, logo, logo2x)
+  header#header.transparent-header.no-sticky
     #header-wrap
       .container.clearfix
         #primary-menu-trigger: i.icon-reorder
         //Logo
         #logo
           a(href="index.html", style='display: inline-block;')
-            img(src= require('../../images/logo/logo.png'), srcset= require('../../images/logo/logo.png') + ' 1x, ' + require('../../images/logo/logo@2x.png') + ' 2x, ' + require('../../images/logo/logo@3x.png') + ' 3x', alt="Логотип танцевального клуба 'Над дождем'")
+            img(src= logo, srcset= logo + ' 1x, ' + logo2x + ' 2x', alt="Над дождём")
         //Primary Navigation
-        nav#primary-menu.with-arrows
+        nav#primary-menu
             ul
               each item in items
-                if !item.subitems
-                  li(class={current: pageName === item.name})
-                    a(href=`${item.name}.html`) #{item.title}
-                else
-                  li(class={current: pageName === item.name})
-                    a(href=`${item.name}.html`)
-                      div #{item.title}
-                    ul
-                      each subitem in item.subitems
-                        li
-                          if subitem.page
-                            a(href=`${subitem.name}.html`) #{subitem.title}
-                          else
-                            a(data-ajax href=`data/services/${subitem.name}.html`) #{subitem.title}
-            //#top-search
-            //  a#top-search-trigger(href="#")
-            //    i.icon-search3
-            //    i.icon-line-cross
-            //  form(action="" method="get")
-            //    input.form-control(type="text" name="q" value="" placeholder="поиск..")
+                li(class={current: htmlWebpackPlugin.options.name === item.name})
+                  a(href=`${item.name}.html`)
+                    div= item.title

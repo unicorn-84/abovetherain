@@ -1,6 +1,6 @@
 {
   "options": {
-    "url": "http://abovetherain.ru",
+    "url": "http://localhost:8000/",
     "name": "Над Дождём",
     "description": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.",
     "author": "unicorn-84",
@@ -116,8 +116,8 @@
         }
       ]
     },
-    "aleksandr_ushakov": {
-      "name": "aleksandr_ushakov",
+    "aleksandrUshakov": {
+      "name": "aleksandr-ushakov",
       "title": "Александр Ушаков | Над Дождём",
       "description": "",
       "pageTitle": "Александр Ушаков",
@@ -205,38 +205,36 @@
       ]
     }
   },
-  "primaryNavigation": {
-    "items": [
-      {
-        "name": "services",
-        "title": "Услуги"
-      },
-      {
-        "name": "schedule",
-        "title": "Расписание"
-      },
-      {
-        "name": "eventsboard",
-        "title": "Афиша"
-      },
-      {
-        "name": "team",
-        "title": "Мы"
-      },
-      {
-        "name": "coaches",
-        "title": "Тренеры"
-      },
-      {
-        "name": "gallery",
-        "title": "Галерея"
-      },
-      {
-        "name": "contacts",
-        "title": "Контакты"
-      }
-    ]
-  },
+  "primaryNavigation": [
+    {
+      "name": "services",
+      "title": "Услуги"
+    },
+    {
+      "name": "schedule",
+      "title": "Расписание"
+    },
+    {
+      "name": "eventsboard",
+      "title": "Афиша"
+    },
+    {
+      "name": "team",
+      "title": "Мы"
+    },
+    {
+      "name": "coaches",
+      "title": "Тренеры"
+    },
+    {
+      "name": "gallery",
+      "title": "Галерея"
+    },
+    {
+      "name": "contacts",
+      "title": "Контакты"
+    }
+  ],
   "services": [
     {
       "name": "rent",
@@ -340,7 +338,7 @@
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandr_ushakov.html"
+          "link": "aleksandr-ushakov.html"
         }
       ]
     },
@@ -350,7 +348,7 @@
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandr_ushakov.html"
+          "link": "aleksandr-ushakov.html"
         }
       ]
     }
@@ -394,9 +392,9 @@
       ]
     },
     {
-      "name": "aleksandr_ushakov",
+      "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
-      "link": "aleksandr_ushakov.html",
+      "link": "coaches/aleksandr-ushakov.html",
       "directions": [
         {
           "title": "Zumba (R) Fitness"
