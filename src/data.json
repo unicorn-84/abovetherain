@@ -1,6 +1,9 @@
 {
   "options": {
     "url": "http://abovetherain.ru/",
+    "remoteServerProd": "http://abovetherain.ru/",
+    "remoteServerDev": "http://templates.vkapitonov.ru/",
+    "localServerDev": "http://localhost:8000/",
     "name": "Над Дождём",
     "description": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.",
     "author": "unicorn-84",
