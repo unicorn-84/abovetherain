@@ -11,10 +11,8 @@ const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
-const prod = process.env.npm_lifecycle_event === 'build:prod';
-const dev = process.env.npm_lifecycle_event === 'build:dev';
 const remoteServer = process.env.npm_config_server;
-const port = 8000;
+const build = process.env.npm_lifecycle_event === 'build:prod' ? 'prod' : 'dev';
 
 module.exports = {
   entry: {
@@ -31,10 +29,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: prod
+    filename: build === 'prod'
       ? 'scripts/[name].[contenthash:4].js'
       : 'scripts/[name].js',
-    chunkFilename: prod
+    chunkFilename: build === 'prod'
       ? 'scripts/[name].[contenthash:4].js'
       : 'scripts/[name].js',
   },
@@ -56,7 +54,7 @@ module.exports = {
           {
             loader: 'pug-loader',
             options: {
-              pretty: !prod,
+              pretty: build === 'dev',
             },
           },
         ],
@@ -95,7 +93,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: prod ? '[name].[hash:4].[ext]' : '[name].[ext]',
+              name: build === 'prod' ? '[name].[hash:4].[ext]' : '[name].[ext]',
               // outputPath: 'images',
               // publicPath: 'images',
             },
@@ -105,6 +103,12 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
+    }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     // скрипты шаблона
     new CopyWebpackPlugin([
@@ -122,8 +126,16 @@ module.exports = {
         toType: 'template',
       },
     ]),
+    // Валидации
+    new CopyWebpackPlugin([
+      {
+        from: './src/data/trash',
+        to: './[name].[ext]',
+        toType: 'template',
+      },
+    ]),
     new MiniCssExtractPlugin({
-      filename: prod
+      filename: build === 'prod'
         ? 'styles/[name].[contenthash:4].css'
         : 'styles/[name].css',
     }),
@@ -135,18 +147,20 @@ module.exports = {
           day: '2-digit',
         },
       )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default'],
-    }),
     new FileManagerPlugin({
       onEnd: {
         delete: [
           path.resolve(__dirname, 'dist/**/inline*.*'),
         ],
       },
+    }),
+    new RobotstxtPlugin({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: remoteServer === 'prod' ? null : '/',
+        },
+      ],
     }),
   ],
   optimization: {
@@ -178,46 +192,14 @@ module.exports = {
     stats: 'errors-only',
     overlay: true,
     compress: true,
-    port,
+    port: 8000,
   },
 };
 
-if (remoteServer === 'prod') {
+if (build === 'prod' && remoteServer !== 'dev') {
   module.exports.plugins.push(
-    new RobotstxtPlugin({
-      policy: [
-        {
-          userAgent: '*',
-        },
-      ],
-    }),
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    }),
-  );
-}
-
-if (dev || remoteServer === 'prod') {
-  module.exports.plugins.push(
-    new CopyWebpackPlugin([
-      {
-        from: './src/data/trash',
-        to: './[name].[ext]',
-        toType: 'template',
-      },
-    ]),
-  );
-}
-
-if (remoteServer === 'dev') {
-  module.exports.plugins.push(
-    new RobotstxtPlugin({
-      policy: [
-        {
-          userAgent: '*',
-          disallow: '/',
-        },
-      ],
     }),
   );
 }
@@ -232,10 +214,10 @@ if (remoteServer === 'dev') {
         inject: false,
         remoteServer,
         minify: {
-          removeComments: prod,
-          minifyCSS: prod,
-          minifyJS: prod,
-          collapseWhitespace: prod,
+          removeComments: build === 'prod',
+          minifyCSS: build === 'prod',
+          minifyJS: build === 'prod',
+          collapseWhitespace: build === 'prod',
         },
       }),
     );
