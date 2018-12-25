@@ -114,7 +114,7 @@ module.exports = {
     // TODO: 'Минимизация сторонних скриптов'
     new CopyWebpackPlugin([
       {
-        from: './src/scripts/**/*.js',
+        from: './src/scripts/external/**/*.js',
         to: 'scripts/[name].[ext]',
         toType: 'template',
       },
@@ -166,6 +166,7 @@ module.exports = {
     }),
   ],
   optimization: {
+    // TODO: 'Добавить runtime'
     noEmitOnErrors: true,
     splitChunks: {
       cacheGroups: {
