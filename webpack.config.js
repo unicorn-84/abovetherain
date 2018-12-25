@@ -112,10 +112,9 @@ module.exports = {
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     // скрипты шаблона
     // TODO: 'Минимизация сторонних скриптов'
-    // FIXME: 'Фильтр локальных модулей'
     new CopyWebpackPlugin([
       {
-        from: './src/scripts/**/*.js',
+        from: './src/scripts/external/**/*.js',
         to: 'scripts/[name].[ext]',
         toType: 'template',
       },
