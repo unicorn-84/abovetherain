@@ -15,6 +15,7 @@ const remoteServer = process.env.npm_config_server;
 const build = process.env.npm_lifecycle_event === 'build:prod' ? 'prod' : 'dev';
 
 module.exports = {
+  // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
     index: './src/pages/index/index',
     services: './src/pages/services/services',
@@ -93,9 +94,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: build === 'prod' ? '[name].[hash:4].[ext]' : '[name].[ext]',
-              // outputPath: 'images',
-              // publicPath: 'images',
+              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              context: path.resolve(__dirname, 'src'),
             },
           },
         ],
@@ -111,6 +111,7 @@ module.exports = {
     }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     // скрипты шаблона
+    // TODO: 'Минимизация сторонних скриптов'
     new CopyWebpackPlugin([
       {
         from: './src/scripts/**/*.js',
@@ -119,6 +120,7 @@ module.exports = {
       },
     ]),
     // стили шаблона
+    // TODO: 'Обработка сторонних стилей'
     new CopyWebpackPlugin([
       {
         from: './src/styles/**/*.css',
