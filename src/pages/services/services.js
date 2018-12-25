@@ -6,8 +6,6 @@ import '../../styles/style.scss';
 // Local
 import './services.scss';
 // Inline
-import './inline/inlineServices';
-import './inline/inlineServices.scss';
 
 // import { fetchData, insertDataToModal } from '../../scripts/components/helpers';
 

@@ -6,11 +6,6 @@ import '../../styles/style.scss';
 import '../../scripts/components/select/select.scss';
 import './schedule.scss';
 // Inline
-import './inline/inlineSchedule';
-import './inline/inlineSchedule.scss';
-
-import createSelect from '../../scripts/components/select/select';
-import { directions, coaches } from '../../data';
 
 const data = {
   day: [
