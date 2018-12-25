@@ -164,3 +164,32 @@ body {
   animation-timing-function: ease-out;
   animation-duration: 1s;
 }
+
+#header {
+  border: 1px solid #f50 !important;
+
+  #primary-menu-trigger {
+    color: $new-bold-text-color;
+  }
+
+  #primary-menu {
+    a {
+      color: $new-normal-text-color;
+
+      &:focus,
+      &:active {
+        font-weight: bold;
+        color: $new-bold-text-color;
+      }
+
+      @include respond-to(laptop) {
+        color: $light-color;
+
+        &:focus,
+        &:hover {
+          color: complement($light-color);
+        }
+      }
+    }
+  }
+}

@@ -4,10 +4,6 @@
   position: relative;
   background-color: #FFF;
   border-bottom: 1px solid #F5F5F5;
-
-  &.index {
-    color: $dark-color;
-  }
 }
 
 #header .container { position: relative; }
@@ -210,20 +206,8 @@ body.stretched #header.full-header .container {
 
   @include transition(margin 0.4s ease, padding 0.4s ease, color 0.3s $function);
 
-  header.index & {
-    color: $dark-color;
-  }
-
   @include respond-to(laptop) {
     font-size: $menu-font-size;
-
-    header.index & {
-      color: $menu-font-color;
-
-      &:hover {
-        color: $theme-color;
-      }
-    }
   }
 }
 
