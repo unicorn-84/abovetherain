@@ -11,12 +11,11 @@ const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
-const prod = process.env.npm_lifecycle_event === 'build:prod';
-const localServer = process.env.npm_lifecycle_event === 'server:loc';
-const buildServer = process.env.npm_config_server;
-const port = 8000;
+const remoteServer = process.env.npm_config_server;
+const build = process.env.npm_lifecycle_event === 'build:prod' ? 'prod' : 'dev';
 
 module.exports = {
+  // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
     index: './src/pages/index/index',
     services: './src/pages/services/services',
@@ -31,10 +30,10 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: prod
+    filename: build === 'prod'
       ? 'scripts/[name].[contenthash:4].js'
       : 'scripts/[name].js',
-    chunkFilename: prod
+    chunkFilename: build === 'prod'
       ? 'scripts/[name].[contenthash:4].js'
       : 'scripts/[name].js',
   },
@@ -56,7 +55,7 @@ module.exports = {
           {
             loader: 'pug-loader',
             options: {
-              pretty: !prod,
+              pretty: build === 'dev',
             },
           },
         ],
@@ -68,8 +67,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
+              name: '[path][name].[ext]',
+              context: path.resolve(__dirname, 'src'),
             },
           },
         ],
@@ -95,8 +94,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: prod ? '[name].[hash:4].[ext]' : '[name].[ext]',
-              outputPath: 'images',
+              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              context: path.resolve(__dirname, 'src'),
             },
           },
         ],
@@ -104,8 +103,15 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
+      Popper: ['popper.js', 'default'],
+    }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     // скрипты шаблона
+    // TODO: 'Минимизация сторонних скриптов'
     new CopyWebpackPlugin([
       {
         from: './src/scripts/**/*.js',
@@ -114,6 +120,7 @@ module.exports = {
       },
     ]),
     // стили шаблона
+    // TODO: 'Обработка сторонних стилей'
     new CopyWebpackPlugin([
       {
         from: './src/styles/**/*.css',
@@ -121,23 +128,41 @@ module.exports = {
         toType: 'template',
       },
     ]),
+    // Валидации
+    new CopyWebpackPlugin([
+      {
+        from: './src/data/trash',
+        to: './[name].[ext]',
+        toType: 'template',
+      },
+    ]),
     new MiniCssExtractPlugin({
-      filename: prod
+      filename: build === 'prod'
         ? 'styles/[name].[contenthash:4].css'
         : 'styles/[name].css',
     }),
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default'],
-    }),
+    new AddAssetPlugin('humans.txt',
+      `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
+        'RU-ru', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        },
+      )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
     new FileManagerPlugin({
       onEnd: {
         delete: [
           path.resolve(__dirname, 'dist/**/inline*.*'),
         ],
       },
+    }),
+    new RobotstxtPlugin({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: remoteServer === 'prod' ? null : '/',
+        },
+      ],
     }),
   ],
   optimization: {
@@ -169,51 +194,16 @@ module.exports = {
     stats: 'errors-only',
     overlay: true,
     compress: true,
-    port,
+    port: 8000,
   },
 };
 
-if (prod) {
-  if (buildServer === 'dev') {
-    module.exports.plugins.push(
-      new RobotstxtPlugin({
-        policy: [
-          {
-            userAgent: '*',
-            disallow: '/',
-          },
-        ],
-      }),
-    );
-  } else {
-    module.exports.plugins.push(
-      new RobotstxtPlugin({
-        policy: [
-          {
-            userAgent: '*',
-          },
-        ],
-      }),
-      new AddAssetPlugin('humans.txt',
-        `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
-          'RU-ru', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-          },
-        )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
-      new CopyWebpackPlugin([
-        {
-          from: './data/trash',
-          to: './[name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      new PurgecssPlugin({
-        paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-      }),
-    );
-  }
+if (build === 'prod' && remoteServer !== 'dev') {
+  module.exports.plugins.push(
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    }),
+  );
 }
 
 (function createPages() {
@@ -224,13 +214,12 @@ if (prod) {
         filename: pages[page].link,
         template: pages[page].template,
         inject: false,
-        buildServer,
-        base: localServer ? `http://localhost:${port}/` : options.url,
+        remoteServer,
         minify: {
-          removeComments: prod,
-          minifyCSS: prod,
-          minifyJS: prod,
-          collapseWhitespace: prod,
+          removeComments: build === 'prod',
+          minifyCSS: build === 'prod',
+          minifyJS: build === 'prod',
+          collapseWhitespace: build === 'prod',
         },
       }),
     );

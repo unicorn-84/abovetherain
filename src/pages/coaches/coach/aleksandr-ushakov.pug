@@ -6,7 +6,6 @@ append meta
   //Page meta tags
   title= pages.aleksandrUshakov.title
   meta(name='description', content= pages.aleksandrUshakov.description)
-  base(href='http://localhost:8000/')
 append icons
   //Page icons
 append styles
@@ -23,7 +22,7 @@ append styles
 //-BODY
 append header
   //Header
-  +header(primaryNavigation, logo, logo2x)
+  +header(primaryNavigation)
 append content
   +pageTitle(pages.aleksandrUshakov)
   section#content
