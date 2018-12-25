@@ -136,6 +136,15 @@ module.exports = {
         toType: 'template',
       },
     ]),
+    // Логотип
+    // TODO: 'Hash для логотипа'
+    new CopyWebpackPlugin([
+      {
+        from: './src/images/logo',
+        to: './images/logo/[name].[ext]',
+        toType: 'template',
+      },
+    ]),
     new MiniCssExtractPlugin({
       filename: build === 'prod'
         ? 'styles/[name].[contenthash:4].css'
@@ -167,6 +176,8 @@ module.exports = {
   ],
   optimization: {
     // TODO: 'Добавить runtime'
+    // https://webpack.js.org/configuration/optimization/
+    // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
     noEmitOnErrors: true,
     splitChunks: {
       cacheGroups: {
