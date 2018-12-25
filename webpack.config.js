@@ -12,8 +12,8 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
 const prod = process.env.npm_lifecycle_event === 'build:prod';
-const localServer = process.env.npm_lifecycle_event === 'server:loc';
-const buildServer = process.env.npm_config_server;
+const dev = process.env.npm_lifecycle_event === 'build:dev';
+const remoteServer = process.env.npm_config_server;
 const port = 8000;
 
 module.exports = {
@@ -96,7 +96,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: prod ? '[name].[hash:4].[ext]' : '[name].[ext]',
-              outputPath: 'images',
+              // outputPath: 'images',
+              // publicPath: 'images',
             },
           },
         ],
@@ -126,6 +127,14 @@ module.exports = {
         ? 'styles/[name].[contenthash:4].css'
         : 'styles/[name].css',
     }),
+    new AddAssetPlugin('humans.txt',
+      `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
+        'RU-ru', {
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        },
+      )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -173,47 +182,44 @@ module.exports = {
   },
 };
 
-if (prod) {
-  if (buildServer === 'dev') {
-    module.exports.plugins.push(
-      new RobotstxtPlugin({
-        policy: [
-          {
-            userAgent: '*',
-            disallow: '/',
-          },
-        ],
-      }),
-    );
-  } else {
-    module.exports.plugins.push(
-      new RobotstxtPlugin({
-        policy: [
-          {
-            userAgent: '*',
-          },
-        ],
-      }),
-      new AddAssetPlugin('humans.txt',
-        `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
-          'RU-ru', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-          },
-        )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
-      new CopyWebpackPlugin([
+if (remoteServer === 'prod') {
+  module.exports.plugins.push(
+    new RobotstxtPlugin({
+      policy: [
         {
-          from: './data/trash',
-          to: './[name].[ext]',
-          toType: 'template',
+          userAgent: '*',
         },
-      ]),
-      new PurgecssPlugin({
-        paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-      }),
-    );
-  }
+      ],
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    }),
+  );
+}
+
+if (dev || remoteServer === 'prod') {
+  module.exports.plugins.push(
+    new CopyWebpackPlugin([
+      {
+        from: './src/data/trash',
+        to: './[name].[ext]',
+        toType: 'template',
+      },
+    ]),
+  );
+}
+
+if (remoteServer === 'dev') {
+  module.exports.plugins.push(
+    new RobotstxtPlugin({
+      policy: [
+        {
+          userAgent: '*',
+          disallow: '/',
+        },
+      ],
+    }),
+  );
 }
 
 (function createPages() {
@@ -224,8 +230,7 @@ if (prod) {
         filename: pages[page].link,
         template: pages[page].template,
         inject: false,
-        buildServer,
-        base: localServer ? `http://localhost:${port}/` : options.url,
+        remoteServer,
         minify: {
           removeComments: prod,
           minifyCSS: prod,

@@ -1,4 +1,4 @@
-mixin header(items, logo, logo2x)
+mixin header(items)
   header#header.transparent-header.no-sticky
     #header-wrap
       .container.clearfix
@@ -6,7 +6,7 @@ mixin header(items, logo, logo2x)
         //Logo
         #logo
           a(href="index.html", style='display: inline-block;')
-            img(src= logo, srcset= logo + ' 1x, ' + logo2x + ' 2x', alt="Над дождём")
+            img(src='', srcset= logo + ' 1x, ' + logo2x + ' 2x', alt="Над дождём")
         //Primary Navigation
         nav#primary-menu
             ul
