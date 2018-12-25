@@ -112,6 +112,7 @@ module.exports = {
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     // скрипты шаблона
     // TODO: 'Минимизация сторонних скриптов'
+    // FIXME: 'Фильтр локальных модулей'
     new CopyWebpackPlugin([
       {
         from: './src/scripts/**/*.js',
@@ -166,6 +167,7 @@ module.exports = {
     }),
   ],
   optimization: {
+    // TODO: 'Добавить runtime'
     noEmitOnErrors: true,
     splitChunks: {
       cacheGroups: {

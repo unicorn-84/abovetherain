@@ -5,5 +5,3 @@ import '../../styles/style.scss';
 // Local
 import './index.scss';
 // Inline
-import './inline/inlineIndex';
-import './inline/inlineIndex.scss';
