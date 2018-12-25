@@ -2,6 +2,7 @@
 script(type="text/javascript" src="scripts/jquery.js")
 script(type="text/javascript" src="scripts/plugins.js")
 script(type="text/javascript" src="scripts/functions.js")
+//TODO: 'Удалить common'
 each jsFile in htmlWebpackPlugin.files.js
   if jsFile.search(/inline/i) === -1 && (jsFile.search(/vendor/i) !== -1 || jsFile.search(/common/i) !== -1)
     script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
