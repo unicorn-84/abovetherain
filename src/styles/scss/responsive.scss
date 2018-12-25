@@ -518,10 +518,6 @@
 		text-transform: none;
 		font-weight: 400;
 		color: $light-color !important;
-
-    header.index &{
-      color: $dark-color !important
-    }
 	}
 
 	#primary-menu ul ul li:hover > a {
