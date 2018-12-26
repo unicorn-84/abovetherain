@@ -11,14 +11,21 @@ const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
-const server = process.env.npm_lifecycle_event === 'server:local' ? 'local' : false;
 let build;
+let server;
+if (process.env.npm_config_server === 'prod') {
+  server = 'prod';
+} else if (process.env.npm_config_server === 'dev') {
+  server = 'dev';
+} else if (process.env.npm_config_server === undefined && process.env.npm_lifecycle_event === 'server:local') {
+  server = 'local';
+}
 if (process.env.npm_lifecycle_event === 'build:dev') {
   build = 'dev';
 } else if (process.env.npm_lifecycle_event === 'build:prod') {
   build = 'prod';
 }
-console.log(build);
+console.log(server, build);
 module.exports = {
   // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
@@ -243,7 +250,7 @@ module.exports = {
         policy: [
           {
             userAgent: '*',
-            disallow: '/',
+            disallow: server === 'prod' ? null : '/',
           },
         ],
       }),

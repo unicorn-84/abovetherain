@@ -8,7 +8,7 @@
     "server:local": "webpack-dev-server --mode development",
     "remote-server:dev": "npm --server=dev run build:prod",
     "remote-server:prod": "npm --server=prod run build:prod",
-    "version": "npm run build:prod && git add -f dist",
+    "version": "npm --server=prod run build:prod && git add -f dist",
     "postversion": "git push && git push --tags"
   },
   "private": true,
