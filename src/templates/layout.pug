@@ -11,8 +11,8 @@ html(lang='RU-ru', dir='ltr', prefix='og: //ogp.me/ns#')
     block styles
       include ./blocks/styles
   body.stretched.no-transition
-    //TODO: 'В отдельный файл и инлайнить'
-    if htmlWebpackPlugin.options.remoteServer !== 'dev'
+    if htmlWebpackPlugin.options.vars.seo
+      //TODO: 'В отдельный файл и инлайнить'
       //Yandex.Metrika counter
       script.
         (function (d, w, c) {
