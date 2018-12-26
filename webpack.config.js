@@ -19,6 +19,7 @@ module.exports = {
   entry: {
     index: './src/pages/index/index',
     services: './src/pages/services/services',
+    service: './src/pages/services/service/service',
     schedule: './src/pages/schedule/schedule',
     eventsboard: './src/pages/eventsboard/eventsboard',
     team: './src/pages/team/team',
