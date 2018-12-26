@@ -83,7 +83,28 @@ module.exports = {
               publicPath: '../',
             },
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                ctx: {
+                  cssnano: build === 'prod' ? {
+                    preset: ['default', {
+                      discardComments: {
+                        removeAll: true,
+                      },
+                    }],
+                  } : false,
+                },
+              },
+            },
+          },
           'sass-loader',
         ],
       },
