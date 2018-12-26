@@ -3,11 +3,9 @@
   "version": "1.20.1",
   "description": "Dance Club static web site",
   "scripts": {
-    "webpack:dev": "webpack --mode development",
-    "webpack:prod": "webpack --mode production",
-    "server:local": "webpack-dev-server --mode development",
-    "build:dev": "npm --server=dev run webpack:dev",
+    "build:dev": "webpack --mode development",
     "build:prod": "webpack --mode production",
+    "server:local": "webpack-dev-server --mode development",
     "remote-server:dev": "npm --server=dev run build:prod",
     "remote-server:prod": "npm --server=prod run build:prod",
     "version": "npm run build:prod && git add -f dist",

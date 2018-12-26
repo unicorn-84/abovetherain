@@ -12,8 +12,13 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
 const server = process.env.npm_lifecycle_event === 'server:local' ? 'local' : false;
-const build = process.env.npm_lifecycle_event === 'build:prod' ? 'prod' : 'dev';
-
+let build;
+if (process.env.npm_lifecycle_event === 'build:dev') {
+  build = 'dev';
+} else if (process.env.npm_lifecycle_event === 'build:prod') {
+  build = 'prod';
+}
+console.log(build);
 module.exports = {
   // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
@@ -211,14 +216,6 @@ module.exports = {
   },
 };
 
-if (build === 'prod' && server !== 'dev') {
-  module.exports.plugins.push(
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    }),
-  );
-}
-
 (function createPages() {
   Object.keys(pages).forEach((page) => {
     module.exports.plugins.push(
@@ -268,3 +265,11 @@ if (build === 'prod' && server !== 'dev') {
     );
   }
 }());
+
+if (build === 'prod') {
+  module.exports.plugins.push(
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+    }),
+  );
+}
