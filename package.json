@@ -3,12 +3,11 @@
   "version": "1.20.1",
   "description": "Dance Club static web site",
   "scripts": {
-    "build:dev": "webpack --mode development",
-    "build:prod": "webpack --mode production",
-    "remote-server:dev": "npm --server=dev run build:prod",
-    "remote-server:prod": "npm --server=prod run build:prod",
-    "local-server:dev": "webpack-dev-server --mode development",
-    "version": "npm run build:prod && git add -f dist",
+    "webpack:dev": "webpack --mode development",
+    "webpack:prod": "webpack --mode production",
+    "webpack:server": "webpack-dev-server --mode development",
+    "server:local": "npm --server=local run webpack:server",
+    "version": "npm --purgecss --seo --server=prod run webpack:prod && git add -f dist",
     "postversion": "git push && git push --tags"
   },
   "private": true,
