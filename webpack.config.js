@@ -201,6 +201,7 @@ module.exports = {
     // https://webpack.js.org/configuration/optimization/
     // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
     noEmitOnErrors: true,
+    // TODO: 'Настроить vendor'
     splitChunks: {
       cacheGroups: {
         default: false,
