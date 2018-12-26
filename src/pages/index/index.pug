@@ -6,7 +6,7 @@ append meta
   //Page meta tags
   title= pages.index.title
   meta(name='description', content= pages.index.description)
-  if htmlWebpackPlugin.options.server !== 'local'
+  if htmlWebpackPlugin.options.vars.seo
     meta(name='google-site-verification', content='Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig')
     meta(name='yandex-verification', content='f196debf2583cee4')
 append icons

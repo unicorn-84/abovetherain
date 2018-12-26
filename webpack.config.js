@@ -12,20 +12,14 @@ const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
 let build;
-let server;
-if (process.env.npm_config_server === 'prod') {
-  server = 'prod';
-} else if (process.env.npm_config_server === 'dev') {
-  server = 'dev';
-} else if (process.env.npm_config_server === undefined && process.env.npm_lifecycle_event === 'server:local') {
-  server = 'local';
-}
-if (process.env.npm_lifecycle_event === 'build:dev') {
+const server = process.env.npm_config_server;
+const purgecss = process.env.npm_config_purge;
+const seo = process.env.npm_config_seo;
+if (process.env.npm_lifecycle_event === 'webpack:dev') {
   build = 'dev';
-} else if (process.env.npm_lifecycle_event === 'build:prod') {
+} else if (process.env.npm_lifecycle_event === 'webpack:prod') {
   build = 'prod';
 }
-console.log(server, build);
 module.exports = {
   // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
@@ -231,7 +225,11 @@ module.exports = {
         filename: pages[page].link,
         template: pages[page].template,
         inject: false,
-        server,
+        vars: {
+          build,
+          server,
+          seo,
+        },
         minify: {
           removeComments: build === 'prod',
           minifyCSS: build === 'prod',
@@ -244,7 +242,7 @@ module.exports = {
 }());
 
 (function makeSeoStuff() {
-  if (server !== 'local') {
+  if (seo) {
     module.exports.plugins.push(
       new RobotstxtPlugin({
         policy: [
@@ -273,7 +271,7 @@ module.exports = {
   }
 }());
 
-if (build === 'prod') {
+if (purgecss) {
   module.exports.plugins.push(
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
