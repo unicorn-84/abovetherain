@@ -11,7 +11,7 @@ const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
-const remoteServer = process.env.npm_config_server;
+const server = process.env.npm_lifecycle_event === 'server:local' ? 'local' : false;
 const build = process.env.npm_lifecycle_event === 'build:prod' ? 'prod' : 'dev';
 
 module.exports = {
@@ -150,14 +150,6 @@ module.exports = {
         toType: 'template',
       },
     ]),
-    // Валидации
-    new CopyWebpackPlugin([
-      {
-        from: './src/data/trash',
-        to: './[name].[ext]',
-        toType: 'template',
-      },
-    ]),
     // Логотип
     // TODO: 'Hash для логотипа'
     new CopyWebpackPlugin([
@@ -172,28 +164,13 @@ module.exports = {
         ? 'styles/[name].[contenthash:4].css'
         : 'styles/[name].css',
     }),
-    new AddAssetPlugin('humans.txt',
-      `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
-        'RU-ru', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        },
-      )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
+
     new FileManagerPlugin({
       onEnd: {
         delete: [
           path.resolve(__dirname, 'dist/**/inline*.*'),
         ],
       },
-    }),
-    new RobotstxtPlugin({
-      policy: [
-        {
-          userAgent: '*',
-          disallow: remoteServer === 'prod' ? null : '/',
-        },
-      ],
     }),
   ],
   optimization: {
@@ -229,11 +206,12 @@ module.exports = {
     stats: 'errors-only',
     overlay: true,
     compress: true,
-    port: 8000,
+    host: options.hostLocal,
+    port: options.portLocal,
   },
 };
 
-if (build === 'prod' && remoteServer !== 'dev') {
+if (build === 'prod' && server !== 'dev') {
   module.exports.plugins.push(
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
@@ -249,7 +227,7 @@ if (build === 'prod' && remoteServer !== 'dev') {
         filename: pages[page].link,
         template: pages[page].template,
         inject: false,
-        remoteServer,
+        server,
         minify: {
           removeComments: build === 'prod',
           minifyCSS: build === 'prod',
@@ -259,4 +237,34 @@ if (build === 'prod' && remoteServer !== 'dev') {
       }),
     );
   });
+}());
+
+(function makeSeoStuff() {
+  if (server !== 'local') {
+    module.exports.plugins.push(
+      new RobotstxtPlugin({
+        policy: [
+          {
+            userAgent: '*',
+            disallow: '/',
+          },
+        ],
+      }),
+      new AddAssetPlugin('humans.txt',
+        `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
+          'RU-ru', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          },
+        )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
+      new CopyWebpackPlugin([
+        {
+          from: './src/data/trash',
+          to: './[name].[ext]',
+          toType: 'template',
+        },
+      ]),
+    );
+  }
 }());
