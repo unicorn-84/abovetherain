@@ -1,3 +1,4 @@
+//-TODO: 'Общий импорт данных'
 extends ../../templates/layout
 append variables
   - const { options, pages, primaryNavigation } = require('../../data');
@@ -51,7 +52,7 @@ append content
                 p(class='card-text lead')
                   |В танцевальном замке "Над дождём" возможно арендовать сценическую площадку для проведения отчетного концерта, творческого вечера, спектакля, семинара, мастер-класса и других различных&nbsp;мероприятий.
                 p(class='card-text d-flex justify-content-end')
-                  a(href= 'rent.html', class='font-weight-bold') Подробнее...
+                  a(href= pages.rent.link, class='font-weight-bold') Подробнее...
           //-Пилон
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
