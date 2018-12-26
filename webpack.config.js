@@ -125,6 +125,7 @@ module.exports = {
     ],
   },
   plugins: [
+    // TODO: 'Global для jquery'
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -138,15 +139,6 @@ module.exports = {
       {
         from: './src/scripts/external/**/*.js',
         to: 'scripts/[name].[ext]',
-        toType: 'template',
-      },
-    ]),
-    // стили шаблона
-    // TODO: 'Обработка сторонних стилей'
-    new CopyWebpackPlugin([
-      {
-        from: './src/styles/**/*.css',
-        to: 'styles/[name].[ext]',
         toType: 'template',
       },
     ]),
