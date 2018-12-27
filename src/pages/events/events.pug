@@ -4,21 +4,21 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.eventsboard.title
-  meta(name='description', content= pages.eventsboard.description)
+  title= pages.events.title
+  meta(name='description', content= pages.events.description)
 append icons
   //Page icons
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inline/i) === -1 && cssFile.search(/eventsboard/i) !== -1
+    if cssFile.search(/inline/i) === -1 && cssFile.search(/events/i) !== -1
       link(rel='preload', href= cssFile.substr(
         htmlWebpackPlugin.files.publicPath.length), as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
       noscript
         link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
   //Inline styles
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inline~eventsboard/i) !== -1
+    if cssFile.search(/inline~events/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
@@ -26,7 +26,7 @@ append header
     //Header
     +header(primaryNavigation)
 append content
-  +pageTitle(pages.eventsboard)
+  +pageTitle(pages.events)
   section#content
     //TODO: 'Изменить стиль на card'
     .content-wrap
@@ -70,9 +70,9 @@ append content
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js
-    if jsFile.search(/inline/i) === -1 && jsFile.search(/eventsboard/i) !== -1
+    if jsFile.search(/inline/i) === -1 && jsFile.search(/events/i) !== -1
       script(type='text/javascript', src= jsFile)
   //Inline scripts
   each jsFile in htmlWebpackPlugin.files.js
-    if jsFile.search(/inline~eventsboard/i) !== -1
+    if jsFile.search(/inline~events/i) !== -1
       script(type='text/javascript') !{compilation.assets[jsFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()}
