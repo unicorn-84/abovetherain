@@ -4,17 +4,15 @@
     "allowImportExportEverywhere": true
   },
   "rules": {
-    //TODO: 'Удалить'
-    "import/no-extraneous-dependencies": [2, {
-      "devDependencies": true
-    }],
     "linebreak-style": [
       "error",
       "windows"
     ]
   },
-//TODO: 'Добавить node, jQuery, es6'
   "env": {
-    "browser": true
+    "browser": true,
+    "jquery": true,
+    "node": true,
+    "es6": true
   }
 }
