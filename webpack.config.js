@@ -1,6 +1,5 @@
 const path = require('path');
 const glob = require('glob');
-const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -134,10 +133,6 @@ module.exports = {
     jquery: 'jQuery',
   },
   plugins: [
-    // TODO: 'Удалить popper.js'
-    new webpack.ProvidePlugin({
-      Popper: ['popper.js', 'default'],
-    }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new MiniCssExtractPlugin({
       filename: build === 'prod'
