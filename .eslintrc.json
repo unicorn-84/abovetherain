@@ -4,6 +4,7 @@
     "allowImportExportEverywhere": true
   },
   "rules": {
+    //TODO: 'Удалить'
     "import/no-extraneous-dependencies": [2, {
       "devDependencies": true
     }],
@@ -12,6 +13,7 @@
       "windows"
     ]
   },
+//TODO: 'Добавить node, jQuery, es6'
   "env": {
     "browser": true
   }

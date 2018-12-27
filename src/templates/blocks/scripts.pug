@@ -1,11 +1,14 @@
 //Common scripts
 
+//jquery.js
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+
 //vendor.js
 each jsFile in htmlWebpackPlugin.files.js
   if jsFile.search(/inline/i) === -1 && jsFile.search(/vendor/i) !== -1
     script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
 
-//script(type="text/javascript" src="scripts/jquery.js")
+//External
 script(type="text/javascript" src="scripts/plugins.js")
 script(type="text/javascript" src="scripts/functions.js")
 
