@@ -5,7 +5,7 @@ import '../../styles/style.scss';
 // Local
 import './contacts.scss';
 // Inline
-
+// FIXME: 'Добавить импорт иконок'
 // TODO: 'В отдельный файл и инлайнить'
 (function createMap() {
   function init() {

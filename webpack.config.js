@@ -1,3 +1,4 @@
+// TODO: 'Настроить devtools'
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
@@ -130,12 +131,12 @@ module.exports = {
       },
     ],
   },
+  externals: {
+    jquery: 'jQuery',
+  },
   plugins: [
-    // TODO: 'Global для jquery'
+    // TODO: 'Удалить popper.js'
     new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
       Popper: ['popper.js', 'default'],
     }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
