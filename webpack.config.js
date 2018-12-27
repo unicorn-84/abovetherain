@@ -145,6 +145,7 @@ module.exports = {
         ],
       },
     }),
+    // FIXME: 'Исключить carousel'
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
       whitelistPatterns: [/mfp/, /swiper/],
