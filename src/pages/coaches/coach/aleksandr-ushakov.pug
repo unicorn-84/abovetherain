@@ -4,7 +4,9 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
+  //FIXME: 'Проверять title'
   title= pages.aleksandrUshakov.title
+  //FIXME: 'Проверять description'
   meta(name='description', content= pages.aleksandrUshakov.description)
 append icons
   //Page icons
@@ -32,17 +34,17 @@ append content
       div(class='container')
         div(class='row justify-content-center')
           div(class='col-12 col-lg-8')
-            div(class='card mb-5 mb-lg-4 border-0')
-              div(class='card-body')
+            div(class='card border-0')
+              div(class='card-body p-sm-4')
                 h2(class='card-title mb-3')
                   |Александр Ушаков
-                span(class='card-subtitle mb-4 font-italic')
+                span(class='card-subtitle mb-4')
                   |Лицензированный инструктор программ <strong>Zumba (R) Fitness</strong> и <strong>Strong by Zumba (R)</strong>
                 p(class='card-text lead mb-4')
                   |В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
                 p(class='card-text lead mb-4')
                   |Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
-                blockquote(class='blockquote')
+                blockquote(class='blockquote mb-0')
                   p(class='mb-0')
                     |В работе главное - взаимосвязь между инструктором и учеником.
                   footer(class='blockquote-footer')

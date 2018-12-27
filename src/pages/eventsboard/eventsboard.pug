@@ -1,8 +1,6 @@
 extends ../../templates/layout
 append variables
-  -
-    const { options, pages, primaryNavigation } = require('../../data');
-    const events = require('../../data/events')
+  - const { options, pages, primaryNavigation } = require('../../data');
 //-HEAD
 append meta
   //Page meta tags
@@ -26,63 +24,49 @@ append styles
 append header
   append header
     //Header
-    header#header.transparent-header.no-sticky
-      #header-wrap
-        .container.clearfix
-          #primary-menu-trigger: i.icon-reorder
-          //Logo
-          #logo
-            a(href="index.html", style='display: inline-block;')
-              img(src= require('../../images/logo/logo.png'), srcset= require('../../images/logo/logo.png') + ' 1x, ' +
-              require('../../images/logo/logo@2x.png') + ' 2x', alt="Логотип | Над дождём")
-          //Primary Navigation
-          nav#primary-menu
-            ul
-              each item in primaryNavigation
-                li(class={current: htmlWebpackPlugin.options.name === item.name})
-                  a(href=`${item.name}.html`)
-                    div= item.title
+    +header(primaryNavigation)
 append content
   +pageTitle(pages.eventsboard)
   section#content
+    //TODO: 'Изменить стиль на card'
     .content-wrap
       .events-wrapper
         .container
           .row
-            each event in events
-              .col-sm-12
-                .event
-                  div.event-image
-                    a(href= `${event.name}.html`)
-                      img(src= require(`../../images/events/${event.name}/${event.poster.fileName}`) alt= event.poster.alt)
-                      .event-date
-                        span= event.date[0]
-                        span= event.date[1]
-                  .event-content
-                    .event-title
-                      a(href= `${event.name}.html`)
-                        h3
-                          span
-                            |Мастер-класс
-                            br
-                            |Софы Макуриной
-                    .event-excerpt
-                      p
-                        |Впервые в САНКТ-ПЕТЕРБУРГЕ!
-                        br
-                        |28 октября 2018
-                        br
-                        |В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
-                        br
-                        a(href="https://vk.com/naddozhdem")
-                          span
-                            b https://vk.com/naddozhdem
-                        br
-                        |Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
-                        br
-                        a(href='requisites.html')
-                          span
-                            b Реквизиты для оплаты
+            .col-sm-12
+              .event
+                div.event-image
+                  a(href= pages.sofaMakurinaMasterClass.link)
+                    //TODO: 'Добавить новые фото'
+                    img(src= require('../../images/events/sofa-makurina-master-class/sofa-makurina-master-class.jpg'), alt= 'Мастер-класс Софы Макуриной | Над Дождём')
+                    .event-date
+                      span 28
+                      span Октября
+                .event-content
+                  .event-title
+                    a(href= pages.sofaMakurinaMasterClass.link)
+                      h3
+                        span
+                          |Мастер-класс
+                          br
+                          |Софы Макуриной
+                  .event-excerpt
+                    p
+                      |Впервые в САНКТ-ПЕТЕРБУРГЕ!
+                      br
+                      |28 октября 2018
+                      br
+                      |В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
+                      br
+                      a(href="https://vk.com/naddozhdem")
+                        span
+                          b https://vk.com/naddozhdem
+                      br
+                      |Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+                      br
+                      a(href='requisites.html')
+                        span
+                          b Реквизиты для оплаты
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

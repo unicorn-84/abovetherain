@@ -11,16 +11,16 @@ append icons
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inline/i) === -1 && (cssFile.search(/vendor/i) !== -1 || cssFile.search(/common/i) !== -1 || cssFile.search(/coaches/i) !== -1)
+    if cssFile.search(/inline/i) === -1 && (cssFile.search(/vendor/i) !== -1 || cssFile.search(/common/i) !== -1 || cssFile.search(/coach\./i) !== -1)
       link(href=cssFile, rel='preload', as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
       noscript
         link(href=cssFile, rel='stylesheet')
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inline~coaches/i) !== -1
+    if cssFile.search(/inline~coach\./i) !== -1
       style=compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
-  //+header(primaryNavigation.items)
+  +header(primaryNavigation)
 append content
   //-Page title
   +pageTitle(pages.nadezhda_luchinina)
@@ -28,14 +28,15 @@ append content
     //-Content
     div(class='content-wrap')
       //-Container
+      //FIXME: 'Исправить фамилию'
       div(class='container')
         div(class='row justify-content-center')
           div(class='col-12 col-lg-8')
-            div(class='card mb-5 mb-lg-4 border-0')
-              div(class='card-body')
+            div(class='card border-0')
+              div(class='card-body p-sm-4')
                 h2(class='card-title mb-3')
                   |Надежда Лучинина
-                span(class='card-subtitle mb-4 font-italic')
+                span(class='card-subtitle mb-4')
                   |В каждой из нас живет танец. Мы учим не движения, мы узнаем себя.
                 p(class='card-text lead')
                   |Надежда Лучинина - успешный преподаватель-хореограф в направлении <strong>Pole&nbsp;Dance</strong>.
