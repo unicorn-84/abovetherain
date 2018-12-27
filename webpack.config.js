@@ -24,9 +24,8 @@ module.exports = {
     services: './src/pages/services/services',
     service: './src/pages/services/service/service',
     schedule: './src/pages/schedule/schedule',
-    // TODO: 'Изменить на events'
-    eventsboard: './src/pages/eventsboard/eventsboard',
-    event: './src/pages/eventsboard/event/event',
+    events: './src/pages/events/events',
+    event: './src/pages/events/event/event',
     team: './src/pages/team/team',
     coaches: './src/pages/coaches/coaches',
     coach: './src/pages/coaches/coach/coach',

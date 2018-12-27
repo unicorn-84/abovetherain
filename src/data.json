@@ -56,10 +56,10 @@
         }
       ]
     },
-    "eventsboard": {
-      "name": "eventsboard",
-      "link": "eventsboard.html",
-      "template": "./src/pages/eventsboard/eventsboard.pug",
+    "events": {
+      "name": "events",
+      "link": "events.html",
+      "template": "./src/pages/events/events.pug",
       "title": "Мероприятия школы танцев | Над Дождём",
       "description": "Наша студия регулярно проводит мастер-классы от ведущих преподавателей по танцам на пилоне, воздушной гимнастике, а также другие интересные танцевальные мероприятия.",
       "pageTitle": "Афиша",
@@ -235,7 +235,7 @@
     "sofaMakurinaMasterClass": {
       "name": "sofa-makurina-master-class",
       "link": "events/sofa-makurina-master-class.html",
-      "template": "./src/pages/eventsboard/event/sofa-makurina-master-class.pug",
+      "template": "./src/pages/events/event/sofa-makurina-master-class.pug",
       "title": "Мастер-класс Софы Макуриной | Над Дождём",
       "description": "",
       "pageTitle": "Мастер-класс Софы Макуриной",
@@ -246,7 +246,7 @@
         },
         {
           "name": "Афиша",
-          "path": "eventsboard.html"
+          "path": "events.html"
         },
         {
           "name": "Мастер-класс Софы Макуриной",
@@ -265,7 +265,7 @@
       "title": "Расписание"
     },
     {
-      "name": "eventsboard",
+      "name": "events",
       "title": "Афиша"
     },
     {
