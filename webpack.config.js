@@ -13,9 +13,6 @@ const { options, pages } = require('./src/data');
 
 let build;
 const server = process.env.npm_config_server;
-// FIXME: 'Заменить на process.env.npm_config_purgecss'
-// const purgecss = process.env.npm_config_purgecss;
-const purgecss = process.env.npm_config_purgecss;
 const seo = process.env.npm_config_seo;
 if (process.env.npm_lifecycle_event === 'webpack:dev') {
   build = 'dev';
@@ -141,6 +138,24 @@ module.exports = {
       Popper: ['popper.js', 'default'],
     }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
+    new MiniCssExtractPlugin({
+      filename: build === 'prod'
+        ? 'styles/[name].[contenthash:4].css'
+        : 'styles/[name].css',
+    }),
+    new FileManagerPlugin({
+      onEnd: {
+        delete: [
+          path.resolve(__dirname, 'dist/**/inline*.*'),
+        ],
+      },
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
+      whitelistPatterns: [/mfp/, /swiper/],
+      fontFace: true,
+      rejected: true,
+    }),
     // скрипты шаблона
     // TODO: 'Минимизация сторонних скриптов'
     new CopyWebpackPlugin([
@@ -159,19 +174,6 @@ module.exports = {
         toType: 'template',
       },
     ]),
-    new MiniCssExtractPlugin({
-      filename: build === 'prod'
-        ? 'styles/[name].[contenthash:4].css'
-        : 'styles/[name].css',
-    }),
-
-    new FileManagerPlugin({
-      onEnd: {
-        delete: [
-          path.resolve(__dirname, 'dist/**/inline*.*'),
-        ],
-      },
-    }),
   ],
   optimization: {
     // TODO: 'Добавить runtime'
@@ -265,18 +267,3 @@ module.exports = {
     );
   }
 }());
-
-if (purgecss) {
-  module.exports.plugins.push(
-    new PurgecssPlugin({
-      // FIXME: 'Настроить Purgecss'
-      // paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
-      // whitelistPatterns: [/mfp/],
-      // keyframes: true,
-      // fontFace: true,
-      // rejected: true,
-      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-      whitelistPatterns: [/mfp/],
-    }),
-  );
-}

@@ -7,7 +7,7 @@
     "webpack:prod": "webpack --mode production",
     "webpack:server": "webpack-dev-server --mode development",
     "server:local": "npm --server=local run webpack:server",
-    "version": "npm --purgecss --seo --server=prod run webpack:prod && git add -f dist",
+    "version": "npm --seo --server=prod run webpack:prod && git add -f dist",
     "postversion": "git push && git push --tags"
   },
   "private": true,
