@@ -13,7 +13,9 @@ const { options, pages } = require('./src/data');
 
 let build;
 const server = process.env.npm_config_server;
-const purgecss = process.env.npm_config_purge;
+// FIXME: 'Заменить на process.env.npm_config_purgecss'
+// const purgecss = process.env.npm_config_purgecss;
+const purgecss = process.env.npm_config_purgecss;
 const seo = process.env.npm_config_seo;
 if (process.env.npm_lifecycle_event === 'webpack:dev') {
   build = 'dev';
@@ -131,6 +133,7 @@ module.exports = {
     ],
   },
   plugins: [
+    // TODO: 'Global для jquery'
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -144,15 +147,6 @@ module.exports = {
       {
         from: './src/scripts/external/**/*.js',
         to: 'scripts/[name].[ext]',
-        toType: 'template',
-      },
-    ]),
-    // стили шаблона
-    // TODO: 'Обработка сторонних стилей'
-    new CopyWebpackPlugin([
-      {
-        from: './src/styles/**/*.css',
-        to: 'styles/[name].[ext]',
         toType: 'template',
       },
     ]),
@@ -244,6 +238,7 @@ module.exports = {
 (function makeSeoStuff() {
   if (seo) {
     module.exports.plugins.push(
+      // TODO: 'Всегда создавать роботс для dev сервера'
       new RobotstxtPlugin({
         policy: [
           {
@@ -274,7 +269,14 @@ module.exports = {
 if (purgecss) {
   module.exports.plugins.push(
     new PurgecssPlugin({
+      // FIXME: 'Настроить Purgecss'
+      // paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
+      // whitelistPatterns: [/mfp/],
+      // keyframes: true,
+      // fontFace: true,
+      // rejected: true,
       paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
+      whitelistPatterns: [/mfp/],
     }),
   );
 }
