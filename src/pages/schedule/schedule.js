@@ -3,7 +3,8 @@ import 'bootstrap/scss/bootstrap.scss';
 // Common
 import '../../styles/style.scss';
 // Local
-// FIXME: 'Добавить импорт data.json'
+import createSelect from '../../scripts/components/select/select';
+import { directions, coaches } from '../../data';
 import '../../scripts/components/select/select.scss';
 import './schedule.scss';
 // Inline
