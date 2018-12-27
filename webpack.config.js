@@ -20,13 +20,14 @@ if (process.env.npm_lifecycle_event === 'webpack:dev') {
   build = 'prod';
 }
 module.exports = {
-  // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
     index: './src/pages/index/index',
     services: './src/pages/services/services',
     service: './src/pages/services/service/service',
     schedule: './src/pages/schedule/schedule',
+    // TODO: 'Изменить на events'
     eventsboard: './src/pages/eventsboard/eventsboard',
+    event: './src/pages/eventsboard/event/event',
     team: './src/pages/team/team',
     coaches: './src/pages/coaches/coaches',
     coach: './src/pages/coaches/coach/coach',

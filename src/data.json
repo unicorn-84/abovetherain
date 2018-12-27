@@ -231,6 +231,28 @@
           "path": "current"
         }
       ]
+    },
+    "sofaMakurinaMasterClass": {
+      "name": "sofa-makurina-master-class",
+      "link": "events/sofa-makurina-master-class.html",
+      "template": "./src/pages/eventsboard/event/sofa-makurina-master-class.pug",
+      "title": "Мастер-класс Софы Макуриной | Над Дождём",
+      "description": "",
+      "pageTitle": "Мастер-класс Софы Макуриной",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Афиша",
+          "path": "eventsboard.html"
+        },
+        {
+          "name": "Мастер-класс Софы Макуриной",
+          "path": "current"
+        }
+      ]
     }
   },
   "primaryNavigation": [
