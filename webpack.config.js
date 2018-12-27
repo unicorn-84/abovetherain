@@ -240,7 +240,6 @@ module.exports = {
 (function makeSeoStuff() {
   if (seo) {
     module.exports.plugins.push(
-      // TODO: 'Всегда создавать роботс для dev сервера'
       new RobotstxtPlugin({
         policy: [
           {
@@ -264,6 +263,17 @@ module.exports = {
           toType: 'template',
         },
       ]),
+    );
+  } else if (!seo && server === 'dev') {
+    module.exports.plugins.push(
+      new RobotstxtPlugin({
+        policy: [
+          {
+            userAgent: '*',
+            disallow: '/',
+          },
+        ],
+      }),
     );
   }
 }());
