@@ -152,8 +152,7 @@ module.exports = {
     }),
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
-      whitelistPatterns: [/mfp/],
-      keyframes: true,
+      whitelistPatterns: [/mfp/, /swiper/],
       fontFace: true,
       rejected: true,
     }),
