@@ -1,3 +1,4 @@
+//-TODO: 'Общий импорт данных'
 extends ../../templates/layout
 append variables
   - const { options, pages, primaryNavigation } = require('../../data');
@@ -24,22 +25,7 @@ append styles
 append header
   append header
     //Header
-    header#header.transparent-header.no-sticky
-      #header-wrap
-        .container.clearfix
-          #primary-menu-trigger: i.icon-reorder
-          //Logo
-          #logo
-            a(href="index.html", style='display: inline-block;')
-              img(src= require('../../images/logo/logo.png'), srcset= require('../../images/logo/logo.png') + ' 1x, ' +
-              require('../../images/logo/logo@2x.png') + ' 2x', alt="Логотип | Над дождём")
-          //Primary Navigation
-          nav#primary-menu
-            ul
-              each item in primaryNavigation
-                li(class={current: htmlWebpackPlugin.options.name === item.name})
-                  a(href=`${item.name}.html`)
-                    div= item.title
+    +header(primaryNavigation)
 append content
   +pageTitle(pages.services)
   section#content
@@ -66,7 +52,7 @@ append content
                 p(class='card-text lead')
                   |В танцевальном замке "Над дождём" возможно арендовать сценическую площадку для проведения отчетного концерта, творческого вечера, спектакля, семинара, мастер-класса и других различных&nbsp;мероприятий.
                 p(class='card-text d-flex justify-content-end')
-                  a(href= 'rent.html', class='font-weight-bold') Подробнее...
+                  a(href= pages.rent.link, class='font-weight-bold') Подробнее...
           //-Пилон
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')

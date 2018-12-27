@@ -3,7 +3,8 @@
     "url": "http://abovetherain.ru/",
     "remoteServerProd": "http://abovetherain.ru/",
     "remoteServerDev": "http://templates.vkapitonov.ru/",
-    "localServerDev": "http://localhost:8000/",
+    "hostLocal": "localhost",
+    "portLocal": "8000",
     "name": "Над Дождём",
     "description": "Многофункциональное творческое пространство самовыражения для души и тела. Которое объединяет в себя танцы, музыку и творческую часть души в единое целое.",
     "author": "unicorn-84",
@@ -167,8 +168,8 @@
     },
     "rent": {
       "name": "rent",
-      "link": "rent.html",
-      "template": "./src/pages/services/rent.pug",
+      "link": "services/rent.html",
+      "template": "./src/pages/services/service/rent.pug",
       "title": "Аренда танцевального зала в СПб для любых мероприятий | Над Дождём",
       "description": "Аренда зала в СПБ - у нас лучшие условия и цены! К вашим услугам просторный зал 90 м с уютным бельэтажем для гостей, профессиональная звуковая аппаратура и освещение. Удобное расположение, живописное место с видом на набережную. Звоните: +7 952 3999930",
       "pageTitle": "Аренда",
@@ -227,6 +228,28 @@
         },
         {
           "name": "Надежда Лучинина",
+          "path": "current"
+        }
+      ]
+    },
+    "sofaMakurinaMasterClass": {
+      "name": "sofa-makurina-master-class",
+      "link": "events/sofa-makurina-master-class.html",
+      "template": "./src/pages/eventsboard/event/sofa-makurina-master-class.pug",
+      "title": "Мастер-класс Софы Макуриной | Над Дождём",
+      "description": "",
+      "pageTitle": "Мастер-класс Софы Макуриной",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Афиша",
+          "path": "eventsboard.html"
+        },
+        {
+          "name": "Мастер-класс Софы Макуриной",
           "path": "current"
         }
       ]

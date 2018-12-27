@@ -1,6 +1,5 @@
 const path = require('path');
 const glob = require('glob');
-const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -11,16 +10,23 @@ const AddAssetPlugin = require('add-asset-webpack-plugin');
 const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
-const remoteServer = process.env.npm_config_server;
-const build = process.env.npm_lifecycle_event === 'build:prod' ? 'prod' : 'dev';
-
+let build;
+const server = process.env.npm_config_server;
+const seo = process.env.npm_config_seo;
+if (process.env.npm_lifecycle_event === 'webpack:dev') {
+  build = 'dev';
+} else if (process.env.npm_lifecycle_event === 'webpack:prod') {
+  build = 'prod';
+}
 module.exports = {
-  // TODO: 'Точки входа для отдельных услуг и событий'
   entry: {
     index: './src/pages/index/index',
     services: './src/pages/services/services',
+    service: './src/pages/services/service/service',
     schedule: './src/pages/schedule/schedule',
+    // TODO: 'Изменить на events'
     eventsboard: './src/pages/eventsboard/eventsboard',
+    event: './src/pages/eventsboard/event/event',
     team: './src/pages/team/team',
     coaches: './src/pages/coaches/coaches',
     coach: './src/pages/coaches/coach/coach',
@@ -83,7 +89,28 @@ module.exports = {
               publicPath: '../',
             },
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                ctx: {
+                  cssnano: build === 'prod' ? {
+                    preset: ['default', {
+                      discardComments: {
+                        removeAll: true,
+                      },
+                    }],
+                  } : false,
+                },
+              },
+            },
+          },
           'sass-loader',
         ],
       },
@@ -102,14 +129,29 @@ module.exports = {
       },
     ],
   },
+  externals: {
+    jquery: 'jQuery',
+  },
   plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default'],
-    }),
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
+    new MiniCssExtractPlugin({
+      filename: build === 'prod'
+        ? 'styles/[name].[contenthash:4].css'
+        : 'styles/[name].css',
+    }),
+    new FileManagerPlugin({
+      onEnd: {
+        delete: [
+          path.resolve(__dirname, 'dist/**/inline*.*'),
+        ],
+      },
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
+      whitelistPatterns: [/mfp/, /swiper/],
+      fontFace: true,
+      rejected: true,
+    }),
     // скрипты шаблона
     // TODO: 'Минимизация сторонних скриптов'
     new CopyWebpackPlugin([
@@ -119,55 +161,22 @@ module.exports = {
         toType: 'template',
       },
     ]),
-    // стили шаблона
-    // TODO: 'Обработка сторонних стилей'
+    // Логотип
+    // TODO: 'Hash для логотипа'
     new CopyWebpackPlugin([
       {
-        from: './src/styles/**/*.css',
-        to: 'styles/[name].[ext]',
+        from: './src/images/logo',
+        to: './images/logo/[name].[ext]',
         toType: 'template',
       },
     ]),
-    // Валидации
-    new CopyWebpackPlugin([
-      {
-        from: './src/data/trash',
-        to: './[name].[ext]',
-        toType: 'template',
-      },
-    ]),
-    new MiniCssExtractPlugin({
-      filename: build === 'prod'
-        ? 'styles/[name].[contenthash:4].css'
-        : 'styles/[name].css',
-    }),
-    new AddAssetPlugin('humans.txt',
-      `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
-        'RU-ru', {
-          year: 'numeric',
-          month: '2-digit',
-          day: '2-digit',
-        },
-      )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
-    new FileManagerPlugin({
-      onEnd: {
-        delete: [
-          path.resolve(__dirname, 'dist/**/inline*.*'),
-        ],
-      },
-    }),
-    new RobotstxtPlugin({
-      policy: [
-        {
-          userAgent: '*',
-          disallow: remoteServer === 'prod' ? null : '/',
-        },
-      ],
-    }),
   ],
   optimization: {
     // TODO: 'Добавить runtime'
+    // https://webpack.js.org/configuration/optimization/
+    // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
     noEmitOnErrors: true,
+    // TODO: 'Настроить vendor'
     splitChunks: {
       cacheGroups: {
         default: false,
@@ -195,17 +204,11 @@ module.exports = {
     stats: 'errors-only',
     overlay: true,
     compress: true,
-    port: 8000,
+    host: options.hostLocal,
+    port: options.portLocal,
   },
+  devtool: server === 'prod' ? 'none' : 'source-map',
 };
-
-if (build === 'prod' && remoteServer !== 'dev') {
-  module.exports.plugins.push(
-    new PurgecssPlugin({
-      paths: glob.sync(path.resolve(__dirname, 'src/**/*'), { nodir: true }),
-    }),
-  );
-}
 
 (function createPages() {
   Object.keys(pages).forEach((page) => {
@@ -215,7 +218,11 @@ if (build === 'prod' && remoteServer !== 'dev') {
         filename: pages[page].link,
         template: pages[page].template,
         inject: false,
-        remoteServer,
+        vars: {
+          build,
+          server,
+          seo,
+        },
         minify: {
           removeComments: build === 'prod',
           minifyCSS: build === 'prod',
@@ -225,4 +232,45 @@ if (build === 'prod' && remoteServer !== 'dev') {
       }),
     );
   });
+}());
+
+(function makeSeoStuff() {
+  if (seo) {
+    module.exports.plugins.push(
+      new RobotstxtPlugin({
+        policy: [
+          {
+            userAgent: '*',
+            disallow: server === 'prod' ? null : '/',
+          },
+        ],
+      }),
+      new AddAssetPlugin('humans.txt',
+        `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
+          'RU-ru', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          },
+        )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
+      new CopyWebpackPlugin([
+        {
+          from: './src/data/trash',
+          to: './[name].[ext]',
+          toType: 'template',
+        },
+      ]),
+    );
+  } else if (!seo && server === 'dev') {
+    module.exports.plugins.push(
+      new RobotstxtPlugin({
+        policy: [
+          {
+            userAgent: '*',
+            disallow: '/',
+          },
+        ],
+      }),
+    );
+  }
 }());
