@@ -1,4 +1,3 @@
-// TODO: 'Настроить devtools'
 const path = require('path');
 const glob = require('glob');
 const webpack = require('webpack');
@@ -213,6 +212,7 @@ module.exports = {
     host: options.hostLocal,
     port: options.portLocal,
   },
+  devtool: server === 'prod' ? 'none' : 'source-map',
 };
 
 (function createPages() {
