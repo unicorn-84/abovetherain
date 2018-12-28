@@ -3,5 +3,5 @@ import 'bootstrap.scss';
 // Common
 import 'style.scss';
 // Local
-// TODO: 'Добавить стили'
+import './requisites.scss';
 // Inline
