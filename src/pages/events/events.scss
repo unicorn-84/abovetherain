@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 //TODO: 'Ссылка на изображение в card'
 .card {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.5);
   box-shadow: $box-shadow;
   border-radius: 0;
 
@@ -60,10 +60,6 @@
 
   .card-img-top {
     border-radius: 0;
-  }
-
-  .card-body {
-    background-color: rgba(0, 0, 0, 0.5);
   }
 
   a {
