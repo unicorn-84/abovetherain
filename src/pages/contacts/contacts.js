@@ -5,8 +5,11 @@ import 'style.scss';
 // Local
 import './contacts.scss';
 // Inline
-// FIXME: 'Добавить импорт иконок'
-// TODO: 'В отдельный файл и инлайнить'
+// IMAGES
+import logo from '../../images/logo/logo@2x.png';
+import evacuatorLogo from '../../images/evacuator.png';
+
+// TODO: 'Загружать лениво'
 (function createMap() {
   function init() {
     const map = new ymaps.Map('yandex-map', {
