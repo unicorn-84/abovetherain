@@ -13,7 +13,7 @@ append icons
   //Page icons
 append styles
   //Page styles
-  //TODO: 'Сделать миксин'
+  //TODO:: 'Сделать миксин'
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline/i) === -1 && cssFile.search(/services/i) !== -1
       link(rel='preload', href= cssFile.substr(
@@ -32,9 +32,9 @@ append header
 append content
   +pageTitle(pages.services)
   section#content
-    //-Content
+    //Content
     div(class='content-wrap')
-      //-Container
+      //Container
       div(class='container')
         div(class='row')
           div(class='col-12')
@@ -42,7 +42,7 @@ append content
               |Выбирайте направления, в которых хочется развиваться.
               br
               |Стоимость одного занятия в школе танцев – 750 рублей.
-          //-Аренда
+          //Аренда
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
               div(class='image-container')
@@ -56,7 +56,7 @@ append content
                   |В танцевальном замке "Над дождём" возможно арендовать сценическую площадку для проведения отчетного концерта, творческого вечера, спектакля, семинара, мастер-класса и других различных&nbsp;мероприятий.
                 p(class='card-text d-flex justify-content-end')
                   a(href= pages.rent.link, class='font-weight-bold') Подробнее...
-          //-Пилон
+          //Пилон
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
               div(class='image-container')
@@ -70,7 +70,7 @@ append content
                   |Пробное занятие - 500 руб
                 p(class='card-text lead')
                   |Pole Dance — это фитнес нового поколения, объединяющий в себе современную хореографию и воздушную акробатику. Помогает развивать и укреплять все группы мышц, совершенствовать красоту тела и достигать внутреннего раскрепощения.
-          //-Кольцо
+          //Кольцо
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
               div(class='image-container')
@@ -87,7 +87,7 @@ append content
                   | Пробное занятие - 500 руб
                 p(class='card-text lead')
                   |Воздушное кольцо - спортивное увлечение, благодаря которому вы незаметно приобретете красивые формы тела. Посещая эти занятия, вы сможете выполнять эффектные и захватывающие трюки. Окунетесь в мир воздушного искусства и почувствуйте себя настоящим артистом. После месяца активных тренировок вы заметите свободу в движениях, легкость и подъем жизненной энергии.
-          //-Полотно
+          //Полотно
           div(class='col-12 col-lg-6')
             div(class='card mb-5 mb-lg-4 border-0')
               div(class='image-container')
@@ -101,7 +101,7 @@ append content
                   | Пробное занятие - 500 руб
                 p(class='card-text lead')
                   |Воздушные полотна - спорт для избранных. Здесь вы полностью удовлетворите свою тягу к совершенству. Зависая в воздухе при помощи двух полотен, танцоры демонстрируют различные трюки, срывы, эффектные висы и шпагаты. Занимаясь воздушными полотнами, вы обретаете желанную спортивную форму, гибкость и пластичность тела.
-          //-Королевская йога
+          //Королевская йога
           div(class='col-12 col-lg-6')
             div(class='card border-0 mb-5 mb-lg-4')
               div(class='image-container')
@@ -115,7 +115,7 @@ append content
                   | Пробное занятие - 500 руб
                 p(class='card-text lead')
                   |Йога - практика ума и тела, сочетающая в себе различные физические позы, дыхательные техники, медитацию и релаксацию. Занятие по йоге нацелено на гармонизацию психического и физиологического состояния организма.
-          //-Stretching
+          //Stretching
           div(class='col-12 col-lg-6')
             div(class='card border-0')
               div(class='image-container')

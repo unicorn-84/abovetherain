@@ -1,42 +1,89 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
+//TODO: 'Ссылка на изображение в card'
+.card {
+  background-color: transparent;
+  box-shadow: $box-shadow;
+  border-radius: 0;
 
-a span {
-  color: $theme-color !important;
-}
+  p {
+    line-height: 1.8 !important;
+  }
 
-.event-title {
-  text-transform: uppercase;
+  .image-container {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: 66.666666%;
+
+    img {
+      background-color: #f0f0f0;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      color: $new-normal-text-color;
+    }
+
+    .event-date {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      background-color: rgba(#000, 0.8);
+      color: $light-color;
+      padding: 10px;
+      font-family: $font-family;
+      font-weight: $font-weight;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        display: block;
+        font-family: $font-family;
+        font-weight: $font-weight;
+
+        @include type(-1);
+
+        @include respond-to(desktop) {
+          @include type(0);
+
+          line-height: 1.333 !important;
+        }
+
+        line-height: 1.333 !important;
+      }
+    }
+  }
+
+  .card-img-top {
+    border-radius: 0;
+  }
+
+  .card-body {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 
   a {
-    display: inline-block;
-
-    @include link($theme-color);
+    font-family: $heading-font-family;
+    color: $light-color;
+    text-decoration: underline rgba($light-color, 0.5) !important;
   }
-}
 
-.single-post {
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  padding: 20px;
-}
+  .card-title {
+    @include type(1);
 
-h2 {
-  margin-bottom: 1em !important;
-}
-
-p {
-  line-height: 1.8 !important;
-}
-
-.entry-image {
-  margin-bottom: 1em;
-
-  @include respond-to(laptop) {
-    margin-bottom: 3em;
+    @include respond-to(handheld) {
+      @include type(2);
+    }
   }
-}
 
-.entry-content {
-  margin-bottom: 1em;
+  .card-subtitle {
+    display: block;
+    font-family: $heading-font-family;
+
+    @include type(0);
+  }
 }
