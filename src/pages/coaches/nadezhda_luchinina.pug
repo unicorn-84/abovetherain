@@ -11,7 +11,7 @@ append icons
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inline/i) === -1 && (cssFile.search(/vendor/i) !== -1 || cssFile.search(/common/i) !== -1 || cssFile.search(/coach\./i) !== -1)
+    if cssFile.search(/inline/i) === -1 && (cssFile.search(/common/i) !== -1 || cssFile.search(/coach\./i) !== -1)
       link(href=cssFile, rel='preload', as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
       noscript
         link(href=cssFile, rel='stylesheet')
