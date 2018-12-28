@@ -206,6 +206,11 @@ module.exports = {
     port: options.portLocal,
   },
   devtool: server === 'prod' ? 'none' : 'source-map',
+  resolve: {
+    alias: {
+      'bootstrap.scss': path.resolve(__dirname, 'node_modules/bootstrap/scss/bootstrap.scss'),
+    },
+  },
 };
 
 (function createPages() {

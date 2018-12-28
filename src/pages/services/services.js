@@ -1,6 +1,6 @@
 // Vendor
 // TODO: 'Добавить алиас'
-import 'bootstrap/scss/bootstrap.scss';
+import 'bootstrap.scss';
 import 'bootstrap/js/dist/carousel';
 // Common
 import '../../styles/style.scss';

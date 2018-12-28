@@ -7,6 +7,12 @@
     "linebreak-style": [
       "error",
       "windows"
+    ],
+    "import/no-unresolved": [
+      "error",
+      {
+        "ignore": ["bootstrap.scss"]
+      }
     ]
   },
   "env": {
