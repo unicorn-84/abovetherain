@@ -5,5 +5,5 @@ import 'carousel';
 // Common
 import 'style.scss';
 // Local
-// TODO: 'Добавить стили для rent.html'
+import './service.scss';
 // Inline

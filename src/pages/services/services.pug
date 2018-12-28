@@ -13,6 +13,7 @@ append icons
   //Page icons
 append styles
   //Page styles
+  //TODO: 'Сделать миксин'
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline/i) === -1 && cssFile.search(/services/i) !== -1
       link(rel='preload', href= cssFile.substr(
