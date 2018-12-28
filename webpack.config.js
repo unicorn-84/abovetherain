@@ -209,6 +209,7 @@ module.exports = {
   resolve: {
     alias: {
       'bootstrap.scss': path.resolve(__dirname, 'node_modules/bootstrap/scss/bootstrap.scss'),
+      carousel: path.resolve(__dirname, 'node_modules/bootstrap/js/dist/carousel.js'),
     },
   },
 };

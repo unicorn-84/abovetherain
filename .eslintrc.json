@@ -11,7 +11,7 @@
     "import/no-unresolved": [
       "error",
       {
-        "ignore": ["bootstrap.scss"]
+        "ignore": ["bootstrap.scss", "carousel"]
       }
     ]
   },
