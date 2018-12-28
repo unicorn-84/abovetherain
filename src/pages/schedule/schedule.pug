@@ -4,8 +4,10 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.schedule.title
-  meta(name='description', content= pages.schedule.description)
+  if pages.schedule.title
+    title= pages.schedule.title
+  if pages.schedule.description
+    meta(name='description', content= pages.schedule.description)
 append icons
   //Page icons
 append styles

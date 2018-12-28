@@ -4,8 +4,10 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.coaches.title
-  meta(name='description', content= pages.coaches.description)
+  if pages.coaches.title
+    title= pages.coaches.title
+  if pages.coaches.description
+    meta(name='description', content= pages.coaches.description)
 append icons
   //Page icons
 append styles
