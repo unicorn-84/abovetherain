@@ -4,8 +4,10 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.nadezhda_luchinina.title
-  meta(name='description', content= pages.nadezhda_luchinina.description)
+  if pages.nadezhda_luchinina.title
+    title= pages.nadezhda_luchinina.title
+  if pages.nadezhda_luchinina.description
+    meta(name='description', content= pages.nadezhda_luchinina.description)
 append icons
   //Page icons
 append styles
@@ -28,7 +30,6 @@ append content
     //-Content
     div(class='content-wrap')
       //-Container
-      //FIXME: 'Исправить фамилию'
       div(class='container')
         div(class='row justify-content-center')
           div(class='col-12 col-lg-8')

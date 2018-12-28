@@ -4,8 +4,10 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.gallery.title
-  meta(name='description', content= pages.gallery.description)
+  if pages.gallery.title
+    title= pages.gallery.title
+  if pages.gallery.description
+    meta(name='description', content= pages.gallery.description)
 append icons
   //Page icons
 append styles

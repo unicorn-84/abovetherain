@@ -4,7 +4,8 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.team.title
+  if pages.team.title
+    title= pages.team.title
   if pages.team.description
     meta(name='description', content= pages.team.description)
   if pages.team.og.title

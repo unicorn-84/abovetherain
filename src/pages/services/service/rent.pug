@@ -4,8 +4,10 @@ append variables
 //-HEAD
 append meta
   //Page meta tags
-  title= pages.rent.title
-  meta(name='description', content= pages.rent.description)
+  if pages.rent.title
+    title= pages.rent.title
+  if pages.rent.description
+    meta(name='description', content= pages.rent.description)
 append icons
   //Page icons
 append styles
