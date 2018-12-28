@@ -18,6 +18,7 @@ if (process.env.npm_lifecycle_event === 'webpack:dev') {
 } else if (process.env.npm_lifecycle_event === 'webpack:prod') {
   build = 'prod';
 }
+
 module.exports = {
   entry: {
     index: './src/pages/index/index',
@@ -174,29 +175,6 @@ module.exports = {
     // https://webpack.js.org/configuration/optimization/
     // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
     noEmitOnErrors: true,
-    // TODO: 'Настроить vendor'
-    splitChunks: {
-      cacheGroups: {
-        default: false,
-        vendors: false,
-        vendor: {
-          name: 'vendor',
-          chunks: 'all',
-          test: /(node_modules|bower_components)/,
-        },
-        common: {
-          name: 'common',
-          minChunks: 2,
-          chunks: 'all',
-        },
-        inline: {
-          name: false,
-          test: /inline/,
-          chunks: 'initial',
-          enforce: true,
-        },
-      },
-    },
   },
   devServer: {
     stats: 'errors-only',
@@ -278,4 +256,24 @@ module.exports = {
       }),
     );
   }
+}());
+
+(function splitChunks() {
+  module.exports.optimization.splitChunks = {
+    cacheGroups: {
+      default: false,
+      vendors: false,
+      common: {
+        name: 'common',
+        minChunks: Object.keys(module.exports.entry).length,
+        chunks: 'all',
+      },
+      inline: {
+        name: false,
+        test: /inline/,
+        chunks: 'initial',
+        enforce: true,
+      },
+    },
+  };
 }());
