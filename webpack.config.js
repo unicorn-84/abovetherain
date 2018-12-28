@@ -153,7 +153,6 @@ module.exports = {
       rejected: true,
     }),
     // скрипты шаблона
-    // TODO: 'Минимизация сторонних скриптов'
     new CopyWebpackPlugin([
       {
         from: './src/scripts/external/**/*.js',
