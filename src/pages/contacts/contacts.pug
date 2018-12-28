@@ -44,8 +44,7 @@ append content
                 a(href=`tel:${contacts.phone}`)= contacts.phone
               .contact-email
                 i.icon-envelope-alt
-                //-TODO: 'Modal contact form'
-                a(href="#")= contacts.email
+                | #{contacts.email}
           .col-lg-12
             #yandex-map
 append scripts
