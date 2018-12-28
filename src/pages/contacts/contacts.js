@@ -1,7 +1,7 @@
 // Vendor
 import 'bootstrap.scss';
 // Common
-import '../../styles/style.scss';
+import 'style.scss';
 // Local
 import './contacts.scss';
 // Inline
