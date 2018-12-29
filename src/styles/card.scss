@@ -34,6 +34,19 @@
       color: darken($new-text-color, 15%);
     }
   }
+
+  blockquote {
+    border: none;
+
+    .blockquote-footer {
+      color: $secondary-text-color;
+    }
+
+    p {
+      font-size: 1.125rem;
+      font-style: italic;
+    }
+  }
 }
 
 .card-title,
