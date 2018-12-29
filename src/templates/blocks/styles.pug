@@ -4,3 +4,4 @@ each cssFile in htmlWebpackPlugin.files.css
     link(rel='preload', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length), as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
     noscript
       link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
+link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,700&amp;subset=cyrillic')
