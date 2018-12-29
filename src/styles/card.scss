@@ -18,10 +18,10 @@
 }
 
 .card {
-  @include img-container(66.666666%);
-
-  p.card-text {
-    margin: 0 auto;
+  p {
+    &.card-text {
+      margin: 0 auto;
+    }
   }
 
   a {
