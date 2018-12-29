@@ -167,17 +167,16 @@ body {
 
 #header {
   #primary-menu-trigger {
-    color: $new-bold-text-color;
+    color: $new-text-color;
   }
 
   #primary-menu {
     a {
-      color: $new-normal-text-color;
+      color: $new-text-color;
 
       &:focus,
       &:active {
-        font-weight: bold;
-        color: $new-bold-text-color;
+        color: $new-text-color;
       }
 
       @include respond-to(laptop) {
