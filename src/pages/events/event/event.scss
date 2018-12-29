@@ -14,17 +14,4 @@
       text-indent: 1em;
     }
   }
-
-  blockquote {
-    border: none;
-
-    .blockquote-footer {
-      color: $secondary-text-color;
-    }
-
-    p {
-      font-size: 1.125rem;
-      font-style: italic;
-    }
-  }
 }

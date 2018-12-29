@@ -35,9 +35,10 @@ append content
       //Container
       div(class='container')
         div(class='row')
-          //Мастер-класс Софы Макуриной
-          div(class='col-12 col-lg-6')
-            div(class='card mb-5 mb-lg-4 border-0')
+          <!--МАСТЕР-КЛАСС СОФЫ МАКУРИНОЙ-->
+          div(class='col-12 col-lg-6 d-flex align-items-stretch')
+            div(class='card')
+              //Image
               div(class='image-container')
                 a(href= pages.sofaMakurinaMasterClass.link)
                   img(class='card-img-top',
@@ -47,21 +48,29 @@ append content
                   div(class='event-date')
                     span 28
                     span Октября
-              div(class='card-body p-sm-4')
-                h2(class='card-title mb-3')
+              //Body
+              div(class='card-body')
+                //Title
+                h2(class='card-title')
                   | Мастер-класс Софы&nbsp;Макуриной
-                p(class='card-text lead mb-4')
+                //Subtitle
+                p(class='card-subtitle')
                   | Впервые в САНКТ-ПЕТЕРБУРГЕ!
                   br
                   | 28 октября 2018
-                p(class='card-text lead mb-4')
-                  | В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
-                p(class='card-text lead mb-4')
-                  | Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+                //Card text
                 p(class='card-text')
+                  | В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
+                p(class='card-text mb-2')
+                  | Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+                p(class='mb-0')
                   a(href='requisites.html') Реквизиты для оплаты
+              //Footer
+              div(class='card-footer')
                 p(class='card-text d-flex justify-content-end')
-                  a(href= pages.sofaMakurinaMasterClass.link, class='font-weight-bold') Подробнее...
+                  a(href= pages.sofaMakurinaMasterClass.link) Подробнее...
+
+
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js
