@@ -1,61 +1,17 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
+@import '../../../styles/card';
 
 .card {
-  background-color: rgba(0, 0, 0, 0.5);
-  box-shadow: $box-shadow;
-  border-radius: 0;
+  @include img-container(66.666666%);
 
   p {
-    line-height: 1.8 !important;
-  }
+    span {
+      font-weight: 500;
+    }
 
-  .image-container {
-    position: relative;
-    height: 0;
-    width: 100%;
-    padding-top: 66.666666%;
-
-    img {
-      background-color: #f0f0f0;
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
+    &.card-text {
+      text-indent: 1em;
     }
   }
-
-  ul {
-    padding-left: 2em;
-  }
-
-  .card-img-top {
-    border-radius: 0;
-  }
-
-  a {
-    font-family: $heading-font-family;
-    color: $light-color;
-    text-decoration: underline rgba($light-color, 0.5) !important;
-  }
-
-  .card-title {
-    @include type(1);
-
-    @include respond-to(handheld) {
-      @include type(2);
-    }
-  }
-
-  .card-subtitle {
-    display: block;
-    font-family: $heading-font-family;
-
-    @include type(0);
-  }
-}
-
-blockquote {
-  border-left: 5px solid $light-color !important;
 }
