@@ -5,9 +5,7 @@
 .card {
   @include img-container(66.666666%);
 
-  p {
-    span {
-      font-weight: 500;
-    }
+  strong {
+    font-weight: 500;
   }
 }
