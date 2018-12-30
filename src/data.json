@@ -210,10 +210,10 @@
         }
       ]
     },
-    "nadezhda_luchinina": {
-      "name": "nadezhda_luchinina",
-      "link": "nadezhda_luchinina.html",
-      "template": "./src/pages/coaches/nadezhda_luchinina.pug",
+    "nadezhdaLuchinina": {
+      "name": "nadezhda-luchinina",
+      "link": "coaches/nadezhda-luchinina.html",
+      "template": "./src/pages/coaches/coach/nadezhda-luchinina.pug",
       "title": "Надежда Лучинина | Над Дождём",
       "description": "",
       "pageTitle": "Надежда Лучинина",
@@ -419,7 +419,7 @@
     {
       "name": "nadezhda_luchinina",
       "title": "Надежда Лучинина",
-      "link": "nadezhda_luchinina.html",
+      "link": "coaches/nadezhda-luchinina.html",
       "directions": [
         {
           "title": "Pole dance"
