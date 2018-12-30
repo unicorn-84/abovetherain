@@ -34,19 +34,24 @@ append content
       div(class='container')
         div(class='row justify-content-center')
           div(class='col-12 col-lg-8')
-            div(class='card border-0')
-              div(class='card-body p-sm-4')
-                h2(class='card-title mb-3')
-                  |Александр Ушаков
-                span(class='card-subtitle mb-4')
-                  |Лицензированный инструктор программ <strong>Zumba (R) Fitness</strong> и <strong>Strong by Zumba (R)</strong>
-                p(class='card-text lead mb-4')
-                  |В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
-                p(class='card-text lead mb-4')
-                  |Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
+            div(class='card')
+              //Body
+              div(class='card-body')
+                //Title
+                h2(class='card-title')
+                  | Александр Ушаков
+                //Subtitle
+                p(class='card-subtitle')
+                  | Лицензированный инструктор программ
+                  br
+                  | <strong>Zumba (R) Fitness</strong> и <strong>Strong by Zumba (R)</strong>
+                p(class='card-text text-indent')
+                  | В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
+                p(class='card-text text-indent')
+                  | Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
                 blockquote(class='blockquote mb-0')
-                  p(class='mb-0 font-italic')
-                    |В работе главное - взаимосвязь между инструктором и учеником.
+                  p(class='card-text mb-2 text-indent')
+                    | "В работе главное - взаимосвязь между инструктором и учеником."
                   footer(class='blockquote-footer')
                     cite(title='Александр Ушаков') Александр Ушаков
 append scripts

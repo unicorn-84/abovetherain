@@ -1,0 +1,64 @@
+@import './variables';
+@import './mixins';
+
+.card,
+.card-header,
+.card-footer,
+.card-img,
+.card-img-top,
+.card-img-bottom {
+  border-radius: 0;
+}
+
+.card,
+.card-header,
+.card-footer {
+  background-color: $card-bg;
+  border: none;
+}
+
+.card {
+  p {
+    &.card-text {
+      margin: 0 auto;
+    }
+
+    &.text-indent {
+      text-indent: 1em;
+    }
+  }
+
+  a {
+    color: $new-text-color;
+    font-weight: 500;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: darken($new-text-color, 15%);
+    }
+  }
+
+  blockquote {
+    border: none;
+
+    .blockquote-footer {
+      color: $secondary-text-color;
+    }
+
+    p {
+      font-size: 1.125rem;
+      font-style: italic;
+    }
+  }
+}
+
+.card-title,
+.card-text {
+  color: $new-text-color;
+}
+
+.card-subtitle {
+  color: $secondary-text-color;
+  margin-bottom: 1rem;
+}
