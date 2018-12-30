@@ -4,10 +4,4 @@
 
 .card {
   @include img-container(66.666666%);
-
-  p {
-    &.card-text {
-      text-indent: 1em;
-    }
-  }
 }
