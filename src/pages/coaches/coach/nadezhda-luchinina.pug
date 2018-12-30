@@ -1,19 +1,19 @@
-extends ../../templates/layout
+extends ../../../templates/layout
 append variables
-  - const { options, pages, primaryNavigation } = require('../../data');
+  - const { options, pages, primaryNavigation } = require('../../../data');
 //-HEAD
 append meta
   //Page meta tags
-  if pages.nadezhda_luchinina.title
-    title= pages.nadezhda_luchinina.title
-  if pages.nadezhda_luchinina.description
-    meta(name='description', content= pages.nadezhda_luchinina.description)
+  if pages.nadezhdaLuchinina.title
+    title= pages.nadezhdaLuchinina.title
+  if pages.nadezhdaLuchinina.description
+    meta(name='description', content= pages.nadezhdaLuchinina.description)
 append icons
   //Page icons
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/inline/i) === -1 && (cssFile.search(/common/i) !== -1 || cssFile.search(/coach\./i) !== -1)
+    if cssFile.search(/inline/i) === -1 && cssFile.search(/coach\./i) !== -1
       link(href=cssFile, rel='preload', as='style', onload='this.onload=null\;this.rel=\'stylesheet\'')
       noscript
         link(href=cssFile, rel='stylesheet')
@@ -25,7 +25,7 @@ append header
   +header(primaryNavigation)
 append content
   //Page title
-  +pageTitle(pages.nadezhda_luchinina)
+  +pageTitle(pages.nadezhdaLuchinina)
   section#content
     //Content
     div(class='content-wrap')
