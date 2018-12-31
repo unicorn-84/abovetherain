@@ -1,0 +1,100 @@
+@import './variables';
+@import './mixins';
+
+.navbar {
+  background-color: $light-color;
+  color: rgba(0, 0, 0, 0.87);
+  overflow-y: auto;
+  max-height: 100vh;
+  align-items: start;
+
+  @include respond-to(laptop) {
+    background-color: transparent;
+    color: $light-color;
+  }
+
+  .navbar-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    > div {
+      flex-basis: 33.333333%;
+
+      @include respond-to(laptop) {
+        flex-basis: auto;
+      }
+    }
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.87);
+
+    &.nav-link {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      &:not(.navbar-brand) {
+        padding: 1rem;
+      }
+
+      &:hover,
+      &:focus,
+      &:active {
+        color: rgba(0, 0, 0, 0.5);
+      }
+
+      @include respond-to(laptop) {
+        color: $light-color;
+
+        &:not(.navbar-brand) {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
+        }
+
+        &:hover,
+        &:focus {
+          color: rgba($light-color, 0.7);
+        }
+      }
+    }
+  }
+
+  .navbar-toggler {
+    color: rgba(0, 0, 0, 0.87);
+    //border-color: red;
+
+    &:focus {
+      outline: 5px auto -webkit-focus-ring-color;
+    }
+
+    svg {
+      fill: rgba(0, 0, 0, 0.87);
+    }
+
+    .navbar-toggler-icon {
+      background-image: none;
+      border: none;
+    }
+  }
+
+  .navbar-brand {
+    margin: 0;
+
+    img {
+      height: 70px;
+      width: 70px;
+      font-size: 1rem;
+
+      @include respond-to(laptop) {
+        height: 100px;
+        width: 100px;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
