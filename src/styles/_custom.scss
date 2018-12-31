@@ -1,20 +1,9 @@
 @import 'variables';
 @import 'mixins';
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-  outline: none !important;
-}
-
 html,
 body {
   height: 100%;
-}
-
-body {
-  background-color: #fff;
 }
 
 #wrapper {

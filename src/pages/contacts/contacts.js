@@ -3,7 +3,7 @@ import 'bootstrap/scss/bootstrap.scss';
 import '../../styles/style.scss';
 import './contacts.scss';
 // IMAGES
-import logo from '../../images/logo/logo@3x.png';
+import logo from '../../images/logo/logo@2x.png';
 import evacuatorLogo from '../../images/evacuator.png';
 
 (function createMap() {

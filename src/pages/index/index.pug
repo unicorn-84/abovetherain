@@ -15,7 +15,42 @@ append styles
   //Page styles
 //-BODY
 append header
-  +header(primaryNavigation.items, className='index')
+  //Primary navigation
+  nav(class='navbar navbar-expand-lg fixed-top')
+    div(class='container')
+      //Content
+      div(class='navbar-wrapper')
+        <!--TOGGLER-->
+        div(class='toggler-wrapper')
+          button(class='navbar-toggler', type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Кнопка меню')
+            span(class='navbar-toggler-icon')
+              svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 512 512')
+                path(d='M491.318 235.318H20.682C9.26 235.318 0 244.577 0 256s9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.259 20.682-20.682 0-11.422-9.259-20.682-20.682-20.682zM491.318 78.439H20.682C9.26 78.439 0 87.699 0 99.121c0 11.422 9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.26 20.682-20.682 0-11.422-9.259-20.682-20.682-20.682zM491.318 392.197H20.682C9.26 392.197 0 401.456 0 412.879s9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.259 20.682-20.682s-9.259-20.682-20.682-20.682z')
+        <!--LOGO-->
+        div(class='logo-wrapper text-center')
+          a(class='navbar-brand', href='index.html', title='Главная | Над Дождём')
+            img(src= require('../../images/logo/logo.png'), alt='Логотип | Над Дождём', srcset= require(
+            '../../images/logo/logo.png') + ' 1x, ' + require('../../images/logo/logo@2x.png') + ' 2x')
+        <!--HELPER-->
+        div
+      //Collapse
+      div(class='collapse navbar-collapse', id='navbarSupportedContent')
+        ul(class='navbar-nav ml-auto')
+          li(class='nav-item')
+            a(class='nav-link', href='services.html', title='Услуги | Над Дождём') Услуги
+              span(class='sr-only') (current)
+          li(class='nav-item')
+            a(class='nav-link', href='schedule.html', title='Расписание | Над Дождём') Расписание
+          li(class='nav-item')
+            a(class='nav-link', href='eventsboard.html', title='Афиша | Над Дождём') Афиша
+          li(class='nav-item')
+            a(class='nav-link', href='team.html', title='Мы | Над Дождём') Мы
+          li(class='nav-item')
+            a(class='nav-link', href='coaches.html', title='Тренеры | Над Дождём') Тренеры
+          li(class='nav-item')
+            a(class='nav-link', href='gallery.html', title='Галерея | Над Дождём') Галерея
+          li(class='nav-item')
+            a(class='nav-link', href='contacts.html', title='Контакты | Над Дождём') Контакты
 append content
   //Primary Slider
   section#slider.slider-element.slider-parallax.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1000" data-autoplay="5000" data-grab="false")
