@@ -4,6 +4,7 @@ import 'bootstrap.scss';
 import 'carousel';
 // Common
 import 'style.scss';
+import '../../../scripts/components/sticky';
 // Local
 import './service.scss';
 // Inline

@@ -1,16 +1,24 @@
 mixin header(items)
-  header#header.transparent-header.no-sticky
-    #header-wrap
-      .container.clearfix
-        #primary-menu-trigger: i.icon-reorder
-        //Logo
-        #logo
-          a(href="index.html", style='display: inline-block;')
-            img(src='images/logo/logo.png', srcset='images/logo/logo.png 1x, images/logo/logo@2x.png 2x', alt="Логотип | Над дождём")
-        //Primary Navigation
-        nav#primary-menu
-            ul
-              each item in items
-                li(class={current: htmlWebpackPlugin.options.name === item.name})
-                  a(href=`${item.name}.html`)
-                    div= item.title
+  //Primary navigation
+  nav(id= 'abovetherain__primary-navigation', class='navbar navbar-expand-lg')
+    div(class='container')
+      //Content
+      div(class='navbar-wrapper')
+        <!--TOGGLER-->
+        div(class='toggler-wrapper')
+          button(class='navbar-toggler', type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Кнопка меню')
+            span(class='navbar-toggler-icon')
+              svg(xmlns='http://www.w3.org/2000/svg', viewBox='0 0 512 512')
+                path(d='M491.318 235.318H20.682C9.26 235.318 0 244.577 0 256s9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.259 20.682-20.682 0-11.422-9.259-20.682-20.682-20.682zM491.318 78.439H20.682C9.26 78.439 0 87.699 0 99.121c0 11.422 9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.26 20.682-20.682 0-11.422-9.259-20.682-20.682-20.682zM491.318 392.197H20.682C9.26 392.197 0 401.456 0 412.879s9.26 20.682 20.682 20.682h470.636c11.423 0 20.682-9.259 20.682-20.682s-9.259-20.682-20.682-20.682z')
+        <!--LOGO-->
+        div(class='logo-wrapper text-center')
+          a(class='navbar-brand', href='index.html', title='Главная | Над Дождём')
+            img(src='images/logo/logo.png', alt='Логотип | Над Дождём', srcset='images/logo/logo.png 1x, images/logo/logo@2x.png 2x')
+        <!--HELPER-->
+        div
+      //Collapse
+      div(class='collapse navbar-collapse', id='navbarSupportedContent')
+        ul(class='navbar-nav ml-auto')
+          each item in items
+            li(class='nav-item')
+              a(class='nav-link', href= `${item.name}.html`, title= `${item.title} | ${options.name}`)= item.title

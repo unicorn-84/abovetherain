@@ -1,6 +1,7 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 @import '../../../styles/card';
+@import '../../../styles/navbar';
 
 .card {
   @include img-container(100%);
