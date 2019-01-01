@@ -62,7 +62,7 @@
 
   .navbar-toggler {
     color: rgba(0, 0, 0, 0.87);
-    //border-color: red;
+    transition: font-size 0.3s;
 
     &:focus {
       outline: 5px auto -webkit-focus-ring-color;
@@ -85,6 +85,7 @@
       height: 70px;
       width: 70px;
       font-size: 1rem;
+      transition: height 0.3s, width 0.3s;
 
       @include respond-to(laptop) {
         height: 100px;
@@ -95,6 +96,39 @@
 
   .navbar-collapse {
     text-align: center;
-    padding-top: 1rem;
+  }
+
+  &.sticky {
+    background-color: $light-color;
+    box-shadow: $box-shadow;
+
+    @include respond-to(laptop) {
+      a {
+        color: rgba(0, 0, 0, 0.87);
+
+        &.nav-link {
+          &:hover,
+          &:focus {
+            color: rgba(0, 0, 0, 0.5);
+          }
+        }
+      }
+    }
+
+    .navbar-brand {
+      img {
+        height: 40px;
+        width: 40px;
+
+        @include respond-to(laptop) {
+          height: 50px;
+          width: 50px;
+        }
+      }
+    }
+
+    .navbar-toggler {
+      font-size: 1rem;
+    }
   }
 }
