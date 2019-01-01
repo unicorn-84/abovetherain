@@ -1,4 +1,4 @@
-import { throttle } from 'lodash';
+import { throttle } from 'underscore';
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
