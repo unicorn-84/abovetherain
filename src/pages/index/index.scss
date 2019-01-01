@@ -1,17 +1,9 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-
-body {
-  overflow: hidden !important;
-  background-color: $light-color;
-}
+@import '../../styles/navbar';
 
 #wrapper {
   background: none !important;
-
-  &::before {
-    background: none !important;
-  }
 }
 
 #slider {
