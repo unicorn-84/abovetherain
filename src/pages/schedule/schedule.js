@@ -2,9 +2,11 @@
 import 'bootstrap.scss';
 // Common
 import 'style.scss';
+import '../../scripts/components/sticky';
 // Local
 import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';
+// SCSS
 import '../../scripts/components/select/select.scss';
 import './schedule.scss';
 // Inline

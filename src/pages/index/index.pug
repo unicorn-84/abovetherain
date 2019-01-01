@@ -27,9 +27,8 @@ append styles
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
-  append header
-    //Header
-    +header(primaryNavigation)
+  //Header
+  +header(primaryNavigation)
 append content
   //Primary Slider
   //TODO:: 'Удалить swiper.js. Добавить bootstrap carousel.js'
