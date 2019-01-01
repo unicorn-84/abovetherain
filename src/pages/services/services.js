@@ -2,6 +2,7 @@ import 'bootstrap/scss/bootstrap.scss';
 import 'bootstrap/js/dist/carousel';
 import '../../styles/style.scss';
 import './services.scss';
+import '../../scripts/components/sticky';
 
 // import { fetchData, insertDataToModal } from '../../scripts/components/helpers';
 

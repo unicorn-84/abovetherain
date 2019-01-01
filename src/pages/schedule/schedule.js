@@ -1,6 +1,7 @@
 // JS
 import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';
+import '../../scripts/components/sticky';
 // SCSS
 import '../../scripts/components/select/select.scss';
 import 'bootstrap/scss/bootstrap.scss';
