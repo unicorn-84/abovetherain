@@ -7,8 +7,14 @@
   overflow-y: auto;
   max-height: 100vh;
   align-items: start;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 
   @include respond-to(laptop) {
+    position: absolute;
     background-color: transparent;
     color: $light-color;
   }
@@ -98,37 +104,26 @@
     text-align: center;
   }
 
-  &.sticky {
-    background-color: $light-color;
-    box-shadow: $box-shadow;
+  @media screen and (max-width: 991px) {
+    &.sticky {
+      background-color: $light-color;
+      box-shadow: $box-shadow;
 
-    @include respond-to(laptop) {
-      a {
-        color: rgba(0, 0, 0, 0.87);
+      .navbar-brand {
+        img {
+          height: 40px;
+          width: 40px;
 
-        &.nav-link {
-          &:hover,
-          &:focus {
-            color: rgba(0, 0, 0, 0.5);
+          @include respond-to(laptop) {
+            height: 50px;
+            width: 50px;
           }
         }
       }
-    }
 
-    .navbar-brand {
-      img {
-        height: 40px;
-        width: 40px;
-
-        @include respond-to(laptop) {
-          height: 50px;
-          width: 50px;
-        }
+      .navbar-toggler {
+        font-size: 1rem;
       }
-    }
-
-    .navbar-toggler {
-      font-size: 1rem;
     }
   }
 }
