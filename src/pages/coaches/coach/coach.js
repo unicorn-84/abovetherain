@@ -1,5 +1,6 @@
 // Vendors
 import 'bootstrap.scss';
+import 'collapse';
 // Common
 import 'style.scss';
 import '../../../scripts/components/sticky';
