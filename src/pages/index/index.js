@@ -2,6 +2,7 @@
 import 'bootstrap.scss';
 import 'collapse';
 import 'carousel';
+import { each } from 'underscore';
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
@@ -17,7 +18,8 @@ import slide3 from '../../images/slides/003-slide-1920x1080.jpg';
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
-  $('#abovetherain__primary-slider').carousel('pause');
+  const $carousel = $('#abovetherain__primary-slider');
+  $carousel.carousel('dispose');
   const mobile = window.matchMedia('(max-width: 991px)');
   function imageLoad() {
     if (mobile.matches) {
@@ -28,43 +30,34 @@ jQuery(document).ready(($) => {
         img.src = fonImage;
       }
       img.onload = () => {
-        $('#abovetherain__primary-slider').css({
+        $('.carousel-indicators').css('display', 'flex').hide().fadeIn();
+        $carousel.css({
           backgroundImage: `url(${img.src})`,
-        }).carousel('cycle');
+        });
+        setTimeout(() => {
+          $carousel.carousel('next').carousel();
+        }, 1000);
       };
     }
     if (!mobile.matches) {
-      const img1 = new Image();
-      if (retinaCheck()) {
-        img1.src = slide1;
-      } else {
-        img1.src = slide1;
-      }
-      img1.onload = () => {
-        $('.carousel-image').eq(0).css({
-          backgroundImage: `url(${img1.src})`,
+      const slides = [slide1, slide2, slide3];
+      const len = slides.length;
+      let counter = 0;
+      each(slides, (slide, index) => {
+        const img = new Image();
+        img.src = slide;
+        img.addEventListener('load', () => {
+          counter += 1;
+          $('.carousel-image').eq(index).css({
+            backgroundImage: `url(${slide})`,
+          });
+          if (counter === len) {
+            $('.carousel-indicators').css('display', 'flex').hide().fadeIn();
+            $('.carousel-controls').css('display', 'flex').hide().fadeIn();
+            $('#abovetherain__primary-slider').carousel();
+          }
         });
-        const img2 = new Image();
-        const img3 = new Image();
-        if (retinaCheck()) {
-          img2.src = slide2;
-          img3.src = slide3;
-        } else {
-          img2.src = slide2;
-          img3.src = slide3;
-        }
-        img2.onload = () => {
-          $('.carousel-image').eq(1).css({
-            backgroundImage: `url(${img2.src})`,
-          });
-          $('#abovetherain__primary-slider').carousel('cycle');
-        };
-        img3.onload = () => {
-          $('.carousel-image').eq(2).css({
-            backgroundImage: `url(${img3.src})`,
-          });
-        };
-      };
+      });
     }
   }
   mobile.addListener(imageLoad);

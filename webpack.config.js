@@ -131,6 +131,7 @@ module.exports = {
   },
   externals: {
     jquery: 'jQuery',
+    Util: 'util.js',
   },
   plugins: [
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
