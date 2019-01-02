@@ -1119,7 +1119,6 @@ var SEMICOLON = SEMICOLON || {};
     $pagemenu = $('#page-menu'),
     $onePageMenuEl = $('.one-page-menu'),
     onePageGlobalOffset = 0,
-    swiperSlider = '',
     $pageTitle = $('#page-title'),
     $fullScreenEl = $('.full-screen'),
     $commonHeightEl = $('.common-height');
