@@ -30,6 +30,17 @@
 
     @include respond-to(laptop) {
       display: block;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(#000, 0.3);
+      }
     }
   }
 
