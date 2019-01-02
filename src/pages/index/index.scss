@@ -2,156 +2,77 @@
 @import '../../styles/mixins';
 @import '../../styles/navbar';
 
+#wrapper,
+.carousel,
+.carousel-inner,
+.carousel-item,
+.carousel-image,
+.carousel-caption {
+  height: 100%;
+}
+
 #wrapper {
   background: none !important;
 }
 
-#slider {
-  .swiper-pagination {
+.carousel {
+  background: transparent no-repeat center fixed url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAA0ACgMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP1V8ZS3PgzWvCXhe+8WeGNLt/Fk9xrVxdP4rvJdPia2gj08i+uNRhQWMcU2sJKf3MtoZLZ0CPOkAH8+4jw3yvE5Bn+No4DE06WDxGV4GCrU6NpVK6xuLm4uM5Obo0sFFVVTknD20Jzfsr3/AHnCeIGZwz/Isvq4vDYmtjMHm2Pk8OqvuUsPPAYWnDmUY8n1irjJey9qo8/salOmvaLTpn8QeKIHaC3voLi3hZooLi2OlXFvPDGSkU0Fw2glp4ZUCvFMxJlRlckls1+TrIqNNKEfYcsFyRvl+Eb5Y6K7dJtuy3bbe7bP015pKTcpwanJuUk8di42k9ZLlVZKNnfRKy2R89eC/Hset+G2v9S8NaNf3WpLZ3t1LqUS6k0k9rCRY/NeQyFYrAO/2KGPZFbNJNJCiSzzySf0rn+Nr1HVpKc4UaKxFOhRUmqdKFaTlWSjD2cXKq7e1m489WMYxqOSjG3865DgaVBUKllKtUdCVety/vKs6NKMaTc5Ockqav7OCk4U3KTpqPM7+Uan8dPGMeo6gka2KRpe3aIgSb5UWeQKv+uH3VAHQdOlfjtTAylUnL26XNOUrKkrK7bsvf2R+y08RBU6a9je0Iq7qPW0Ur/D1P8A/9k=);
+  background-size: cover;
+
+  @include respond-to(laptop) {
+    background-image: none;
+  }
+
+  .carousel-image {
     display: none;
-  }
+    background: transparent center top no-repeat fixed;
+    background-size: cover;
 
-  .swiper-wrapper {
-    .swiper-slide {
-      background: transparent center right no-repeat / cover;
-
-      &.slide-1 {
-        background-image: url('../../images/slides/thumbnails/slide-1.jpg');
-
-        @include respond-to(laptop) {
-          background-image: url('../../images/slides/slide-1.jpg');
-        }
-      }
-
-      &.slide-2 {
-        background-image: url('../../images/slides/thumbnails/slide-2.jpg');
-
-        @include respond-to(laptop) {
-          background-image: url('../../images/slides/slide-2.jpg');
-        }
-      }
-
-      &.slide-3 {
-        background-image: url('../../images/slides/thumbnails/slide-3.jpg');
-
-        @include respond-to(laptop) {
-          background-image: url('../../images/slides/slide-3.jpg');
-        }
-      }
-
-      .slide-wrapper {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-
-        .slider-caption {
-          position: absolute;
-          top: 55% !important;
-          left: 0;
-          right: 0;
-          margin: 0 auto;
-          padding: 0;
-          max-width: none;
-
-          @media screen and (min-height: 736px) {
-            top: 65% !important;
-          }
-
-          @include respond-to(laptop) {
-            top: 65% !important;
-          }
-
-          > div {
-            overflow: hidden;
-          }
-
-          h3 {
-            color: $slider-font-color;
-            font-family: $slider-font-family;
-            font-weight: $font-weight;
-            margin-bottom: 15px !important;
-            text-transform: uppercase;
-            font-size: $slider-font-size;
-            letter-spacing: 0.15rem;
-            text-align: center;
-
-            @include type(2);
-
-            @include respond-to(handheld) {
-              text-align: left;
-            }
-
-            @include respond-to(tablet) {
-              @include type(4);
-            }
-
-            @include respond-to(laptop) {
-              letter-spacing: 0.2rem;
-              margin-bottom: 20px !important;
-
-              @include type(5);
-            }
-
-            line-height: 1 !important;
-          }
-        }
-      }
+    @include respond-to(laptop) {
+      display: block;
     }
   }
 
-  //.overlay {
-  //  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6) 50%);
-  //
-  //  @include respond-to(handheld) {
-  //    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 60%);
-  //  }
-  //
-  //  @include respond-to(laptop) {
-  //    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6) 70%);
-  //  }
-  //}
+  .carousel-inner {
+    .carousel-item:nth-child(1) .carousel-image {
+      background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAICAIAAABGc1mbAAAACXBIWXMAAAsSAAALEgHS3X78AAABTElEQVQYlQXBW0vCUBwA8LOLOXWby1CzUqOSsAsFEtSDb0Xfqe/Ue88hBV1MMhDEvKDG5mVzzrOdM8/27/cTHx9uem5eKp7nUory94LlPRoKjFLH8TD21pS42F3Opn1jKWIvpuSOkJphQFvDlb9JJDkhhvyai4war4WCYuGNDRfnpJCvjZNyuRqo2x3DtfRVmsMpRQLmY3MRQ1zAeE1WfZ8jTBAyyTwkUoGAHMsMjLGdLkHxEjNejkt2r7cO/cP9jDk1Q6A8leKVq1PXnNs/nyfZ6LRe25l9QzwZRJNqNr0lQqPZ/cXow2DCfeVs6pLJV7Pe7rwNTMtjcYK1cPn03PQmQ51Am2p9faJGOX7tjJTRu3aQAwSEEMfz4aI6GM7w3Fh4ZOzyhj4ChGyK+PbYanV1bFsiMEAAEGqyGoHwunx8u4vuSikEgBBigP4Be4rIDB9TBGsAAAAASUVORK5CYII=);
+    }
+  }
 
-  #slider-phone {
-    position: absolute;
-    bottom: 25px;
-    right: 25px;
-    z-index: 10;
-    transition: transform 0.3s ease-out;
+  .carousel-caption {
+    height: 100%;
     display: flex;
-    justify-content: center;
+    flex-flow: column nowrap;
     align-items: center;
+    justify-content: center;
+    padding-top: 10rem;
 
-    @media screen and (min-height: 667px) {
-      bottom: 30px;
-      right: 30px;
-    }
-
-    @media screen and (min-height: 1024px) {
-      bottom: 50px;
-      right: 50px;
-    }
-
-    .i-light {
+    h1,
+    h2 {
+      font-size: calc(24px + 1vw);
       margin: 0;
-      color: $dark-color;
-      background-color: $light-color;
-      box-shadow: rgba(0, 0, 0, 0.75) 0 0 6px !important;
+
+      @media screen and (min-width: 576px) {
+        font-size: calc(24px + 1.5vw);
+      }
+
+      @media screen and (min-width: 768px) {
+        font-size: calc(24px + 2vw);
+      }
+
+      @media screen and (min-width: 992px) {
+        font-size: calc(24px + 2.5vw);
+      }
     }
 
-    &:focus,
-    &:hover {
-      transform: scale(1.1) !important;
-
-      .i-light {
-        background-color: darken($light-color, 5%);
-      }
+    p {
+      max-width: 75%;
+      margin: 0;
     }
   }
 }
 
-.slide {
+.abovetherain__slide {
   animation-name: slide;
   animation-timing-function: ease-out;
   animation-duration: 1s;
