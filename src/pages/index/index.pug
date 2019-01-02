@@ -30,47 +30,39 @@ append header
   //Header
   +header(primaryNavigation)
 append content
-  //Primary Slider
-  //TODO:: 'Удалить swiper.js. Добавить bootstrap carousel.js'
-  //https://codepen.io/afmarchetti/pen/qaqBZG
-  section#slider.slider-element.slider-parallax.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1000" data-autoplay="5000" data-grab="false")
-    .slider-parallax-inner
-      .swiper-container.swiper-parent
-        .swiper-wrapper
-          //Slide-1
-          .swiper-slide.slide-1
-            .overlay
-            .container.clearfix
-              .slide-wrapper
-                .slider-caption
-                  div
-                    h3(data-caption-animate="slide") Время твоего
-                  div
-                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
-          //Slide-2
-          .swiper-slide.slide-2
-            .overlay
-            .container
-              .slide-wrapper
-                .slider-caption
-                  div
-                    h3(data-caption-animate="slide") Время твоего
-                  div
-                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
-          //Slide-3
-          .swiper-slide.slide-3
-            .overlay
-            .container
-              .slide-wrapper
-                .slider-caption
-                  div
-                    h3(data-caption-animate="slide") Время твоего
-                  div
-                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
-        //Phone icon
-        #slider-phone
-          a(href=`tel:${contacts.phone}`)
-            i.i-circled.i-light.icon-call
+  <!--PRIMARY SLIDER-->
+  div(id='abovetherain__primary-slider', class='carousel slide carousel-fade', data-ride='carousel', data-pause='false')
+    <!--ИНДИКАТОРЫ-->
+    ol(class='carousel-indicators')
+      li(data-target='#abovetherain__primary-slider', data-slide-to='0', class='active')
+      li(data-target='#abovetherain__primary-slider', data-slide-to='1')
+      li(data-target='#abovetherain__primary-slider', data-slide-to='2')
+    div(class='carousel-inner')
+      <!--SLIDE 1-->
+      div(class='carousel-item active')
+        div(class='carousel-image')
+        div(class='carousel-caption')
+          h1(class='h3 text-uppercase') Школа танцев в&nbsp;Санкт&#8209;Петербурге «Над&nbsp;дождём»
+          p(class='d-none d-lg-block') Мини-группы до&nbsp;3&nbsp;человек и&nbsp;просторный зал&nbsp;90&nbsp;м<sup>2</sup>
+      <!--SLIDE 2-->
+      div(class='carousel-item')
+        div(class='carousel-image')
+        div(class='carousel-caption')
+          h2(class='h3 text-uppercase') Раскройте свою силу и&nbsp;красоту с&nbsp;помощью танцев
+          p(class='d-none d-lg-block') Наслаждайтесь движением своего&nbsp;тела
+      <!--SLIDE 3-->
+      div(class='carousel-item')
+        div(class='carousel-image')
+        div(class='carousel-caption')
+          h2(class='h3 text-uppercase') Погрузитесь в&nbsp;дружескую атмосферу и&nbsp;получайте удовольствие
+          p(class='d-none d-lg-block') Профессиональное&nbsp;световое и&nbsp;звуковое&nbsp;оборудование, теплый&nbsp;пол, быстровозводимая&nbsp;сцена, акустический&nbsp;потолок
+      <!--СТРЕЛКИ-->
+      a(class='carousel-control-prev d-none d-md-flex', href='#abovetherain__primary-slider', role='button', data-slide='prev')
+        span(class='carousel-control-prev-icon' aria-hidden='true')
+        span(class='sr-only') Назад
+      a(class='carousel-control-next d-none d-md-flex' href='#abovetherain__primary-slider' role='button' data-slide='next')
+        span(class='carousel-control-next-icon' aria-hidden='true')
+        span(class='sr-only') Вперед
 block footer
 append scripts
   //Page scripts
