@@ -31,7 +31,7 @@ append header
   +header(primaryNavigation)
 append content
   <!--PRIMARY SLIDER-->
-  div(id='abovetherain__primary-slider', class='carousel slide carousel-fade', data-ride='carousel', data-pause='false')
+  div(id='abovetherain__primary-slider', class='carousel slide carousel-fade', data-ride='carousel', data-pause='false', data-interval='7000')
     <!--ИНДИКАТОРЫ-->
     ol(class='carousel-indicators')
       li(data-target='#abovetherain__primary-slider', data-slide-to='0', class='active')
@@ -57,10 +57,10 @@ append content
           h2(class='h3 text-uppercase') Погрузитесь в&nbsp;дружескую атмосферу и&nbsp;получайте удовольствие
           p(class='d-none d-lg-block') Профессиональное&nbsp;световое и&nbsp;звуковое&nbsp;оборудование, теплый&nbsp;пол, быстровозводимая&nbsp;сцена, акустический&nbsp;потолок
       <!--СТРЕЛКИ-->
-      a(class='carousel-control-prev d-none d-md-flex', href='#abovetherain__primary-slider', role='button', data-slide='prev')
+      a(class='carousel-control-prev carousel-controls', href='#abovetherain__primary-slider', role='button', data-slide='prev')
         span(class='carousel-control-prev-icon' aria-hidden='true')
         span(class='sr-only') Назад
-      a(class='carousel-control-next d-none d-md-flex' href='#abovetherain__primary-slider' role='button' data-slide='next')
+      a(class='carousel-control-next carousel-controls' href='#abovetherain__primary-slider' role='button' data-slide='next')
         span(class='carousel-control-next-icon' aria-hidden='true')
         span(class='sr-only') Вперед
 block footer
