@@ -3,6 +3,9 @@ import 'bootstrap.scss';
 import 'collapse';
 import 'carousel';
 import { each } from 'underscore';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import { fas } from '@fortawesome/free-solid-svg-icons'
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
@@ -62,4 +65,7 @@ jQuery(document).ready(($) => {
   }
   mobile.addListener(imageLoad);
   imageLoad();
+  // FontAwesome icons
+  library.add(fab, fas);
+  dom.i2svg();
 });
