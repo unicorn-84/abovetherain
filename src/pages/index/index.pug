@@ -67,8 +67,11 @@ append content
     <!--INFO-->
     div(class='info p-5')
       p(class='mb-1') Приглашаем вас на пробное занятие
-      p(class='mb-1') Запишитесь на него по тел.&nbsp;
+      p(class='mb-1') Запишитесь на него по тел.
+        |&nbsp;&nbsp;
         a(href= `tel:${contacts.phone}`)
+          i(class='fas fa-phone fa-flip-horizontal')
+          |&nbsp;
           strong= contacts.phone
       p Опытные тренеры помогут раскрыть ваш талант:
         br
