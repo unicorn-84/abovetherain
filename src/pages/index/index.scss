@@ -87,4 +87,25 @@
   .carousel-controls {
     display: none;
   }
+
+  .info {
+    display: none;
+
+    @include respond-to(laptop) {
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+
+      p {
+        margin-bottom: 0;
+        font-size: calc(8px + 0.5vw);
+      }
+
+      strong {
+        font-weight: 500;
+      }
+    }
+  }
 }
