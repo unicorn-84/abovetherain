@@ -16,7 +16,6 @@
   @include respond-to(laptop) {
     position: absolute;
     background-color: transparent;
-    //color: $light-color;
   }
 
   .navbar-wrapper {
@@ -107,7 +106,6 @@
   @media screen and (max-width: 991px) {
     &.sticky {
       background-color: $light-color;
-      box-shadow: $box-shadow;
 
       .navbar-brand {
         img {
