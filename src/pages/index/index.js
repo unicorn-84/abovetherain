@@ -8,7 +8,7 @@ import { each } from 'underscore';
 import 'style.scss';
 import '../../scripts/components/sticky';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
+import { faPhoneSquare } from '@fortawesome/free-solid-svg-icons/faPhoneSquare';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { retinaCheck } from '../../scripts/components/helpers';
 // Local
@@ -42,7 +42,7 @@ jQuery(document).ready(($) => {
         });
         setTimeout(() => {
           $carousel.carousel('next').carousel();
-        }, 1500);
+        }, 2500);
       };
     }
     if (!mobile.matches) {
@@ -70,5 +70,5 @@ jQuery(document).ready(($) => {
   imageLoad();
 });
 
-library.add(faPhone, faBars);
+library.add(faPhoneSquare, faBars);
 dom.i2svg();

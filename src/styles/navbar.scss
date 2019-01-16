@@ -12,6 +12,8 @@
   right: 0;
   left: 0;
   z-index: 1030;
+  padding-top: 0;
+  padding-bottom: 0;
 
   @include respond-to(laptop) {
     position: absolute;
@@ -67,6 +69,7 @@
 
   .navbar-toggler {
     color: rgba(0, 0, 0, 0.87);
+    transition: font-size 0.3s;
 
     &:focus {
       outline: 5px auto -webkit-focus-ring-color;
@@ -107,6 +110,10 @@
             width: 50px;
           }
         }
+      }
+
+      .navbar-toggler {
+        font-size: 1rem;
       }
     }
   }
