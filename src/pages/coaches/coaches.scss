@@ -2,50 +2,10 @@
 @import '../../styles/mixins';
 @import '../../styles/navbar';
 
-.coaches-wrapper {
-  margin-bottom: -30px;
-}
-
-.coach-wrapper {
-  overflow: hidden;
-  margin-bottom: 30px;
-}
-
 .coach {
   position: relative;
   display: flex;
   flex-direction: column;
-  animation: none;
-
-  @include respond-to(desktop) {
-    transform: translateY(100%);
-    animation: slide 1s ease-in-out forwards;
-  }
-
-  .coaches-wrapper [class*='col']:nth-child(1) &,
-  .coaches-wrapper [class*='col']:nth-child(4) & {
-    animation-delay: 0.2s;
-  }
-
-  .coaches-wrapper [class*='col']:nth-child(2) &,
-  .coaches-wrapper [class*='col']:nth-child(5) & {
-    animation-delay: 0.4s;
-  }
-
-  .coaches-wrapper [class*='col']:nth-child(3) & {
-    animation-delay: 0.6s;
-  }
-
-  &::before {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 101%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8));
-  }
 
   .coach-image {
     img {
@@ -126,6 +86,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      align-items: center;
 
       a {
         display: block;
@@ -134,36 +95,8 @@
         padding: 10px;
         margin-bottom: 5px;
 
-        @include respond-to(laptop) {
-          &:hover {
-            i {
-              color: $theme-color;
-            }
-          }
-        }
-
         &:last-child {
           margin-bottom: 0;
-        }
-
-        i {
-          font-size: 1.5em;
-
-          @include respond-to(handheld) {
-            font-size: 1em;
-          }
-
-          @include respond-to(tablet) {
-            font-size: 1.5em;
-          }
-
-          @include respond-to(laptop) {
-            transition: color 0.3s $function;
-          }
-
-          @include respond-to(desktop) {
-            font-size: 1em;
-          }
         }
       }
     }
