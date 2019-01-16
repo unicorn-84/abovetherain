@@ -4,11 +4,12 @@ import 'bootstrap.scss';
 import 'collapse';
 import 'carousel';
 import { each } from 'underscore';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { retinaCheck } from '../../scripts/components/helpers';
 // Local
 import './index.scss';
@@ -67,7 +68,7 @@ jQuery(document).ready(($) => {
   }
   mobile.addListener(imageLoad);
   imageLoad();
-  // FontAwesome icons
-  library.add(faPhone);
-  dom.i2svg();
 });
+
+library.add(faPhone, faBars);
+dom.i2svg();

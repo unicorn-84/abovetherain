@@ -4,13 +4,16 @@ import 'collapse';
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
-import '../../scripts/components/social';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faInfo } from '@fortawesome/free-solid-svg-icons/faInfo';
-import { faCalendarAlt } from '@fortawesome/free-solid-svg-icons/faCalendarAlt';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faVk } from '@fortawesome/free-brands-svg-icons/faVk';
+import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
+import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons/faCalendarAlt';
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 // Local
 import './coaches.scss';
 // Inline
 
-library.add(faInfo, faCalendarAlt);
+library.add(faInfo, faInstagram, faVk, faFacebook, faCalendarAlt, faBars);
 dom.i2svg();
