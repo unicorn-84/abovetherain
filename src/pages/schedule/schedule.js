@@ -4,6 +4,7 @@ import 'collapse';
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
+import '../../scripts/components/social';
 // Local
 import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';

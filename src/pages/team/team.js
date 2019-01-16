@@ -4,6 +4,7 @@ import 'collapse';
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
+import '../../scripts/components/social';
 // Local
 import './team.scss';
 // Inline
