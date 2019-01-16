@@ -17,7 +17,7 @@ import './contacts.scss';
 // Inline
 // IMAGES
 import logo from '../../images/logo/logo@2x.png';
-import evacuatorLogo from '../../images/evacuator.png';
+import evacuatorLogo from '../../images/icons/evacuator.png';
 
 library.add(faPhone, faEnvelope, faMapMarkerAlt, faInstagram, faVk, faFacebook, faBars);
 dom.i2svg();

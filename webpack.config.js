@@ -66,20 +66,6 @@ module.exports = {
           },
         ],
       },
-      // Fonts
-      {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              context: path.resolve(__dirname, 'src'),
-            },
-          },
-        ],
-      },
-      // CSS
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
