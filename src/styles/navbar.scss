@@ -12,11 +12,12 @@
   right: 0;
   left: 0;
   z-index: 1030;
+  padding-top: 0;
+  padding-bottom: 0;
 
   @include respond-to(laptop) {
     position: absolute;
     background-color: transparent;
-    //color: $light-color;
   }
 
   .navbar-wrapper {
@@ -73,15 +74,6 @@
     &:focus {
       outline: 5px auto -webkit-focus-ring-color;
     }
-
-    svg {
-      fill: rgba(0, 0, 0, 0.87);
-    }
-
-    .navbar-toggler-icon {
-      background-image: none;
-      border: none;
-    }
   }
 
   .navbar-brand {
@@ -107,7 +99,6 @@
   @media screen and (max-width: 991px) {
     &.sticky {
       background-color: $light-color;
-      box-shadow: $box-shadow;
 
       .navbar-brand {
         img {

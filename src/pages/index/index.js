@@ -1,4 +1,5 @@
 // Vendors
+// TODO: 'Отдельный модуль для иконок'
 import 'bootstrap.scss';
 import 'collapse';
 import 'carousel';
@@ -6,11 +7,15 @@ import { each } from 'underscore';
 // Common
 import 'style.scss';
 import '../../scripts/components/sticky';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faPhoneSquare } from '@fortawesome/free-solid-svg-icons/faPhoneSquare';
+import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
 import { retinaCheck } from '../../scripts/components/helpers';
 // Local
 import './index.scss';
 import fonImage from '../../images/fon/index-fon@1x.jpg';
 import retinaFonImage from '../../images/fon/index-fon@2x.jpg';
+// TODO: 'Добавить slides для retina'
 import slide1 from '../../images/slides/001-slide-1920x1080.jpg';
 import slide2 from '../../images/slides/002-slide-1920x1080.jpg';
 import slide3 from '../../images/slides/003-slide-1920x1080.jpg';
@@ -18,11 +23,13 @@ import slide3 from '../../images/slides/003-slide-1920x1080.jpg';
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
+  const mobile = window.matchMedia('(max-width: 991px)');
   const $carousel = $('#abovetherain__primary-slider');
   $carousel.carousel('dispose');
-  const mobile = window.matchMedia('(max-width: 991px)');
   function imageLoad() {
     if (mobile.matches) {
+      $('.carousel-indicators').hide();
+      $('.carousel-controls').hide();
       const img = new Image();
       if (retinaCheck()) {
         img.src = retinaFonImage;
@@ -30,13 +37,12 @@ jQuery(document).ready(($) => {
         img.src = fonImage;
       }
       img.onload = () => {
-        $('.carousel-indicators').css('display', 'flex').hide().fadeIn();
         $carousel.css({
           backgroundImage: `url(${img.src})`,
         });
         setTimeout(() => {
           $carousel.carousel('next').carousel();
-        }, 1000);
+        }, 2500);
       };
     }
     if (!mobile.matches) {
@@ -63,3 +69,6 @@ jQuery(document).ready(($) => {
   mobile.addListener(imageLoad);
   imageLoad();
 });
+
+library.add(faPhoneSquare, faBars);
+dom.i2svg();

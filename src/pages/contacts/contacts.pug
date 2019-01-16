@@ -30,23 +30,25 @@ append header
 append content
   +pageTitle(pages.contacts)
   section#content
-    .content-wrap
-      .container.clearfix
-        .row
-          .col-lg-12
-            h1= mark
-            .contact-content
-              .contact-address
-                i.icon-map-marker
-                | !{contacts.address}
-              .contact-phone
-                i.icon-phone3
-                a(href=`tel:${contacts.phone}`)= contacts.phone
-              .contact-email
-                i.icon-envelope-alt
-                | #{contacts.email}
-          .col-lg-12
-            #yandex-map
+    div(class='content-wrap')
+      div(class='container')
+        div(class='row')
+          div(class='col-12')
+            ul(class='contacts')
+              li
+                i(class='fas fa-map-marker-alt')
+                |&nbsp;
+                |!{contacts.address}
+              li
+                i(class='fas fa-phone fa-rotate-90 fa-fw')
+                |&nbsp;
+                a(href=`tel:${contacts.phone}`) #{contacts.phone}
+              li
+                i(class='fas fa-envelope fa-fw')
+                |&nbsp;
+                |#{contacts.email}
+          div(class='col-12')
+            div(id='yandex-map')
 append scripts
   //Page scripts
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")

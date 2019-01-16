@@ -64,18 +64,10 @@ append content
       a(class='carousel-control-next carousel-controls' href='#abovetherain__primary-slider' role='button' data-slide='next')
         span(class='carousel-control-next-icon' aria-hidden='true')
         span(class='sr-only') Вперед
-    <!--INFO-->
-    div(class='info p-5')
-      p(class='mb-1') Приглашаем вас на пробное занятие
-      p(class='mb-1') Запишитесь на него по тел.&nbsp;
+      <!--PHONE-->
+      div(class='phone')
         a(href= `tel:${contacts.phone}`)
-          strong= contacts.phone
-      p Опытные тренеры помогут раскрыть ваш талант:
-        br
-        |мы стремимся сделать танец выражением личности и
-        br
-        |инструментом самопознания
-
+          i(class='fas fa-phone-square fa-3x')
 block footer
 append scripts
   //Page scripts
