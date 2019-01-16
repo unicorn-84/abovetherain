@@ -53,6 +53,7 @@
     align-items: center;
     justify-content: center;
     padding-top: 5rem;
+    bottom: 0;
 
     h1,
     h2 {
@@ -88,24 +89,24 @@
     display: none;
   }
 
-  .info {
-    display: none;
+  .phone {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2rem;
+    z-index: 1;
+
+    a {
+      display: inline-block;
+      color: rgb(250, 250, 250);
+      padding: 0.25rem 0.75rem;
+
+      &:focus {
+        outline: 5px auto -webkit-focus-ring-color !important;
+      }
+    }
 
     @include respond-to(laptop) {
-      display: block;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: 1;
-
-      p {
-        margin-bottom: 0;
-        font-size: calc(8px + 0.5vw);
-      }
-
-      strong {
-        font-weight: 500;
-      }
+      display: none;
     }
   }
 }
