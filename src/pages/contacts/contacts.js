@@ -5,6 +5,10 @@ import 'collapse';
 import 'style.scss';
 import '../../scripts/components/sticky';
 import '../../scripts/components/social';
+import { library, dom } from '@fortawesome/fontawesome-svg-core';
+import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
 // Local
 import './contacts.scss';
 // Inline
@@ -12,6 +16,8 @@ import './contacts.scss';
 import logo from '../../images/logo/logo@2x.png';
 import evacuatorLogo from '../../images/evacuator.png';
 
+library.add(faPhone, faEnvelope, faMapMarkerAlt);
+dom.i2svg();
 // TODO: 'Загружать лениво'
 (function createMap() {
   function init() {
