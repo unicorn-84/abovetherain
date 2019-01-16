@@ -28,34 +28,35 @@ append header
 append content
   +pageTitle(pages.coaches)
   section#content
-    .content-wrap
-      .coaches-wrapper
-        .container
-          .row
-            each coach in coaches
-              .col-sm-6.col-md-6.col-lg-4
-                .coach-wrapper
-                  .coach
-                    .coach-image
-                      img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
-                    .coach-info
-                      div
-                        .coach-title
-                          h2= coach.title
-                        .coach-directions
-                          each direction in coach.directions
-                            if direction.link
-                              a(href= direction.link)
-                                h4= direction.title
-                            else
-                              a(href='services.html')
-                                h4= direction.title
-                      .coach-icons
-                        if coach.link
-                          a(href= coach.link)
-                            i.icon-line2-info
-                        a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
-                          i.icon-calendar2
+    div(class='content-wrap')
+      div(class='container')
+        div(class='row')
+          each coach, index in coaches
+            div(class='col-sm-6 col-lg-4')
+              div(class= {
+                'coach': true,
+                'mb-4': coaches.length - 1 !== index
+              })
+                div(class='coach-image')
+                  img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
+                div(class='coach-info')
+                  div
+                    div(class='coach-title')
+                      h2= coach.title
+                    div(class='coach-directions')
+                      each direction in coach.directions
+                        if direction.link
+                          a(href= direction.link)
+                            h4= direction.title
+                        else
+                          a(href='services.html')
+                            h4= direction.title
+                  div(class='coach-icons')
+                    if coach.link
+                      a(href= coach.link)
+                        i(class='fas fa-info fa-lg')
+                    a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
+                      i(class='fas fa-calendar-alt fa-lg')
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js
