@@ -67,19 +67,9 @@
 
   .navbar-toggler {
     color: rgba(0, 0, 0, 0.87);
-    transition: font-size 0.3s;
 
     &:focus {
       outline: 5px auto -webkit-focus-ring-color;
-    }
-
-    svg {
-      fill: rgba(0, 0, 0, 0.87);
-    }
-
-    .navbar-toggler-icon {
-      background-image: none;
-      border: none;
     }
   }
 
@@ -117,10 +107,6 @@
             width: 50px;
           }
         }
-      }
-
-      .navbar-toggler {
-        font-size: 1rem;
       }
     }
   }
