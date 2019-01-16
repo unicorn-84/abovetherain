@@ -22,12 +22,6 @@ body {
 #wrapper {
   display: flex;
   flex-flow: column nowrap;
-  //height: 100%;
-  //background: transparent url('../images/fon/thumbnails/fon.jpg') center fixed / cover;
-
-  @include respond-to(laptop) {
-    //background: transparent url('../images/fon/fon.jpg') center fixed / cover;
-  }
 }
 
 #content {
@@ -35,7 +29,7 @@ body {
 }
 
 #gototop {
-  //display: none;
+  display: none;
   z-index: 20;
   position: fixed;
   justify-content: center;
