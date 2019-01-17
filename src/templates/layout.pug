@@ -1,8 +1,8 @@
-//TODO:: 'Добавить общие require в отдельный шаблон'
 block variables
-//Markup
+<!--MARKUP-->
 doctype html
 html(lang='RU-ru', dir='ltr', prefix='og: //ogp.me/ns#')
+  <!--HEAD-->
   head
     block meta
       include ./blocks/meta
@@ -10,163 +10,20 @@ html(lang='RU-ru', dir='ltr', prefix='og: //ogp.me/ns#')
       include ./blocks/icons
     block styles
       include ./blocks/styles
-    block fallback
-      script.
-        /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
-        /* This file is meant as a standalone workflow for
-        - testing support for link[rel=preload]
-        - enabling async CSS loading in browsers that do not support rel=preload
-        - applying rel preload css once loaded, whether supported or not.
-        */
-        (function (w) {
-          "use strict";
-          // rel=preload support test
-          if (!w.loadCSS) {
-            w.loadCSS = function () {};
-          }
-          // define on the loadCSS obj
-          var rp = loadCSS.relpreload = {};
-          // rel=preload feature support test
-          // runs once and returns a function for compat purposes
-          rp.support = (function () {
-            var ret;
-            try {
-              ret = w.document.createElement("link").relList.supports("preload");
-            } catch (e) {
-              ret = false;
-            }
-            return function () {
-              return ret;
-            };
-          })();
-
-          // if preload isn't supported, get an asynchronous load by using a non-matching media attribute
-          // then change that media back to its intended value on load
-          rp.bindMediaToggle = function (link) {
-            // remember existing media attr for ultimate state, or default to 'all'
-            var finalMedia = link.media || "all";
-
-            function enableStylesheet () {
-              // unbind listeners
-              if (link.addEventListener) {
-                link.removeEventListener("load", enableStylesheet);
-              } else if (link.attachEvent) {
-                link.detachEvent("onload", enableStylesheet);
-              }
-              link.setAttribute("onload", null);
-              link.media = finalMedia;
-            }
-
-            // bind load handlers to enable media
-            if (link.addEventListener) {
-              link.addEventListener("load", enableStylesheet);
-            } else if (link.attachEvent) {
-              link.attachEvent("onload", enableStylesheet);
-            }
-
-            // Set rel and non-applicable media type to start an async request
-            // note: timeout allows this to happen async to let rendering continue in IE
-            setTimeout(function () {
-              link.rel = "stylesheet";
-              link.media = "only x";
-            });
-            // also enable media after 3 seconds,
-            // which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
-            setTimeout(enableStylesheet, 3000);
-          };
-
-          // loop through link elements in DOM
-          rp.poly = function () {
-            // double check this to prevent external calls from running
-            if (rp.support()) {
-              return;
-            }
-            var links = w.document.getElementsByTagName("link");
-            for (var i = 0; i < links.length; i++) {
-              var link = links[i];
-              // qualify links to those with rel=preload and as=style attrs
-              if (link.rel === "preload" && link.getAttribute("as") === "style" && !link.getAttribute("data-loadcss")) {
-                // prevent rerunning on link
-                link.setAttribute("data-loadcss", true);
-                // bind listeners to toggle media back
-                rp.bindMediaToggle(link);
-              }
-            }
-          };
-
-          // if unsupported, run the polyfill
-          if (!rp.support()) {
-            // run once at least
-            rp.poly();
-
-            // rerun poly on an interval until onload
-            var run = w.setInterval(rp.poly, 500);
-            if (w.addEventListener) {
-              w.addEventListener("load", function () {
-                rp.poly();
-                w.clearInterval(run);
-              });
-            } else if (w.attachEvent) {
-              w.attachEvent("onload", function () {
-                rp.poly();
-                w.clearInterval(run);
-              });
-            }
-          }
-
-          // commonjs
-          if (typeof exports !== "undefined") {
-            exports.loadCSS = loadCSS;
-          }
-          else {
-            w.loadCSS = loadCSS;
-          }
-        }(typeof global !== "undefined" ? global : this));
-  body.stretched.no-transition
-    if htmlWebpackPlugin.options.vars.seo
-      //TODO:: 'В отдельный файл и инлайнить'
-      //Yandex.Metrika counter
-      script.
-        (function (d, w, c) {
-          (w[c] = w[c] || []).push(function () {
-            try {
-              w.yaCounter51313063 = new Ya.Metrika2({
-                id: 51313063,
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true
-              });
-            } catch (e) { }
-          });
-
-          var n = d.getElementsByTagName('script')[0],
-            s = d.createElement('script'),
-            f = function () { n.parentNode.insertBefore(s, n); };
-          s.type = 'text/javascript';
-          s.async = true;
-          s.src = 'https://mc.yandex.ru/metrika/tag.js';
-
-          if (w.opera == '[object Opera]') {
-            d.addEventListener('DOMContentLoaded', f, false);
-          } else { f(); }
-        })(document, window, 'yandex_metrika_callbacks2');
-      noscript
-        div
-          img(src='https://mc.yandex.ru/watch/51313063', style='position:absolute; left:-9999px;', alt='')
-      ///Yandex.Metrika counter
-    //Page content
-    #wrapper
-      block header
-        include ./mixins/header
-      block content
-        include ./mixins/page-title
-      block footer
-        include ./blocks/footer
-    if htmlWebpackPlugin.options.name !== 'index'
-      //GoToTop
-      svg(id='gototop', xmlns='http://www.w3.org/2000/svg', width='512', height='512', viewBox='0 0 438.533 438.533')
-        path(d='M409.133 109.203c-19.608-33.592-46.205-60.189-79.798-79.796C295.736 9.801 259.058 0 219.273 0c-39.781 0-76.47 9.801-110.063 29.407-33.595 19.604-60.192 46.201-79.8 79.796C9.801 142.8 0 179.489 0 219.267c0 39.78 9.804 76.463 29.407 110.062 19.607 33.592 46.204 60.189 79.799 79.798 33.597 19.605 70.283 29.407 110.063 29.407s76.47-9.802 110.065-29.407c33.593-19.602 60.189-46.206 79.795-79.798 19.603-33.596 29.403-70.284 29.403-110.062.001-39.782-9.8-76.472-29.399-110.064zm-47.684 122.628l-25.981 25.981c-3.613 3.613-7.901 5.42-12.847 5.42-4.948 0-9.229-1.807-12.847-5.42l-53.954-53.961v143.32c0 4.948-1.813 9.232-5.428 12.847-3.613 3.62-7.898 5.427-12.847 5.427h-36.547c-4.948 0-9.231-1.807-12.847-5.427-3.617-3.614-5.426-7.898-5.426-12.847v-143.32l-53.959 53.961c-3.431 3.425-7.708 5.133-12.85 5.133-5.14 0-9.423-1.708-12.85-5.133l-25.981-25.981c-3.422-3.429-5.137-7.714-5.137-12.852 0-5.137 1.709-9.419 5.137-12.847l103.356-103.353 25.981-25.981c3.427-3.425 7.71-5.14 12.847-5.14 5.142 0 9.423 1.715 12.849 5.14l25.98 25.981 103.35 103.353c3.432 3.427 5.14 7.71 5.14 12.847.001 5.138-1.707 9.423-5.139 12.852z')
+    block loadCSS
+      include ./blocks/loadCSS
+  <!--BODY-->
+  body
+    block ymetrika
+      include ./blocks/ymetrika
+    block header
+      include ./mixins/header
+    block content
+      include ./mixins/page-title
+    block footer
+      include ./blocks/footer
+    block gototop
+      include ./blocks/gototop
     block scripts
       include ./blocks/scripts
 
