@@ -4,27 +4,6 @@
 
 @media only screen and (max-width: 767px) {
 
-
-	#page-title {
-		padding: 40px 0;
-		text-align: center;
-		h1 {
-			line-height: 1.5;
-			font-size: 24px;
-		}
-		span {
-			display: none;
-		}
-		.breadcrumb {
-			position: relative !important;
-			top: 0 !important;
-			left: 0 !important;
-			right: 0 !important;
-			margin: 20px 0 0 !important;
-			justify-content: center;
-		}
-	}
-
 	/* Copyrights
 	-----------------------------------------------------------------*/
 
@@ -47,14 +26,13 @@
 	Retina CSS
 -----------------------------------------------------------------*/
 
-
 @media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
+	only screen and (-webkit-min-device-pixel-ratio: 2),
+	only screen and (   min--moz-device-pixel-ratio: 2),
+	only screen and (     -o-min-device-pixel-ratio: 2/1),
+	only screen and (        min-device-pixel-ratio: 2),
+	only screen and (                min-resolution: 192dpi),
+	only screen and (                min-resolution: 2dppx) {
 
 	#logo a.standard-logo,
 	#header.split-menu #logo a.standard-logo { display: none; }
