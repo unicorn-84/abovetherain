@@ -17,9 +17,6 @@ import '../../scripts/components/select/select.scss';
 import './schedule.scss';
 // Inline
 
-library.add(faInstagram, faVk, faFacebook, faBars);
-dom.i2svg();
-
 const data = {
   day: [
     'all',
@@ -93,7 +90,7 @@ function checkQuery() {
   return false;
 }
 function replaceQuery(object) {
-  window.history.replaceState(object, '', `?${makeQuery(makeStateObject(object))}`);
+  window.history.replaceState(object, '', `/schedule.html?${makeQuery(makeStateObject(object))}`);
 }
 function setSelects(...selects) {
   for (const select of selects) {
@@ -156,3 +153,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+library.add(faInstagram, faVk, faFacebook, faBars);
+dom.i2svg();
