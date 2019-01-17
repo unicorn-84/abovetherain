@@ -1,8 +1,8 @@
 mixin pageTitle(page)
   section(class='page-title')
-    nav(aria-label='breadcrumb')
-      div(class='container')
-        h3 !{page.pageTitle}
+    div(class='container')
+      nav(aria-label='breadcrumb')
+        h3(class='mb-3 mb-lg-0') !{page.pageTitle}
         ol(class='breadcrumb')
           if page.breadcrumbs
             each breadcrumb in page.breadcrumbs

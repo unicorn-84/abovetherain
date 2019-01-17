@@ -14,7 +14,7 @@ $dark-text-color: rgba(0, 0, 0, 0.87);
 $secondary-dark-text-color: rgba(0, 0, 0, 0.56);
 $light-color: #e9e9d3;
 $dark-color: #002137;
-$theme-color: complement($light-color);
+$theme-color: #e9e9d3;
 $border-color: #ccc;
 $heading-color: $light-color;
 $text-color: $light-color;
@@ -38,4 +38,3 @@ $function: cubic-bezier(0.6, 0, 0.4, 1);
 
 //Card
 $card-bg: $light-color;
-

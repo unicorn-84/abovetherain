@@ -2,11 +2,43 @@
 @import './mixins';
 
 .page-title {
-  border: 1px solid #f50;
-  padding: 50px 0;
+  padding: 2rem 0;
   margin-top: 80px;
+  border-bottom: 1px solid $theme-color;
 
   @include respond-to(laptop) {
     margin-top: 0;
+    padding: 3rem 0;
+  }
+
+  nav {
+    @include respond-to(laptop) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    h3 {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    .breadcrumb {
+      justify-content: center;
+      background: none;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: center;
+      border-radius: 0;
+    }
+
+    .breadcrumb-item.active {
+      color: $secondary-light-text-color;
+    }
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      color: $secondary-light-text-color;
+    }
   }
 }
