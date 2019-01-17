@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 @import '../../styles/navbar';
+@import '../../styles/pagetitle';
 
 $schedule-bg-color: rgba(0, 0, 0, 0.8);
 $schedule-days-bg-color: $schedule-bg-color;
@@ -186,13 +187,12 @@ $border-color: #777;
 
     .schedule-title,
     .schedule-coach {
-      font-family: $heading-font-family;
     }
 
     .schedule-title {
       font-weight: $heading-font-weight;
 
-      @include type(0);
+
 
       @include respond-to(tablet) {
         font-size: 0.7rem;
@@ -203,7 +203,7 @@ $border-color: #777;
       }
 
       @include respond-to(desktop) {
-        @include type(0);
+
       }
     }
 
@@ -215,14 +215,12 @@ $border-color: #777;
     .schedule-interval {
       font-family: $font-family;
 
-      @include type(-1);
-
       @include respond-to(tablet) {
-        @include type(-2);
+
       }
 
       @include respond-to(laptop) {
-        @include type(-1);
+
       }
     }
 
@@ -334,10 +332,9 @@ $border-color: #777;
 .select,
 .select-list {
   border: 1px solid $border-color;
-  font-family: $heading-font-family;
   font-weight: $font-weight;
 
-  @include type(0);
+
 }
 
 .select,

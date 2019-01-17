@@ -1,12 +1,13 @@
 mixin pageTitle(page)
-  section#page-title.page-title-nobg
-    .container.clearfix
-      h3 !{page.pageTitle}
-      ol.breadcrumb
-        if page.breadcrumbs
-          each breadcrumb in page.breadcrumbs
-            if breadcrumb.path !== 'current'
-              li.breadcrumb-item
-                a(href= breadcrumb.path) !{breadcrumb.name}
-            else
-              li.breadcrumb-item.active.current(aria-current="page") !{breadcrumb.name}
+  section(class='page-title')
+    nav(aria-label='breadcrumb')
+      div(class='container')
+        h3 !{page.pageTitle}
+        ol(class='breadcrumb')
+          if page.breadcrumbs
+            each breadcrumb in page.breadcrumbs
+              if breadcrumb.path !== 'current'
+                li.breadcrumb-item
+                  a(href= breadcrumb.path) !{breadcrumb.name}
+              else
+                li(class='breadcrumb-item active', aria-current='page') !{breadcrumb.name}

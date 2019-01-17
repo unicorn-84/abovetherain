@@ -2,11 +2,8 @@
 @import '../../../styles/mixins';
 @import '../../../styles/card';
 @import '../../../styles/navbar';
+@import '../../../styles/pagetitle';
 
 .card {
   @include img-container(66.666666%);
-
-  strong {
-    font-weight: 500;
-  }
 }

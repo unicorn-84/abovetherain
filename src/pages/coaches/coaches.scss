@@ -1,6 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 @import '../../styles/navbar';
+@import '../../styles/pagetitle';
 
 .coach {
   position: relative;
@@ -36,15 +37,15 @@
         //text-shadow: $text-shadow;
 
         @include respond-to(handheld) {
-          @include type(1);
+
         }
 
         @include respond-to(tablet) {
-          @include type(2);
+
         }
 
         @include respond-to(desktop) {
-          @include type(1);
+
         }
 
         font-weight: $heading-font-weight;
@@ -69,15 +70,15 @@
         //text-shadow: $text-shadow;
 
         @include respond-to(handheld) {
-          @include type(-1);
+
         }
 
         @include respond-to(tablet) {
-          @include type(0);
+
         }
 
         @include respond-to(desktop) {
-          @include type(-1);
+
         }
       }
     }

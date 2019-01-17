@@ -2,32 +2,7 @@
 	sass/responsive.scss
 -----------------------------------------------------------------------------------*/
 
-
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-	#wrapper {
-		width: 1000px;
-	}
-}
-
-@media only screen and (max-width: 991px) {
-
-	#wrapper {
-		width: 100%;
-		margin: 0;
-		box-shadow: none;
-	}
-
-}
-
 @media only screen and (max-width: 767px) {
-
-	body {
-		padding: 0 !important;
-	}
-
-	#wrapper {
-		width: 100% !important;
-	}
 
 
 	#page-title {
@@ -48,18 +23,6 @@
 			margin: 20px 0 0 !important;
 			justify-content: center;
 		}
-	}
-
-	#page-title #portfolio-navigation,
-	.portfolio-ajax-title #portfolio-navigation {
-		position: relative;
-		top: 0;
-		left: 0;
-		margin: 15px auto 0;
-	}
-
-	.portfolio-ajax-title {
-		text-align: center;
 	}
 
 	/* Copyrights

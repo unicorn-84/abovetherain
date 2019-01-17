@@ -24,11 +24,11 @@ append styles
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
 //-BODY
 append header
-  append header
-    //Header
-    +header(primaryNavigation)
-append content
+  //Header
+  +header(primaryNavigation)
+append pageTitle
   +pageTitle(pages.team)
+//-append content
   section#content
     //Content
     div(class='content-wrap')

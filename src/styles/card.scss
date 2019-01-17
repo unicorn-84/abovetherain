@@ -1,4 +1,4 @@
-@import './variables';
+@import 'variables';
 @import './mixins';
 
 .card,
@@ -29,13 +29,13 @@
   }
 
   a {
-    color: $new-text-color;
-    font-weight: 500;
+    color: $dark-text-color;
+    font-weight: $heading-font-weight;
 
     &:hover,
     &:focus,
     &:active {
-      color: darken($new-text-color, 15%);
+      color: $secondary-dark-text-color
     }
   }
 
@@ -43,11 +43,11 @@
     border: none;
 
     .blockquote-footer {
-      color: $secondary-text-color;
+      color: $secondary-dark-text-color;
     }
 
     p {
-      font-size: 1.125rem;
+      font-size: $font-size;
       font-style: italic;
     }
   }
@@ -55,10 +55,10 @@
 
 .card-title,
 .card-text {
-  color: $new-text-color;
+  color: $dark-text-color;
 }
 
 .card-subtitle {
-  color: $secondary-text-color;
+  color: $secondary-dark-text-color;
   margin-bottom: 1rem;
 }
