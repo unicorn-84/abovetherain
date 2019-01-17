@@ -139,14 +139,6 @@ module.exports = {
       fontFace: true,
       rejected: true,
     }),
-    // скрипты шаблона
-    new CopyWebpackPlugin([
-      {
-        from: './src/scripts/external/**/*.js',
-        to: 'scripts/[name].[ext]',
-        toType: 'template',
-      },
-    ]),
     // Логотип
     // TODO: 'Hash для логотипа'
     new CopyWebpackPlugin([
