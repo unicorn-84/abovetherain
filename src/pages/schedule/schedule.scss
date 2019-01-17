@@ -10,14 +10,6 @@ $schedule-direction-color: $schedule-bg-color;
 $link-color: #00be9f;
 $border-color: #777;
 
-.content-wrap {
-  .container {
-    @include respond-to(tablet) {
-      max-width: 1340px !important;
-    }
-  }
-}
-
 .schedule-wrapper {
   margin-top: 15px;
   margin-bottom: -30px;
@@ -137,8 +129,7 @@ $border-color: #777;
 
     @include respond-to(tablet) {
       padding: 5px;
-
-      @include transition(opacity 0.3s $function);
+      transition: opacity 0.3s $function;
     }
 
     @include respond-to(laptop) {
@@ -185,26 +176,8 @@ $border-color: #777;
       }
     }
 
-    .schedule-title,
-    .schedule-coach {
-    }
-
     .schedule-title {
       font-weight: $heading-font-weight;
-
-
-
-      @include respond-to(tablet) {
-        font-size: 0.7rem;
-      }
-
-      @include respond-to(laptop) {
-        font-size: 14px;
-      }
-
-      @include respond-to(desktop) {
-
-      }
     }
 
     .schedule-interval,
@@ -214,14 +187,6 @@ $border-color: #777;
 
     .schedule-interval {
       font-family: $font-family;
-
-      @include respond-to(tablet) {
-
-      }
-
-      @include respond-to(laptop) {
-
-      }
     }
 
     .schedule-coach {
@@ -333,8 +298,6 @@ $border-color: #777;
 .select-list {
   border: 1px solid $border-color;
   font-weight: $font-weight;
-
-
 }
 
 .select,
@@ -374,10 +337,8 @@ $border-color: #777;
   color: $dark-color;
   background-color: $light-color;
 
-  @include animation(opacity 0.3s $function);
-
   li {
-    @include transition(background-color, 0.3s, $function);
+    transition: background-color 0.3s $function;
 
     &:focus,
     &:hover {

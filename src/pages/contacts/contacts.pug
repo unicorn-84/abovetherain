@@ -1,15 +1,18 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation, contacts } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.contacts.title
     title= pages.contacts.title
   if pages.contacts.description
     meta(name='description', content= pages.contacts.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -22,17 +25,19 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~contacts/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
-  append header
-    //Header
-    +header(primaryNavigation)
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   //Page title
   +pageTitle(pages.contacts)
-//-append content
-  section#content
-    div(class='content-wrap')
+//-CONTENT
+append content
+    //Content
+    div(id='content')
+      //Container
       div(class='container')
         div(class='row')
           div(class='col-12')
@@ -51,6 +56,7 @@ append pageTitle
                 |#{contacts.email}
           div(class='col-12')
             div(id='yandex-map')
+//-SCRIPTS
 append scripts
   //Page scripts
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")

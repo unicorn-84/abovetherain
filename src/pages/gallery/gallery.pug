@@ -1,15 +1,18 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.gallery.title
     title= pages.gallery.title
   if pages.gallery.description
     meta(name='description', content= pages.gallery.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -22,16 +25,19 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~gallery/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   //Header
   +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   +pageTitle(pages.gallery)
-//-append content
-  section#content
-    .content-wrap
-      .container
+//-CONTENT
+append content
+    //Content
+    div(id='content')
+      //Container
+      div(class='container')
         div(id='gallery', data-lightbox='gallery')
           div
             a(href= require('../../images/gallery/001.jpg') data-lightbox='gallery-item')
@@ -120,6 +126,7 @@ append pageTitle
           div
             a(href= require('../../images/gallery/029.jpg') data-lightbox='gallery-item')
               img(src= require('../../images/gallery/thumbnails/029.jpg') alt= `Галерея | ${options.name}` width='300', height='200')
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

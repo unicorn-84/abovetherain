@@ -1,15 +1,18 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation, coaches } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.coaches.title
     title= pages.coaches.title
   if pages.coaches.description
     meta(name='description', content= pages.coaches.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -21,44 +24,48 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~coaches/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   //Header
   +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   //Page title
   +pageTitle(pages.coaches)
-//-append content
-  section#content
-    div(class='content-wrap')
-      div(class='container')
-        div(class='row')
-          each coach, index in coaches
-            div(class='col-sm-6 col-lg-4')
-              div(class= {
-                'coach': true,
-                'mb-4': coaches.length - 1 !== index
-              })
-                div(class='coach-image')
-                  img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
-                div(class='coach-info')
-                  div
-                    div(class='coach-title')
-                      h2= coach.title
-                    div(class='coach-directions')
-                      each direction in coach.directions
-                        if direction.link
-                          a(href= direction.link)
-                            h4= direction.title
-                        else
-                          a(href='services.html')
-                            h4= direction.title
-                  div(class='coach-icons')
-                    if coach.link
-                      a(href= coach.link)
-                        i(class='fas fa-info fa-lg')
-                    a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
-                      i(class='far fa-calendar-alt fa-lg')
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row')
+        each coach, index in coaches
+          div(class='col-sm-6 col-lg-4')
+            div(class= {
+              'coach': true,
+              'mb-4': coaches.length - 1 !== index
+            })
+              div(class='coach-image')
+                img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
+              div(class='coach-info')
+                div
+                  div(class='coach-title')
+                    h2= coach.title
+                  div(class='coach-directions')
+                    each direction in coach.directions
+                      if direction.link
+                        a(href= direction.link)
+                          h4= direction.title
+                      else
+                        a(href='services.html')
+                          h4= direction.title
+                div(class='coach-icons')
+                  if coach.link
+                    a(href= coach.link)
+                      i(class='fas fa-info fa-lg')
+                  a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
+                    i(class='far fa-calendar-alt fa-lg')
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

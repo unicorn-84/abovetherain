@@ -1,7 +1,8 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation, contacts } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.index.title
@@ -11,8 +12,10 @@ append meta
   if htmlWebpackPlugin.options.vars.seo
     meta(name='google-site-verification', content='Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig')
     meta(name='yandex-verification', content='f196debf2583cee4')
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -25,11 +28,13 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~index/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   //Header
   +header(primaryNavigation)
+//-CONTENT
 append content
+  //Content
   <!--PRIMARY SLIDER-->
   div(id='abovetherain__primary-slider', class='carousel slide carousel-fade', data-ride='carousel', data-pause='false', data-interval='7000')
     <!--ИНДИКАТОРЫ-->
@@ -68,7 +73,9 @@ append content
       div(class='phone')
         a(href= `tel:${contacts.phone}`)
           i(class='fas fa-phone-square fa-3x')
+//-FOOTER
 block footer
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js
