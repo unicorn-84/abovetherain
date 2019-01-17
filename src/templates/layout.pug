@@ -16,14 +16,16 @@ html(lang='RU-ru', dir='ltr')
   body
     block ymetrika
       include ./blocks/ymetrika
-    block header
-      include ./mixins/header
-    block content
-      include ./mixins/page-title
-    block footer
-      include ./blocks/footer
-    block gototop
-      include ./blocks/gototop
-    block scripts
-      include ./blocks/scripts
+    div(id='wrapper')
+      block header
+        include ./mixins/header
+      block pageTitle
+        include ./mixins/page-title
+      block content
+      block footer
+        include ./blocks/footer
+      block gototop
+        include ./blocks/gototop
+      block scripts
+        include ./blocks/scripts
 

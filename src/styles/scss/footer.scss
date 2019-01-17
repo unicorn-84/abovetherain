@@ -17,7 +17,6 @@
     a {
       @include link($light-color, 1);
 
-      font-family: $heading-font-family !important;
     }
   }
 
@@ -50,18 +49,15 @@
     }
 
     span {
-      font-family: $heading-font-family;
       font-weight: $font-weight;
       color: $light-color;
       margin-bottom: $indent * 5;
 
-      @include type(1);
     }
 
     a {
       @include link($light-color, 0);
 
-      font-family: $heading-font-family !important;
     }
   }
 }

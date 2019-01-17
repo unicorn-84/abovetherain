@@ -11,6 +11,10 @@
   height: 100%;
 }
 
+#wrapper {
+  overflow: hidden;
+}
+
 .carousel {
   background: transparent no-repeat center fixed url(data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAf/AABEIAA0ACgMBEQACEQEDEQH/xAGiAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+gEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoLEQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6ery8/T19vf4+fr/2gAMAwEAAhEDEQA/AP1V8ZS3PgzWvCXhe+8WeGNLt/Fk9xrVxdP4rvJdPia2gj08i+uNRhQWMcU2sJKf3MtoZLZ0CPOkAH8+4jw3yvE5Bn+No4DE06WDxGV4GCrU6NpVK6xuLm4uM5Obo0sFFVVTknD20Jzfsr3/AHnCeIGZwz/Isvq4vDYmtjMHm2Pk8OqvuUsPPAYWnDmUY8n1irjJey9qo8/salOmvaLTpn8QeKIHaC3voLi3hZooLi2OlXFvPDGSkU0Fw2glp4ZUCvFMxJlRlckls1+TrIqNNKEfYcsFyRvl+Eb5Y6K7dJtuy3bbe7bP015pKTcpwanJuUk8di42k9ZLlVZKNnfRKy2R89eC/Hset+G2v9S8NaNf3WpLZ3t1LqUS6k0k9rCRY/NeQyFYrAO/2KGPZFbNJNJCiSzzySf0rn+Nr1HVpKc4UaKxFOhRUmqdKFaTlWSjD2cXKq7e1m489WMYxqOSjG3865DgaVBUKllKtUdCVety/vKs6NKMaTc5Ockqav7OCk4U3KTpqPM7+Uan8dPGMeo6gka2KRpe3aIgSb5UWeQKv+uH3VAHQdOlfjtTAylUnL26XNOUrKkrK7bsvf2R+y08RBU6a9je0Iq7qPW0Ur/D1P8A/9k=);
   background-size: cover;
@@ -52,8 +56,13 @@
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
-    padding-top: 5rem;
+    padding-top: 100px;
     bottom: 0;
+    color: $light-text-color;
+
+    @include respond-to(laptop) {
+      padding-top: 20px;
+    }
 
     h1,
     h2 {
@@ -108,5 +117,11 @@
     @include respond-to(laptop) {
       display: none;
     }
+  }
+}
+
+.navbar {
+  @include respond-to(laptop) {
+    position: fixed;
   }
 }
