@@ -1,15 +1,18 @@
 extends ../../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation } = require('../../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.nadezhdaLuchinina.title
     title= pages.nadezhdaLuchinina.title
   if pages.nadezhdaLuchinina.description
     meta(name='description', content= pages.nadezhdaLuchinina.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -20,53 +23,55 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~coach\./i) !== -1
       style=compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   //Page title
   +pageTitle(pages.nadezhdaLuchinina)
-//-append content
-  section#content
-    //Content
-    div(class='content-wrap')
-      //Container
-      div(class='container')
-        div(class='row justify-content-center')
-          div(class='col-12 col-lg-8')
-            div(class='card')
-              //Body
-              div(class='card-body')
-                //Title
-                h2(class='card-title text-center')
-                  | Надежда Лучинина
-                blockquote(class='blockquote mb-0')
-                  p(class='card-text mb-2 text-indent')
-                    | "В каждой из нас живет танец. Мы учим не движения, мы узнаем себя."
-                  footer(class='blockquote-footer')
-                    cite(title='Надежда Лучинина') Надежда Лучинина
-                p(class='card-text text-indent')
-                    | Надежда Лучинина - успешный преподаватель-хореограф в направлении <strong>Pole&nbsp;Dance</strong>.
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title text-center')
+                | Надежда Лучинина
+              blockquote(class='blockquote mb-0')
                 p(class='card-text mb-2 text-indent')
-                  | В 2012г Надежда Лучинина стала пополнять копилку своих достижений:
-                ul
-                  li(class='mb-2') "Золотой пилон", акробатик, профи - 3 место, г.Краснодар
-                  li(class='mb-2') "Pole Power" профи - 1место, г.Череповец
-                  li(class='mb-2') "Miss Pole Dance Battle Final" артистик - 2 место, г.Санкт- Петербург
-                  li(class='mb-2') "Pole Star" 2013, акробатик, профи - 1 место, г.Самара
-                  li(class='mb-2') "Золотой пилон", акробатик профи - 2 место, г.Краснодар
-                  li(class='mb-2') "Pole Star" 2015 акробатик профи - 2 место, г.Самара
-                  li(class='mb-2') "Dance Fest Drive Арт" профи - 3 место, г.Санкт Петербург
-                  li(class='mb-2') "Exotic Hard" - 2 место, Москва
-                  li(class='mb-2') Lady Dance Show 2016 экзот профи - 4 место, г.Москва
-                  li(class='mb-2') "Волна Успеха" 2015 пилон профи - 1 место, г.Санкт Петербург
-                  li(class='mb-2') "Pole Star" 2015 акробатик профи - 2 место, г.Самара
-                  li(class='mb-2') "Dance Fest Drive Арт" профи - 3 место, г.Санкт-Петербург
-                  li "Волна Успеха" 2015 пилон профи - 1 место
-                p(class='card-text text-indent')
-                  | Не останавливаясь в профессиональном росте, в 2014 году получила аттестацию Межрегиональной Организации Спорта и Танца на пилоне (МОСТП).
-                p(class='card-text text-indent')
-                  | На тренировках Надежда научит Вас управлять и наслаждаться движением  своего тела, поскольку, тело — это самый прекрасный инструмент, которым мы когда-либо обладали.
+                  | "В каждой из нас живет танец. Мы учим не движения, мы узнаем себя."
+                footer(class='blockquote-footer')
+                  cite(title='Надежда Лучинина') Надежда Лучинина
+              p(class='card-text text-indent')
+                  | Надежда Лучинина - успешный преподаватель-хореограф в направлении <strong>Pole&nbsp;Dance</strong>.
+              p(class='card-text mb-2 text-indent')
+                | В 2012г Надежда Лучинина стала пополнять копилку своих достижений:
+              ul
+                li(class='mb-2') "Золотой пилон", акробатик, профи - 3 место, г.Краснодар
+                li(class='mb-2') "Pole Power" профи - 1место, г.Череповец
+                li(class='mb-2') "Miss Pole Dance Battle Final" артистик - 2 место, г.Санкт- Петербург
+                li(class='mb-2') "Pole Star" 2013, акробатик, профи - 1 место, г.Самара
+                li(class='mb-2') "Золотой пилон", акробатик профи - 2 место, г.Краснодар
+                li(class='mb-2') "Pole Star" 2015 акробатик профи - 2 место, г.Самара
+                li(class='mb-2') "Dance Fest Drive Арт" профи - 3 место, г.Санкт Петербург
+                li(class='mb-2') "Exotic Hard" - 2 место, Москва
+                li(class='mb-2') Lady Dance Show 2016 экзот профи - 4 место, г.Москва
+                li(class='mb-2') "Волна Успеха" 2015 пилон профи - 1 место, г.Санкт Петербург
+                li(class='mb-2') "Pole Star" 2015 акробатик профи - 2 место, г.Самара
+                li(class='mb-2') "Dance Fest Drive Арт" профи - 3 место, г.Санкт-Петербург
+                li "Волна Успеха" 2015 пилон профи - 1 место
+              p(class='card-text text-indent')
+                | Не останавливаясь в профессиональном росте, в 2014 году получила аттестацию Межрегиональной Организации Спорта и Танца на пилоне (МОСТП).
+              p(class='card-text text-indent')
+                | На тренировках Надежда научит Вас управлять и наслаждаться движением  своего тела, поскольку, тело — это самый прекрасный инструмент, которым мы когда-либо обладали.
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

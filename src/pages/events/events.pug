@@ -1,15 +1,18 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.events.title
     title= pages.events.title
   if pages.events.description
     meta(name='description', content= pages.events.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -22,55 +25,55 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~events/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   //Header
   +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   +pageTitle(pages.events)
-//-append content
-  section#content
-    //Content
-    div(class='content-wrap')
-      //Container
-      div(class='container')
-        div(class='row')
-          <!--МАСТЕР-КЛАСС СОФЫ МАКУРИНОЙ-->
-          div(class='col-12 col-lg-6 d-flex align-items-stretch')
-            div(class='card')
-              //Image
-              div(class='image-container')
-                a(href= pages.sofaMakurinaMasterClass.link)
-                  img(class='card-img-top',
-                src= require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-600x400.jpg'),
-                srcset= require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-600x400.jpg') + ' 600w,' + require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-800x533.jpg') + ' 800w, ' + require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-1200x800.jpg') + ' 1200w',
-                alt='Мастер-класс Софы Макуриной | Над Дождём')
-                  div(class='event-date')
-                    span 28
-                    span Октября
-              //Body
-              div(class='card-body')
-                //Title
-                h2(class='card-title')
-                  | Мастер-класс Софы&nbsp;Макуриной
-                //Subtitle
-                p(class='card-subtitle')
-                  | Впервые в САНКТ-ПЕТЕРБУРГЕ!
-                  br
-                  | 28 октября 2018
-                //Card text
-                p(class='card-text text-indent')
-                  | В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
-                p(class='card-text mb-2 text-indent')
-                  | Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
-                p(class='mb-0')
-                  a(href='requisites.html') Реквизиты для оплаты
-              //Footer
-              div(class='card-footer')
-                p(class='card-text d-flex justify-content-end')
-                  a(href= pages.sofaMakurinaMasterClass.link) Подробнее...
-
-
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row')
+        <!--МАСТЕР-КЛАСС СОФЫ МАКУРИНОЙ-->
+        div(class='col-12 col-lg-6 d-flex align-items-stretch')
+          div(class='card')
+            //Image
+            div(class='image-container')
+              a(href= pages.sofaMakurinaMasterClass.link)
+                img(class='card-img-top',
+              src= require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-600x400.jpg'),
+              srcset= require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-600x400.jpg') + ' 600w,' + require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-800x533.jpg') + ' 800w, ' + require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-1200x800.jpg') + ' 1200w',
+              alt='Мастер-класс Софы Макуриной | Над Дождём')
+                div(class='event-date')
+                  span 28
+                  span Октября
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Мастер-класс Софы&nbsp;Макуриной
+              //Subtitle
+              p(class='card-subtitle')
+                | Впервые в САНКТ-ПЕТЕРБУРГЕ!
+                br
+                | 28 октября 2018
+              //Card text
+              p(class='card-text text-indent')
+                | В Танцевальном замке "НАД&nbsp;ДОЖДЁМ" пройдет МАСТЕР-КЛАСС горячей, космической и неординарной СОФЫ&nbsp;МАКУРИНОЙ.
+              p(class='card-text mb-2 text-indent')
+                | Приглашаем на авторские классы Софы с её дерзкой, но очень чувственной хореографией.
+              p(class='mb-0')
+                a(href='requisites.html') Реквизиты для оплаты
+            //Footer
+            div(class='card-footer')
+              p(class='card-text d-flex justify-content-end')
+                a(href= pages.sofaMakurinaMasterClass.link) Подробнее...
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

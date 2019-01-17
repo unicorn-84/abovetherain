@@ -1,15 +1,18 @@
 extends ../../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation } = require('../../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.aleksandrUshakov.title
     title= pages.aleksandrUshakov.title
   if pages.aleksandrUshakov.description
     meta(name='description', content= pages.aleksandrUshakov.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -21,41 +24,43 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~coach\./i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   //Header
   +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   //Page title
   +pageTitle(pages.aleksandrUshakov)
-//-append content
-  section#content
-    //Content
-    div(class='content-wrap')
-      //Container
-      div(class='container')
-        div(class='row justify-content-center')
-          div(class='col-12 col-lg-8')
-            div(class='card')
-              //Body
-              div(class='card-body')
-                //Title
-                h2(class='card-title')
-                  | Александр Ушаков
-                //Subtitle
-                p(class='card-subtitle')
-                  | Лицензированный инструктор программ
-                  br
-                  | <strong>Zumba (R) Fitness</strong> и <strong>Strong by Zumba (R)</strong>
-                p(class='card-text text-indent')
-                  | В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
-                p(class='card-text text-indent')
-                  | Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
-                blockquote(class='blockquote mb-0')
-                  p(class='card-text mb-2 text-indent')
-                    | "В работе главное - взаимосвязь между инструктором и учеником."
-                  footer(class='blockquote-footer')
-                    cite(title='Александр Ушаков') Александр Ушаков
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Александр Ушаков
+              //Subtitle
+              p(class='card-subtitle')
+                | Лицензированный инструктор программ
+                br
+                | <strong>Zumba (R) Fitness</strong> и <strong>Strong by Zumba (R)</strong>
+              p(class='card-text text-indent')
+                | В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
+              p(class='card-text text-indent')
+                | Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
+              blockquote(class='blockquote mb-0')
+                p(class='card-text mb-2 text-indent')
+                  | "В работе главное - взаимосвязь между инструктором и учеником."
+                footer(class='blockquote-footer')
+                  cite(title='Александр Ушаков') Александр Ушаков
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

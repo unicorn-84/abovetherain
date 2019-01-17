@@ -1,15 +1,18 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation, coaches, directions } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
   if pages.schedule.title
     title= pages.schedule.title
   if pages.schedule.description
     meta(name='description', content= pages.schedule.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
   each cssFile in htmlWebpackPlugin.files.css
@@ -22,38 +25,42 @@ append styles
   each cssFile in htmlWebpackPlugin.files.css
     if cssFile.search(/inline~schedule/i) !== -1
       style= compilation.assets[cssFile.substr(htmlWebpackPlugin.files.publicPath.length)].source()
-//-BODY
+//-HEADER
 append header
   //Header
   +header(primaryNavigation)
+//-PAGE TITLE
 append pageTitle
   +pageTitle(pages.schedule)
+//-CONTENT
 append content
-  section#content
-    .content-wrap
-      .container
-        .row
-          .col-12
-            .schedule-filter
-              select#direction-select(data-select)
-                option(value="all" selected) Все направления
-                each direction in directions
-                  option(value= direction.name)= direction.title
-              select#coach-select(data-select)
-                option(value="all" selected) Все тренеры
-                each coach in coaches
-                  option(value= coach.name)= coach.title
-              select#day-select(data-select)
-                option(value="all" selected) Все дни
-                option(value="day-1") Понедельник
-                option(value="day-2") Вторник
-                option(value="day-3") Среда
-                option(value="day-4") Четверг
-                option(value="day-5") Пятница
-                option(value="day-6") Суббота
-          .col-12
-            .schedule-wrapper
-              include ../../templates/components/schedule
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      .row
+        .col-12
+          .schedule-filter
+            select#direction-select(data-select)
+              option(value="all" selected) Все направления
+              each direction in directions
+                option(value= direction.name)= direction.title
+            select#coach-select(data-select)
+              option(value="all" selected) Все тренеры
+              each coach in coaches
+                option(value= coach.name)= coach.title
+            select#day-select(data-select)
+              option(value="all" selected) Все дни
+              option(value="day-1") Понедельник
+              option(value="day-2") Вторник
+              option(value="day-3") Среда
+              option(value="day-4") Четверг
+              option(value="day-5") Пятница
+              option(value="day-6") Суббота
+        .col-12
+          .schedule-wrapper
+            include ../../templates/components/schedule
+//-SCRIPTS
 append scripts
   //Page scripts
   each jsFile in htmlWebpackPlugin.files.js

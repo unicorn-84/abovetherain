@@ -13,11 +13,6 @@
     @include respond-to(laptop) {
       margin-bottom: 0;
     }
-
-    a {
-      @include link($light-color, 1);
-
-    }
   }
 
   .icons {
@@ -52,12 +47,6 @@
       font-weight: $font-weight;
       color: $light-color;
       margin-bottom: $indent * 5;
-
-    }
-
-    a {
-      @include link($light-color, 0);
-
     }
   }
 }

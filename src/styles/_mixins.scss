@@ -1,6 +1,4 @@
 @import 'variables';
-@import 'scss/mixins';
-@import 'functions';
 
 @mixin respond-to($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -9,29 +7,6 @@
     @media screen and (min-width: $value) {
       @content;
     }
-  }
-}
-
-@mixin animation($variables...) {
-  animation: $variables;
-}
-
-@mixin transition($variables...) {
-  transition: $variables;
-}
-
-@mixin link($color: $link-color, $type: 0) {
-  color: $color;
-  text-decoration: underline rgba($link-color, 0.5) !important;
-
-  @include respond-to(laptop) {
-    text-decoration: none !important;
-  }
-
-  &:focus,
-  &:hover {
-    color: inherit;
-    text-decoration: underline rgba($link-color, 0.5) !important;
   }
 }
 
