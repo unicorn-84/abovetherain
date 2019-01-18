@@ -1,33 +1,5 @@
 //Common scripts
-
 //jquery.js
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
-
 //common.js
 +assets('js', /common/i)
-
-if htmlWebpackPlugin.options.name !== 'index'
-  //Go to top
-  //TODO:: 'В отдельный модуль'
-  script.
-    jQuery.noConflict();
-    jQuery(document).ready(function domReadyCb($) {
-      const $window = $(window);
-      const $goToTopEl = $('#gototop');
-      $goToTopEl.click(function () {
-        $('body, html').stop(true).animate({
-          'scrollTop': 0
-        });
-        return false;
-      });
-      $window.on('scroll', function windowScrollCb() {
-        if ($window.scrollTop() > 450) {
-          $goToTopEl.fadeIn();
-        } else {
-          $goToTopEl.fadeOut();
-        }
-      });
-      if ($window.scrollTop() > 450) {
-        $goToTopEl.fadeIn();
-      }
-    });
