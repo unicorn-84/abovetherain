@@ -1,5 +1,4 @@
-//Common styles
+include ../mixins/assets
 link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500&amp;subset=cyrillic')
-each cssFile in htmlWebpackPlugin.files.css
-  if cssFile.search(/common/i) !== -1
-    link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
+//Common styles
++assets('css', /common/i)

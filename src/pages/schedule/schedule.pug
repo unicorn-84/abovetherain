@@ -15,9 +15,7 @@ append icons
 //-STYLES
 append styles
   //Page styles
-  each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/schedule\./i) !== -1
-      link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  +assets('css', /schedule\./i)
 //-HEADER
 append header
   //Header
@@ -56,6 +54,4 @@ append content
 //-SCRIPTS
 append scripts
   //Page scripts
-  each jsFile in htmlWebpackPlugin.files.js
-    if jsFile.search(/schedule\./i) !== -1
-      script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  +assets('js', /schedule\./i)
