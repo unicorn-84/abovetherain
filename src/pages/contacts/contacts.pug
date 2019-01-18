@@ -38,9 +38,10 @@ append content
                 |&nbsp;
                 |!{contacts.address}
               li
-                i(class='fas fa-phone fa-rotate-90 fa-fw')
-                |&nbsp;
-                a(href=`tel:${contacts.phone}`) #{contacts.phone}
+                a(href=`tel:${contacts.phone}`)
+                  i(class='fas fa-phone fa-rotate-90 fa-fw')
+                  |&nbsp;
+                  |#{contacts.phone}
               li
                 i(class='fas fa-envelope fa-fw')
                 |&nbsp;
