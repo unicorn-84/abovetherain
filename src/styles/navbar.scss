@@ -2,7 +2,7 @@
 @import 'mixins';
 
 .navbar {
-  background-color: rgba($light-color, 0.95);
+  background-color: rgba($theme-color, 0.95);
   color: $dark-text-color;
   overflow-y: auto;
   max-height: 100vh;
@@ -36,6 +36,7 @@
 
   a {
     color: $dark-text-color;
+    transition: color 0.1s $function;
 
     &.nav-link {
       text-transform: uppercase;
@@ -98,7 +99,7 @@
 
   @media screen and (max-width: 991px) {
     &.sticky {
-      background-color: $light-color;
+      background-color: $theme-color;
 
       .navbar-brand {
         img {
