@@ -10,6 +10,17 @@ ul.contacts {
   li {
     margin-bottom: 0.5rem;
   }
+
+  a {
+    color: $light-text-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $secondary-light-text-color;
+    }
+  }
 }
 
 #yandex-map {
