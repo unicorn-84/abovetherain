@@ -2,8 +2,7 @@
 import 'bootstrap.scss';
 import 'collapse';
 // Common
-import 'style.scss';
-import '../../scripts/components/sticky';
+import '../../styles/main.scss';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';

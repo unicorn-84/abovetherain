@@ -4,7 +4,7 @@ import 'bootstrap.scss';
 import 'carousel';
 import 'collapse';
 // Common
-import 'style.scss';
+import '../../../styles/main.scss';
 import '../../../scripts/components/sticky';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
