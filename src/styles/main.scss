@@ -1,6 +1,4 @@
 //FIXME: 'Fixed background'
-//TODO:: 'Настроить переносы слов'
-//https://habr.com/company/wargaming/blog/277933/
 @import 'variables';
 @import 'mixins';
 
@@ -14,25 +12,6 @@ body {
   font-size: $font-size;
   background-color: $body-bg-color;
   color: $light-text-color;
-}
-
-#gototop {
-  display: none;
-  z-index: 20;
-  position: fixed;
-  justify-content: center;
-  align-items: center;
-  width: 50px;
-  height: 50px;
-  top: auto;
-  left: auto;
-  right: 30px;
-  bottom: 50px;
-  cursor: pointer;
-
-  path {
-    fill: $theme-color;
-  }
 }
 
 strong {
@@ -51,3 +30,4 @@ strong {
 @import 'pagetitle';
 @import 'card';
 @import 'footer';
+@import 'gototop';

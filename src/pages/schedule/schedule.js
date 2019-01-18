@@ -5,6 +5,7 @@ import 'collapse';
 import '../../styles/main.scss';
 import '../../scripts/components/sticky';
 import '../../scripts/components/icons';
+import '../../scripts/components/gototop';
 // Local
 import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';
