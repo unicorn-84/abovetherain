@@ -5,7 +5,7 @@ import 'collapse';
 import 'carousel';
 import { each } from 'underscore';
 // Common
-import 'style.scss';
+import '../../styles/main.scss';
 import '../../scripts/components/sticky';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faPhoneSquare } from '@fortawesome/free-solid-svg-icons/faPhoneSquare';
