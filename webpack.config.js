@@ -248,12 +248,12 @@ module.exports = {
         minChunks: Object.keys(module.exports.entry).length,
         chunks: 'all',
       },
-      inline: {
-        name: false,
-        test: /inline/,
-        chunks: 'initial',
-        enforce: true,
-      },
+      // inline: {
+      //   name: false,
+      //   test: /inline/,
+      //   chunks: 'initial',
+      //   enforce: true,
+      // },
     },
   };
 }());
