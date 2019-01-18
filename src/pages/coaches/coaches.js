@@ -4,18 +4,7 @@ import 'collapse';
 // Common
 import '../../styles/main.scss';
 import '../../scripts/components/sticky';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faInfo } from '@fortawesome/free-solid-svg-icons/faInfo';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
-import { faVk } from '@fortawesome/free-brands-svg-icons/faVk';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
-import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons/faCalendarAlt';
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
-import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
-import { faCopyright } from '@fortawesome/free-regular-svg-icons/faCopyright';
+import '../../scripts/components/icons';
 // Local
 import './coaches.scss';
 // Inline
-
-library.add(faInfo, faInstagram, faVk, faFacebook, faCalendarAlt, faBars, faPhone, faCopyright);
-dom.i2svg();

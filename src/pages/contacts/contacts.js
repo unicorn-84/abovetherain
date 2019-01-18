@@ -3,24 +3,13 @@ import 'bootstrap.scss';
 import 'collapse';
 // Common
 import '../../styles/main.scss';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faPhone } from '@fortawesome/free-solid-svg-icons/faPhone';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
-import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
-import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
-import { faVk } from '@fortawesome/free-brands-svg-icons/faVk';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
-import { faCopyright } from '@fortawesome/free-regular-svg-icons/faCopyright';
+import '../../scripts/components/sticky';
+import '../../scripts/components/icons';
 // Local
 import './contacts.scss';
-// Inline
 // IMAGES
 import logo from '../../images/logo/logo@2x.png';
 import evacuatorLogo from '../../images/icons/evacuator.png';
-
-library.add(faPhone, faEnvelope, faMapMarkerAlt, faInstagram, faVk, faFacebook, faBars, faCopyright);
-dom.i2svg();
 
 // TODO: 'Загружать лениво'
 (function createMap() {
