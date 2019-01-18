@@ -15,9 +15,7 @@ append icons
 //-STYLES
 append styles
   //Page styles
-  each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/contacts\./i) !== -1
-      link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  +assets('css', /contacts\./i)
 //-HEADER
 append header
   //Header
@@ -53,7 +51,5 @@ append content
 append scripts
   //Page scripts
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
-  each jsFile in htmlWebpackPlugin.files.js
-    if jsFile.search(/contacts\./i) !== -1
-      script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  +assets('js', /contacts\./i)
 

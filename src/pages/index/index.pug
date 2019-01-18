@@ -18,9 +18,7 @@ append icons
 //-STYLES
 append styles
   //Page styles
-  each cssFile in htmlWebpackPlugin.files.css
-    if cssFile.search(/index\./i) !== -1
-      link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  +assets('css', /index\./i)
 //-HEADER
 append header
   //Header
@@ -71,6 +69,4 @@ block footer
 //-SCRIPTS
 append scripts
   //Page scripts
-  each jsFile in htmlWebpackPlugin.files.js
-    if jsFile.search(/index\./i) !== -1
-      script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
+  +assets('js', /index\./i)
