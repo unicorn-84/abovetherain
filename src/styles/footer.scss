@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'mixins';
+
+#footer {
+  border-top: 1px solid $light-color;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  color: $light-text-color;
+
+  a {
+    color: $light-text-color;
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: $secondary-light-text-color;
+    }
+  }
+
+  .phone,
+  .icons {
+    margin-bottom: 1.5rem;
+
+    @include respond-to(laptop) {
+      margin-bottom: 0;
+    }
+
+    a {
+      transition: color 0.1s $function;
+      text-decoration: none;
+    }
+  }
+
+  .icons a {
+    margin: 0 0.5rem;
+  }
+
+  .link a {
+    font-size: initial;
+  }
+}

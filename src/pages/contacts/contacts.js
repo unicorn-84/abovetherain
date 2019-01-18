@@ -12,6 +12,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
 import { faVk } from '@fortawesome/free-brands-svg-icons/faVk';
 import { faFacebook } from '@fortawesome/free-brands-svg-icons/faFacebook';
 import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
+import { faCopyright } from '@fortawesome/free-regular-svg-icons/faCopyright';
 // Local
 import './contacts.scss';
 // Inline
@@ -19,7 +20,7 @@ import './contacts.scss';
 import logo from '../../images/logo/logo@2x.png';
 import evacuatorLogo from '../../images/icons/evacuator.png';
 
-library.add(faPhone, faEnvelope, faMapMarkerAlt, faInstagram, faVk, faFacebook, faBars);
+library.add(faPhone, faEnvelope, faMapMarkerAlt, faInstagram, faVk, faFacebook, faBars, faCopyright);
 dom.i2svg();
 
 // TODO: 'Загружать лениво'
