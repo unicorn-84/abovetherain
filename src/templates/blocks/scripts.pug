@@ -4,9 +4,8 @@
 script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
 
 //common.js
-//TODO:: 'Удалить common'
 each jsFile in htmlWebpackPlugin.files.js
-  if jsFile.search(/inline/i) === -1 && jsFile.search(/common/i) !== -1
+  if jsFile.search(/common/i) !== -1
     script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))
 
 if htmlWebpackPlugin.options.name !== 'index'
