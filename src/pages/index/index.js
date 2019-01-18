@@ -6,10 +6,7 @@ import 'carousel';
 import { each } from 'underscore';
 // Common
 import '../../styles/main.scss';
-import '../../scripts/components/sticky';
-import { library, dom } from '@fortawesome/fontawesome-svg-core';
-import { faPhoneSquare } from '@fortawesome/free-solid-svg-icons/faPhoneSquare';
-import { faBars } from '@fortawesome/free-solid-svg-icons/faBars';
+import '../../scripts/components/icons';
 import { retinaCheck } from '../../scripts/components/helpers';
 // Local
 import './index.scss';
@@ -69,6 +66,3 @@ jQuery(document).ready(($) => {
   mobile.addListener(imageLoad);
   imageLoad();
 });
-
-library.add(faPhoneSquare, faBars);
-dom.i2svg();
