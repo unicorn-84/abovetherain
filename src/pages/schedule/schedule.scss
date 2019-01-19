@@ -12,7 +12,7 @@ $border-color: #777;
   margin-top: 15px;
   margin-bottom: -30px;
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
     margin-bottom: 0;
   }
 }
@@ -30,6 +30,9 @@ $border-color: #777;
   border: 1px solid $border-color;
 
   &.mobile {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
     display: table;
     background-color: transparent;
     border: none;
@@ -51,14 +54,14 @@ $border-color: #777;
       &:first-child {
         display: none;
 
-        @include respond-to(tablet) {
+        @include respond-to(laptop) {
           display: table-cell;
         }
       }
     }
   }
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
     display: table;
 
     &.mobile {
@@ -77,21 +80,8 @@ $border-color: #777;
     border: 1px solid $border-color;
   }
 
-  .schedule-day,
-  .schedule-time {
-    font-size: 14px;
-  }
-
   .schedule-day {
-    padding: 10px 0;
-
-    @include respond-to(tablet) {
-      font-size: 12px;
-    }
-
-    @include respond-to(laptop) {
-      font-size: 14px;
-    }
+    padding: 0.5rem 0;
 
     &:first-child {
       width: 20%;
@@ -108,58 +98,40 @@ $border-color: #777;
 
   .schedule-time {
     display: none;
-    padding: 20px 0;
-
-    @include respond-to(tablet) {
-      font-size: 10px;
-      display: table-cell;
-    }
+    padding: 1rem 0;
 
     @include respond-to(laptop) {
-      font-size: 14px;
+      display: table-cell;
     }
   }
 
   .schedule-event {
     vertical-align: middle;
-    padding: 0 20px;
+    padding: 0.5rem 1.5rem;
     opacity: 0.1;
 
-    @include respond-to(tablet) {
-      padding: 5px;
-      transition: opacity 0.3s $function;
-    }
-
     @include respond-to(laptop) {
-      padding: 5px 10px;
-    }
-
-    @include respond-to(desktop) {
-      padding: 10px 15px;
+      padding: 0.5rem;
+      transition: opacity 0.3s $function;
     }
 
     & > * {
-      margin: 12px 0;
+      margin: 0.5rem 0;
       padding: 0;
       transition: opacity 0.3s $function;
 
-      @include respond-to(tablet) {
-        margin: 8px 0;
+      @include respond-to(laptop) {
         pointer-events: none;
       }
     }
 
     a {
-      text-decoration: underline rgba($link-color, 0.5) !important;
       color: $link-color;
 
+      &:hover,
       &:focus,
-      &:hover {
-        text-decoration: underline rgba($link-color, 0.5) !important;
-      }
-
-      @include respond-to(tablet) {
-        text-decoration: none !important;
+      &:active {
+        color: rgba($link-color, 0.8);
       }
     }
 
@@ -169,7 +141,7 @@ $border-color: #777;
       display: block;
       text-align: left;
 
-      @include respond-to(tablet) {
+      @include respond-to(laptop) {
         text-align: center;
       }
     }
@@ -180,23 +152,8 @@ $border-color: #777;
 
     .schedule-interval,
     .schedule-coach {
+      font-size: 1rem;
       font-weight: $font-weight;
-    }
-
-    .schedule-interval {
-      font-family: $font-family;
-    }
-
-    .schedule-coach {
-      font-size: 14px;
-
-      @include respond-to(tablet) {
-        font-size: 0.7rem;
-      }
-
-      @include respond-to(laptop) {
-        font-size: 14px !important;
-      }
     }
   }
 }
@@ -286,7 +243,7 @@ $border-color: #777;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
     justify-content: start;
     flex-wrap: nowrap;
   }
@@ -307,8 +264,12 @@ $border-color: #777;
   color: $dark-text-color;
   background-color: $theme-color;
   margin-bottom: 15px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
+    margin-left: 0;
     margin-right: 15px;
     margin-bottom: 0;
     max-width: 320px;
