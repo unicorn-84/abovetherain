@@ -3,4 +3,12 @@
 
 .card {
   @include img-container(66.666666%);
+
+  .card-body {
+    padding: 2.5rem 2rem 0;
+  }
+
+  .card-footer {
+    padding: 0 2rem 2rem;
+  }
 }
