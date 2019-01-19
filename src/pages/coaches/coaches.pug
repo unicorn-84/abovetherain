@@ -42,15 +42,15 @@ append content
               div(class='coach-info')
                 div
                   div(class='coach-title')
-                    h2= coach.title
+                    h3= coach.title
                   div(class='coach-directions')
                     each direction in coach.directions
                       if direction.link
                         a(href= direction.link)
-                          h4= direction.title
+                          p= direction.title
                       else
                         a(href='services.html')
-                          h4= direction.title
+                          p= direction.title
                 div(class='coach-icons')
                   if coach.link
                     a(href= coach.link)
