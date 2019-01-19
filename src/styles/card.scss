@@ -7,7 +7,7 @@
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  border-radius: 0;
+  border-radius: 0 !important;
 }
 
 .card,
@@ -18,14 +18,24 @@
 }
 
 .card {
-  p {
-    &.card-text {
-      margin: 0 auto;
-    }
+  color: $dark-text-color;
 
-    &.text-indent {
-      text-indent: 1em;
-    }
+  p {
+    line-height: 1.75;
+  }
+
+  .card-body {
+    padding: 2.5rem 2rem 2rem;
+  }
+
+  .card-title,
+  .card-text {
+    margin-bottom: 1.5rem;
+  }
+
+  .card-subtitle {
+    color: $secondary-dark-text-color;
+    margin-bottom: 1.5rem;
   }
 
   a {
@@ -35,7 +45,7 @@
     &:hover,
     &:focus,
     &:active {
-      color: $secondary-dark-text-color
+      color: $secondary-dark-text-color;
     }
   }
 
@@ -51,14 +61,4 @@
       font-style: italic;
     }
   }
-}
-
-.card-title,
-.card-text {
-  color: $dark-text-color;
-}
-
-.card-subtitle {
-  color: $secondary-dark-text-color;
-  margin-bottom: 1rem;
 }
