@@ -1,6 +1,10 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+body::before {
+  display: none;
+}
+
 #wrapper,
 .carousel,
 .carousel-inner,
