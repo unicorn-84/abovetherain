@@ -9,7 +9,7 @@
     top: 10px;
     left: 20px;
     background-color: rgba(0, 0, 0, 0.7);
-    color: $theme-color;
+    color: $light-text-color;
     padding: 10px;
     display: flex;
     flex-direction: column;
@@ -20,5 +20,13 @@
       display: block;
       font-weight: 400;
     }
+  }
+
+  .card-body {
+    padding: 2.5rem 2rem 0;
+  }
+
+  .card-footer {
+    padding: 0 2rem 2rem;
   }
 }
