@@ -12,6 +12,18 @@
       width: 100%;
       height: auto;
     }
+
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($secondary-dark-text-color, 0.3);
+    }
   }
 
   .coach-info {
@@ -21,32 +33,23 @@
     left: 0;
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 1rem;
 
-    @include respond-to(desktop) {
-      padding-bottom: 10px;
+    h3 {
+      margin-bottom: 1rem;
     }
 
-    .coach-title {
-      padding: 5px;
-
-      h2 {
-        margin: 0;
-        font-weight: $heading-font-weight;
-      }
+    p {
+      margin-bottom: 0;
     }
 
-    .coach-directions {
-      padding: 5px;
+    a {
+      color: $light-text-color;
 
-      @include respond-to(desktop) {
-        padding-bottom: 0;
-      }
-
-      h4 {
-        margin: 0;
-        padding: 5px 0;
-        font-weight: $heading-font-weight;
+      &:hover,
+      &:focus,
+      &:active {
+        color: $secondary-light-text-color;
       }
     }
 
@@ -57,9 +60,9 @@
       align-items: center;
 
       a {
+        transition: color 0.1s $function;
         display: block;
         text-decoration: none;
-        color: inherit;
         padding: 10px;
         margin-bottom: 5px;
 
