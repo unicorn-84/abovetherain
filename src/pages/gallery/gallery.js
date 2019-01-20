@@ -3,6 +3,7 @@ import 'bootstrap.scss';
 import 'collapse';
 import Glightbox from 'glightbox';
 import 'glightbox/dist/css/glightbox.css';
+import '../../scripts/components/fon';
 // Common
 import '../../styles/main.scss';
 import '../../scripts/components/sticky';
@@ -17,3 +18,4 @@ jQuery(document).ready(() => {
     selector: 'glightbox',
   });
 });
+
