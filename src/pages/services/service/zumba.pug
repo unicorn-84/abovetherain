@@ -1,0 +1,58 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.zumba.title
+    title= pages.zumba.title
+  if pages.zumba.description
+    meta(name='description', content= pages.zumba.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /service\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.zumba)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Image
+            //div(class='image-container')
+            //  img(class='card-img-top', src= require(
+            //    '../../../images/services/zumba/001-zumba-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+            //    '../../../images/services/zumba/001-zumba-600x400.jpg') + ' 600w,' +
+            //  require('../../../images/services/zumba/001-zumba-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Zumba® Fitness
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p(class='card-text')
+                | Программа Zumba® Fitness — это танцевальное направление в фитнесе, в котором используются движения различных танцевальных стилей (латиноамериканских и других международных направлений: сальса, бачата, реггетон, кумбия и др).
+              p(class='card-text')
+                | Оно построено на сочетании быстрых и медленных ритмов, позволяющих быть в форме и совершенствовать свое тело. Для овладения техникой Зумбы совсем не обязательно быть профессиональным танцором, любой желающий, независимо от его танцевальной подготовки, может легко освоить данный класс. Тренировка дарит атмосферу праздника, которая помогает раскрепоститься, получить удовольствие и создать музыкально-танцевальное настроение.
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /service\./i)

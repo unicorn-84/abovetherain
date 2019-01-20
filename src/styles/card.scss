@@ -26,6 +26,12 @@
 
   .card-body {
     padding: 2.5rem 2rem 2rem;
+
+    .card-text {
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
   }
 
   .card-title,
