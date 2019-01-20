@@ -3,10 +3,4 @@
 
 .card {
   @include img-container(100%);
-
-  p {
-    span {
-      font-weight: 500;
-    }
-  }
 }

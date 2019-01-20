@@ -7,12 +7,6 @@
   border-radius: 0;
   transition: opacity 0.1s $function;
   padding: 2px;
-
-  &:hover,
-  &:focus,
-  &:active {
-    opacity: 0.8;
-  }
 }
 
 .glightbox-clean .gprev {
