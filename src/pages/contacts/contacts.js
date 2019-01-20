@@ -6,6 +6,7 @@ import '../../styles/main.scss';
 import '../../scripts/components/sticky';
 import '../../scripts/components/icons';
 import '../../scripts/components/gototop';
+import '../../scripts/components/fon';
 // Local
 import './contacts.scss';
 // IMAGES

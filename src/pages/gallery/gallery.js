@@ -18,4 +18,3 @@ jQuery(document).ready(() => {
     selector: 'glightbox',
   });
 });
-

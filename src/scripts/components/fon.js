@@ -9,11 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = new Image();
       img.src = fonSm;
       img.onload = () => {
-        const fonContainer = document.createElement('div');
-        fonContainer.classList.add('fon');
-        fonContainer.style.backgroundImage = `url(${img.src})`;
         setTimeout(() => {
-          document.body.appendChild(fonContainer);
+          document.body.style.backgroundImage = `url(${img.src})`;
         }, 0);
       };
     }
@@ -21,11 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const img = new Image();
       img.src = fonLg;
       img.onload = () => {
-        const fonContainer = document.createElement('div');
-        fonContainer.classList.add('fon');
-        fonContainer.style.backgroundImage = `url(${img.src})`;
         setTimeout(() => {
-          document.body.appendChild(fonContainer);
+          document.body.style.backgroundImage = `url(${img.src})`;
         }, 0);
       };
     }
