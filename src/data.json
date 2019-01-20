@@ -375,9 +375,9 @@
       ]
     },
     "aleksandrUshakov": {
-      "name": "aleksandr-ushakov",
-      "link": "coaches/aleksandr-ushakov.html",
-      "template": "./src/pages/coaches/coach/aleksandr-ushakov.pug",
+      "name": "aleksandrUshakov",
+      "link": "coaches/aleksandrUshakov.html",
+      "template": "./src/pages/coaches/coach/aleksandrUshakov.pug",
       "title": "Александр Ушаков | Над Дождём",
       "description": "",
       "pageTitle": "Александр Ушаков",
@@ -397,9 +397,9 @@
       ]
     },
     "nadezhdaLuchinina": {
-      "name": "nadezhda-luchinina",
-      "link": "coaches/nadezhda-luchinina.html",
-      "template": "./src/pages/coaches/coach/nadezhda-luchinina.pug",
+      "name": "nadezhdaLuchinina",
+      "link": "coaches/nadezhdaLuchinina.html",
+      "template": "./src/pages/coaches/coach/nadezhdaLuchinina.pug",
       "title": "Надежда Лучинина | Над Дождём",
       "description": "",
       "pageTitle": "Надежда Лучинина",
@@ -603,9 +603,9 @@
       ]
     },
     {
-      "name": "nadezhda_luchinina",
+      "name": "nadezhdaLuchinina",
       "title": "Надежда Лучинина",
-      "link": "coaches/nadezhda-luchinina.html",
+      "link": "coaches/nadezhdaLuchinina.html",
       "directions": [
         {
           "title": "Pole dance"
@@ -628,9 +628,9 @@
       ]
     },
     {
-      "name": "aleksandr-ushakov",
+      "name": "aleksandrUshakov",
       "title": "Александр Ушаков",
-      "link": "coaches/aleksandr-ushakov.html",
+      "link": "coaches/aleksandrUshakov.html",
       "directions": [
         {
           "title": "Zumba (R) Fitness"
