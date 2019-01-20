@@ -49,7 +49,7 @@
       &:hover,
       &:focus,
       &:active {
-        color: $secondary-light-text-color;
+        color: darken($light-text-color, 20%);
       }
     }
 
