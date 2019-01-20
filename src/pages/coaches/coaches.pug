@@ -38,7 +38,7 @@ append content
               'mb-4': coaches.length - 1 !== index
             })
               div(class='coach-image')
-                img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
+                img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
               div(class='coach-info')
                 div
                   div(class='coach-title')
