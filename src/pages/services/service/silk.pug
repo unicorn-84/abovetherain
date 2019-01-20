@@ -1,0 +1,58 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.silk.title
+    title= pages.silk.title
+  if pages.silk.description
+    meta(name='description', content= pages.silk.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /service\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.silk)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Image
+            div(class='image-container')
+              img(class='card-img-top', src= require(
+                '../../../images/services/silk/001-silk-600x400.jpg'), alt='Воздушное полотно | Над Дождём', srcset= require(
+                '../../../images/services/silk/001-silk-600x400.jpg') + ' 600w,' +
+              require('../../../images/services/silk/001-silk-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Воздушное полотно
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p(class='card-text')
+                | Воздушные полотна - спорт для избранных. Здесь вы полностью удовлетворите свою тягу к совершенству. Зависая в воздухе при помощи двух полотен, танцоры демонстрируют различные трюки, срывы, эффектные висы и шпагаты.
+              p(class='card-text')
+                | Занимаясь воздушными полотнами, вы обретаете желанную спортивную форму, гибкость и пластичность тела.
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /service\./i)

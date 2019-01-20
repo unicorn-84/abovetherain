@@ -185,6 +185,195 @@
         }
       ]
     },
+    "hood": {
+      "name": "hood",
+      "link": "services/hood.html",
+      "template": "./src/pages/services/service/hood.pug",
+      "title": "Воздушное кольцо | Над Дождём",
+      "pageTitle": "Воздушное кольцо",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Воздушное кольцо",
+          "path": "current"
+        }
+      ]
+    },
+    "silk": {
+      "name": "silk",
+      "link": "services/silk.html",
+      "template": "./src/pages/services/service/silk.pug",
+      "title": "Воздушное полотно | Над Дождём",
+      "pageTitle": "Воздушное полотно",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Воздушное полотно",
+          "path": "current"
+        }
+      ]
+    },
+    "poleDance": {
+      "name": "poleDance",
+      "link": "services/poleDance.html",
+      "template": "./src/pages/services/service/poleDance.pug",
+      "title": "Pole Dance | Над Дождём",
+      "pageTitle": "Pole Dance",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Pole Dance",
+          "path": "current"
+        }
+      ]
+    },
+    "yoga": {
+      "name": "yoga",
+      "link": "services/yoga.html",
+      "template": "./src/pages/services/service/yoga.pug",
+      "title": "Королевская йога | Над Дождём",
+      "pageTitle": "Королевская йога",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Королевская йога",
+          "path": "current"
+        }
+      ]
+    },
+    "stretching": {
+      "name": "stretching",
+      "link": "services/stretching.html",
+      "template": "./src/pages/services/service/stretching.pug",
+      "title": "Stretching | Над Дождём",
+      "pageTitle": "Stretching",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Stretching",
+          "path": "current"
+        }
+      ]
+    },
+    "zumba": {
+      "name": "zumba",
+      "link": "services/zumba.html",
+      "template": "./src/pages/services/service/zumba.pug",
+      "title": "Zumba® Fitness | Над Дождём",
+      "pageTitle": "Zumba® Fitness",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Zumba® Fitness",
+          "path": "current"
+        }
+      ]
+    },
+    "healthyBack": {
+      "name": "healthyBack",
+      "link": "services/healthyBack.html",
+      "template": "./src/pages/services/service/healthyBack.pug",
+      "title": "Здоровая спина | Над Дождём",
+      "pageTitle": "Здоровая спина",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Здоровая спина",
+          "path": "current"
+        }
+      ]
+    },
+    "superSculpt": {
+      "name": "superSculpt",
+      "link": "services/superSculpt.html",
+      "template": "./src/pages/services/service/superSculpt.pug",
+      "title": "Super Sculpt | Над Дождём",
+      "pageTitle": "Super Sculpt",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Super Sculpt",
+          "path": "current"
+        }
+      ]
+    },
+    "zumbaStrong": {
+      "name": "zumbaStrong",
+      "link": "services/zumbaStrong.html",
+      "template": "./src/pages/services/service/zumbaStrong.pug",
+      "title": "Strong by Zumba® | Над Дождём",
+      "pageTitle": "Strong by Zumba®",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Strong by Zumba®",
+          "path": "current"
+        }
+      ]
+    },
     "aleksandrUshakov": {
       "name": "aleksandr-ushakov",
       "link": "coaches/aleksandr-ushakov.html",

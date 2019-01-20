@@ -79,7 +79,7 @@ append content
                 | Pole Dance — это фитнес нового поколения, объединяющий в себе современную хореографию и воздушную акробатику. Помогает развивать и укреплять все группы мышц, совершенствовать красоту тела и достигать внутреннего раскрепощения.
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(onclick=null) Подробнее...
+                a(href= pages.poleDance.link) Подробнее...
         <!--КОЛЬЦО-->
         div(class='col-12 col-lg-6 d-flex align-items-stretch')
           div(class='card mb-4')
@@ -101,10 +101,10 @@ append content
                 | Пробное занятие - 500 руб
               //Card text
               p(class='card-text')
-                | Воздушное кольцо - спортивное увлечение, благодаря которому вы незаметно приобретете красивые формы тела. Посещая эти занятия, вы сможете выполнять эффектные и захватывающие трюки. Окунетесь в мир воздушного искусства и почувствуйте себя настоящим артистом. После месяца активных тренировок вы заметите свободу в движениях, легкость и подъем жизненной энергии.
+                | Воздушное кольцо - спортивное увлечение, благодаря которому вы незаметно приобретете красивые формы тела. Посещая эти занятия, вы сможете выполнять эффектные и захватывающие трюки. Окунетесь в мир воздушного искусства и почувствуйте себя настоящим артистом.
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(onclick=null) Подробнее...
+                a(href= pages.hood.link) Подробнее...
         <!--ПОЛОТНО-->
         div(class='col-12 col-lg-6 d-flex align-items-stretch')
           div(class='card mb-4')
@@ -126,13 +126,13 @@ append content
                 | Пробное занятие - 500 руб
               //Card text
               p(class='card-text')
-                | Воздушные полотна - спорт для избранных. Здесь вы полностью удовлетворите свою тягу к совершенству. Зависая в воздухе при помощи двух полотен, танцоры демонстрируют различные трюки, срывы, эффектные висы и шпагаты. Занимаясь воздушными полотнами, вы обретаете желанную спортивную форму, гибкость и пластичность тела.
+                | Воздушные полотна - спорт для избранных. Здесь вы полностью удовлетворите свою тягу к совершенству. Зависая в воздухе при помощи двух полотен, танцоры демонстрируют различные трюки, срывы, эффектные висы и шпагаты.
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                  a(onclick=null) Подробнее...
+                a(href= pages.silk.link) Подробнее...
         <!--КОРОЛЕВСКАЯ ЙОГА-->
         div(class='col-12 col-lg-6 d-flex align-items-stretch')
-          div(class='card mb-4 mb-lg-0')
+          div(class='card mb-4')
             //Image
             div(class='image-container')
               img(class='card-img-top', src= require(
@@ -154,10 +154,10 @@ append content
                 | Йога - практика ума и тела, сочетающая в себе различные физические позы, дыхательные техники, медитацию и релаксацию. Занятие по йоге нацелено на гармонизацию психического и физиологического состояния организма.
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(onclick=null) Подробнее...
+                a(href= pages.yoga.link) Подробнее...
         <!--STRETCHING-->
         div(class='col-12 col-lg-6 d-flex align-items-stretch')
-          div(class='card')
+          div(class='card mb-4')
             //Image
             div(class='image-container')
               img(class='card-img-top', src= require(
@@ -176,10 +176,101 @@ append content
                 | Пробное занятие - 500 руб
               //Card text
               p(class='card-text')
-                | Stretching - оздоровительное направление, сконцентрированное на растяжении групп мышц, суставов, связок и сухожилий. Благодаря активному разогреву мышц и влиянию на функционирование кровеносной и лимфатической системы, данное направление увеличивает эластичность всего тела, замедляет старение организма и улучшает обмен веществ.
+                | Stretching - оздоровительное направление, сконцентрированное на растяжении групп мышц, суставов, связок и сухожилий.
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(onclick=null) Подробнее...
+                a(href= pages.stretching.link) Подробнее...
+        <!--ZUMBA FITNESS-->
+        div(class='col-12 col-lg-6 d-flex align-items-stretch')
+          div(class='card mb-4')
+            //Image
+            //div(class='image-container')
+            //  img(class='card-img-top', src= require(
+            //    '../../images/services/stretching/001-stretching-600x400.jpg'), alt='Stretching | Над Дождём', srcset= require(
+            //    '../../images/services/stretching/001-stretching-600x400.jpg') + ' 600w,' +
+            //  require('../../images/services/stretching/001-stretching-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Zumba® Fitness
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              //Card text
+              p(class='card-text')
+                | Программа Zumba® Fitness — это танцевальное направление в фитнесе, в котором используются движения различных танцевальных стилей (латиноамериканских и других международных направлений: сальса, бачата, реггетон, кумбия и др).
+            div(class='card-footer')
+              div(class='d-flex justify-content-end')
+                a(href= pages.zumba.link) Подробнее...
+        <!--ЗДОРОВАЯ СПИНА-->
+        div(class='col-12 col-lg-6 d-flex align-items-stretch')
+          div(class='card mb-4')
+            //Image
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Здоровая спина
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              //Card text
+              p(class='card-text')
+                | Пора уже снять груз с плеч и свободно вдохнуть полной грудью!
+                br
+                | Что такое программа «Здоровая спина»?
+                br
+                | Это именно тот вид тренировки который направлен на профилактику заболеваний позвоночника (остеохондроз шейного и поясничного отделов, грыжа межпозвоночных дисков).
+            div(class='card-footer')
+              div(class='d-flex justify-content-end')
+                a(href= pages.healthyBack.link) Подробнее...
+        <!--SUPER SCULPT-->
+        div(class='col-12 col-lg-6 d-flex align-items-stretch')
+          div(class='card mb-4 mb-lg-0')
+            //Image
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Super Sculpt
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              //Card text
+              p(class='card-text')
+                | Super Sculpt — это интенсивный силовой класс аэробики с разного рода отягощениями (гантели, бодибары, эспандеры, и т.д.).
+                br
+                | Как правило тренировка состоит из трех частей: разминки, силовой и растяжки.
+            div(class='card-footer')
+              div(class='d-flex justify-content-end')
+                a(href= pages.superSculpt.link) Подробнее...
+        <!--STRONG BY ZUMBA-->
+        div(class='col-12 col-lg-6 d-flex align-items-stretch')
+          div(class='card')
+            //Image
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Strong by Zumba®
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              //Card text
+              p(class='card-text')
+                | Это интенсивная, музыкальная тренировка с мощными кардио-силовыми упражнениями (планки, отжимания, приседания, бёрпи). Основной целью этого направления является проработка основных групп мышц всего тела с использованием только своего веса.
+            div(class='card-footer')
+              div(class='d-flex justify-content-end')
+                a(href= pages.zumbaStrong.link) Подробнее...
 //-SCRIPTS
 append scripts
   //Page scripts

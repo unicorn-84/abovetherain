@@ -1,0 +1,58 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.hood.title
+    title= pages.hood.title
+  if pages.hood.description
+    meta(name='description', content= pages.hood.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /service\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.hood)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Image
+            div(class='image-container')
+              img(class='card-img-top', src= require(
+                '../../../images/services/hood/001-hood-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+                '../../../images/services/hood/001-hood-600x400.jpg') + ' 600w,' +
+              require('../../../images/services/hood/001-hood-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Воздушное кольцо
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p(class='card-text')
+                | Воздушное кольцо - спортивное увлечение, благодаря которому вы незаметно приобретете красивые формы тела. Посещая эти занятия, вы сможете выполнять эффектные и захватывающие трюки. Окунетесь в мир воздушного искусства и почувствуйте себя настоящим артистом.
+              p(class='card-text')
+                | После месяца активных тренировок вы заметите свободу в движениях, легкость и подъем жизненной энергии.
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /service\./i)
