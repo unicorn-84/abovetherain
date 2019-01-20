@@ -7,6 +7,7 @@ import { each } from 'underscore';
 // Common
 import '../../styles/main.scss';
 import '../../scripts/components/icons';
+import '../../scripts/components/logo';
 import { retinaCheck } from '../../scripts/components/helpers';
 // Local
 import './index.scss';
