@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, coaches } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -65,10 +65,21 @@ append content
               p(class='card-text mb-0')
                 | На тренировках Надежда научит Вас управлять и наслаждаться движением  своего тела, поскольку, тело — это самый прекрасный инструмент, которым мы когда-либо обладали.
             div(class='card-footer')
-              a(href=`schedule.html?direction=all&coach=nadezhdaLuchinina&day=all`)
-                i(class='far fa-calendar-alt fa-lg')
-                | &nbsp;
-                | Расписание занятий
+              div(class='mb-3 mb-lg-0')
+                p(class='card-text')
+                  i(class='far fa-list-alt fa-lg')
+                  | &nbsp;
+                  | <b>Направления:<b>
+                ul
+                  each direction in coaches.nadezhdaLuchinina.directions
+                    li
+                      a(href= direction.link)= direction.title
+              div
+                p(class='card-text')
+                  a(class='icons-link', href=`schedule.html?direction=all&coach=nadezhda-luchinina&day=all`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

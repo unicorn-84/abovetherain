@@ -6,8 +6,18 @@
 
   .card-footer {
     padding-top: 0;
+    display: flex;
+    flex-flow: column nowrap;
 
-    a {
+    @include respond-to(laptop) {
+      flex-flow: row nowrap;
+
+      > * {
+        flex-basis: 50%;
+      }
+    }
+
+    a.icons-link {
       transition: color 0.1s $function;
       text-decoration: none;
     }

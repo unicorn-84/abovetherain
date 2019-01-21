@@ -2,6 +2,7 @@
 import 'bootstrap.scss';
 import 'collapse';
 // Common
+import { each } from 'underscore';
 import '../../styles/main.scss';
 import '../../scripts/components/sticky';
 import '../../scripts/components/icons';
@@ -33,7 +34,7 @@ directions.forEach((item) => {
   direction.push(item.name);
 });
 const coach = ['all'];
-coaches.forEach((item) => {
+each(coaches, (item) => {
   coach.push(item.name);
 });
 data.coach = coach;
