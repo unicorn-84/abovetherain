@@ -228,9 +228,9 @@
       ]
     },
     "poleDance": {
-      "name": "poleDance",
-      "link": "services/poleDance.html",
-      "template": "./src/pages/services/service/poleDance.pug",
+      "name": "pole-dance",
+      "link": "services/pole-dance.html",
+      "template": "./src/pages/services/service/pole-dance.pug",
       "title": "Pole Dance | Над Дождём",
       "pageTitle": "Pole Dance",
       "breadcrumbs": [
@@ -312,9 +312,9 @@
       ]
     },
     "healthyBack": {
-      "name": "healthyBack",
-      "link": "services/healthyBack.html",
-      "template": "./src/pages/services/service/healthyBack.pug",
+      "name": "healthy-back",
+      "link": "services/healthy-back.html",
+      "template": "./src/pages/services/service/healthy-back.pug",
       "title": "Здоровая спина | Над Дождём",
       "pageTitle": "Здоровая спина",
       "breadcrumbs": [
@@ -333,9 +333,9 @@
       ]
     },
     "superSculpt": {
-      "name": "superSculpt",
-      "link": "services/superSculpt.html",
-      "template": "./src/pages/services/service/superSculpt.pug",
+      "name": "super-sculpt",
+      "link": "services/super-sculpt.html",
+      "template": "./src/pages/services/service/super-sculpt.pug",
       "title": "Super Sculpt | Над Дождём",
       "pageTitle": "Super Sculpt",
       "breadcrumbs": [
@@ -354,9 +354,9 @@
       ]
     },
     "zumbaStrong": {
-      "name": "zumbaStrong",
-      "link": "services/zumbaStrong.html",
-      "template": "./src/pages/services/service/zumbaStrong.pug",
+      "name": "zumba-strong",
+      "link": "services/zumba-strong.html",
+      "template": "./src/pages/services/service/zumba-strong.pug",
       "title": "Strong by Zumba® | Над Дождём",
       "pageTitle": "Strong by Zumba®",
       "breadcrumbs": [
@@ -375,9 +375,9 @@
       ]
     },
     "aleksandrUshakov": {
-      "name": "aleksandrUshakov",
-      "link": "coaches/aleksandrUshakov.html",
-      "template": "./src/pages/coaches/coach/aleksandrUshakov.pug",
+      "name": "aleksandr-ushakov",
+      "link": "coaches/aleksandr-ushakov.html",
+      "template": "./src/pages/coaches/coach/aleksandr-ushakov.pug",
       "title": "Александр Ушаков | Над Дождём",
       "description": "",
       "pageTitle": "Александр Ушаков",
@@ -397,9 +397,9 @@
       ]
     },
     "nadezhdaLuchinina": {
-      "name": "nadezhdaLuchinina",
-      "link": "coaches/nadezhdaLuchinina.html",
-      "template": "./src/pages/coaches/coach/nadezhdaLuchinina.pug",
+      "name": "nadezhda-luchinina",
+      "link": "coaches/nadezhda-luchinina.html",
+      "template": "./src/pages/coaches/coach/nadezhda-luchinina.pug",
       "title": "Надежда Лучинина | Над Дождём",
       "description": "",
       "pageTitle": "Надежда Лучинина",
@@ -605,9 +605,9 @@
       ]
     },
     {
-      "name": "nadezhdaLuchinina",
+      "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
-      "link": "coaches/nadezhdaLuchinina.html",
+      "link": "coaches/nadezhda-luchinina.html",
       "directions": [
         {
           "title": "Pole dance",
@@ -632,9 +632,9 @@
       ]
     },
     {
-      "name": "aleksandrUshakov",
+      "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
-      "link": "coaches/aleksandrUshakov.html",
+      "link": "coaches/aleksandr-ushakov.html",
       "directions": [
         {
           "title": "Zumba® Fitness",

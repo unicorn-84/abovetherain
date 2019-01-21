@@ -24,13 +24,18 @@
     line-height: 1.75;
   }
 
-  .card-body {
-    padding: 2.5rem 2rem 2rem;
+  .card-text,
+  blockquote,
+  ul,
+  li {
+    margin-bottom: 1rem;
+  }
 
-    .card-text {
-      &:last-child {
-        margin-bottom: 0 !important;
-      }
+  .card-body {
+    padding: 1.5rem 1rem;
+
+    @include respond-to(laptop) {
+      padding: 2.5rem 2rem;
     }
   }
 
@@ -43,13 +48,6 @@
     margin-bottom: 1.5rem;
   }
 
-  .card-text,
-  blockquote,
-  ul,
-  li {
-    margin-bottom: 1rem;
-  }
-
   .card-subtitle {
     color: $secondary-dark-text-color;
   }
@@ -57,11 +55,22 @@
   a {
     color: $dark-text-color;
     font-weight: $heading-font-weight;
+    text-decoration: underline;
 
     &:hover,
     &:focus,
     &:active {
       color: lighten($dark-text-color, 20%);
+    }
+
+    @include respond-to(laptop) {
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        text-decoration: underline;
+      }
     }
   }
 
@@ -69,6 +78,7 @@
     border: none;
 
     .blockquote-footer {
+      padding-left: 0.5rem;
       color: $secondary-dark-text-color;
     }
 
