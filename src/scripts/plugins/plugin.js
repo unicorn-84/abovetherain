@@ -9,7 +9,7 @@ function Plugin() {}
 Plugin.prototype.apply = function apply(compiler) {
   compiler.hooks.compilation.tap('Plugin', (compilation) => {
     compilation.hooks.htmlWebpackPluginBeforeHtmlGeneration.tapAsync('Plugin', (data, cb) => {
-      if (data.outputName === 'coaches/aleksandr-ushakov.html') {
+      if (data.outputName === 'coaches/aleksandrUshakov.html') {
         console.log(data.assets);
         // console.log(compilation.assets);
       }

@@ -84,7 +84,9 @@ append content
               p(class='card-subtitle')
                 | Лицензированный инструктор программ
                 br
-                | <strong>Zumba&nbsp;(R)&nbsp;Fitness</strong> и <strong>Strong&nbsp;by&nbsp;Zumba&nbsp;(R)</strong>
+                a(href='services/zumba.html') Zumba&nbsp;(R)&nbsp;Fitness
+                |&#8194;и&#8194;
+                a(href='services/zumbaStrong.html') Strong&nbsp;by&nbsp;Zumba&nbsp;(R)
               p(class='card-text')
                 | В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
               p(class='card-text')
@@ -94,6 +96,12 @@ append content
                   | "В работе главное - взаимосвязь между инструктором и учеником."
                 footer(class='blockquote-footer')
                   cite(title='Александр Ушаков') Александр Ушаков
+            div(class='card-footer')
+              a(href=`schedule.html?direction=all&coach=aleksandrUshakov&day=all`)
+                i(class='far fa-calendar-alt fa-lg')
+                | &nbsp;
+                | Расписание занятий
+
 //-SCRIPTS
 append scripts
   //Page scripts
