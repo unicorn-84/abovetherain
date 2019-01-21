@@ -11,7 +11,8 @@ import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons/faCalendarAlt
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons/faEnvelope';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons/faMapMarkerAlt';
 import { faArrowAltCircleUp } from '@fortawesome/free-solid-svg-icons/faArrowAltCircleUp';
+import { faListAlt } from '@fortawesome/free-regular-svg-icons/faListAlt';
 
 library.add(faPhoneSquare, faBars, faInstagram, faVk, faFacebook, faPhone,
-  faCopyright, faInfo, faCalendarAlt, faEnvelope, faMapMarkerAlt, faArrowAltCircleUp);
+  faCopyright, faInfo, faCalendarAlt, faEnvelope, faMapMarkerAlt, faArrowAltCircleUp, faListAlt);
 dom.i2svg();

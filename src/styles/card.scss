@@ -26,9 +26,12 @@
 
   .card-text,
   blockquote,
-  ul,
   li {
     margin-bottom: 1rem;
+  }
+
+  ul li:last-child {
+    margin-bottom: 0;
   }
 
   .card-body {
@@ -40,7 +43,11 @@
   }
 
   .card-footer {
-    padding: 1rem 2rem 2rem;
+    padding: 1.5rem 1rem;
+
+    @include respond-to(laptop) {
+      padding: 2.5rem 2rem;
+    }
   }
 
   .card-title,
@@ -86,6 +93,10 @@
       margin-bottom: 1rem;
       font-size: $font-size;
       font-style: italic;
+
+      &.card-text:last-of-type {
+        margin-bottom: 0.5rem;
+      }
     }
   }
 }

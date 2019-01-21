@@ -589,8 +589,8 @@
       ]
     }
   ],
-  "coaches": [
-    {
+  "coaches": {
+    "natali": {
       "name": "natali",
       "title": "Натали",
       "directions": [
@@ -604,14 +604,14 @@
         }
       ]
     },
-    {
+    "nadezhdaLuchinina": {
       "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
       "link": "coaches/nadezhda-luchinina.html",
       "directions": [
         {
           "title": "Pole dance",
-          "link": "services/poleDance.html"
+          "link": "services/pole-dance.html"
         },
         {
           "title": "Stretching",
@@ -619,7 +619,7 @@
         }
       ]
     },
-    {
+    "jana": {
       "name": "jana",
       "title": "Яна",
       "directions": [
@@ -631,7 +631,7 @@
         }
       ]
     },
-    {
+    "aleksandrUshakov": {
       "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
       "link": "coaches/aleksandr-ushakov.html",
@@ -642,11 +642,11 @@
         },
         {
           "title": "Strong by Zumba®",
-          "link": "services/zumbaStrong.html"
+          "link": "services/zumba-strong.html"
         }
       ]
     }
-  ],
+  },
   "contacts": {
     "address": "Пионерская ул., 50",
     "phone": "+7 952 3999930",
