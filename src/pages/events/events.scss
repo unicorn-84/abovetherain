@@ -4,6 +4,18 @@
 .card {
   @include img-container(66.666666%);
 
+  .card-body {
+    padding: 1.5rem 1rem 1rem;
+
+    @include respond-to(laptop) {
+      padding: 2.5rem 2rem 1rem;
+    }
+  }
+
+  .card-footer {
+    padding: 0 2rem 2rem;
+  }
+
   .image-container .event-date {
     position: absolute;
     top: 10px;
@@ -20,13 +32,5 @@
       display: block;
       font-weight: 400;
     }
-  }
-
-  .card-body {
-    padding: 2.5rem 2rem 0;
-  }
-
-  .card-footer {
-    padding: 1rem 2rem 2rem;
   }
 }

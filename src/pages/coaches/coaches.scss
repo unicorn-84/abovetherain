@@ -45,11 +45,23 @@
 
     a {
       color: $light-text-color;
+      text-decoration: underline;
 
       &:hover,
       &:focus,
       &:active {
         color: darken($light-text-color, 20%);
+      }
+
+      @include respond-to(laptop) {
+        text-decoration: none;
+
+        &:hover,
+        &:focus,
+        &:active {
+          color: darken($light-text-color, 20%);
+          text-decoration: underline;
+        }
       }
     }
 
