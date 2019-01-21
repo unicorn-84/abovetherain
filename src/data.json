@@ -574,7 +574,7 @@
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandr-ushakov.html"
+          "link": "aleksandrUshakov.html"
         }
       ]
     },
@@ -584,7 +584,7 @@
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandr-ushakov.html"
+          "link": "aleksandrUshakov.html"
         }
       ]
     }
@@ -595,10 +595,12 @@
       "title": "Натали",
       "directions": [
         {
-          "title": "Йога"
+          "title": "Йога",
+          "link": "services/yoga.html"
         },
         {
-          "title": "Растяжка на полотнах"
+          "title": "Растяжка на полотнах",
+          "link": "services/silk.html"
         }
       ]
     },
@@ -608,10 +610,12 @@
       "link": "coaches/nadezhdaLuchinina.html",
       "directions": [
         {
-          "title": "Pole dance"
+          "title": "Pole dance",
+          "link": "services/poleDance.html"
         },
         {
-          "title": "Растяжка"
+          "title": "Stretching",
+          "link": "services/stretching.html"
         }
       ]
     },
@@ -633,10 +637,12 @@
       "link": "coaches/aleksandrUshakov.html",
       "directions": [
         {
-          "title": "Zumba (R) Fitness"
+          "title": "Zumba® Fitness",
+          "link": "services/zumba.html"
         },
         {
-          "title": "Strong by Zumba (R)"
+          "title": "Strong by Zumba®",
+          "link": "services/zumbaStrong.html"
         }
       ]
     }
