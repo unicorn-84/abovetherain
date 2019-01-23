@@ -1,0 +1,66 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation, coaches } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.yanaBelyakova.title
+    title= pages.yanaBelyakova.title
+  if pages.yanaBelyakova.description
+    meta(name='description', content= pages.yanaBelyakova.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /coach\./i)
+//-HEADER
+append header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  //Page title
+  +pageTitle(pages.yanaBelyakova)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title text-center')
+                | Яна Белякова
+              blockquote(class='blockquote')
+                p(class='card-text')
+                  | "Когда меня спрашивают почему я выбрала воздушную хореографию я отвечаю: - Я не выбирала, я была выбрана ею.
+                  br
+                  | <a href='services/pole-dance.html'>Pole&nbsp;Dance</a> это ключ к нашему телу который освобождает физическое мышление. Когда вы танцуете думайте телом и в ответ вы получите энергию и вдохновение."
+                footer(class='blockquote-footer')
+                  cite(title='Надежда Лучинина') Яна Белякова
+            div(class='card-footer')
+              div(class='mb-3 mb-lg-0')
+                p(class='card-text')
+                  i(class='far fa-list-alt fa-lg')
+                  | &nbsp;
+                  | <b>Направления:<b>
+                ul
+                  each direction in coaches.yanaBelyakova.directions
+                    li
+                      a(href= direction.link)= direction.title
+              div
+                p(class='card-text')
+                  a(class='icons-link', href=`schedule.html?direction=all&coach=yana-belyakova&day=all`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /coach\./i)
