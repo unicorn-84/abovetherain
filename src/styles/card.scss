@@ -3,25 +3,24 @@
 
 .card,
 .card-header,
-.card-footer,
-.card-img,
-.card-img-top,
-.card-img-bottom {
-  border-radius: 0 !important;
-}
-
-.card,
-.card-header,
 .card-footer {
   background-color: $card-bg;
-  border: none;
+  width: 100%;
 }
 
 .card {
   color: $dark-text-color;
+  border: 2px solid $light-text-color;
+  border-radius: 0.5rem;
 
   p {
     line-height: 1.75;
+  }
+
+  .card-img-top,
+  .carousel img {
+    border-top-left-radius: calc(0.5rem - 1px);
+    border-top-right-radius: calc(0.5rem - 1px);
   }
 
   .card-text,
@@ -35,19 +34,16 @@
   }
 
   .card-body {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1rem 1rem;
 
     @include respond-to(laptop) {
-      padding: 2.5rem 2rem;
+      padding: 2.5rem 2rem 1rem;
     }
   }
 
   .card-footer {
-    padding: 1.5rem 1rem;
-
-    @include respond-to(laptop) {
-      padding: 2.5rem 2rem;
-    }
+    padding: 0 2rem 2rem;
+    border: none;
   }
 
   .card-title,
