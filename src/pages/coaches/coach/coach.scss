@@ -4,22 +4,7 @@
 .card {
   @include img-container(66.666666%);
 
-  .card-footer {
-    padding-top: 0;
-    display: flex;
-    flex-flow: column nowrap;
-
-    @include respond-to(laptop) {
-      flex-flow: row nowrap;
-
-      > * {
-        flex-basis: 50%;
-      }
-    }
-
-    a.icons-link {
-      transition: color 0.1s $function;
-      text-decoration: none;
-    }
+  .coach-schedule-link {
+    @include link(dark, false, true);
   }
 }

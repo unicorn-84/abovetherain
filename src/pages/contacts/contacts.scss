@@ -11,16 +11,7 @@ ul.contacts {
     margin-bottom: 0.5rem;
   }
 
-  a {
-    color: $light-text-color;
-    text-decoration: none;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: darken($light-text-color, 20%);
-    }
-  }
+  @include link(light, false, true);
 }
 
 #yandex-map {

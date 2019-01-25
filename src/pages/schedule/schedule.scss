@@ -125,24 +125,15 @@ $border-color: #777;
       }
     }
 
+    @include link(light, true, false, false);
+
     a {
       color: $link-color;
-      text-decoration: underline;
 
       &:hover,
       &:focus,
       &:active {
-        color: rgba($link-color, 0.8);
-      }
-
-      @include respond-to(laptop) {
-        text-decoration: none;
-
-        &:hover,
-        &:focus,
-        &:active {
-          text-decoration: underline;
-        }
+        color: darken($link-color, 20%);
       }
     }
 

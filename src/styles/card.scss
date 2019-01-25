@@ -14,29 +14,10 @@
     border-top-right-radius: calc(0.25rem - 1px);
   }
 
-  a {
-    color: $dark-text-color;
-    font-weight: $heading-font-weight;
-    text-decoration: underline;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: lighten($dark-text-color, 20%);
-    }
-
-    @include respond-to(laptop) {
-      text-decoration: none;
-
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
-      }
-    }
-  }
+  @include link;
 
   .card-body {
+    //TODO: 'Добавить для футера'
     padding: 2rem 1.5rem;
 
     *:last-child {

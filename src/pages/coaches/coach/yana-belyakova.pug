@@ -45,7 +45,7 @@ append content
                 footer(class='blockquote-footer')
                   cite(title='Надежда Лучинина') Яна Белякова
             div(class='card-footer')
-              div(class='mb-3 mb-lg-0')
+              div(class='mb-3 mb-lg-0 coach-direction-link')
                 p(class='card-text')
                   i(class='far fa-list-alt fa-lg')
                   | &nbsp;
@@ -53,10 +53,11 @@ append content
                 ul
                   each direction in coaches.yanaBelyakova.directions
                     li
+                      //TODO: 'Проверка наличия ссылки и направления'
                       a(href= direction.link)= direction.title
-              div
+              div(class='coach-schedule-link')
                 p(class='card-text')
-                  a(class='icons-link', href=`schedule.html?direction=all&coach=yana-belyakova&day=all`)
+                  a(href=`schedule.html?direction=all&coach=yana-belyakova&day=all`)
                     i(class='far fa-calendar-alt fa-lg')
                     | &nbsp;
                     | Расписание занятий
