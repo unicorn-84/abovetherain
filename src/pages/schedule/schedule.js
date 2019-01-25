@@ -1,3 +1,5 @@
+// TODO: 'Удалить генератор'
+// TODO: 'Удалить custom select'
 // Vendors
 import 'bootstrap.scss';
 import 'collapse';
