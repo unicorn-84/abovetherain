@@ -1,12 +1,20 @@
-// SCSS
-import 'bootstrap/scss/bootstrap.scss';
-import '../../styles/style.scss';
+// Vendors
+import 'bootstrap.scss';
+import 'collapse';
+// Common
+import '../../styles/main.scss';
+import '../../scripts/components/sticky';
+import '../../scripts/components/icons';
+import '../../scripts/components/gototop';
+import '../../scripts/components/fon';
+import '../../scripts/components/logo';
+// Local
 import './contacts.scss';
 // IMAGES
 import logo from '../../images/logo/logo@2x.png';
-import evacuatorLogo from '../../images/evacuator.png';
-import '../../scripts/components/sticky';
+import evacuatorLogo from '../../images/icons/evacuator.png';
 
+// TODO: 'Загружать лениво'
 (function createMap() {
   function init() {
     const map = new ymaps.Map('yandex-map', {

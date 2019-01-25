@@ -1,0 +1,94 @@
+@import 'variables';
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: nth(map-get($breakpoints, $breakpoint), 1);
+
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+@mixin img-container($padding) {
+  .image-container {
+    position: relative;
+    height: 0;
+    width: 100%;
+    padding-top: $padding;
+
+    img {
+      background-color: $theme-color;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      color: $dark-text-color;
+    }
+  }
+}
+
+@mixin link($style:dark, $underline:true, $transition:false, $bold:true) {
+  a {
+    @if $style == light {
+      color: $light-text-color;
+    }
+
+    @else {
+      color: $dark-text-color;
+    }
+
+    @if $underline {
+      text-decoration: underline;
+    }
+
+    @else {
+      text-decoration: none;
+    }
+
+    @if $transition {
+      transition: color 0.1s $function;
+    }
+
+    @else {
+      transition: none;
+    }
+
+    @if $bold {
+      font-weight: $heading-font-weight;
+    }
+
+    @else {
+      font-weight: $font-weight;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      @if $style == light {
+        color: darken($light-text-color, 10%);
+      }
+
+      @else {
+        color: lighten($dark-text-color, 10%);
+      }
+    }
+
+    @include respond-to(laptop) {
+      text-decoration: none;
+
+      &:hover,
+      &:focus,
+      &:active {
+        @if $underline {
+          text-decoration: underline;
+        }
+
+        @else {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

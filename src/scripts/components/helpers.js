@@ -3,21 +3,8 @@ function wrap(element, wrapper) {
   wrapper.appendChild(element);
 }
 
-function fetchData(url, cb) {
-  fetch(url)
-    .then((response) => {
-      if (response.status !== 200) {
-        throw new Error('No data');
-      }
-      return response.text();
-    })
-    .then(text => cb(null, text))
-    .catch(error => cb(error));
+function retinaCheck() {
+  return matchMedia('only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx)').matches;
 }
 
-function insertDataToModal(data) {
-  document.querySelector('.modal').insertAdjacentHTML('beforeEnd', data);
-  document.querySelector('.abovetherain__css3-spinner').remove();
-}
-
-export { wrap, fetchData, insertDataToModal };
+export { wrap, retinaCheck };

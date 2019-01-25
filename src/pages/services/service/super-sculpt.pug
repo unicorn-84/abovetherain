@@ -1,0 +1,68 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.superSculpt.title
+    title= pages.superSculpt.title
+  if pages.superSculpt.description
+    meta(name='description', content= pages.superSculpt.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /service\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.superSculpt)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Image
+            //div(class='image-container')
+            //  img(class='card-img-top', src= require(
+            //    '../../../images/services/superSculpt/001-superSculpt-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+            //    '../../../images/services/superSculpt/001-superSculpt-600x400.jpg') + ' 600w,' +
+            //  require('../../../images/services/superSculpt/001-superSculpt-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Super Sculpt
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p(class='card-text')
+                | Super Sculpt — это интенсивный силовой класс аэробики с разного рода отягощениями (гантели, бодибары, эспандеры, и т.д.).
+                br
+                | Как правило тренировка состоит из трех частей: разминки, силовой и растяжки.
+              p(class='card-text')
+                | Разные классы нагрузки помогут тщательно проработать отдельные зоны:
+                ul
+                  li Upper body - только верхнюю часть тела
+                  li ABT- пресс и ягодицы
+                  li ТИТ - ноги
+              p(class='card-text')
+                | Эта программа популярна у женщин, поскольку помогает улучшить форму всего тела и привести вес в норму. Super Sculpt развивает выносливость, ускоряет обменные процессы, повышает иммунитет и дает заряд бодрости.
+                | Тренер индивидуально рассчитывает нагрузку для каждого, поэтому новичок точно освоит программу и быстро войдет в ритм.
+                | Для тренировки необходима спортивная одежда и обувь, а также желание поработать над собой.
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /service\./i)

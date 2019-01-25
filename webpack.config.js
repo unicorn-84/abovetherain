@@ -1,401 +1,259 @@
 const path = require('path');
-const webpack = require('webpack');
-const merge = require('webpack-merge');
+const glob = require('glob');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const productionConfig = require('./webpack.production');
-const developmentConfig = require('./webpack.development');
+const FileManagerPlugin = require('filemanager-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
+const AddAssetPlugin = require('add-asset-webpack-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+const { options, pages } = require('./src/data');
 
-const build = process.env.npm_lifecycle_event === 'build:prod';
+let build;
 const server = process.env.npm_config_server;
+const seo = process.env.npm_config_seo;
+if (process.env.npm_lifecycle_event === 'webpack:dev') {
+  build = 'dev';
+} else if (process.env.npm_lifecycle_event === 'webpack:prod') {
+  build = 'prod';
+}
 
-const commonConfig = merge([
-  {
-    context: path.resolve(__dirname, 'src'),
-    entry: {
-      index: './pages/index/index',
-      services: './pages/services/services',
-      schedule: './pages/schedule/schedule',
-      eventsboard: './pages/eventsboard/eventsboard',
-      team: './pages/team/team',
-      coaches: './pages/coaches/coaches',
-      gallery: './pages/gallery/gallery',
-      contacts: './pages/contacts/contacts',
-      requisites: './pages/requisites/requisites',
-    },
-    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: './scripts/[name].js',
-    },
-    module: {
-      rules: [
-        // JS
-        {
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: [
-            'babel-loader',
-          ],
-        },
-        {
-          test: /\.(pug|jade)$/,
-          exclude: /(node_modules|bower_components|data)/,
-          use: [
-            {
-              loader: 'pug-loader',
-              options: {
-                pretty: true,
+module.exports = {
+  entry: {
+    index: './src/pages/index/index',
+    services: './src/pages/services/services',
+    service: './src/pages/services/service/service',
+    schedule: './src/pages/schedule/schedule',
+    events: './src/pages/events/events',
+    event: './src/pages/events/event/event',
+    team: './src/pages/team/team',
+    coaches: './src/pages/coaches/coaches',
+    coach: './src/pages/coaches/coach/coach',
+    gallery: './src/pages/gallery/gallery',
+    contacts: './src/pages/contacts/contacts',
+    requisites: './src/pages/requisites/requisites',
+  },
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: build === 'prod'
+      ? 'scripts/[name].[contenthash:4].js'
+      : 'scripts/[name].js',
+    chunkFilename: build === 'prod'
+      ? 'scripts/[name].[contenthash:4].js'
+      : 'scripts/[name].js',
+  },
+  module: {
+    rules: [
+      // JS
+      {
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          'babel-loader',
+        ],
+      },
+      // HTML
+      {
+        test: /\.(pug|jade)$/,
+        exclude: /(node_modules|bower_components)/,
+        use: [
+          {
+            loader: 'pug-loader',
+            options: {
+              pretty: build === 'dev',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: '../',
+            },
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                ctx: {
+                  cssnano: build === 'prod' ? {
+                    preset: ['default', {
+                      discardComments: {
+                        removeAll: true,
+                      },
+                    }],
+                  } : false,
+                },
               },
             },
-          ],
-        },
-        {
-          test: /\.(eot|svg|ttf|woff|woff2)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'fonts/[name].[ext]',
-              },
+          },
+          'sass-loader',
+        ],
+      },
+      // Images
+      {
+        test: /\.(png|jpg|gif|svg|ico)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              context: path.resolve(__dirname, 'src'),
             },
-          ],
-        },
-        {
-          test: /data.*\.(jade|pug|html)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {
-                name: 'data/[name].[hash:4].html',
-              },
-            },
-            'extract-loader',
-            {
-              loader: 'html-loader',
-              options: {
-                attrs: ['img:src'],
-                root: path.resolve(__dirname, '.'),
-                interpolate: true,
-              },
-            },
-            {
-              loader: 'pug-html-loader',
-              options: {
-                exports: false,
-              },
-            },
-          ],
-        },
-      ],
-    },
-    plugins: [
-      new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
-      // скрипты шаблона
-      new CopyWebpackPlugin([
-        {
-          from: './scripts/**/*.js',
-          to: 'scripts/[name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      // стили шаблона
-      new CopyWebpackPlugin([
-        {
-          from: './styles/**/*.css',
-          to: 'styles/[name].[ext]',
-          toType: 'template',
-        },
-      ]),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'index.html',
-        template: './pages/index/index.pug',
-        name: 'index',
-        excludeChunks: [
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'services.html',
-        template: './pages/services/services.pug',
-        name: 'services',
-        excludeChunks: [
-          'index',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'rent.html',
-        template: './pages/services/rent.pug',
-        name: 'rent',
-        excludeChunks: [
-          'index',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'schedule.html',
-        template: './pages/schedule/schedule.pug',
-        name: 'schedule',
-        excludeChunks: [
-          'index',
-          'services',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'eventsboard.html',
-        template: './pages/eventsboard/eventsboard.pug',
-        name: 'eventsboard',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'team.html',
-        template: './pages/team/team.pug',
-        name: 'team',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'coaches.html',
-        template: './pages/coaches/coaches.pug',
-        name: 'coaches',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'aleksandr_ushakov.html',
-        template: './pages/coaches/aleksandr_ushakov.pug',
-        name: 'aleksandr_ushakov',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'nadezhda_luchinina.html',
-        template: './pages/coaches/nadezhda_luchinina.pug',
-        name: 'nadezhda_luchinina',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'gallery.html',
-        template: './pages/gallery/gallery.pug',
-        name: 'gallery',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'contacts.html',
-        template: './pages/contacts/contacts.pug',
-        name: 'contacts',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'requisites.html',
-        template: './pages/requisites/requisites.pug',
-        name: 'requisites',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'eventsboard',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new HtmlWebpackPlugin({
-        server,
-        filename: 'sofa-makurina-master-class.html',
-        template: './pages/eventsboard/sofa-makurina-master-class.pug',
-        name: 'sofa-makurina-master-class',
-        excludeChunks: [
-          'index',
-          'services',
-          'schedule',
-          'team',
-          'coaches',
-          'gallery',
-          'contacts',
-          'requisites'],
-        minify: {
-          removeComments: build,
-          minifyCSS: build,
-          minifyJS: build,
-          collapseWhitespace: build,
-        },
-      }),
-      new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        Popper: ['popper.js', 'default'],
-      }),
+          },
+        ],
+      },
     ],
-    optimization: {
-      noEmitOnErrors: true,
+  },
+  externals: {
+    jquery: 'jQuery',
+    Util: 'util.js',
+  },
+  plugins: [
+    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
+    new MiniCssExtractPlugin({
+      filename: build === 'prod'
+        ? 'styles/[name].[contenthash:4].css'
+        : 'styles/[name].css',
+    }),
+    new FileManagerPlugin({
+      onEnd: {
+        delete: [
+          path.resolve(__dirname, 'dist/**/inline*.*'),
+        ],
+      },
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
+      whitelistPatterns: [/carousel/, /collapsing/, /^g/],
+      fontFace: true,
+      rejected: true,
+    }),
+    // Логотип
+    // TODO: 'Hash для логотипа'
+    new CopyWebpackPlugin([
+      {
+        from: './src/images/logo',
+        to: './images/logo/[name].[ext]',
+        toType: 'template',
+      },
+    ]),
+  ],
+  optimization: {
+    // TODO: 'Добавить runtime'
+    // https://webpack.js.org/configuration/optimization/
+    // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
+    noEmitOnErrors: true,
+  },
+  devServer: {
+    stats: 'errors-only',
+    overlay: true,
+    compress: true,
+    host: options.hostLocal,
+    port: options.portLocal,
+  },
+  devtool: server === 'prod' ? 'none' : 'source-map',
+  resolve: {
+    alias: {
+      'bootstrap.scss': path.resolve(__dirname, 'node_modules/bootstrap/scss/bootstrap.scss'),
+      'style.scss': path.resolve(__dirname, 'src/styles/style.scss'),
+      carousel: path.resolve(__dirname, 'node_modules/bootstrap/js/dist/carousel.js'),
+      collapse: path.resolve(__dirname, 'node_modules/bootstrap/js/dist/collapse.js'),
     },
   },
-]);
-
-module.exports = (mode) => {
-  if (mode === 'production') {
-    return merge(commonConfig, productionConfig, { mode });
-  }
-  return merge(commonConfig, developmentConfig, { mode });
 };
+
+(function createPages() {
+  Object.keys(pages).forEach((page) => {
+    module.exports.plugins.push(
+      new HtmlWebpackPlugin({
+        name: pages[page].name,
+        filename: pages[page].link,
+        template: pages[page].template,
+        inject: false,
+        vars: {
+          build,
+          server,
+          seo,
+        },
+        minify: {
+          removeComments: build === 'prod',
+          minifyCSS: build === 'prod',
+          minifyJS: build === 'prod',
+          collapseWhitespace: build === 'prod',
+        },
+      }),
+    );
+  });
+}());
+
+(function makeSeoStuff() {
+  if (seo) {
+    module.exports.plugins.push(
+      new RobotstxtPlugin({
+        policy: [
+          {
+            userAgent: '*',
+            disallow: server === 'prod' ? null : '/',
+          },
+        ],
+      }),
+      new AddAssetPlugin('humans.txt',
+        `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
+          'RU-ru', {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+          },
+        )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
+      new CopyWebpackPlugin([
+        {
+          from: './src/data/trash',
+          to: './[name].[ext]',
+          toType: 'template',
+        },
+      ]),
+    );
+  } else if (!seo && server === 'dev') {
+    module.exports.plugins.push(
+      new RobotstxtPlugin({
+        policy: [
+          {
+            userAgent: '*',
+            disallow: '/',
+          },
+        ],
+      }),
+    );
+  }
+}());
+
+(function splitChunks() {
+  module.exports.optimization.splitChunks = {
+    cacheGroups: {
+      default: false,
+      vendors: false,
+      common: {
+        name: 'common',
+        minChunks: Object.keys(module.exports.entry).length,
+        chunks: 'all',
+      },
+      // inline: {
+      //   name: false,
+      //   test: /inline/,
+      //   chunks: 'initial',
+      //   enforce: true,
+      // },
+    },
+  };
+}());

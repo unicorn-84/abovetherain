@@ -3,10 +3,13 @@
   "version": "1.22.0",
   "description": "Dance Club static web site",
   "scripts": {
-    "build:dev": "webpack --env development",
-    "build:prod": "webpack --env production",
-    "server:loc": "webpack-dev-server --env development",
-    "version": "npm run build:prod && git add -f dist",
+    "webpack:dev": "webpack --mode development",
+    "webpack:prod": "webpack --mode production",
+    "webpack:server": "webpack-dev-server --mode development",
+    "server:local": "npm --server=local run webpack:server",
+    "server:dev": "npm --server=dev run webpack:prod",
+    "server:prod": "npm --server=prod --seo run webpack:prod",
+    "version": "npm --server=prod --seo run webpack:prod && git add -f dist",
     "postversion": "git push && git push --tags"
   },
   "private": true,
@@ -25,7 +28,7 @@
   },
   "browserslist": [
     "last 2 version",
-    "> 0.5% in RU",
+    "> 1% in RU",
     "not dead"
   ],
   "devDependencies": {
@@ -34,23 +37,22 @@
     "@polymer/paper-styles": "^3.0.1",
     "add-asset-webpack-plugin": "^0.1.0",
     "babel-loader": "^8.0.4",
-    "bootstrap": "^4.1.3",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.3",
     "css-loader": "^1.0.0",
-    "cssnano": "^4.1.5",
+    "cssnano": "^4.1.8",
     "eslint": "^5.7.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
     "file-loader": "^2.0.0",
+    "filemanager-webpack-plugin": "^2.0.5",
     "glob": "^7.1.3",
     "html-webpack-plugin": "^3.2.0",
     "jquery": "^3.3.1",
-    "lodash": "^4.17.11",
     "mini-css-extract-plugin": "^0.4.4",
-    "node-sass": "^4.9.4",
-    "optimize-css-assets-webpack-plugin": "^5.0.1",
-    "popper.js": "^1.14.6",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.5.0",
     "pug": "^2.0.3",
     "pug-loader": "^2.4.0",
     "purgecss": "^1.1.0",
@@ -63,14 +65,19 @@
     "style-loader": "^0.23.1",
     "stylelint": "^9.6.0",
     "stylelint-config-standard": "^18.2.0",
-    "uglifyjs-webpack-plugin": "^1.3.0",
-    "url-loader": "^1.1.2",
     "webpack": "^4.21.0",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.9",
-    "webpack-merge": "^4.1.5"
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0"
+    "@babel/polyfill": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-brands-svg-icons": "^5.6.3",
+    "@fortawesome/free-regular-svg-icons": "^5.6.3",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "bootstrap": "^4.2.1",
+    "glightbox": "^1.0.9",
+    "node-sass": "^4.11.0",
+    "underscore": "^1.9.1"
   }
 }

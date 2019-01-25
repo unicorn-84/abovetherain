@@ -1,12 +1,21 @@
-// JS
+// Vendors
+import 'bootstrap.scss';
+import 'collapse';
+// Common
+import { each } from 'underscore';
+import '../../styles/main.scss';
+import '../../scripts/components/sticky';
+import '../../scripts/components/icons';
+import '../../scripts/components/gototop';
+import '../../scripts/components/fon';
+import '../../scripts/components/logo';
+// Local
 import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';
-import '../../scripts/components/sticky';
 // SCSS
 import '../../scripts/components/select/select.scss';
-import 'bootstrap/scss/bootstrap.scss';
-import '../../styles/style.scss';
 import './schedule.scss';
+// Inline
 
 const data = {
   day: [
@@ -25,7 +34,7 @@ directions.forEach((item) => {
   direction.push(item.name);
 });
 const coach = ['all'];
-coaches.forEach((item) => {
+each(coaches, (item) => {
   coach.push(item.name);
 });
 data.coach = coach;
@@ -81,7 +90,7 @@ function checkQuery() {
   return false;
 }
 function replaceQuery(object) {
-  window.history.replaceState(object, '', `?${makeQuery(makeStateObject(object))}`);
+  window.history.replaceState(object, '', `/schedule.html?${makeQuery(makeStateObject(object))}`);
 }
 function setSelects(...selects) {
   for (const select of selects) {

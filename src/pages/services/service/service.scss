@@ -1,0 +1,6 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.card {
+  @include img-container(66.666666%);
+}

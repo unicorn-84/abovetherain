@@ -1,6 +1,5 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-@import '../../styles/navbar';
 
 $schedule-bg-color: rgba(0, 0, 0, 0.8);
 $schedule-days-bg-color: $schedule-bg-color;
@@ -9,19 +8,11 @@ $schedule-direction-color: $schedule-bg-color;
 $link-color: #00be9f;
 $border-color: #777;
 
-.content-wrap {
-  .container {
-    @include respond-to(tablet) {
-      max-width: 1340px !important;
-    }
-  }
-}
-
 .schedule-wrapper {
   margin-top: 15px;
   margin-bottom: -30px;
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
     margin-bottom: 0;
   }
 }
@@ -39,6 +30,9 @@ $border-color: #777;
   border: 1px solid $border-color;
 
   &.mobile {
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
     display: table;
     background-color: transparent;
     border: none;
@@ -60,14 +54,14 @@ $border-color: #777;
       &:first-child {
         display: none;
 
-        @include respond-to(tablet) {
+        @include respond-to(laptop) {
           display: table-cell;
         }
       }
     }
   }
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
     display: table;
 
     &.mobile {
@@ -80,27 +74,14 @@ $border-color: #777;
   .schedule-event {
     font-family: $font-family;
     font-weight: $font-weight;
-    color: $text-color;
+    color: $secondary-light-text-color;
     overflow: hidden;
     word-wrap: break-word;
     border: 1px solid $border-color;
   }
 
-  .schedule-day,
-  .schedule-time {
-    font-size: 14px;
-  }
-
   .schedule-day {
-    padding: 10px 0;
-
-    @include respond-to(tablet) {
-      font-size: 12px;
-    }
-
-    @include respond-to(laptop) {
-      font-size: 14px;
-    }
+    padding: 0.5rem 0;
 
     &:first-child {
       width: 20%;
@@ -117,59 +98,42 @@ $border-color: #777;
 
   .schedule-time {
     display: none;
-    padding: 20px 0;
-
-    @include respond-to(tablet) {
-      font-size: 10px;
-      display: table-cell;
-    }
+    padding: 1rem 0;
 
     @include respond-to(laptop) {
-      font-size: 14px;
+      display: table-cell;
     }
   }
 
   .schedule-event {
     vertical-align: middle;
-    padding: 0 20px;
+    padding: 0.5rem 1.5rem;
     opacity: 0.1;
 
-    @include respond-to(tablet) {
-      padding: 5px;
-
-      @include transition(opacity 0.3s $function);
-    }
-
     @include respond-to(laptop) {
-      padding: 5px 10px;
-    }
-
-    @include respond-to(desktop) {
-      padding: 10px 15px;
+      padding: 0.5rem;
+      transition: opacity 0.3s $function;
     }
 
     & > * {
-      margin: $indent * 6 0;
+      margin: 0.5rem 0;
       padding: 0;
       transition: opacity 0.3s $function;
 
-      @include respond-to(tablet) {
-        margin: $indent * 4 0;
+      @include respond-to(laptop) {
         pointer-events: none;
       }
     }
 
+    @include link(light, true, false, false);
+
     a {
-      text-decoration: underline rgba($link-color, 0.5) !important;
       color: $link-color;
 
+      &:hover,
       &:focus,
-      &:hover {
-        text-decoration: underline rgba($link-color, 0.5) !important;
-      }
-
-      @include respond-to(tablet) {
-        text-decoration: none !important;
+      &:active {
+        color: darken($link-color, 20%);
       }
     }
 
@@ -179,63 +143,19 @@ $border-color: #777;
       display: block;
       text-align: left;
 
-      @include respond-to(tablet) {
+      @include respond-to(laptop) {
         text-align: center;
       }
     }
 
-    .schedule-title,
-    .schedule-coach {
-      font-family: $heading-font-family;
-    }
-
     .schedule-title {
       font-weight: $heading-font-weight;
-
-      @include type(0);
-
-      @include respond-to(tablet) {
-        font-size: 0.7rem;
-      }
-
-      @include respond-to(laptop) {
-        font-size: 14px;
-      }
-
-      @include respond-to(desktop) {
-        @include type(0);
-      }
     }
 
     .schedule-interval,
     .schedule-coach {
+      font-size: 1rem;
       font-weight: $font-weight;
-    }
-
-    .schedule-interval {
-      font-family: $font-family;
-
-      @include type(-1);
-
-      @include respond-to(tablet) {
-        @include type(-2);
-      }
-
-      @include respond-to(laptop) {
-        @include type(-1);
-      }
-    }
-
-    .schedule-coach {
-      font-size: 14px;
-
-      @include respond-to(tablet) {
-        font-size: 0.7rem;
-      }
-
-      @include respond-to(laptop) {
-        font-size: 14px !important;
-      }
     }
   }
 }
@@ -253,10 +173,9 @@ $border-color: #777;
 .schedule-table[data-selected='plastic'] .schedule-event[data-direction='plastic'] > *,
 .schedule-table[data-selected='zumba_fitness'] .schedule-event[data-direction='zumba_fitness'] > *,
 .schedule-table[data-selected='zumba_strong'] .schedule-event[data-direction='zumba_strong'] > *,
-.schedule-table[data-selected='natali'] .schedule-event[data-coach='natali'] > *,
-.schedule-table[data-selected='nadezhda_luchinina'] .schedule-event[data-coach='nadezhda_luchinina'] > *,
-.schedule-table[data-selected='jana'] .schedule-event[data-coach='jana'] > *,
-.schedule-table[data-selected='aleksandr_ushakov'] .schedule-event[data-coach='aleksandr_ushakov'] > *,
+.schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'] > *,
+.schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'] > *,
+.schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'] > *,
 .schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'] > *,
 .schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'] > *,
 .schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'] > *,
@@ -279,10 +198,9 @@ $border-color: #777;
 .schedule-table[data-selected='plastic'] .schedule-event[data-direction='plastic'],
 .schedule-table[data-selected='zumba_fitness'] .schedule-event[data-direction='zumba_fitness'],
 .schedule-table[data-selected='zumba_strong'] .schedule-event[data-direction='zumba_strong'],
-.schedule-table[data-selected='natali'] .schedule-event[data-coach='natali'],
-.schedule-table[data-selected='nadezhda_luchinina'] .schedule-event[data-coach='nadezhda_luchinina'],
-.schedule-table[data-selected='jana'] .schedule-event[data-coach='jana'],
-.schedule-table[data-selected='aleksandr_ushakov'] .schedule-event[data-coach='aleksandr_ushakov'],
+.schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'],
+.schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'],
+.schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'],
 .schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'],
 .schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'],
 .schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'],
@@ -307,10 +225,9 @@ $border-color: #777;
 .schedule-table.mobile[data-selected='plastic'] tr[class~='plastic'],
 .schedule-table.mobile[data-selected='zumba_fitness'] tr[class~='zumba_fitness'],
 .schedule-table.mobile[data-selected='zumba_strong'] tr[class~='zumba_strong'],
-.schedule-table.mobile[data-selected='natali'] tr[class~='natali'],
-.schedule-table.mobile[data-selected='nadezhda_luchinina'] tr[class~='nadezhda_luchinina'],
-.schedule-table.mobile[data-selected='jana'] tr[class~='jana'],
-.schedule-table.mobile[data-selected='aleksandr_ushakov'] tr[class~='aleksandr_ushakov'],
+.schedule-table.mobile[data-selected='nadezhda-luchinina'] tr[class~='nadezhda-luchinina'],
+.schedule-table.mobile[data-selected='yana-belyakova'] tr[class~='yana-belyakova'],
+.schedule-table.mobile[data-selected='aleksandr-ushakov'] tr[class~='aleksandr-ushakov'],
 .schedule-table[data-selected='day-1'] tr[class~='day-1'],
 .schedule-table[data-selected='day-2'] tr[class~='day-2'],
 .schedule-table[data-selected='day-3'] tr[class~='day-3'],
@@ -325,7 +242,7 @@ $border-color: #777;
   justify-content: space-between;
   flex-wrap: wrap;
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
     justify-content: start;
     flex-wrap: nowrap;
   }
@@ -334,23 +251,24 @@ $border-color: #777;
 .select,
 .select-list {
   border: 1px solid $border-color;
-  font-family: $heading-font-family;
   font-weight: $font-weight;
-
-  @include type(0);
 }
 
 .select,
 .select-list > li {
-  padding: $indent * 4 $indent * 8;
+  padding: 8px 16px;
 }
 
 .select {
-  color: $dark-color;
-  background-color: $light-color;
+  color: $dark-text-color;
+  background-color: $theme-color;
   margin-bottom: 15px;
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
 
-  @include respond-to(tablet) {
+  @include respond-to(laptop) {
+    margin-left: 0;
     margin-right: 15px;
     margin-bottom: 0;
     max-width: 320px;
@@ -374,13 +292,11 @@ $border-color: #777;
 }
 
 .select-list {
-  color: $dark-color;
-  background-color: $light-color;
-
-  @include animation(opacity 0.3s $function);
+  color: $dark-text-color;
+  background-color: $theme-color;
 
   li {
-    @include transition(background-color, 0.3s, $function);
+    transition: background-color 0.3s $function;
 
     &:focus,
     &:hover {

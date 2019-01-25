@@ -1,49 +1,65 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation, coaches } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
-  title= pages.coaches.title
-  meta(name='description', content= pages.coaches.description)
+  if pages.coaches.title
+    title= pages.coaches.title
+  if pages.coaches.description
+    meta(name='description', content= pages.coaches.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
-//-BODY
+  +assets('css', /coaches\./i)
+//-HEADER
 append header
-  +header(primaryNavigation.items)
-append content
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  //Page title
   +pageTitle(pages.coaches)
-  section#content
-    .content-wrap
-      .coaches-wrapper
-        .container
-          .row
-            each coach in coaches
-              .col-sm-6.col-md-6.col-lg-4
-                .coach-wrapper
-                  .coach
-                    .coach-image
-                      img(src= require(`../../images/coaches/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
-                    .coach-info
-                      div
-                        .coach-title
-                          h2= coach.title
-                        .coach-directions
-                          each direction in coach.directions
-                            if direction.link
-                              a(href= direction.link)
-                                h4= direction.title
-                            else
-                              a(href='services.html')
-                                h4= direction.title
-                      .coach-icons
-                        if coach.link
-                          a(href= coach.link)
-                            i.icon-line2-info
-                        a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
-                          i.icon-calendar2
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row')
+        each coach, index in coaches
+          div(class='col-sm-6 col-lg-4')
+            div(class= {
+              'coach': true,
+              'mb-4': coaches.length - 1 !== index
+            })
+              div(class='coach-image')
+                img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
+              div(class='coach-info')
+                div
+                  div(class='coach-title')
+                    h3= coach.title
+                  div(class='coach-directions')
+                    each direction in coach.directions
+                      if direction.link
+                        a(href= direction.link)
+                          p= direction.title
+                      else
+                        a(href='services.html')
+                          p= direction.title
+                div(class='coach-icons')
+                  if coach.link
+                    a(href= coach.link)
+                      i(class='fas fa-info fa-lg')
+                  a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
+                    i(class='far fa-calendar-alt fa-lg')
+//-SCRIPTS
 append scripts
   //Page scripts
+  +assets('js', /coaches\./i)
+
 
