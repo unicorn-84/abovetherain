@@ -1,3 +1,4 @@
+//TODO: 'Изменить тренеры'
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
@@ -5,12 +6,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 4px $card-bg solid;
 
   .coach-image {
     img {
       display: block;
       width: 100%;
       height: auto;
+      border-radius: calc(0.25rem - 1px);
     }
 
     position: relative;
@@ -43,27 +48,7 @@
       margin-bottom: 0;
     }
 
-    a {
-      color: $light-text-color;
-      text-decoration: underline;
-
-      &:hover,
-      &:focus,
-      &:active {
-        color: darken($light-text-color, 20%);
-      }
-
-      @include respond-to(laptop) {
-        text-decoration: none;
-
-        &:hover,
-        &:focus,
-        &:active {
-          color: darken($light-text-color, 20%);
-          text-decoration: underline;
-        }
-      }
-    }
+    @include link(light, true, false, false);
 
     .coach-icons {
       display: flex;
@@ -71,10 +56,10 @@
       justify-content: flex-end;
       align-items: center;
 
+      @include link(light, false, true);
+
       a {
-        transition: color 0.1s $function;
         display: block;
-        text-decoration: none;
         padding: 10px;
         margin-bottom: 5px;
 
