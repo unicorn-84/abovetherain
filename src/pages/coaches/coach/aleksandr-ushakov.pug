@@ -97,7 +97,7 @@ append content
                 footer(class='blockquote-footer')
                   cite(title='Александр Ушаков') Александр Ушаков
             div(class='card-footer')
-              div(class='mb-3 mb-lg-0')
+              div(class='mb-3 mb-lg-0 coach-direction-link')
                 p(class='card-text')
                   i(class='far fa-list-alt fa-lg')
                   | &nbsp;
@@ -106,9 +106,9 @@ append content
                   each direction in coaches.aleksandrUshakov.directions
                     li
                       a(href= direction.link)= direction.title
-              div
+              div(class='coach-schedule-link')
                 p(class='card-text')
-                  a(class='icons-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
+                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
                     i(class='far fa-calendar-alt fa-lg')
                     | &nbsp;
                     | Расписание занятий
