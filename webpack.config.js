@@ -66,6 +66,7 @@ module.exports = {
           },
         ],
       },
+      // SCSS
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
@@ -113,6 +114,17 @@ module.exports = {
           },
         ],
       },
+      // Fonts
+      {
+        test: /\.(ttf|eot|woff|woff2)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            context: path.resolve(__dirname, 'src'),
+          },
+        },
+      },
     ],
   },
   externals: {
@@ -136,7 +148,6 @@ module.exports = {
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
       whitelistPatterns: [/carousel/, /collapsing/, /^g/],
-      fontFace: true,
       rejected: true,
     }),
   ],
