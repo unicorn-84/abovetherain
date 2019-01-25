@@ -32,26 +32,7 @@
       text-align: center;
       border-radius: 0;
 
-      a {
-        color: $light-text-color;
-        text-decoration: underline;
-
-        &:hover,
-        &:focus,
-        &:active {
-          color: darken($light-text-color, 20%);
-        }
-
-        @include respond-to(laptop) {
-          text-decoration: none;
-
-          &:hover,
-          &:focus,
-          &:active {
-            text-decoration: underline;
-          }
-        }
-      }
+      @include link('light');
     }
 
     .breadcrumb-item.active {
