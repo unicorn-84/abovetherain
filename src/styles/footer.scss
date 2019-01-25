@@ -8,26 +8,7 @@
   text-align: center;
   color: $light-text-color;
 
-  a {
-    color: $light-text-color;
-    text-decoration: underline;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: darken($light-text-color, 20%);
-    }
-
-    @include respond-to(laptop) {
-      text-decoration: none;
-
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
-      }
-    }
-  }
+  @include link(light);
 
   .phone,
   .icons {
@@ -37,10 +18,7 @@
       margin-bottom: 0;
     }
 
-    a {
-      transition: color 0.1s $function;
-      text-decoration: none;
-    }
+    @include link(light, false, true);
   }
 
   .icons a {

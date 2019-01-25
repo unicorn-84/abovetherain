@@ -418,6 +418,28 @@
         }
       ]
     },
+    "yanaBelyakova" : {
+      "name": "yana-belyakova",
+      "link": "coaches/yana-belyakova.html",
+      "template": "./src/pages/coaches/coach/yana-belyakova.pug",
+      "title": "Яна Белякова | Над Дождём",
+      "description": "",
+      "pageTitle": "Яна Белякова",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Тренеры",
+          "path": "coaches.html"
+        },
+        {
+          "name": "Яна Белякова",
+          "path": "current"
+        }
+      ]
+    },
     "sofaMakurinaMasterClass": {
       "name": "sofa-makurina-master-class",
       "link": "events/sofa-makurina-master-class.html",
@@ -496,26 +518,15 @@
   "directions": [
     {
       "name": "yoga",
-      "title": "Королевская йога",
-      "coaches": [
-        {
-          "title": "Натали"
-        }
-      ]
+      "title": "Королевская йога"
     },
     {
       "name": "pole_dance",
-      "title": "Pole Dance",
-      "coaches": [
-        {
-          "title": "Надежда Лучинина"
-        }
-      ]
+      "title": "Pole Dance"
     },
     {
       "name": "pole_dance_child",
-      "title": "Детский Pole Dance",
-      "coaches": []
+      "title": "Детский Pole Dance"
     },
     {
       "name": "stretching",
@@ -528,12 +539,7 @@
     },
     {
       "name": "stretching_silk",
-      "title": "Stretching на полотнах",
-      "coaches": [
-        {
-          "title": "Натали"
-        }
-      ]
+      "title": "Stretching на полотнах"
     },
     {
       "name": "aerial_hoop",
@@ -555,7 +561,7 @@
       "title": "Функциональный тренинг",
       "coaches": [
         {
-          "title": "Яна"
+          "title": "Яна Белякова"
         }
       ]
     },
@@ -564,7 +570,7 @@
       "title": "Женская пластика",
       "coaches": [
         {
-          "title": "Яна"
+          "title": "Яна Белякова"
         }
       ]
     },
@@ -590,20 +596,6 @@
     }
   ],
   "coaches": {
-    "natali": {
-      "name": "natali",
-      "title": "Натали",
-      "directions": [
-        {
-          "title": "Йога",
-          "link": "services/yoga.html"
-        },
-        {
-          "title": "Растяжка на полотнах",
-          "link": "services/silk.html"
-        }
-      ]
-    },
     "nadezhdaLuchinina": {
       "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
@@ -619,9 +611,10 @@
         }
       ]
     },
-    "jana": {
-      "name": "jana",
-      "title": "Яна",
+    "yanaBelyakova": {
+      "name": "yana-belyakova",
+      "title": "Яна Белякова",
+      "link": "coaches/yana-belyakova.html",
       "directions": [
         {
           "title": "Функциональный тренинг"

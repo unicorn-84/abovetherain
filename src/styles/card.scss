@@ -1,102 +1,65 @@
 @import 'variables';
 @import 'mixins';
 
-.card,
-.card-header,
-.card-footer,
-.card-img,
-.card-img-top,
-.card-img-bottom {
-  border-radius: 0 !important;
-}
-
-.card,
-.card-header,
-.card-footer {
-  background-color: $card-bg;
-  border: none;
-}
-
 .card {
+  width: 100%;
+  background-color: $card-bg;
   color: $dark-text-color;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 4px $card-bg solid;
 
-  p {
-    line-height: 1.75;
+  .carousel-inner {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
   }
 
-  .card-text,
-  blockquote,
-  li {
-    margin-bottom: 1rem;
-  }
-
-  ul li:last-child {
-    margin-bottom: 0;
-  }
+  @include link;
 
   .card-body {
-    padding: 1.5rem 1rem;
+    //TODO: 'Добавить для футера'
+    padding: 2rem 1.5rem;
 
-    @include respond-to(laptop) {
-      padding: 2.5rem 2rem;
+    *:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .card-title,
+    .card-subtitle {
+      margin-bottom: 1.5rem;
+    }
+
+    .card-subtitle {
+      color: $secondary-dark-text-color;
     }
   }
 
   .card-footer {
-    padding: 1.5rem 1rem;
-
-    @include respond-to(laptop) {
-      padding: 2.5rem 2rem;
-    }
-  }
-
-  .card-title,
-  .card-subtitle {
-    margin-bottom: 1.5rem;
-  }
-
-  .card-subtitle {
-    color: $secondary-dark-text-color;
-  }
-
-  a {
-    color: $dark-text-color;
-    font-weight: $heading-font-weight;
-    text-decoration: underline;
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: lighten($dark-text-color, 20%);
-    }
-
-    @include respond-to(laptop) {
-      text-decoration: none;
-
-      &:hover,
-      &:focus,
-      &:active {
-        text-decoration: underline;
-      }
-    }
-  }
-
-  blockquote {
-    border: none;
-
-    .blockquote-footer {
-      padding-left: 0.5rem;
-      color: $secondary-dark-text-color;
-    }
-
-    p {
-      margin-bottom: 1rem;
-      font-size: $font-size;
-      font-style: italic;
-
-      &.card-text:last-of-type {
-        margin-bottom: 0.5rem;
-      }
-    }
+    background-color: transparent;
   }
 }
+
+//.card {
+//  p {
+    //line-height: 1.75;
+  //}
+
+  //blockquote {
+  //  border: none;
+  //
+  //  .blockquote-footer {
+  //    padding-left: 0.5rem;
+  //    color: $secondary-dark-text-color;
+  //  }
+  //
+  //  p {
+  //    margin-bottom: 1rem;
+  //    font-size: $font-size;
+  //    font-style: italic;
+  //
+  //    &.card-text:last-of-type {
+  //      margin-bottom: 0.5rem;
+  //    }
+  //  }
+  //}
+//}

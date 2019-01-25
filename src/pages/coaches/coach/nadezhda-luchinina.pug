@@ -65,7 +65,7 @@ append content
               p(class='card-text mb-0')
                 | На тренировках Надежда научит Вас управлять и наслаждаться движением  своего тела, поскольку, тело — это самый прекрасный инструмент, которым мы когда-либо обладали.
             div(class='card-footer')
-              div(class='mb-3 mb-lg-0')
+              div(class='mb-3 mb-lg-0 coach-direction-link')
                 p(class='card-text')
                   i(class='far fa-list-alt fa-lg')
                   | &nbsp;
@@ -74,9 +74,9 @@ append content
                   each direction in coaches.nadezhdaLuchinina.directions
                     li
                       a(href= direction.link)= direction.title
-              div
+              div(class='coach-schedule-link')
                 p(class='card-text')
-                  a(class='icons-link', href=`schedule.html?direction=all&coach=nadezhda-luchinina&day=all`)
+                  a(href=`schedule.html?direction=all&coach=nadezhda-luchinina&day=all`)
                     i(class='far fa-calendar-alt fa-lg')
                     | &nbsp;
                     | Расписание занятий

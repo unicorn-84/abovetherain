@@ -34,10 +34,13 @@
     }
   }
 
-  a {
-    color: $dark-text-color;
-    transition: color 0.1s $function;
+  @include link(dark, false, true, false);
 
+  @include respond-to(laptop) {
+    @include link(light, false, true);
+  }
+
+  a {
     &.nav-link {
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -46,24 +49,10 @@
         padding: 1rem;
       }
 
-      &:hover,
-      &:focus,
-      &:active {
-        color: lighten($dark-text-color, 20%);
-      }
-
       @include respond-to(laptop) {
-        color: $light-text-color;
-
         &:not(.navbar-brand) {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
-        }
-
-        &:hover,
-        &:focus,
-        &:active {
-          color: darken($light-text-color, 20%);
         }
       }
     }
