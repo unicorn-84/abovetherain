@@ -518,26 +518,15 @@
   "directions": [
     {
       "name": "yoga",
-      "title": "Королевская йога",
-      "coaches": [
-        {
-          "title": "Натали"
-        }
-      ]
+      "title": "Королевская йога"
     },
     {
       "name": "pole_dance",
-      "title": "Pole Dance",
-      "coaches": [
-        {
-          "title": "Надежда Лучинина"
-        }
-      ]
+      "title": "Pole Dance"
     },
     {
       "name": "pole_dance_child",
-      "title": "Детский Pole Dance",
-      "coaches": []
+      "title": "Детский Pole Dance"
     },
     {
       "name": "stretching",
@@ -550,12 +539,7 @@
     },
     {
       "name": "stretching_silk",
-      "title": "Stretching на полотнах",
-      "coaches": [
-        {
-          "title": "Натали"
-        }
-      ]
+      "title": "Stretching на полотнах"
     },
     {
       "name": "aerial_hoop",
@@ -612,20 +596,6 @@
     }
   ],
   "coaches": {
-    "natali": {
-      "name": "natali",
-      "title": "Натали",
-      "directions": [
-        {
-          "title": "Йога",
-          "link": "services/yoga.html"
-        },
-        {
-          "title": "Растяжка на полотнах",
-          "link": "services/silk.html"
-        }
-      ]
-    },
     "nadezhdaLuchinina": {
       "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
