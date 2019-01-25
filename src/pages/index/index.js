@@ -2,7 +2,7 @@
 import 'bootstrap.scss';
 import 'collapse';
 import 'carousel';
-import { each } from 'underscore';
+import WebFont from 'webfontloader';
 // Common
 import '../../styles/main.scss';
 import '../../scripts/components/icons';
@@ -16,6 +16,20 @@ import retinaMobileFon from '../../images/fon/mobile-index-fon@2x.jpg';
 import laptopFon from '../../images/fon/laptop-index-fon.jpg';
 // import retinaLaptopFon from '../../images/slides/002-slide-1920x1080.jpg';
 // Inline
+
+WebFont.load({
+  custom: {
+    families: ['hercules_modern'],
+  },
+  fontactive() {
+    const caption = document.querySelector('.caption');
+    caption.classList.add('visible');
+  },
+  fontinactive() {
+    const caption = document.querySelector('.caption');
+    caption.classList.add('visible');
+  },
+});
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
