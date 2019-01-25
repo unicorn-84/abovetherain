@@ -32,7 +32,7 @@
       text-align: center;
       border-radius: 0;
 
-      @include link('light');
+      @include link(light);
     }
 
     .breadcrumb-item.active {
