@@ -67,11 +67,11 @@
     &:focus,
     &:active {
       @if $style == light {
-        color: darken($light-text-color, 20%);
+        color: darken($light-text-color, 10%);
       }
 
       @else {
-        color: lighten($dark-text-color, 20%);
+        color: lighten($dark-text-color, 10%);
       }
     }
 

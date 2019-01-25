@@ -1,5 +1,5 @@
-import fonLg from '../../images/fon/001-fon-1920x1080.jpg';
-import fonSm from '../../images/fon/001-fon-1080x1080.jpg';
+import fonLg from '../../images/fon/laptop-common-fon.jpg';
+import fonSm from '../../images/fon/mobile-common-fon.jpg';
 import '../../styles/fon.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
