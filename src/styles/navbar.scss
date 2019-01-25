@@ -37,7 +37,7 @@
   @include link(dark, false, true, false);
 
   @include respond-to(laptop) {
-    @include link(light, false, true);
+    @include link(light, false, true, false);
   }
 
   a {
