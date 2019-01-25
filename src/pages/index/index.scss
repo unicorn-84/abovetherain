@@ -1,6 +1,15 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+@font-face {
+  font-family: 'hercules_modern';
+  src:
+    url('../../fonts/hercules_modern/hercules_modern.woff2') format('woff2'),
+    url('../../fonts/hercules_modern/hercules_modern.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #wrapper {
   position: relative;
   overflow: hidden;
@@ -19,7 +28,7 @@
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.4);
   }
 
   .caption {
@@ -28,6 +37,12 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     padding-top: 80px;
+    opacity: 0;
+    transition: opacity 0.1s $function;
+
+    &.visible {
+      opacity: 1;
+    }
 
     @include respond-to(laptop) {
       width: 960px;
@@ -42,9 +57,10 @@
     }
 
     h1 {
+      font-family: 'hercules_modern', serif;
       text-transform: uppercase;
       text-align: center;
-      font-size: calc(24px + 2vw);
+      font-size: calc(24px + 3vw);
       margin: 0;
 
       @media screen and (min-width: 2000px) {
