@@ -4,10 +4,6 @@
 .card {
   @include img-container(66.666666%);
 
-  .card-footer {
-    padding: 0 2rem 2rem;
-  }
-
   .image-container .event-date {
     position: absolute;
     top: 10px;
