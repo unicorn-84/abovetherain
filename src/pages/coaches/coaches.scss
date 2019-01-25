@@ -6,12 +6,16 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 4px $card-bg solid;
 
   .coach-image {
     img {
       display: block;
       width: 100%;
       height: auto;
+      border-radius: calc(0.25rem - 1px);
     }
 
     position: relative;
