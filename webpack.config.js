@@ -138,16 +138,7 @@ module.exports = {
       whitelistPatterns: [/carousel/, /collapsing/, /^g/],
       fontFace: true,
       rejected: true,
-    }),
-    // Логотип
-    // TODO: 'Hash для логотипа'
-    new CopyWebpackPlugin([
-      {
-        from: './src/images/logo',
-        to: './images/logo/[name].[ext]',
-        toType: 'template',
-      },
-    ]),
+    })
   ],
   optimization: {
     // TODO: 'Добавить runtime'
