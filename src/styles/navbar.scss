@@ -1,9 +1,9 @@
-@import './variables';
-@import './mixins';
+@import 'variables';
+@import 'mixins';
 
 .navbar {
-  background-color: $light-color;
-  color: rgba(0, 0, 0, 0.87);
+  background-color: rgba($theme-color, 0.95);
+  color: $dark-text-color;
   overflow-y: auto;
   max-height: 100vh;
   align-items: start;
@@ -12,11 +12,12 @@
   right: 0;
   left: 0;
   z-index: 1030;
+  padding-top: 0;
+  padding-bottom: 0;
 
   @include respond-to(laptop) {
-    position: absolute;
+    position: static;
     background-color: transparent;
-    color: $light-color;
   }
 
   .navbar-wrapper {
@@ -33,9 +34,13 @@
     }
   }
 
-  a {
-    color: rgba(0, 0, 0, 0.87);
+  @include link(dark, false, true, false);
 
+  @include respond-to(laptop) {
+    @include link(light, false, true);
+  }
+
+  a {
     &.nav-link {
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -44,43 +49,21 @@
         padding: 1rem;
       }
 
-      &:hover,
-      &:focus,
-      &:active {
-        color: rgba(0, 0, 0, 0.5);
-      }
-
       @include respond-to(laptop) {
-        color: $light-color;
-
         &:not(.navbar-brand) {
           padding-left: 1rem !important;
           padding-right: 1rem !important;
-        }
-
-        &:hover,
-        &:focus {
-          color: rgba($light-color, 0.7);
         }
       }
     }
   }
 
   .navbar-toggler {
-    color: rgba(0, 0, 0, 0.87);
+    color: $secondary-dark-text-color;
     transition: font-size 0.3s;
 
     &:focus {
       outline: 5px auto -webkit-focus-ring-color;
-    }
-
-    svg {
-      fill: rgba(0, 0, 0, 0.87);
-    }
-
-    .navbar-toggler-icon {
-      background-image: none;
-      border: none;
     }
   }
 
@@ -106,8 +89,7 @@
 
   @media screen and (max-width: 991px) {
     &.sticky {
-      background-color: $light-color;
-      box-shadow: $box-shadow;
+      background-color: $theme-color;
 
       .navbar-brand {
         img {

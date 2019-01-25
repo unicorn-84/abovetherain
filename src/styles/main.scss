@@ -1,0 +1,41 @@
+//FIXME: 'Fixed background'
+//TODO: 'Изменить цвет фона для img-container'
+//TODO: 'Миксин для '
+@import 'variables';
+@import 'mixins';
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: $font-family;
+  font-size: $font-size;
+  background-color: $body-bg-color;
+  color: $light-text-color;
+}
+
+strong,
+b,
+.font-weight-bold {
+  font-weight: $heading-font-weight;
+}
+
+#content {
+  padding: 3rem 0;
+
+  @include respond-to(laptop) {
+    padding: 5rem 0;
+  }
+}
+
+a:focus {
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+@import 'navbar';
+@import 'pagetitle';
+@import 'card';
+@import 'footer';
+@import 'gototop';

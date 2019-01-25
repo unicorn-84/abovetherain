@@ -1,0 +1,65 @@
+@import 'variables';
+@import 'mixins';
+
+.card {
+  width: 100%;
+  background-color: $card-bg;
+  color: $dark-text-color;
+  padding: 0;
+  border-radius: 0.5rem;
+  border: 4px $card-bg solid;
+
+  .carousel-inner {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+  }
+
+  @include link;
+
+  .card-body {
+    //TODO: 'Добавить для футера'
+    padding: 2rem 1.5rem;
+
+    *:last-child {
+      margin-bottom: 0 !important;
+    }
+
+    .card-title,
+    .card-subtitle {
+      margin-bottom: 1.5rem;
+    }
+
+    .card-subtitle {
+      color: $secondary-dark-text-color;
+    }
+  }
+
+  .card-footer {
+    background-color: transparent;
+  }
+}
+
+//.card {
+//  p {
+    //line-height: 1.75;
+  //}
+
+  //blockquote {
+  //  border: none;
+  //
+  //  .blockquote-footer {
+  //    padding-left: 0.5rem;
+  //    color: $secondary-dark-text-color;
+  //  }
+  //
+  //  p {
+  //    margin-bottom: 1rem;
+  //    font-size: $font-size;
+  //    font-style: italic;
+  //
+  //    &.card-text:last-of-type {
+  //      margin-bottom: 0.5rem;
+  //    }
+  //  }
+  //}
+//}

@@ -1,127 +1,123 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
-  title= pages.gallery.title
-  meta(name='description', content= pages.gallery.description)
+  if pages.gallery.title
+    title= pages.gallery.title
+  if pages.gallery.description
+    meta(name='description', content= pages.gallery.description)
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
-//-BODY
+  +assets('css', /gallery\./i)
+//-HEADER
 append header
-  +header(primaryNavigation.items)
-append content
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
   +pageTitle(pages.gallery)
-  section#content
-    .content-wrap
-      .container
-        div(id='gallery', data-lightbox='gallery')
-          div
-            a(href= require('../../images/gallery/001.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/001.jpg') alt= options.name width='133', height='200')
-          div
-            a(href= require('../../images/gallery/002.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/002.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/003.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/003.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/004.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/004.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/005.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/005.jpg') alt= options.name width='300', height='188')
-          div
-            a(href= require('../../images/gallery/006.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/006.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/007.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/007.jpg') alt= options.name width='300', height='131')
-          div
-            a(href= require('../../images/gallery/008.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/008.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/009.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/009.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/010.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/010.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/011.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/011.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/012.jpg') data-lightbox='gallery-item')
-              img(src= require('../../images/gallery/thumbnails/012.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/013.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/013.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/014.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/014.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/015.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/015.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/016.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/016.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/017.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/017.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/018.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/018.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/019.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/019.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/020.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/020.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/021.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/021.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/022.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/022.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/023.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/023.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/024.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/024.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/025.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/025.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/026.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/026.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/027.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/027.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/028.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/028.jpg') alt= options.name width='300', height='200')
-          div
-            a(href= require('../../images/gallery/029.jpg') data-lightbox='gallery-item')
-              img(src= require(
-                '../../images/gallery/thumbnails/029.jpg') alt= options.name width='300', height='200')
+//-CONTENT
+append content
+    //Content
+    div(id='content')
+      //Container
+      div(class='container')
+        div(class='row text-center')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/001.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/001.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/002.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/002.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/003.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/003.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/004.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/004.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/005.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/005.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/006.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/006.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/007.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/007.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/008.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/008.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/009.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/009.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/010.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/010.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/011.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/011.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/012.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/012.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/013.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/013.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/014.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/014.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/015.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/015.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/016.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/016.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/017.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/017.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/018.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/018.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/019.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/019.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/020.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/020.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/021.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/021.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/022.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/022.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/023.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/023.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/024.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/024.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/025.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/025.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/026.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/026.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/027.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/027.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/028.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/028.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+          div(class='col-lg-3 col-md-4 col-xs-6')
+            a(href= require('../../images/gallery/029.jpg'), class='glightbox d-inline-block mb-4')
+              img(src= require('../../images/gallery/thumbnails/029.jpg'), alt= `Галерея | ${options.name}`, class='d-block img-fluid img-thumbnail')
+//-SCRIPTS
 append scripts
   //Page scripts
+  +assets('js', /gallery\./i)

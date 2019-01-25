@@ -1,0 +1,31 @@
+@import 'variables';
+@import 'mixins';
+
+#footer {
+  border-top: 1px solid $theme-color;
+  padding: 2rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  color: $light-text-color;
+
+  @include link(light);
+
+  .phone,
+  .icons {
+    margin-bottom: 1.5rem;
+
+    @include respond-to(laptop) {
+      margin-bottom: 0;
+    }
+
+    @include link(light, false, true);
+  }
+
+  .icons a {
+    margin: 0 0.5rem;
+  }
+
+  .link a {
+    font-size: initial;
+  }
+}

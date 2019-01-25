@@ -1,0 +1,56 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.poleDance.title
+    title= pages.poleDance.title
+  if pages.poleDance.description
+    meta(name='description', content= pages.poleDance.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /service\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.poleDance)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Image
+            div(class='image-container')
+              img(class='card-img-top', src= require(
+                '../../../images/services/pole-dance/001-pole-dance-600x400.jpg'), alt='Pole Dance | Над Дождём', srcset= require(
+                '../../../images/services/pole-dance/001-pole-dance-600x400.jpg') + ' 600w,' +
+              require('../../../images/services/pole-dance/001-pole-dance-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Pole Dance
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p(class='card-text')
+                | Pole Dance — это фитнес нового поколения, объединяющий в себе современную хореографию и воздушную акробатику. Помогает развивать и укреплять все группы мышц, совершенствовать красоту тела и достигать внутреннего раскрепощения.
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /service\./i)

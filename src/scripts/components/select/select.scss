@@ -55,7 +55,7 @@ select[data-select] {
   z-index: 1;
 
   > li {
-    @include transition(background-color 0.3s $function);
+    transition: background-color 0.3s $function;
 
     &:focus,
     &:hover {

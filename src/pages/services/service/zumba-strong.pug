@@ -1,0 +1,58 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.zumbaStrong.title
+    title= pages.zumbaStrong.title
+  if pages.zumbaStrong.description
+    meta(name='description', content= pages.zumbaStrong.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /service\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.zumbaStrong)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Image
+            //div(class='image-container')
+            //  img(class='card-img-top', src= require(
+            //    '../../../images/services/zumbaStrong/001-zumbaStrong-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+            //    '../../../images/services/zumbaStrong/001-zumbaStrong-600x400.jpg') + ' 600w,' +
+            //  require('../../../images/services/zumbaStrong/001-zumbaStrong-800x533.jpg') + ' 800w')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Strong by Zumba®
+              //Subtitle
+              p(class='card-subtitle')
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p(class='card-text')
+                | Это интенсивная, музыкальная тренировка с мощными кардио-силовыми упражнениями (планки, отжимания, приседания, бёрпи). Основной целью этого направления является проработка основных групп мышц всего тела с использованием только своего веса.
+              p(class='card-text') Тренировка состоит из нескольких частей. Все части имеют разную степень сложности. Самая последняя всегда выполняется на полу: пресс, планки, скрутки. Во всех частях интенсивная фаза сменяется фазой отдыха. Вся тренировка проходит под ритмичную музыку: афро, дабстеп, латиноамериканские ритмы, которая пишется специально под движения и помогает сконцентрироваться на технике исполнения.
+              p(class='card-text') После одного занятия Strong by zumba® вы почувствуете мощный прилив сил и результат от тренировок не заставит себя ждать.
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /service\./i)

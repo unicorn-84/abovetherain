@@ -1,0 +1,119 @@
+extends ../../../templates/layout
+//-VARIABLES
+append variables
+  - const { options, pages, primaryNavigation, coaches } = require('../../../data');
+//-META
+append meta
+  //Page meta tags
+  if pages.aleksandrUshakov.title
+    title= pages.aleksandrUshakov.title
+  if pages.aleksandrUshakov.description
+    meta(name='description', content= pages.aleksandrUshakov.description)
+//-ICONS
+append icons
+  //Page icons
+//-STYLES
+append styles
+  //Page styles
+  +assets('css', /coach\./i)
+//-HEADER
+append header
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  //Page title
+  +pageTitle(pages.aleksandrUshakov)
+//-CONTENT
+append content
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row justify-content-center')
+        div(class='col-12 col-lg-8')
+          div(class='card')
+            //Carousel
+            div(id='aleksandrUshakovCarousel', class='carousel slide', data-ride='carousel')
+              ol(class='carousel-indicators')
+                li(data-target='#aleksandrUshakovCarousel', data-slide-to='0', class='active')
+                li(data-target='#aleksandrUshakovCarousel', data-slide-to='1')
+                li(data-target='#aleksandrUshakovCarousel', data-slide-to='2')
+                li(data-target='#aleksandrUshakovCarousel', data-slide-to='3')
+                li(data-target='#aleksandrUshakovCarousel', data-slide-to='4')
+              div(class='carousel-inner')
+                div(class='carousel-item active')
+                  div(class='image-container')
+                    img(class='d-block w-100', src= require('../../../images/coaches/aleksandr-ushakov/001-aleksandr-ushakov-600x400.jpg'), alt='Александр Ушаков | Над Дождём', srcset= require('../../../images/coaches/aleksandr-ushakov/001-aleksandr-ushakov-600x400.jpg') + ' 600w, ' + require('../../../images/coaches/aleksandr-ushakov/001-aleksandr-ushakov-1200x800.jpg') + ' 1200w')
+                div(class='carousel-item')
+                  div(class='image-container')
+                    img(class='d-block w-100', src= require(
+                      '../../../images/coaches/aleksandr-ushakov/002-aleksandr-ushakov-600x400.jpg'), alt='Александр Ушаков | Над Дождём', srcset= require(
+                      '../../../images/coaches/aleksandr-ushakov/002-aleksandr-ushakov-600x400.jpg') + ' 600w, ' +
+                    require('../../../images/coaches/aleksandr-ushakov/002-aleksandr-ushakov-1200x800.jpg') + ' 1200w')
+                div(class='carousel-item')
+                  div(class='image-container')
+                    img(class='d-block w-100', src= require(
+                      '../../../images/coaches/aleksandr-ushakov/003-aleksandr-ushakov-600x400.jpg'), alt='Александр Ушаков | Над Дождём', srcset= require(
+                      '../../../images/coaches/aleksandr-ushakov/003-aleksandr-ushakov-600x400.jpg') + ' 600w, ' +
+                    require('../../../images/coaches/aleksandr-ushakov/003-aleksandr-ushakov-1200x800.jpg') + ' 1200w')
+                div(class='carousel-item')
+                  div(class='image-container')
+                    img(class='d-block w-100', src= require(
+                      '../../../images/coaches/aleksandr-ushakov/004-aleksandr-ushakov-600x400.jpg'), alt='Александр Ушаков | Над Дождём', srcset= require(
+                      '../../../images/coaches/aleksandr-ushakov/004-aleksandr-ushakov-600x400.jpg') + ' 600w, ' +
+                    require('../../../images/coaches/aleksandr-ushakov/004-aleksandr-ushakov-1200x800.jpg') + ' 1200w')
+                div(class='carousel-item')
+                  div(class='image-container')
+                    img(class='d-block w-100', src= require(
+                      '../../../images/coaches/aleksandr-ushakov/005-aleksandr-ushakov-600x400.jpg'), alt='Александр Ушаков | Над Дождём', srcset= require(
+                      '../../../images/coaches/aleksandr-ushakov/005-aleksandr-ushakov-600x400.jpg') + ' 600w, ' +
+                    require('../../../images/coaches/aleksandr-ushakov/005-aleksandr-ushakov-1200x800.jpg') + ' 1200w')
+                a(class='carousel-control-prev', href='#aleksandrUshakovCarousel', role='button', data-slide='prev')
+                  span(class='carousel-control-prev-icon' aria-hidden='true')
+                  span(class='sr-only') Previous
+                a(class='carousel-control-next' href='#aleksandrUshakovCarousel' role='button' data-slide='next')
+                  span(class='carousel-control-next-icon' aria-hidden='true')
+                  span(class='sr-only') Next
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title')
+                | Александр Ушаков
+              //Subtitle
+              p(class='card-subtitle')
+                | Лицензированный инструктор программ
+                br
+                a(href='services/zumba.html') Zumba&nbsp;(R)&nbsp;Fitness
+                |&#8194;и&#8194;
+                a(href='services/zumbaStrong.html') Strong&nbsp;by&nbsp;Zumba&nbsp;(R)
+              p(class='card-text')
+                | В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
+              p(class='card-text')
+                | Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
+              blockquote(class='blockquote mb-0')
+                p(class='card-text')
+                  | "В работе главное - взаимосвязь между инструктором и учеником."
+                footer(class='blockquote-footer')
+                  cite(title='Александр Ушаков') Александр Ушаков
+            div(class='card-footer')
+              div(class='mb-3 mb-lg-0 coach-direction-link')
+                p(class='card-text')
+                  i(class='far fa-list-alt fa-lg')
+                  | &nbsp;
+                  | <b>Направления:<b>
+                ul
+                  each direction in coaches.aleksandrUshakov.directions
+                    li
+                      a(href= direction.link)= direction.title
+              div(class='coach-schedule-link')
+                p(class='card-text')
+                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
+
+//-SCRIPTS
+append scripts
+  //Page scripts
+  +assets('js', /coach\./i)

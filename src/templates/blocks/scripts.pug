@@ -1,27 +1,5 @@
 //Common scripts
-script(type="text/javascript" src="scripts/jquery.js")
-script(type="text/javascript" src="scripts/plugins.js")
-script(type="text/javascript" src="scripts/functions.js")
-if htmlWebpackPlugin.options.name !== 'index'
-  script.
-    jQuery.noConflict();
-    jQuery(document).ready(function domReadyCb($) {
-      $window = $(window);
-      $goToTopEl = $('#abovetherain__gototop');
-      $goToTopEl.click(function () {
-        $('body, html').stop(true).animate({
-          'scrollTop': 0
-        });
-        return false;
-      });
-      $window.on('scroll', function windowScrollCb() {
-        if ($window.scrollTop() > 450) {
-          $goToTopEl.fadeIn();
-        } else {
-          $goToTopEl.fadeOut();
-        }
-      });
-      if ($window.scrollTop() > 450) {
-        $goToTopEl.fadeIn();
-      }
-    });
+//jquery.js
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+//common.js
++assets('js', /common/i)

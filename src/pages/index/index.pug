@@ -1,61 +1,44 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
   - const { options, pages, primaryNavigation, contacts } = require('../../data');
-//-HEAD
+//-META
 append meta
   //Page meta tags
-  title= pages.index.title
-  meta(name='description', content= pages.index.description)
-  if htmlWebpackPlugin.options.server !== 'dev'
+  if pages.index.title
+    title= pages.index.title
+  if pages.index.description
+    meta(name='description', content= pages.index.description)
+  if htmlWebpackPlugin.options.vars.seo
     meta(name='google-site-verification', content='Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig')
     meta(name='yandex-verification', content='f196debf2583cee4')
+//-ICONS
 append icons
   //Page icons
+//-STYLES
 append styles
   //Page styles
-//-BODY
+  +assets('css', /index\./i)
+//-HEADER
 append header
-  +header(primaryNavigation.items)
+  //Header
+  +header(primaryNavigation)
+//-CONTENT
 append content
-  //Primary Slider
-  section#slider.slider-element.slider-parallax.swiper_wrapper.full-screen.force-full-screen.clearfix(data-effect="fade" data-loop="true" data-speed="1000" data-autoplay="5000" data-grab="false")
-    .slider-parallax-inner
-      .swiper-container.swiper-parent
-        .swiper-wrapper
-          //Slide-1
-          .swiper-slide.slide-1
-            .overlay
-            .container.clearfix
-              .slide-wrapper
-                .slider-caption
-                  div
-                    h3(data-caption-animate="slide") Время твоего
-                  div
-                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
-          //Slide-2
-          .swiper-slide.slide-2
-            .overlay
-            .container
-              .slide-wrapper
-                .slider-caption
-                  div
-                    h3(data-caption-animate="slide") Время твоего
-                  div
-                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
-          //Slide-3
-          .swiper-slide.slide-3
-            .overlay
-            .container
-              .slide-wrapper
-                .slider-caption
-                  div
-                    h3(data-caption-animate="slide") Время твоего
-                  div
-                    h3(data-caption-animate="slide" data-caption-delay="200") превосходства
-        //Phone icon
-        #slider-phone
-          a(href=`tel:${contacts.phone}`)
-            i.i-circled.i-light.icon-call
+  //Content
+  <!--CAPTION-->
+  div(class='caption')
+    div(class='container')
+      div(class='row')
+        div(class='col-12')
+          h1 Школа танцев в&nbsp;Санкт&#8209;Петербурге «Над&nbsp;дождём»
+  <!--PHONE-->
+  div(class='phone')
+    a(href= `tel:${contacts.phone}`)
+      i(class='fas fa-phone-square fa-3x')
+//-FOOTER
 block footer
+//-SCRIPTS
 append scripts
   //Page scripts
+  +assets('js', /index\./i)

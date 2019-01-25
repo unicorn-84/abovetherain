@@ -1,37 +1,19 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
-@import '../../styles/navbar';
 
-.contact-content {
-  margin-bottom: $indent * 16;
-  font-family: $heading-font-family;
-  font-weight: $heading-font-weight;
-  color: $text-color;
+ul.contacts {
+  padding: 0;
+  margin: 0 0 2rem 0;
+  list-style-type: none;
+  font-size: 1.5rem;
 
-  @include respond-to(laptop) {
-    margin-left: $indent * 8;
+  li {
+    margin-bottom: 0.5rem;
   }
 
-  i {
-    padding-right: $indent * 8;
-  }
-
-  .contact-address,
-  .contact-phone,
-  .contact-email {
-    @include type(1);
-
-    a {
-      @include link($link-color, 1);
-    }
-  }
-
-  .contact-address,
-  .contact-phone {
-    margin-bottom: $indent * 8;
-  }
+  @include link(light, false, true);
 }
 
 #yandex-map {
-  height: 500px;
+  height: 40rem;
 }

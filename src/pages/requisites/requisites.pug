@@ -1,40 +1,61 @@
 extends ../../templates/layout
+//-VARIABLES
 append variables
-    - const { options, pages, primaryNavigation } = require('../../data');
-//-HEAD
+  - const { options, pages, primaryNavigation } = require('../../data');
+//-META
 append meta
-    //Page meta tags
+  //Page meta tags
+  if pages.requisites.title
     title= pages.requisites.title
+  if pages.requisites.description
     meta(name='description', content= pages.requisites.description)
+//-ICONS
 append icons
-    //Page icons
+  //Page icons
+//-STYLES
 append styles
-    //Page styles
-//-BODY
+  //Page styles
+  +assets('css', /requisites\./i)
+//-HEADER
 append header
-    +header(primaryNavigation.items)
+  //Header
+  +header(primaryNavigation)
+//-PAGE TITLE
+append pageTitle
+  +pageTitle(pages.requisites)
+//-CONTENT
 append content
-    +pageTitle(pages.requisites)
-    section#content
-        .content-wrap
-            .container
-                .row
-                    .col-sm-12
-                        div.requires-wrapper
-                            h3 Реквизиты для перечисления платежей:
-                            p.
-                                ООО «Технологии управления»
-                            p.
-                                ИНН 7816450800<br>
-                                КПП 781301001
-                            p.
-                                БАНК: СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК Г. САНКТ-ПЕТЕРБУРГ<br>
-                                БИК 044030653<br>
-                                К/С 30101810500000000653<br>
-                                Р/С 40702.810.5.55000034772
-                            p
-                             b.
-                              В назначении платежа указать:<br>
-                              «Оплата за участие в танцевальном мероприятии, МК Софа. НДС не облагается»
+  //Content
+  div(id='content')
+    //Container
+    div(class='container')
+      div(class='row')
+        div(class='col-12')
+          div(class='card')
+            //Body
+            div(class='card-body')
+              //Title
+              h2(class='card-title text-center')
+                | Реквизиты для перечисления платежей
+              p(class='card-text')
+                | ООО «Технологии управления»
+              p(class='card-text')
+                | ИНН 7816450800
+                br
+                | КПП 781301001
+              p(class='card-text')
+                | БАНК: СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК Г. САНКТ-ПЕТЕРБУРГ
+                br
+                | БИК 044030653
+                br
+                | К/С 30101810500000000653
+                br
+                | Р/С 40702.810.5.55000034772
+              p(class='card-text font-weight-bold mb-0')
+                | В назначении платежа указать:
+                br
+                | «Оплата за участие в танцевальном мероприятии, МК Софа. НДС не облагается»
+//-SCRIPTS
 append scripts
-    //Page scripts
+  //Page scripts
+  +assets('js', /requisites\./i)
