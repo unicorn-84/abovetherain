@@ -29,7 +29,7 @@
   }
 }
 
-@mixin link($style:dark, $underline:true, $transition:false) {
+@mixin link($style:dark, $underline:true, $transition:false, $bold:true) {
   a {
     @if $style == light {
       color: $light-text-color;
@@ -52,10 +52,16 @@
     }
 
     @else {
-      transition: color 0.1s $function;
+      transition: none;
     }
 
-    font-weight: $heading-font-weight;
+    @if $bold {
+      font-weight: $heading-font-weight;
+    }
+
+    @else {
+      font-weight: $font-weight;
+    }
 
     &:hover,
     &:focus,
