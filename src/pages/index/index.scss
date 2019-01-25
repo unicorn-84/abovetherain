@@ -37,6 +37,12 @@
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
     padding-top: 80px;
+    opacity: 0;
+    transition: opacity 0.1s $function;
+
+    &.visible {
+      opacity: 1;
+    }
 
     @include respond-to(laptop) {
       width: 960px;
@@ -51,7 +57,7 @@
     }
 
     h1 {
-      font-family: 'hercules_modern', sans-serif !important;
+      font-family: 'hercules_modern', serif;
       text-transform: uppercase;
       text-align: center;
       font-size: calc(24px + 3vw);
