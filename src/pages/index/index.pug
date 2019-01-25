@@ -26,44 +26,16 @@ append header
 //-CONTENT
 append content
   //Content
-  <!--PRIMARY SLIDER-->
-  div(id='abovetherain__primary-slider', class='carousel slide carousel-fade', data-ride='carousel', data-pause='false', data-interval='7000')
-    <!--ИНДИКАТОРЫ-->
-    ol(class='carousel-indicators')
-      li(data-target='#abovetherain__primary-slider', data-slide-to='0', class='active')
-      li(data-target='#abovetherain__primary-slider', data-slide-to='1')
-      li(data-target='#abovetherain__primary-slider', data-slide-to='2')
-    <!--СЛАЙДЫ-->
-    div(class='carousel-inner')
-      <!--SLIDE 1-->
-      div(class='carousel-item active')
-        div(class='carousel-image')
-        div(class='carousel-caption')
-          h1(class='h3 text-uppercase') Школа танцев в&nbsp;Санкт&#8209;Петербурге «Над&nbsp;дождём»
-          p(class='d-none d-lg-block') Мини-группы до&nbsp;3&nbsp;человек и&nbsp;просторный зал&nbsp;90&nbsp;м<sup>2</sup>
-      <!--SLIDE 2-->
-      div(class='carousel-item')
-        div(class='carousel-image')
-        div(class='carousel-caption')
-          h2(class='h3 text-uppercase') Раскройте свою силу и&nbsp;красоту с&nbsp;помощью танцев
-          p(class='d-none d-lg-block') Наслаждайтесь движением своего&nbsp;тела
-      <!--SLIDE 3-->
-      div(class='carousel-item')
-        div(class='carousel-image')
-        div(class='carousel-caption')
-          h2(class='h3 text-uppercase') Погрузитесь в&nbsp;дружескую атмосферу и&nbsp;получайте удовольствие
-          p(class='d-none d-lg-block') Профессиональное&nbsp;световое и&nbsp;звуковое&nbsp;оборудование, теплый&nbsp;пол, быстровозводимая&nbsp;сцена, акустический&nbsp;потолок
-      <!--СТРЕЛКИ-->
-      a(class='carousel-control-prev carousel-controls', href='#abovetherain__primary-slider', role='button', data-slide='prev')
-        span(class='carousel-control-prev-icon' aria-hidden='true')
-        span(class='sr-only') Назад
-      a(class='carousel-control-next carousel-controls' href='#abovetherain__primary-slider' role='button' data-slide='next')
-        span(class='carousel-control-next-icon' aria-hidden='true')
-        span(class='sr-only') Вперед
-      <!--PHONE-->
-      div(class='phone')
-        a(href= `tel:${contacts.phone}`)
-          i(class='fas fa-phone-square fa-3x')
+  <!--CAPTION-->
+  div(class='caption')
+    div(class='container')
+      div(class='row')
+        div(class='col-12')
+          h1 Школа танцев в&nbsp;Санкт&#8209;Петербурге «Над&nbsp;дождём»
+  <!--PHONE-->
+  div(class='phone')
+    a(href= `tel:${contacts.phone}`)
+      i(class='fas fa-phone-square fa-3x')
 //-FOOTER
 block footer
 //-SCRIPTS
