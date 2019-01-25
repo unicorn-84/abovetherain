@@ -1,6 +1,15 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
+@font-face {
+  font-family: 'hercules_modern';
+  src:
+    url('../../fonts/hercules_modern/hercules_modern.woff2') format('woff2'),
+    url('../../fonts/hercules_modern/hercules_modern.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #wrapper {
   position: relative;
   overflow: hidden;
@@ -42,6 +51,7 @@
     }
 
     h1 {
+      font-family: 'hercules_modern', sans-serif !important;
       text-transform: uppercase;
       text-align: center;
       font-size: calc(24px + 2vw);
