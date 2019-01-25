@@ -138,12 +138,9 @@ module.exports = {
       whitelistPatterns: [/carousel/, /collapsing/, /^g/],
       fontFace: true,
       rejected: true,
-    })
+    }),
   ],
   optimization: {
-    // TODO: 'Добавить runtime'
-    // https://webpack.js.org/configuration/optimization/
-    // https://developers.google.com/web/fundamentals/performance/webpack/use-long-term-caching
     noEmitOnErrors: true,
   },
   devServer: {
