@@ -1,3 +1,4 @@
+// TODO: 'Подложка для logo'
 import logo from '../../images/logo/logo.png';
 import logoRetina from '../../images/logo/logo@2x.png';
 import { retinaCheck } from './helpers';
