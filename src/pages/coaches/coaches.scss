@@ -1,4 +1,3 @@
-//TODO: 'Градиент для фото'
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
@@ -12,15 +11,16 @@
 
   .coach-image {
     position: relative;
+    overflow: hidden;
 
     &::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba($secondary-dark-text-color, 0.3);
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
     }
 
     img {
