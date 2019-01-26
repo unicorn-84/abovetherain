@@ -10,7 +10,6 @@ import '../../scripts/components/logo';
 import '../../styles/main.scss';
 import '../../scripts/components/sticky';
 import '../../scripts/components/icons';
-import '../../scripts/components/gototop';
 // Local
 import './gallery.scss';
 
