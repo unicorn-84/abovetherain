@@ -1,5 +1,3 @@
-//-TODO: 'Добавить ссылки на расписание и услуги'
-//-TODO: 'Настроить футер'
 extends ../../../templates/layout
 //-VARIABLES
 append variables
@@ -86,35 +84,41 @@ append content
               p(class='card-subtitle')
                 | Лицензированный инструктор программ
                 br
-                a(href='services/zumba.html') Zumba&nbsp;(R)&nbsp;Fitness
+                a(href='services/zumba-fitness.html') Zumba®&nbsp;Fitness
                 |&#8194;и&#8194;
-                a(href='services/zumbaStrong.html') Strong&nbsp;by&nbsp;Zumba&nbsp;(R)
+                a(href='services/zumba-strong.html') Strong&nbsp;by&nbsp;Zumba®
               p(class='card-text')
                 | В составе хореографического танцевального ансамбля "Nord Star" многократный призер и лауреат различных степеней международного конкурса хореографического искусства "Волна успеха"; бронзовый призер всероссийского конкурса талантов "Звезда Удачи".
               p(class='card-text')
                 | Участник и презентр городских спортивных мероприятий (мастер-классов, флеш-мобов, конвенций).
-              blockquote(class='blockquote mb-0')
+              blockquote(class='blockquote')
                 p(class='card-text')
-                  | "В работе главное - взаимосвязь между инструктором и учеником."
+                  | &laquo;В работе главное - взаимосвязь между инструктором и учеником.&raquo;
                 footer(class='blockquote-footer')
                   cite(title='Александр Ушаков') Александр Ушаков
-            div(class='card-footer')
-              div(class='mb-3 mb-lg-0 coach-direction-link')
-                p(class='card-text')
-                  i(class='far fa-list-alt fa-lg')
-                  | &nbsp;
-                  | <b>Направления:<b>
-                ul
-                  each direction in coaches.aleksandrUshakov.directions
-                    li
-                      a(href= direction.link)= direction.title
-              div(class='coach-schedule-link')
-                p(class='card-text')
-                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
-                    i(class='far fa-calendar-alt fa-lg')
-                    | &nbsp;
-                    | Расписание занятий
-
+            if coaches.aleksandrUshakov.directions || coaches.aleksandrUshakov.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if coaches.aleksandrUshakov.directions
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Направления:
+                    ul
+                      each direction in coaches.aleksandrUshakov.directions
+                        li
+                          if direction.link
+                            a(href= direction.link)= direction.title
+                          else
+                            | #{direction.title}
+                  if coaches.aleksandrUshakov.schedule
+                    div(class='coach-schedule-link')
+                      h5(class='card-text')
+                        a(class='coach-schedule-link', href= coaches.aleksandrUshakov.schedule)
+                          i(class='far fa-calendar-alt fa-lg')
+                          | &nbsp;
+                          | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

@@ -169,7 +169,7 @@
       "template": "./src/pages/services/service/rent.pug",
       "title": "Аренда танцевального зала в СПб для любых мероприятий | Над Дождём",
       "description": "Аренда зала в СПБ - у нас лучшие условия и цены! К вашим услугам просторный зал 90 м с уютным бельэтажем для гостей, профессиональная звуковая аппаратура и освещение. Удобное расположение, живописное место с видом на набережную. Звоните: +7 952 3999930",
-      "pageTitle": "Аренда",
+      "pageTitle": "Аренда сценической площадки",
       "breadcrumbs": [
         {
           "name": "Главная",
@@ -185,10 +185,31 @@
         }
       ]
     },
-    "hood": {
-      "name": "hood",
-      "link": "services/hood.html",
-      "template": "./src/pages/services/service/hood.pug",
+    "poleDance": {
+      "name": "pole-dance",
+      "link": "services/pole-dance.html",
+      "template": "./src/pages/services/service/pole-dance.pug",
+      "title": "Pole Dance | Над Дождём",
+      "pageTitle": "Pole Dance",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Pole Dance",
+          "path": "current"
+        }
+      ]
+    },
+    "hoop": {
+      "name": "hoop",
+      "link": "services/hoop.html",
+      "template": "./src/pages/services/service/hoop.pug",
       "title": "Воздушное кольцо | Над Дождём",
       "pageTitle": "Воздушное кольцо",
       "breadcrumbs": [
@@ -223,27 +244,6 @@
         },
         {
           "name": "Воздушное полотно",
-          "path": "current"
-        }
-      ]
-    },
-    "poleDance": {
-      "name": "pole-dance",
-      "link": "services/pole-dance.html",
-      "template": "./src/pages/services/service/pole-dance.pug",
-      "title": "Pole Dance | Над Дождём",
-      "pageTitle": "Pole Dance",
-      "breadcrumbs": [
-        {
-          "name": "Главная",
-          "path": "index.html"
-        },
-        {
-          "name": "Услуги",
-          "path": "services.html"
-        },
-        {
-          "name": "Pole Dance",
           "path": "current"
         }
       ]
@@ -290,10 +290,10 @@
         }
       ]
     },
-    "zumba": {
-      "name": "zumba",
-      "link": "services/zumba.html",
-      "template": "./src/pages/services/service/zumba.pug",
+    "zumbaFitness": {
+      "name": "zumba-fitness",
+      "link": "services/zumba-fitness.html",
+      "template": "./src/pages/services/service/zumba-fitness.pug",
       "title": "Zumba® Fitness | Над Дождём",
       "pageTitle": "Zumba® Fitness",
       "breadcrumbs": [
@@ -493,113 +493,131 @@
       "title": "Контакты"
     }
   ],
-  "services": [
-    {
+  "directions": {
+    "rent": {
       "name": "rent",
-      "title": "Аренда"
+      "title": "Аренда сценической площадки",
+      "link": "services/rent.html"
     },
-    {
-      "name": "aerial-hoop",
-      "title": "Воздушное кольцо"
-    },
-    {
-      "name": "aerial-silk",
-      "title": "Воздушное полотно"
-    },
-    {
+    "poleDance": {
       "name": "pole-dance",
-      "title": "Pole Dance"
+      "title": "Pole Dance",
+      "link": "services/pole-dance.html",
+      "schedule": "schedule.html?direction=pole-dance&coach=all&day=all",
+      "coaches": [
+        {
+          "title": "Надежда Лучинина",
+          "link": "coaches/nadezhda-luchinina.html"
+        },
+        {
+          "title": "Яна Белякова",
+          "link": "coaches/yana-belyakova.html"
+        }
+      ]
     },
-    {
+    "hoop": {
+      "name": "hoop",
+      "title": "Воздушное кольцо",
+      "link": "services/hoop.html",
+      "schedule": "schedule.html?direction=hoop&coach=all&day=all"
+    },
+    "silk": {
+      "name": "silk",
+      "title": "Воздушное полотно",
+      "link": "services/silk.html",
+      "schedule": "schedule.html?direction=silk&coach=all&day=all"
+    },
+    "yoga": {
       "name": "yoga",
-      "title": "Королевская йога"
-    }
-  ],
-  "directions": [
-    {
-      "name": "yoga",
-      "title": "Королевская йога"
+      "title": "Королевская йога",
+      "link": "services/yoga.html",
+      "schedule": "schedule.html?direction=silk&coach=all&day=all"
     },
-    {
-      "name": "pole_dance",
-      "title": "Pole Dance"
-    },
-    {
-      "name": "pole_dance_child",
-      "title": "Детский Pole Dance"
-    },
-    {
+    "stretching": {
       "name": "stretching",
       "title": "Stretching",
+      "link": "services/stretching.html",
+      "schedule": "schedule.html?direction=stretching&coach=all&day=all",
       "coaches": [
         {
-          "title": "Надежда Лучинина"
+          "title": "Надежда Лучинина",
+          "link": "coaches/nadezhda-luchinina.html"
         }
       ]
     },
-    {
-      "name": "stretching_silk",
-      "title": "Stretching на полотнах"
+    "zumbaFitness": {
+      "name": "zumba-fitness",
+      "title": "Zumba® Fitness",
+      "link": "services/zumba-fitness.html",
+      "schedule": "schedule.html?direction=zumba-fitness&coach=all&day=all",
+      "coaches": [
+        {
+          "title": "Александр Ушаков",
+          "link": "coaches/aleksandr-ushakov.html"
+        }
+      ]
     },
-    {
-      "name": "aerial_hoop",
-      "title": "Воздушное кольцо",
-      "coaches": []
+    "healthyBack": {
+      "name": "healthy-back",
+      "title": "Здоровая спина",
+      "link": "services/healthy-back.html"
     },
-    {
-      "name": "aerial_silk",
-      "title": "Воздушное полотно",
-      "coaches": []
+    "superSculpt": {
+      "name": "super-sculpt",
+      "title": "Super Sculpt",
+      "link": "services/super-sculpt.html"
     },
-    {
-      "name": "rhythmic_gymnastics",
+    "zumbaStrong": {
+      "name": "zumba-strong",
+      "title": "Strong by Zumba®",
+      "link": "services/zumba-strong.html",
+      "schedule": "schedule.html?direction=zumba-strong&coach=all&day=all",
+      "coaches": [
+        {
+          "title": "Александр Ушаков",
+          "link": "coaches/aleksandr-ushakov.html"
+        }
+      ]
+    },
+    "stretchingSilk": {
+      "name": "stretching-silk",
+      "title": "Stretching на полотнах",
+      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all"
+    },
+    "rhythmicGymnastics": {
+      "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
-      "coaches": []
+      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all"
     },
-    {
-      "name": "functional_training",
+    "functionalTraining": {
+      "name": "functional-training",
       "title": "Функциональный тренинг",
+      "schedule": "schedule.html?direction=functional-training&coach=all&day=all",
       "coaches": [
         {
-          "title": "Яна Белякова"
+          "title": "Яна Белякова",
+          "link": "coaches/yana-belyakova.html"
         }
       ]
     },
-    {
+    "plastic": {
       "name": "plastic",
       "title": "Женская пластика",
+      "schedule": "schedule.html?direction=plastic&coach=all&day=all",
       "coaches": [
         {
-          "title": "Яна Белякова"
-        }
-      ]
-    },
-    {
-      "name": "zumba_fitness",
-      "title": "Zumba (R) Fitness",
-      "coaches": [
-        {
-          "title": "Александр Ушаков",
-          "link": "aleksandrUshakov.html"
-        }
-      ]
-    },
-    {
-      "name": "zumba_strong",
-      "title": "Strong by Zumba (R)",
-      "coaches": [
-        {
-          "title": "Александр Ушаков",
-          "link": "aleksandrUshakov.html"
+          "title": "Яна Белякова",
+          "link": "coaches/yana-belyakova.html"
         }
       ]
     }
-  ],
+  },
   "coaches": {
     "nadezhdaLuchinina": {
       "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
       "link": "coaches/nadezhda-luchinina.html",
+      "schedule": "schedule.html?direction=all&coach=nadezhda-luchinina&day=all",
       "directions": [
         {
           "title": "Pole dance",
@@ -615,7 +633,12 @@
       "name": "yana-belyakova",
       "title": "Яна Белякова",
       "link": "coaches/yana-belyakova.html",
+      "schedule": "schedule.html?direction=all&coach=yana-belyakova&day=all",
       "directions": [
+        {
+          "title": "Pole Dance",
+          "link": "services/pole-dance.html"
+        },
         {
           "title": "Функциональный тренинг"
         },
@@ -628,10 +651,11 @@
       "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
       "link": "coaches/aleksandr-ushakov.html",
+      "schedule": "schedule.html?direction=all&coach=aleksandr-ushakov&day=all",
       "directions": [
         {
           "title": "Zumba® Fitness",
-          "link": "services/zumba.html"
+          "link": "services/zumba-fitness.html"
         },
         {
           "title": "Strong by Zumba®",

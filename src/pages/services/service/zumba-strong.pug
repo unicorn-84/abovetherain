@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -52,6 +52,29 @@ append content
                 | Это интенсивная, музыкальная тренировка с мощными кардио-силовыми упражнениями (планки, отжимания, приседания, бёрпи). Основной целью этого направления является проработка основных групп мышц всего тела с использованием только своего веса.
               p(class='card-text') Тренировка состоит из нескольких частей. Все части имеют разную степень сложности. Самая последняя всегда выполняется на полу: пресс, планки, скрутки. Во всех частях интенсивная фаза сменяется фазой отдыха. Вся тренировка проходит под ритмичную музыку: афро, дабстеп, латиноамериканские ритмы, которая пишется специально под движения и помогает сконцентрироваться на технике исполнения.
               p(class='card-text') После одного занятия Strong by zumba® вы почувствуете мощный прилив сил и результат от тренировок не заставит себя ждать.
+            if directions.zumbaStrong.coaches || directions.zumbaStrong.schedule
+              //Footer
+              div(class='card-footer service-footer')
+                if directions.zumbaStrong.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.zumbaStrong.coaches
+                        li
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
+                if directions.zumbaStrong.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.zumbaStrong.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

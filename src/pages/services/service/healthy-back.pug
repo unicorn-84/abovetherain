@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -66,6 +66,30 @@ append content
                 | Ограничения для посещения занятий:
                 br
                 | Период обострения болезни, показания к операции, грыжа больше 1.2, через 6-7 недель после хирургического вмешательства.
+
+            if directions.healthyBack.coaches || directions.healthyBack.schedule
+              //Footer
+              div(class='card-footer service-footer')
+                if directions.healthyBack.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.healthyBack.coaches
+                        li
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
+                if directions.healthyBack.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.healthyBack.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts
