@@ -62,9 +62,12 @@ append content
                       | &nbsp;
                       | Тренеры:
                     ul
-                       each coach in directions.hoop.coaches
+                      each coach in directions.hoop.coaches
                         li
-                          a(href= coach.link)= coach.title
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
                 if directions.hoop.schedule
                   div(class='coach-schedule-link')
                     h5(class='card-text')
