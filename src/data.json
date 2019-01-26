@@ -503,6 +503,7 @@
       "name": "pole-dance",
       "title": "Pole Dance",
       "link": "services/pole-dance.html",
+      "schedule": "schedule.html?direction=pole-dance&coach=all&day=all",
       "coaches": [
         {
           "title": "Надежда Лучинина",
@@ -518,24 +519,28 @@
       "name": "hoop",
       "title": "Воздушное кольцо",
       "link": "services/hoop.html",
+      "schedule": "schedule.html?direction=hoop&coach=all&day=all",
       "coaches": []
     },
     "silk": {
       "name": "silk",
       "title": "Воздушное полотно",
       "link": "services/silk.html",
+      "schedule": "schedule.html?direction=silk&coach=all&day=all",
       "coaches": []
     },
     "yoga": {
       "name": "yoga",
       "title": "Королевская йога",
       "link": "services/yoga.html",
+      "schedule": "schedule.html?direction=silk&coach=all&day=all",
       "coaches":[]
     },
     "stretching": {
       "name": "stretching",
       "title": "Stretching",
       "link": "services/stretching.html",
+      "schedule": "schedule.html?direction=stretching&coach=all&day=all",
       "coaches": [
         {
           "title": "Надежда Лучинина",
@@ -547,6 +552,7 @@
       "name": "zumba-fitness",
       "title": "Zumba® Fitness",
       "link": "services/zumba-fitness.html",
+      "schedule": "schedule.html?direction=zumba-fitness&coach=all&day=all",
       "coaches": [
         {
           "title": "Александр Ушаков",
@@ -568,6 +574,7 @@
       "name": "zumba-strong",
       "title": "Strong by Zumba®",
       "link": "services/zumba-strong.html",
+      "schedule": "schedule.html?direction=zumba-strong&coach=all&day=all",
       "coaches": [
         {
           "title": "Александр Ушаков",
@@ -578,16 +585,19 @@
     "stretchingSilk": {
       "name": "stretching-silk",
       "title": "Stretching на полотнах",
+      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all",
       "coaches": []
     },
     "rhythmicGymnastics": {
       "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
+      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all",
       "coaches": []
     },
     "functionalTraining": {
       "name": "functional-training",
       "title": "Функциональный тренинг",
+      "schedule": "schedule.html?direction=functional-training&coach=all&day=all",
       "coaches": [
         {
           "title": "Яна Белякова",
@@ -598,6 +608,7 @@
     "plastic": {
       "name": "plastic",
       "title": "Женская пластика",
+      "schedule": "schedule.html?direction=plastic&coach=all&day=all",
       "coaches": [
         {
           "title": "Яна Белякова",
