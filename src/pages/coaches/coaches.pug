@@ -39,10 +39,10 @@ append content
             })
               if coach.link
                 a(href= coach.link)
-                  div(class='coach-image')
+                  div(class='coach-image image-container')
                     img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
               else
-                div(class='coach-image')
+                div(class='coach-image image-container')
                   img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(
                     `../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' +
                   require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) +

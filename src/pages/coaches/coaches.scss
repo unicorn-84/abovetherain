@@ -9,9 +9,15 @@
   border-radius: 0.5rem;
   border: 4px $card-bg solid;
 
+  @include img-container(125%);
+
   .coach-image {
     position: relative;
     overflow: hidden;
+
+    img {
+      border-radius: calc(0.25rem - 1px);
+    }
 
     &::after {
       content: '';
@@ -21,13 +27,6 @@
       bottom: -5px;
       left: -5px;
       background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
-    }
-
-    img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: calc(0.25rem - 1px);
     }
   }
 
