@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -67,23 +67,26 @@ append content
                 br
                 | Период обострения болезни, показания к операции, грыжа больше 1.2, через 6-7 недель после хирургического вмешательства.
 
-            //Footer
-            div(class='card-footer coach-footer')
-              div(class='coach-direction-link')
-                h5(class='card-text')
-                  i(class='far fa-list-alt fa-lg')
-                  | &nbsp;
-                  | <b>Тренеры:<b>
-                ul
-                  // each coach in directions.aleksandrUshakov.directions
-                    li
-                      a(href= direction.link)= direction.title
-              div(class='coach-schedule-link')
-                h5(class='card-text')
-                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
-                    i(class='far fa-calendar-alt fa-lg')
-                    | &nbsp;
-                    | Расписание занятий
+            if directions.healthyBack.coaches || directions.healthyBack.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.healthyBack.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.healthyBack.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.healthyBack.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.healthyBack.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

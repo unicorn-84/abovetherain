@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -78,6 +78,26 @@ append content
                 |Ограничения:
                 br
                 |Максимальное количество гостей вместе с выступающими не более 60 человек.
+            if directions.rent.coaches || directions.rent.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.rent.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.rent.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.rent.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.rent.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

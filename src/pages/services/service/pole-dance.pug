@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -50,6 +50,26 @@ append content
                 | Пробное занятие - 500 руб
               p(class='card-text')
                 | Pole Dance — это фитнес нового поколения, объединяющий в себе современную хореографию и воздушную акробатику. Помогает развивать и укреплять все группы мышц, совершенствовать красоту тела и достигать внутреннего раскрепощения.
+            if directions.poleDance.coaches || directions.poleDance.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.poleDance.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.poleDance.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.poleDance.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.poleDance.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts
