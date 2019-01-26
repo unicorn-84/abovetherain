@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -62,6 +62,29 @@ append content
                 | Эта программа популярна у женщин, поскольку помогает улучшить форму всего тела и привести вес в норму. Super Sculpt развивает выносливость, ускоряет обменные процессы, повышает иммунитет и дает заряд бодрости.
                 | Тренер индивидуально рассчитывает нагрузку для каждого, поэтому новичок точно освоит программу и быстро войдет в ритм.
                 | Для тренировки необходима спортивная одежда и обувь, а также желание поработать над собой.
+            if directions.superSculpt.coaches || directions.superSculpt.schedule
+              //Footer
+              div(class='card-footer service-footer')
+                if directions.superSculpt.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.superSculpt.coaches
+                        li
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
+                if directions.superSculpt.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.superSculpt.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

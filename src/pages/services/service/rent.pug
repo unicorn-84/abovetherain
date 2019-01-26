@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -74,10 +74,32 @@ append content
               p(class='card-text')
                 |В вашем распоряжении легко возводимая модульная сцена, бархатный занавес, проф. световое и музыкальное оборудование, быстросъемные двух-режимные пилоны, воздушные кольца и полотна.
               p(class='card-text')
-                //TODO: 'bold?'
-                |Ограничения:
+                |<b>Ограничения:</b>
                 br
                 |Максимальное количество гостей вместе с выступающими не более 60 человек.
+            if directions.rent.coaches || directions.rent.schedule
+              //Footer
+              div(class='card-footer service-footer')
+                if directions.rent.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.rent.coaches
+                        li
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
+                if directions.rent.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.rent.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

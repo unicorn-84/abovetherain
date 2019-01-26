@@ -1,7 +1,3 @@
-//TODO: 'Градиент для фото'
-//TODO: 'Увеличить расстояние между направлениями'
-//TODO: 'Перенести иконки'
-//TODO: 'Ссылки на заголовок и изображение'
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
@@ -13,24 +9,24 @@
   border-radius: 0.5rem;
   border: 4px $card-bg solid;
 
+  @include image-container(125%);
+
   .coach-image {
+    position: relative;
+    overflow: hidden;
+
     img {
-      display: block;
-      width: 100%;
-      height: auto;
       border-radius: calc(0.25rem - 1px);
     }
-
-    position: relative;
 
     &::after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 100%;
-      background-color: rgba($secondary-dark-text-color, 0.3);
+      top: -5px;
+      right: -5px;
+      bottom: -5px;
+      left: -5px;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0, 0, 0, 0.7) 100%);
     }
   }
 
@@ -43,15 +39,33 @@
     justify-content: space-between;
     padding: 1rem;
 
-    h3 {
+    .coach-directions {
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
+
+        li {
+          margin-bottom: 0.5rem;
+
+          @include link(light, true, false);
+        }
+      }
+
+      > :last-child {
+        margin-bottom: 0 !important;
+
+        :last-child {
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+
+    .coach-title {
       margin-bottom: 1rem;
-    }
 
-    p {
-      margin-bottom: 0;
+      @include link(light, false, true);
     }
-
-    @include link(light, true, false, false);
 
     .coach-icons {
       display: flex;

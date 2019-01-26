@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -42,7 +42,7 @@ append content
             div(class='card-body')
               //Title
               h2(class='card-title')
-                | Воздушное кольцо
+                | Королевская йога
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -50,6 +50,29 @@ append content
                 | Пробное занятие - 500 руб
               p(class='card-text')
                 | Йога - практика ума и тела, сочетающая в себе различные физические позы, дыхательные техники, медитацию и релаксацию. Занятие по йоге нацелено на гармонизацию психического и физиологического состояния организма.
+            if directions.yoga.coaches || directions.yoga.schedule
+              //Footer
+              div(class='card-footer service-footer')
+                if directions.yoga.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.yoga.coaches
+                        li
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
+                if directions.yoga.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.yoga.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

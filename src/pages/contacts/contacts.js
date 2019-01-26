@@ -5,7 +5,6 @@ import 'collapse';
 import '../../styles/main.scss';
 import '../../scripts/components/sticky';
 import '../../scripts/components/icons';
-import '../../scripts/components/gototop';
 import '../../scripts/components/fon';
 import '../../scripts/components/logo';
 // Local
@@ -14,7 +13,6 @@ import './contacts.scss';
 import logo from '../../images/logo/logo@2x.png';
 import evacuatorLogo from '../../images/icons/evacuator.png';
 
-// TODO: 'Загружать лениво'
 (function createMap() {
   function init() {
     const map = new ymaps.Map('yandex-map', {

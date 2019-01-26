@@ -1,10 +1,8 @@
-//-TODO: 'Ссылки в title и image'
-//-TODO: 'Добавить ссылки на расписание и тренеров'
-//-TODO: 'Перенести записи с слайдера'
+//-TODO: 'Итерировать массив'
 extends ../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../data');
+  - const { options, pages, primaryNavigation, contacts } = require('../../data');
 //-META
 append meta
   //Page meta tags
@@ -34,12 +32,40 @@ append content
     //Container
     div(class='container')
       div(class='row')
+        div(class='col-12')
+          div(class='card mb-4')
+            div(class='card-body')
+              h3 Раскройте свою силу и красоту с помощью танцев.
+              p Наслаждайтесь движением своего тела.
+              h3 Погрузитесь в дружескую атмосферу и получайте удовольствие от спортивных занятий в просторном, оборудованном зале.
+              p Профессиональное световое и звуковое оборудование, теплый пол, быстровозводимая сцена, акустический потолок.
+              p Приглашаем вас на пробное занятие.
+                br
+                |Запишитесь на него:
+                br
+                span(class='phone-link')
+                  a(href=`tel:${contacts.phone}`)
+                    i(class='fas fa-phone fa-rotate-90 fa-fw')
+                    |&nbsp;
+                    |#{contacts.phone}
+                br
+                |Опытные тренеры помогут раскрыть ваш талант.
+                br
+                |Мы стремимся сделать танец выражением личности и инструментом самопознания.
+    div(class='container')
+      div(class='row')
         <!--АРЕНДА-->
         div(class='col-12 col-md-6 col-lg-4 d-flex align-items-stretch')
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              a(href= pages.rent.link)
+              if pages.rent.link
+                a(href= pages.rent.link)
+                  img(class='card-img-top', src= require(
+                    '../../images/services/rent/001-rent-600x400.jpg'), alt='Аренда сценической площадки | Над Дождём', srcset= require(
+                    '../../images/services/rent/001-rent-600x400.jpg') + ' 600w,' +
+                  require('../../images/services/rent/001-rent-800x533.jpg') + ' 800w')
+              else
                 img(class='card-img-top', src= require(
                   '../../images/services/rent/001-rent-600x400.jpg'), alt='Аренда сценической площадки | Над Дождём', srcset= require(
                   '../../images/services/rent/001-rent-600x400.jpg') + ' 600w,' +
@@ -48,7 +74,11 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Аренда сценической площадки
+                if pages.rent.link
+                  a(href= pages.rent.link)
+                    | Аренда сценической площадки
+                else
+                  | Аренда сценической площадки
               //Subtitle
               p(class='card-subtitle')
                 | от 25 000 до 40 000 руб
@@ -60,7 +90,13 @@ append content
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              a(href= pages.poleDance.link)
+              if pages.poleDance.link
+                a(href= pages.poleDance.link)
+                  img(class='card-img-top', src= require(
+                    '../../images/services/pole-dance/001-pole-dance-600x400.jpg'), alt='Pole Dance | Над Дождём', srcset= require(
+                    '../../images/services/pole-dance/001-pole-dance-600x400.jpg') + ' 600w,' +
+                  require('../../images/services/pole-dance/001-pole-dance-800x533.jpg') + ' 800w')
+              else
                 img(class='card-img-top', src= require(
                   '../../images/services/pole-dance/001-pole-dance-600x400.jpg'), alt='Pole Dance | Над Дождём', srcset= require(
                   '../../images/services/pole-dance/001-pole-dance-600x400.jpg') + ' 600w,' +
@@ -69,7 +105,11 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Pole Dance
+                if pages.poleDance.link
+                  a(href= pages.poleDance.link)
+                    | Pole Dance
+                else
+                  | Pole Dance
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -83,15 +123,26 @@ append content
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              img(class='card-img-top', src= require(
-                '../../images/services/hood/001-hood-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
-                '../../images/services/hood/001-hood-600x400.jpg') + ' 600w,' +
-              require('../../images/services/hood/001-hood-800x533.jpg') + ' 800w')
+              if pages.hoop.link
+                a(href= pages.hoop.link)
+                  img(class='card-img-top', src= require(
+                '../../images/services/hoop/001-hoop-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+                '../../images/services/hoop/001-hoop-600x400.jpg') + ' 600w,' +
+              require('../../images/services/hoop/001-hoop-800x533.jpg') + ' 800w')
+              else
+                img(class='card-img-top', src= require(
+                  '../../images/services/hoop/001-hoop-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+                  '../../images/services/hoop/001-hoop-600x400.jpg') + ' 600w,' +
+                require('../../images/services/hoop/001-hoop-800x533.jpg') + ' 800w')
             //Body
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Воздушное кольцо
+                if pages.hoop.link
+                  a(href= pages.hoop.link)
+                    | Воздушное кольцо
+                else
+                  | Воздушное кольцо
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -99,21 +150,32 @@ append content
                 | Пробное занятие - 500 руб
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(href= pages.hood.link, class='read-more') Подробнее...
+                a(href= pages.hoop.link, class='read-more') Подробнее...
         <!--ПОЛОТНО-->
         div(class='col-12 col-md-6 col-lg-4 d-flex align-items-stretch')
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              img(class='card-img-top', src= require(
+              if pages.silk.link
+                a(href= pages.silk.link)
+                  img(class='card-img-top', src= require(
                 '../../images/services/silk/001-silk-600x400.jpg'), alt='Воздушное полотно | Над Дождём', srcset= require(
                 '../../images/services/silk/001-silk-600x400.jpg') + ' 600w,' +
               require('../../images/services/silk/001-silk-800x533.jpg') + ' 800w')
+              else
+                img(class='card-img-top', src= require(
+                  '../../images/services/silk/001-silk-600x400.jpg'), alt='Воздушное полотно | Над Дождём', srcset= require(
+                  '../../images/services/silk/001-silk-600x400.jpg') + ' 600w,' +
+                require('../../images/services/silk/001-silk-800x533.jpg') + ' 800w')
             //Body
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Воздушное полотно
+                if pages.silk.link
+                  a(href= pages.silk.link)
+                    | Воздушное полотно
+                else
+                  | Воздушное полотно
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -127,15 +189,26 @@ append content
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              img(class='card-img-top', src= require(
+              if pages.yoga.link
+                a(href= pages.yoga.link)
+                  img(class='card-img-top', src= require(
                 '../../images/services/yoga/001-yoga-600x400.jpg'), alt='Королевская йога | Над Дождём', srcset= require(
                 '../../images/services/yoga/001-yoga-600x400.jpg') + ' 600w,' +
               require('../../images/services/yoga/001-yoga-800x533.jpg') + ' 800w')
+              else
+                img(class='card-img-top', src= require(
+                  '../../images/services/yoga/001-yoga-600x400.jpg'), alt='Королевская йога | Над Дождём', srcset= require(
+                  '../../images/services/yoga/001-yoga-600x400.jpg') + ' 600w,' +
+                require('../../images/services/yoga/001-yoga-800x533.jpg') + ' 800w')
             //Body
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Королевская йога
+                if pages.yoga.link
+                  a(href= pages.yoga.link)
+                    | Королевская йога
+                else
+                  | Королевская йога
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -149,15 +222,26 @@ append content
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              img(class='card-img-top', src= require(
+              if pages.stretching.link
+                a(href= pages.stretching.link)
+                  img(class='card-img-top', src= require(
                 '../../images/services/stretching/001-stretching-600x400.jpg'), alt='Stretching | Над Дождём', srcset= require(
                 '../../images/services/stretching/001-stretching-600x400.jpg') + ' 600w,' +
               require('../../images/services/stretching/001-stretching-800x533.jpg') + ' 800w')
+              else
+                img(class='card-img-top', src= require(
+                  '../../images/services/stretching/001-stretching-600x400.jpg'), alt='Stretching | Над Дождём', srcset= require(
+                  '../../images/services/stretching/001-stretching-600x400.jpg') + ' 600w,' +
+                require('../../images/services/stretching/001-stretching-800x533.jpg') + ' 800w')
             //Body
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Stretching
+                if pages.stretching.link
+                  a(href= pages.stretching.link)
+                    | Stretching
+                else
+                  | Stretching
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -171,15 +255,26 @@ append content
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              img(class='card-img-top', src= require(
-                '../../images/services/zumba/001-zumba-600x400.jpg'), alt='Zumba Fitness | Над Дождём', srcset= require(
-                '../../images/services/zumba/001-zumba-600x400.jpg') + ' 600w,' +
-              require('../../images/services/zumba/001-zumba-1200x800.jpg') + ' 1200w')
+              if pages.zumbaFitness.link
+                a(href= pages.zumbaFitness.link)
+                  img(class='card-img-top', src= require(
+                '../../images/services/zumba-fitness/001-zumba-fitness-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require(
+                '../../images/services/zumba-fitness/001-zumba-fitness-600x400.jpg') + ' 600w,' +
+              require('../../images/services/zumba-fitness/001-zumba-fitness-1200x800.jpg') + ' 1200w')
+              else
+                img(class='card-img-top', src= require(
+                  '../../images/services/zumba-fitness/001-zumba-fitness-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require(
+                  '../../images/services/zumba-fitness/001-zumba-fitness-600x400.jpg') + ' 600w,' +
+                require('../../images/services/zumba-fitness/001-zumba-fitness-1200x800.jpg') + ' 1200w')
             //Body
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Zumba® Fitness
+                if pages.zumbaFitness.link
+                  a(href= pages.zumbaFitness.link)
+                    | Zumba® Fitness
+                else
+                  | Zumba® Fitness
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -187,7 +282,7 @@ append content
                 | Пробное занятие - 500 руб
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(href= pages.zumba.link, class='read-more') Подробнее...
+                a(href= pages.zumbaFitness.link, class='read-more') Подробнее...
         <!--ЗДОРОВАЯ СПИНА-->
         div(class='col-12 col-md-6 col-lg-4')
           div(class='card mb-4')
@@ -196,7 +291,11 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Здоровая спина
+                if pages.healthyBack.link
+                  a(href= pages.healthyBack.link)
+                    | Здоровая спина
+                else
+                  | Здоровая спина
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -213,7 +312,11 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Super Sculpt
+                if pages.superSculpt.link
+                  a(href= pages.superSculpt.link)
+                    | Super Sculpt
+                else
+                  | Super Sculpt
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
@@ -230,7 +333,11 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                | Strong by Zumba®
+                if pages.zumbaStrong.link
+                  a(href= pages.zumbaStrong.link)
+                    | Strong by Zumba®
+                else
+                  | Strong by Zumba®
               //Subtitle
               p(class='card-subtitle')
                 | Одно занятие - 750 руб
