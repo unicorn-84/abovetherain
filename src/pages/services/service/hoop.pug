@@ -5,10 +5,10 @@ append variables
 //-META
 append meta
   //Page meta tags
-  if pages.hood.title
-    title= pages.hood.title
-  if pages.hood.description
-    meta(name='description', content= pages.hood.description)
+  if pages.hoop.title
+    title= pages.hoop.title
+  if pages.hoop.description
+    meta(name='description', content= pages.hoop.description)
 //-ICONS
 append icons
   //Page icons
@@ -22,7 +22,7 @@ append header
   +header(primaryNavigation)
 //-PAGE TITLE
 append pageTitle
-  +pageTitle(pages.hood)
+  +pageTitle(pages.hoop)
 //-CONTENT
 append content
   //Content
@@ -35,9 +35,9 @@ append content
             //Image
             div(class='image-container')
               img(class='card-img-top', src= require(
-                '../../../images/services/hood/001-hood-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
-                '../../../images/services/hood/001-hood-600x400.jpg') + ' 600w,' +
-              require('../../../images/services/hood/001-hood-800x533.jpg') + ' 800w')
+                '../../../images/services/hoop/001-hoop-600x400.jpg'), alt='Воздушное кольцо | Над Дождём', srcset= require(
+                '../../../images/services/hoop/001-hoop-600x400.jpg') + ' 600w,' +
+              require('../../../images/services/hoop/001-hoop-800x533.jpg') + ' 800w')
             //Body
             div(class='card-body')
               //Title

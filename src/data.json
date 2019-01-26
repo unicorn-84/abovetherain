@@ -185,10 +185,10 @@
         }
       ]
     },
-    "hood": {
-      "name": "hood",
-      "link": "services/hood.html",
-      "template": "./src/pages/services/service/hood.pug",
+    "hoop": {
+      "name": "hoop",
+      "link": "services/hoop.html",
+      "template": "./src/pages/services/service/hoop.pug",
       "title": "Воздушное кольцо | Над Дождём",
       "pageTitle": "Воздушное кольцо",
       "breadcrumbs": [
@@ -290,10 +290,10 @@
         }
       ]
     },
-    "zumba": {
-      "name": "zumba",
-      "link": "services/zumba.html",
-      "template": "./src/pages/services/service/zumba.pug",
+    "zumbaFitness": {
+      "name": "zumba-fitness",
+      "link": "services/zumba-fitness.html",
+      "template": "./src/pages/services/service/zumba-fitness.pug",
       "title": "Zumba® Fitness | Над Дождём",
       "pageTitle": "Zumba® Fitness",
       "breadcrumbs": [
@@ -605,7 +605,7 @@
       "directions": [
         {
           "title": "Zumba® Fitness",
-          "link": "services/zumba.html"
+          "link": "services/zumba-fitness.html"
         },
         {
           "title": "Strong by Zumba®",
