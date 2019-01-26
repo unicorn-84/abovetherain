@@ -13,7 +13,6 @@ import './contacts.scss';
 import logo from '../../images/logo/logo@2x.png';
 import evacuatorLogo from '../../images/icons/evacuator.png';
 
-// TODO: 'Загружать лениво'
 (function createMap() {
   function init() {
     const map = new ymaps.Map('yandex-map', {
