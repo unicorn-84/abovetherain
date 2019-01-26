@@ -185,6 +185,27 @@
         }
       ]
     },
+    "poleDance": {
+      "name": "pole-dance",
+      "link": "services/pole-dance.html",
+      "template": "./src/pages/services/service/pole-dance.pug",
+      "title": "Pole Dance | Над Дождём",
+      "pageTitle": "Pole Dance",
+      "breadcrumbs": [
+        {
+          "name": "Главная",
+          "path": "index.html"
+        },
+        {
+          "name": "Услуги",
+          "path": "services.html"
+        },
+        {
+          "name": "Pole Dance",
+          "path": "current"
+        }
+      ]
+    },
     "hoop": {
       "name": "hoop",
       "link": "services/hoop.html",
@@ -223,27 +244,6 @@
         },
         {
           "name": "Воздушное полотно",
-          "path": "current"
-        }
-      ]
-    },
-    "poleDance": {
-      "name": "pole-dance",
-      "link": "services/pole-dance.html",
-      "template": "./src/pages/services/service/pole-dance.pug",
-      "title": "Pole Dance | Над Дождём",
-      "pageTitle": "Pole Dance",
-      "breadcrumbs": [
-        {
-          "name": "Главная",
-          "path": "index.html"
-        },
-        {
-          "name": "Услуги",
-          "path": "services.html"
-        },
-        {
-          "name": "Pole Dance",
           "path": "current"
         }
       ]
