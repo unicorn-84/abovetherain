@@ -622,6 +622,7 @@
       "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
       "link": "coaches/nadezhda-luchinina.html",
+      "schedule": "schedule.html?direction=all&coach=nadezhda-luchinina&day=all",
       "directions": [
         {
           "title": "Pole dance",
@@ -637,6 +638,7 @@
       "name": "yana-belyakova",
       "title": "Яна Белякова",
       "link": "coaches/yana-belyakova.html",
+      "schedule": "schedule.html?direction=all&coach=yana-belyakova&day=all",
       "directions": [
         {
           "title": "Pole Dance",
@@ -654,6 +656,7 @@
       "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
       "link": "coaches/aleksandr-ushakov.html",
+      "schedule": "schedule.html?direction=all&coach=aleksandr-ushakov&day=all",
       "directions": [
         {
           "title": "Zumba® Fitness",
