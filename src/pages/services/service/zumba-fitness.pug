@@ -80,7 +80,10 @@ append content
                     ul
                       each coach in directions.zumbaFitness.coaches
                         li
-                          a(href= coach.link)= coach.title
+                          if coach.link
+                            a(href= coach.link)= coach.title
+                          else
+                            | #{coach.title}
                 if directions.zumbaFitness.schedule
                   div(class='coach-schedule-link')
                     h5(class='card-text')
