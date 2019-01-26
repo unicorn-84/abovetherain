@@ -494,6 +494,11 @@
     }
   ],
   "directions": {
+    "rent": {
+      "name": "rent",
+      "title": "Аренда сценической площадки",
+      "link": "services/rent.html"
+    },
     "poleDance": {
       "name": "pole-dance",
       "title": "Pole Dance",
