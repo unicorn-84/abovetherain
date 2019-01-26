@@ -554,6 +554,11 @@
         }
       ]
     },
+    "healthyBack": {
+      "name": "healthy-back",
+      "title": "Здоровая спина",
+      "link": "services/healthy-back.html"
+    },
     "zumbaStrong": {
       "name": "zumba-strong",
       "title": "Strong by Zumba®",
