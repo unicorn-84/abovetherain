@@ -8,4 +8,8 @@
   .card-title {
     @include link(dark, false, true);
   }
+
+  .phone-link {
+    @include link(dark, false, true, true);
+  }
 }

@@ -1,10 +1,9 @@
-//-TODO: 'Перенести записи с слайдера'
 //-TODO: 'Проверять ссылки на тренеров'
 //-TODO: 'Итерировать массив'
 extends ../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../data');
+  - const { options, pages, primaryNavigation, contacts } = require('../../data');
 //-META
 append meta
   //Page meta tags
@@ -32,6 +31,28 @@ append content
   //Content
   div(id='content')
     //Container
+    div(class='container')
+      div(class='row')
+        div(class='col-12')
+          div(class='card mb-4')
+            div(class='card-body')
+              h3 Раскройте свою силу и красоту с помощью танцев.
+              p Наслаждайтесь движением своего тела.
+              h3 Погрузитесь в дружескую атмосферу и получайте удовольствие от спортивных занятий в просторном, оборудованном зале.
+              p Профессиональное световое и звуковое оборудование, теплый пол, быстровозводимая сцена, акустический потолок.
+              p Приглашаем вас на пробное занятие.
+                br
+                |Запишитесь на него:
+                br
+                span(class='phone-link')
+                  a(href=`tel:${contacts.phone}`)
+                    i(class='fas fa-phone fa-rotate-90 fa-fw')
+                    |&nbsp;
+                    |#{contacts.phone}
+                br
+                |Опытные тренеры помогут раскрыть ваш талант.
+                br
+                |Мы стремимся сделать танец выражением личности и инструментом самопознания.
     div(class='container')
       div(class='row')
         <!--АРЕНДА-->
