@@ -493,82 +493,104 @@
       "title": "Контакты"
     }
   ],
-  "directions": [
-    {
+  "directions": {
+    "yoga": {
       "name": "yoga",
-      "title": "Королевская йога"
+      "title": "Королевская йога",
+      "link": "services/yoga.html",
+      "coaches":[]
     },
-    {
+    "poleDance": {
       "name": "pole-dance",
-      "title": "Pole Dance"
-    },
-    {
-      "name": "stretching",
-      "title": "Stretching",
+      "title": "Pole Dance",
+      "link": "services/pole-dance.html",
       "coaches": [
         {
-          "title": "Надежда Лучинина"
+          "title": "Надежда Лучинина",
+          "link": "coaches/nadezhda-luchinina.html"
+        },
+        {
+          "title": "Яна Белякова",
+          "link": "coaches/yana-belyakova.html"
         }
       ]
     },
-    {
-      "name": "stretching-silk",
-      "title": "Stretching на полотнах"
+    "stretching": {
+      "name": "stretching",
+      "title": "Stretching",
+      "link": "services/stretching.html",
+      "coaches": [
+        {
+          "title": "Надежда Лучинина",
+          "link": "coaches/nadezhda-luchinina.html"
+        }
+      ]
     },
-    {
+    "stretchingSilk": {
+      "name": "stretching-silk",
+      "title": "Stretching на полотнах",
+      "coaches": []
+    },
+    "hoop": {
       "name": "hoop",
       "title": "Воздушное кольцо",
+      "link": "services/hoop.html",
       "coaches": []
     },
-    {
+    "silk": {
       "name": "silk",
       "title": "Воздушное полотно",
+      "link": "services/silk.html",
       "coaches": []
     },
-    {
+    "rhythmicGymnastics": {
       "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
       "coaches": []
     },
-    {
+    "functionalTraining": {
       "name": "functional-training",
       "title": "Функциональный тренинг",
       "coaches": [
         {
-          "title": "Яна Белякова"
+          "title": "Яна Белякова",
+          "link": "coaches/yana-belyakova.html"
         }
       ]
     },
-    {
+    "plastic": {
       "name": "plastic",
       "title": "Женская пластика",
       "coaches": [
         {
-          "title": "Яна Белякова"
+          "title": "Яна Белякова",
+          "link": "coaches/yana-belyakova.html"
         }
       ]
     },
-    {
+    "zumbaFitness": {
       "name": "zumba-fitness",
       "title": "Zumba® Fitness",
+      "link": "services/zumba-fitness.html",
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandrUshakov.html"
+          "link": "coaches/aleksandr-ushakov.html"
         }
       ]
     },
-    {
+    "zumbaStrong": {
       "name": "zumba-strong",
       "title": "Strong by Zumba®",
+      "link": "services/zumba-strong.html",
       "coaches": [
         {
           "title": "Александр Ушаков",
-          "link": "aleksandrUshakov.html"
+          "link": "coaches/aleksandr-ushakov.html"
         }
       ]
     }
-  ],
+  },
   "coaches": {
     "nadezhdaLuchinina": {
       "name": "nadezhda-luchinina",
@@ -590,6 +612,10 @@
       "title": "Яна Белякова",
       "link": "coaches/yana-belyakova.html",
       "directions": [
+        {
+          "title": "Pole Dance",
+          "link": "services/pole-dance.html"
+        },
         {
           "title": "Функциональный тренинг"
         },
