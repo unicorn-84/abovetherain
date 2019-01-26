@@ -1,4 +1,3 @@
-//TODO: 'Настроить списки'
 @import 'variables';
 @import 'mixins';
 
@@ -47,6 +46,12 @@
     @include link(dark, false, true);
   }
 
+  .coach-direction-link {
+    h5 {
+      margin-bottom: 1rem;
+    }
+  }
+
   blockquote {
     border-width: 1px !important;
     font-style: italic;
@@ -86,6 +91,14 @@
           }
         }
       }
+    }
+  }
+
+  ul {
+    padding-left: 2rem;
+
+    li {
+      margin-bottom: 0.5rem;
     }
   }
 }
