@@ -57,12 +57,13 @@ append content
                       h3= coach.title
                   if coach.directions
                     div(class='coach-directions')
-                      each direction in coach.directions
-                        if direction.link
-                          a(href= direction.link)
-                            p= direction.title
-                        else
-                          p= direction.title
+                      ul
+                        each direction in coach.directions
+                          li
+                            if direction.link
+                              a(href= direction.link)= direction.title
+                            else
+                              | #{direction.title}
                 if coach.link || coach.schedule
                   div(class='coach-icons')
                     if coach.link

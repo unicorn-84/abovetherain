@@ -41,11 +41,17 @@
     padding: 1rem;
 
     .coach-directions {
-      p {
-        margin-bottom: 0.5rem;
-      }
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style-type: none;
 
-      @include link(light, true, false);
+        li {
+          margin-bottom: 0.5rem;
+
+          @include link(light, true, false);
+        }
+      }
 
       > :last-child {
         margin-bottom: 0 !important;
@@ -59,7 +65,7 @@
     .coach-title {
       margin-bottom: 1rem;
 
-      @include link(light, false, true)
+      @include link(light, false, true);
     }
 
     .coach-icons {
