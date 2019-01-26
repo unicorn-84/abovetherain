@@ -9,7 +9,7 @@
   border-radius: 0.5rem;
   border: 4px $card-bg solid;
 
-  @include img-container(125%);
+  @include image-container(125%);
 
   .coach-image {
     position: relative;

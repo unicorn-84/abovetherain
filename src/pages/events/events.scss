@@ -2,7 +2,7 @@
 @import '../../styles/mixins';
 
 .card {
-  @include img-container(66.666666%);
+  @include image-container(66.666666%);
 
   .image-container .event-date {
     position: absolute;
