@@ -3,6 +3,7 @@ import 'bootstrap.scss';
 import 'collapse';
 import 'carousel';
 import WebFont from 'webfontloader';
+import { each, defer } from 'underscore';
 // Common
 import '../../styles/main.scss';
 import '../../scripts/components/icons';
@@ -17,23 +18,16 @@ import laptopFon from '../../images/fon/laptop-index-fon.jpg';
 // import retinaLaptopFon from '../../images/slides/002-slide-1920x1080.jpg';
 // Inline
 
+const mobile = window.matchMedia('(max-width: 991px)');
+
 WebFont.load({
   custom: {
     families: ['hercules_modern'],
-  },
-  fontactive() {
-    const caption = document.querySelector('.caption');
-    caption.classList.add('visible');
-  },
-  fontinactive() {
-    const caption = document.querySelector('.caption');
-    caption.classList.add('visible');
   },
 });
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
-  const mobile = window.matchMedia('(max-width: 991px)');
   const $wrapper = $('#wrapper');
   function imageLoad() {
     if (mobile.matches) {
@@ -57,8 +51,16 @@ jQuery(document).ready(($) => {
         img.src = laptopFon;
       }
       img.onload = () => {
-        $wrapper.css({
-          backgroundImage: `url(${img.src})`,
+        const spans = document.querySelectorAll('.caption h1 div span');
+        defer(() => {
+          $wrapper.css({
+            backgroundImage: `url(${img.src})`,
+          });
+        });
+        each(spans, (span) => {
+          defer(() => {
+            span.classList.add('in-up-animation');
+          });
         });
       };
     }
