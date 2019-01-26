@@ -1,6 +1,4 @@
 //TODO: 'Градиент для фото'
-//TODO: 'Перенести иконки'
-//TODO: 'Ссылки на заголовок и изображение'
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
@@ -43,6 +41,12 @@
     padding: 1rem;
 
     .coach-directions {
+      p {
+        margin-bottom: 0.5rem;
+      }
+
+      @include link(light, true, false);
+
       > :last-child {
         margin-bottom: 0 !important;
 
@@ -52,15 +56,11 @@
       }
     }
 
-    h3 {
+    .coach-title {
       margin-bottom: 1rem;
-    }
 
-    p {
-      margin-bottom: 0.5rem;
+      @include link(light, false, true)
     }
-
-    @include link(light, true, false);
 
     .coach-icons {
       display: flex;

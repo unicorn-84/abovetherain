@@ -37,12 +37,24 @@ append content
               'coach': true,
               'mb-4': coaches.length - 1 !== index
             })
-              div(class='coach-image')
-                img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
+              if coach.link
+                a(href= coach.link)
+                  div(class='coach-image')
+                    img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' + require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) + ' 2x', alt= `${coach.title} | ${options.name}`)
+              else
+                div(class='coach-image')
+                  img(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), srcset= require(
+                    `../../images/coaches/${coach.name}/${coach.name}.jpg`) + ' 1x, ' +
+                  require(`../../images/coaches/${coach.name}/${coach.name}@2x.jpg`) +
+                  ' 2x', alt= `${coach.title} | ${options.name}`)
               div(class='coach-info')
                 div
                   div(class='coach-title')
-                    h3= coach.title
+                    if coach.link
+                      a(href= coach.link)
+                        h3= coach.title
+                    else
+                      h3= coach.title
                   if coach.directions
                     div(class='coach-directions')
                       each direction in coach.directions
