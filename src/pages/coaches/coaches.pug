@@ -44,20 +44,22 @@ append content
                 div
                   div(class='coach-title')
                     h3= coach.title
-                  div(class='coach-directions')
-                    each direction in coach.directions
-                      if direction.link
-                        a(href= direction.link)
+                  if coach.directions
+                    div(class='coach-directions')
+                      each direction in coach.directions
+                        if direction.link
+                          a(href= direction.link)
+                            p= direction.title
+                        else
                           p= direction.title
-                      else
-                        a(href='services.html')
-                          p= direction.title
-                div(class='coach-icons')
-                  if coach.link
-                    a(href= coach.link)
-                      i(class='fas fa-info fa-lg')
-                  a(href=`schedule.html?direction=all&coach=${coach.name}&day=all`)
-                    i(class='far fa-calendar-alt fa-lg')
+                if coach.link || coach.schedule
+                  div(class='coach-icons')
+                    if coach.link
+                      a(href= coach.link)
+                        i(class='fas fa-info fa-lg')
+                    if coach.schedule
+                      a(href= coach.schedule)
+                        i(class='far fa-calendar-alt fa-lg')
 //-SCRIPTS
 append scripts
   //Page scripts
