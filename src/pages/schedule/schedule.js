@@ -32,7 +32,7 @@ const data = {
   ],
 };
 const direction = ['all'];
-directions.forEach((item) => {
+each(directions, (item) => {
   direction.push(item.name);
 });
 const coach = ['all'];
