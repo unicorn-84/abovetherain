@@ -4,4 +4,8 @@
 .card {
   @include img-container(66.666666%);
   @include link;
+
+  .card-title {
+    @include link(dark, false, true);
+  }
 }
