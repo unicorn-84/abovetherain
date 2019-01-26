@@ -494,12 +494,6 @@
     }
   ],
   "directions": {
-    "yoga": {
-      "name": "yoga",
-      "title": "Королевская йога",
-      "link": "services/yoga.html",
-      "coaches":[]
-    },
     "poleDance": {
       "name": "pole-dance",
       "title": "Pole Dance",
@@ -515,6 +509,24 @@
         }
       ]
     },
+    "hoop": {
+      "name": "hoop",
+      "title": "Воздушное кольцо",
+      "link": "services/hoop.html",
+      "coaches": []
+    },
+    "silk": {
+      "name": "silk",
+      "title": "Воздушное полотно",
+      "link": "services/silk.html",
+      "coaches": []
+    },
+    "yoga": {
+      "name": "yoga",
+      "title": "Королевская йога",
+      "link": "services/yoga.html",
+      "coaches":[]
+    },
     "stretching": {
       "name": "stretching",
       "title": "Stretching",
@@ -526,21 +538,31 @@
         }
       ]
     },
+    "zumbaFitness": {
+      "name": "zumba-fitness",
+      "title": "Zumba® Fitness",
+      "link": "services/zumba-fitness.html",
+      "coaches": [
+        {
+          "title": "Александр Ушаков",
+          "link": "coaches/aleksandr-ushakov.html"
+        }
+      ]
+    },
+    "zumbaStrong": {
+      "name": "zumba-strong",
+      "title": "Strong by Zumba®",
+      "link": "services/zumba-strong.html",
+      "coaches": [
+        {
+          "title": "Александр Ушаков",
+          "link": "coaches/aleksandr-ushakov.html"
+        }
+      ]
+    },
     "stretchingSilk": {
       "name": "stretching-silk",
       "title": "Stretching на полотнах",
-      "coaches": []
-    },
-    "hoop": {
-      "name": "hoop",
-      "title": "Воздушное кольцо",
-      "link": "services/hoop.html",
-      "coaches": []
-    },
-    "silk": {
-      "name": "silk",
-      "title": "Воздушное полотно",
-      "link": "services/silk.html",
       "coaches": []
     },
     "rhythmicGymnastics": {
@@ -565,28 +587,6 @@
         {
           "title": "Яна Белякова",
           "link": "coaches/yana-belyakova.html"
-        }
-      ]
-    },
-    "zumbaFitness": {
-      "name": "zumba-fitness",
-      "title": "Zumba® Fitness",
-      "link": "services/zumba-fitness.html",
-      "coaches": [
-        {
-          "title": "Александр Ушаков",
-          "link": "coaches/aleksandr-ushakov.html"
-        }
-      ]
-    },
-    "zumbaStrong": {
-      "name": "zumba-strong",
-      "title": "Strong by Zumba®",
-      "link": "services/zumba-strong.html",
-      "coaches": [
-        {
-          "title": "Александр Ушаков",
-          "link": "coaches/aleksandr-ushakov.html"
         }
       ]
     }
