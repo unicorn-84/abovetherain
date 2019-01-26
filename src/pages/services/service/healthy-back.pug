@@ -66,6 +66,24 @@ append content
                 | Ограничения для посещения занятий:
                 br
                 | Период обострения болезни, показания к операции, грыжа больше 1.2, через 6-7 недель после хирургического вмешательства.
+
+            //Footer
+            div(class='card-footer coach-footer')
+              div(class='coach-direction-link')
+                h5(class='card-text')
+                  i(class='far fa-list-alt fa-lg')
+                  | &nbsp;
+                  | <b>Тренеры:<b>
+                ul
+                  // each coach in directions.aleksandrUshakov.directions
+                    li
+                      a(href= direction.link)= direction.title
+              div(class='coach-schedule-link')
+                h5(class='card-text')
+                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

@@ -493,40 +493,14 @@
       "title": "Контакты"
     }
   ],
-  "services": [
-    {
-      "name": "rent",
-      "title": "Аренда"
-    },
-    {
-      "name": "aerial-hoop",
-      "title": "Воздушное кольцо"
-    },
-    {
-      "name": "aerial-silk",
-      "title": "Воздушное полотно"
-    },
-    {
-      "name": "pole-dance",
-      "title": "Pole Dance"
-    },
-    {
-      "name": "yoga",
-      "title": "Королевская йога"
-    }
-  ],
   "directions": [
     {
       "name": "yoga",
       "title": "Королевская йога"
     },
     {
-      "name": "pole_dance",
+      "name": "pole-dance",
       "title": "Pole Dance"
-    },
-    {
-      "name": "pole_dance_child",
-      "title": "Детский Pole Dance"
     },
     {
       "name": "stretching",
@@ -538,26 +512,26 @@
       ]
     },
     {
-      "name": "stretching_silk",
+      "name": "stretching-silk",
       "title": "Stretching на полотнах"
     },
     {
-      "name": "aerial_hoop",
+      "name": "hoop",
       "title": "Воздушное кольцо",
       "coaches": []
     },
     {
-      "name": "aerial_silk",
+      "name": "silk",
       "title": "Воздушное полотно",
       "coaches": []
     },
     {
-      "name": "rhythmic_gymnastics",
+      "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
       "coaches": []
     },
     {
-      "name": "functional_training",
+      "name": "functional-training",
       "title": "Функциональный тренинг",
       "coaches": [
         {
@@ -575,7 +549,7 @@
       ]
     },
     {
-      "name": "zumba_fitness",
+      "name": "zumba-fitness",
       "title": "Zumba (R) Fitness",
       "coaches": [
         {
@@ -585,7 +559,7 @@
       ]
     },
     {
-      "name": "zumba_strong",
+      "name": "zumba-strong",
       "title": "Strong by Zumba (R)",
       "coaches": [
         {
