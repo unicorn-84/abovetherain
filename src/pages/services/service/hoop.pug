@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -52,6 +52,26 @@ append content
                 | Воздушное кольцо - спортивное увлечение, благодаря которому вы незаметно приобретете красивые формы тела. Посещая эти занятия, вы сможете выполнять эффектные и захватывающие трюки. Окунетесь в мир воздушного искусства и почувствуйте себя настоящим артистом.
               p(class='card-text')
                 | После месяца активных тренировок вы заметите свободу в движениях, легкость и подъем жизненной энергии.
+            if directions.hoop.coaches || directions.hoop.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.hoop.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                       each coach in directions.hoop.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.hoop.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.hoop.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

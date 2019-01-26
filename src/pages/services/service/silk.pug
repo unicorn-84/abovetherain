@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -52,6 +52,26 @@ append content
                 | Воздушные полотна - спорт для избранных. Здесь вы полностью удовлетворите свою тягу к совершенству. Зависая в воздухе при помощи двух полотен, танцоры демонстрируют различные трюки, срывы, эффектные висы и шпагаты.
               p(class='card-text')
                 | Занимаясь воздушными полотнами, вы обретаете желанную спортивную форму, гибкость и пластичность тела.
+            if directions.silk.coaches || directions.silk.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.silk.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.silk.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.silk.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.silk.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -50,6 +50,26 @@ append content
                 | Пробное занятие - 500 руб
               p(class='card-text')
                 | Stretching - оздоровительное направление, сконцентрированное на растяжении групп мышц, суставов, связок и сухожилий. Благодаря активному разогреву мышц и влиянию на функционирование кровеносной и лимфатической системы, данное направление увеличивает эластичность всего тела, замедляет старение организма и улучшает обмен веществ.
+            if directions.stretching.coaches || directions.stretching.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.stretching.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.stretching.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.stretching.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.stretching.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

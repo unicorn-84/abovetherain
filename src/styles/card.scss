@@ -43,6 +43,10 @@
     }
   }
 
+  .coach-schedule-link {
+    @include link(dark, false, true);
+  }
+
   blockquote {
     border-width: 1px !important;
     font-style: italic;

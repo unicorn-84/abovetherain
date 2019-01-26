@@ -1,7 +1,7 @@
 extends ../../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
+  - const { options, pages, primaryNavigation, directions } = require('../../../data');
 //-META
 append meta
   //Page meta tags
@@ -68,6 +68,26 @@ append content
                 | Программа Zumba® Fitness — это танцевальное направление в фитнесе, в котором используются движения различных танцевальных стилей (латиноамериканских и других международных направлений: сальса, бачата, реггетон, кумбия и др).
               p(class='card-text')
                 | Оно построено на сочетании быстрых и медленных ритмов, позволяющих быть в форме и совершенствовать свое тело. Для овладения техникой Зумбы совсем не обязательно быть профессиональным танцором, любой желающий, независимо от его танцевальной подготовки, может легко освоить данный класс. Тренировка дарит атмосферу праздника, которая помогает раскрепоститься, получить удовольствие и создать музыкально-танцевальное настроение.
+            if directions.zumbaFitness.coaches || directions.zumbaFitness.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if directions.zumbaFitness.coaches
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Тренеры:
+                    ul
+                      each coach in directions.zumbaFitness.coaches
+                        li
+                          a(href= coach.link)= coach.title
+                if directions.zumbaFitness.schedule
+                  div(class='coach-schedule-link')
+                    h5(class='card-text')
+                      a(class='coach-schedule-link', href= directions.zumbaFitness.schedule )
+                        i(class='far fa-calendar-alt fa-lg')
+                        | &nbsp;
+                        | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

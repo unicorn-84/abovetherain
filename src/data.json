@@ -519,22 +519,19 @@
       "name": "hoop",
       "title": "Воздушное кольцо",
       "link": "services/hoop.html",
-      "schedule": "schedule.html?direction=hoop&coach=all&day=all",
-      "coaches": []
+      "schedule": "schedule.html?direction=hoop&coach=all&day=all"
     },
     "silk": {
       "name": "silk",
       "title": "Воздушное полотно",
       "link": "services/silk.html",
-      "schedule": "schedule.html?direction=silk&coach=all&day=all",
-      "coaches": []
+      "schedule": "schedule.html?direction=silk&coach=all&day=all"
     },
     "yoga": {
       "name": "yoga",
       "title": "Королевская йога",
       "link": "services/yoga.html",
-      "schedule": "schedule.html?direction=silk&coach=all&day=all",
-      "coaches":[]
+      "schedule": "schedule.html?direction=silk&coach=all&day=all"
     },
     "stretching": {
       "name": "stretching",
@@ -585,14 +582,12 @@
     "stretchingSilk": {
       "name": "stretching-silk",
       "title": "Stretching на полотнах",
-      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all",
-      "coaches": []
+      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all"
     },
     "rhythmicGymnastics": {
       "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
-      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all",
-      "coaches": []
+      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all"
     },
     "functionalTraining": {
       "name": "functional-training",
