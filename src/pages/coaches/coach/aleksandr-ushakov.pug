@@ -96,23 +96,29 @@ append content
                   | &laquo;В работе главное - взаимосвязь между инструктором и учеником.&raquo;
                 footer(class='blockquote-footer')
                   cite(title='Александр Ушаков') Александр Ушаков
-            //Footer
-            div(class='card-footer coach-footer')
-              div(class='coach-direction-link')
-                h5(class='card-text')
-                  i(class='far fa-list-alt fa-lg')
-                  | &nbsp;
-                  | Направления:
-                ul
-                  each direction in coaches.aleksandrUshakov.directions
-                    li
-                      a(href= direction.link)= direction.title
-              div(class='coach-schedule-link')
-                h5(class='card-text')
-                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=aleksandr-ushakov&day=all`)
-                    i(class='far fa-calendar-alt fa-lg')
-                    | &nbsp;
-                    | Расписание занятий
+            if coaches.aleksandrUshakov.directions || coaches.aleksandrUshakov.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if coaches.aleksandrUshakov.directions
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Направления:
+                    ul
+                      each direction in coaches.aleksandrUshakov.directions
+                        li
+                          if direction.link
+                            a(href= direction.link)= direction.title
+                          else
+                            | #{direction.title}
+                  if coaches.aleksandrUshakov.schedule
+                    div(class='coach-schedule-link')
+                      h5(class='card-text')
+                        a(class='coach-schedule-link', href= coaches.aleksandrUshakov.schedule)
+                          i(class='far fa-calendar-alt fa-lg')
+                          | &nbsp;
+                          | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts

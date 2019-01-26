@@ -64,23 +64,29 @@ append content
                 | Не останавливаясь в профессиональном росте, в 2014 году получила аттестацию Межрегиональной Организации Спорта и Танца на пилоне (МОСТП).
               p(class='card-text')
                 | На тренировках Надежда научит Вас управлять и наслаждаться движением  своего тела, поскольку, тело — это самый прекрасный инструмент, которым мы когда-либо обладали.
-            //Footer
-            div(class='card-footer coach-footer')
-              div(class='coach-direction-link')
-                h5(class='card-text')
-                  i(class='far fa-list-alt fa-lg')
-                  | &nbsp;
-                  | Направления:
-                ul
-                  each direction in coaches.nadezhdaLuchinina.directions
-                    li
-                      a(href= direction.link)= direction.title
-              div(class='coach-schedule-link')
-                h5(class='card-text')
-                  a(class='coach-schedule-link', href=`schedule.html?direction=all&coach=nadezhda-luchinina&day=all`)
-                    i(class='far fa-calendar-alt fa-lg')
-                    | &nbsp;
-                    | Расписание занятий
+            if coaches.nadezhdaLuchinina.directions || coaches.nadezhdaLuchinina.schedule
+              //Footer
+              div(class='card-footer coach-footer')
+                if coaches.nadezhdaLuchinina.directions
+                  div(class='coach-direction-link')
+                    h5(class='card-text')
+                      i(class='far fa-list-alt fa-lg')
+                      | &nbsp;
+                      | Направления:
+                    ul
+                      each direction in coaches.nadezhdaLuchinina.directions
+                        li
+                          if direction.link
+                            a(href= direction.link)= direction.title
+                          else
+                            | #{direction.title}
+                  if coaches.nadezhdaLuchinina.schedule
+                    div(class='coach-schedule-link')
+                      h5(class='card-text')
+                        a(class='coach-schedule-link', href= coaches.nadezhdaLuchinina.schedule)
+                          i(class='far fa-calendar-alt fa-lg')
+                          | &nbsp;
+                          | Расписание занятий
 //-SCRIPTS
 append scripts
   //Page scripts
