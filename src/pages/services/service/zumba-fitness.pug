@@ -5,10 +5,10 @@ append variables
 //-META
 append meta
   //Page meta tags
-  if pages.zumba.title
-    title= pages.zumba.title
-  if pages.zumba.description
-    meta(name='description', content= pages.zumba.description)
+  if pages.zumbaFitness.title
+    title= pages.zumbaFitness.title
+  if pages.zumbaFitness.description
+    meta(name='description', content= pages.zumbaFitness.description)
 //-ICONS
 append icons
   //Page icons
@@ -22,7 +22,7 @@ append header
   +header(primaryNavigation)
 //-PAGE TITLE
 append pageTitle
-  +pageTitle(pages.zumba)
+  +pageTitle(pages.zumbaFitness)
 //-CONTENT
 append content
   //Content
@@ -33,25 +33,25 @@ append content
         div(class='col-12 col-lg-8')
           div(class='card card-page')
             //Carousel
-            div(id='zumbaCarousel', class='carousel slide', data-ride='carousel')
+            div(id='zumbaFitnessCarousel', class='carousel slide', data-ride='carousel')
               ol(class='carousel-indicators')
-                li(data-target='#zumbaCarousel', data-slide-to='0', class='active')
-                li(data-target='#zumbaCarousel', data-slide-to='1')
-                li(data-target='#zumbaCarousel', data-slide-to='2')
+                li(data-target='#zumbaFitnessCarousel', data-slide-to='0', class='active')
+                li(data-target='#zumbaFitnessCarousel', data-slide-to='1')
+                li(data-target='#zumbaFitnessCarousel', data-slide-to='2')
               div(class='carousel-inner')
                 div(class='carousel-item active')
                   div(class='image-container')
-                    img(class='d-block', src= require('../../../images/services/zumba/001-zumba-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require('../../../images/services/zumba/001-zumba-600x400.jpg') + ' 600w, ' + require('../../../images/services/zumba/001-zumba-1200x800.jpg') + ' 1200w')
+                    img(class='d-block', src= require('../../../images/services/zumba-fitness/001-zumba-fitness-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require('../../../images/services/zumba-fitness/001-zumba-fitness-600x400.jpg') + ' 600w, ' + require('../../../images/services/zumba-fitness/001-zumba-fitness-1200x800.jpg') + ' 1200w')
                 div(class='carousel-item')
                   div(class='image-container')
-                    img(class='d-block', src= require('../../../images/services/zumba/002-zumba-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require('../../../images/services/zumba/002-zumba-600x400.jpg') + ' 600w, ' + require('../../../images/services/zumba/002-zumba-1200x800.jpg') + ' 1200w')
+                    img(class='d-block', src= require('../../../images/services/zumba-fitness/002-zumba-fitness-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require('../../../images/services/zumba-fitness/002-zumba-fitness-600x400.jpg') + ' 600w, ' + require('../../../images/services/zumba-fitness/002-zumba-fitness-1200x800.jpg') + ' 1200w')
                 div(class='carousel-item')
                   div(class='image-container')
-                    img(class='d-block', src= require('../../../images/services/zumba/003-zumba-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require('../../../images/services/zumba/003-zumba-600x400.jpg') + ' 600w, ' + require('../../../images/services/zumba/003-zumba-1200x800.jpg') + ' 1200w')
-                a(class='carousel-control-prev', href='#zumbaCarousel', role='button', data-slide='prev')
+                    img(class='d-block', src= require('../../../images/services/zumba-fitness/003-zumba-fitness-600x400.jpg'), alt='Zumba® Fitness | Над Дождём', srcset= require('../../../images/services/zumba-fitness/003-zumba-fitness-600x400.jpg') + ' 600w, ' + require('../../../images/services/zumba-fitness/003-zumba-fitness-1200x800.jpg') + ' 1200w')
+                a(class='carousel-control-prev', href='#zumbaFitnessCarousel', role='button', data-slide='prev')
                   span(class='carousel-control-prev-icon' aria-hidden='true')
                   span(class='sr-only') Previous
-                a(class='carousel-control-next' href='#zumbaCarousel' role='button' data-slide='next')
+                a(class='carousel-control-next' href='#zumbaFitnessCarousel' role='button' data-slide='next')
                   span(class='carousel-control-next-icon' aria-hidden='true')
                   span(class='sr-only') Next
             //Body
