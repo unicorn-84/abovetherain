@@ -1,6 +1,7 @@
 // TODO: 'Удалить генератор'
 // TODO: 'Удалить custom select'
-// TODO: 'Добавить фидьтрацию по направлению'
+// TODO: 'Добавить ссылки с фильтрацией по направлению'
+// TODO: 'Исправить смещение массива directions'
 // Vendors
 import 'bootstrap.scss';
 import 'collapse';
