@@ -610,6 +610,11 @@
           "link": "coaches/yana-belyakova.html"
         }
       ]
+    },
+    "contemporary": {
+      "name": "contemporary",
+      "title": "Контемпорари",
+      "schedule": "schedule.html?direction=contemporary&coach=all&day=all"
     }
   },
   "coaches": {
