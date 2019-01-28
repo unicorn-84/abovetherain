@@ -38,7 +38,8 @@ append content
             select#direction-select(data-select)
               option(value="all" selected) Все направления
               each direction in directions
-                option(value= direction.name)= direction.title
+                if direction.schedule
+                  option(value= direction.name)= direction.title
             select#coach-select(data-select)
               option(value="all" selected) Все тренеры
               each coach in coaches
