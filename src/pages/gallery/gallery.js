@@ -8,7 +8,7 @@ import '../../scripts/components/fon';
 import '../../scripts/components/logo';
 // Common
 import '../../styles/main.scss';
-import '../../scripts/components/sticky';
+
 import '../../scripts/components/icons';
 // Local
 import './gallery.scss';
