@@ -3,14 +3,14 @@ import 'bootstrap.scss';
 import 'collapse';
 // Common
 import '../../styles/main.scss';
-import '../../scripts/components/sticky';
+
 import '../../scripts/components/icons';
 import '../../scripts/components/fon';
 import '../../scripts/components/logo';
 // Local
 import './contacts.scss';
 // IMAGES
-import logo from '../../images/logo/logo@2x.png';
+import logo from '../../images/logo/logo.png';
 import evacuatorLogo from '../../images/icons/evacuator.png';
 
 (function createMap() {
