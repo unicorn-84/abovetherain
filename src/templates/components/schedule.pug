@@ -123,7 +123,7 @@ table.schedule-table(data-selected="all")
       td
       //Пятница
       //Суббота
-      +schedule-event('2', 'zumba-fitness', 'Zumba® Fitness', 'aleksandr-ushakov', 'Александр Ушаков', 'day-6', '13:00', '14:00')
+      td
     //13:30
     tr
       td.schedule-time 13:30
@@ -138,6 +138,7 @@ table.schedule-table(data-selected="all")
       //Пятница
       +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-5', '13:30', '14:30')
       //Суббота
+      td
     //14-00
     tr
       td.schedule-time 14:00
@@ -742,7 +743,7 @@ table.schedule-table.mobile(data-selected="all")
 //Суббота
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.stretching.silk.functional-training.plastic.zumba-fitness.aleksandr-ushakov.yana-belyakova.day-6
+    tr.stretching.silk.functional-training.plastic.yana-belyakova.day-6
       th.schedule-day
       th.schedule-day Суббота
   tbody
@@ -766,12 +767,7 @@ table.schedule-table.mobile(data-selected="all")
     //12:00
     //12:30
     //13:00
-    tr.zumba-fitness.aleksandr-ushakov.day-6
-      td.schedule-time 13:00
-      +schedule-event('2', 'zumba-fitness', 'Zumba® Fitness', 'aleksandr-ushakov', 'Александр Ушаков', 'day-6', '13:00', '14:00')
     //13:30
-    tr.zumba-fitness.aleksandr-ushakov.day-6
-      td.schedule-time 13:30
     //14:00
     tr.plastic.yana-belyakova.day-6
       td.schedule-time 14:00
