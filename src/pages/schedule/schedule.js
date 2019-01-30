@@ -7,7 +7,7 @@
 import 'bootstrap.scss';
 import 'collapse';
 // Common
-import { each } from 'underscore';
+import _ from 'underscore';
 import '../../styles/main.scss';
 
 import '../../scripts/components/icons';
@@ -19,34 +19,33 @@ import { directions, coaches } from '../../data';
 import './schedule.scss';
 // Inline
 
-jQuery.noConflict();
-jQuery(document).ready(($) => {
-});
-
-const data = {
-  day: [
-    'all',
-    'day-1',
-    'day-2',
-    'day-3',
-    'day-4',
-    'day-5',
-    'day-6',
-    'day-7',
-  ],
-};
-const direction = ['all'];
-each(directions, (item) => {
-  direction.push(item.name);
-});
-const coach = ['all'];
-each(coaches, (item) => {
-  coach.push(item.name);
-});
-data.coach = coach;
-data.direction = direction;
-const { day } = data;
-let stateObject = {
+const days = [
+  'all',
+  'monday',
+  'tuesday',
+  'wednesday',
+  'thursday',
+  'friday',
+  'saturday',
+  'sunday',
+];
+const data = {};
+(function makeData() {
+  data.direction = ['all'];
+  _.each(directions, (direction) => {
+    if (_.has(direction, 'schedule')) {
+      data.direction.push(direction.name);
+    }
+  });
+  data.coach = ['all'];
+  _.each(coaches, (coach) => {
+    if (_.has(coach, 'schedule')) {
+      data.coach.push(coach.name);
+    }
+  });
+  data.day = days;
+}());
+const stateObject = {
   direction: 'all',
   coach: 'all',
   day: 'all',
@@ -70,19 +69,19 @@ function checkQuery() {
     for (let i = 0; i < parameters.length; i += 1) {
       switch (Object.keys(parameters[i])[0]) {
         case 'direction':
-          if (direction.indexOf(parameters[i].direction) < 0) {
+          if (data.direction.indexOf(parameters[i].direction) < 0) {
             return false;
           }
           stateObject.direction = parameters[i].direction;
           break;
         case 'coach':
-          if (coach.indexOf(parameters[i].coach) < 0) {
+          if (data.coach.indexOf(parameters[i].coach) < 0) {
             return false;
           }
           stateObject.coach = parameters[i].coach;
           break;
         case 'day':
-          if (day.indexOf(parameters[i].day) < 0) {
+          if (data.day.indexOf(parameters[i].day) < 0) {
             return false;
           }
           stateObject.day = parameters[i].day;
@@ -99,14 +98,15 @@ function replaceQuery(object) {
   window.history.replaceState(object, '', `/schedule.html?${makeQuery(makeStateObject(object))}`);
 }
 function setSelects(...selects) {
-  // for (const select of selects) {
-  //   for (let i = 0; i < select.options.length; i += 1) {
-  //     if (select.options[i].value === stateObject[select.id.split('-')[0]]) {
-  //       select.options.selectedIndex = i;
-  //       break;
-  //     }
-  //   }
-  // }
+  _.each(selects, (item) => {
+    const select = item;
+    for (let i = 0; i < select.options.length; i += 1) {
+      if (select.options[i].value === stateObject[select.id.split('-')[0]]) {
+        select.options.selectedIndex = i;
+        break;
+      }
+    }
+  });
 }
 function sortTable(tables) {
   tables.forEach((table) => {
@@ -120,42 +120,32 @@ function sortTable(tables) {
 }
 document.addEventListener('DOMContentLoaded', () => {
   const tables = document.querySelectorAll('.schedule-table');
-  const nativeSelects = document.querySelectorAll('select[data-select]');
+  const selects = document.querySelectorAll('.schedule-filter select');
   const directionSelect = document.querySelector('select#direction-select');
   const coachSelect = document.querySelector('select#coach-select');
   const daySelect = document.querySelector('select#day-select');
-  nativeSelects.forEach((nativeSelect) => {
-    const item = nativeSelect;
-    item.onchange = () => {
-      stateObject = {
+  _.each(selects, (item) => {
+    const select = item;
+    select.onchange = (e) => {
+      _.each(tables, (i) => {
+        const table = i;
+        table.dataset.selected = e.target.options[e.target.options.selectedIndex].getAttribute('value');
+      });
+      const object = {
         direction: 'all',
         coach: 'all',
         day: 'all',
       };
-      stateObject[item.id.split('-')[0]] = data[item.id.split('-')[0]][item.options.selectedIndex];
-      replaceQuery(stateObject);
+      object[select.id.split('-')[0]] = data[select.id.split('-')[0]][select.options.selectedIndex];
+      replaceQuery(object);
     };
   });
   if (checkQuery()) {
-    stateObject.direction = 'all';
     stateObject.day = 'all';
     replaceQuery(stateObject);
     setSelects(directionSelect, coachSelect, daySelect);
     sortTable(tables);
   } else {
     replaceQuery(stateObject);
-  }
-  // createSelect();
-  const customOptions = document.querySelectorAll('.select-list > li');
-  if (customOptions.length > 0) {
-    customOptions.forEach((customOption) => {
-      customOption.addEventListener('click', ({ target }) => {
-        tables.forEach((table) => {
-          const item = table;
-          item.dataset.selected = target.getAttribute('value');
-        });
-        target.closest('.select').querySelector('select[data-select]').onchange();
-      });
-    });
   }
 });
