@@ -7,8 +7,9 @@ $breakpoints: (
 );
 
 //Colors
-$body-bg-color: rgb(170, 170, 154);
-$light-text-color: #fafafa;
+$white-color: #fafafa;
+$body-bg-color: #d1d1d1;
+$light-text-color: $white-color;
 $secondary-light-text-color: #e1e1e1;
 $dark-text-color: rgba(0, 0, 0, 0.87);
 $secondary-dark-text-color: rgba(0, 0, 0, 0.56);
