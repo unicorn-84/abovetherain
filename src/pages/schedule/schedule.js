@@ -2,6 +2,7 @@
 // TODO: 'Удалить custom select'
 // TODO: 'Добавить ссылки с фильтрацией по направлению'
 // TODO: 'Исправить смещение массива directions'
+// TODO: 'Генерировать стили'
 // Vendors
 import 'bootstrap.scss';
 import 'collapse';
@@ -13,12 +14,14 @@ import '../../scripts/components/icons';
 import '../../scripts/components/fon';
 import '../../scripts/components/logo';
 // Local
-import createSelect from '../../scripts/components/select/select';
 import { directions, coaches } from '../../data';
 // SCSS
-import '../../scripts/components/select/select.scss';
 import './schedule.scss';
 // Inline
+
+jQuery.noConflict();
+jQuery(document).ready(($) => {
+});
 
 const data = {
   day: [
@@ -96,14 +99,14 @@ function replaceQuery(object) {
   window.history.replaceState(object, '', `/schedule.html?${makeQuery(makeStateObject(object))}`);
 }
 function setSelects(...selects) {
-  for (const select of selects) {
-    for (let i = 0; i < select.options.length; i += 1) {
-      if (select.options[i].value === stateObject[select.id.split('-')[0]]) {
-        select.options.selectedIndex = i;
-        break;
-      }
-    }
-  }
+  // for (const select of selects) {
+  //   for (let i = 0; i < select.options.length; i += 1) {
+  //     if (select.options[i].value === stateObject[select.id.split('-')[0]]) {
+  //       select.options.selectedIndex = i;
+  //       break;
+  //     }
+  //   }
+  // }
 }
 function sortTable(tables) {
   tables.forEach((table) => {
@@ -142,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     replaceQuery(stateObject);
   }
-  createSelect();
+  // createSelect();
   const customOptions = document.querySelectorAll('.select-list > li');
   if (customOptions.length > 0) {
     customOptions.forEach((customOption) => {

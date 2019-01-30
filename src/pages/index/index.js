@@ -27,7 +27,6 @@ WebFont.load({
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
-  // const $wrapper = $('#wrapper');
   function imageLoad() {
     if (mobile.matches) {
       const img = new Image();
