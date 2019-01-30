@@ -13,9 +13,8 @@ import { retinaCheck } from '../../scripts/components/helpers';
 import './index.scss';
 import mobileFon from '../../images/fon/mobile-index-fon.jpg';
 import retinaMobileFon from '../../images/fon/mobile-index-fon@2x.jpg';
-// TODO: 'Добавить retina'
 import laptopFon from '../../images/fon/laptop-index-fon.jpg';
-// import retinaLaptopFon from '../../images/slides/002-slide-1920x1080.jpg';
+import retinaLaptopFon from '../../images/fon/laptop-index-fon@2x.jpg';
 // Inline
 
 const mobile = window.matchMedia('(max-width: 991px)');
@@ -46,7 +45,7 @@ jQuery(document).ready(($) => {
     if (!mobile.matches) {
       const img = new Image();
       if (retinaCheck()) {
-        img.src = laptopFon;
+        img.src = retinaLaptopFon;
       } else {
         img.src = laptopFon;
       }
