@@ -1,4 +1,4 @@
-mixin schedule-event(rowspan, directionClass, direction, coachClass, coach, dayClass, timeStart, timeEnd)
+mixin schedule-event(rowspan, directionClass, direction, coachClass, coach, dayClass, timeStart, timeEnd, badge)
   td.schedule-event(rowspan= rowspan data-direction= directionClass data-coach= coachClass data-day= dayClass)
     if direction
       .schedule-title
@@ -8,3 +8,9 @@ mixin schedule-event(rowspan, directionClass, direction, coachClass, coach, dayC
     if coach
       .schedule-coach
         a(href='coaches.html')= coach
+    if badge
+      div
+        span(class='badge badge-success badge-pill')= badge
+    else
+      div
+        span(class='badge badge-info badge-pill') Ведется набор

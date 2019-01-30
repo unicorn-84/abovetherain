@@ -137,9 +137,7 @@ $border-color: #777;
       }
     }
 
-    .schedule-title,
-    .schedule-interval,
-    .schedule-coach {
+    > div {
       display: block;
       text-align: left;
 
@@ -156,6 +154,12 @@ $border-color: #777;
     .schedule-coach {
       font-size: 1rem;
       font-weight: $font-weight;
+    }
+
+    .badge-success,
+    .badge-info {
+      color: $light-text-color;
+      font-weight: $heading-font-weight;
     }
   }
 }
