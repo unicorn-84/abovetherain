@@ -8,15 +8,6 @@ $schedule-direction-color: $schedule-bg-color;
 $link-color: #00be9f;
 $border-color: #777;
 
-.schedule-wrapper {
-  margin-top: 15px;
-  margin-bottom: -30px;
-
-  @include respond-to(laptop) {
-    margin-bottom: 0;
-  }
-}
-
 .schedule-table {
   display: none;
   width: calc(100% + 2px);
@@ -252,64 +243,7 @@ $border-color: #777;
   }
 }
 
-.select,
-.select-list {
-  border: 1px solid $border-color;
-  font-weight: $font-weight;
-}
-
-.select,
-.select-list > li {
-  padding: 8px 16px;
-}
-
-.select {
-  color: $dark-text-color;
-  background-color: $theme-color;
-  margin-bottom: 15px;
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include respond-to(laptop) {
-    margin-left: 0;
-    margin-right: 15px;
-    margin-bottom: 0;
-    max-width: 320px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &#day-select {
-      display: none;
-    }
-  }
-
-  &::after {
-    border-color: $border-color transparent transparent;
-  }
-
-  &.active::after {
-    border-color: transparent transparent $border-color;
-  }
-}
-
-.select-list {
-  color: $dark-text-color;
-  background-color: $theme-color;
-
-  li {
-    transition: background-color 0.3s $function;
-
-    &:focus,
-    &:hover {
-      background-color: $theme-color;
-    }
-  }
-}
-
-.vk-link-sign-up {
+.schedule-controls {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -320,5 +254,31 @@ $border-color: #777;
     margin-left: 0;
     margin-right: 0;
     max-width: 320px;
+  }
+}
+
+select.schedule-controls {
+  background-color: $white-color;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: $dark-text-color;
+  font-family: $font-family;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(128, 189, 255, 0.5);
+  }
+
+  @include respond-to(laptop) {
+    margin-right: 0.5rem;
+    margin-left: 0;
+    max-width: 320px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
