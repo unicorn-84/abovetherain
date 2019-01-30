@@ -513,25 +513,29 @@
           "title": "Яна Белякова",
           "link": "coaches/yana-belyakova.html"
         }
-      ]
+      ],
+      "frame": "Открытая группа"
     },
     "hoop": {
       "name": "hoop",
       "title": "Воздушное кольцо",
       "link": "services/hoop.html",
-      "schedule": "schedule.html?direction=hoop&coach=all&day=all"
+      "schedule": "schedule.html?direction=hoop&coach=all&day=all",
+      "frame": "Ведется набор"
     },
     "silk": {
       "name": "silk",
       "title": "Воздушное полотно",
       "link": "services/silk.html",
-      "schedule": "schedule.html?direction=silk&coach=all&day=all"
+      "schedule": "schedule.html?direction=silk&coach=all&day=all",
+      "frame": "Ведется набор"
     },
     "yoga": {
       "name": "yoga",
       "title": "Королевская йога",
       "link": "services/yoga.html",
-      "schedule": "schedule.html?direction=silk&coach=all&day=all"
+      "schedule": "schedule.html?direction=silk&coach=all&day=all",
+      "frame": "Ведется набор"
     },
     "stretching": {
       "name": "stretching",
@@ -543,7 +547,8 @@
           "title": "Надежда Лучинина",
           "link": "coaches/nadezhda-luchinina.html"
         }
-      ]
+      ],
+      "frame": "Ведется набор"
     },
     "zumbaFitness": {
       "name": "zumba-fitness",
@@ -555,17 +560,20 @@
           "title": "Александр Ушаков",
           "link": "coaches/aleksandr-ushakov.html"
         }
-      ]
+      ],
+      "frame": "Открытая группа"
     },
     "healthyBack": {
       "name": "healthy-back",
       "title": "Здоровая спина",
-      "link": "services/healthy-back.html"
+      "link": "services/healthy-back.html",
+      "frame": "Ведется набор"
     },
     "superSculpt": {
       "name": "super-sculpt",
       "title": "Super Sculpt",
-      "link": "services/super-sculpt.html"
+      "link": "services/super-sculpt.html",
+      "frame": "Ведется набор"
     },
     "zumbaStrong": {
       "name": "zumba-strong",
@@ -577,17 +585,20 @@
           "title": "Александр Ушаков",
           "link": "coaches/aleksandr-ushakov.html"
         }
-      ]
+      ],
+      "frame": "Открытая группа"
     },
     "stretchingSilk": {
       "name": "stretching-silk",
       "title": "Stretching на полотнах",
-      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all"
+      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all",
+      "frame": "Ведется набор"
     },
     "rhythmicGymnastics": {
       "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
-      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all"
+      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all",
+      "frame": "Ведется набор"
     },
     "functionalTraining": {
       "name": "functional-training",
@@ -598,7 +609,8 @@
           "title": "Яна Белякова",
           "link": "coaches/yana-belyakova.html"
         }
-      ]
+      ],
+      "frame": "Открытая группа"
     },
     "plastic": {
       "name": "plastic",
@@ -609,12 +621,14 @@
           "title": "Яна Белякова",
           "link": "coaches/yana-belyakova.html"
         }
-      ]
+      ],
+      "frame": "Открытая группа"
     },
     "contemporary": {
       "name": "contemporary",
       "title": "Контемпорари",
-      "schedule": "schedule.html?direction=contemporary&coach=all&day=all"
+      "schedule": "schedule.html?direction=contemporary&coach=all&day=all",
+      "frame": "Ведется набор"
     }
   },
   "coaches": {
