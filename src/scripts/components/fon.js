@@ -1,6 +1,5 @@
 import fonLg from '../../images/fon/laptop-common-fon.jpg';
 import fonSm from '../../images/fon/mobile-common-fon.jpg';
-import '../../styles/fon.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mobile = window.matchMedia('(max-width: 991px)');

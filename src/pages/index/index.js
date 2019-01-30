@@ -27,7 +27,7 @@ WebFont.load({
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
-  const $wrapper = $('#wrapper');
+  // const $wrapper = $('#wrapper');
   function imageLoad() {
     if (mobile.matches) {
       const img = new Image();
@@ -37,8 +37,8 @@ jQuery(document).ready(($) => {
         img.src = mobileFon;
       }
       img.onload = () => {
-        $wrapper.css({
-          backgroundImage: `url(${img.src})`,
+        defer(() => {
+          $('html').addClass('fon-loaded');
         });
       };
     }
@@ -52,9 +52,7 @@ jQuery(document).ready(($) => {
       img.onload = () => {
         const spans = document.querySelectorAll('.caption h1 div span');
         defer(() => {
-          $wrapper.css({
-            backgroundImage: `url(${img.src})`,
-          });
+          $('html').addClass('fon-loaded');
         });
         each(spans, (span) => {
           defer(() => {
