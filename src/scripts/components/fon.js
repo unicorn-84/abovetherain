@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = fonSm;
       img.onload = () => {
         setTimeout(() => {
-          document.body.style.backgroundImage = `url(${img.src})`;
+          document.documentElement.classList.add('fon-loaded');
         }, 0);
       };
     }
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = fonLg;
       img.onload = () => {
         setTimeout(() => {
-          document.body.style.backgroundImage = `url(${img.src})`;
+          document.documentElement.classList.add('fon-loaded');
         }, 0);
       };
     }
