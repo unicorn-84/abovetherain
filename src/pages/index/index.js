@@ -8,7 +8,7 @@ import { each, defer } from 'underscore';
 import '../../styles/main.scss';
 import '../../scripts/components/icons';
 import '../../scripts/components/logo';
-import { retinaCheck } from '../../scripts/components/helpers';
+import { checkRetina, mobile } from '../../scripts/components/helpers';
 // Local
 import './index.scss';
 import mobileFon from '../../images/fon/mobile-index-fon.jpg';
@@ -16,8 +16,6 @@ import retinaMobileFon from '../../images/fon/mobile-index-fon@2x.jpg';
 import laptopFon from '../../images/fon/laptop-index-fon.jpg';
 import retinaLaptopFon from '../../images/fon/laptop-index-fon@2x.jpg';
 // Inline
-// TODO: 'В helpers.js'
-const mobile = window.matchMedia('(max-width: 991px)');
 
 WebFont.load({
   custom: {
@@ -30,7 +28,7 @@ jQuery(document).ready(($) => {
   function imageLoad() {
     if (mobile.matches) {
       const img = new Image();
-      if (retinaCheck()) {
+      if (checkRetina()) {
         img.src = retinaMobileFon;
       } else {
         img.src = mobileFon;
@@ -43,7 +41,7 @@ jQuery(document).ready(($) => {
     }
     if (!mobile.matches) {
       const img = new Image();
-      if (retinaCheck()) {
+      if (checkRetina()) {
         img.src = retinaLaptopFon;
       } else {
         img.src = laptopFon;

@@ -5,6 +5,7 @@ import 'collapse';
 import {
   each, has, without, map,
 } from 'underscore';
+import { mobile } from '../../scripts/components/helpers';
 import '../../styles/main.scss';
 
 import '../../scripts/components/icons';
@@ -15,8 +16,6 @@ import { directions, coaches } from '../../data';
 // SCSS
 import './schedule.scss';
 // Inline
-
-const mobile = window.matchMedia('(max-width: 991px)');
 
 // Массив дней недели.
 const days = [
