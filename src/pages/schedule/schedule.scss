@@ -155,80 +155,18 @@ $border-color: #777;
   }
 }
 
-.schedule-table[data-selected='all'] .schedule-event > *,
-.schedule-table[data-selected='yoga'] .schedule-event[data-direction='yoga'] > *,
-.schedule-table[data-selected='pole-dance'] .schedule-event[data-direction='pole-dance'] > *,
-.schedule-table[data-selected='stretching'] .schedule-event[data-direction='stretching'] > *,
-.schedule-table[data-selected='stretching-silk'] .schedule-event[data-direction='stretching-silk'] > *,
-.schedule-table[data-selected='hoop'] .schedule-event[data-direction='hoop'] > *,
-.schedule-table[data-selected='silk'] .schedule-event[data-direction='silk'] > *,
-.schedule-table[data-selected='rhythmic-gymnastics'] .schedule-event[data-direction='rhythmic-gymnastics'] > *,
-.schedule-table[data-selected='functional-training'] .schedule-event[data-direction='functional-training'] > *,
-.schedule-table[data-selected='plastic'] .schedule-event[data-direction='plastic'] > *,
-.schedule-table[data-selected='zumba-fitness'] .schedule-event[data-direction='zumba-fitness'] > *,
-.schedule-table[data-selected='zumba-strong'] .schedule-event[data-direction='zumba-strong'] > *,
-.schedule-table[data-selected='contemporary'] .schedule-event[data-direction='contemporary'] > *,
-.schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'] > *,
-.schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'] > *,
-.schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'] > *,
-.schedule-table[data-selected='monday'] .schedule-event[data-day='monday'] > *,
-.schedule-table[data-selected='tuesday'] .schedule-event[data-day='tuesday'] > *,
-.schedule-table[data-selected='wednesday'] .schedule-event[data-day='wednesday'] > *,
-.schedule-table[data-selected='thursday'] .schedule-event[data-day='thursday'] > *,
-.schedule-table[data-selected='friday'] .schedule-event[data-day='friday'] > *,
-.schedule-table[data-selected='saturday'] .schedule-event[data-day='saturday'] > * {
-  pointer-events: auto;
-}
-
-.schedule-table[data-selected='all'] .schedule-event,
-.schedule-table[data-selected='yoga'] .schedule-event[data-direction='yoga'],
-.schedule-table[data-selected='pole-dance'] .schedule-event[data-direction='pole-dance'],
-.schedule-table[data-selected='stretching'] .schedule-event[data-direction='stretching'],
-.schedule-table[data-selected='stretching-silk'] .schedule-event[data-direction='stretching-silk'],
-.schedule-table[data-selected='hoop'] .schedule-event[data-direction='hoop'],
-.schedule-table[data-selected='silk'] .schedule-event[data-direction='silk'],
-.schedule-table[data-selected='rhythmic-gymnastics'] .schedule-event[data-direction='rhythmic-gymnastics'],
-.schedule-table[data-selected='functional-training'] .schedule-event[data-direction='functional-training'],
-.schedule-table[data-selected='plastic'] .schedule-event[data-direction='plastic'],
-.schedule-table[data-selected='zumba-fitness'] .schedule-event[data-direction='zumba-fitness'],
-.schedule-table[data-selected='zumba-strong'] .schedule-event[data-direction='zumba-strong'],
-.schedule-table[data-selected='contemporary'] .schedule-event[data-direction='contemporary'],
-.schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'],
-.schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'],
-.schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'],
-.schedule-table[data-selected='monday'] .schedule-event[data-day='monday'],
-.schedule-table[data-selected='tuesday'] .schedule-event[data-day='tuesday'],
-.schedule-table[data-selected='wednesday'] .schedule-event[data-day='wednesday'],
-.schedule-table[data-selected='thursday'] .schedule-event[data-day='thursday'],
-.schedule-table[data-selected='friday'] .schedule-event[data-day='friday'],
-.schedule-table[data-selected='saturday'] .schedule-event[data-day='saturday'] {
+//Для 'all' селектора
+.schedule-table[data-selected='all'] .schedule-event {
   border: 1px solid $border-color;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 
-.schedule-table.mobile[data-selected='all'] tr,
-.schedule-table.mobile[data-selected='yoga'] tr[class~='yoga'],
-.schedule-table.mobile[data-selected='pole-dance'] tr[class~='pole-dance'],
-.schedule-table.mobile[data-selected='stretching'] tr[class~='stretching'],
-.schedule-table.mobile[data-selected='stretching-silk'] tr[class~='stretching-silk'],
-.schedule-table.mobile[data-selected='hoop'] tr[class~='hoop'],
-.schedule-table.mobile[data-selected='silk'] tr[class~='silk'],
-.schedule-table.mobile[data-selected='rhythmic-gymnastics'] tr[class~='rhythmic-gymnastics'],
-.schedule-table.mobile[data-selected='functional-training'] tr[class~='functional-training'],
-.schedule-table.mobile[data-selected='plastic'] tr[class~='plastic'],
-.schedule-table.mobile[data-selected='zumba-fitness'] tr[class~='zumba-fitness'],
-.schedule-table.mobile[data-selected='zumba-strong'] tr[class~='zumba-strong'],
-.schedule-table.mobile[data-selected='contemporary'] tr[class~='contemporary'],
-.schedule-table.mobile[data-selected='nadezhda-luchinina'] tr[class~='nadezhda-luchinina'],
-.schedule-table.mobile[data-selected='yana-belyakova'] tr[class~='yana-belyakova'],
-.schedule-table.mobile[data-selected='aleksandr-ushakov'] tr[class~='aleksandr-ushakov'],
-.schedule-table[data-selected='monday'] tr[class~='monday'],
-.schedule-table[data-selected='tuesday'] tr[class~='tuesday'],
-.schedule-table[data-selected='wednesday'] tr[class~='wednesday'],
-.schedule-table[data-selected='thursday'] tr[class~='thursday'],
-.schedule-table[data-selected='friday'] tr[class~='friday'],
-.schedule-table[data-selected='saturday'] tr[class~='saturday'] {
+.schedule-table[data-selected='all'] .schedule-event > * {
+  pointer-events: auto;
+}
+
+.schedule-table.mobile[data-selected='all'] tr {
   display: table-row;
 }
 

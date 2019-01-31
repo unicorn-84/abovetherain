@@ -3,7 +3,9 @@
 import 'bootstrap.scss';
 import 'collapse';
 // Common
-import { each, has } from 'underscore';
+import {
+  each, has, without, map,
+} from 'underscore';
 import '../../styles/main.scss';
 
 import '../../scripts/components/icons';
@@ -25,7 +27,6 @@ const days = [
   'thursday',
   'friday',
   'saturday',
-  'sunday',
 ];
 
 // Объект для хранения массивов с названиями дней, направлений и тренеров у которых есть расписание.
@@ -141,23 +142,125 @@ function closeAllSelect(target, selects) {
   }, selects);
 }
 
+function genStyles() {
+  const css = document.createElement('style');
+  css.type = 'text/css';
+
+  // Стили для разних групп селекторов
+  const styles = {
+    schema1: '{ pointer-events: auto; }',
+    schema2: '{ border: 1px solid #00be9f; background-color: rgba(0, 0, 0, 0.5); opacity: 1;}',
+    schema3: '{ display: table-row; }',
+  };
+
+  // Создаем группы селекторов для стилей из 'styles'
+  // Проходим по объекту 'styles'
+  each(styles, (style, index) => {
+    // Для каждого правила стилей своя схема создания селекторов
+    switch (index) {
+      case 'schema1':
+        (function makeCssGroup1() {
+          let group = [];
+
+          // Проходим по объекту 'data'
+          each(data, (element, i) => {
+            let item = element;
+
+            // Удаляем 'all'
+            item = without(item, 'all');
+
+            // Создаем группу css cелекторов'
+            item = map(item, value => `.schedule-table[data-selected='${value}'] .schedule-event[data-${i}='${value}'] > *`);
+            group = group.concat(item);
+          });
+
+          // Соединяем селекторы и стиль
+          const rule = group.join(',') + style;
+
+          // Добавляем в 'css'
+          css.appendChild(document.createTextNode(rule));
+        }());
+        break;
+      case 'schema2':
+        (function makeCssGroup2() {
+          let group = [];
+
+          // Проходим по объекту 'data'
+          each(data, (element, i) => {
+            let item = element;
+
+            // Удаляем 'all'
+            item = without(item, 'all');
+
+            // Создаем группу css cелекторов'
+            item = map(item, value => `.schedule-table[data-selected='${value}'] .schedule-event[data-${i}='${value}']`);
+            group = group.concat(item);
+          });
+
+          // Соединяем селекторы и стиль
+          const rule = group.join(',') + style;
+
+          // Добавляем в 'css'
+          css.appendChild(document.createTextNode(rule));
+        }());
+        break;
+      case 'schema3':
+        (function makeCssGroup3() {
+          let group = [];
+
+          // Проходим по объекту 'data'
+          each(data, (element) => {
+            let item = element;
+
+            // Удаляем 'all'
+            item = without(item, 'all');
+
+            // Создаем группу css cелекторов'
+            item = map(item, value => `.schedule-table.mobile[data-selected='${value}'] tr[class~='${value}']`);
+            group = group.concat(item);
+          });
+
+          // Соединяем селекторы и стиль
+          const rule = group.join(',') + style;
+
+          // Добавляем в 'css'
+          css.appendChild(document.createTextNode(rule));
+        }());
+        break;
+      default:
+        break;
+    }
+  });
+  document.getElementsByTagName('head')[0].appendChild(css);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const tables = document.querySelectorAll('.schedule-table');
   const selects = document.querySelectorAll('.schedule-filter select');
+  // Вставить в 'head' стили в соответствии с 'data'.
+  if (selects.length > 0) {
+    genStyles();
+  }
+
   // Отключить фильтр по дням недели на 'laptop' и больше
   if (!mobile.matches) {
     document.querySelector('select#day-select').setAttribute('disabled', 'disabled');
   }
+
   // Проверка строки запроса
   if (checkQuery()) {
     // При загрузке страницы всегда присваивать параметру 'day' значение 'all', т.к. запрос с фильтрацией по дням не используется.
     stateObject.day = 'all';
+
     // Переписать строку запроса.
     replaceQuery(stateObject);
+
     // Програмно задать селектам значения в соответствии с значениями в строке запроса.
     setSelects(selects);
+
     // Присвоить 'value' выбранного селекта атрибуту 'data-select' у всех таблиц расписания.
     sortTable(tables);
+
     // Назначение обработчика на 'onchange' всем селектам для фильтрации расписания.
     each(selects, (item) => {
       const select = item;
@@ -186,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     replaceQuery(stateObject);
   }
 });
+
 // Включать, отключать фильтр по дням недели в соответствии с медиа запросом
 mobile.addListener(() => {
   if (!mobile.matches) {
