@@ -116,7 +116,7 @@ $border-color: #777;
       }
     }
 
-    @include link(light, true, false, false);
+    @include link(light, true, false, true);
 
     a {
       color: $link-color;
@@ -141,10 +141,20 @@ $border-color: #777;
       font-weight: $heading-font-weight;
     }
 
+    .schedule-title,
+    .schedule-coach {
+      color: $link-color;
+    }
+
+    .schedule-coach {
+      a {
+        font-weight: $font-weight !important;
+      }
+    }
+
     .schedule-interval,
     .schedule-coach {
       font-size: 1rem;
-      font-weight: $font-weight;
     }
 
     .badge-success,
