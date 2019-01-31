@@ -13,7 +13,8 @@
       {
         "ignore": ["bootstrap.scss", "style.scss", "carousel", "collapse", "select"]
       }
-    ]
+    ],
+    "max-len": 0
   },
   "env": {
     "browser": true,
