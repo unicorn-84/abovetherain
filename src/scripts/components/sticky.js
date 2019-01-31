@@ -1,3 +1,4 @@
+// TODO: 'Удалить'
 import { throttle } from 'underscore';
 
 jQuery.noConflict();
