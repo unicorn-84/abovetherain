@@ -531,7 +531,7 @@
       "name": "yoga",
       "title": "Королевская йога",
       "link": "services/yoga.html",
-      "schedule": "schedule.html?direction=silk&coach=all&day=all"
+      "schedule": "schedule.html?direction=yoga&coach=all&day=all"
     },
     "stretching": {
       "name": "stretching",
