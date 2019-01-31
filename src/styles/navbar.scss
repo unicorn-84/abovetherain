@@ -12,10 +12,12 @@
   right: 0;
   left: 0;
   z-index: 1030;
+  box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3);
 
   @include respond-to(laptop) {
     position: static;
     background-color: transparent;
+    box-shadow: none;
   }
 
   .navbar-wrapper {
