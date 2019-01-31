@@ -15,6 +15,7 @@ import { directions, coaches } from '../../data';
 import './schedule.scss';
 // Inline
 
+const mobile = window.matchMedia('(max-width: 991px)');
 // Массив дней недели. Задается в скрипте.
 const days = [
   'monday',
@@ -132,6 +133,10 @@ function closeAllSelect(target, selects) {
 document.addEventListener('DOMContentLoaded', () => {
   const tables = document.querySelectorAll('.schedule-table');
   const selects = document.querySelectorAll('.schedule-filter select');
+  // Отключить фильтр по дням недели на 'laptop' и больше
+  if (!mobile.matches) {
+    document.querySelector('select#day-select').setAttribute('disabled', 'disabled');
+  }
   // Проверка строки запроса
   if (checkQuery()) {
     // При загрузке страницы всегда присваивать параметру 'day' значение 'all', т.к. запрос с фильтрацией по дням не используется.
@@ -168,5 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
   } else {
     // Если пришел запрос с невалидными параметрами, задать дефолтные значения.
     replaceQuery(stateObject);
+  }
+});
+// Включать, отключать фильтр по дням недели в соответствии с медиа запросом
+mobile.addListener(() => {
+  if (!mobile.matches) {
+    document.querySelector('select#day-select').setAttribute('disabled', 'disabled');
+  } else {
+    document.querySelector('select#day-select').removeAttribute('disabled');
   }
 });
