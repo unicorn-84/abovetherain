@@ -1,21 +1,12 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-$schedule-bg-color: rgba(0, 0, 0, 0.8);
+$schedule-bg-color: rgba(0, 0, 0, 0.9);
 $schedule-days-bg-color: $schedule-bg-color;
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: $schedule-bg-color;
 $link-color: #00be9f;
 $border-color: #777;
-
-.schedule-wrapper {
-  margin-top: 15px;
-  margin-bottom: -30px;
-
-  @include respond-to(laptop) {
-    margin-bottom: 0;
-  }
-}
 
 .schedule-table {
   display: none;
@@ -108,7 +99,7 @@ $border-color: #777;
   .schedule-event {
     vertical-align: middle;
     padding: 0.5rem 1.5rem;
-    opacity: 0.1;
+    opacity: 0.05;
 
     @include respond-to(laptop) {
       padding: 0.5rem;
@@ -125,7 +116,7 @@ $border-color: #777;
       }
     }
 
-    @include link(light, true, false, false);
+    @include link(light, true, false, true);
 
     a {
       color: $link-color;
@@ -150,10 +141,20 @@ $border-color: #777;
       font-weight: $heading-font-weight;
     }
 
+    .schedule-title,
+    .schedule-coach {
+      color: $link-color;
+    }
+
+    .schedule-coach {
+      a {
+        font-weight: $font-weight !important;
+      }
+    }
+
     .schedule-interval,
     .schedule-coach {
       font-size: 1rem;
-      font-weight: $font-weight;
     }
 
     .badge-success,
@@ -164,80 +165,18 @@ $border-color: #777;
   }
 }
 
-.schedule-table[data-selected='all'] .schedule-event > *,
-.schedule-table[data-selected='yoga'] .schedule-event[data-direction='yoga'] > *,
-.schedule-table[data-selected='pole-dance'] .schedule-event[data-direction='pole-dance'] > *,
-.schedule-table[data-selected='stretching'] .schedule-event[data-direction='stretching'] > *,
-.schedule-table[data-selected='stretching-silk'] .schedule-event[data-direction='stretching-silk'] > *,
-.schedule-table[data-selected='hoop'] .schedule-event[data-direction='hoop'] > *,
-.schedule-table[data-selected='silk'] .schedule-event[data-direction='silk'] > *,
-.schedule-table[data-selected='rhythmic-gymnastics'] .schedule-event[data-direction='rhythmic-gymnastics'] > *,
-.schedule-table[data-selected='functional-training'] .schedule-event[data-direction='functional-training'] > *,
-.schedule-table[data-selected='plastic'] .schedule-event[data-direction='plastic'] > *,
-.schedule-table[data-selected='zumba-fitness'] .schedule-event[data-direction='zumba-fitness'] > *,
-.schedule-table[data-selected='zumba-strong'] .schedule-event[data-direction='zumba-strong'] > *,
-.schedule-table[data-selected='contemporary'] .schedule-event[data-direction='contemporary'] > *,
-.schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'] > *,
-.schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'] > *,
-.schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'] > *,
-.schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'] > *,
-.schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'] > *,
-.schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'] > *,
-.schedule-table[data-selected='day-4'] .schedule-event[data-day='day-4'] > *,
-.schedule-table[data-selected='day-5'] .schedule-event[data-day='day-5'] > *,
-.schedule-table[data-selected='day-6'] .schedule-event[data-day='day-6'] > * {
-  pointer-events: auto;
-}
-
-.schedule-table[data-selected='all'] .schedule-event,
-.schedule-table[data-selected='yoga'] .schedule-event[data-direction='yoga'],
-.schedule-table[data-selected='pole-dance'] .schedule-event[data-direction='pole-dance'],
-.schedule-table[data-selected='stretching'] .schedule-event[data-direction='stretching'],
-.schedule-table[data-selected='stretching-silk'] .schedule-event[data-direction='stretching-silk'],
-.schedule-table[data-selected='hoop'] .schedule-event[data-direction='hoop'],
-.schedule-table[data-selected='silk'] .schedule-event[data-direction='silk'],
-.schedule-table[data-selected='rhythmic-gymnastics'] .schedule-event[data-direction='rhythmic-gymnastics'],
-.schedule-table[data-selected='functional-training'] .schedule-event[data-direction='functional-training'],
-.schedule-table[data-selected='plastic'] .schedule-event[data-direction='plastic'],
-.schedule-table[data-selected='zumba-fitness'] .schedule-event[data-direction='zumba-fitness'],
-.schedule-table[data-selected='zumba-strong'] .schedule-event[data-direction='zumba-strong'],
-.schedule-table[data-selected='contemporary'] .schedule-event[data-direction='contemporary'],
-.schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'],
-.schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'],
-.schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'],
-.schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'],
-.schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'],
-.schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'],
-.schedule-table[data-selected='day-4'] .schedule-event[data-day='day-4'],
-.schedule-table[data-selected='day-5'] .schedule-event[data-day='day-5'],
-.schedule-table[data-selected='day-6'] .schedule-event[data-day='day-6'] {
+//Для 'all' селектора
+.schedule-table[data-selected='all'] .schedule-event {
   border: 1px solid $border-color;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
 }
 
-.schedule-table.mobile[data-selected='all'] tr,
-.schedule-table.mobile[data-selected='yoga'] tr[class~='yoga'],
-.schedule-table.mobile[data-selected='pole-dance'] tr[class~='pole-dance'],
-.schedule-table.mobile[data-selected='stretching'] tr[class~='stretching'],
-.schedule-table.mobile[data-selected='stretching-silk'] tr[class~='stretching-silk'],
-.schedule-table.mobile[data-selected='hoop'] tr[class~='hoop'],
-.schedule-table.mobile[data-selected='silk'] tr[class~='silk'],
-.schedule-table.mobile[data-selected='rhythmic-gymnastics'] tr[class~='rhythmic-gymnastics'],
-.schedule-table.mobile[data-selected='functional-training'] tr[class~='functional-training'],
-.schedule-table.mobile[data-selected='plastic'] tr[class~='plastic'],
-.schedule-table.mobile[data-selected='zumba-fitness'] tr[class~='zumba-fitness'],
-.schedule-table.mobile[data-selected='zumba-strong'] tr[class~='zumba-strong'],
-.schedule-table.mobile[data-selected='contemporary'] tr[class~='contemporary'],
-.schedule-table.mobile[data-selected='nadezhda-luchinina'] tr[class~='nadezhda-luchinina'],
-.schedule-table.mobile[data-selected='yana-belyakova'] tr[class~='yana-belyakova'],
-.schedule-table.mobile[data-selected='aleksandr-ushakov'] tr[class~='aleksandr-ushakov'],
-.schedule-table[data-selected='day-1'] tr[class~='day-1'],
-.schedule-table[data-selected='day-2'] tr[class~='day-2'],
-.schedule-table[data-selected='day-3'] tr[class~='day-3'],
-.schedule-table[data-selected='day-4'] tr[class~='day-4'],
-.schedule-table[data-selected='day-5'] tr[class~='day-5'],
-.schedule-table[data-selected='day-6'] tr[class~='day-6'] {
+.schedule-table[data-selected='all'] .schedule-event > * {
+  pointer-events: auto;
+}
+
+.schedule-table.mobile[data-selected='all'] tr {
   display: table-row;
 }
 
@@ -252,64 +191,7 @@ $border-color: #777;
   }
 }
 
-.select,
-.select-list {
-  border: 1px solid $border-color;
-  font-weight: $font-weight;
-}
-
-.select,
-.select-list > li {
-  padding: 8px 16px;
-}
-
-.select {
-  color: $dark-text-color;
-  background-color: $theme-color;
-  margin-bottom: 15px;
-  max-width: 540px;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include respond-to(laptop) {
-    margin-left: 0;
-    margin-right: 15px;
-    margin-bottom: 0;
-    max-width: 320px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-
-    &#day-select {
-      display: none;
-    }
-  }
-
-  &::after {
-    border-color: $border-color transparent transparent;
-  }
-
-  &.active::after {
-    border-color: transparent transparent $border-color;
-  }
-}
-
-.select-list {
-  color: $dark-text-color;
-  background-color: $theme-color;
-
-  li {
-    transition: background-color 0.3s $function;
-
-    &:focus,
-    &:hover {
-      background-color: $theme-color;
-    }
-  }
-}
-
-.vk-link-sign-up {
+.schedule-controls {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -320,5 +202,31 @@ $border-color: #777;
     margin-left: 0;
     margin-right: 0;
     max-width: 320px;
+  }
+}
+
+select.schedule-controls {
+  background-color: $white-color;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  color: $dark-text-color;
+  font-family: $font-family;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(128, 189, 255, 0.5);
+  }
+
+  @include respond-to(laptop) {
+    margin-right: 0.5rem;
+    margin-left: 0;
+    max-width: 320px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

@@ -1,8 +1,8 @@
+import { mobile } from './helpers';
 import fonLg from '../../images/fon/laptop-common-fon.jpg';
 import fonSm from '../../images/fon/mobile-common-fon.jpg';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const mobile = window.matchMedia('(max-width: 991px)');
   function fonLoad() {
     if (mobile.matches) {
       const img = new Image();

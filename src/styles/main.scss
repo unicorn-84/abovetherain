@@ -1,11 +1,6 @@
 @import 'variables';
 @import 'mixins';
 
-html,
-body {
-  height: 100%;
-}
-
 html {
   background-color: $body-bg-color;
 
