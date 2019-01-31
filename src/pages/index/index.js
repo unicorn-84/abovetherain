@@ -16,7 +16,7 @@ import retinaMobileFon from '../../images/fon/mobile-index-fon@2x.jpg';
 import laptopFon from '../../images/fon/laptop-index-fon.jpg';
 import retinaLaptopFon from '../../images/fon/laptop-index-fon@2x.jpg';
 // Inline
-
+// TODO: 'В helpers.js'
 const mobile = window.matchMedia('(max-width: 991px)');
 
 WebFont.load({
@@ -27,7 +27,6 @@ WebFont.load({
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
-  // const $wrapper = $('#wrapper');
   function imageLoad() {
     if (mobile.matches) {
       const img = new Image();

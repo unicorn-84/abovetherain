@@ -1,13 +1,19 @@
-mixin schedule-event(rowspan, directionClass, direction, coachClass, coach, dayClass, timeStart, timeEnd, badge)
-  td.schedule-event(rowspan= rowspan data-direction= directionClass data-coach= coachClass data-day= dayClass)
+mixin schedule-event(rowspan, direction, coach, day, timeStart, timeEnd, badge)
+  td.schedule-event(rowspan= rowspan data-direction= direction.name data-coach= coach.name data-day= day)
     if direction
       .schedule-title
-        a(href='services.html') !{direction}
+        if direction.link
+          a(href= direction.link)= direction.title
+        else
+          | #{direction.title}
       .schedule-interval
         span= `${timeStart}-${timeEnd}`
     if coach
       .schedule-coach
-        a(href='coaches.html')= coach
+        if coach.link
+          a(href= coach.link)= coach.title
+        else
+          | #{coach.title}
     if badge
       div
         span(class='badge badge-success badge-pill')= badge

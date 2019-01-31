@@ -15,15 +15,15 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 9:00
       //Понедельник
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-1', '9:00', '10:30', '')
+      +schedule-event('3', directions.yoga, '', 'monday', '9:00', '10:30')
       //Вторник
-      +schedule-event('3', 'stretching', 'Stretching', '', '', 'day-2', '9:00', '10:30')
+      +schedule-event('3', directions.stretching, '', 'tuesday', '9:00', '10:30')
       //Среда
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-3', '9:00', '10:30')
+      +schedule-event('3', directions.yoga, '', 'wednesday', '9:00', '10:30')
       //Четверг
-      +schedule-event('3', 'stretching', 'Stretching', '', '', 'day-4', '9:00', '10:30')
+      +schedule-event('3', directions.stretching, '', 'thursday', '9:00', '10:30')
       //Пятница
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-5', '9:00', '10:30')
+      +schedule-event('3', directions.yoga, '', 'friday', '9:00', '10:30')
       //Суббота
       td
     //9:30
@@ -45,7 +45,7 @@ table.schedule-table(data-selected="all")
       //Четверг
       //Пятница
       //Суббота
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-6', '10:00', '11:00')
+      +schedule-event('2', directions.stretching, '', 'saturday', '10:00', '11:00')
     //10:30
     tr
       td.schedule-time 10:30
@@ -64,17 +64,17 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 11:00
       //Понедельник
-      +schedule-event('2', 'zumba-fitness', 'Zumba® Fitness', 'aleksandr-ushakov', 'Александр Ушаков', 'day-1', '11:00', '12:00', 'Открытая группа')
+      +schedule-event('2', directions.zumbaFitness, coaches.aleksandrUshakov, 'monday', '11:00', '12:00', 'Открытая группа')
       //Вторник
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-2', '11:00', '12:00')
+      +schedule-event('2', directions.poleDance, '', 'tuesday', '11:00', '12:00')
       //Среда
-      +schedule-event('2', 'silk', 'Воздушное полотно', '', '', 'day-3', '11:00', '12:00')
+      +schedule-event('2', directions.silk, '', 'wednesday', '11:00', '12:00')
       //Четверг
-      +schedule-event('2', 'zumba-strong', 'Strong by Zumba®', 'aleksandr-ushakov', 'Александр Ушаков', 'day-4', '11:00', '12:00', 'Открытая группа')
+      +schedule-event('2', directions.zumbaStrong, coaches.aleksandrUshakov, 'thursday', '11:00', '12:00', 'Открытая группа')
       //Пятница
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-5', '11:00', '12:00')
+      +schedule-event('2', directions.poleDance, '', 'friday', '11:00', '12:00')
       //Суббота
-      +schedule-event('2', 'silk', 'Воздушное полотно', '', '', 'day-6', '11:00', '12:00')
+      +schedule-event('2', directions.silk, '', 'saturday', '11:00', '12:00')
     //11:30
     tr
       td.schedule-time 11:30
@@ -94,7 +94,7 @@ table.schedule-table(data-selected="all")
       //Среда
       td
       //Четверг
-      +schedule-event('2', 'stretching', 'Stretching', 'yana-belyakova', 'Яна Белякова', 'day-4', '12:00', '13:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.stretching, coaches.yanaBelyakova, 'thursday', '12:00', '13:00', 'Открытая группа', 'Открытая группа')
       //Пятница
       td
       //Суббота
@@ -103,14 +103,14 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 12:30
       //Понедельник
-      +schedule-event('2', 'stretching-silk', 'Stretching на полотнах', '', '', 'day-1', '12:30', '13:30')
+      +schedule-event('2', directions.stretchingSilk, '', 'monday', '12:30', '13:30')
       //Вторник
-      +schedule-event('2', 'hoop', 'Воздушное кольцо', '', '', 'day-2', '12:30', '13:30')
+      +schedule-event('2', directions.hoop, '', 'tuesday', '12:30', '13:30')
       //Среда
-      +schedule-event('2', 'stretching-silk', 'Stretching на полотнах', '', '', 'day-3', '12:30', '13:30')
+      +schedule-event('2', directions.stretchingSilk, '', 'wednesday', '12:30', '13:30')
       //Четверг
       //Пятница
-      +schedule-event('2', 'hoop', 'Воздушное кольцо', '', '', 'day-5', '12:30', '13:30')
+      +schedule-event('2', directions.hoop, '', 'friday', '12:30', '13:30')
       //Суббота
       td
     //13:00
@@ -128,15 +128,15 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 13:30
       //Понедельник
-      +schedule-event('2', 'functional-training', 'Функциональный тренинг', 'yana-belyakova', 'Яна Белякова', 'day-1', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.functionalTraining, coaches.yanaBelyakova, 'monday', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
       //Вторник
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-2', '13:30', '14:30')
+      +schedule-event('2', directions.stretching, '', 'tuesday', '13:30', '14:30')
       //Среда
       td
       //Четверг
-      +schedule-event('2', 'functional-training', 'Функциональный тренинг', 'yana-belyakova', 'Яна Белякова', 'day-4', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.functionalTraining, coaches.yanaBelyakova, 'thursday', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
       //Пятница
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-5', '13:30', '14:30')
+      +schedule-event('2', directions.stretching, '', 'friday', '13:30', '14:30')
       //Суббота
       td
     //14-00
@@ -145,37 +145,37 @@ table.schedule-table(data-selected="all")
       //Понедельник
       //Вторник
       //Среда
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-3', '14:00', '15:00')
+      +schedule-event('2', directions.poleDance, '', 'wednesday', '14:00', '15:00')
       //Четверг
       //Пятница
       //Суббота
-      +schedule-event('2', 'plastic', 'Женская пластика', 'yana-belyakova', 'Яна Белякова', 'day-6', '14:00', '15:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.plastic, coaches.yanaBelyakova, 'saturday', '14:00', '15:00', 'Открытая группа', 'Открытая группа')
     //14:30
     tr
       td.schedule-time 14:30
       //Понедельник
       td
       //Вторник
-      +schedule-event('2', 'rhythmic-gymnastics', 'Художественная гимнастика', '', '', 'day-2', '14:30', '15:30')
+      +schedule-event('2', directions.rhythmicGymnastics, '', 'tuesday', '14:30', '15:30')
       //Среда
       //Четверг
       td
       //Пятница
-      +schedule-event('2', 'rhythmic-gymnastics', 'Художественная гимнастика', '', '', 'day-5', '14:30', '15:30')
+      +schedule-event('2', directions.rhythmicGymnastics, '', 'friday', '14:30', '15:30')
       //Суббота
     //15:00
     tr
       td.schedule-time 15:00
       //Понедельник
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'yana-belyakova', 'Яна Белякова', 'day-1', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.poleDance, coaches.yanaBelyakova, 'monday', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
       //Вторник
       //Среда
       td
       //Четверг
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'yana-belyakova', 'Яна Белякова', 'day-4', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.poleDance, coaches.yanaBelyakova, 'thursday', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
       //Пятница
       //Суббота
-      +schedule-event('2', 'functional-training', 'Функциональный тренинг', 'yana-belyakova', 'Яна Белякова', 'day-6', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.functionalTraining, coaches.yanaBelyakova, 'saturday', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
     //15:30
     tr
       td.schedule-time 15:30
@@ -200,9 +200,9 @@ table.schedule-table(data-selected="all")
       //Четверг
       td
       //Пятница
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-5', '16:00', '17:00')
+      +schedule-event('2', directions.poleDance, '', 'friday', '16:00', '17:00')
       //Суббота
-      +schedule-event('2', 'stretching', 'Stretching', 'yana-belyakova', 'Яна Белякова', 'day-6', '16:00', '17:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.stretching, coaches.yanaBelyakova, 'saturday', '16:00', '17:00', 'Открытая группа', 'Открытая группа')
     //16:30
     tr
       td.schedule-time 16:30
@@ -220,15 +220,15 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 17:00
       //Понедельник
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-1', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'monday', '17:00', '18:00')
       //Вторник
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-2', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, '', 'tuesday', '17:00', '18:00')
       //Среда
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-3', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'wednesday', '17:00', '18:00')
       //Четверг
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-4', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, '', 'thursday', '17:00', '18:00')
       //Пятница
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-5', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'friday', '17:00', '18:00')
       //Суббота
       td
     //17:30
@@ -245,7 +245,7 @@ table.schedule-table(data-selected="all")
     tr
       td.schedule-time 18:00
       //Понедельник
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-1', '18:00', '19:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'monday', '18:00', '19:00')
       //Вторник
       td
       //Среда
@@ -253,7 +253,7 @@ table.schedule-table(data-selected="all")
       //Четверг
       td
       //Пятница
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-5', '18:00', '19:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'friday', '18:00', '19:00')
       //Суббота
       td
     //18:30
@@ -265,7 +265,7 @@ table.schedule-table(data-selected="all")
       //Среда
       td
       //Четверг
-      +schedule-event('2', 'silk', 'Воздушное полотно', '', '', 'day-4', '18:30', '19:30')
+      +schedule-event('2', directions.silk, '', 'thursday', '18:30', '19:30')
       //Пятница
       //Суббота
       td
@@ -275,9 +275,9 @@ table.schedule-table(data-selected="all")
       //Понедельник
       td
       //Вторник
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-2', '19:00', '20:30', 'Открытая группа')
+      +schedule-event('3', directions.yoga, '', 'tuesday', '19:00', '20:30', 'Открытая группа')
       //Среда
-      +schedule-event('2', 'zumba-fitness', 'Zumba® Fitness', 'aleksandr-ushakov', 'Александр Ушаков', 'day-3', '19:00', '20:00' , 'Открытая группа')
+      +schedule-event('2', directions.zumbaFitness, coaches.aleksandrUshakov, 'wednesday', '19:00', '20:00' , 'Открытая группа')
       //Четверг
       //Пятница
       td
@@ -293,19 +293,19 @@ table.schedule-table(data-selected="all")
       //Четверг
       td
       //Пятница
-      +schedule-event('2', 'plastic', 'Женская пластика', 'yana-belyakova', 'Яна Белякова', 'day-5', '19:30', '20:30', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.plastic, coaches.yanaBelyakova, 'friday', '19:30', '20:30', 'Открытая группа', 'Открытая группа')
       //Суббота
       td
     //20:00
     tr
       td.schedule-time 20:00
       //Понедельник
-      +schedule-event('3', 'contemporary', 'Контемпорари', '', '', 'day-1', '20:00', '21:30')
+      +schedule-event('3', directions.contemporary, '', 'monday', '20:00', '21:30')
       //Вторник
       //Среда
       td
       //Четверг
-      +schedule-event('3', 'contemporary', 'Контемпорари', '', '', 'day-4', '20:00', '21:30')
+      +schedule-event('3', directions.contemporary, '', 'thursday', '20:00', '21:30')
       //Пятница
       //Суббота
       td
@@ -314,12 +314,12 @@ table.schedule-table(data-selected="all")
       td.schedule-time 20:30
       //Понедельник
       //Вторник
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-2', '20:30', '21:30')
+      +schedule-event('2', directions.stretching, '', 'tuesday', '20:30', '21:30')
       //Среда
       td
       //Четверг
       //Пятница
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-5', '20:30', '21:30')
+      +schedule-event('2', directions.stretching, '', 'friday', '20:30', '21:30')
       //Суббота
       td
     //21:00
@@ -328,7 +328,7 @@ table.schedule-table(data-selected="all")
       //Понедельник
       //Вторник
       //Среда
-      +schedule-event('2', 'stretching', 'Stretching', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-3', '21:00', '22:00')
+      +schedule-event('2', directions.stretching, coaches.nadezhdaLuchinina, 'wednesday', '21:00', '22:00')
       //Четверг
       //Пятница
       //Суббота
@@ -351,399 +351,399 @@ table.schedule-table(data-selected="all")
 //Понедельник
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.yoga.pole-dance.stretching.stretching-silk.functional-training.zumba-fitness.contemporary.nadezhda-luchinina.yana-belyakova.aleksandr-ushakov.day-1
+    tr.yoga.pole-dance.stretching.stretching-silk.functional-training.zumba-fitness.contemporary.nadezhda-luchinina.yana-belyakova.aleksandr-ushakov.monday
       th.schedule-day
       th.schedule-day Понедельник
   tbody
     //9:00
-    tr.yoga.day-1
+    tr.yoga.monday
       td.schedule-time 9:00
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-1', '9:00', '10:30')
+      +schedule-event('3', directions.yoga, '', 'monday', '9:00', '10:30')
     //9:30
-    tr.yoga.day-1
+    tr.yoga.monday
       td.schedule-time 9:30
     //10:00
-    tr.yoga.day-1
+    tr.yoga.monday
       td.schedule-time 10:00
     //11:00
-    tr.zumba-fitness.aleksandr-ushakov.day-1
+    tr.zumba-fitness.aleksandr-ushakov.monday
       td.schedule-time 11:00
-      +schedule-event('2', 'zumba-fitness', 'Zumba® Fitness', 'aleksandr-ushakov', 'Александр Ушаков', 'day-1', '11:00', '12:00', 'Открытая группа')
+      +schedule-event('2', directions.zumbaFitness, coaches.aleksandrUshakov, 'monday', '11:00', '12:00', 'Открытая группа')
     //11:30
-    tr.zumba-fitness.aleksandr-ushakov.day-1
+    tr.zumba-fitness.aleksandr-ushakov.monday
       td.schedule-time 11:30
     //12:30
-    tr.stretching-silk.day-1
+    tr.stretching-silk.monday
       td.schedule-time 12:30
-      +schedule-event('2', 'stretching-silk', 'Stretching на полотнах', '', '', 'day-1', '12:30', '13:30')
+      +schedule-event('2', directions.stretchingSilk, '', 'monday', '12:30', '13:30')
     //13:00
-    tr.stretching-silk.day-1
+    tr.stretching-silk.monday
       td.schedule-time 13:00
     //13:30
-    tr.functional-training.yana-belyakova.day-1
+    tr.functional-training.yana-belyakova.monday
       td.schedule-time 13:30
-      +schedule-event('2', 'functional-training', 'Функциональный тренинг', 'yana-belyakova', 'Яна Белякова', 'day-1', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.functionalTraining, coaches.yanaBelyakova, 'monday', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
     //14:00
-    tr.functional-training.yana-belyakova.day-1
+    tr.functional-training.yana-belyakova.monday
       td.schedule-time 14:30
     //15:00
-    tr.pole-dance.yana-belyakova.day-1
+    tr.pole-dance.yana-belyakova.monday
       td.schedule-time 15:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'yana-belyakova', 'Яна Белякова', 'day-1', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.poleDance, coaches.yanaBelyakova, 'monday', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
     //15:30
-    tr.pole-dance.yana-belyakova.day-1
+    tr.pole-dance.yana-belyakova.monday
       td.schedule-time 15:30
     //16:00
     //16:30
     //17:00
-    tr.pole-dance.nadezhda-luchinina.day-1
+    tr.pole-dance.nadezhda-luchinina.monday
       td.schedule-time 17:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-1', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'monday', '17:00', '18:00')
     //17:30
-    tr.pole-dance.nadezhda-luchinina.day-1
+    tr.pole-dance.nadezhda-luchinina.monday
       td.schedule-time 17:30
     //18:00
-    tr.pole-dance.nadezhda-luchinina.day-1
+    tr.pole-dance.nadezhda-luchinina.monday
       td.schedule-time 18:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-1', '18:00', '19:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'monday', '18:00', '19:00')
     //18:30
-    tr.pole-dance.nadezhda-luchinina.day-1
+    tr.pole-dance.nadezhda-luchinina.monday
       td.schedule-time 18:30
     //19:30
     //20:00
-    tr.contemporary.day-1
+    tr.contemporary.monday
       td.schedule-time 20:00
-      +schedule-event('3', 'contemporary', 'Контемпорари', '', '', 'day-1', '20:00', '21:30')
+      +schedule-event('3', directions.contemporary, '', 'monday', '20:00', '21:30')
     //20:30
-    tr.contemporary.day-1
+    tr.contemporary.monday
       td.schedule-time 20:30
     //21:00
-    tr.contemporary.day-1
+    tr.contemporary.monday
       td.schedule-time 21:00
     //21:30
     //Margin
-    tr.schedule-table-margin.yoga.pole-dance.stretching.stretching-silk.functional-training.zumba-fitness.contemporary.nadezhda-luchinina.yana-belyakova.aleksandr-ushakov.day-1
+    tr.schedule-table-margin.yoga.pole-dance.stretching.stretching-silk.functional-training.zumba-fitness.contemporary.nadezhda-luchinina.yana-belyakova.aleksandr-ushakov.monday
       td
 //Вторник
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.pole-dance.stretching.hoop.rhythmic-gymnastics.yoga.day-2
+    tr.pole-dance.stretching.hoop.rhythmic-gymnastics.yoga.tuesday
       th.schedule-day
       th.schedule-day Вторник
   tbody
     //9:00
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 9:00
-      +schedule-event('3', 'stretching', 'Stretching', '', '', 'day-2', '9:00', '10:30')
+      +schedule-event('3', directions.stretching, '', 'tuesday', '9:00', '10:30')
     //9:30
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 9:30
     //10:00
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 10:00
     //11:00
-    tr.pole-dance.day-2
+    tr.pole-dance.tuesday
       td.schedule-time 11:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-2', '11:00', '12:00')
+      +schedule-event('2', directions.poleDance, '', 'tuesday', '11:00', '12:00')
     //11:30
-    tr.pole-dance.day-2
+    tr.pole-dance.tuesday
       td.schedule-time 11:30
     //12:30
-    tr.hoop.day-2
+    tr.hoop.tuesday
       td.schedule-time 12:30
-      +schedule-event('2', 'hoop', 'Воздушное кольцо', '', '', 'day-2', '12:30', '13:30')
+      +schedule-event('2', directions.hoop, '', 'tuesday', '12:30', '13:30')
     //13:00
-    tr.hoop.day-2
+    tr.hoop.tuesday
       td.schedule-time 13:00
     //13:30
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 13:30
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-2', '13:30', '14:30')
+      +schedule-event('2', directions.stretching, '', 'tuesday', '13:30', '14:30')
     //14:00
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 14:00
     //14:30
-    tr.rhythmic-gymnastics.day-2
+    tr.rhythmic-gymnastics.tuesday
       td.schedule-time 14:30
-      +schedule-event('2', 'rhythmic-gymnastics', 'Художественная гимнастика', '', '', 'day-2', '14:30', '15:30')
+      +schedule-event('2', directions.rhythmicGymnastics, '', 'tuesday', '14:30', '15:30')
     //15:00
-    tr.rhythmic-gymnastics.day-2
+    tr.rhythmic-gymnastics.tuesday
       td.schedule-time 15:00
     //16:00
     //16:30
     //17:00
-    tr.pole-dance.day-2
+    tr.pole-dance.tuesday
       td.schedule-time 17:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-2', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, '', 'tuesday', '17:00', '18:00')
     //17:30
-    tr.pole-dance.day-2
+    tr.pole-dance.tuesday
       td.schedule-time 17:30
     //18:30
     //19:00
-    tr.yoga.day-2
+    tr.yoga.tuesday
       td.schedule-time 19:00
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-2', '19:00', '20:30', 'Открытая группа')
+      +schedule-event('3', directions.yoga, '', 'tuesday', '19:00', '20:30', 'Открытая группа')
     //19:30
-    tr.yoga.day-2
+    tr.yoga.tuesday
       td.schedule-time 19:30
     //20:00
-    tr.yoga.day-2
+    tr.yoga.tuesday
       td.schedule-time 20:00
     //20:30
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 20:30
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-2', '20:30', '21:30')
+      +schedule-event('2', directions.stretching, '', 'tuesday', '20:30', '21:30')
     //21:00
-    tr.stretching.day-2
+    tr.stretching.tuesday
       td.schedule-time 21:00
-    tr.schedule-table-margin.pole-dance.stretching.hoop.rhythmic-gymnastics.yoga.day-2
+    tr.schedule-table-margin.pole-dance.stretching.hoop.rhythmic-gymnastics.yoga.tuesday
       td
 //Среда
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.yoga.pole-dance.stretching.stretching-silk.silk.zumba-fitness.nadezhda-luchinina.aleksandr-ushakov.day-3
+    tr.yoga.pole-dance.stretching.stretching-silk.silk.zumba-fitness.nadezhda-luchinina.aleksandr-ushakov.wednesday
       th.schedule-day
       th.schedule-day Среда
   tbody
     //9:00
-    tr.yoga.day-3
+    tr.yoga.wednesday
       td.schedule-time 9:00
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-3', '9:00', '10:30')
+      +schedule-event('3', directions.yoga, '', 'wednesday', '9:00', '10:30')
     //9:30
-    tr.yoga.day-3
+    tr.yoga.wednesday
       td.schedule-time 9:30
     //10:00
-    tr.yoga.day-3
+    tr.yoga.wednesday
       td.schedule-time 10:00
     //10:30
     //11:00
-    tr.silk.day-3
+    tr.silk.wednesday
       td.schedule-time 11:00
-      +schedule-event('2', 'silk', 'Воздушное полотно', '', '', 'day-3', '11:00', '12:00')
+      +schedule-event('2', directions.silk, '', 'wednesday', '11:00', '12:00')
     //11:30
-    tr.silk.day-3
+    tr.silk.wednesday
       td.schedule-time 11:30
     //12:00
     //12:30
-    tr.stretching-silk.day-3
+    tr.stretching-silk.wednesday
       td.schedule-time 12:30
-      +schedule-event('2', 'stretching-silk', 'Stretching на полотнах', '', '', 'day-3', '12:30', '13:30')
+      +schedule-event('2', directions.stretchingSilk, '', 'wednesday', '12:30', '13:30')
     //13:00
-    tr.stretching-silk.day-3
+    tr.stretching-silk.wednesday
       td.schedule-time 13:00
     //13:30
     //14:00
-    tr.pole-dance.day-3
+    tr.pole-dance.wednesday
       td.schedule-time 14:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-3', '14:00', '15:00')
+      +schedule-event('2', directions.poleDance, '', 'wednesday', '14:00', '15:00')
     //14:30
-    tr.pole-dance.day-3
+    tr.pole-dance.wednesday
       td.schedule-time 14:30
     //15:00
     //15:30
     //16:00
     //16:30
     //17:00
-    tr.pole-dance.nadezhda-luchinina.day-3
+    tr.pole-dance.nadezhda-luchinina.wednesday
       td.schedule-time 17:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-3', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'wednesday', '17:00', '18:00')
     //17:30
-    tr.pole-dance.nadezhda-luchinina.day-3
+    tr.pole-dance.nadezhda-luchinina.wednesday
       td.schedule-time 17:30
     //18:00
     //18:30
     //19:00
-    tr.zumba-fitness.aleksandr-ushakov.day-3
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
       td.schedule-time 19:00
-      +schedule-event('2', 'zumba-fitness', 'Zumba® Fitness', 'aleksandr-ushakov', 'Александр Ушаков', 'day-3', '19:00', '20:00', 'Открытая группа')
+      +schedule-event('2', directions.zumbaFitness, coaches.aleksandrUshakov, 'wednesday', '19:00', '20:00', 'Открытая группа')
     //19:30
-    tr.zumba-fitness.aleksandr-ushakov.day-3
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
       td.schedule-time 19:30
     //20:00
     //20:30
     //21:00
-    tr.stretching.nadezhda-luchinina.day-3
+    tr.stretching.nadezhda-luchinina.wednesday
       td.schedule-time 21:00
-      +schedule-event('2', 'stretching', 'Stretching', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-3', '21:00', '22:00')
+      +schedule-event('2', directions.stretching, coaches.nadezhdaLuchinina, 'wednesday', '21:00', '22:00')
     //21:30
-    tr.stretching.nadezhda-luchinina.day-3
+    tr.stretching.nadezhda-luchinina.wednesday
       td.schedule-time 21:30
     //Margin
-    tr.schedule-table-margin.yoga.pole-dance.stretching.stretching-silk.zumba-fitness.aleksandr-ushakov.silk.nadezhda-luchinina.day-3
+    tr.schedule-table-margin.yoga.pole-dance.stretching.stretching-silk.zumba-fitness.aleksandr-ushakov.silk.nadezhda-luchinina.wednesday
       td
 //Четверг
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.pole-dance.stretching.silk.functional-training.zumba-strong.contemporary.yana-belyakova.aleksandr-ushakov.day-4
+    tr.pole-dance.stretching.silk.functional-training.zumba-strong.contemporary.yana-belyakova.aleksandr-ushakov.thursday
       th.schedule-day
       th.schedule-day Четверг
   tbody
     //9:00
-    tr.stretching.day-4
+    tr.stretching.thursday
       td.schedule-time 9:00
-      +schedule-event('3', 'stretching', 'Stretching', '', '', 'day-4', '9:00', '10:30')
+      +schedule-event('3', directions.stretching, '', 'thursday', '9:00', '10:30')
     //9:30
-    tr.stretching.day-4
+    tr.stretching.thursday
       td.schedule-time 9:30
     //10:00
-    tr.stretching.day-4
+    tr.stretching.thursday
       td.schedule-time 10:00
     //10:30
     //11:00
-    tr.zumba-strong.aleksandr-ushakov.day-4
+    tr.zumba-strong.aleksandr-ushakov.thursday
       td.schedule-time 11:00
-      +schedule-event('2', 'zumba-strong', 'Strong by Zumba®', 'aleksandr-ushakov', 'Александр Ушаков', 'day-4', '11:00', '12:00', 'Открытая группа')
+      +schedule-event('2', directions.zumbaStrong, coaches.aleksandrUshakov, 'thursday', '11:00', '12:00', 'Открытая группа')
     //11:30
-    tr.zumba-strong.aleksandr-ushakov.day-4
+    tr.zumba-strong.aleksandr-ushakov.thursday
       td.schedule-time 11:30
     //12:00
-    tr.stretching.yana-belyakova.day-4
+    tr.stretching.yana-belyakova.thursday
       td.schedule-time 12:00
-      +schedule-event('2', 'stretching', 'Stretching', 'yana-belyakova', 'Яна Белякова', 'day-4', '12:00', '13:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.stretching, coaches.yanaBelyakova, 'thursday', '12:00', '13:00', 'Открытая группа', 'Открытая группа')
     //12:30
-    tr.stretching.yana-belyakova.day-4
+    tr.stretching.yana-belyakova.thursday
       td.schedule-time 12:30
     //13:00
     //13:30
-    tr.functional-training.yana-belyakova.day-4
+    tr.functional-training.yana-belyakova.thursday
       td.schedule-time 13:30
-      +schedule-event('2', 'functional-training', 'Функциональный тренинг', 'yana-belyakova', 'Яна Белякова', 'day-4', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.functionalTraining, coaches.yanaBelyakova, 'thursday', '13:30', '14:30', 'Открытая группа', 'Открытая группа')
     //14:00
-    tr.functional-training.yana-belyakova.day-4
+    tr.functional-training.yana-belyakova.thursday
       td.schedule-time 14:00
     //14:30
     //15:00
-    tr.pole-dance.yana-belyakova.day-4
+    tr.pole-dance.yana-belyakova.thursday
       td.schedule-time 15:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'yana-belyakova', 'Яна Белякова', 'day-4', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.poleDance, coaches.yanaBelyakova, 'thursday', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
     //15:30
-    tr.pole-dance.yana-belyakova.day-4
+    tr.pole-dance.yana-belyakova.thursday
       td.schedule-time 15:30
     //16:00
     //16:30
     //17:00
-    tr.pole-dance.day-4
+    tr.pole-dance.thursday
       td.schedule-time 17:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-4', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, '', 'thursday', '17:00', '18:00')
     //17:30
-    tr.pole-dance.day-4
+    tr.pole-dance.thursday
       td.schedule-time 17:30
     //18:00
     //18:30
-    tr.silk.day-4
+    tr.silk.thursday
       td.schedule-time 18:30
-      +schedule-event('2', 'silk', 'Воздушное полотно', '', '', 'day-4', '18:30', '19:30')
+      +schedule-event('2', directions.silk, '', 'thursday', '18:30', '19:30')
     //19:00
-    tr.silk.day-4
+    tr.silk.thursday
       td.schedule-time 19:00
     //19:30
     //20:00
-    tr.contemporary.day-4
+    tr.contemporary.thursday
       td.schedule-time 20:00
-      +schedule-event('3', 'contemporary', 'Контемпорари', '', '', 'day-4', '20:00', '21:30')
+      +schedule-event('3', directions.contemporary, '', 'thursday', '20:00', '21:30')
     //20:30
-    tr.contemporary.day-4
+    tr.contemporary.thursday
       td.schedule-time 20:30
     //21:00
-    tr.contemporary.day-4
+    tr.contemporary.thursday
       td.schedule-time 21:00
     //21:30
     //Margin
-    tr.schedule-table-margin.pole-dance.stretching.silk.functional-training.contemporary.zumba-strong.yana-belyakova.aleksandr-ushakov.day-4
+    tr.schedule-table-margin.pole-dance.stretching.silk.functional-training.contemporary.zumba-strong.yana-belyakova.aleksandr-ushakov.thursday
       td
 //Пятница
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.yoga.pole-dance.stretching.hoop.rhythmic-gymnastics.plastic.nadezhda-luchinina.yana-belyakova.day-5
+    tr.yoga.pole-dance.stretching.hoop.rhythmic-gymnastics.plastic.nadezhda-luchinina.yana-belyakova.friday
       th.schedule-day
       th.schedule-day Пятница
   tbody
     //8:30
     //9:00
-    tr.yoga.day-5
+    tr.yoga.friday
       td.schedule-time 9:00
-      +schedule-event('3', 'yoga', 'Королевская йога', '', '', 'day-5', '9:00', '10:30')
+      +schedule-event('3', directions.yoga, '', 'friday', '9:00', '10:30')
     //9:30
-    tr.yoga.day-5
+    tr.yoga.friday
       td.schedule-time 9:30
     //10:00
-    tr.yoga.day-5
+    tr.yoga.friday
       td.schedule-time 10:00
     //10:30
     //11:00
-    tr.pole-dance.day-5
+    tr.pole-dance.friday
       td.schedule-time 11:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-5', '11:00', '12:00')
+      +schedule-event('2', directions.poleDance, '', 'friday', '11:00', '12:00')
     //11:30
-    tr.pole-dance.day-5
+    tr.pole-dance.friday
       td.schedule-time 11:30
     //12:00
     //12:30
-    tr.hoop.day-5
+    tr.hoop.friday
       td.schedule-time 12:30
-      +schedule-event('2', 'hoop', 'Воздушное кольцо', '', '', 'day-5', '12:30', '13:30')
+      +schedule-event('2', directions.hoop, '', 'friday', '12:30', '13:30')
     //13:00
-    tr.hoop.day-5
+    tr.hoop.friday
       td.schedule-time 13:00
     //13:30
-    tr.stretching.day-5
+    tr.stretching.friday
       td.schedule-time 13:30
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-5', '13:30', '14:30')
+      +schedule-event('2', directions.stretching, '', 'friday', '13:30', '14:30')
     //14-00
-    tr.stretching.day-5
+    tr.stretching.friday
       td.schedule-time 14:00
     //14:30
-    tr.rhythmic-gymnastics.day-5
+    tr.rhythmic-gymnastics.friday
       td.schedule-time 14:30
-      +schedule-event('2', 'rhythmic-gymnastics', 'Художественная гимнастика', '', '', 'day-5', '14:30', '15:30')
+      +schedule-event('2', directions.rhythmicGymnastics, '', 'friday', '14:30', '15:30')
     //15:00
-    tr.rhythmic-gymnastics.day-5
+    tr.rhythmic-gymnastics.friday
       td.schedule-time 15:00
     //15:30
     //16:00
-    tr.pole-dance.day-5
+    tr.pole-dance.friday
       td.schedule-time 16:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', '', '', 'day-5', '16:00', '17:00')
+      +schedule-event('2', directions.poleDance, '', 'friday', '16:00', '17:00')
     //16:30
-    tr.pole-dance.day-5
+    tr.pole-dance.friday
       td.schedule-time 16:30
     //17:00
-    tr.pole-dance.nadezhda-luchinina.day-5
+    tr.pole-dance.nadezhda-luchinina.friday
       td.schedule-time 17:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-5', '17:00', '18:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'friday', '17:00', '18:00')
     //17:30
-    tr.pole-dance.nadezhda-luchinina.day-5
+    tr.pole-dance.nadezhda-luchinina.friday
       td.schedule-time 17:30
     //18:00
-    tr.pole-dance.nadezhda-luchinina.day-5
+    tr.pole-dance.nadezhda-luchinina.friday
       td.schedule-time 18:00
-      +schedule-event('2', 'pole-dance', 'Pole Dance', 'nadezhda-luchinina', 'Надежда Лучинина', 'day-5', '18:00', '19:00')
+      +schedule-event('2', directions.poleDance, coaches.nadezhdaLuchinina, 'friday', '18:00', '19:00')
     //18:30
-    tr.pole-dance.nadezhda-luchinina.day-5
+    tr.pole-dance.nadezhda-luchinina.friday
       td.schedule-time 18:30
     //19:00
     //19:30
-    tr.plastic.yana-belyakova.day-5
+    tr.plastic.yana-belyakova.friday
       td.schedule-time 19:30
-      +schedule-event('2', 'plastic', 'Женская пластика', 'yana-belyakova', 'Яна Белякова', 'day-5', '19:30', '20:30', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.plastic, coaches.yanaBelyakova, 'friday', '19:30', '20:30', 'Открытая группа', 'Открытая группа')
     //20:00
-    tr.plastic.yana-belyakova.day-5
+    tr.plastic.yana-belyakova.friday
       td.schedule-time 20:00
     //20:30
-    tr.stretching.day-5
+    tr.stretching.friday
       td.schedule-time 20:30
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-5', '20:30', '21:30')
+      +schedule-event('2', directions.stretching, '', 'friday', '20:30', '21:30')
     //21:00
-    tr.stretching.day-5
+    tr.stretching.friday
       td.schedule-time 21:00
     //21:30
     //Margin
-    tr.schedule-table-margin.yoga.pole-dance.stretching.hoop.rhythmic-gymnastics.plastic.nadezhda-luchinina.yana-belyakova.day-5
+    tr.schedule-table-margin.yoga.pole-dance.stretching.hoop.rhythmic-gymnastics.plastic.nadezhda-luchinina.yana-belyakova.friday
       td
 //Суббота
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.stretching.silk.functional-training.plastic.yana-belyakova.day-6
+    tr.stretching.silk.functional-training.plastic.yana-belyakova.saturday
       th.schedule-day
       th.schedule-day Суббота
   tbody
@@ -751,43 +751,43 @@ table.schedule-table.mobile(data-selected="all")
     //9:00
     //9:30
     //10:00
-    tr.stretching.day-6
+    tr.stretching.saturday
       td.schedule-time 10:00
-      +schedule-event('2', 'stretching', 'Stretching', '', '', 'day-6', '10:00', '11:00')
+      +schedule-event('2', directions.stretching, '', 'saturday', '10:00', '11:00')
     //10:30
-    tr.stretching.day-6
+    tr.stretching.saturday
       td.schedule-time 10:30
     //11:00
-    tr.silk.day-6
+    tr.silk.saturday
       td.schedule-time 11:00
-      +schedule-event('2', 'silk', 'Воздушное полотно', '', '', 'day-6', '11:00', '12:00')
+      +schedule-event('2', directions.silk, '', 'saturday', '11:00', '12:00')
     //11:30
-    tr.silk.day-6
+    tr.silk.saturday
       td.schedule-time 11:30
     //12:00
     //12:30
     //13:00
     //13:30
     //14:00
-    tr.plastic.yana-belyakova.day-6
+    tr.plastic.yana-belyakova.saturday
       td.schedule-time 14:00
-      +schedule-event('2', 'plastic', 'Женская пластика', 'yana-belyakova', 'Яна Белякова', 'day-6', '14:00', '15:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.plastic, coaches.yanaBelyakova, '14:00', '15:00', 'Открытая группа', 'Открытая группа')
     //14:30
-    tr.plastic.yana-belyakova.day-6
+    tr.plastic.yana-belyakova.saturday
       td.schedule-time 14:30
     //15:00
-    tr.functional-training.yana-belyakova.day-6
+    tr.functional-training.yana-belyakova.saturday
       td.schedule-time 15:00
-      +schedule-event('2', 'functional-training', 'Функциональный тренинг', 'yana-belyakova', 'Яна Белякова', 'day-6', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.functionalTraining, coaches.yanaBelyakova, 'saturday', '15:00', '16:00', 'Открытая группа', 'Открытая группа')
     //15:30
-    tr.functional-training.yana-belyakova.day-6
+    tr.functional-training.yana-belyakova.saturday
       td.schedule-time 15:30
     //16:00
-    tr.stretching.yana-belyakova.day-6
+    tr.stretching.yana-belyakova.saturday
       td.schedule-time 16:00
-      +schedule-event('2', 'stretching', 'Stretching', 'yana-belyakova', 'Яна Белякова', 'day-6', '16:00', '17:00', 'Открытая группа', 'Открытая группа')
+      +schedule-event('2', directions.stretching, coaches.yanaBelyakova, 'saturday', '16:00', '17:00', 'Открытая группа', 'Открытая группа')
     //16:30
-    tr.stretching.yana-belyakova.day-6
+    tr.stretching.yana-belyakova.saturday
       td.schedule-time 16:30
     //17:00
     //17:30
