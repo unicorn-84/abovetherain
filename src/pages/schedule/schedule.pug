@@ -1,8 +1,7 @@
-//-TODO: 'Ссылки на услуги из расписания'
 extends ../../templates/layout
 //-VARIABLES
 append variables
-  - const { options, pages, primaryNavigation, coaches, directions } = require('../../data');
+  - const { options, pages, primaryNavigation, coaches, directions, contacts } = require('../../data');
 //-META
 append meta
   //Page meta tags
@@ -32,33 +31,32 @@ append content
     div(class='container')
       div(class='row')
         div(class='col-12')
-          a(href='https://vk.com/naddozhdem?w=app5708398_-168182015', role='button' aria-disabled='true', class='btn btn-info btn-lg vk-link-sign-up')
+          a(href= contacts.vkSignUp, role='button' aria-disabled='true', class='btn btn-info btn-lg schedule-controls')
             |Записаться на занятие
             |&nbsp;
             i(class='fab fa-vk fa-lg')
-      .row
-        .col-12
-          .schedule-filter
-            select#direction-select(data-select)
+      div(class='row')
+        div(class='col-12')
+          div(class='schedule-filter')
+            select(id='direction-select', class='custom-select custom-select-lg schedule-controls')
               option(value="all" selected) Все направления
-              each direction in directions
-                if direction.schedule
-                  option(value= direction.name)= direction.title
-            select#coach-select(data-select)
+                each direction in directions
+                  if direction.schedule
+                    option(value= direction.name)= direction.title
+            select(id='coach-select', class='custom-select custom-select-lg schedule-controls')
               option(value="all" selected) Все тренеры
               each coach in coaches
                 option(value= coach.name)= coach.title
-            select#day-select(data-select)
-              option(value="all" selected) Все дни
-              option(value="day-1") Понедельник
-              option(value="day-2") Вторник
-              option(value="day-3") Среда
-              option(value="day-4") Четверг
-              option(value="day-5") Пятница
-              option(value="day-6") Суббота
-        .col-12
-          .schedule-wrapper
-            include ../../templates/components/schedule
+            select(id='day-select', class='custom-select custom-select-lg schedule-controls')
+              option(value="all" selected) Все дни недели
+              option(value="monday") Понедельник
+              option(value="tuesday") Вторник
+              option(value="wednesday") Среда
+              option(value="thursday") Четверг
+              option(value="friday") Пятница
+              option(value="saturday") Суббота
+        div(class='col-12')
+          include ../../templates/components/schedule
 //-SCRIPTS
 append scripts
   //Page scripts

@@ -31,12 +31,9 @@ append content
     //Container
     div(class='container')
       div(class='row')
-        each coach, index in coaches
+        each coach in coaches
           div(class='col-sm-6 col-lg-4')
-            div(class= {
-              'coach': true,
-              'mb-4': coaches.length - 1 !== index
-            })
+            div(class='coach mb-4')
               if coach.link
                 a(href= coach.link)
                   div(class='coach-image image-container')
