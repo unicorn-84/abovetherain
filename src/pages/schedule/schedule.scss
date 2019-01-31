@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-$schedule-bg-color: rgba(0, 0, 0, 0.8);
+$schedule-bg-color: rgba(0, 0, 0, 0.9);
 $schedule-days-bg-color: $schedule-bg-color;
 $schedule-times-bg-color: $schedule-days-bg-color;
 $schedule-direction-color: $schedule-bg-color;
@@ -99,7 +99,7 @@ $border-color: #777;
   .schedule-event {
     vertical-align: middle;
     padding: 0.5rem 1.5rem;
-    opacity: 0.1;
+    opacity: 0.05;
 
     @include respond-to(laptop) {
       padding: 0.5rem;

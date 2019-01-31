@@ -16,7 +16,8 @@ import './schedule.scss';
 // Inline
 
 const mobile = window.matchMedia('(max-width: 991px)');
-// Массив дней недели. Задается в скрипте.
+
+// Массив дней недели.
 const days = [
   'monday',
   'tuesday',
@@ -26,8 +27,10 @@ const days = [
   'saturday',
   'sunday',
 ];
+
 // Объект для хранения массивов с названиями дней, направлений и тренеров у которых есть расписание.
 const data = {};
+
 // Объекту 'data' задается три ключа: 'direction', 'coach' и 'day'. Значение каждого ключа - массив строк. В каждый массив первым значением (index = 0) вставляется строка 'all', для фильтрации по 'Все дни', 'Все направления' и 'Все тренеры'. 'Глобальные' объекты 'directions' и 'coaches' из 'data.json' фильтруются по ключу 'schedule', чтобы в 'data' не попали направления и тренеры у которых нет расписания. У объекта у которого есть ключ 'schedule' берется значение ключа 'name' и оно 'пушится' соответственно либо в 'data.direction', либо в 'data.coach'.
 (function makeData() {
   data.direction = ['all'];
@@ -45,22 +48,26 @@ const data = {};
   data.day = ['all'];
   data.day = data.day.concat(days);
 }());
+
 // Дефолтный 'stateObject'.
 const stateObject = {
   direction: 'all',
   coach: 'all',
   day: 'all',
 };
+
 // Создать строку запроса из объекта.
 function makeQuery(object) {
   return Object.keys(object).map(i => [i, object[i]].join('=')).join('&');
 }
+
 function makeStateObject(object) {
   if (!object) {
     return stateObject;
   }
   return object;
 }
+
 function checkQuery() {
   const queryElements = window.location.search.substring(1).split('&');
   if (queryElements.length === 3) {
@@ -100,6 +107,7 @@ function checkQuery() {
 function replaceQuery(object) {
   window.history.replaceState(object, '', `/schedule.html?${makeQuery(makeStateObject(object))}`);
 }
+
 function setSelects(selects) {
   each(selects, (item) => {
     const select = item;
@@ -111,6 +119,7 @@ function setSelects(selects) {
     }
   });
 }
+
 function sortTable(tables) {
   each(tables, (table) => {
     const item = table;
@@ -121,7 +130,8 @@ function sortTable(tables) {
     }
   });
 }
-// Reset всех селектов в 'selectedIndex = 0', т.е. в 'Все тренеры', 'Все нправления' или 'Все дни' соответственно, кроме активного. Т.е. на котором был вызван 'onchange'.
+
+// Reset всех селектов в 'selectedIndex = 0', т.е. в 'Все тренеры', 'Все нправления' или 'Все дни' соответственно, кроме активного, на котором был вызван 'onchange'.
 function closeAllSelect(target, selects) {
   each(selects, (item) => {
     const select = item;
@@ -130,6 +140,7 @@ function closeAllSelect(target, selects) {
     }
   }, selects);
 }
+
 document.addEventListener('DOMContentLoaded', () => {
   const tables = document.querySelectorAll('.schedule-table');
   const selects = document.querySelectorAll('.schedule-filter select');
