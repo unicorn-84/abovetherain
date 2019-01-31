@@ -171,12 +171,12 @@ $border-color: #777;
 .schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'] > *,
 .schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'] > *,
 .schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'] > *,
-.schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'] > *,
-.schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'] > *,
-.schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'] > *,
-.schedule-table[data-selected='day-4'] .schedule-event[data-day='day-4'] > *,
-.schedule-table[data-selected='day-5'] .schedule-event[data-day='day-5'] > *,
-.schedule-table[data-selected='day-6'] .schedule-event[data-day='day-6'] > * {
+.schedule-table[data-selected='monday'] .schedule-event[data-day='monday'] > *,
+.schedule-table[data-selected='tuesday'] .schedule-event[data-day='tuesday'] > *,
+.schedule-table[data-selected='wednesday'] .schedule-event[data-day='wednesday'] > *,
+.schedule-table[data-selected='thursday'] .schedule-event[data-day='thursday'] > *,
+.schedule-table[data-selected='friday'] .schedule-event[data-day='friday'] > *,
+.schedule-table[data-selected='saturday'] .schedule-event[data-day='saturday'] > * {
   pointer-events: auto;
 }
 
@@ -196,12 +196,12 @@ $border-color: #777;
 .schedule-table[data-selected='nadezhda-luchinina'] .schedule-event[data-coach='nadezhda-luchinina'],
 .schedule-table[data-selected='yana-belyakova'] .schedule-event[data-coach='yana-belyakova'],
 .schedule-table[data-selected='aleksandr-ushakov'] .schedule-event[data-coach='aleksandr-ushakov'],
-.schedule-table[data-selected='day-1'] .schedule-event[data-day='day-1'],
-.schedule-table[data-selected='day-2'] .schedule-event[data-day='day-2'],
-.schedule-table[data-selected='day-3'] .schedule-event[data-day='day-3'],
-.schedule-table[data-selected='day-4'] .schedule-event[data-day='day-4'],
-.schedule-table[data-selected='day-5'] .schedule-event[data-day='day-5'],
-.schedule-table[data-selected='day-6'] .schedule-event[data-day='day-6'] {
+.schedule-table[data-selected='monday'] .schedule-event[data-day='monday'],
+.schedule-table[data-selected='tuesday'] .schedule-event[data-day='tuesday'],
+.schedule-table[data-selected='wednesday'] .schedule-event[data-day='wednesday'],
+.schedule-table[data-selected='thursday'] .schedule-event[data-day='thursday'],
+.schedule-table[data-selected='friday'] .schedule-event[data-day='friday'],
+.schedule-table[data-selected='saturday'] .schedule-event[data-day='saturday'] {
   border: 1px solid $border-color;
   background-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
@@ -223,12 +223,12 @@ $border-color: #777;
 .schedule-table.mobile[data-selected='nadezhda-luchinina'] tr[class~='nadezhda-luchinina'],
 .schedule-table.mobile[data-selected='yana-belyakova'] tr[class~='yana-belyakova'],
 .schedule-table.mobile[data-selected='aleksandr-ushakov'] tr[class~='aleksandr-ushakov'],
-.schedule-table[data-selected='day-1'] tr[class~='day-1'],
-.schedule-table[data-selected='day-2'] tr[class~='day-2'],
-.schedule-table[data-selected='day-3'] tr[class~='day-3'],
-.schedule-table[data-selected='day-4'] tr[class~='day-4'],
-.schedule-table[data-selected='day-5'] tr[class~='day-5'],
-.schedule-table[data-selected='day-6'] tr[class~='day-6'] {
+.schedule-table[data-selected='monday'] tr[class~='monday'],
+.schedule-table[data-selected='tuesday'] tr[class~='tuesday'],
+.schedule-table[data-selected='wednesday'] tr[class~='wednesday'],
+.schedule-table[data-selected='thursday'] tr[class~='thursday'],
+.schedule-table[data-selected='friday'] tr[class~='friday'],
+.schedule-table[data-selected='saturday'] tr[class~='saturday'] {
   display: table-row;
 }
 
