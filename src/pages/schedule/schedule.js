@@ -1,4 +1,3 @@
-// TODO: 'Генерировать стили'
 // Vendors
 import 'bootstrap.scss';
 import 'collapse';
