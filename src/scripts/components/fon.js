@@ -1,6 +1,5 @@
 import fonLg from '../../images/fon/laptop-common-fon.jpg';
 import fonSm from '../../images/fon/mobile-common-fon.jpg';
-import '../../styles/fon.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
   const mobile = window.matchMedia('(max-width: 991px)');
@@ -10,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = fonSm;
       img.onload = () => {
         setTimeout(() => {
-          document.body.style.backgroundImage = `url(${img.src})`;
+          document.documentElement.classList.add('fon-loaded');
         }, 0);
       };
     }
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = fonLg;
       img.onload = () => {
         setTimeout(() => {
-          document.body.style.backgroundImage = `url(${img.src})`;
+          document.documentElement.classList.add('fon-loaded');
         }, 0);
       };
     }
