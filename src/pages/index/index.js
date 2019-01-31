@@ -13,9 +13,8 @@ import { retinaCheck } from '../../scripts/components/helpers';
 import './index.scss';
 import mobileFon from '../../images/fon/mobile-index-fon.jpg';
 import retinaMobileFon from '../../images/fon/mobile-index-fon@2x.jpg';
-// TODO: 'Добавить retina'
 import laptopFon from '../../images/fon/laptop-index-fon.jpg';
-// import retinaLaptopFon from '../../images/slides/002-slide-1920x1080.jpg';
+import retinaLaptopFon from '../../images/fon/laptop-index-fon@2x.jpg';
 // Inline
 
 const mobile = window.matchMedia('(max-width: 991px)');
@@ -28,7 +27,7 @@ WebFont.load({
 
 jQuery.noConflict();
 jQuery(document).ready(($) => {
-  const $wrapper = $('#wrapper');
+  // const $wrapper = $('#wrapper');
   function imageLoad() {
     if (mobile.matches) {
       const img = new Image();
@@ -38,24 +37,22 @@ jQuery(document).ready(($) => {
         img.src = mobileFon;
       }
       img.onload = () => {
-        $wrapper.css({
-          backgroundImage: `url(${img.src})`,
+        defer(() => {
+          $('html').addClass('fon-loaded');
         });
       };
     }
     if (!mobile.matches) {
       const img = new Image();
       if (retinaCheck()) {
-        img.src = laptopFon;
+        img.src = retinaLaptopFon;
       } else {
         img.src = laptopFon;
       }
       img.onload = () => {
         const spans = document.querySelectorAll('.caption h1 div span');
         defer(() => {
-          $wrapper.css({
-            backgroundImage: `url(${img.src})`,
-          });
+          $('html').addClass('fon-loaded');
         });
         each(spans, (span) => {
           defer(() => {
