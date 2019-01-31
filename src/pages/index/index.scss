@@ -26,6 +26,11 @@
   animation-duration: 1s;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   &.fon-loaded {
     &::before {
