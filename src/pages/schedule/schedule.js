@@ -3,7 +3,7 @@ import 'bootstrap.scss';
 import 'collapse';
 // Common
 import {
-  each, has, without, map,
+  each, has, without, map, extendOwn, pairs, isObject, indexOf,
 } from 'underscore';
 import { mobile } from '../../scripts/components/helpers';
 import '../../styles/main.scss';
@@ -49,62 +49,61 @@ const data = {};
 }());
 
 // Дефолтный 'stateObject'.
-const stateObject = {
-  direction: 'all',
-  coach: 'all',
-  day: 'all',
-};
+let stateObject = {};
+
+// Проверить window.location.search. Если валидный запрос, то записать в stateObject.
+(function checkQuery() {
+  let queryObject;
+  queryObject = window.location.search.substring(1).split('&');
+  queryObject = map(queryObject, value => value.split('='));
+  if (queryObject.length === 3) {
+    each(queryObject, (value) => {
+      const [param, paramValue] = value;
+      switch (param) {
+        case 'day':
+          if (indexOf(data.day, paramValue) >= 0) {
+            stateObject.day = paramValue;
+          } else {
+            stateObject.day = 'all';
+          }
+          break;
+        case 'direction':
+          if (indexOf(data.direction, paramValue) >= 0) {
+            stateObject.direction = paramValue;
+          } else {
+            stateObject.direction = 'all';
+          }
+          break;
+        case 'coach':
+          if (indexOf(data.coach, paramValue) >= 0) {
+            stateObject.coach = paramValue;
+          } else {
+            stateObject.coach = 'all';
+          }
+          break;
+        default:
+          break;
+      }
+    });
+  }
+}());
 
 // Создать строку запроса из объекта.
 function makeQuery(object) {
-  return Object.keys(object).map(i => [i, object[i]].join('=')).join('&');
-}
-
-function makeStateObject(object) {
-  if (!object) {
-    return stateObject;
+  if (isObject(object)) {
+    let query;
+    query = pairs(object); // { day: value,  direction: value, coach: value } => [['day', 'value'], ['direction', 'value'], ['coach', 'value']]
+    query = map(query, value => value.join('=')); // [['day', 'value'], ['direction', 'value'], ['coach', 'value']] => ['day=value', 'direction=value', 'coach=value']
+    query = query.join('&'); // ['day=value', 'direction=value', 'coach=value'] => 'day=value&direction=value&coach=value'
+    return query;
   }
-  return object;
+  return 'day=all&direction=all&coach-all';
 }
 
-function checkQuery() {
-  const queryElements = window.location.search.substring(1).split('&');
-  if (queryElements.length === 3) {
-    const parameters = queryElements.map((element) => {
-      const parameterString = element.split('=');
-      return { [parameterString[0]]: parameterString[1] };
-    });
-    for (let i = 0; i < parameters.length; i += 1) {
-      switch (Object.keys(parameters[i])[0]) {
-        case 'direction':
-          if (data.direction.indexOf(parameters[i].direction) < 0) {
-            return false;
-          }
-          stateObject.direction = parameters[i].direction;
-          break;
-        case 'coach':
-          if (data.coach.indexOf(parameters[i].coach) < 0) {
-            return false;
-          }
-          stateObject.coach = parameters[i].coach;
-          break;
-        case 'day':
-          if (data.day.indexOf(parameters[i].day) < 0) {
-            return false;
-          }
-          stateObject.day = parameters[i].day;
-          break;
-        default:
-          return false;
-      }
-    }
-    return true;
-  }
-  return false;
-}
-
-function replaceQuery(object) {
-  window.history.replaceState(object, '', `/schedule.html?${makeQuery(makeStateObject(object))}`);
+// Переписать window.location
+function replaceQuery() {
+  const query = makeQuery(stateObject);
+  window.history.replaceState(stateObject, '', `/schedule.html?${query}`);
 }
 
 function setSelects(selects) {
@@ -120,12 +119,18 @@ function setSelects(selects) {
 }
 
 function sortTable(tables) {
-  each(tables, (table) => {
-    const item = table;
+  each(tables, (item) => {
+    const table = item;
     if (stateObject.direction !== 'all') {
-      item.dataset.selected = stateObject.direction;
-    } else {
-      item.dataset.selected = stateObject.coach;
+      table.dataset.selected = stateObject.direction;
+      return;
+    }
+    if (stateObject.coach !== 'all') {
+      table.dataset.selected = stateObject.coach;
+      return;
+    }
+    if (stateObject.day !== 'all') {
+      table.dataset.selected = stateObject.day;
     }
   });
 }
@@ -240,52 +245,32 @@ document.addEventListener('DOMContentLoaded', () => {
     genStyles();
   }
 
-  // Отключить фильтр по дням недели на 'laptop' и больше
-  if (!mobile.matches) {
-    document.querySelector('select#day-select').setAttribute('disabled', 'disabled');
-  }
+  // Програмно задать селектам значения в соответствии с значениями в строке запроса.
+  setSelects(selects);
 
+  // Присвоить 'value' выбранного селекта атрибуту 'data-select' у всех таблиц расписания.
+  sortTable(tables);
   // Проверка строки запроса
-  if (checkQuery()) {
-    // При загрузке страницы всегда присваивать параметру 'day' значение 'all', т.к. запрос с фильтрацией по дням не используется.
-    stateObject.day = 'all';
 
-    // Переписать строку запроса.
-    replaceQuery(stateObject);
+  // Назначение обработчика на 'onchange' всем селектам для фильтрации расписания.
+  each(selects, (select) => {
+    select.onchange = ({ target }) => {
+      // Присвоить 'value' выбранного селекта атрибуту 'data-select' у всех таблиц расписания
+      each(tables, (table) => {
+        const option = target.options[target.options.selectedIndex];
+        table.dataset.selected = option.getAttribute('value');
+      });
+      stateObject = extendOwn({
+        day: 'all',
+        direction: 'all',
+        coach: 'all',
+      }, { [target.id.split('-')[0]]: target.options[target.options.selectedIndex].getAttribute('value') });
+      replaceQuery();
 
-    // Програмно задать селектам значения в соответствии с значениями в строке запроса.
-    setSelects(selects);
-
-    // Присвоить 'value' выбранного селекта атрибуту 'data-select' у всех таблиц расписания.
-    sortTable(tables);
-
-    // Назначение обработчика на 'onchange' всем селектам для фильтрации расписания.
-    each(selects, (item) => {
-      const select = item;
-      select.onchange = ({ target }) => {
-        // Присвоить 'value' выбранного селекта атрибуту 'data-select' у всех таблиц расписания
-        each(tables, (i) => {
-          const table = i;
-          table.dataset.selected = target.options[target.options.selectedIndex].getAttribute('value');
-        });
-        // Дефолтный 'stateObject' для обнудения строки запроса
-        const object = {
-          direction: 'all',
-          coach: 'all',
-          day: 'all',
-        };
-        // Определить 'id' выбранного селекта. Взять первую его часть. Найти в объекте 'data' по 'id' селекта и 'selectedIndex' строчное значение. Присвоить это значение соответствующему ключу в 'object'.
-        object[select.id.split('-')[0]] = data[select.id.split('-')[0]][select.options.selectedIndex];
-        // Переписать строку запроса
-        replaceQuery(object);
-        // Сбросить все селекты, кроме выбранного
-        closeAllSelect(target, selects);
-      };
-    });
-  } else {
-    // Если пришел запрос с невалидными параметрами, задать дефолтные значения.
-    replaceQuery(stateObject);
-  }
+      // Сбросить все селекты, кроме выбранного
+      closeAllSelect(target, selects);
+    };
+  });
 });
 
 // Включать, отключать фильтр по дням недели в соответствии с медиа запросом
