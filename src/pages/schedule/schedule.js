@@ -85,6 +85,12 @@ let stateObject = {};
           break;
       }
     });
+  } else {
+    stateObject = {
+      day: 'all',
+      direction: 'all',
+      coach: 'all',
+    };
   }
 }());
 
@@ -123,13 +129,9 @@ function sortTable(tables) {
     const table = item;
     if (stateObject.direction !== 'all') {
       table.dataset.selected = stateObject.direction;
-      return;
-    }
-    if (stateObject.coach !== 'all') {
+    } else if (stateObject.coach !== 'all') {
       table.dataset.selected = stateObject.coach;
-      return;
-    }
-    if (stateObject.day !== 'all') {
+    } else if (stateObject.day !== 'all') {
       table.dataset.selected = stateObject.day;
     }
   });
@@ -250,8 +252,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Присвоить 'value' выбранного селекта атрибуту 'data-select' у всех таблиц расписания.
   sortTable(tables);
-  // Проверка строки запроса
 
+  // Проверка строки запроса
+  replaceQuery();
   // Назначение обработчика на 'onchange' всем селектам для фильтрации расписания.
   each(selects, (select) => {
     select.onchange = ({ target }) => {
