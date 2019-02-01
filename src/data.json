@@ -507,7 +507,7 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/pole-dance.html",
       "image": true,
-      "schedule": "schedule.html?direction=pole-dance&coach=all&day=all",
+      "schedule": "schedule.html?day=all&direction=pole-dance&coach=all",
       "coaches": [
         {
           "title": "Надежда Лучинина",
@@ -525,7 +525,7 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/hoop.html",
       "image": true,
-      "schedule": "schedule.html?direction=hoop&coach=all&day=all"
+      "schedule": "schedule.html?day=all&direction=hoop&coach=all"
     },
     "silk": {
       "name": "silk",
@@ -533,7 +533,7 @@
       "title": "Воздушное полотно",
       "link": "services/silk.html",
       "image": true,
-      "schedule": "schedule.html?direction=silk&coach=all&day=all"
+      "schedule": "schedule.html?day=all&direction=silk&coach=all"
     },
     "yoga": {
       "name": "yoga",
@@ -541,7 +541,7 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/yoga.html",
       "image": true,
-      "schedule": "schedule.html?direction=yoga&coach=all&day=all"
+      "schedule": "schedule.html?day=all&direction=yoga&coach=all"
     },
     "stretching": {
       "name": "stretching",
@@ -549,7 +549,7 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/stretching.html",
       "image": true,
-      "schedule": "schedule.html?direction=stretching&coach=all&day=all",
+      "schedule": "schedule.html?day=all&direction=stretching&coach=all",
       "coaches": [
         {
           "title": "Надежда Лучинина",
@@ -563,7 +563,7 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/zumba-fitness.html",
       "image": true,
-      "schedule": "schedule.html?direction=zumba-fitness&coach=all&day=all",
+      "schedule": "schedule.html?day=all&direction=zumba-fitness&coach=all",
       "coaches": [
         {
           "title": "Александр Ушаков",
@@ -577,7 +577,7 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/zumba-strong.html",
       "image": true,
-      "schedule": "schedule.html?direction=zumba-strong&coach=all&day=all",
+      "schedule": "schedule.html?day=all&direction=zumba-strong&coach=all",
       "coaches": [
         {
           "title": "Александр Ушаков",
@@ -595,19 +595,19 @@
       "name": "stretching-silk",
       "title": "Stretching на полотнах",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?direction=stretching-silk&coach=all&day=all"
+      "schedule": "schedule.html?day=all&direction=stretching-silk&coach=all"
     },
     "rhythmicGymnastics": {
       "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?direction=rhythmic-gymnastics&coach=all&day=all"
+      "schedule": "schedule.html?day=all&direction=rhythmic-gymnastics&coach=all"
     },
     "functionalTraining": {
       "name": "functional-training",
       "title": "Функциональный тренинг",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?direction=functional-training&coach=all&day=all",
+      "schedule": "schedule.html?day=all&direction=functional-training&coach=all",
       "coaches": [
         {
           "title": "Яна Белякова",
@@ -625,7 +625,7 @@
       "name": "plastic",
       "title": "Женская пластика",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?direction=plastic&coach=all&day=all",
+      "schedule": "schedule.html?day=all&direction=plastic&coach=all",
       "coaches": [
         {
           "title": "Яна Белякова",
@@ -637,7 +637,7 @@
       "name": "contemporary",
       "title": "Контемпорари",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?direction=contemporary&coach=all&day=all"
+      "schedule": "schedule.html?day=all&direction=contemporary&coach=all"
     }
   },
   "coaches": {
@@ -645,7 +645,7 @@
       "name": "nadezhda-luchinina",
       "title": "Надежда Лучинина",
       "link": "coaches/nadezhda-luchinina.html",
-      "schedule": "schedule.html?direction=all&coach=nadezhda-luchinina&day=all",
+      "schedule": "schedule.html?day=all&direction=all&coach=nadezhda-luchinina",
       "directions": [
         {
           "title": "Pole dance",
@@ -661,7 +661,7 @@
       "name": "yana-belyakova",
       "title": "Яна Белякова",
       "link": "coaches/yana-belyakova.html",
-      "schedule": "schedule.html?direction=all&coach=yana-belyakova&day=all",
+      "schedule": "schedule.html?day=all&direction=all&coach=yana-belyakova",
       "directions": [
         {
           "title": "Pole Dance",
@@ -679,7 +679,7 @@
       "name": "aleksandr-ushakov",
       "title": "Александр Ушаков",
       "link": "coaches/aleksandr-ushakov.html",
-      "schedule": "schedule.html?direction=all&coach=aleksandr-ushakov&day=all",
+      "schedule": "schedule.html?day=all&direction=all&coach=aleksandr-ushakov",
       "directions": [
         {
           "title": "Zumba® Fitness",
