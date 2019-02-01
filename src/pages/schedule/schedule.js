@@ -154,7 +154,7 @@ function genStyles() {
   // Стили для разних групп селекторов
   const styles = {
     schema1: '{ pointer-events: auto; }',
-    schema2: '{ border: 1px solid #00be9f; background-color: rgba(0, 0, 0, 0.5); opacity: 1;}',
+    schema2: '{ border: 1px solid #777; background-color: rgba(0, 0, 0, 0.5); opacity: 1;}',
     schema3: '{ display: table-row; }',
   };
 
