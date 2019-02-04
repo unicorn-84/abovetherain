@@ -78,6 +78,7 @@
     "bootstrap": "^4.2.1",
     "jquery-lazy": "^1.7.10",
     "node-sass": "^4.11.0",
+    "simple-lightbox": "^2.1.0",
     "underscore": "^1.9.1",
     "webfontloader": "^1.6.28"
   }
