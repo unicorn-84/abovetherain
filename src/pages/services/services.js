@@ -11,4 +11,7 @@ import '../../scripts/components/logo';
 // Local
 import './services.scss';
 
-$('.lazy').Lazy();
+jQuery.noConflict();
+jQuery(document).ready(($) => {
+  $('.lazy').Lazy();
+});
