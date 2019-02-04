@@ -44,9 +44,9 @@ append content
                 div(class='image-container')
                   if direction.link
                     a(href= direction.link)
-                      img(class='card-img-top', src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.name}`, srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
+                      img(class='card-img-top lazy', data-src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.name}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
                   else
-                    img(class='card-img-top', src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.name}`, srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
+                    img(class='card-img-top lazy', data-src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.name}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
               //Body
               div(class='card-body')
                 //Title
