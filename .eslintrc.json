@@ -11,7 +11,7 @@
     "import/no-unresolved": [
       "error",
       {
-        "ignore": ["bootstrap.scss", "style.scss", "carousel", "collapse", "select"]
+        "ignore": ["bootstrap.scss", "style.scss", "carousel", "collapse", "lazy"]
       }
     ],
     "max-len": 0
