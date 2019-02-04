@@ -1,18 +1,28 @@
 @import '../../styles/variables';
 @import '../../styles/mixins';
 
-.img-thumbnail {
-  background-color: $light-text-color;
-  transition: opacity 0.1s $function;
-  padding: 0;
+@include image-container(66.666666%);
+
+.image-container {
   border-radius: 0.5rem;
   border: 4px $card-bg solid;
+  margin-bottom: 1rem;
+  background-color: $card-bg;
+  transition: border-color 0.1s $function;
+
+  img {
+    border-radius: calc(0.25rem - 1px);
+  }
 }
 
-.glightbox-clean .gprev {
-  top: 45%;
+button:focus {
+  outline: none;
 }
 
-.glightbox-clean .gnext {
-  top: 45%;
+.slbCloseBtn {
+  position: fixed;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
 }

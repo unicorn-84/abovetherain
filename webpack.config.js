@@ -147,7 +147,7 @@ module.exports = {
     }),
     new PurgecssPlugin({
       paths: glob.sync(path.resolve(__dirname, 'src/**/*.{pug,js}'), { nodir: true }),
-      whitelistPatterns: [/carousel/, /collapsing/, /^g/],
+      whitelistPatterns: [/carousel/, /collapsing/, /^slb/],
       rejected: true,
     }),
   ],
@@ -168,6 +168,7 @@ module.exports = {
       'style.scss': path.resolve(__dirname, 'src/styles/style.scss'),
       carousel: path.resolve(__dirname, 'node_modules/bootstrap/js/dist/carousel.js'),
       collapse: path.resolve(__dirname, 'node_modules/bootstrap/js/dist/collapse.js'),
+      lazy: path.resolve(__dirname, 'node_modules/jquery-lazy/jquery.lazy.js'),
     },
   },
 };
