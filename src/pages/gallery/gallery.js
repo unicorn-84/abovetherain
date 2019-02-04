@@ -2,20 +2,13 @@
 // Vendors
 import 'bootstrap.scss';
 import 'collapse';
-import Glightbox from 'glightbox';
-import 'glightbox/dist/css/glightbox.css';
-import '../../scripts/components/fon';
-import '../../scripts/components/logo';
+import Lazy from 'lazy';
 // Common
 import '../../styles/main.scss';
-
+import '../../scripts/components/fon';
+import '../../scripts/components/logo';
 import '../../scripts/components/icons';
 // Local
 import './gallery.scss';
 
-jQuery.noConflict();
-jQuery(document).ready(() => {
-  Glightbox({
-    selector: 'glightbox',
-  });
-});
+$('.lazy').Lazy();
