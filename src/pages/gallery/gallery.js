@@ -1,4 +1,3 @@
-// TODO: 'Сделать новую галерею'
 // Vendors
 import 'bootstrap.scss';
 import 'collapse';
