@@ -1,6 +1,6 @@
 {
   "name": "abovetherain",
-  "version": "1.32.1",
+  "version": "2.0.0",
   "description": "Dance Club static web site",
   "scripts": {
     "webpack:dev": "webpack --mode development",
