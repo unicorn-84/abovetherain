@@ -30,9 +30,44 @@ append content
     //Container
     div(class='container')
       div(class='row')
+        <!--ТРЕНИНГ РОМАНА ЛЯШЕНКО-->
+        div(class='col-12 col-lg-6')
+          div(class='card mb-4')
+            //Image
+            div(class='image-container', style='padding-top: 100%')
+              a(href= pages.trainingOfRomanLyashenko.link)
+                img(class='card-img-top',
+                src= require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-600x600.jpg'),
+                srcset= require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-600x600.jpg') + ' 600w,' + require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-800x800.jpg') + ' 800w, ' + require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-1200x1200.jpg') + ' 1200w',
+                alt='Тренинг Романа Ляшенко | Над Дождём')
+            //Body
+            div(class='card-body')
+              //Title
+              h3(class='card-title')
+                a(href= pages.trainingOfRomanLyashenko.link)
+                  | Тренинг Романа Ляшенко
+              //Subtitle
+              p(class='card-subtitle')
+                | 30 - 31 марта 2019
+              //Card text
+              p(class='card-text')
+                a(href='https://vk.com/id1436131') Роман
+                | 🙌
+                br
+                | Эксперт по работе с фасцией, мануальным техникам
+              p(class='card-text')
+                | Профессиональный массажист, эксперт по мягким мануальным техникам, имеет огромный практический опыт работы с профессионалами танцевальных направлений фитнеса и спорта, специалист по терапевтическому тейпированию.
+              p(class='card-text')
+                a(href="https://vk.com/topic-168182015_39846377", role='button' aria-disabled='true', class='btn btn-info sign-up') Запись на МК Романа
+              p(class='card-text')
+                a(href='requisites.html') Реквизиты для оплаты
+            //Footer
+            div(class='card-footer')
+              div(class='d-flex justify-content-end')
+                a(href= pages.trainingOfRomanLyashenko.link) Подробнее...
         <!--МАСТЕР-КЛАСС СОФЫ МАКУРИНОЙ-->
-        div(class='col-12 col-lg-6 d-flex align-items-stretch')
-          div(class='card')
+        div(class='col-12 col-lg-6')
+          div(class='card mb-4')
             //Image
             div(class='image-container')
               a(href= pages.sofaMakurinaMasterClass.link)
@@ -46,8 +81,9 @@ append content
             //Body
             div(class='card-body')
               //Title
-              h2(class='card-title')
-                | Мастер-класс Софы Макуриной
+              h3(class='card-title')
+                a(href= pages.sofaMakurinaMasterClass.link)
+                  | Мастер-класс Софы Макуриной
               //Subtitle
               p(class='card-subtitle')
                 | Впервые в САНКТ-ПЕТЕРБУРГЕ!
