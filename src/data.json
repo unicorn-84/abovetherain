@@ -529,7 +529,6 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/pole-dance.html",
       "image": true,
-      "schedule": "schedule.html?day=all&direction=pole-dance&coach=all",
       "coaches": [
         {
           "title": "Надежда Лучинина",
@@ -546,24 +545,21 @@
       "title": "Воздушное кольцо",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/hoop.html",
-      "image": true,
-      "schedule": "schedule.html?day=all&direction=hoop&coach=all"
+      "image": true
     },
     "silk": {
       "name": "silk",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "title": "Воздушное полотно",
       "link": "services/silk.html",
-      "image": true,
-      "schedule": "schedule.html?day=all&direction=silk&coach=all"
+      "image": true
     },
     "yoga": {
       "name": "yoga",
       "title": "Королевская йога",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/yoga.html",
-      "image": true,
-      "schedule": "schedule.html?day=all&direction=yoga&coach=all"
+      "image": true
     },
     "stretching": {
       "name": "stretching",
@@ -616,20 +612,17 @@
     "stretchingSilk": {
       "name": "stretching-silk",
       "title": "Stretching на полотнах",
-      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?day=all&direction=stretching-silk&coach=all"
+      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
     },
     "rhythmicGymnastics": {
       "name": "rhythmic-gymnastics",
       "title": "Художественная гимнастика",
-      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?day=all&direction=rhythmic-gymnastics&coach=all"
+      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
     },
     "functionalTraining": {
       "name": "functional-training",
       "title": "Функциональный тренинг",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?day=all&direction=functional-training&coach=all",
       "coaches": [
         {
           "title": "Яна Белякова",
@@ -647,7 +640,6 @@
       "name": "plastic",
       "title": "Женская пластика",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?day=all&direction=plastic&coach=all",
       "coaches": [
         {
           "title": "Яна Белякова",
@@ -658,8 +650,7 @@
     "contemporary": {
       "name": "contemporary",
       "title": "Контемпорари",
-      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "schedule": "schedule.html?day=all&direction=contemporary&coach=all"
+      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
     }
   },
   "coaches": {
