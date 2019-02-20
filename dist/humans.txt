@@ -4,7 +4,7 @@ Site: unicorn-84 [at] ya [dot] ru
 Location: Saint Petersburg, Russia
 
 /* SITE */
-Last update: 2019-02-12
+Last update: 2019-02-20
 Language: Russian
 Standards: HTML5, CSS3, ES6
 IDE: WebStorm
