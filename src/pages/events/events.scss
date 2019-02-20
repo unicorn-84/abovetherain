@@ -21,4 +21,13 @@
       font-weight: 400;
     }
   }
+
+  .card-title {
+    @include link(dark, false, true);
+  }
+}
+
+.sign-up {
+  text-decoration: none !important;
+  color: #fff !important;
 }
