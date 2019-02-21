@@ -332,12 +332,12 @@
         }
       ]
     },
-    "superSculpt": {
-      "name": "super-sculpt",
-      "link": "services/super-sculpt.html",
-      "template": "./src/pages/services/service/super-sculpt.pug",
-      "title": "Super Sculpt | Над Дождём",
-      "pageTitle": "Super Sculpt",
+    "functionalTraining": {
+      "name": "functional-training",
+      "link": "services/functional-training.html",
+      "template": "./src/pages/services/service/functional-training.pug",
+      "title": "Функциональный тренинг | Над Дождём",
+      "pageTitle": "Функциональный тренинг",
       "breadcrumbs": [
         {
           "name": "Главная",
@@ -348,7 +348,7 @@
           "path": "services.html"
         },
         {
-          "name": "Super Sculpt",
+          "name": "Функциональный тренинг",
           "path": "current"
         }
       ]
@@ -609,20 +609,11 @@
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
       "link": "services/healthy-back.html"
     },
-    "stretchingSilk": {
-      "name": "stretching-silk",
-      "title": "Stretching на полотнах",
-      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
-    },
-    "rhythmicGymnastics": {
-      "name": "rhythmic-gymnastics",
-      "title": "Художественная гимнастика",
-      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
-    },
     "functionalTraining": {
       "name": "functional-training",
       "title": "Функциональный тренинг",
       "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
+      "link": "services/functional-training.html",
       "coaches": [
         {
           "title": "Яна Белякова",
@@ -630,11 +621,15 @@
         }
       ]
     },
+    "stretchingSilk": {
+      "name": "stretching-silk",
+      "title": "Stretching на полотнах",
+      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
+    },
     "superSculpt": {
       "name": "super-sculpt",
       "title": "Super Sculpt",
-      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-      "link": "services/super-sculpt.html"
+      "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб"
     },
     "plastic": {
       "name": "plastic",
@@ -680,7 +675,8 @@
           "link": "services/pole-dance.html"
         },
         {
-          "title": "Функциональный тренинг"
+          "title": "Функциональный тренинг",
+          "link": "services/functional-training.html"
         },
         {
           "title": "Женская пластика"
