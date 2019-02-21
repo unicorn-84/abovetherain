@@ -46,7 +46,8 @@ append content
             select(id='coach-select', class='custom-select custom-select-lg schedule-controls')
               option(value="all" selected) Все тренеры
               each coach in coaches
-                option(value= coach.name)= coach.title
+                if coach.schedule
+                  option(value= coach.name)= coach.title
             select(id='day-select', class='custom-select custom-select-lg schedule-controls')
               option(value="all" selected) Все дни недели
               option(value="monday") Понедельник
