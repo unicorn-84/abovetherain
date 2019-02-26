@@ -1,7 +1,4 @@
 // Vendors
-import 'bootstrap.scss';
-import 'collapse';
-import 'carousel';
 import WebFont from 'webfontloader';
 import { each, defer } from 'underscore';
 // Common
