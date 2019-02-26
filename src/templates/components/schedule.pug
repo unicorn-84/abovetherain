@@ -272,7 +272,7 @@ table.schedule-table(data-selected="all")
       //Вторник
       td
       //Среда
-      td
+      +schedule-event('2', directions.zumbaFitness, coaches.aleksandrUshakov, 'wednesday', '19:00', '20:00', 'Открытая группа')
       //Четверг
       td
       //Пятница
@@ -285,7 +285,6 @@ table.schedule-table(data-selected="all")
       //Вторник
       td
       //Среда
-      td
       //Четверг
       td
       //Пятница
@@ -411,7 +410,7 @@ table.schedule-table.mobile(data-selected="all")
 //Среда
 table.schedule-table.mobile(data-selected="all")
   thead
-    tr.wednesday
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
       th.schedule-day
       th.schedule-day Среда
   tbody
@@ -436,12 +435,17 @@ table.schedule-table.mobile(data-selected="all")
     //18:00
     //18:30
     //19:00
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
+      td.schedule-time 19:00
+      +schedule-event('2', directions.zumbaFitness, coaches.aleksandrUshakov, 'wednesday', '19:00', '20:00', 'Открытая группа')
     //19:30
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
+      td.schedule-time 19:30
     //20:00
     //20:30
     //21:00
     //Margin
-    tr.schedule-table-margin.wednesday
+    tr.schedule-table-margin.zumba-fitness.aleksandr-ushakov.wednesday
       td
 //Четверг
 table.schedule-table.mobile(data-selected="all")
