@@ -114,6 +114,19 @@ module.exports = {
           },
         ],
       },
+      // Video
+      {
+        test: /\.(mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              context: path.resolve(__dirname, 'src'),
+            },
+          },
+        ],
+      },
       // Fonts
       {
         test: /\.(ttf|eot|woff|woff2)$/,
