@@ -1,6 +1,4 @@
 // Vendors
-import 'bootstrap.scss';
-import 'collapse';
 import Lazy from 'lazy';
 import SimpleLightbox from 'simple-lightbox';
 import 'simple-lightbox/dist/simpleLightbox.css';

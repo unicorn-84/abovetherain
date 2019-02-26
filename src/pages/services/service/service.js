@@ -1,7 +1,4 @@
 // Vendors
-import 'bootstrap.scss';
-import 'carousel';
-import 'collapse';
 // Common
 import '../../../styles/main.scss';
 
