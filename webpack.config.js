@@ -1,13 +1,7 @@
 const path = require('path');
-const glob = require('glob');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const FileManagerPlugin = require('filemanager-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const RobotstxtPlugin = require('robotstxt-webpack-plugin').default;
-const AddAssetPlugin = require('add-asset-webpack-plugin');
-const PurgecssPlugin = require('purgecss-webpack-plugin');
 const { options, pages } = require('./src/data');
 
 let build;
@@ -192,45 +186,4 @@ module.exports = {
       }),
     );
   });
-}());
-
-(function makeSeoStuff() {
-  if (seo) {
-    module.exports.plugins.push(
-      new RobotstxtPlugin({
-        policy: [
-          {
-            userAgent: '*',
-            disallow: server === 'prod' ? null : '/',
-          },
-        ],
-      }),
-      new AddAssetPlugin('humans.txt',
-        `/* TEAM */\nDeveloper: ${options.author}\nSite: ${options.author_email}\nLocation: Saint Petersburg, Russia\n\n/* SITE */\nLast update: ${new Date().toLocaleDateString(
-          'RU-ru', {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
-          },
-        )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
-      new CopyWebpackPlugin([
-        {
-          from: './src/data/trash',
-          to: './[name].[ext]',
-          toType: 'template',
-        },
-      ]),
-    );
-  } else if (!seo && server === 'dev') {
-    module.exports.plugins.push(
-      new RobotstxtPlugin({
-        policy: [
-          {
-            userAgent: '*',
-            disallow: '/',
-          },
-        ],
-      }),
-    );
-  }
 }());
