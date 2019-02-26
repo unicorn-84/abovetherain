@@ -246,23 +246,3 @@ module.exports = {
     );
   }
 }());
-
-(function splitChunks() {
-  module.exports.optimization.splitChunks = {
-    cacheGroups: {
-      default: false,
-      vendors: false,
-      common: {
-        name: 'common',
-        minChunks: Object.keys(module.exports.entry).length,
-        chunks: 'all',
-      },
-      // inline: {
-      //   name: false,
-      //   test: /inline/,
-      //   chunks: 'initial',
-      //   enforce: true,
-      // },
-    },
-  };
-}());
