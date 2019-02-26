@@ -6,7 +6,6 @@ const { options, pages } = require('./src/data');
 
 let build;
 const server = process.env.npm_config_server;
-const seo = process.env.npm_config_seo;
 if (process.env.npm_lifecycle_event === 'webpack:dev') {
   build = 'dev';
 } else if (process.env.npm_lifecycle_event === 'webpack:prod') {
