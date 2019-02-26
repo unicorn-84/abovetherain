@@ -1,11 +1,7 @@
 // Vendors
 import WebFont from 'webfontloader';
 import { each, defer } from 'underscore';
-// Common
-import '../../styles/main.scss';
-import '../../scripts/components/icons';
-import '../../scripts/components/logo';
-import { checkRetina, mobile } from '../../scripts/components/helpers';
+import { checkRetina, mobile } from '../../scripts/helpers';
 // Local
 import './index.scss';
 import mobileFon from '../../images/fon/mobile-index-fon.jpg';

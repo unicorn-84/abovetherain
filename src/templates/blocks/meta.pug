@@ -3,8 +3,6 @@
 meta(charset='utf-8')
 meta(http-equiv='x-ua-compatible', content='ie=edge')
 meta(name='viewport', content='width=device-width, initial-scale=1, viewport-fit=cover')
-if htmlWebpackPlugin.options.vars.seo
-  link(rel='author', href='humans.txt')
 if htmlWebpackPlugin.options.vars.server === 'local'
   base(href= `http://${options.hostLocal}:${options.portLocal}`)
 else if htmlWebpackPlugin.options.vars.server === 'prod'

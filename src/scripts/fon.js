@@ -1,7 +1,7 @@
 import { defer } from 'underscore';
 import { mobile } from './helpers';
-import fonLg from '../../images/fon/laptop-common-fon.jpg';
-import fonSm from '../../images/fon/mobile-common-fon.jpg';
+import fonLg from '../images/fon/laptop-common-fon.jpg';
+import fonSm from '../images/fon/mobile-common-fon.jpg';
 
 document.addEventListener('DOMContentLoaded', () => {
   function fonLoad() {
