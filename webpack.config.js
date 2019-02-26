@@ -14,18 +14,7 @@ if (process.env.npm_lifecycle_event === 'webpack:dev') {
 
 module.exports = {
   entry: {
-    index: './src/pages/index/index',
-    services: './src/pages/services/services',
-    service: './src/pages/services/service/service',
-    schedule: './src/pages/schedule/schedule',
-    events: './src/pages/events/events',
-    event: './src/pages/events/event/event',
-    team: './src/pages/team/team',
-    coaches: './src/pages/coaches/coaches',
-    coach: './src/pages/coaches/coach/coach',
-    gallery: './src/pages/gallery/gallery',
-    contacts: './src/pages/contacts/contacts',
-    requisites: './src/pages/requisites/requisites',
+    main: './src/main',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -133,10 +122,6 @@ module.exports = {
       },
     ],
   },
-  externals: {
-    jquery: 'jQuery',
-    Util: 'util.js',
-  },
   plugins: [
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new MiniCssExtractPlugin({
@@ -157,7 +142,6 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'style.scss': path.resolve(__dirname, 'src/styles/style.scss'),
       lazy: path.resolve(__dirname, 'node_modules/jquery-lazy/jquery.lazy.js'),
     },
   },
@@ -170,11 +154,9 @@ module.exports = {
         name: pages[page].name,
         filename: pages[page].link,
         template: pages[page].template,
-        inject: false,
         vars: {
           build,
           server,
-          seo,
         },
         minify: {
           removeComments: build === 'prod',

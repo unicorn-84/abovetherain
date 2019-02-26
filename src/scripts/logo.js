@@ -1,5 +1,5 @@
 import { defer } from 'underscore';
-import logo from '../../images/logo/logo.png';
+import logo from '../images/logo/logo.png';
 
 document.addEventListener('DOMContentLoaded', () => {
   (function logoLoad() {

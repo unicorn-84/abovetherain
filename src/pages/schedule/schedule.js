@@ -2,12 +2,9 @@
 import {
   each, has, without, map, extendOwn, pairs, isObject, indexOf,
 } from 'underscore';
-import { mobile } from '../../scripts/components/helpers';
-import '../../styles/main.scss';
+import { mobile } from '../../scripts/helpers';
 
-import '../../scripts/components/icons';
-import '../../scripts/components/fon';
-import '../../scripts/components/logo';
+
 // Local
 import { directions, coaches } from '../../data';
 // SCSS
