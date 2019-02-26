@@ -1,4 +1,3 @@
-// Vendors
 // Common
 import {
   each, has, without, map, extendOwn, pairs, isObject, indexOf,
