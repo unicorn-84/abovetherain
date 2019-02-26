@@ -114,6 +114,19 @@ module.exports = {
           },
         ],
       },
+      // Video
+      {
+        test: /\.(mp4)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              context: path.resolve(__dirname, 'src'),
+            },
+          },
+        ],
+      },
       // Fonts
       {
         test: /\.(ttf|eot|woff|woff2)$/,
@@ -135,7 +148,7 @@ module.exports = {
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new MiniCssExtractPlugin({
       filename: build === 'prod'
-        ? 'styles/[name].[contenthash:4].css'
+        ? 'styles/[name].[contenthash:6].css'
         : 'styles/[name].css',
     }),
     new FileManagerPlugin({
@@ -161,7 +174,6 @@ module.exports = {
     host: options.hostLocal,
     port: options.portLocal,
   },
-  devtool: server === 'prod' ? 'none' : 'source-map',
   resolve: {
     alias: {
       'bootstrap.scss': path.resolve(__dirname, 'node_modules/bootstrap/scss/bootstrap.scss'),
