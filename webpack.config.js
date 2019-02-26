@@ -148,15 +148,8 @@ module.exports = {
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new MiniCssExtractPlugin({
       filename: build === 'prod'
-        ? 'styles/[name].[contenthash:6].css'
+        ? 'styles/[name].[contenthash:4].css'
         : 'styles/[name].css',
-    }),
-    new FileManagerPlugin({
-      onEnd: {
-        delete: [
-          path.resolve(__dirname, 'dist/**/inline*.*'),
-        ],
-      },
     }),
   ],
   optimization: {
