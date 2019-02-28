@@ -5,11 +5,8 @@
   "scripts": {
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
-    "webpack:server": "webpack-dev-server --mode development",
-    "server:local": "npm --server=local run webpack:server",
-    "server:dev": "npm --server=dev run prod",
-    "server:prod": "npm --server=prod run prod",
-    "version": "npm --server=prod run prod && git add -f dist",
+    "server": "webpack-dev-server --mode development",
+    "version": "npm run prod",
     "postversion": "git push && git push --tags"
   },
   "private": true,

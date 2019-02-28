@@ -6,12 +6,9 @@ const { each } = require('lodash');
 const options = require('./src/database/options');
 const pages = require('./src/database/pages');
 
-let build;
-const server = process.env.npm_config_server;
-if (process.env.npm_lifecycle_event === 'dev') {
-  build = 'dev';
-} else if (process.env.npm_lifecycle_event === 'prod') {
-  build = 'prod';
+let prod;
+if (process.env.npm_lifecycle_event === 'prod') {
+  prod = true;
 }
 
 module.exports = {
@@ -20,12 +17,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: build === 'prod'
-      ? 'scripts/[name].[contenthash:4].js'
-      : 'scripts/[name].js',
-    chunkFilename: build === 'prod'
-      ? 'scripts/[name].[contenthash:4].js'
-      : 'scripts/[name].js',
+    filename: prod ? 'scripts/[name].[contenthash:4].js' : 'scripts/[name].js',
   },
   module: {
     rules: [
@@ -45,7 +37,7 @@ module.exports = {
           {
             loader: 'pug-loader',
             options: {
-              pretty: build === 'dev',
+              pretty: !prod,
             },
           },
         ],
@@ -55,10 +47,10 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
+            loader: prod ? MiniCssExtractPlugin.loader : 'style-loader',
+            options: prod ? {
               publicPath: '../',
-            },
+            } : {},
           },
           {
             loader: 'css-loader',
@@ -71,7 +63,7 @@ module.exports = {
             options: {
               config: {
                 ctx: {
-                  cssnano: build === 'prod' ? {
+                  cssnano: prod ? {
                     preset: ['default', {
                       discardComments: {
                         removeAll: true,
@@ -92,7 +84,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              name: prod ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
               context: path.resolve(__dirname, 'src'),
             },
           },
@@ -105,7 +97,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: build === 'prod' ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
+              name: prod ? '[path][name].[hash:4].[ext]' : '[path][name].[ext]',
               context: path.resolve(__dirname, 'src'),
             },
           },
@@ -127,16 +119,10 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new MiniCssExtractPlugin({
-      filename: build === 'prod'
-        ? 'styles/[name].[contenthash:4].css'
-        : 'styles/[name].css',
+      filename: prod ? 'styles/[name].[contenthash:4].css' : 'styles/[name].css',
     }),
   ],
-  resolve: {
-    alias: {
-      lazy: path.resolve(__dirname, 'node_modules/jquery-lazy/jquery.lazy.js'),
-    },
-  },
+  devtool: prod ? 'none' : 'eval',
 };
 
 (function createPages() {
@@ -147,16 +133,15 @@ module.exports = {
         filename: page.link,
         template: page.template,
         vars: {
-          build,
-          server,
+          prod,
           options,
           page,
         },
         minify: {
-          removeComments: build === 'prod',
-          minifyCSS: build === 'prod',
-          minifyJS: build === 'prod',
-          collapseWhitespace: build === 'prod',
+          removeComments: prod,
+          minifyCSS: prod,
+          minifyJS: prod,
+          collapseWhitespace: prod,
         },
       }),
     );
