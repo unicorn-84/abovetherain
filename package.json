@@ -1,6 +1,6 @@
 {
   "name": "abovetherain",
-  "version": "1.21.0",
+  "version": "2.4.1",
   "description": "Dance Club static web site",
   "scripts": {
     "dev": "webpack --mode development",
@@ -15,7 +15,7 @@
     "url": "git+https://github.com/unicorn-84/abovetherain.git"
   },
   "author": "unicorn-84 <unicorn-84@ya.ru> (https://github.com/unicorn-84)",
-  "license": "UNLICENSED",
+  "license": "GNU AGPLv3",
   "bugs": {
     "url": "https://github.com/unicorn-84/abovetherain/issues"
   },
