@@ -3,13 +3,13 @@
   "version": "1.21.0",
   "description": "Dance Club static web site",
   "scripts": {
-    "webpack:dev": "webpack --mode development",
-    "webpack:prod": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
     "webpack:server": "webpack-dev-server --mode development",
     "server:local": "npm --server=local run webpack:server",
-    "server:dev": "npm --server=dev run webpack:prod",
-    "server:prod": "npm --server=prod run webpack:prod",
-    "version": "npm --server=prod run webpack:prod && git add -f dist",
+    "server:dev": "npm --server=dev run prod",
+    "server:prod": "npm --server=prod run prod",
+    "version": "npm --server=prod run prod && git add -f dist",
     "postversion": "git push && git push --tags"
   },
   "private": true,
@@ -44,6 +44,7 @@
     "file-loader": "^2.0.0",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.11.0",
     "postcss-import": "^12.0.1",
     "postcss-loader": "^3.0.0",
     "postcss-preset-env": "^6.5.0",
@@ -59,14 +60,11 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "@fortawesome/fontawesome-svg-core": "^1.2.12",
-    "@fortawesome/free-brands-svg-icons": "^5.6.3",
-    "@fortawesome/free-regular-svg-icons": "^5.6.3",
-    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "bootstrap": "^4.3.1",
+    "jquery": "^3.3.1",
     "jquery-lazy": "^1.7.10",
-    "node-sass": "^4.11.0",
-    "simple-lightbox": "^2.1.0",
-    "underscore": "^1.9.1",
+    "lodash": "^4.17.11",
+    "popper.js": "^1.14.7",
     "webfontloader": "^1.6.28"
   }
 }

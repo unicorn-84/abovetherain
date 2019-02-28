@@ -1,34 +1,10 @@
-extends ../../templates/layout
-//-VARIABLES
+extends ../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, contacts } = require('../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.contacts.title
-    title= pages.contacts.title
-  if pages.contacts.description
-    meta(name='description', content= pages.contacts.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /contacts\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.contacts)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../images/icons/favicon.ico')
+  -var logo = require('../../images/logo/logo.png')
 append content
-    //Content
     div(id='content')
-      //Container
       div(class='container')
         div(class='row')
           div(class='col-12')
@@ -36,21 +12,19 @@ append content
               li
                 i(class='fas fa-map-marker-alt')
                 |&nbsp;
-                |!{contacts.address}
+                |!{data.options.address}
               li
-                a(href=`tel:${contacts.phone}`)
+                a(href=`tel:${data.options.phone}`)
                   i(class='fas fa-phone fa-rotate-90 fa-fw')
                   |&nbsp;
-                  |#{contacts.phone}
+                  |#{data.options.phone}
               li
                 i(class='fas fa-envelope fa-fw')
                 |&nbsp;
-                |#{contacts.email}
+                |#{data.options.email}
           div(class='col-12')
             div(id='yandex-map')
 //-SCRIPTS
 append scripts
-  //Page scripts
   script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
-  +assets('js', /contacts\./i)
 

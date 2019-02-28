@@ -1,4 +1,0 @@
-
-
-// Local
-import './requisites.scss';

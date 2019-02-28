@@ -1,34 +1,10 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.sofaMakurinaMasterClass.title
-    title= pages.sofaMakurinaMasterClass.title
-  if pages.sofaMakurinaMasterClass.descsription
-    meta(name='description', content= pages.sofaMakurinaMasterClass.descsription)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /event\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.sofaMakurinaMasterClass)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row justify-content-center')
         div(class='col-12 col-lg-8')
@@ -103,7 +79,3 @@ append content
                   | Ну и Музыка, конечно, даже на разминке я должна чувствовать ритмы, нечто, от чего внутри всё начинает шевелиться.&raquo;
                 footer(class='blockquote-footer')
                   cite(title='Софа Макурина') Софа Макурина
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /event\./i)

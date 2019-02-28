@@ -1,29 +1,8 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, directions } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.zumbaStrong.title
-    title= pages.zumbaStrong.title
-  if pages.zumbaStrong.description
-    meta(name='description', content= pages.zumbaStrong.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /service\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.zumbaStrong)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
   //Content
   div(id='content')
@@ -52,30 +31,26 @@ append content
                 | Это интенсивная, музыкальная тренировка с мощными кардио-силовыми упражнениями (планки, отжимания, приседания, бёрпи). Основной целью этого направления является проработка основных групп мышц всего тела с использованием только своего веса.
               p(class='card-text') Тренировка состоит из нескольких частей. Все части имеют разную степень сложности. Самая последняя всегда выполняется на полу: пресс, планки, скрутки. Во всех частях интенсивная фаза сменяется фазой отдыха. Вся тренировка проходит под ритмичную музыку: афро, дабстеп, латиноамериканские ритмы, которая пишется специально под движения и помогает сконцентрироваться на технике исполнения.
               p(class='card-text') После одного занятия Strong by zumba® вы почувствуете мощный прилив сил и результат от тренировок не заставит себя ждать.
-            if directions.zumbaStrong.coaches || directions.zumbaStrong.schedule
+            if data.directions.zumbaStrong.coaches || data.directions.zumbaStrong.schedule
               //Footer
               div(class='card-footer service-footer')
-                if directions.zumbaStrong.coaches
+                if data.directions.zumbaStrong.coaches
                   div(class='coach-direction-link')
                     h5(class='card-text')
                       i(class='far fa-list-alt fa-lg')
                       | &nbsp;
                       | Тренеры:
                     ul
-                      each coach in directions.zumbaStrong.coaches
+                      each coach in data.directions.zumbaStrong.coaches
                         li
                           if coach.link
                             a(href= coach.link)= coach.title
                           else
                             | #{coach.title}
-                if directions.zumbaStrong.schedule
+                if data.directions.zumbaStrong.schedule
                   div(class='coach-schedule-link')
                     h5(class='card-text')
-                      a(class='coach-schedule-link', href= directions.zumbaStrong.schedule )
+                      a(class='coach-schedule-link', href= data.directions.zumbaStrong.schedule )
                         i(class='far fa-calendar-alt fa-lg')
                         | &nbsp;
                         | Расписание занятий
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /service\./i)

@@ -1,0 +1,12 @@
+aside#abovetherain__page-title.border-beige.border-bottom.text-white
+  div.container
+    nav.py-5.d-lg-flex.justify-content-lg-between.align-items-lg-center
+      h3.mb-3.mb-lg-0.text-center.text-uppercase !{htmlWebpackPlugin.options.vars.page.pageTitle}
+      ol.breadcrumb.m-0.p-0.bg-transparent.text-center.justify-content-center
+        if htmlWebpackPlugin.options.vars.page.breadcrumbs
+          each breadcrumb in htmlWebpackPlugin.options.vars.page.breadcrumbs
+            if breadcrumb.path !== "current"
+              li.breadcrumb-item
+                a.text-reset(href= breadcrumb.path) !{breadcrumb.name}
+            else
+              li.breadcrumb-item.active(aria-current="page") !{breadcrumb.name}

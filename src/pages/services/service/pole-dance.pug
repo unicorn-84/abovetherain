@@ -1,38 +1,14 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, directions } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.poleDance.title
-    title= pages.poleDance.title
-  if pages.poleDance.description
-    meta(name='description', content= pages.poleDance.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /service\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.poleDance)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row justify-content-center')
         div(class='col-12 col-lg-8')
           div(class='card card-page')
-            //Image
             div(class='image-container')
               img(class='card-img-top', src= require(
                 '../../../images/services/pole-dance/001-pole-dance-600x400.jpg'), alt='Pole Dance | Над Дождём', srcset= require(
@@ -50,30 +26,26 @@ append content
                 | Пробное занятие - 500 руб
               p(class='card-text')
                 | Pole Dance — это фитнес нового поколения, объединяющий в себе современную хореографию и воздушную акробатику. Помогает развивать и укреплять все группы мышц, совершенствовать красоту тела и достигать внутреннего раскрепощения.
-            if directions.poleDance.coaches || directions.poleDance.schedule
+            if data.directions.poleDance.coaches || data.directions.poleDance.schedule
               //Footer
               div(class='card-footer service-footer')
-                if directions.poleDance.coaches
+                if data.directions.poleDance.coaches
                   div(class='coach-direction-link')
                     h5(class='card-text')
                       i(class='far fa-list-alt fa-lg')
                       | &nbsp;
                       | Тренеры:
                     ul
-                      each coach in directions.poleDance.coaches
+                      each coach in data.directions.poleDance.coaches
                         li
                           if coach.link
                             a(href= coach.link)= coach.title
                           else
                             | #{coach.title}
-                if directions.poleDance.schedule
+                if data.directions.poleDance.schedule
                   div(class='coach-schedule-link')
                     h5(class='card-text')
-                      a(class='coach-schedule-link', href= directions.poleDance.schedule )
+                      a(class='coach-schedule-link', href= data.directions.poleDance.schedule )
                         i(class='far fa-calendar-alt fa-lg')
                         | &nbsp;
                         | Расписание занятий
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /service\./i)

@@ -1,29 +1,8 @@
-extends ../../templates/layout
-//-VARIABLES
+extends ../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, contacts } = require('../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.team.title
-    title= pages.team.title
-  if pages.team.description
-    meta(name='description', content= pages.team.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /team\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.team)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../images/icons/favicon.ico')
+  -var logo = require('../../images/logo/logo.png')
 append content
   //Content
   div(id='content')
@@ -90,15 +69,11 @@ append content
                 | Запишитесь на него:
                 br
                 span(class='phone-link')
-                  a(href=`tel:${contacts.phone}`)
+                  a(href=`tel:${data.options.phone}`)
                     i(class='fas fa-phone fa-rotate-90 fa-fw')
                     | &nbsp;
-                    | #{contacts.phone}
+                    | #{data.options.phone}
                 br
                 | Опытные тренеры помогут раскрыть ваш талант.
                 br
                 | Мы стремимся сделать танец выражением личности и инструментом самопознания.
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /team\./i)

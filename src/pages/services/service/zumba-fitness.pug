@@ -1,29 +1,8 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, directions } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.zumbaFitness.title
-    title= pages.zumbaFitness.title
-  if pages.zumbaFitness.description
-    meta(name='description', content= pages.zumbaFitness.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /service\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.zumbaFitness)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
   //Content
   div(id='content')
@@ -68,30 +47,26 @@ append content
                 | Программа Zumba® Fitness — это танцевальное направление в фитнесе, в котором используются движения различных танцевальных стилей (латиноамериканских и других международных направлений: сальса, бачата, реггетон, кумбия и др).
               p(class='card-text')
                 | Оно построено на сочетании быстрых и медленных ритмов, позволяющих быть в форме и совершенствовать свое тело. Для овладения техникой Зумбы совсем не обязательно быть профессиональным танцором, любой желающий, независимо от его танцевальной подготовки, может легко освоить данный класс. Тренировка дарит атмосферу праздника, которая помогает раскрепоститься, получить удовольствие и создать музыкально-танцевальное настроение.
-            if directions.zumbaFitness.coaches || directions.zumbaFitness.schedule
+            if data.directions.zumbaFitness.coaches || data.directions.zumbaFitness.schedule
               //Footer
               div(class='card-footer service-footer')
-                if directions.zumbaFitness.coaches
+                if data.directions.zumbaFitness.coaches
                   div(class='coach-direction-link')
                     h5(class='card-text')
                       i(class='far fa-list-alt fa-lg')
                       | &nbsp;
                       | Тренеры:
                     ul
-                      each coach in directions.zumbaFitness.coaches
+                      each coach in data.directions.zumbaFitness.coaches
                         li
                           if coach.link
                             a(href= coach.link)= coach.title
                           else
                             | #{coach.title}
-                if directions.zumbaFitness.schedule
+                if data.directions.zumbaFitness.schedule
                   div(class='coach-schedule-link')
                     h5(class='card-text')
-                      a(class='coach-schedule-link', href= directions.zumbaFitness.schedule )
+                      a(class='coach-schedule-link', href= data.directions.zumbaFitness.schedule )
                         i(class='far fa-calendar-alt fa-lg')
                         | &nbsp;
                         | Расписание занятий
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /service\./i)

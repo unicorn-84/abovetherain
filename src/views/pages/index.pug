@@ -1,0 +1,31 @@
+extends ../layouts/app
+//-VARS
+append variables
+  -var icon = require("../../images/icons/favicon.ico")
+  -var logo = require("../../images/logo/logo.png")
+//-META
+append meta
+  if server === "prod"
+    meta(name="google-site-verification" content="Gc5zQB4yQ5s8ZvDI5WoD2yXp5Hrza3OmX-qsy8A2hig")
+    meta(name="yandex-verification" content="f196debf2583cee4")
+//-HEADER
+append header
+  +header(logo)
+//-PAGE TITLE
+block page-title
+//-CONTENT
+block content
+  main.py-5.flex-fill
+    div.container
+      div.row
+        div.col
+          | index
+//-FOOTER
+block footer
+  footer#abovetherain__footer.text-white.px-3
+    div.py-5
+      div.container
+        div.row
+          div.col.d-flex.justify-content-end.d-lg-none
+            a.text-decoration-none.text-reset(href=`tel:${htmlWebpackPlugin.options.vars.options.phone}`)
+              i.fas.fa-phone-square.fa-3x

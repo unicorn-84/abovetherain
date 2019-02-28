@@ -2,13 +2,15 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { options, pages } = require('./src/data');
+const { each } = require('lodash');
+const options = require('./src/database/options');
+const pages = require('./src/database/pages');
 
 let build;
 const server = process.env.npm_config_server;
-if (process.env.npm_lifecycle_event === 'webpack:dev') {
+if (process.env.npm_lifecycle_event === 'dev') {
   build = 'dev';
-} else if (process.env.npm_lifecycle_event === 'webpack:prod') {
+} else if (process.env.npm_lifecycle_event === 'prod') {
   build = 'prod';
 }
 
@@ -130,16 +132,6 @@ module.exports = {
         : 'styles/[name].css',
     }),
   ],
-  optimization: {
-    noEmitOnErrors: true,
-  },
-  devServer: {
-    stats: 'errors-only',
-    overlay: true,
-    compress: true,
-    host: options.hostLocal,
-    port: options.portLocal,
-  },
   resolve: {
     alias: {
       lazy: path.resolve(__dirname, 'node_modules/jquery-lazy/jquery.lazy.js'),
@@ -148,15 +140,17 @@ module.exports = {
 };
 
 (function createPages() {
-  Object.keys(pages).forEach((page) => {
+  each(pages, (page) => {
     module.exports.plugins.push(
       new HtmlWebpackPlugin({
-        name: pages[page].name,
-        filename: pages[page].link,
-        template: pages[page].template,
+        name: page.name,
+        filename: page.link,
+        template: page.template,
         vars: {
           build,
           server,
+          options,
+          page,
         },
         minify: {
           removeComments: build === 'prod',
