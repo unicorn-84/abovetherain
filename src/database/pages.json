@@ -1,0 +1,475 @@
+[
+  {
+    "name": "index",
+    "link": "index.html",
+    "template": "./src/views/pages/index.pug",
+    "title": "Школа танцев на пилоне, полотнах и кольце в СПб – «Над дождём», т. +7 952 3999930",
+    "description": "Танцы на пилоне, кольце и полотнах, зумба, фитнес, растяжка, йога в СПб – группы по 5 человек. Наша школа танцев находится по адресу ул. Пионерская, 50. Запишитесь на пробное занятие в танцевальную студию «Над дождём», т. +7 952 3999930",
+    "pageTitle": null,
+    "breadcrumbs": null
+  },
+  {
+    "name": "services",
+    "link": "services.html",
+    "template": "./src/views/pages/services.pug",
+    "title": "Направления занятий в школе танцев | Над Дождём",
+    "description": "В нашей танцевальной школе огромный выбор танцевальных занятий - pole dance, воздушное кольцо, воздушное полотно, зумба, королевская йога, занятия для укрепления спины и растяжка. Записывайтесь на пробное занятие: +7 952 3999930",
+    "pageTitle": "Услуги",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "schedule",
+    "link": "schedule.html",
+    "template": "./src/views/pages/schedule.pug",
+    "title": "Расписание школы танцев в Санкт-Петербурге | Над Дождём",
+    "description": "Выбирайте удобное для вас расписание занятий и приходите танцевать в самую красивую и уютную танцевальную студию Санкт-Петербурга",
+    "pageTitle": "Расписание",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Расписание",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "events",
+    "link": "events.html",
+    "template": "./src/views/pages/events.pug",
+    "title": "Мероприятия школы танцев | Над Дождём",
+    "description": "Наша студия регулярно проводит мастер-классы от ведущих преподавателей по танцам на пилоне, воздушной гимнастике, а также другие интересные танцевальные мероприятия.",
+    "pageTitle": "Афиша",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Афиша",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "team",
+    "link": "team.html",
+    "template": "./src/views/pages/team.pug",
+    "title": "Мы | Над Дождём",
+    "pageTitle": "Мы",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Мы",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "coaches",
+    "link": "coaches.html",
+    "template": "./src/views/pages/coaches.pug",
+    "title": "Преподаватели школы танцев | Над Дождём",
+    "description": "В нашей студии работает сплоченный коллектив преподавателей по следующим направлениям: pole dance, воздушная гимнастика и кольцо, йога, растяжка, зумба и не только. Приходите к нам и тренируйтесь у лучших!",
+    "pageTitle": "Тренеры",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Тренеры",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "gallery",
+    "link": "gallery.html",
+    "template": "./src/views/pages/gallery.pug",
+    "title": "Фото и видео школы танцев | Над Дождём",
+    "description": "Смотрите наши фото и видео отчеты с занятий по танцам на пилоне, воздушной гимнастике, растяжке и йоге, а также репортажи с танцевальных мероприятий и мастер-классов.",
+    "pageTitle": "Галерея",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Галерея",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "contacts",
+    "link": "contacts.html",
+    "template": "./src/views/pages/contacts.pug",
+    "title": "Контакты школы танцев | Над Дождём",
+    "description": "Наша студия танцев находится в тихом, красивом и уютном месте, на набережной Малой Невки, в 15 минутах ходьбы от станции метро «Чкаловская». Адрес: Пионерская улица, 50. Звоните: +7 952 3999930",
+    "pageTitle": "Контакты",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Контакты",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "requisites",
+    "link": "requisites.html",
+    "template": "./src/views/pages/requisites.pug",
+    "title": "Реквизиты | Над Дождём",
+    "description": "",
+    "pageTitle": "Реквизиты",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Реквизиты",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "rent",
+    "link": "services/rent.html",
+    "template": "./src/views/pages/services/rent.pug",
+    "title": "Аренда танцевального зала в СПб для любых мероприятий | Над Дождём",
+    "description": "Аренда зала в СПБ - у нас лучшие условия и цены! К вашим услугам просторный зал 90 м с уютным бельэтажем для гостей, профессиональная звуковая аппаратура и освещение. Удобное расположение, живописное место с видом на набережную. Звоните: +7 952 3999930",
+    "pageTitle": "Аренда сценической площадки",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Аренда",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "pole-dance",
+    "link": "services/pole-dance.html",
+    "template": "./src/views/pages/services/pole-dance.pug",
+    "title": "Pole Dance | Над Дождём",
+    "pageTitle": "Pole Dance",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Pole Dance",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "hoop",
+    "link": "services/hoop.html",
+    "template": "./src/views/pages/services/hoop.pug",
+    "title": "Воздушное кольцо | Над Дождём",
+    "pageTitle": "Воздушное кольцо",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Воздушное кольцо",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "silk",
+    "link": "services/silk.html",
+    "template": "./src/views/pages/services/silk.pug",
+    "title": "Воздушное полотно | Над Дождём",
+    "pageTitle": "Воздушное полотно",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Воздушное полотно",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "yoga",
+    "link": "services/yoga.html",
+    "template": "./src/views/pages/services/yoga.pug",
+    "title": "Королевская йога | Над Дождём",
+    "pageTitle": "Королевская йога",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Королевская йога",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "stretching",
+    "link": "services/stretching.html",
+    "template": "./src/views/pages/services/stretching.pug",
+    "title": "Stretching | Над Дождём",
+    "pageTitle": "Stretching",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Stretching",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "zumba-fitness",
+    "link": "services/zumba-fitness.html",
+    "template": "./src/views/pages/services/zumba-fitness.pug",
+    "title": "Zumba® Fitness | Над Дождём",
+    "pageTitle": "Zumba® Fitness",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Zumba® Fitness",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "healthy-back",
+    "link": "services/healthy-back.html",
+    "template": "./src/views/pages/services/healthy-back.pug",
+    "title": "Здоровая спина | Над Дождём",
+    "pageTitle": "Здоровая спина",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Здоровая спина",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "functional-training",
+    "link": "services/functional-training.html",
+    "template": "./src/views/pages/services/functional-training.pug",
+    "title": "Функциональный тренинг | Над Дождём",
+    "pageTitle": "Функциональный тренинг",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Функциональный тренинг",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "zumba-strong",
+    "link": "services/zumba-strong.html",
+    "template": "./src/views/pages/services/zumba-strong.pug",
+    "title": "Strong by Zumba® | Над Дождём",
+    "pageTitle": "Strong by Zumba®",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Услуги",
+        "path": "services.html"
+      },
+      {
+        "name": "Strong by Zumba®",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "aleksandr-ushakov",
+    "link": "coaches/aleksandr-ushakov.html",
+    "template": "./src/views/pages/coaches//aleksandr-ushakov.pug",
+    "title": "Александр Ушаков | Над Дождём",
+    "description": "",
+    "pageTitle": "Александр Ушаков",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Тренеры",
+        "path": "coaches.html"
+      },
+      {
+        "name": "Александр Ушаков",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "nadezhda-luchinina",
+    "link": "coaches/nadezhda-luchinina.html",
+    "template": "./src/views/pages/coaches//nadezhda-luchinina.pug",
+    "title": "Надежда Лучинина | Над Дождём",
+    "description": "",
+    "pageTitle": "Надежда Лучинина",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Тренеры",
+        "path": "coaches.html"
+      },
+      {
+        "name": "Надежда Лучинина",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "yana-belyakova",
+    "link": "coaches/yana-belyakova.html",
+    "template": "./src/views/pages/coaches//yana-belyakova.pug",
+    "title": "Яна Белякова | Над Дождём",
+    "description": "",
+    "pageTitle": "Яна Белякова",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Тренеры",
+        "path": "coaches.html"
+      },
+      {
+        "name": "Яна Белякова",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "sofa-makurina-master-class",
+    "link": "events/sofa-makurina-master-class.html",
+    "template": "./src/views/pages/events/sofa-makurina-master-class.pug",
+    "title": "Мастер-класс Софы Макуриной | Над Дождём",
+    "description": "",
+    "pageTitle": "Мастер-класс Софы Макуриной",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Афиша",
+        "path": "events.html"
+      },
+      {
+        "name": "Мастер-класс Софы Макуриной",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "training-of-roman-lyashenko",
+    "link": "events/training-of-roman-lyashenko.html",
+    "template": "./src/views/pages/events/training-of-roman-lyashenko.pug",
+    "title": "Тренинг Романа Ляшенко | Над Дождём",
+    "description": "",
+    "pageTitle": "Тренинг Романа Ляшенко",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Афиша",
+        "path": "events.html"
+      },
+      {
+        "name": "Тренинг Романа Ляшенко",
+        "path": "current"
+      }
+    ]
+  }
+]

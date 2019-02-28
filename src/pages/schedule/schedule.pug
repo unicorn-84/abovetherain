@@ -1,51 +1,28 @@
-extends ../../templates/layout
-//-VARIABLES
+extends ../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, coaches, directions, contacts } = require('../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.schedule.title
-    title= pages.schedule.title
-  if pages.schedule.description
-    meta(name='description', content= pages.schedule.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /schedule\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.schedule)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../images/icons/favicon.ico')
+  -var logo = require('../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row')
         div(class='col-12')
-          a(href= contacts.vkSignUp, role='button' aria-disabled='true', class='btn btn-info btn-lg schedule-controls')
+          a(href= data.options.vkSignUp, role='button' aria-disabled='true', class='btn btn-info btn-lg schedule-controls')
             |Записаться на занятие
             |&nbsp;
             i(class='fab fa-vk fa-lg')
       div(class='row')
         div(class='col-12')
-          div(class='schedule-filter')
+          //div(class='schedule-filter')
             select(id='direction-select', class='custom-select custom-select-lg schedule-controls')
               option(value="all" selected) Все направления
-                each direction in directions
+                each direction in data.directions
                   if direction.schedule
                     option(value= direction.name)= direction.title
             select(id='coach-select', class='custom-select custom-select-lg schedule-controls')
               option(value="all" selected) Все тренеры
-              each coach in coaches
+              each coach in data.coaches
                 if coach.schedule
                   option(value= coach.name)= coach.title
             select(id='day-select', class='custom-select custom-select-lg schedule-controls')
@@ -56,8 +33,4 @@ append content
               option(value="thursday") Четверг
               option(value="friday") Пятница
         div(class='col-12')
-          include ../../templates/components/schedule
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /schedule\./i)
+          //include ../../templates/components/schedule

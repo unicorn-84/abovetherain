@@ -1,4 +1,5 @@
-if htmlWebpackPlugin.options.vars.server === 'prod'
+-var server = htmlWebpackPlugin.options.vars.server
+if server === 'prod'
   //Yandex.Metrika counter
   script.
     (function (d, w, c) {

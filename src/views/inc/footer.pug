@@ -1,0 +1,25 @@
+footer#abovetherain__footer.border-beige.border-top.text-white.px-3
+  div.py-5
+    div.container
+      div.row
+        div.col-sm-6.col-lg-4.d-flex.justify-content-center.mb-4.mb-lg-0.order-lg-last
+          a.text-reset.text-decoration-none.lead(href=`tel:${htmlWebpackPlugin.options.vars.options.phone}`)
+            i.fas.fa-phone.fa-rotate-90
+            | &nbsp;
+            | #{htmlWebpackPlugin.options.vars.options.phone}
+        div.col-sm-6.col-lg-4.d-flex.justify-content-center.mb-4.mb-lg-0
+          a.mx-3.text-decoration-none.text-reset(href= htmlWebpackPlugin.options.vars.options.instagram)
+            i.fab.fa-instagram.fa-2x
+          a.mx-3.text-decoration-none.text-reset(href= htmlWebpackPlugin.options.vars.options.vkontakte)
+            i.fab.fa-vk.fa-2x
+          a.mx-3.text-decoration-none.text-reset(href= htmlWebpackPlugin.options.vars.options.facebook)
+            i.fab.fa-facebook.fa-2x
+        div.col-sm-6.col-lg-4.d-flex.justify-content-center.order-lg-first
+          ul.list-unstyled.text-left.p-0.m-0
+            li
+              a.text-reset(href="requisites.html") Реквизиты для оплаты
+  div.text-center.pb-3
+    span 2019&nbsp;
+      i.far.fa-copyright.fa-fw
+      | &nbsp;
+      | #{htmlWebpackPlugin.options.vars.options.title}

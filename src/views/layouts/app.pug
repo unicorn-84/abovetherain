@@ -1,0 +1,45 @@
+block variables
+doctype html
+html(lang="RU-ru", class="")
+  //-HEAD
+  head
+    //-META
+    block meta
+      meta(charset="utf-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1, viewport-fit=cover")
+      if htmlWebpackPlugin.options.vars.page.title
+        title= htmlWebpackPlugin.options.vars.page.title
+      else
+        title= htmlWebpackPlugin.options.vars.options.title
+      if htmlWebpackPlugin.options.vars.page.description
+        meta(name='description', content= htmlWebpackPlugin.options.vars.page.description)
+      else
+        meta(name='description', content= htmlWebpackPlugin.options.vars.options.description)
+    //-FONTS
+    link(rel="dns-prefetch" href="//fonts.gstatic.com") 
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Fira+Sans:400,400i,500,500i&amp;subset=cyrillic")
+    //-ICONS
+    link(rel="icon", type="image/x-icon", href= icon)
+    //-FONT AWESOME
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/solid.css" integrity="sha384-r/k8YTFqmlOaqRkZuSiE9trsrDXkh07mRaoGBMoDcmA58OHILZPsk29i2BsFng1B" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/regular.css" integrity="sha384-IG162Tfx2WTn//TRUi9ahZHsz47lNKzYOp0b6Vv8qltVlPkub2yj9TVwzNck6GEF" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/brands.css" integrity="sha384-BKw0P+CQz9xmby+uplDwp82Py8x1xtYPK3ORn/ZSoe6Dk3ETP59WCDnX+fI1XCKK" crossorigin="anonymous")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/fontawesome.css" integrity="sha384-4aon80D8rXCGx9ayDt85LbyUHeMWd3UiBaWliBlJ53yzm9hqN21A+o1pqoyK04h+" crossorigin="anonymous")
+  //-BODY
+  body.d-flex.flex-column.bg-dark
+    //-COUNTERS
+    include ../inc/counters
+    //-HEADER
+    block header
+      include ../inc/header
+    //-PAGE-TITLE
+    block page-title
+      include ../inc/page-title
+    //-CONTENT
+    block content
+    //-FOOTER
+    block footer
+      include ../inc/footer
+    //-SCRIPTS
+    block scripts
+

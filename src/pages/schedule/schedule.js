@@ -3,8 +3,6 @@ import {
   each, has, without, map, extendOwn, pairs, isObject, indexOf,
 } from 'underscore';
 import { mobile } from '../../scripts/helpers';
-
-
 // Local
 import { directions, coaches } from '../../data';
 // SCSS

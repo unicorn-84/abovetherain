@@ -1,0 +1,15 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+html {
+  height: 1px;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+@import 'header';
+@import 'content';
+@import 'footer';

@@ -1,40 +1,16 @@
-extends ../../templates/layout
-//-VARIABLES
+extends ../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation } = require('../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.requisites.title
-    title= pages.requisites.title
-  if pages.requisites.description
-    meta(name='description', content= pages.requisites.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /requisites\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.requisites)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../images/icons/favicon.ico')
+  -var logo = require('../../images/logo/logo.png')
 append content
   //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row')
         div(class='col-12')
           div(class='card card-page')
-            //Body
             div(class='card-body')
-              //Title
               h2(class='card-title text-center')
                 | Реквизиты для перечисления платежей
               p(class='card-text')
@@ -55,7 +31,3 @@ append content
                 | В назначении платежа указать:
                 br
                 | «Оплата за участие в мероприятии ___(указать дату мероприятия)___. НДС не облагается»
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /requisites\./i)

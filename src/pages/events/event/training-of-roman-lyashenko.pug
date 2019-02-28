@@ -1,34 +1,10 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.trainingOfRomanLyashenko.title
-    title= pages.trainingOfRomanLyashenko.title
-  if pages.trainingOfRomanLyashenko.descsription
-    meta(name='description', content= pages.trainingOfRomanLyashenko.descsription)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /event\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.trainingOfRomanLyashenko)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row justify-content-center')
         div(class='col-12 col-lg-8')
@@ -87,7 +63,3 @@ append content
                 a(href='https://vk.com/@naddozhdem-anatomiya-rastyazhki') Подробнее о программе развития гибкости
               p(class='card-text')
                 a(href='requisites.html') Реквизиты для оплаты
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /event\./i)

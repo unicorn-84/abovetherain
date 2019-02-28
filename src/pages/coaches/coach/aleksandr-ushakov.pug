@@ -1,39 +1,14 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, coaches } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.aleksandrUshakov.title
-    title= pages.aleksandrUshakov.title
-  if pages.aleksandrUshakov.description
-    meta(name='description', content= pages.aleksandrUshakov.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /coach\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.aleksandrUshakov)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row justify-content-center')
         div(class='col-12 col-lg-8')
           div(class='card card-page')
-            //Carousel
             div(id='aleksandrUshakovCarousel', class='carousel slide', data-ride='carousel')
               ol(class='carousel-indicators')
                 li(data-target='#aleksandrUshakovCarousel', data-slide-to='0', class='active')
@@ -75,12 +50,9 @@ append content
                 a(class='carousel-control-next' href='#aleksandrUshakovCarousel' role='button' data-slide='next')
                   span(class='carousel-control-next-icon' aria-hidden='true')
                   span(class='sr-only') Next
-            //Body
             div(class='card-body')
-              //Title
               h2(class='card-title')
                 | Александр Ушаков
-              //Subtitle
               p(class='card-subtitle')
                 | Лицензированный инструктор программ
                 br
@@ -96,30 +68,26 @@ append content
                   | &laquo;В работе главное - взаимосвязь между инструктором и учеником.&raquo;
                 footer(class='blockquote-footer')
                   cite(title='Александр Ушаков') Александр Ушаков
-            if coaches.aleksandrUshakov.directions || coaches.aleksandrUshakov.schedule
+            if data.coaches.aleksandrUshakov.directions || data.coaches.aleksandrUshakov.schedule
               //Footer
               div(class='card-footer coach-footer')
-                if coaches.aleksandrUshakov.directions
+                if data.coaches.aleksandrUshakov.directions
                   div(class='coach-direction-link')
                     h5(class='card-text')
                       i(class='far fa-list-alt fa-lg')
                       | &nbsp;
                       | Направления:
                     ul
-                      each direction in coaches.aleksandrUshakov.directions
+                      each direction in data.coaches.aleksandrUshakov.directions
                         li
                           if direction.link
                             a(href= direction.link)= direction.title
                           else
                             | #{direction.title}
-                  if coaches.aleksandrUshakov.schedule
+                  if data.coaches.aleksandrUshakov.schedule
                     div(class='coach-schedule-link')
                       h5(class='card-text')
-                        a(class='coach-schedule-link', href= coaches.aleksandrUshakov.schedule)
+                        a(class='coach-schedule-link', href= data.coaches.aleksandrUshakov.schedule)
                           i(class='far fa-calendar-alt fa-lg')
                           | &nbsp;
                           | Расписание занятий
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /coach\./i)

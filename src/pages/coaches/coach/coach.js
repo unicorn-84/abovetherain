@@ -1,2 +1,0 @@
-// Local
-import './coach.scss';

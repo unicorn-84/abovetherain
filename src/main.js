@@ -1,6 +1,7 @@
 // SCSS
-import './styles/main.scss';
+import './sass/main.scss';
 // JS
-import './scripts/icons';
-import './scripts/logo';
-import './scripts/fon';
+import 'bootstrap';
+// import './scripts/icons';
+// import './scripts/logo';
+// import './scripts/fon';

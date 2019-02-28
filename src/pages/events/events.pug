@@ -1,41 +1,16 @@
-extends ../../templates/layout
-//-VARIABLES
+extends ../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation } = require('../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.events.title
-    title= pages.events.title
-  if pages.events.description
-    meta(name='description', content= pages.events.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /events\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  +pageTitle(pages.events)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../images/icons/favicon.ico')
+  -var logo = require('../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row')
-        <!--ТРЕНИНГ РОМАНА ЛЯШЕНКО-->
         div(class='col-12 col-lg-6')
           div(class='card mb-4')
-            //Image
             div(class='image-container', style='padding-top: 100%')
-              a(href= pages.trainingOfRomanLyashenko.link)
+              a(href= data.pages.trainingOfRomanLyashenko.link)
                 img(class='card-img-top',
                 src= require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-600x600.jpg'),
                 srcset= require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-600x600.jpg') + ' 600w,' + require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-800x800.jpg') + ' 800w, ' + require('../../images/events/training-of-roman-lyashenko/001-training-of-roman-lyashenko-1200x1200.jpg') + ' 1200w',
@@ -44,7 +19,7 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                a(href= pages.trainingOfRomanLyashenko.link)
+                a(href= data.pages.trainingOfRomanLyashenko.link)
                   | Тренинг Романа Ляшенко
               //Subtitle
               p(class='card-subtitle')
@@ -64,13 +39,13 @@ append content
             //Footer
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(href= pages.trainingOfRomanLyashenko.link) Подробнее...
+                a(href= data.pages.trainingOfRomanLyashenko.link) Подробнее...
         <!--МАСТЕР-КЛАСС СОФЫ МАКУРИНОЙ-->
         div(class='col-12 col-lg-6')
           div(class='card mb-4')
             //Image
             div(class='image-container')
-              a(href= pages.sofaMakurinaMasterClass.link)
+              a(href= data.pages.sofaMakurinaMasterClass.link)
                 img(class='card-img-top',
               src= require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-600x400.jpg'),
               srcset= require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-600x400.jpg') + ' 600w,' + require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-800x533.jpg') + ' 800w, ' + require('../../images/events/sofa-makurina-master-class/001-sofa-makurina-master-class-1200x800.jpg') + ' 1200w',
@@ -82,7 +57,7 @@ append content
             div(class='card-body')
               //Title
               h3(class='card-title')
-                a(href= pages.sofaMakurinaMasterClass.link)
+                a(href= data.pages.sofaMakurinaMasterClass.link)
                   | Мастер-класс Софы Макуриной
               //Subtitle
               p(class='card-subtitle')
@@ -99,8 +74,4 @@ append content
             //Footer
             div(class='card-footer')
               div(class='d-flex justify-content-end')
-                a(href= pages.sofaMakurinaMasterClass.link) Подробнее...
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /events\./i)
+                a(href= data.pages.sofaMakurinaMasterClass.link) Подробнее...

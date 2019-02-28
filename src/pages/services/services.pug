@@ -1,37 +1,15 @@
-extends ../../templates/layout
-//-VARIABLES
+extends ../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, directions } = require('../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.services.title
-    title= pages.services.title
-  if pages.services.description
-    meta(name='description', content= pages.services.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /services\./i)
-//-HEADER
-append header
-  //Header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.services)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../images/icons/favicon.ico')
+  -var logo = require('../../images/logo/logo.png')
 append content
   //Content
   div(id='content')
     //Container
     div(class='container')
       div(class='row')
-        each direction, index in directions
+        each direction in data.directions
           div(class={
             'col-12': true,
             'col-md-6': true,
@@ -41,12 +19,12 @@ append content
             div(class='card mb-4')
               //Image
               if direction.image
-                div(class='image-container')
+                //div(class='image-container')
                   if direction.link
                     a(href= direction.link)
-                      img(class='card-img-top lazy', data-src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.name}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
+                      img(class='card-img-top lazy', data-src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
                   else
-                    img(class='card-img-top lazy', data-src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.name}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
+                    img(class='card-img-top lazy', data-src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
               //Body
               div(class='card-body')
                 //Title
@@ -64,7 +42,3 @@ append content
                     a(href= direction.link) Подробнее...
                   else
                     | Подробнее...
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /services\./i)

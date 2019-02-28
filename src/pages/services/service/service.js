@@ -1,2 +1,0 @@
-// Local
-import './service.scss';

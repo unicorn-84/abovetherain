@@ -1,40 +1,15 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, coaches } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.nadezhdaLuchinina.title
-    title= pages.nadezhdaLuchinina.title
-  if pages.nadezhdaLuchinina.description
-    meta(name='description', content= pages.nadezhdaLuchinina.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /coach\./i)
-//-HEADER
-append header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.nadezhdaLuchinina)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row justify-content-center')
         div(class='col-12 col-lg-8')
           div(class='card card-page')
-            //Body
             div(class='card-body')
-              //Title
               h2(class='card-title text-center')
                 | Надежда Лучинина
               blockquote(class='blockquote')
@@ -64,30 +39,26 @@ append content
                 | Не останавливаясь в профессиональном росте, в 2014 году получила аттестацию Межрегиональной Организации Спорта и Танца на пилоне (МОСТП).
               p(class='card-text')
                 | На тренировках Надежда научит Вас управлять и наслаждаться движением  своего тела, поскольку, тело — это самый прекрасный инструмент, которым мы когда-либо обладали.
-            if coaches.nadezhdaLuchinina.directions || coaches.nadezhdaLuchinina.schedule
+            if data.coaches.nadezhdaLuchinina.directions || data.coaches.nadezhdaLuchinina.schedule
               //Footer
               div(class='card-footer coach-footer')
-                if coaches.nadezhdaLuchinina.directions
+                if data.coaches.nadezhdaLuchinina.directions
                   div(class='coach-direction-link')
                     h5(class='card-text')
                       i(class='far fa-list-alt fa-lg')
                       | &nbsp;
                       | Направления:
                     ul
-                      each direction in coaches.nadezhdaLuchinina.directions
+                      each direction in data.coaches.nadezhdaLuchinina.directions
                         li
                           if direction.link
                             a(href= direction.link)= direction.title
                           else
                             | #{direction.title}
-                  if coaches.nadezhdaLuchinina.schedule
+                  if data.coaches.nadezhdaLuchinina.schedule
                     div(class='coach-schedule-link')
                       h5(class='card-text')
-                        a(class='coach-schedule-link', href= coaches.nadezhdaLuchinina.schedule)
+                        a(class='coach-schedule-link', href= data.coaches.nadezhdaLuchinina.schedule)
                           i(class='far fa-calendar-alt fa-lg')
                           | &nbsp;
                           | Расписание занятий
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /coach\./i)

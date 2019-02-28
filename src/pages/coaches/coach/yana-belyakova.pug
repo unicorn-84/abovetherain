@@ -1,40 +1,15 @@
-extends ../../../templates/layout
-//-VARIABLES
+extends ../../../views/layouts/app
 append variables
-  - const { options, pages, primaryNavigation, coaches } = require('../../../data');
-//-META
-append meta
-  //Page meta tags
-  if pages.yanaBelyakova.title
-    title= pages.yanaBelyakova.title
-  if pages.yanaBelyakova.description
-    meta(name='description', content= pages.yanaBelyakova.description)
-//-ICONS
-append icons
-  //Page icons
-//-STYLES
-append styles
-  //Page styles
-  +assets('css', /coach\./i)
-//-HEADER
-append header
-  +header(primaryNavigation)
-//-PAGE TITLE
-append pageTitle
-  //Page title
-  +pageTitle(pages.yanaBelyakova)
-//-CONTENT
+  -var page = htmlWebpackPlugin.options.vars.page
+  -var icon = require('../../../images/icons/favicon.ico')
+  -var logo = require('../../../images/logo/logo.png')
 append content
-  //Content
   div(id='content')
-    //Container
     div(class='container')
       div(class='row justify-content-center')
         div(class='col-12 col-lg-8')
           div(class='card card-page')
-            //Body
             div(class='card-body')
-              //Title
               h2(class='card-title text-center')
                 | Яна Белякова
               blockquote(class='blockquote')
@@ -44,30 +19,26 @@ append content
                   | <a href='services/pole-dance.html'>Pole&nbsp;Dance</a> это ключ к нашему телу который освобождает физическое мышление. Когда вы танцуете думайте телом и в ответ вы получите энергию и вдохновение.&raquo;
                 footer(class='blockquote-footer')
                   cite(title='Надежда Лучинина') Яна Белякова
-            if coaches.yanaBelyakova.directions || coaches.yanaBelyakova.schedule
+            if data.coaches.yanaBelyakova.directions || data.coaches.yanaBelyakova.schedule
               //Footer
               div(class='card-footer coach-footer')
-                if coaches.yanaBelyakova.directions
+                if data.coaches.yanaBelyakova.directions
                   div(class='coach-direction-link')
                     h5(class='card-text')
                       i(class='far fa-list-alt fa-lg')
                       | &nbsp;
                       | Направления:
                     ul
-                      each direction in coaches.yanaBelyakova.directions
+                      each direction in data.coaches.yanaBelyakova.directions
                         li
                           if direction.link
                             a(href= direction.link)= direction.title
                           else
                             | #{direction.title}
-                  if coaches.yanaBelyakova.schedule
+                  if data.coaches.yanaBelyakova.schedule
                     div(class='coach-schedule-link')
                       h5(class='card-text')
-                        a(class='coach-schedule-link', href= coaches.yanaBelyakova.schedule)
+                        a(class='coach-schedule-link', href= data.coaches.yanaBelyakova.schedule)
                           i(class='far fa-calendar-alt fa-lg')
                           | &nbsp;
                           | Расписание занятий
-//-SCRIPTS
-append scripts
-  //Page scripts
-  +assets('js', /coach\./i)
