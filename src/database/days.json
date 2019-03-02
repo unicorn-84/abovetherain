@@ -1,0 +1,37 @@
+[
+  {
+    "name": "monday",
+    "title": "Понедельник",
+    "shortName": "Пн"
+  },
+  {
+    "name": "tuesday",
+    "title": "Вторник",
+    "shortName": "Вт"
+  },
+  {
+    "name": "wednesday",
+    "title": "Среда",
+    "shortName": "Ср"
+  },
+  {
+    "name": "thursday",
+    "title": "Четверг",
+    "shortName": "Чт"
+  },
+  {
+    "name": "friday",
+    "title": "Пятница",
+    "shortName": "Пт"
+  },
+  {
+    "name": "saturday",
+    "title": "Суббота",
+    "shortName": "Сб"
+  },
+  {
+    "name": "sunday",
+    "title": "Воскресенье",
+    "shortName": "Вс"
+  }
+]

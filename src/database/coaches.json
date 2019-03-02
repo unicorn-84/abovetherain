@@ -1,0 +1,55 @@
+[
+  {
+    "id": 0,
+    "name": "nadezhda-luchinina",
+    "title": "Надежда Лучинина",
+    "link": "coaches/nadezhda-luchinina.html",
+    "directions": [
+      {
+        "title": "Pole dance",
+        "link": "services/pole-dance.html"
+      },
+      {
+        "title": "Stretching",
+        "link": "services/stretching.html"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "name": "yana-belyakova",
+    "title": "Яна Белякова",
+    "link": "coaches/yana-belyakova.html",
+    "schedule": "schedule.html?day=all&direction=all&coach=yana-belyakova",
+    "directions": [
+      {
+        "title": "Pole Dance",
+        "link": "services/pole-dance.html"
+      },
+      {
+        "title": "Функциональный тренинг",
+        "link": "services/functional-training.html"
+      },
+      {
+        "title": "Женская пластика"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "aleksandr-ushakov",
+    "title": "Александр Ушаков",
+    "link": "coaches/aleksandr-ushakov.html",
+    "schedule": "schedule.html?day=all&direction=all&coach=aleksandr-ushakov",
+    "directions": [
+      {
+        "title": "Zumba® Fitness",
+        "link": "services/zumba-fitness.html"
+      },
+      {
+        "title": "Strong by Zumba®",
+        "link": "services/zumba-strong.html"
+      }
+    ]
+  }
+]

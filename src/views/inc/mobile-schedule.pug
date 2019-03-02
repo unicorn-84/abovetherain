@@ -1,0 +1,187 @@
+include schedule-event
+//Понедельник
+table.mb-3.table-sm.table-bordered.table-dark.border.border-rhino.schedule-table.w-100.d-lg-none(data-selected="all")
+  thead
+    tr.zumba-fitness.aleksandr-ushakov.stretching.yana-belyakova.monday
+      th(scope="col").d-none.d-md-table-cell
+      th(scope="col").font-weight-bold.px-4 Понедельник
+  tbody
+    //9:00
+    //9:30
+    //10:00
+    //11:00
+    tr.zumba-fitness.aleksandr-ushakov.monday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 11:00
+      +schedule-event('2', directions[6], coaches[2], days[0], '11:00', '12:00', 'Открытая группа')
+    //11:30
+    tr.zumba-fitness.aleksandr-ushakov.monday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 11:30
+    //12:00
+    tr.stretching.yana-belyakova.monday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 12:00
+      +schedule-event('2', directions[5], coaches[1], days[0], '12:00', '13:00', 'Открытая группа')
+    //12:30
+    tr.stretching.yana-belyakova.monday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 12:30
+    //13:00
+    //13:30
+    //14:00
+    //15:00
+    //15:30
+    //16:00
+    //16:30
+    //17:00
+    //17:30
+    //18:00
+    //18:30
+    //19:30
+    //20:00
+    //20:30
+    //21:00
+//Вторник
+table.mb-3.table-sm.table-bordered.table-dark.border.border-rhino.schedule-table.w-100.d-lg-none(data-selected="all")
+  thead
+    tr.stretching.yana-belyakova.tuesday
+      th(scope="col").d-none.d-md-table-cell
+      th(scope="col").font-weight-bold.px-4 Вторник
+  tbody
+    //9:00
+    //9:30
+    //10:00
+    //11:00
+    //11:30
+    //12:00
+    tr.stretching.yana-belyakova.tuesday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 12:00
+        +schedule-event('2', directions[5], coaches[1], days[1], '12:00', '13:00', 'Открытая группа')
+    //12:30
+    tr.stretching.yana-belyakova.tuesday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 12:30
+    //13:00
+    //13:30
+    //14:00
+    //14:30
+    //15:00
+    //16:00
+    //16:30
+    //17:00
+    //17:30
+    //18:30
+    //19:00
+    //19:30
+    //20:00
+    //20:30
+    //21:00
+//Среда
+table.mb-3.table-sm.table-bordered.table-dark.border.border-rhino.schedule-table.w-100.d-lg-none(data-selected="all")
+  thead
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
+      th(scope="col").d-none.d-md-table-cell
+      th(scope="col").font-weight-bold.px-4 Среда
+  tbody
+    //9:00
+    //9:30
+    //10:00
+    //10:30
+    //11:00
+    //11:30
+    //12:00
+    //12:30
+    //13:00
+    //13:30
+    //14:00
+    //14:30
+    //15:00
+    //15:30
+    //16:00
+    //16:30
+    //17:00
+    //17:30
+    //18:00
+    //18:30
+    //19:00
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 19:00
+      +schedule-event('2', directions[6], coaches[2], days[2], '19:00', '20:00', 'Открытая группа')
+    //19:30
+    tr.zumba-fitness.aleksandr-ushakov.wednesday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 19:30
+    //20:00
+    //20:30
+    //21:00
+//Четверг
+table.mb-3.table-sm.table-bordered.table-dark.border.border-rhino.schedule-table.w-100.d-lg-none(data-selected="all")
+  thead
+    tr.zumba-strong.aleksandr-ushakov.stretching.yana-belyakova.thursday
+      th(scope="col").d-none.d-md-table-cell
+      th(scope="col").font-weight-bold.px-4 Четверг
+  tbody
+    //9:00
+    //9:30
+    //10:00
+    //10:30
+    //11:00
+    tr.zumba-strong.aleksandr-ushakov.thursday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 11:00
+      +schedule-event('2', directions[7], coaches[2], days[3], '11:00', '12:00', 'Открытая группа')
+    //11:30
+    tr.zumba-strong.aleksandr-ushakov.thursday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 11:30
+    //12:00
+    tr.stretching.yana-belyakova.thursday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 12:00
+      +schedule-event('2', directions[5], coaches[1], days[3], '12:00', '13:00', 'Открытая группа')
+    //12:30
+    tr.stretching.yana-belyakova.thursday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 12:30
+    //13:00
+    //13:30
+    //14:00
+    //14:30
+    //15:00
+    //15:30
+    //16:00
+    //16:30
+    //17:00
+    //17:30
+    //18:00
+    //18:30
+    //19:00
+    //19:30
+    //20:00
+    //20:30
+    //21:00
+//Пятница
+table.mb-3.table-sm.table-bordered.table-dark.border.border-rhino.schedule-table.w-100.d-lg-none(data-selected="all")
+  thead
+    tr.stretching.yana-belyakova.friday
+      th(scope="col").d-none.d-md-table-cell
+      th(scope="col").font-weight-bold.px-4 Пятница
+  tbody
+    //8:30
+    //9:00
+    //9:30
+    //10:00
+    //10:30
+    //11:00
+    tr.stretching.yana-belyakova.friday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 11:00
+      +schedule-event('2', directions[5], coaches[1], days[4], '11:00', '12:00')
+    //11:30
+    tr.stretching.yana-belyakova.friday
+      th.align-middle(scope="row").font-weight-bold.d-none.d-md-table-cell 11:30
+    //12:00
+    //12:30
+    //13:00
+    //13:30
+    //14-00
+    //14:30
+    //15:00
+    //15:30
+    //16:00
+    //16:30
+    //17:00
+    //17:30
+    //19:00
+    //19:30
+    //21:00

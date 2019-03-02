@@ -29,9 +29,10 @@
     "not dead"
   ],
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "babel-loader": "^8.0.4",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/preset-env": "^7.3.4",
+    "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
     "cssnano": "^4.1.8",
