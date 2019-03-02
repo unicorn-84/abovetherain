@@ -2,6 +2,8 @@
 import './sass/main.scss';
 // JS
 import 'bootstrap';
-// import './scripts/icons';
-// import './scripts/logo';
-// import './scripts/fon';
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.querySelector('#abovetherain__schedule')) {
+  }
+});

@@ -1,0 +1,22 @@
+mixin schedule-event(rowspan, direction, coach, day, timeStart, timeEnd, badge)
+  td.schedule-event.align-middle.table-dark.border.border-rhino.text-left.text-lg-center.py-2.px-4.px-lg-1(rowspan= rowspan data-direction= direction.name data-coach= coach.name data-day= day)
+    if direction
+      if direction.link
+        a(href= direction.link).font-weight-bold.large.text-caribbean_green= direction.title
+      else
+        | #{direction.title}
+      div.small.mt-1= day.title
+      div.small.mb-1= `${timeStart}-${timeEnd}`
+    if coach
+      if coach.link
+        a(href= coach.link).text-caribbean_green= coach.title
+      else
+        | #{coach.title}
+    if badge
+      div.mt-1
+        span.badge.badge-success.badge-pill= badge
+    else
+      div.mt-1
+        span.badge.badge-info.badge-pill Ведется набор
+
+
