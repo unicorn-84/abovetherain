@@ -2,7 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { each } = require('lodash');
+const { each } = require('underscore');
 const options = require('./src/database/options');
 const pages = require('./src/database/pages');
 
@@ -123,6 +123,9 @@ module.exports = {
     }),
   ],
   devtool: prod ? 'none' : 'eval',
+  optimization: {
+    splitChunks: false,
+  },
 };
 
 (function createPages() {

@@ -21,19 +21,19 @@ block content
             i.fab.fa-vk.fa-lg
       div.row
         div.col-md-4.col-xl-3
-          select#direction-select.custom-select.mb-2
+          select#direction-select.abovetherain__schedule-select.custom-select.mb-2
             option(value="all" selected) Все направления
             each direction in directions
               if direction.schedule
                 option(value= direction.name)= direction.title
         div.col-md-4.col-xl-3
-          select#coach-select.custom-select.mb-2
+          select#coach-select.abovetherain__schedule-select.custom-select.mb-2
             option(value="all" selected) Все тренеры
             each coach in coaches
               if coach.schedule
                 option(value= coach.name)= coach.title
         div.col-md-4.col-xl-3
-          select#day-select.custom-select.mb-2
+          select#day-select.abovetherain__schedule-select.custom-select.mb-2
             option(value="all" selected) Все дни недели
             each day in days
               option(value= day.name)= day.title
