@@ -63,6 +63,7 @@
     "jquery-lazy": "^1.7.10",
     "lodash": "^4.17.11",
     "popper.js": "^1.14.7",
+    "underscore": "^1.9.1",
     "webfontloader": "^1.6.28"
   }
 }
