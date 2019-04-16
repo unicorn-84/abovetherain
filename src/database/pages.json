@@ -451,23 +451,23 @@
     ]
   },
   {
-    "name": "training-of-roman-lyashenko",
-    "link": "events/training-of-roman-lyashenko.html",
-    "template": "./src/views/pages/events/training-of-roman-lyashenko.pug",
-    "title": "Тренинг Романа Ляшенко | Над Дождём",
+    "name": "overtime-article",
+    "link": "events/overtime-article.html",
+    "template": "./src/views/pages/events/overtime-article.pug",
+    "title": "Статья в журнале Овертайм | Над Дождём",
     "description": "",
-    "pageTitle": "Тренинг Романа Ляшенко",
+    "pageTitle": "Статья в журнале Овертайм",
     "breadcrumbs": [
       {
         "name": "Главная",
         "path": "index.html"
       },
       {
-        "name": "Афиша",
+        "name": "События",
         "path": "events.html"
       },
       {
-        "name": "Тренинг Романа Ляшенко",
+        "name": "Статья в журнале Овертайм",
         "path": "current"
       }
     ]
