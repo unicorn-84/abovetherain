@@ -1,2 +1,0 @@
-// Local
-import './events.scss';
