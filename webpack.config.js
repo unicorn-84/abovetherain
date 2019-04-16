@@ -2,6 +2,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { each } = require('underscore');
 const options = require('./src/database/options');
 const pages = require('./src/database/pages');
@@ -121,6 +122,20 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: prod ? 'styles/[name].[contenthash:4].css' : 'styles/[name].css',
     }),
+    new CopyPlugin([
+      {
+        from: 'src/database/events.json',
+        to: 'events.json',
+        toType: 'file',
+      },
+    ]),
+    new CopyPlugin([
+      {
+        from: 'src/js/scheduler.min.js',
+        to: 'scripts/scheduler.min.js',
+        toType: 'file',
+      },
+    ]),
   ],
   devtool: prod ? 'none' : 'eval',
   optimization: {

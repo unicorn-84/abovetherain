@@ -1,3 +1,7 @@
+.table-bordered thead td {
+  border-bottom-width: 1px;
+}
+
 .schedule-table {
   table-layout: fixed;
   //border-collapse: separate;
@@ -5,7 +9,7 @@
 
   thead {
     tr {
-      th {
+      td {
         @include media-breakpoint-up(lg) {
           &:first-child {
             width: 7%;
@@ -16,24 +20,26 @@
   }
 
   tbody {
-    td {
-      border: 0;
+    tr {
+      td {
+        //border-width: 0;
+      }
     }
 
     tr {
-      display: none;
+      //display: none;
 
       @include media-breakpoint-up(lg) {
-        display: table-row;
+        //display: table-row;
       }
     }
   }
 
   .schedule-event {
-    border: 0;
+    //border: 0;
 
     > div {
-      display: none;
+      //display: none;
     }
   }
 }
