@@ -124,7 +124,7 @@ module.exports = {
     }),
     new CopyPlugin([
       {
-        from: 'src/database/events.json',
+        from: 'src/database/schedule.json',
         to: 'events.json',
         toType: 'file',
       },
