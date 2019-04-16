@@ -7,24 +7,9 @@ append content
     div(id='content')
       div(class='container')
         div(class='row')
-          div(class='col-12')
-            ul(class='contacts')
-              li
-                i(class='fas fa-map-marker-alt')
-                |&nbsp;
-                |!{data.options.address}
-              li
-                a(href=`tel:${data.options.phone}`)
-                  i(class='fas fa-phone fa-rotate-90 fa-fw')
-                  |&nbsp;
-                  |#{data.options.phone}
-              li
-                i(class='fas fa-envelope fa-fw')
-                |&nbsp;
-                |#{data.options.email}
+
           div(class='col-12')
             div(id='yandex-map')
 //-SCRIPTS
-append scripts
-  script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+
 
