@@ -3,7 +3,7 @@ import './sass/main.scss';
 // JS
 import 'bootstrap';
 import createSchedule from './scripts/schedule';
-import events from './database/events';
+import events from './database/schedule';
 
 function createContent(name, day, start, end, coach) {
   return `${name}`;

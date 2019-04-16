@@ -14,18 +14,13 @@ block content
     div.container
       div.row
         each direction in directions
-          div(class={
-            'col-12': true,
-            'col-md-6': true,
-            'col-lg-4': true
-          })
+          div.col-md-6.col-lg-4
             div.card.mb-4.w-100
               //Image
               if direction.image
                 if direction.link
-                  div
-                    a(href= direction.link)
-                      img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
+                  a(href= direction.link)
+                    img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
                 else
                   img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${direction.title} | ${options.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
               //Body
