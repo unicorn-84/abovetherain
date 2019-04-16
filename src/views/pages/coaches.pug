@@ -3,13 +3,36 @@ extends ../layouts/app
 append variables
   -var icon = require("../../images/icons/favicon.ico")
   -var logo = require("../../images/logo/logo.png")
+  -var coaches = require("../../database/coaches")
 //-HEADER
 append header
   +header(logo)
 //-CONTENT
 block content
-  main.py-5.flex-fill
-    div.container
-      div.row
-        div.col
-          | coaches
+  if coaches && coaches.length > 0
+    main.py-5.flex-fill
+      div.container
+        div.row
+          each coach in coaches
+            div.col-sm-6.col-lg-4
+              div.card.mb-4
+                //Image
+                if coach.image
+                  div
+                    img.card-img-top(src= require(`../../images/coaches/${coach.name}/${coach.name}.jpg`), alt= `${coach.title} | ${htmlWebpackPlugin.options.vars.options.title}`)
+                div.card-img-overlay.h-100.d-flex.flex-column.justify-content-end.text-white
+                  if coach.link
+                    a.text-reset(href= coach.link, title= coach.title)
+                      h3= coach.title
+                  else
+                    h3= coach.title
+                  ul.list-unstyled.m-2
+                    each direction in coach.directions
+                      li
+                        if direction.link
+                          a.text-reset(href= direction.link)= direction.title
+                        else
+                          | #{direction.title}
+                  if coach.schedule
+                    a.text-decoration-none.text-reset(href= coach.schedule)
+                      i.far.fa-calendar-alt.fa-2x.mt-2

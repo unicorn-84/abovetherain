@@ -10,20 +10,21 @@ append header
   +header(logo)
 //-CONTENT
 block content
-  main.py-5.flex-fill
-    div.container
-      div.row
-        if directions && directions.length > 0
+  if directions && directions.length > 0
+    main.py-5.flex-fill
+      div.container
+        div.row
           each direction in directions
             div.col-md-6.col-lg-4
               div.card.mb-4.w-100
                 //Image
                 if direction.image
-                  if direction.link
-                    a(href= direction.link)
+                  div
+                    if direction.link
+                      a(href= direction.link)
+                        img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${htmlWebpackPlugin.options.vars.page.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
+                    else
                       img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${htmlWebpackPlugin.options.vars.page.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
-                  else
-                    img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`), alt=`${htmlWebpackPlugin.options.vars.page.title}`, data-srcset= require(`../../images/services/${direction.name}/001-${direction.name}-600x400.jpg`) + ' 600w,' + require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`) + ' 1200w')
                 //Body
                 div.card-body
                   //Title

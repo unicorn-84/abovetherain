@@ -1,22 +1,7 @@
 [
   {
     "id": 0,
-    "name": "nadezhda-luchinina",
-    "title": "Надежда Лучинина",
-    "link": "coaches/nadezhda-luchinina.html",
-    "directions": [
-      {
-        "title": "Pole dance",
-        "link": "services/pole-dance.html"
-      },
-      {
-        "title": "Stretching",
-        "link": "services/stretching.html"
-      }
-    ]
-  },
-  {
-    "id": 1,
+    "image": "true",
     "name": "yana-belyakova",
     "title": "Яна Белякова",
     "link": "coaches/yana-belyakova.html",
@@ -29,14 +14,12 @@
       {
         "title": "Функциональный тренинг",
         "link": "services/functional-training.html"
-      },
-      {
-        "title": "Женская пластика"
       }
     ]
   },
   {
-    "id": 2,
+    "id": 1,
+    "image": "true",
     "name": "aleksandr-ushakov",
     "title": "Александр Ушаков",
     "link": "coaches/aleksandr-ushakov.html",
@@ -49,6 +32,20 @@
       {
         "title": "Strong by Zumba®",
         "link": "services/zumba-strong.html"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "true",
+    "name": "nataliya-bondareva",
+    "title": "Наталия Бондарева",
+    "link": "coaches/nataliya-bondareva.html",
+    "schedule": "schedule.html?day=all&direction=all&coach=nataliya-bondareva",
+    "directions": [
+      {
+        "title": "Королевская йога",
+        "link": "services/yoga.html"
       }
     ]
   }
