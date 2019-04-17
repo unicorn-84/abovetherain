@@ -3,13 +3,74 @@ extends ../../layouts/app
 append variables
   -var icon = require("../../../images/icons/favicon.ico")
   -var logo = require("../../../images/logo/logo.png")
+  -var directions = require("../../../database/directions");
+  -var direction;
 //-HEADER
 append header
-  +header(logo)
+  +header(logo, true)
 //-CONTENT
 block content
   main.py-5.flex-fill
     div.container
       div.row
         div.col
-          | zumba-fitness
+          div.card
+            div#zumbaFitnessCarousel.carousel.slide(data-ride='carousel')
+              ol.carousel-indicators
+                li.active(data-target='#zumbaFitnessCarousel', data-slide-to='0')
+                li(data-target='#zumbaFitnessCarousel', data-slide-to='1')
+                li(data-target='#zumbaFitnessCarousel', data-slide-to='2')
+              div.carousel-inner
+                div.carousel-item.active
+                  img.card-img-top.img-thumbnail.border-0(src= `../${require('../../../images/services/zumba-fitness/001-zumba-fitness-1200x800.jpg')}`, alt=`${htmlWebpackPlugin.options.vars.page.title}`)
+                div.carousel-item
+                  img.card-img-top.img-thumbnail.border-0(src= `../${require('../../../images/services/zumba-fitness/002-zumba-fitness-1200x800.jpg')}`, alt=`${htmlWebpackPlugin.options.vars.page.title}`)
+                div.carousel-item
+                  img.card-img-top.img-thumbnail.border-0(src= `../${require('../../../images/services/zumba-fitness/003-zumba-fitness-1200x800.jpg')}`, alt=`${htmlWebpackPlugin.options.vars.page.title}`)
+                a.carousel-control-prev(href='#zumbaFitnessCarousel', role='button', data-slide='prev')
+                  span.carousel-control-prev-icon(aria-hidden='true')
+                  span.sr-only Previous
+                a.carousel-control-next(href='#zumbaFitnessCarousel', role='button', data-slide='next')
+                  span.carousel-control-next-icon(aria-hidden='true')
+                  span.sr-only Next
+            //Body
+            div.card-body
+              //Title
+              h1.card-title.text-center
+                | Zumba® Fitness
+              //Subtitle
+              p.card-subtitle.text-secondary.my-3
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p.card-text
+                | Программа Zumba® Fitness — это танцевальное направление в фитнесе, в котором используются движения различных танцевальных стилей (латиноамериканских и других международных направлений: сальса, бачата, реггетон, кумбия и др).
+              p.card-text
+                | Оно построено на сочетании быстрых и медленных ритмов, позволяющих быть в форме и совершенствовать свое тело. Для овладения техникой Зумбы совсем не обязательно быть профессиональным танцором, любой желающий, независимо от его танцевальной подготовки, может легко освоить данный класс. Тренировка дарит атмосферу праздника, которая помогает раскрепоститься, получить удовольствие и создать музыкально-танцевальное настроение.
+            each item in directions
+              if item.name === htmlWebpackPlugin.options.vars.page.name
+                -direction = item
+            if direction.coaches || direction.schedule
+              div.card-footer.p-4.d-lg-flex.justify-content-lg-between
+                if direction.coaches && direction.coaches.length > 0
+                  ul.list-unstyled.m-0
+                    each coach, i in direction.coaches
+                      li(class = {
+                        'mb-2': i !== direction.coaches.length - 1
+                      })
+                        if coach.link
+                          a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${coach.link}`)
+                            i(class='far fa-user fa-lg')
+                            | &nbsp;
+                            | #{coach.title}
+                        else
+                          | #{coach.title}
+                if direction.schedule
+                  a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
+                    'mt-3': direction.coaches.length > 0,
+                    'mt-lg-0': true
+                  })(href= `../${direction.schedule}`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
+

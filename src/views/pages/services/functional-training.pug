@@ -3,6 +3,8 @@ extends ../../layouts/app
 append variables
   -var icon = require("../../../images/icons/favicon.ico")
   -var logo = require("../../../images/logo/logo.png")
+  -var directions = require("../../../database/directions");
+  -var direction;
 //-HEADER
 append header
   +header(logo, true)
@@ -12,4 +14,53 @@ block content
     div.container
       div.row
         div.col
-          | functional-training
+          div.card
+            div.card-body
+              //Title
+              h1.card-title.text-center
+                | Функциональный тренинг
+              p.card-subtitle.text-secondary.my-3
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p.card-text
+                | Функциональный тренинг — это интенсивный силовой класс аэробики с разного рода отягощениями (гантели, бодибары, эспандеры, и т.д.).
+                br
+                | Как правило тренировка состоит из трех частей: разминки, силовой и растяжки.
+              p.card-text
+                | Разные классы нагрузки помогут тщательно проработать отдельные зоны:
+                ul
+                  li Upper body - только верхнюю часть тела
+                  li ABT- пресс и ягодицы
+                  li ТИТ - ноги
+              p.card-text
+                | Эта программа популярна у женщин, поскольку помогает улучшить форму всего тела и привести вес в норму. Функциональный тренинг развивает выносливость, ускоряет обменные процессы, повышает иммунитет и дает заряд бодрости.
+                | Тренер индивидуально рассчитывает нагрузку для каждого, поэтому новичок точно освоит программу и быстро войдет в ритм.
+                | Для тренировки необходима спортивная одежда и обувь, а также желание поработать над собой.
+            each item in directions
+              if item.name === htmlWebpackPlugin.options.vars.page.name
+                -direction = item
+            if direction.coaches || direction.schedule
+              div.card-footer.p-4.d-lg-flex.justify-content-lg-between
+                if direction.coaches && direction.coaches.length > 0
+                  ul.list-unstyled.m-0
+                    each coach, i in direction.coaches
+                      li(class = {
+                        'mb-2': i !== direction.coaches.length - 1
+                      })
+                        if coach.link
+                          a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${coach.link}`)
+                            i(class='far fa-user fa-lg')
+                            | &nbsp;
+                            | #{coach.title}
+                        else
+                          | #{coach.title}
+                if direction.schedule
+                  a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
+                    'mt-3': direction.coaches.length > 0,
+                    'mt-lg-0': true
+                  })(href= `../${direction.schedule}`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
+
