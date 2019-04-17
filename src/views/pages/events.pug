@@ -21,9 +21,9 @@ block content
                 if event.image
                   if event.link
                     a(href= event.link)
-                      img.card-image-top.img-thumbnail.border-0(src= require(`../../images/events/${event.name}/001-${event.name}-600x400.jpg`), alt=`${htmlWebpackPlugin.options.vars.page.title}`, data-srcset= require(`../../images/events/${event.name}/001-${event.name}-600x400.jpg`) + ' 600w,' + require(`../../images/events/${event.name}/001-${event.name}-1200x800.jpg`) + ' 1200w')
+                      img.card-image-top.img-thumbnail.border-0(src= require(`../../images/events/${event.name}/001-${event.name}-1200x800.jpg`))
                   else
-                    img.card-image-top.img-thumbnail.border-0(src= require(`../../images/events/${event.name}/001-${event.name}-600x400.jpg`), alt=`${htmlWebpackPlugin.options.vars.page.title}`, data-srcset= require(`../../images/events/${event.name}/001-${event.name}-600x400.jpg`) + ' 600w,' + require(`../../images/events/${event.name}/001-${event.name}-1200x800.jpg`) + ' 1200w')
+                    img.card-image-top.img-thumbnail.border-0(src= require(`../../images/events/${event.name}/001-${event.name}-1200x800.jpg`))
                 //Body
                 div.card-body
                   //Title
