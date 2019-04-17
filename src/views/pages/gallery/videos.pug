@@ -3,6 +3,7 @@ extends ../../layouts/app
 append variables
   -var icon = require("../../../images/icons/favicon.ico")
   -var logo = require("../../../images/logo/logo.png")
+  -var gallery = require("../../../database/gallery")
 //-HEADER
 append header
   +header(logo)
@@ -12,4 +13,4 @@ block content
     div.container
       div.row
         div.col
-          | nadezhda-luchinina
+          | Videos

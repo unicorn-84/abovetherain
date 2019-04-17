@@ -1,11 +1,16 @@
-// SCSS
-import './sass/main.scss';
-// JS
+import WebFont from 'webfontloader';
+import each from 'lodash/each';
 import 'bootstrap';
 import createSchedule from './scripts/schedule';
 import events from './database/schedule';
 import logo from './images/logo/logo.png';
 import evacuatorLogo from './images/icons/evacuator.png';
+import mobile from './scripts/helpers';
+import indexMobileFon from './images/fon/mobile-index-fon.jpg';
+import indexFon from './images/fon/index-fon.jpg';
+import commonMobileFon from './images/fon/mobile-common-fon.jpg';
+import commonFon from './images/fon/common-fon.jpg';
+import './sass/main.scss';
 
 function yandexMapInit() {
   const map = new window.ymaps.Map('yandex-map', {
@@ -68,15 +73,104 @@ function createContent(name, day, start, end, coach) {
   return `${name}`;
 }
 
+function fonLoad() {
+  if (mobile.matches) {
+    const img = new Image();
+    img.src = commonMobileFon;
+    img.onload = () => {
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+    };
+    img.onerror = () => {
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+    };
+  }
+  if (!mobile.matches) {
+    const img = new Image();
+    img.src = commonFon;
+    img.onload = () => {
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+    };
+    img.onerror = () => {
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+    };
+  }
+}
+
+function indexFonLoad() {
+  if (mobile.matches) {
+    const img = new Image();
+    img.src = indexMobileFon;
+    img.onload = () => {
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+    };
+    img.onerror = () => {
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+    };
+  }
+  if (!mobile.matches) {
+    const img = new Image();
+    img.src = indexFon;
+    img.onload = () => {
+      const spans = document.querySelectorAll('.caption h1 div span');
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+      each(spans, (span) => {
+        setTimeout(() => {
+          span.classList.add('in-up-animation');
+        }, 0);
+      });
+    };
+    img.onerror = () => {
+      const spans = document.querySelectorAll('.caption h1 div span');
+      setTimeout(() => {
+        document.documentElement.classList.add('fon-loaded');
+      }, 0);
+      each(spans, (span) => {
+        setTimeout(() => {
+          span.classList.add('in-up-animation');
+        }, 0);
+      });
+    };
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   const pages = {
-    services: document.getElementById('abovetherain__services'),
-    schedule: document.getElementById('abovetherain__schedule'),
-    events: document.getElementById('abovetherain__events'),
-    coaches: document.getElementById('abovetherain__events'),
-    gallery: document.getElementById('abovetherain__gallery'),
-    contacts: document.getElementById('abovetherain__contacts'),
+    index: document.documentElement.id === 'abovetherain__index',
+    services: document.documentElement.id === 'abovetherain__services',
+    schedule: document.documentElement.id === 'abovetherain__schedule',
+    events: document.documentElement.id === 'abovetherain__events',
+    coaches: document.documentElement.id === 'abovetherain__events',
+    gallery: document.documentElement.id === 'abovetherain__gallery',
+    contacts: document.documentElement.id === 'abovetherain__contacts',
   };
+
+  if (pages.index) {
+    WebFont.load({
+      custom: {
+        families: ['hercules_modern'],
+      },
+    });
+    mobile.addListener(indexFonLoad);
+    indexFonLoad();
+  } else {
+    mobile.addListener(fonLoad);
+    fonLoad();
+  }
+
   if (pages.schedule) {
     const options = {
       breakpoint: '991px',
@@ -118,6 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scheduler(options);
     createSchedule();
   }
+
   if (pages.contacts) {
     window.ymaps.ready(yandexMapInit);
   }
