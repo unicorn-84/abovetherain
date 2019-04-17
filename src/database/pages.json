@@ -116,6 +116,48 @@
     ]
   },
   {
+    "name": "photos",
+    "link": "gallery/photos.html",
+    "template": "./src/views/pages/gallery/photos.pug",
+    "title": "Фото школы танцев | Над Дождём",
+    "pageTitle": "Фотографии",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Галерея",
+        "path": "gallery.html"
+      },
+      {
+        "name": "Фотографии",
+        "path": "current"
+      }
+    ]
+  },
+  {
+    "name": "videos",
+    "link": "gallery/videos.html",
+    "template": "./src/views/pages/gallery/videos.pug",
+    "title": "Видео школы танцев | Над Дождём",
+    "pageTitle": "Видео",
+    "breadcrumbs": [
+      {
+        "name": "Главная",
+        "path": "index.html"
+      },
+      {
+        "name": "Галерея",
+        "path": "gallery.html"
+      },
+      {
+        "name": "Видео",
+        "path": "current"
+      }
+    ]
+  },
+  {
     "name": "contacts",
     "link": "contacts.html",
     "template": "./src/views/pages/contacts.pug",
@@ -365,7 +407,7 @@
   {
     "name": "aleksandr-ushakov",
     "link": "coaches/aleksandr-ushakov.html",
-    "template": "./src/views/pages/coaches//aleksandr-ushakov.pug",
+    "template": "./src/views/pages/coaches/aleksandr-ushakov.pug",
     "title": "Александр Ушаков | Над Дождём",
     "description": "",
     "pageTitle": "Александр Ушаков",
@@ -385,12 +427,12 @@
     ]
   },
   {
-    "name": "nadezhda-luchinina",
-    "link": "coaches/nadezhda-luchinina.html",
-    "template": "./src/views/pages/coaches//nadezhda-luchinina.pug",
-    "title": "Надежда Лучинина | Над Дождём",
+    "name": "nataliya-bondareva",
+    "link": "coaches/nataliya-bondareva.html",
+    "template": "./src/views/pages/coaches/nataliya-bondareva.pug",
+    "title": "Наталия Бондарева | Над Дождём",
     "description": "",
-    "pageTitle": "Надежда Лучинина",
+    "pageTitle": "Наталия Бондарева",
     "breadcrumbs": [
       {
         "name": "Главная",
@@ -401,7 +443,7 @@
         "path": "coaches.html"
       },
       {
-        "name": "Надежда Лучинина",
+        "name": "Наталия Бондарева",
         "path": "current"
       }
     ]
@@ -409,7 +451,7 @@
   {
     "name": "yana-belyakova",
     "link": "coaches/yana-belyakova.html",
-    "template": "./src/views/pages/coaches//yana-belyakova.pug",
+    "template": "./src/views/pages/coaches/yana-belyakova.pug",
     "title": "Яна Белякова | Над Дождём",
     "description": "",
     "pageTitle": "Яна Белякова",

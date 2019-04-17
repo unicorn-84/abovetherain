@@ -38,9 +38,9 @@ html {
       background-image: url('../images/fon/mobile-common-fon.jpg');
     }
 
-    @include respond-to(laptop) {
+    @include media-breakpoint-up(lg) {
       &::before {
-        background-image: url('../images/fon/laptop-common-fon.jpg');
+        background-image: url('../images/fon/common-fon.jpg');
       }
     }
   }
