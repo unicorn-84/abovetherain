@@ -50,7 +50,7 @@ block content
                       })
                         if coach.link
                           a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${coach.link}`)
-                            i(class='far fa-user fa-lg')
+                            i.far.fa-user.fa-lg
                             | &nbsp;
                             | #{coach.title}
                         else
@@ -59,8 +59,8 @@ block content
                   a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
                     'mt-3': direction.coaches.length > 0,
                     'mt-lg-0': true
-                  })(href= `../${direction.schedule}`)
-                    i(class='far fa-calendar-alt fa-lg')
+                  }, href= `../${direction.schedule}`)
+                    i.far.fa-calendar-alt.fa-lg
                     | &nbsp;
                     | Расписание занятий
 
