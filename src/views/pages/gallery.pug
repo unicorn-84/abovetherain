@@ -3,13 +3,30 @@ extends ../layouts/app
 append variables
   -var icon = require("../../images/icons/favicon.ico")
   -var logo = require("../../images/logo/logo.png")
+  -var gallery = require("../../database/gallery")
 //-HEADER
 append header
   +header(logo)
 //-CONTENT
 block content
-  main.py-5.flex-fill
-    div.container
-      div.row
-        div.col
-          | gallery
+  if gallery
+    main.py-5.flex-fill
+      div.container
+        div.row
+          each item in gallery
+            div.col-md-6.col-lg-4
+              div.card.mb-4.w-100
+                if item.poster
+                  if item.link
+                    a(href= item.link)
+                      img.card-image-top.img-thumbnail.border-0(src= require(`../../images/${item.poster}`))
+                  else
+                    img.card-image-top.img-thumbnail.border-0(src= require(`../../images/${item.poster}`))
+                div.card-body
+                  //Title
+                  h3.card-title.m-0.text-center
+                    if item.link
+                      a.text-reset(href= item.link) !{item.title}
+                    else
+                      | #{item.title}
+

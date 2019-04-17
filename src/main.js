@@ -69,7 +69,15 @@ function createContent(name, day, start, end, coach) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('abovetherain__schedule')) {
+  const pages = {
+    services: document.getElementById('abovetherain__services'),
+    schedule: document.getElementById('abovetherain__schedule'),
+    events: document.getElementById('abovetherain__events'),
+    coaches: document.getElementById('abovetherain__events'),
+    gallery: document.getElementById('abovetherain__gallery'),
+    contacts: document.getElementById('abovetherain__contacts'),
+  };
+  if (pages.schedule) {
     const options = {
       breakpoint: '991px',
       container: 'abovetherain__schedule-table',
@@ -110,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scheduler(options);
     createSchedule();
   }
-  if (document.getElementById('abovetherain__contacts')) {
+  if (pages.contacts) {
     window.ymaps.ready(yandexMapInit);
   }
 });
