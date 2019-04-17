@@ -5,7 +5,7 @@ import createSchedule from './scripts/schedule';
 import events from './database/schedule';
 import logo from './images/logo/logo.png';
 import evacuatorLogo from './images/icons/evacuator.png';
-import mobile from './scripts/helpers';
+import mobile from './js/helpers';
 import indexMobileFon from './images/fon/mobile-index-fon.jpg';
 import indexFon from './images/fon/index-fon.jpg';
 import commonMobileFon from './images/fon/mobile-common-fon.jpg';
