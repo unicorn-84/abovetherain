@@ -1,5 +1,7 @@
 import WebFont from 'webfontloader';
 import each from 'lodash/each';
+import SimpleLightbox from 'simple-lightbox';
+import 'simple-lightbox/dist/simpleLightbox.css';
 import 'bootstrap';
 import createSchedule from './scripts/schedule';
 import events from './database/schedule';
@@ -154,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
     schedule: document.documentElement.id === 'abovetherain__schedule',
     events: document.documentElement.id === 'abovetherain__events',
     coaches: document.documentElement.id === 'abovetherain__events',
-    gallery: document.documentElement.id === 'abovetherain__gallery',
+    photos: document.documentElement.id === 'abovetherain__photos',
     contacts: document.documentElement.id === 'abovetherain__contacts',
   };
 
@@ -211,6 +213,15 @@ document.addEventListener('DOMContentLoaded', () => {
     ));
     window.scheduler(options);
     createSchedule();
+  }
+
+  if (pages.photos) {
+    $('a.lightbox').simpleLightbox({
+      closeBtnCaption: 'Закрыть',
+      nextBtnCaption: 'Вперед',
+      prevBtnCaption: 'Назад',
+      loadingCaption: 'Загрузка...',
+    });
   }
 
   if (pages.contacts) {

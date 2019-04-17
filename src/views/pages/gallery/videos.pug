@@ -3,14 +3,17 @@ extends ../../layouts/app
 append variables
   -var icon = require("../../../images/icons/favicon.ico")
   -var logo = require("../../../images/logo/logo.png")
-  -var gallery = require("../../../database/gallery")
+  -var { videos } = require("../../../database/gallery")
 //-HEADER
 append header
-  +header(logo)
+  +header(logo, true)
 //-CONTENT
 block content
-  main.py-5.flex-fill
-    div.container
-      div.row
-        div.col
-          | Videos
+  if videos.length > 0
+    main.py-5.flex-fill
+      div.container
+        div.row
+          div.col-sm-6.col-md-4.col-lg-3
+            div.embed-responsive.embed-responsive-16by9
+              video.embed-responsive-item(src= require('../../../images/gallery/video/1.mp4'), controls)
+
