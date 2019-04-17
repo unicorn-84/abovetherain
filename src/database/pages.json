@@ -124,11 +124,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Галерея",
-        "path": "gallery.html"
+        "path": "../gallery.html"
       },
       {
         "name": "Фотографии",
@@ -145,11 +145,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Галерея",
-        "path": "gallery.html"
+        "path": "../gallery.html"
       },
       {
         "name": "Видео",
@@ -203,11 +203,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Аренда",
@@ -224,11 +224,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Pole Dance",
@@ -245,11 +245,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Воздушное кольцо",
@@ -266,11 +266,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Воздушное полотно",
@@ -287,11 +287,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Королевская йога",
@@ -308,11 +308,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Stretching",
@@ -329,11 +329,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Zumba® Fitness",
@@ -350,11 +350,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Здоровая спина",
@@ -371,11 +371,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Функциональный тренинг",
@@ -392,11 +392,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Услуги",
-        "path": "services.html"
+        "path": "../services.html"
       },
       {
         "name": "Strong by Zumba®",
@@ -414,11 +414,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Тренеры",
-        "path": "coaches.html"
+        "path": "../coaches.html"
       },
       {
         "name": "Александр Ушаков",
@@ -436,11 +436,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Тренеры",
-        "path": "coaches.html"
+        "path": "../coaches.html"
       },
       {
         "name": "Наталия Бондарева",
@@ -458,11 +458,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Тренеры",
-        "path": "coaches.html"
+        "path": "../coaches.html"
       },
       {
         "name": "Яна Белякова",
@@ -480,11 +480,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "Афиша",
-        "path": "events.html"
+        "path": "../events.html"
       },
       {
         "name": "Мастер-класс Софы Макуриной",
@@ -502,11 +502,11 @@
     "breadcrumbs": [
       {
         "name": "Главная",
-        "path": "index.html"
+        "path": "../index.html"
       },
       {
         "name": "События",
-        "path": "events.html"
+        "path": "../events.html"
       },
       {
         "name": "Статья в журнале Овертайм",

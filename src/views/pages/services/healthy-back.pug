@@ -3,13 +3,70 @@ extends ../../layouts/app
 append variables
   -var icon = require("../../../images/icons/favicon.ico")
   -var logo = require("../../../images/logo/logo.png")
+  -var directions = require("../../../database/directions");
+  -var direction;
 //-HEADER
 append header
-  +header(logo)
+  +header(logo, true)
 //-CONTENT
 block content
   main.py-5.flex-fill
     div.container
       div.row
         div.col
-          | healthy-back
+          div.card
+            //Body
+            div.card-body
+              //Title
+              h1.card-title.text-center
+                | Здоровая спина
+              //Subtitle
+              p.card-subtitle.text-secondary.my-3
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p.card-text
+                | Пора уже снять груз с плеч и свободно вдохнуть полной грудью!
+                br
+                | Что такое программа «Здоровая спина»?
+                br
+                | Это именно тот вид тренировки который направлен на профилактику заболеваний позвоночника (остеохондроз шейного и поясничного отделов, грыжа межпозвоночных дисков).
+              p.card-text
+                | В основе программы лежат мягкие упражнения от боли в спине из фитнеса, приемы из метода телесной терапии, элементы йоги и растяжки, которые обеспечивают комплексную проработку мышц-стабилизаторов, удерживающих позвоночник в правильном положении, способствуют растягиванию, улучшают гибкость и восстанавливают подвижность.
+                br
+                | Секрет положительного эффекта в том, что улучшается кровообращение, уходит мышечное напряжение, при растяжении мышцы в несколько раз снижается нагрузка на позвоночник, в результате чего расстояние между межпозвоночными дисками увеличивается естественным путем.
+                br
+                | Мы набираем мини-группы до 5 человек. Продолжительность занятия с упражнениями для спины составляет 60 минут.
+                br
+                | Подарите себе лёгкость движений. Позвольте своему телу слушаться вас. Устраните зажимы и избавьтесь от болезненных нездоровых ощущений.
+              p.card-text
+                | Ограничения для посещения занятий:
+                br
+                | Период обострения болезни, показания к операции, грыжа больше 1.2, через 6-7 недель после хирургического вмешательства.
+            each item in directions
+              if item.name === htmlWebpackPlugin.options.vars.page.name
+                -direction = item
+            if direction.coaches || direction.schedule
+              div.card-footer.p-4.d-lg-flex.justify-content-lg-between
+                if direction.coaches && direction.coaches.length > 0
+                  ul.list-unstyled.m-0
+                    each coach, i in direction.coaches
+                      li(class = {
+                        'mb-2': i !== direction.coaches.length - 1
+                      })
+                        if coach.link
+                          a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${coach.link}`)
+                            i(class='far fa-user fa-lg')
+                            | &nbsp;
+                            | #{coach.title}
+                        else
+                          | #{coach.title}
+                if direction.schedule
+                  a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
+                    'mt-3': direction.coaches.length > 0,
+                    'mt-lg-0': true
+                  })(href= `../${direction.schedule}`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
+

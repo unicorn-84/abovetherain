@@ -13,17 +13,7 @@
     "title": "Pole Dance",
     "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
     "link": "services/pole-dance.html",
-    "image": true,
-    "coaches": [
-      {
-        "title": "Надежда Лучинина",
-        "link": "coaches/nadezhda-luchinina.html"
-      },
-      {
-        "title": "Яна Белякова",
-        "link": "coaches/yana-belyakova.html"
-      }
-    ]
+    "image": true
   },
   {
     "id": 2,
@@ -47,7 +37,14 @@
     "title": "Королевская йога",
     "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб<br>Пробное занятие 60 мин - 500 руб<br>Пробное занятие 90 мин - 700 руб",
     "link": "services/yoga.html",
-    "image": true
+    "image": true,
+    "schedule": "schedule.html?day=all&direction=yoga&coach=all",
+    "coaches": [
+      {
+        "title": "Наталия Бондарева",
+        "link": "services/yoga.html"
+      }
+    ]
   },
   {
     "id": 5,
@@ -59,8 +56,8 @@
     "schedule": "schedule.html?day=all&direction=stretching&coach=all",
     "coaches": [
       {
-        "title": "Надежда Лучинина",
-        "link": "coaches/nadezhda-luchinina.html"
+        "title": "Яна Белякова",
+        "link": "coaches/yana-belyakova.html"
       }
     ]
   },
@@ -106,13 +103,7 @@
     "name": "functional-training",
     "title": "Функциональный тренинг",
     "subtitle": "Одно занятие - 750 руб<br>Пробное занятие - 500 руб",
-    "link": "services/functional-training.html",
-    "coaches": [
-      {
-        "title": "Яна Белякова",
-        "link": "coaches/yana-belyakova.html"
-      }
-    ]
+    "link": "services/functional-training.html"
   },
   {
     "id": 10,

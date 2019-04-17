@@ -8,12 +8,8 @@
     "schedule": "schedule.html?day=all&direction=all&coach=yana-belyakova",
     "directions": [
       {
-        "title": "Pole Dance",
-        "link": "services/pole-dance.html"
-      },
-      {
-        "title": "Функциональный тренинг",
-        "link": "services/functional-training.html"
+        "title": "Stretching",
+        "link": "services/stretching.html"
       }
     ]
   },

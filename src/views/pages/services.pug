@@ -33,14 +33,7 @@ block content
                     else
                       | #{direction.title}
                   //Subtitle
-                  p(class={
-                    'card-subtitle': true,
-                    'mx-2': true,
-                    'mt-2': true,
-                    'mb-2': true,
-                    'text-secondary': true,
-                    'mb-0': !direction.excerpt
-                  }) !{direction.subtitle}
+                  p.card-subtitle.mt-2.mb-0.text-secondary !{direction.subtitle}
                 //Footer
                 div.card-footer
                   div.text-right

@@ -3,13 +3,55 @@ extends ../../layouts/app
 append variables
   -var icon = require("../../../images/icons/favicon.ico")
   -var logo = require("../../../images/logo/logo.png")
+  -var directions = require("../../../database/directions");
+  -var direction;
 //-HEADER
 append header
-  +header(logo)
+  +header(logo, true)
 //-CONTENT
 block content
   main.py-5.flex-fill
     div.container
       div.row
         div.col
-          | yoga
+          div.card
+            img.card-img-top.img-thumbnail.border-0(src=`../${require('../../../images/services/yoga/001-yoga-1200x800.jpg')}`, alt=`${htmlWebpackPlugin.options.vars.page.title}`)
+            //Body
+            div.card-body
+              //Title
+              h1.card-title.text-center
+                | Королевская йога
+              //Subtitle
+              p.card-subtitle.text-secondary.my-3
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p.card-text
+                | Йога - практика ума и тела, сочетающая в себе различные физические позы, дыхательные техники, медитацию и релаксацию. Занятие по йоге нацелено на гармонизацию психического и физиологического состояния организма.
+            each item in directions
+              if item.name === htmlWebpackPlugin.options.vars.page.name
+                -direction = item
+            if direction.coaches || direction.schedule
+              div.card-footer.p-4.d-lg-flex.justify-content-lg-between
+                if direction.coaches && direction.coaches.length > 0
+                  ul.list-unstyled.m-0
+                    each coach, i in direction.coaches
+                      li(class = {
+                        'mb-2': i !== direction.coaches.length - 1
+                      })
+                        if coach.link
+                          a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${coach.link}`)
+                            i(class='far fa-user fa-lg')
+                            | &nbsp;
+                            | #{coach.title}
+                        else
+                          | #{coach.title}
+                if direction.schedule
+                  a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
+                    'mt-3': direction.coaches.length > 0,
+                    'mt-lg-0': true
+                  })(href= `../${direction.schedule}`)
+                    i(class='far fa-calendar-alt fa-lg')
+                    | &nbsp;
+                    | Расписание занятий
+
