@@ -1,9 +1,0 @@
-mixin assets(type, regex)
-  if type === 'css'
-    each cssFile in htmlWebpackPlugin.files.css
-      if cssFile.search(regex) !== -1
-        link(rel='stylesheet', href= cssFile.substr(htmlWebpackPlugin.files.publicPath.length))
-  if type === 'js'
-    each jsFile in htmlWebpackPlugin.files.js
-      if jsFile.search(regex) !== -1
-        script(type='text/javascript', src= jsFile.substr(htmlWebpackPlugin.files.publicPath.length))

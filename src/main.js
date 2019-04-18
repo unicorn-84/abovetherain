@@ -1,17 +1,11 @@
 import WebFont from 'webfontloader';
 import each from 'lodash/each';
-import SimpleLightbox from 'simple-lightbox';
-import 'simple-lightbox/dist/simpleLightbox.css';
 import 'bootstrap';
-import createSchedule from './scripts/schedule';
+import createSchedule from './js/schedule';
 import events from './database/schedule';
 import logo from './images/logo/logo.png';
 import evacuatorLogo from './images/icons/evacuator.png';
 import mobile from './js/helpers';
-import indexMobileFon from './images/fon/mobile-index-fon.jpg';
-import indexFon from './images/fon/index-fon.jpg';
-import commonMobileFon from './images/fon/mobile-common-fon.jpg';
-import commonFon from './images/fon/common-fon.jpg';
 import './sass/main.scss';
 
 function yandexMapInit() {
@@ -72,80 +66,17 @@ function yandexMapInit() {
 }
 
 function createContent(name, day, start, end, coach) {
-  return `${name}`;
+  return `<div class="h5 mb-1 text-caribbean_green">${name}</div><div class="font-weight-normal mb-1">${start}-${end}</div><div class="text-caribbean_green mb-1">${coach}</div><span class="badge badge-success badge-pill">Открытая группа</span>`;
 }
 
 function fonLoad() {
-  if (mobile.matches) {
-    const img = new Image();
-    img.src = commonMobileFon;
-    img.onload = () => {
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-    };
-    img.onerror = () => {
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-    };
-  }
   if (!mobile.matches) {
-    const img = new Image();
-    img.src = commonFon;
-    img.onload = () => {
+    const spans = document.querySelectorAll('.caption h1 div span');
+    each(spans, (span) => {
       setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
+        span.classList.add('in-up-animation');
       }, 0);
-    };
-    img.onerror = () => {
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-    };
-  }
-}
-
-function indexFonLoad() {
-  if (mobile.matches) {
-    const img = new Image();
-    img.src = indexMobileFon;
-    img.onload = () => {
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-    };
-    img.onerror = () => {
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-    };
-  }
-  if (!mobile.matches) {
-    const img = new Image();
-    img.src = indexFon;
-    img.onload = () => {
-      const spans = document.querySelectorAll('.caption h1 div span');
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-      each(spans, (span) => {
-        setTimeout(() => {
-          span.classList.add('in-up-animation');
-        }, 0);
-      });
-    };
-    img.onerror = () => {
-      const spans = document.querySelectorAll('.caption h1 div span');
-      setTimeout(() => {
-        document.documentElement.classList.add('fon-loaded');
-      }, 0);
-      each(spans, (span) => {
-        setTimeout(() => {
-          span.classList.add('in-up-animation');
-        }, 0);
-      });
-    };
+    });
   }
 }
 
@@ -166,9 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         families: ['hercules_modern'],
       },
     });
-    mobile.addListener(indexFonLoad);
-    indexFonLoad();
-  } else {
     mobile.addListener(fonLoad);
     fonLoad();
   }
@@ -179,19 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
       container: 'abovetherain__schedule-table',
       table: {
         attributes: {
-          class: 'table table-sm table-bordered table-dark border border-rhino schedule-table text-center',
+          class: 'table table-sm table-bordered border border-rhino text-center text-light',
+          style: 'background-color: rgba(0, 0, 0, 0.9)',
         },
         thead: {
           td: {
             attributes: {
-              class: 'font-weight-bold align-middle',
+              class: 'font-weight-bold align-middle py-2',
             },
           },
         },
         tbody: {
           td: {
             attributes: {
-              class: 'font-weight-bold align-middle',
+              class: 'font-weight-bold align-middle py-3',
             },
           },
         },
@@ -213,15 +142,6 @@ document.addEventListener('DOMContentLoaded', () => {
     ));
     window.scheduler(options);
     createSchedule();
-  }
-
-  if (pages.photos) {
-    $('a.lightbox').simpleLightbox({
-      closeBtnCaption: 'Закрыть',
-      nextBtnCaption: 'Вперед',
-      prevBtnCaption: 'Назад',
-      loadingCaption: 'Загрузка...',
-    });
   }
 
   if (pages.contacts) {
