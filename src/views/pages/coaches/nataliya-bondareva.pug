@@ -1,0 +1,53 @@
+extends ../../layouts/app
+//-VARS
+append variables
+  -var icon = require("../../../images/icons/favicon.ico")
+  -var logo = require("../../../images/logo/logo.png")
+  -var coaches = require("../../../database/coaches");
+  -var coach;
+//-HEADER
+append header
+  +header(logo, true)
+//-CONTENT
+block content
+  main.py-5.flex-fill
+    div.container
+      div.row
+        div.col
+          div.card
+            img.card-img-top.img-thumbnail.border-0(src=`../${require('../../../images/coaches/nataliya-bondareva/001-yoga-1200x800.jpg')}`, alt=`${htmlWebpackPlugin.options.vars.page.title}`)
+            //Body
+            div.card-body
+              //Title
+              h1.card-title.text-center
+                | Наталия Бондарева
+              //Subtitle
+              p.card-text
+                | Бондарева Наталия практикует йогу уже более 20 лет, и 13 лет из них преподаёт. Наталия очень деликатно передаёт своей опыт своим ученикам. Её занятия - это возможность узнать новое о своем теле и уме, сделать жизнь более спокойной и созерцательной. Ведь йога - это не только и не столько про тело, это образ жизни, полный осознанности.
+            each item in coaches
+              if item.name === htmlWebpackPlugin.options.vars.page.name
+                -coach = item
+            if coach.directions || coach.schedule
+              div.card-footer.p-4.d-lg-flex.justify-content-lg-between
+                if coach.directions && coach.directions.length > 0
+                  ul.list-unstyled.m-0
+                    each direction, i in coach.directions
+                      li(class = {
+                        'mb-2': i !== coach.directions.length - 1
+                      })
+                        if direction.link
+                          a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${direction.link}`)
+                            i.far.fa-check-square.fa-lg
+                            | &nbsp;
+                            | #{direction.title}
+                        else
+                          | #{direction.title}
+                if coach.schedule
+                  a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
+                    'mt-3': coach.directions.length > 0,
+                    'mt-lg-0': true
+                  }, href= `../${coach.schedule}`)
+                    i.far.fa-calendar-alt.fa-lg
+                    | &nbsp;
+                    | Расписание занятий
+

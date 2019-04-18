@@ -1,0 +1,59 @@
+extends ../../layouts/app
+//-VARS
+append variables
+  -var icon = require("../../../images/icons/favicon.ico")
+  -var logo = require("../../../images/logo/logo.png")
+  -var directions = require("../../../database/directions");
+  -var direction;
+//-HEADER
+append header
+  +header(logo, true)
+//-CONTENT
+block content
+  main.py-5.flex-fill
+    div.container
+      div.row
+        div.col
+          div.card
+            img.card-img-top.img-thumbnail.border-0(src=`../${require('../../../images/services/zumba-strong/001-zumba-strong-1200x800.jpg')}`, alt=`${htmlWebpackPlugin.options.vars.page.title}`)
+            //Body
+            div.card-body
+              //Title
+              h1.card-title.text-center
+                | Strong by Zumba®
+              //Subtitle
+              p.card-subtitle.text-secondary.my-3
+                | Одно занятие - 750 руб
+                br
+                | Пробное занятие - 500 руб
+              p.card-text
+                | Это интенсивная, музыкальная тренировка с мощными кардио-силовыми упражнениями (планки, отжимания, приседания, бёрпи). Основной целью этого направления является проработка основных групп мышц всего тела с использованием только своего веса.
+              p.card-text Тренировка состоит из нескольких частей. Все части имеют разную степень сложности. Самая последняя всегда выполняется на полу: пресс, планки, скрутки. Во всех частях интенсивная фаза сменяется фазой отдыха. Вся тренировка проходит под ритмичную музыку: афро, дабстеп, латиноамериканские ритмы, которая пишется специально под движения и помогает сконцентрироваться на технике исполнения.
+              p.card-text После одного занятия Strong by zumba® вы почувствуете мощный прилив сил и результат от тренировок не заставит себя ждать.
+            each item in directions
+              if item.name === htmlWebpackPlugin.options.vars.page.name
+                -direction = item
+            if direction.coaches || direction.schedule
+              div.card-footer.p-4.d-lg-flex.justify-content-lg-between
+                if direction.coaches && direction.coaches.length > 0
+                  ul.list-unstyled.m-0
+                    each coach, i in direction.coaches
+                      li(class = {
+                        'mb-2': i !== direction.coaches.length - 1
+                      })
+                        if coach.link
+                          a.text-reset.text-decoration-none.font-weight-bold.h5(href= `../${coach.link}`)
+                            i.far.fa-user.fa-lg
+                            | &nbsp;
+                            | #{coach.title}
+                        else
+                          | #{coach.title}
+                if direction.schedule
+                  a.d-inline-block.h5.text-reset.text-decoration-none.font-weight-bold.mb-0(class={
+                    'mt-3': direction.coaches.length > 0,
+                    'mt-lg-0': true
+                  }, href= `../${direction.schedule}`)
+                    i.far.fa-calendar-alt.fa-lg
+                    | &nbsp;
+                    | Расписание занятий
+

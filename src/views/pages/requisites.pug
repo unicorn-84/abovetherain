@@ -1,0 +1,36 @@
+extends ../layouts/app
+//-VARS
+append variables
+  -var icon = require("../../images/icons/favicon.ico")
+  -var logo = require("../../images/logo/logo.png")
+//-HEADER
+append header
+  +header(logo)
+//-CONTENT
+block content
+  main.py-5.flex-fill
+    div.container
+      div.row
+        div.col
+          div.card
+            div.card-body
+              h2.card-title.text-center
+                | Реквизиты для перечисления платежей
+              p.card-text
+                | ООО «Технологии управления»
+              p.card-text
+                | ИНН 7816450800
+                br
+                | КПП 781301001
+              p.card-text
+                | БАНК: СЕВЕРО-ЗАПАДНЫЙ БАНК ПАО СБЕРБАНК Г. САНКТ-ПЕТЕРБУРГ
+                br
+                | БИК 044030653
+                br
+                | К/С 30101810500000000653
+                br
+                | Р/С 40702.810.5.55000034772
+              p.card-text.font-weight-bold
+                | В назначении платежа указать:
+                br
+                | «Оплата за участие в мероприятии ___(указать дату мероприятия)___. НДС не облагается»

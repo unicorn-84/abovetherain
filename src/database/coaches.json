@@ -1,0 +1,48 @@
+[
+  {
+    "id": 0,
+    "image": "true",
+    "name": "yana-belyakova",
+    "title": "Яна Белякова",
+    "link": "coaches/yana-belyakova.html",
+    "schedule": "schedule.html?day=all&direction=all&coach=yana-belyakova",
+    "directions": [
+      {
+        "title": "Stretching",
+        "link": "services/stretching.html"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "image": "true",
+    "name": "aleksandr-ushakov",
+    "title": "Александр Ушаков",
+    "link": "coaches/aleksandr-ushakov.html",
+    "schedule": "schedule.html?day=all&direction=all&coach=aleksandr-ushakov",
+    "directions": [
+      {
+        "title": "Zumba® Fitness",
+        "link": "services/zumba-fitness.html"
+      },
+      {
+        "title": "Strong by Zumba®",
+        "link": "services/zumba-strong.html"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "image": "true",
+    "name": "nataliya-bondareva",
+    "title": "Наталия Бондарева",
+    "link": "coaches/nataliya-bondareva.html",
+    "schedule": "schedule.html?day=all&direction=all&coach=nataliya-bondareva",
+    "directions": [
+      {
+        "title": "Королевская йога",
+        "link": "services/yoga.html"
+      }
+    ]
+  }
+]
