@@ -1,0 +1,44 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+
+html {
+  height: 1px;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
+@font-face {
+  font-family: 'hercules_modern';
+  src:
+    url('../fonts/hercules_modern/hercules_modern.woff2') format('woff2'),
+    url('../fonts/hercules_modern/hercules_modern.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@keyframes inUp {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.in-up-animation {
+  animation-name: inUp;
+  animation-timing-function: ease-out;
+  animation-duration: 1s;
+}
+
+img {
+  font-size: 1rem;
+}
+
+@import 'header';
+@import 'content';
+@import 'footer';

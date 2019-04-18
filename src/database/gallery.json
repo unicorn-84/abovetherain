@@ -1,0 +1,16 @@
+{
+  "photos": {
+    "name": "photos",
+    "title": "Фотографии",
+    "link": "gallery/photos.html",
+    "length": 29,
+    "poster": "gallery/photos/005.jpg"
+  },
+  "videos": {
+    "name": "videos",
+    "title": "Видео",
+    "link": "gallery/videos.html",
+    "length": 1,
+    "poster": "gallery/photos/002.jpg"
+  }
+}

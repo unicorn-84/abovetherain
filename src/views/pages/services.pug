@@ -1,0 +1,43 @@
+extends ../layouts/app
+//-VARS
+append variables
+  -var icon = require("../../images/icons/favicon.ico")
+  -var logo = require("../../images/logo/logo.png")
+  -var directions = require("../../database/directions")
+//-HEADER
+append header
+  +header(logo)
+//-CONTENT
+block content
+  if directions && directions.length > 0
+    main.py-5.flex-fill
+      div.container
+        div.row
+          each direction in directions
+            div.col-md-6.col-lg-4
+              div.card.mb-4.w-100
+                //Image
+                if direction.image
+                  div
+                    if direction.link
+                      a(href= direction.link)
+                        img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`))
+                    else
+                      img.card-image-top.img-thumbnail.border-0(src= require(`../../images/services/${direction.name}/001-${direction.name}-1200x800.jpg`))
+                //Body
+                div.card-body
+                  //Title
+                  h3.card-title
+                    if direction.link
+                      a.text-reset(href= direction.link) !{direction.title}
+                    else
+                      | #{direction.title}
+                  //Subtitle
+                  p.card-subtitle.mt-2.mb-0.text-secondary !{direction.subtitle}
+                //Footer
+                div.card-footer
+                  div.text-right
+                    if direction.link
+                      a.text-reset.font-weight-bold(href= direction.link) Подробнее...
+                    else
+                      | Подробнее...

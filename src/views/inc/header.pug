@@ -1,0 +1,61 @@
+mixin header(logo, subpage)
+  if subpage
+    -subpage = '../'
+  else
+    -subpage = ''
+  header#abovetherain__header
+    nav.navbar.navbar-expand-lg.bg-beige.navbar-light.shadow-sm
+      div.container
+        div.d-flex.align-items-center.justify-content-between.w-100
+          div.d-flex.align-items-center.w-100.d-lg-none
+            button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarSupportedContent")
+              span.navbar-toggler-icon
+          div.d-flex.align-items-center.justify-content-center.justify-content-lg-start.w-100
+            a.navbar-brand.m-0(href= `${subpage}index.html` title="Главная")
+              img(src= `${subpage}${logo}` alt=`Логотип | ${htmlWebpackPlugin.options.vars.options.title}`)
+          //-Для выравнивания лого по центру
+          div.w-100.d-lg-none
+        div#navbarSupportedContent.collapse.navbar-collapse
+          ul.navbar-nav.ml-auto.text-uppercase
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "services",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}services.html` title="Услуги") Услуги
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "schedule",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}schedule.html` title="Расписание") Расписание
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "events",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}events.html` title="События") События
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "team",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}team.html` title="Мы") Мы
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "coaches",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}coaches.html` title="Тренеры") Тренеры
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "gallery",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}gallery.html` title="Галерея") Галерея
+            li(class={
+              "nav-item": true,
+              "active": htmlWebpackPlugin.options.vars.page.name === "contacts",
+              "px-lg-3": true
+            })
+              a.nav-link.py-lg-1.px-lg-0(href= `${subpage}contacts.html` title="Контакты") Контакты

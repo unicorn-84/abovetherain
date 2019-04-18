@@ -1,0 +1,51 @@
+extends ../layouts/app
+//-VARS
+append variables
+  -var icon = require("../../images/icons/favicon.ico")
+  -var logo = require("../../images/logo/logo.png")
+  -var options = require('../../database/options')
+  -var events = require('../../database/events');
+//-HEADER
+append header
+  +header(logo)
+//-CONTENT
+block content
+  main.py-5.flex-fill
+    div.container
+      div.row
+        if events && events.length > 0
+          each event in events
+            div.col-md-6
+              div.card.mb-4.w-100
+                //Image
+                if event.image
+                  if event.link
+                    a(href= event.link)
+                      img.card-image-top.img-thumbnail.border-0(src= require(`../../images/events/${event.name}/001-${event.name}-1200x800.jpg`))
+                  else
+                    img.card-image-top.img-thumbnail.border-0(src= require(`../../images/events/${event.name}/001-${event.name}-1200x800.jpg`))
+                //Body
+                div.card-body
+                  //Title
+                  h3.card-title
+                    if event.link
+                      a.text-reset(href= event.link) !{event.title}
+                    else
+                      | #{event.title}
+                  //Subtitle
+                  p(class={
+                    'card-subtitle': true,
+                    'mx-2': true,
+                    'mt-2': true,
+                    'mb-2': true,
+                    'text-secondary': true,
+                    'mb-0': !event.excerpt
+                  }) !{event.subtitle}
+                  p.card-text !{event.excerpt}
+                //Footer
+                div.card-footer
+                  div.text-right
+                    if event.link
+                      a.text-reset.font-weight-bold(href= event.link) Подробнее...
+                    else
+                      | Подробнее...
