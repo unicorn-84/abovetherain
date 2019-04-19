@@ -6,7 +6,7 @@
     "dev": "webpack --mode development",
     "prod": "webpack --mode production",
     "server": "webpack-dev-server --mode development",
-    "version": "npm run prod",
+    "version": "yarn run prod",
     "postversion": "git push && git push --tags"
   },
   "private": true,
