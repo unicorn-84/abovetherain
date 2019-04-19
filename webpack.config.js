@@ -118,7 +118,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: prod ? 'styles/[name].[contenthash:4].css' : 'styles/[name].css',
     }),
