@@ -216,7 +216,7 @@ module.exports = {
         policy: [
           {
             userAgent: '*',
-            disallow: server === 'prod' ? null : '/',
+            disallow: server === '/' ? null : '/',
           },
         ],
       }),
