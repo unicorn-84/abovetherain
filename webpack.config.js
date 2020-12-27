@@ -228,13 +228,6 @@ module.exports = {
             day: '2-digit',
           },
         )}\nLanguage: Russian\nStandards: HTML5, CSS3, ES6\nIDE: WebStorm`),
-      new CopyWebpackPlugin([
-        {
-          from: './src/data/trash',
-          to: './[name].[ext]',
-          toType: 'template',
-        },
-      ]),
     );
   } else if (!seo && server === 'dev') {
     module.exports.plugins.push(
